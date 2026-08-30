@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 17 · 在最美好的时刻离开 · HSK 标准教程 5上</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#201a1e;
+  --paper:#dad4d2;
+  --card:#f1ecea;
+  --brick:#6d6058;
+  --red:#8e3350;
+  --gold:#a8853c;
+  --slate:#4a4453;
+  --line:rgba(32,26,30,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:repeating-linear-gradient(90deg,transparent 0 33px,rgba(32,26,30,.04) 33px 34px)}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+header{padding:40px 0 26px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;color:var(--red);letter-spacing:-.03em}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:40px;line-height:1.08;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brick);margin-top:10px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+section{margin-top:56px}
+h2{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+
+.curve-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px}
+.curve-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone .fillable{transition:opacity .18s ease}
+.zone .fillable{opacity:.85}
+.zone:hover .fillable,.zone.on .fillable{opacity:1}
+.zone:focus{outline:none}
+.klab{font-family:var(--han);font-size:14px;font-weight:600;fill:var(--ink);pointer-events:none}
+.kpin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.05em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:64px}
+.readout .w{font-family:var(--han);font-size:21px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:12.5px;color:var(--slate)}
+.readout .d{display:block;margin-top:5px;font-size:15px;line-height:1.55}
+.readout .hint{color:var(--brick);font-style:italic}
+
+.moves{list-style:none;padding:0;margin:0;counter-reset:mv}
+.moves li{counter-increment:mv;position:relative;padding:14px 0 14px 62px;border-bottom:1px solid var(--line)}
+.moves li::before{content:counter(mv,decimal-leading-zero);position:absolute;left:0;top:14px;
+  font-family:var(--mono);font-size:13px;font-weight:700;color:var(--red);letter-spacing:.05em}
+.moves b{font-family:var(--disp);font-size:18px;letter-spacing:.02em;display:block;margin-bottom:3px}
+.moves .kw{display:block;margin-top:6px;font-family:var(--han);font-size:15px;color:var(--brick)}
+
+.cluster{margin-top:26px}
+.cluster .why{font-size:14px;color:var(--brick);margin:-4px 0 14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--slate);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--gold);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.gold{border-left:4px solid var(--gold)}
+.card.slate{border-left:4px solid var(--slate)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--card);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.g{background:var(--gold)}
+.tag.s{background:var(--slate)}
+.tag.r{background:var(--red)}
+
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(32,26,30,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+.trap{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--slate);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+details{background:var(--card);border:1px solid var(--line);margin:10px 0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;font-family:var(--disp);
+  font-weight:700;font-size:22px;color:var(--red);width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  .lesson-no{font-size:64px}
+  h1{font-size:29px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index.html">&#8592; Все уроки 5A</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（上） · Unit 6 修养身心 · Cultivating Physical and Mental Health</div>
+  <div class="title-row">
+    <div class="lesson-no">17</div>
+    <h1>在最美好的时刻离开<span class="lat">Уйти в лучший момент · 644 字 · стр. 142–149</span></h1>
+  </div>
+  <div class="meta">
+    <span><b>33</b> новых слова + 3 имени</span>
+    <span><b>3</b> грамматические точки</span>
+    <span>ключ: <b>以 · 平常 · 宁可</b></span>
+  </div>
+</header>
+
+<section>
+  <p class="lede">Текст объясняет одно психологическое правило — 峰终定律, «правило пика и конца» Даниэля Канемана, — и потом четыре раза применяет его: к спектаклю, свадьбе, фильму и телепередаче. Структура редкая и очень удобная: закон, а затем четыре примера одной формы. Поэтому лексика раскладывается ровно по этим примерам, а опорой служит кривая переживания.</p>
+  <p style="font-size:15px;color:var(--brick);margin:0"><b>Формулировка закона:</b> 我们对事物的记忆仅在高峰和结尾，而事情的经过对记忆几乎没有影响。高峰之后，终点出现得越迅速，这件事留给我们的印象就越深刻。</p>
+</section>
+
+<section id="curve">
+  <h2>Кривая переживания <span class="cn">峰终定律</span></h2>
+  <div class="curve-box">
+    <svg viewBox="0 0 620 400" role="img" aria-label="Кривая правила пика и конца с подписями лексики урока">
+      <line x1="46" y1="30" x2="46" y2="220" stroke="rgba(32,26,30,.35)" stroke-width="1.4"/>
+      <line x1="46" y1="220" x2="596" y2="220" stroke="rgba(32,26,30,.35)" stroke-width="1.4"/>
+      <text class="kpin" x="40" y="36" text-anchor="end">感受</text>
+      <text class="kpin" x="596" y="238" text-anchor="end">时间</text>
+
+      <!-- середина: процесс -->
+      <g class="zone" tabindex="0" data-w="经过：事物 · 记忆几乎不受影响" data-p="shìwù · jīngguò" data-d="Ядро закона: 我们对事物的记忆仅在高峰和结尾，而事情的经过对记忆几乎没有影响. Всё, что между пиком и финалом, память почти не сохраняет — на схеме эта часть намеренно приглушена.">
+        <rect class="fillable" x="128" y="30" width="292" height="190" fill="#6d6058" opacity=".1"/>
+        <text class="kpin" x="274" y="206" text-anchor="middle">经过 · 对记忆几乎没有影响</text>
+      </g>
+
+      <!-- кривая -->
+      <path d="M46 176 C 90 168, 110 120, 140 100 C 165 84, 185 62, 208 58 C 232 54, 250 92, 272 108
+               C 296 126, 316 106, 340 122 C 364 138, 388 120, 412 140 C 440 162, 462 150, 486 96"
+        fill="none" stroke="#4a4453" stroke-width="2.6" stroke-linecap="round"/>
+
+      <!-- пик -->
+      <g class="zone" tabindex="0" data-w="高峰 · 深刻 · 印象" data-p="gāofēng · shēnkè" data-d="Первая из двух точек, которые запоминаются, — 高峰, самый яркий момент. 深刻 всегда идёт с 印象、记忆、道理: 留下深刻的印象.">
+        <circle class="fillable" cx="208" cy="58" r="8" fill="#8e3350"/>
+        <line class="fillable" x1="208" y1="66" x2="208" y2="220" stroke="#8e3350" stroke-width="1.4" stroke-dasharray="4 4"/>
+        <text class="klab" x="208" y="46" text-anchor="middle" fill="#8e3350">高峰</text>
+      </g>
+
+      <!-- финал -->
+      <g class="zone" tabindex="0" data-w="终点 · 迅速 · 告别" data-p="zhōngdiǎn · xùnsù · gàobié" data-d="Вторая точка — 终点. Ключевая мысль: 高峰之后，终点出现得越迅速，这件事留给我们的印象就越深刻. Отсюда и заголовок: уходить надо в лучший момент.">
+        <circle class="fillable" cx="486" cy="96" r="8" fill="#a8853c"/>
+        <line class="fillable" x1="486" y1="104" x2="486" y2="220" stroke="#a8853c" stroke-width="1.4" stroke-dasharray="4 4"/>
+        <text class="klab" x="486" y="84" text-anchor="middle" fill="#a8853c">终点</text>
+        <text class="kpin" x="486" y="236" text-anchor="middle">越迅速 → 印象越深刻</text>
+      </g>
+
+      <!-- формула -->
+      <rect x="508" y="30" width="86" height="46" fill="#201a1e"/>
+      <text class="klab" x="551" y="49" text-anchor="middle" fill="#f1ecea" style="font-size:12px">记忆 =</text>
+      <text class="klab" x="551" y="66" text-anchor="middle" fill="#f1ecea" style="font-size:12px">高峰 + 终点</text>
+
+      <!-- четыре применения -->
+      <text class="kpin" x="46" y="276" letter-spacing="0.14em">ЧЕТЫРЕ ПРИМЕРА ИЗ ТЕКСТА</text>
+
+      <g class="zone" tabindex="0" data-w="戏剧：投入 · 服装 · 化妆 · 道具 · 美术 · 以 · 良好 · 争取 · 忽视 · 糟糕 · 魅力" data-p="xìjù · tóurù · huà zhuāng · dàojù" data-d="К спектаклю готовятся долго: 我们会投入很多时间，准备服装、化妆、道具、舞台美术，以创造良好的效果，争取给观众留下一个好的印象 — 却常常忽视结束退场时的准备. Начало кажется 很有魅力, но 糟糕的结局会给人留下难以忘记的坏印象.">
+        <rect class="fillable" x="46" y="288" width="128" height="42" fill="#8e3350" opacity=".16"/>
+        <text class="klab" x="110" y="308" text-anchor="middle">戏剧</text>
+        <text class="kpin" x="110" y="323" text-anchor="middle">开幕好 · 退场被忽视</text>
+      </g>
+
+      <g class="zone" tabindex="0" data-w="婚礼：等于 · 度过 · 告别 · 平常" data-p="hūnlǐ · děngyú · dùguò" data-d="Автор был на свадьбе: 前三个小时感觉都很好，只在最后一个小时感到无聊. Арифметика говорит 三小时快乐减一小时无聊等于两个小时快乐, но память считает иначе: короткий визит с ранним 告别 запомнился как 更为美好.">
+        <rect class="fillable" x="184" y="288" width="128" height="42" fill="#a8853c" opacity=".2"/>
+        <text class="klab" x="248" y="308" text-anchor="middle">婚礼</text>
+        <text class="kpin" x="248" y="323" text-anchor="middle">早早告别 → 记忆更好</text>
+      </g>
+
+      <g class="zone" tabindex="0" data-w="电影：平常 · 依然 · 推荐 · 淋漓尽致 · 评价 · 烂" data-p="píngcháng · yīrán · tuījiàn · píngjià · làn" data-d="Фильм с 平平常常 началом, но трогающим финалом, зрители 依然会向别人推荐它. И наоборот: если 前半个小时就把剧情的创造力表现得淋漓尽致，结尾却非常普通, то 评价就肯定不好，甚至会说这是一部“烂片”.">
+        <rect class="fillable" x="322" y="288" width="128" height="42" fill="#4a4453" opacity=".18"/>
+        <text class="klab" x="386" y="308" text-anchor="middle">电影</text>
+        <text class="kpin" x="386" y="323" text-anchor="middle">结尾决定评价</text>
+      </g>
+
+      <g class="zone" tabindex="0" data-w="做节目：主持 · 运用 · 开幕式 · 宁可 · 集中 · 体会" data-p="zhǔchí · yùnyòng · nìngkě · jízhōng" data-d="Автор — телеведущий (主持人) и 在工作中常常运用“峰终定律”: 与开幕式相比，我们宁可把更多的精力集中在闭幕式上. Многие закона не знают, но 能从经验中体会这种做法的重要性.">
+        <rect class="fillable" x="460" y="288" width="136" height="42" fill="#8e3350" opacity=".16"/>
+        <text class="klab" x="528" y="308" text-anchor="middle">做节目</text>
+        <text class="kpin" x="528" y="323" text-anchor="middle">精力集中在闭幕式</text>
+      </g>
+
+      <text class="kpin" x="46" y="366">诺贝尔奖 · 丹尼尔·卡内曼 · 峰终定律 Fēngzhōng Dìnglǜ</text>
+    </svg>
+    <div class="readout" id="readout">
+      <span class="hint">Наведите курсор или коснитесь точки на кривой или одного из четырёх примеров — появятся слова этого фрагмента.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Текст в пяти кадрах <span class="cn">课文复述</span></h2>
+  <p style="font-size:14.5px;color:var(--brick)">Пять блоков учебника (стр. 148). Первый — сам закон, остальные четыре — примеры одинаковой формы: «начало хорошее, конец забыт» или наоборот.</p>
+  <ol class="moves">
+    <li>
+      <b>Правило пика и конца</b>
+      Бабушка автора говорила: 人们应该在最美好的时候离开. Нобелевскую премию за это открытие получила, впрочем, не она, а психолог Даниэль Канеман, назвавший явление 峰终定律: 我们对事物的记忆仅在高峰和结尾，而事情的经过对记忆几乎没有影响. 高峰之后，终点出现得越迅速，印象就越深刻.
+      <span class="kw">事物 · 高峰 · 终点 · 迅速 · 深刻</span>
+    </li>
+    <li>
+      <b>Подготовка спектакля</b>
+      Большинство закона не понимает. Ради одного спектакля 我们会投入很多时间，准备服装、化妆、道具、舞台美术，以创造良好的效果，争取给观众留下一个好的印象，却常常忽视结束退场时的准备. В итоге начало кажется 很有魅力, а 糟糕的结局会给人留下难以忘记的坏印象.
+      <span class="kw">戏剧 · 投入 · 服装 · 化妆 · 道具 · 美术 · 以 · 良好 · 争取 · 忽视 · 魅力 · 糟糕</span>
+    </li>
+    <li>
+      <b>Свадьба</b>
+      На свадьбе автору 前三个小时感觉都很好，只在最后一个小时感到无聊. Арифметически 三个小时快乐减一个小时无聊等于两个小时快乐, но память считает не так. В другой раз он пробыл всего час и 早早地告别 — и 享受了满满60分钟的快乐. 与第一次相比，第二次的聚会留给我的印象更为美好.
+      <span class="kw">婚礼 · 等于 · 度过 · 告别</span>
+    </li>
+    <li>
+      <b>Кино</b>
+      То же с фильмами. Начало может быть 平平常常, но если 最后半个小时能使我们感动, мы 依然会向别人推荐它. И наоборот: 如果在前半个小时就把剧情的创造力表现得淋漓尽致，结尾却非常普通, зрители дадут плохую 评价 и даже назовут фильм 烂片.
+      <span class="kw">平常 · 依然 · 推荐 · 淋漓尽致 · 评价 · 烂</span>
+    </li>
+    <li>
+      <b>Работа телеведущего</b>
+      作为电视节目主持人，我在工作中常常运用“峰终定律”. Например, 与开幕式相比，我们宁可把更多的精力集中在闭幕式上，这样可以加强观众对节目的印象. Многие о законе не слышали, но 能从经验中体会这种做法的重要性.
+      <span class="kw">主持 · 运用 · 开幕式 · 宁可 · 集中 · 体会</span>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <h2>33 слова по гнёздам <span class="cn">生词</span></h2>
+  <p style="font-size:14px;color:var(--brick)"><span class="star">★</span> — слово сверх программы HSK 5 (в учебнике со звёздочкой).</p>
+
+  <div class="audiobar" id="audiobar">
+    <div class="ab-t">Озвучка слов</div>
+    <div class="ab-row">
+      <input id="ab-pat" type="text" spellcheck="false" value="audio/{hz}.mp3" aria-label="Шаблон пути к mp3">
+      <button type="button" id="ab-auto">Подобрать</button>
+      <button type="button" id="ab-test">Проверить</button>
+    </div>
+    <div class="ab-status" id="ab-status"></div>
+    <div class="ab-note">
+      По умолчанию ищутся файлы вида <code>иероглиф.mp3</code> — сначала в папке
+      <code>audio</code> рядом с этим файлом, потом прямо рядом с ним. Нужная папка
+      определяется сама при открытии страницы. Если ваши mp3 лежат где-то ещё, впишите путь
+      вручную: доступны подстановки <code>{hz}</code> иероглифы, <code>{py}</code> пиньинь с
+      тонами, <code>{pyn}</code> пиньинь без диакритики, <code>{num}</code> номер слова в списке
+      учебника, <code>{L}</code> номер урока. Работает только если открыть файл у себя на диске —
+      в предпросмотре доступа к вашим папкам нет.
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>I. Сам закон<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Пять слов, которыми формулируется правило. Их достаточно, чтобы пересказать первый абзац.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">事物</span><span class="py">shìwù</span><button class="pb" type="button" data-hz="事物" data-hz2="事物" data-py="shìwù" data-pyn="shiwu" data-num="1" aria-label="Прослушать 事物" title="Прослушать 事物">&#9654;</button><span class="ru">вещи и явления, предметы</span><span class="ex">对事物的记忆</span></div>
+      <div class="w-item"><span class="hz">高峰</span><span class="py">gāofēng</span><span class="star">★</span><button class="pb" type="button" data-hz="高峰" data-hz2="高峰" data-py="gāofēng" data-pyn="gaofeng" data-num="2" aria-label="Прослушать 高峰" title="Прослушать 高峰">&#9654;</button><span class="ru">пик, вершина</span><span class="ex">高峰时间 / 事业的高峰</span></div>
+      <div class="w-item"><span class="hz">终点</span><span class="py">zhōngdiǎn</span><span class="star">★</span><button class="pb" type="button" data-hz="终点" data-hz2="终点" data-py="zhōngdiǎn" data-pyn="zhongdian" data-num="3" aria-label="Прослушать 终点" title="Прослушать 终点">&#9654;</button><span class="ru">конечная точка, финиш</span><span class="ex">↔ 起点</span></div>
+      <div class="w-item"><span class="hz">迅速</span><span class="py">xùnsù</span><button class="pb" type="button" data-hz="迅速" data-hz2="迅速" data-py="xùnsù" data-pyn="xunsu" data-num="4" aria-label="Прослушать 迅速" title="Прослушать 迅速">&#9654;</button><span class="ru">быстрый, стремительный</span><span class="ex">迅速提高 / 迅速做出反应</span></div>
+      <div class="w-item"><span class="hz">深刻</span><span class="py">shēnkè</span><button class="pb" type="button" data-hz="深刻" data-hz2="深刻" data-py="shēnkè" data-pyn="shenke" data-num="5" aria-label="Прослушать 深刻" title="Прослушать 深刻">&#9654;</button><span class="ru">глубокий (о впечатлении, мысли)</span><span class="ex">深刻的印象 / 记忆 / 道理</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>II. Театр и сцена<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Тематическое гнездо второго абзаца плюс глаголы усилия. 争取 и 忽视 — самые экзаменуемые слова урока.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">戏剧</span><span class="py">xìjù</span><button class="pb" type="button" data-hz="戏剧" data-hz2="戏剧" data-py="xìjù" data-pyn="xiju" data-num="6" aria-label="Прослушать 戏剧" title="Прослушать 戏剧">&#9654;</button><span class="ru">драма, спектакль</span><span class="ex">古典戏剧 / 一场戏剧演出</span></div>
+      <div class="w-item"><span class="hz">投入</span><span class="py">tóurù</span><button class="pb" type="button" data-hz="投入" data-hz2="投入" data-py="tóurù" data-pyn="touru" data-num="7" aria-label="Прослушать 投入" title="Прослушать 投入">&#9654;</button><span class="ru">вкладывать (время, силы); поглощённый</span><span class="ex">投入很多时间 / 演得很投入</span></div>
+      <div class="w-item"><span class="hz">服装</span><span class="py">fúzhuāng</span><button class="pb" type="button" data-hz="服装" data-hz2="服装" data-py="fúzhuāng" data-pyn="fuzhuang" data-num="8" aria-label="Прослушать 服装" title="Прослушать 服装">&#9654;</button><span class="ru">одежда, костюм</span><span class="ex">一套服装 / 服装设计</span></div>
+      <div class="w-item"><span class="hz">化妆</span><span class="py">huà zhuāng</span><span class="star">★</span><button class="pb" type="button" data-hz="化妆" data-hz2="化妆" data-py="huà zhuāng" data-pyn="huazhuang" data-num="9" aria-label="Прослушать 化妆" title="Прослушать 化妆">&#9654;</button><span class="ru">краситься, гримироваться</span><span class="ex">化妆品（妆, а не 装!）</span></div>
+      <div class="w-item"><span class="hz">道具</span><span class="py">dàojù</span><span class="star">★</span><button class="pb" type="button" data-hz="道具" data-hz2="道具" data-py="dàojù" data-pyn="daoju" data-num="10" aria-label="Прослушать 道具" title="Прослушать 道具">&#9654;</button><span class="ru">реквизит, бутафория</span></div>
+      <div class="w-item"><span class="hz">美术</span><span class="py">měishù</span><button class="pb" type="button" data-hz="美术" data-hz2="美术" data-py="měishù" data-pyn="meishu" data-num="11" aria-label="Прослушать 美术" title="Прослушать 美术">&#9654;</button><span class="ru">изобразительное искусство</span><span class="ex">舞台美术</span></div>
+      <div class="w-item"><span class="hz">良好</span><span class="py">liánghǎo</span><button class="pb" type="button" data-hz="良好" data-hz2="良好" data-py="liánghǎo" data-pyn="lianghao" data-num="13" aria-label="Прослушать 良好" title="Прослушать 良好">&#9654;</button><span class="ru">хороший, добротный</span><span class="ex">良好的效果 / 习惯 / 环境</span></div>
+      <div class="w-item"><span class="hz">争取</span><span class="py">zhēngqǔ</span><button class="pb" type="button" data-hz="争取" data-hz2="争取" data-py="zhēngqǔ" data-pyn="zhengqu" data-num="14" aria-label="Прослушать 争取" title="Прослушать 争取">&#9654;</button><span class="ru">добиваться, стараться успеть</span><span class="ex">争取时间 / 机会 / 提前结束</span></div>
+      <div class="w-item"><span class="hz">忽视</span><span class="py">hūshì</span><button class="pb" type="button" data-hz="忽视" data-hz2="忽视" data-py="hūshì" data-pyn="hushi" data-num="15" aria-label="Прослушать 忽视" title="Прослушать 忽视">&#9654;</button><span class="ru">упускать из виду, не придавать значения</span><span class="ex">忽视了结束时的准备</span></div>
+      <div class="w-item"><span class="hz">魅力</span><span class="py">mèilì</span><button class="pb" type="button" data-hz="魅力" data-hz2="魅力" data-py="mèilì" data-pyn="meili" data-num="16" aria-label="Прослушать 魅力" title="Прослушать 魅力">&#9654;</button><span class="ru">обаяние, притягательность</span><span class="ex">很有魅力</span></div>
+      <div class="w-item"><span class="hz">糟糕</span><span class="py">zāogāo</span><button class="pb" type="button" data-hz="糟糕" data-hz2="糟糕" data-py="zāogāo" data-pyn="zaogao" data-num="17" aria-label="Прослушать 糟糕" title="Прослушать 糟糕">&#9654;</button><span class="ru">скверный; вот беда!</span><span class="ex">糟糕的结局</span></div>
+      <div class="w-item"><span class="hz">以</span><span class="py">yǐ</span><button class="pb" type="button" data-hz="以" data-hz2="以" data-py="yǐ" data-pyn="yi" data-num="12" aria-label="Прослушать 以" title="Прослушать 以">&#9654;</button><span class="ru">посредством; чтобы (книжн.)</span><span class="ex">以……为…… / 以创造良好的效果</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>III. Свадьба и кино<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Слова про то, как мы проводим время и как потом об этом судим.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">婚礼</span><span class="py">hūnlǐ</span><button class="pb" type="button" data-hz="婚礼" data-hz2="婚礼" data-py="hūnlǐ" data-pyn="hunli" data-num="18" aria-label="Прослушать 婚礼" title="Прослушать 婚礼">&#9654;</button><span class="ru">свадьба, свадебная церемония</span><span class="ex">参加婚礼 / 举行婚礼</span></div>
+      <div class="w-item"><span class="hz">等于</span><span class="py">děngyú</span><button class="pb" type="button" data-hz="等于" data-hz2="等于" data-py="děngyú" data-pyn="dengyu" data-num="19" aria-label="Прослушать 等于" title="Прослушать 等于">&#9654;</button><span class="ru">равняться, быть равносильным</span><span class="ex">三加五等于八</span></div>
+      <div class="w-item"><span class="hz">度过</span><span class="py">dùguò</span><button class="pb" type="button" data-hz="度过" data-hz2="度过" data-py="dùguò" data-pyn="duguo" data-num="20" aria-label="Прослушать 度过" title="Прослушать 度过">&#9654;</button><span class="ru">провести (время)</span><span class="ex">度过童年 / 度过了两个小时</span></div>
+      <div class="w-item"><span class="hz">告别</span><span class="py">gàobié</span><button class="pb" type="button" data-hz="告别" data-hz2="告别" data-py="gàobié" data-pyn="gaobie" data-num="21" aria-label="Прослушать 告别" title="Прослушать 告别">&#9654;</button><span class="ru">прощаться, откланяться</span><span class="ex">早早地告别</span></div>
+      <div class="w-item"><span class="hz">平常</span><span class="py">píngcháng</span><button class="pb" type="button" data-hz="平常" data-hz2="平常" data-py="píngcháng" data-pyn="pingchang" data-num="22" aria-label="Прослушать 平常" title="Прослушать 平常">&#9654;</button><span class="ru">обычный, заурядный; обычно</span><span class="ex">平平常常 / 他平常来得很早</span></div>
+      <div class="w-item"><span class="hz">依然</span><span class="py">yīrán</span><button class="pb" type="button" data-hz="依然" data-hz2="依然" data-py="yīrán" data-pyn="yiran" data-num="23" aria-label="Прослушать 依然" title="Прослушать 依然">&#9654;</button><span class="ru">по-прежнему, всё равно</span><span class="ex">依然会向别人推荐</span></div>
+      <div class="w-item"><span class="hz">推荐</span><span class="py">tuījiàn</span><button class="pb" type="button" data-hz="推荐" data-hz2="推荐" data-py="tuījiàn" data-pyn="tuijian" data-num="24" aria-label="Прослушать 推荐" title="Прослушать 推荐">&#9654;</button><span class="ru">рекомендовать</span><span class="ex">向别人推荐 / 推荐信</span></div>
+      <div class="w-item"><span class="hz">淋漓尽致</span><span class="py">línlí-jìnzhì</span><span class="star">★</span><button class="pb" type="button" data-hz="淋漓尽致" data-hz2="淋漓尽致" data-py="línlí-jìnzhì" data-pyn="linli-jinzhi" data-num="25" aria-label="Прослушать 淋漓尽致" title="Прослушать 淋漓尽致">&#9654;</button><span class="ru">исчерпывающе, во всей полноте</span><span class="ex">表现得淋漓尽致</span></div>
+      <div class="w-item"><span class="hz">评价</span><span class="py">píngjià</span><button class="pb" type="button" data-hz="评价" data-hz2="评价" data-py="píngjià" data-pyn="pingjia" data-num="26" aria-label="Прослушать 评价" title="Прослушать 评价">&#9654;</button><span class="ru">оценивать; оценка</span><span class="ex">评价不好 / 高度评价</span></div>
+      <div class="w-item"><span class="hz">烂</span><span class="py">làn</span><button class="pb" type="button" data-hz="烂" data-hz2="烂" data-py="làn" data-pyn="lan" data-num="27" aria-label="Прослушать 烂" title="Прослушать 烂">&#9654;</button><span class="ru">гнилой; паршивый (разг.)</span><span class="ex">烂苹果 / 烂片</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>IV. Работа и выбор<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Последний абзац плюс 宁可 — третья грамматическая точка урока.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">主持</span><span class="py">zhǔchí</span><button class="pb" type="button" data-hz="主持" data-hz2="主持" data-py="zhǔchí" data-pyn="zhuchi" data-num="28" aria-label="Прослушать 主持" title="Прослушать 主持">&#9654;</button><span class="ru">вести (передачу), возглавлять</span><span class="ex">主持会议 / 主持人</span></div>
+      <div class="w-item"><span class="hz">运用</span><span class="py">yùnyòng</span><button class="pb" type="button" data-hz="运用" data-hz2="运用" data-py="yùnyòng" data-pyn="yunyong" data-num="29" aria-label="Прослушать 运用" title="Прослушать 运用">&#9654;</button><span class="ru">применять на практике</span><span class="ex">灵活地运用 / 运用规律</span></div>
+      <div class="w-item"><span class="hz">开幕式</span><span class="py">kāimùshì</span><button class="pb" type="button" data-hz="开幕式" data-hz2="开幕式" data-py="kāimùshì" data-pyn="kaimushi" data-num="30" aria-label="Прослушать 开幕式" title="Прослушать 开幕式">&#9654;</button><span class="ru">церемония открытия</span><span class="ex">↔ 闭幕式</span></div>
+      <div class="w-item"><span class="hz">宁可</span><span class="py">nìngkě</span><button class="pb" type="button" data-hz="宁可" data-hz2="宁可" data-py="nìngkě" data-pyn="ningke" data-num="31" aria-label="Прослушать 宁可" title="Прослушать 宁可">&#9654;</button><span class="ru">уж лучше, скорее (выбор)</span><span class="ex">宁可……也不…… （宁 — nìng）</span></div>
+      <div class="w-item"><span class="hz">集中</span><span class="py">jízhōng</span><button class="pb" type="button" data-hz="集中" data-hz2="集中" data-py="jízhōng" data-pyn="jizhong" data-num="32" aria-label="Прослушать 集中" title="Прослушать 集中">&#9654;</button><span class="ru">сосредоточить(ся)</span><span class="ex">集中注意力 / 集中在……上</span></div>
+      <div class="w-item"><span class="hz">体会</span><span class="py">tǐhuì</span><button class="pb" type="button" data-hz="体会" data-hz2="体会" data-py="tǐhuì" data-pyn="tihui" data-num="33" aria-label="Прослушать 体会" title="Прослушать 体会">&#9654;</button><span class="ru">прочувствовать, понять на опыте; ощущение</span><span class="ex">体会到 / 最大的体会</span></div>
+      <div class="w-item"><span class="hz">诺贝尔奖</span><span class="py">Nuòbèi'ěr Jiǎng</span><button class="pb" type="button" data-hz="诺贝尔奖" data-hz2="诺贝尔奖" data-py="Nuòbèi'ěr Jiǎng" data-pyn="NuobeierJiang" data-num="" aria-label="Прослушать 诺贝尔奖" title="Прослушать 诺贝尔奖">&#9654;</button><span class="ru">Нобелевская премия</span></div>
+      <div class="w-item"><span class="hz">丹尼尔·卡内曼</span><span class="py">Dānní'ěr Kǎnèimàn</span><button class="pb" type="button" data-hz="丹尼尔·卡内曼" data-hz2="丹尼尔·卡内曼" data-py="Dānní'ěr Kǎnèimàn" data-pyn="DannierKaneiman" data-num="" aria-label="Прослушать 丹尼尔·卡内曼" title="Прослушать 丹尼尔·卡内曼">&#9654;</button><span class="ru">Даниэль Канеман, психолог</span></div>
+      <div class="w-item"><span class="hz">峰终定律</span><span class="py">Fēngzhōng Dìnglǜ</span><button class="pb" type="button" data-hz="峰终定律" data-hz2="峰终定律" data-py="Fēngzhōng Dìnglǜ" data-pyn="FengzhongDinglu" data-num="" aria-label="Прослушать 峰终定律" title="Прослушать 峰终定律">&#9654;</button><span class="ru">правило пика и конца</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>На слух: где рука ошибётся <span class="cn">听写陷阱</span></h2>
+  <p>Этот урок опасен <b>внутренними парами</b>: два слова с одинаковым слогом zhuāng стоят в одном предложении, а 魅力 и 美丽 звучат почти неразличимо.</p>
+
+  <div class="warn">Ловушка внутри одного предложения</div>
+  <div class="trap">
+    <div><span class="hz">服装</span><span class="py">fúzhuāng</span><span class="n">одежда — 装 «облачать»</span></div>
+    <div><span class="hz">化妆</span><span class="py">huà zhuāng</span><span class="n">гримироваться — <b>妆</b> (丬 + 女), другой иероглиф! Оба стоят подряд: 准备服装、化妆、道具</span></div>
+  </div>
+  <div class="trap">
+    <div><span class="hz">魅力</span><span class="py">mèilì</span><span class="n">обаяние — 魅 = 鬼 + 未</span></div>
+    <div><span class="hz">美丽</span><span class="py">měilì</span><span class="n">красивый. Различие только в первом тоне: mèi (4-й) против měi (3-й)</span></div>
+  </div>
+  <div class="trap">
+    <div><span class="hz">度过</span><span class="py">dùguò</span><span class="n">провести <b>время</b> — 度过童年, 度过两个小时</span></div>
+    <div><span class="hz">渡过</span><span class="py">dùguò</span><span class="n">переправиться, преодолеть <b>трудность</b> — 渡过难关, 渡河. Полные омофоны</span></div>
+  </div>
+  <div class="trap">
+    <div><span class="hz">主持</span><span class="py">zhǔchí</span><span class="n">вести, возглавлять — 主持会议</span></div>
+    <div><span class="hz">支持</span><span class="py">zhīchí</span><span class="n">поддерживать. Одна из самых частых ошибок HSK</span></div>
+  </div>
+
+  <div class="warn">Перекличка с пройденными уроками</div>
+  <table class="pair-tbl">
+    <tr><th>Слово</th><th>С чем сравнить</th></tr>
+    <tr><td>忽视 hūshì</td><td>轻视 qīngshì из урока 15. Полный разбор ниже, в 辨析: 忽视 — «не заметил», 轻视 — «презрел».</td></tr>
+    <tr><td>平常 píngcháng</td><td>通常 tōngcháng (урок 14) и 常常 (там же). 平常 — «заурядный» или «в обычное время»; 通常 — «как правило»; 常常 — «часто».</td></tr>
+    <tr><td>争取 zhēngqǔ</td><td>采取 cǎiqǔ (урок 16). Общий 取: 争取 — побороться за, 采取 — применить (меры).</td></tr>
+    <tr><td>告别 gàobié</td><td>个别 gèbié (урок 16) и 分别. Все три с 别, но с разными первыми слогами: gào / gè / fēn.</td></tr>
+    <tr><td>迅速 xùnsù</td><td>训练 xùnliàn (урок 13) — общий первый слог xùn.</td></tr>
+  </table>
+
+  <div class="warn">Прочие пары</div>
+  <table class="pair-tbl">
+    <tr><th>Пара</th><th>Как развести</th></tr>
+    <tr><td>依然 yīrán<br>仍然 réngrán<br>居然 jūrán</td><td>依然 и 仍然 — синонимы «по-прежнему», 依然 книжнее. 居然 — «представьте себе, надо же» (урок 1).</td></tr>
+    <tr><td>运用 yùnyòng<br>应用 yìngyòng<br>使用 shǐyòng</td><td>运用 — применить знание, метод, закон. 应用 — применить технологию в сфере. 使用 — просто пользоваться вещью.</td></tr>
+    <tr><td>体会 tǐhuì<br>体验 tǐyàn</td><td>体会 — понять что-то нутром, вывод из опыта (最大的体会). 体验 — сам процесс проживания опыта (体验生活).</td></tr>
+    <tr><td>宁可 nìngkě<br>宁静 níngjìng</td><td>宁 в 宁可 — <b>четвёртый</b> тон, а в 宁静 и 南宁 — второй.</td></tr>
+    <tr><td>烂 làn<br>乱 luàn</td><td>烂 — гнилой, паршивый (烂片). 乱 — беспорядочный. Слоги близкие, но разные: làn / luàn.</td></tr>
+    <tr><td>以 yǐ<br>已 yǐ</td><td>Одинаковое чтение, соседние по виду иероглифы. 以 — служебное «посредством, чтобы», 已 — «уже» (已经).</td></tr>
+  </table>
+
+  <div class="warn">Тяжёлые для руки иероглифы</div>
+  <div class="card">
+    <ul style="margin-bottom:0">
+      <li><b>魅</b> (魅力) = 鬼 + 未. Ключ «призрак» — обаяние как наваждение.</li>
+      <li><b>妆</b> (化妆) = 丬 + 女, всего 6 черт. Не 装 (壮 + 衣, 12 черт).</li>
+      <li><b>糟糕</b> — оба знака с 米 слева: 糟 = 米 + 曹, 糕 = 米 + 羔.</li>
+      <li><b>荐</b> (推荐) = 艹 + 存. Часто пишут 存 без травы.</li>
+      <li><b>淋漓尽致</b> — четыре знака, из них три редкие. Достаточно узнавать на слух; писать от руки почти наверняка не попросят.</li>
+      <li><b>幕</b> (开幕式) = 莫 + 巾 «ткань» снизу — занавес. Не 慕 (сердце снизу) и не 墓 (земля).</li>
+      <li><b>剧</b> (戏剧) = 居 + 刂. <b>峰</b> (高峰) = 山 + 夆, ключ «гора» слева.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Грамматика: три детали <span class="cn">注释</span></h2>
+
+  <h3>1 · 以 yǐ</h3>
+  <div class="card red">
+    <p><span class="tag r">предлог</span> «Посредством, с помощью, взяв за» = 用 / 拿 / 凭借. Книжное.</p>
+    <p class="cn-ex">（微信）<span class="hl">以</span>英文名WeChat正式进入国际市场。</p>
+    <p class="cn-ex">学生分为甲乙两队，<span class="hl">以</span>足球为比赛工具向篮内投。</p>
+    <p class="tr">Частая рамка: 以 A 为 B «взять A в качестве B» — 以……为工具 / 为主 / 为例 / 为荣.</p>
+    <p><span class="tag r">союз цели</span> «Чтобы, дабы» = 以便. Стоит перед второй частью предложения.</p>
+    <p class="cn-ex">我们会投入很多时间，准备服装、化妆、道具、舞台美术，<span class="hl">以</span>创造良好的效果。</p>
+    <p class="cn-ex" style="margin-bottom:0">虽然我们已经老了，但还要坚持学习，<span class="hl">以</span>适应社会的发展。</p>
+  </div>
+
+  <h3>2 · 平常 píngcháng</h3>
+  <div class="card gold">
+    <p><span class="tag g">прилагательное</span> «Обычный, ничем не примечательный, заурядный». Часто удваивается: 平平常常.</p>
+    <p class="cn-ex">一部电影，开始虽然剧情<span class="hl">平平常常</span>，如果最后半个小时能使我们感动，我们依然会向别人推荐它。</p>
+    <p class="cn-ex">对小王来说，今天是一个不<span class="hl">平常</span>的日子，因为他今天第一天上班。</p>
+    <p><span class="tag g">существительное</span> «Обычное время, в обычные дни» = 平时.</p>
+    <p class="cn-ex">他<span class="hl">平常</span>总是来得很早，今天却迟到了。</p>
+    <p class="cn-ex">对待这些孩子，要像<span class="hl">平常</span>一样，不要让孩子知道他们是被选出来的。</p>
+    <p class="tr" style="margin:0">Как отличить от 通常 (урок 14): 通常 — «как правило, обыкновенно» о закономерности; 平常 — либо «заурядный» как качество, либо «в обычные дни» как время.</p>
+  </div>
+
+  <h3>3 · 宁可 nìngkě</h3>
+  <div class="card slate">
+    <p>Наречие: после сравнения выбирается вариант, который при всех минусах всё же лучше. Русское «уж лучше…».</p>
+    <p class="cn-ex">作为母亲，她<span class="hl">宁可</span>自己累一点儿，也不想委屈了孩子。</p>
+    <p class="cn-ex">与开幕式相比，我们<span class="hl">宁可</span>把更多的精力集中在闭幕式上。</p>
+    <p class="cn-ex">为什么大家<span class="hl">宁可</span>挤成一团，也不去没人的那边？</p>
+    <p class="tr" style="margin:0">Две рамки: <b>宁可 A，也不 B</b> (лучше A, чем B) и <b>宁可 A，也要 B</b> (пусть A, но добьюсь B). Позиция — после подлежащего, перед глаголом. Синоним 宁愿.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Сочетаемость <span class="cn">词语搭配</span></h2>
+  <table>
+    <tr><th style="width:38%">Модель</th><th>Что подставляем</th></tr>
+    <tr><td class="han">争取 + O</td><td class="han">争取时间 / 机会 / 胜利 / 项目 / 考好 / 准时到 / 提前结束</td></tr>
+    <tr><td class="han">主持 + O</td><td class="han">主持会议 / 工作 / 项目</td></tr>
+    <tr><td class="han">深刻的 + N</td><td class="han">深刻的印象 / 记忆 / 道理</td></tr>
+    <tr><td class="han">烂 + N</td><td class="han">烂苹果 / 烂衣服 / 烂片</td></tr>
+    <tr><td class="han">迅速（地）+ V</td><td class="han">迅速提高 / 产生 / 出现 / 采取措施 / 做出反应</td></tr>
+    <tr><td class="han">…… 地 + 运用</td><td class="han">正确 / 灵活 / 成功 / 科学 / 广泛地运用</td></tr>
+    <tr><td class="han">集中 + 补语</td><td class="han">集中在…… / 集中到…… / 集中起来</td></tr>
+    <tr><td class="han">体会 + 补语</td><td class="han">体会到…… / 体会出…… / 体会一下</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>忽视 или 轻视 <span class="cn">词语辨析</span></h2>
+  <p>Оба значат «не уделять внимания», и в части фраз взаимозаменяемы (他只注重理论，忽视/轻视实践，所以失败了). Различие в двух пунктах:</p>
+  <table>
+    <tr><th style="width:50%">忽视 hūshì</th><th>轻视 qīngshì</th></tr>
+    <tr>
+      <td>Подчёркивает, что <b>просто не подумал, упустил</b>.<br><span class="han">他忙得忽视了去医院看病。</span></td>
+      <td>Подчёркивает, что <b>смотрит свысока, ставит ни во что</b>.<br><span class="han">你可别轻视他，他看起来很平常，其实很能干。</span></td>
+    </tr>
+    <tr>
+      <td>По отношению может быть <b>ненамеренным</b> — а может и намеренным.<br><span class="han">我们常常忽视结束退场时的准备。</span></td>
+      <td>Всегда <b>намеренно или избирательно</b>.<br><span class="han">虽然这是一次小考，你也不能轻视，要好好复习。</span></td>
+    </tr>
+  </table>
+  <p style="font-size:14.5px;color:var(--brick);margin:0">Быстрый тест: если можно добавить «нечаянно, забыл, не заметил» — 忽视. Если «недооценил, счёл мелочью, посмотрел свысока» — 轻视. Обратите внимание: 轻视 разбиралось ещё в уроке 15, так что здесь достаточно доучить 忽视.</p>
+</section>
+
+<section>
+  <h2>Проверьте себя <span class="cn">练习 · 答案</span></h2>
+  <p>Ответы к упражнениям со стр. 147–148 — сначала решите, потом раскройте.</p>
+
+  <details>
+    <summary>做一做 · 忽视 / 轻视</summary>
+    <div class="in">
+      <p>① 以前我们<span class="k">忽视</span>了教育问题。（упустили из виду）<br>
+      ② 过多地看电视、玩手机，<span class="k">忽视</span>了家人之间的交流。<br>
+      ③ 虽然这是一份平常的工作，你也不能<span class="k">轻视</span>。（не смотри свысока）<br>
+      ④ 不要因为他是小孩子就<span class="k">轻视</span>他。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 1 · 选择合适的词语填空 （度过 集中 体会 推荐 运用 争取）</summary>
+    <div class="in">
+      <p>① 最大的<span class="k">体会</span>就是要放松。（вывод из опыта — существительное）<br>
+      ② 要懂得灵活地<span class="k">运用</span>。<br>
+      ③ 复习时要<span class="k">集中</span>注意力。<br>
+      ④ 专家常常向大家<span class="k">推荐</span>“餐餐有蔬菜”。<br>
+      ⑤ 我在外公外婆身边<span class="k">度过</span>了美好的童年。<br>
+      ⑥ 机会要靠自己去<span class="k">争取</span>。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 2 · 选择正确答案</summary>
+    <div class="in">
+      <p>① 迅速地熟悉新产品，<span class="k">以</span>更好地向顾客推广（B）— союз цели.<br>
+      ② 留下了<span class="k">深刻</span>的印象（B）— 深 не сочетается с 印象 напрямую.<br>
+      ③ 这部电影很<span class="k">平常</span>（A）— здесь нужно прилагательное; 平时 — только существительное.<br>
+      ④ 他被<span class="k">评</span>为……之一（B）— рамка 评为; 评价 не берёт 为.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 3 · 给括号里的词选择适当的位置</summary>
+    <div class="in">
+      <p>① <span class="k">B</span> — 事情发生后，领导<span class="k">迅速</span>采取了措施，积极应对。<br>
+      ② <span class="k">B</span> — 三加五<span class="k">等于</span>八吗？<br>
+      ③ <span class="k">C</span> — 十几年过去了，她<span class="k">依然</span>那么美丽。<br>
+      ④ <span class="k">B</span> — 我<span class="k">宁可</span>多花点儿钱，也要买一个质量好点儿的。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>扩展 · 医务2 （诊断 手术 血 肌肉 骨头 胃 心脏 病毒 传染 寿命）</summary>
+    <div class="in">
+      <p>① 医生还在为他<span class="k">诊断</span>病情。<br>
+      ② 电脑速度越来越慢，是不是中了<span class="k">病毒</span>？<br>
+      ③ 这是一种新型的<span class="k">传染</span>病。<br>
+      ④ 海龟的<span class="k">寿命</span>最长可达150多年。</p>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Сочинение <span class="cn">婚礼</span></h2>
+  <p>Задание урока: рассказать о свадьбе, на которой были, или об особенностях свадеб в вашей стране, и сравнить с китайскими. Не менее 100 иероглифов. Образец на ~180 знаков.</p>
+  <div class="card red">
+    <p class="cn-ex" style="line-height:2">我参加过的<span class="hl">婚礼</span>大多在傍晚举行。有意思的是，汉语中的“婚礼”原来写作“昏礼”，正是这个道理。在我们国家，婚礼通常先在登记处举行仪式，然后才是聚会，而中国的婚礼更热闹，客人也更多。让我印象最<span class="hl">深刻</span>的却是一场很<span class="hl">平常</span>的婚礼：没有华丽的<span class="hl">服装</span>，也没有复杂的<span class="hl">道具</span>，但新人在气氛最好的时候就向大家<span class="hl">告别</span>了。几年过去，朋友们<span class="hl">依然</span>在谈论那天有多美好。这也说明，一个好的结尾<span class="hl">等于</span>给所有人留下了好印象。</p>
+  </div>
+  <h3>Готовые связки</h3>
+  <div class="card">
+    <ul style="margin-bottom:0">
+      <li class="cn-ex">在我们国家，婚礼通常……，而中国的婚礼……</li>
+      <li class="cn-ex">让我印象最深刻的是……</li>
+      <li class="cn-ex">与……相比，……更为美好</li>
+      <li class="cn-ex">几年过去，朋友们依然在谈论……</li>
+      <li class="cn-ex">一个好的结尾等于给所有人留下了好印象</li>
+      <li class="cn-ex">我们常常投入很多时间准备开头，却忽视了结尾</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Что делать до экзамена <span class="cn">复习计划</span></h2>
+  <ol class="route">
+    <li><b>Пересказ по кривой.</b> Сформулируйте закон одним предложением, потом пройдите четыре примера: спектакль, свадьба, кино, передача. У всех четырёх одна форма — «вложились в начало, забыли про конец», и это делает пересказ почти автоматическим.</li>
+    <li><b>Две пары под диктовку.</b> 服装 / 化妆 (装 против 妆) и 魅力 / 美丽 (mèi против měi). Первая — в одном предложении текста, вторая — почти неразличима на слух. Продиктуйте себе и запишите от руки.</li>
+    <li><b>Разберитесь с семейством 常.</b> 平常 (17) · 通常 (14) · 常常 (14) · 平时. Четыре слова, которые экзамен любит ставить в один вопрос.</li>
+    <li><b>Три конструкции — по своему предложению.</b> ……，以…… · 平常总是…… · 宁可……也不…… . Последняя особенно полезна в устной части: она сразу показывает умение сравнивать.</li>
+    <li><b>Сочинение от руки, 12 минут.</b> Тема «свадьба» удобна тем, что позволяет сравнивать свою страну и Китай — а это самый частый формат 书写 на пятом уровне.</li>
+  </ol>
+</section>
+
+<nav class="botnav"><a href="hsk5a-lesson-16.html"><span>Предыдущий урок</span>16 · 体重与节食</a><a href="hsk5a-lesson-18.html"><span>Следующий урок</span>18 · 抽象艺术美不美</a></nav>
+
+<footer>
+  Конспект по «HSK 标准教程 5（上）», урок 17 «在最美好的时刻离开», стр. 142–149 · Unit 6 修养身心<br>
+  Кривая построена по формулировке закона из текста: запоминаются 高峰 и 终点, а 经过 на память почти не влияет.
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML =
+      '<span class="w">' + z.dataset.w + '</span>' +
+      '<span class="p">' + z.dataset.p + '</span>' +
+      '<span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    out.innerHTML = def;
+  }
+
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+
+  document.querySelector('.curve-box svg').addEventListener('mouseleave', clear);
+})();
+</script>
+<script>
+(function(){
+  var LESSON = "17";
+  var DIRS = ["audio/", "", "mp3/", "media/", "аудио/", "audio/15/", "15/"];
+  var CAND = [];
+  DIRS.forEach(function(d){ CAND.push(d + "{hz}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{hz2}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{pyn}.mp3"); });
+
+  var patIn  = document.getElementById('ab-pat');
+  var status = document.getElementById('ab-status');
+  var btns   = Array.prototype.slice.call(document.querySelectorAll('.pb[data-hz]'));
+  var cur = null, curBtn = null, queue = null;
+
+  function pad(n){ n = String(n||''); return n.length === 1 ? '0'+n : n; }
+
+  function resolve(pat, b){
+    return pat
+      .replace(/\{hz2\}/g, b.dataset.hz2 || b.dataset.hz)
+      .replace(/\{hz\}/g,  b.dataset.hz)
+      .replace(/\{pyn\}/g, b.dataset.pyn)
+      .replace(/\{py\}/g,  b.dataset.py)
+      .replace(/\{num\}/g, pad(b.dataset.num))
+      .replace(/\{n\}/g,   b.dataset.num || '')
+      .replace(/\{L\}/g,   LESSON);
+  }
+
+  function setStatus(t, cls){
+    status.textContent = t || '';
+    status.className = 'ab-status' + (cls ? ' ' + cls : '');
+  }
+
+  function test(pat, b){
+    return new Promise(function(res){
+      var a = new Audio(), done = false;
+      function ok(){ if(!done){ done = true; res(true); } }
+      function no(){ if(!done){ done = true; res(false); } }
+      a.addEventListener('loadedmetadata', ok);
+      a.addEventListener('canplay', ok);
+      a.addEventListener('error', no);
+      a.preload = 'metadata';
+      a.src = encodeURI(resolve(pat, b));
+      setTimeout(no, 2500);
+    });
+  }
+
+  function stop(){
+    if(cur){ cur.pause(); cur = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn = null; }
+    queue = null;
+    document.querySelectorAll('.pball.playing').forEach(function(x){ x.classList.remove('playing'); });
+  }
+
+  /* проигрывание с запасными вариантами имени для этого слова */
+  function play(b, onEnd){
+    stop();
+    var tries = [patIn.value.trim()];
+    var alt = (b.dataset.hz2 && b.dataset.hz2 !== b.dataset.hz)
+      ? patIn.value.trim().replace('{hz}', '{hz2}') : null;
+    if(alt && tries.indexOf(alt) < 0) tries.push(alt);
+    CAND.forEach(function(p){ if(tries.indexOf(p) < 0) tries.push(p); });
+
+    b.classList.add('playing');
+    var i = 0;
+    (function attempt(){
+      if(i >= tries.length){
+        b.classList.remove('playing');
+        b.classList.add('missing');
+        b.title = 'Не найден файл для ' + b.dataset.hz;
+        setStatus('Не найден файл для ' + b.dataset.hz + ' — проверьте папку или шаблон.', 'bad');
+        if(onEnd) onEnd();
+        return;
+      }
+      var src = resolve(tries[i++], b);
+      var a = new Audio(encodeURI(src));
+      var started = false;
+      a.addEventListener('canplay', function(){ started = true; });
+      a.addEventListener('ended', function(){
+        b.classList.remove('playing');
+        if(cur === a){ cur = null; curBtn = null; }
+        if(onEnd) onEnd();
+      });
+      a.addEventListener('error', function(){
+        if(!started){ attempt(); }
+        else { b.classList.remove('playing'); if(onEnd) onEnd(); }
+      });
+      cur = a; curBtn = b;
+      b.classList.remove('missing');
+      a.play().catch(function(){});
+    })();
+  }
+
+  /* автопоиск папки при открытии */
+  function autodetect(quiet){
+    if(!btns.length) return;
+    if(!quiet) setStatus('Перебираю варианты…');
+    var i = 0;
+    (function next(){
+      if(i >= CAND.length){
+        setStatus(quiet
+          ? 'Папка с mp3 не найдена. Положите файлы в audio рядом с этим документом.'
+          : 'Ни один из типовых вариантов не подошёл. Впишите путь вручную.',
+          quiet ? '' : 'bad');
+        return;
+      }
+      var p = CAND[i++];
+      test(p, btns[0]).then(function(ok){
+        if(ok){
+          patIn.value = p;
+          document.querySelectorAll('.pb.missing').forEach(function(x){
+            x.classList.remove('missing'); x.title = '';
+          });
+          setStatus('Озвучка подключена: ' + p, 'ok');
+        } else next();
+      });
+    })();
+  }
+
+  document.getElementById('ab-auto').addEventListener('click', function(){ autodetect(false); });
+  document.getElementById('ab-test').addEventListener('click', function(){
+    if(!btns.length) return;
+    setStatus('Проверяю…');
+    test(patIn.value.trim(), btns[0]).then(function(ok){
+      setStatus((ok ? 'Файл найден: ' : 'Не найден: ') + resolve(patIn.value.trim(), btns[0]),
+                ok ? 'ok' : 'bad');
+    });
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(curBtn === b && cur){ stop(); return; }
+      play(b);
+    });
+  });
+
+  document.querySelectorAll('.pball').forEach(function(pb){
+    pb.addEventListener('click', function(){
+      if(pb.classList.contains('playing')){ stop(); return; }
+      var list = Array.prototype.slice.call(
+        pb.closest('.cluster').querySelectorAll('.pb[data-hz]'));
+      stop();
+      pb.classList.add('playing');
+      var i = 0;
+      queue = list;
+      (function step(){
+        if(queue !== list || i >= list.length){ pb.classList.remove('playing'); return; }
+        play(list[i++], function(){ setTimeout(step, 350); });
+      })();
+    });
+  });
+
+  autodetect(true);
+})();
+</script>
+</body>
+</html>

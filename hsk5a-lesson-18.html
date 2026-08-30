@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 18 · 抽象艺术美不美 · HSK 标准教程 5上</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1a1a;
+  --paper:#e4e2dd;
+  --card:#f6f5f2;
+  --brick:#6a6862;
+  --red:#c0392b;
+  --blue:#2b4c8c;
+  --yellow:#d9a520;
+  --line:rgba(26,26,26,.17);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+header{padding:40px 0 26px;border-bottom:6px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;color:var(--red);letter-spacing:-.03em}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:42px;line-height:1.06;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brick);margin-top:10px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+section{margin-top:56px}
+h2{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+
+.lab-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px}
+.lab-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone .fillable{transition:opacity .18s ease}
+.zone .fillable{opacity:.88}
+.zone:hover .fillable,.zone.on .fillable{opacity:1}
+.zone:focus{outline:none}
+.alab{font-family:var(--han);font-size:14px;font-weight:600;fill:var(--ink);pointer-events:none}
+.apin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.05em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:64px}
+.readout .w{font-family:var(--han);font-size:21px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:12.5px;color:var(--blue)}
+.readout .d{display:block;margin-top:5px;font-size:15px;line-height:1.55}
+.readout .hint{color:var(--brick);font-style:italic}
+
+.moves{list-style:none;padding:0;margin:0;counter-reset:mv}
+.moves li{counter-increment:mv;position:relative;padding:14px 0 14px 62px;border-bottom:1px solid var(--line)}
+.moves li::before{content:counter(mv,decimal-leading-zero);position:absolute;left:0;top:14px;
+  font-family:var(--mono);font-size:13px;font-weight:700;color:var(--red);letter-spacing:.05em}
+.moves b{font-family:var(--disp);font-size:18px;letter-spacing:.02em;display:block;margin-bottom:3px}
+.moves .kw{display:block;margin-top:6px;font-family:var(--han);font-size:15px;color:var(--brick)}
+
+.cluster{margin-top:26px}
+.cluster .why{font-size:14px;color:var(--brick);margin:-4px 0 14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--blue);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--yellow);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.blue{border-left:4px solid var(--blue)}
+.card.yellow{border-left:4px solid var(--yellow)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--card);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.b{background:var(--blue)}
+.tag.y{background:var(--yellow)}
+.tag.r{background:var(--red)}
+
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(26,26,26,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+.trap{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--blue);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+details{background:var(--card);border:1px solid var(--line);margin:10px 0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;font-family:var(--disp);
+  font-weight:700;font-size:22px;color:var(--red);width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+.finale{background:var(--ink);color:var(--card);padding:26px 28px;margin-top:30px}
+.finale b{font-family:var(--disp);font-size:20px;letter-spacing:.03em;display:block;margin-bottom:8px}
+.finale p{margin:0;font-size:15.5px;line-height:1.7}
+footer{margin-top:64px;padding-top:20px;border-top:6px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  .lesson-no{font-size:64px}
+  h1{font-size:31px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index.html">&#8592; Все уроки 5A</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（上） · Unit 6 修养身心 · последний урок учебника</div>
+  <div class="title-row">
+    <div class="lesson-no">18</div>
+    <h1>抽象艺术美不美<span class="lat">Красиво ли абстрактное искусство · 634 字 · стр. 150–157</span></h1>
+  </div>
+  <div class="meta">
+    <span><b>40</b> новых слов</span>
+    <span><b>3</b> грамматические точки</span>
+    <span>ключ: <b>极其 · 其余 · 可见</b></span>
+  </div>
+</header>
+
+<section>
+  <p class="lede">Последний урок 5A снова научно-популярный, как шестнадцатый, но устроен интереснее: в нём два эксперимента подряд, и оба проверяют одно и то же — способен ли человек отличить настоящее искусство от случайных мазков, даже когда сам не может объяснить, чем они отличаются. Опорой будет схема этих двух экспериментов.</p>
+  <p style="font-size:15px;color:var(--brick);margin:0"><b>Вывод текста:</b> 志愿者能够从画作中感知艺术家的用心，哪怕他们不能够解释原因。Мозг замечает композицию раньше, чем сознание успевает подобрать объяснение.</p>
+</section>
+
+<section id="lab">
+  <h2>Два эксперимента <span class="cn">研究者设计的实验</span></h2>
+  <div class="lab-box">
+    <svg viewBox="0 0 620 420" role="img" aria-label="Схема двух экспериментов с абстрактной живописью">
+      <text class="apin" x="16" y="20" letter-spacing="0.16em">ЭКСПЕРИМЕНТ 1 — ПАРЫ КАРТИН</text>
+
+      <!-- картина художника -->
+      <g class="zone" tabindex="0" data-w="出自艺术家之手：作品 · 幅 · 设计 · 布局" data-p="chūzì · zuòpǐn · fú · bùjú" data-d="В каждой паре одна работа 出自著名抽象艺术家之手. Счётное слово для картин — 幅: 一幅画儿, 一幅作品. За такой работой стоит 设计 и продуманная 布局 (композиция).">
+        <rect class="fillable" x="20" y="34" width="150" height="112" fill="#f6f5f2" stroke="#1a1a1a" stroke-width="2.4"/>
+        <rect class="fillable" x="34" y="48" width="52" height="52" fill="#c0392b"/>
+        <rect class="fillable" x="96" y="48" width="60" height="26" fill="#2b4c8c"/>
+        <rect class="fillable" x="96" y="84" width="26" height="48" fill="#d9a520"/>
+        <rect class="fillable" x="34" y="110" width="52" height="22" fill="#2b4c8c"/>
+        <text class="apin" x="95" y="162" text-anchor="middle">一幅 · 出自艺术家之手</text>
+      </g>
+
+      <text class="alab" x="196" y="96" text-anchor="middle">VS</text>
+
+      <!-- каракули -->
+      <g class="zone" tabindex="0" data-w="涂鸦：业余 · 婴儿 · 黑猩猩 · 随手 · 洒" data-p="túyā · yèyú · yīng'ér · hēixīngxing · suíshǒu" data-d="Вторая работа в паре — 涂鸦 (каракули), сделанные 业余爱好者、婴儿、黑猩猩或者大象. Отсюда и первое впечатление от абстракции: 好像随便洒上颜料而形成的画作.">
+        <rect class="fillable" x="222" y="34" width="150" height="112" fill="#f6f5f2" stroke="#1a1a1a" stroke-width="2.4"/>
+        <path class="fillable" d="M236 120 C 262 60, 288 132, 314 66 C 336 40, 352 118, 362 84"
+          fill="none" stroke="#c0392b" stroke-width="3"/>
+        <path class="fillable" d="M240 84 C 270 110, 300 48, 340 116"
+          fill="none" stroke="#2b4c8c" stroke-width="3"/>
+        <circle class="fillable" cx="268" cy="60" r="4" fill="#d9a520"/>
+        <circle class="fillable" cx="330" cy="128" r="5" fill="#d9a520"/>
+        <text class="apin" x="297" y="162" text-anchor="middle">涂鸦 · 业余 · 婴儿 · 黑猩猩</text>
+      </g>
+
+      <!-- подписи -->
+      <g class="zone" tabindex="0" data-w="签名的问题：签 · 其余 · 身份 · 确认 · 分辨" data-p="qiān · qíyú · shēnfèn · quèrèn · fēnbiàn" data-d="У трети работ подписи не было, 而其余的则标明了身份. Но часть подписей 被故意弄错了, поэтому 志愿者无法确认作者到底是谁 — и мог принять 黑猩猩的随手涂鸦 за 著名抽象艺术家的大作.">
+        <rect class="fillable" x="410" y="34" width="190" height="112" fill="#2b4c8c" opacity=".1" stroke="#2b4c8c" stroke-width="1.4"/>
+        <text class="alab" x="505" y="66" text-anchor="middle">签名被弄错</text>
+        <text class="apin" x="505" y="88" text-anchor="middle">1/3 没有签名</text>
+        <text class="apin" x="505" y="104" text-anchor="middle">其余标明了身份</text>
+        <text class="apin" x="505" y="126" text-anchor="middle">无法确认 · 不可能分辨？</text>
+      </g>
+
+      <!-- результат 1 -->
+      <g class="zone" tabindex="0" data-w="结果：挥 · 可见 · 哪怕 · 含意" data-p="huī · kějiàn · nǎpà · hányì" data-d="Однако 在每一次测试中，志愿者普遍更喜欢的作品都是由人类艺术家挥笔完成的. 由此可见，志愿者能够从画作中感知艺术家的用心，哪怕他们不能够解释原因. Здесь сразу две грамматические точки урока.">
+        <rect class="fillable" x="20" y="180" width="580" height="34" fill="#c0392b"/>
+        <text class="alab" x="310" y="202" text-anchor="middle" fill="#f6f5f2">普遍更喜欢人类艺术家挥笔完成的作品 → 由此可见……</text>
+      </g>
+
+      <text class="apin" x="16" y="248" letter-spacing="0.16em">ЭКСПЕРИМЕНТ 2 — ОРИГИНАЛ ПРОТИВ ПЕРЕСТАВЛЕННОГО</text>
+
+      <!-- оригинал -->
+      <g class="zone" tabindex="0" data-w="原作：欣赏 · 布 · 规则 · 神秘 · 丑" data-p="xīnshǎng · bù · guīzé · shénmì · chǒu" data-d="Первый абзац текста: 抽象艺术没有古典艺术那么容易欣赏，画布上那些不规则的色块、线条，实在看不出有什么意义. Одним такие работы кажутся 极其神秘甚至丑陋, другие 从中感受到对自由、对生命的赞美.">
+        <rect class="fillable" x="20" y="262" width="150" height="106" fill="#f6f5f2" stroke="#1a1a1a" stroke-width="2.4"/>
+        <rect class="fillable" x="34" y="276" width="46" height="46" fill="#c0392b"/>
+        <rect class="fillable" x="90" y="276" width="66" height="20" fill="#2b4c8c"/>
+        <rect class="fillable" x="90" y="306" width="20" height="48" fill="#d9a520"/>
+        <text class="apin" x="95" y="384" text-anchor="middle">原作 · 欣赏 · 布 · 规则</text>
+      </g>
+
+      <text class="alab" x="196" y="318" text-anchor="middle">VS</text>
+
+      <!-- переставленное -->
+      <g class="zone" tabindex="0" data-w="调整后：元素 · 位置 · 调整 · 活跃 · 区域" data-p="yuánsù · wèizhì · tiáozhěng · huóyuè · qūyù" data-d="Второй эксперимент: 志愿者同时欣赏原作和画面元素被调整后的画作. Почти все предпочли оригинал. Причина: 当看到画上物体位置变化后，大脑中有关含意和解释的区域活跃性下降了. Внимание: 调 здесь читается tiáo, а не diào.">
+        <rect class="fillable" x="222" y="262" width="150" height="106" fill="#f6f5f2" stroke="#1a1a1a" stroke-width="2.4"/>
+        <rect class="fillable" x="248" y="330" width="46" height="24" fill="#c0392b"/>
+        <rect class="fillable" x="230" y="272" width="30" height="44" fill="#2b4c8c"/>
+        <rect class="fillable" x="322" y="292" width="42" height="18" fill="#d9a520"/>
+        <text class="apin" x="297" y="384" text-anchor="middle">元素被调整 · 位置变化</text>
+      </g>
+
+      <!-- мозг -->
+      <g class="zone" tabindex="0" data-w="大脑：表明 · 事实 · 目前 · 证据 · 话题" data-p="biǎomíng · shìshí · mùqián · zhèngjù · huàtí" data-d="这表明，我们的大脑注意到了原作的布局，并且可以感知其背后的用意，即使我们还没有清楚地感受到这个事实. Осторожная оговорка учёных: 至少目前可以这么说，没有证据表明黑猩猩或儿童可以这样做. Финал: это 一个有趣的话题.">
+        <rect class="fillable" x="410" y="262" width="190" height="106" fill="#d9a520" opacity=".18" stroke="#d9a520" stroke-width="1.6"/>
+        <text class="alab" x="505" y="292" text-anchor="middle">大脑的反应</text>
+        <text class="apin" x="505" y="314" text-anchor="middle">解释区域活跃性下降</text>
+        <text class="apin" x="505" y="332" text-anchor="middle">目前没有证据表明</text>
+        <text class="apin" x="505" y="350" text-anchor="middle">黑猩猩或儿童可以这样做</text>
+      </g>
+
+      <text class="apin" x="20" y="410">既是挑战，也是自由 — 每个人对抽象艺术可以有不同的解读</text>
+    </svg>
+    <div class="readout" id="readout">
+      <span class="hint">Наведите курсор или коснитесь любой панели — появятся слова этого фрагмента и их роль в тексте.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Текст в четырёх кадрах <span class="cn">课文复述</span></h2>
+  <p style="font-size:14.5px;color:var(--brick)">Четыре блока учебника (стр. 156): вступление, первый эксперимент, второй эксперимент, вывод.</p>
+  <ol class="moves">
+    <li>
+      <b>Вступление: за что абстракцию не любят</b>
+      对有些人来说，抽象艺术没有古典艺术那么容易欣赏: 画布上那些不规则的色块、线条，实在看不出有什么意义. В работах 抽象派画家 часто видишь то, что 好像随便洒上颜料而形成的画作 — 在有人看来极其神秘甚至丑陋. А кто-то 却从中感受到对自由、对生命的赞美.
+      <span class="kw">抽象 · 古典 · 欣赏 · 布 · 规则 · 派 · 作品 · 洒 · 极其 · 神秘 · 丑 · 自由</span>
+    </li>
+    <li>
+      <b>Первый эксперимент: художник или шимпанзе</b>
+      研究者设计了一个有趣的实验. Волонтёрам показывали картины парами (两两一组): одна 出自著名抽象艺术家之手, другая — 涂鸦 от 业余爱好者、婴儿、黑猩猩或者大象. Надо было выбрать, какая нравится больше. У трети работ подписи не было, 而其余的则标明了身份, причём 一些签名被故意弄错了, так что 志愿者无法确认作者到底是谁.
+      <span class="kw">设计 · 组 · 幅 · 出自 · 业余 · 婴儿 · 黑猩猩 · 涂鸦 · 签 · 其余 · 身份 · 确认 · 随手</span>
+    </li>
+    <li>
+      <b>Второй эксперимент: оригинал против перестановки</b>
+      Казалось бы, 在这种情况下根本不可能分辨出来. 然而在每一次测试中，志愿者普遍更喜欢的作品都是由人类艺术家挥笔完成的. 由此可见，志愿者能够从画作中感知艺术家的用心，哪怕他们不能够解释原因. Во втором опыте волонтёрам показывали оригинал и работу, у которой 画面元素被调整, — почти все выбирали оригинал. 当看到画上物体位置变化后，大脑中有关含意和解释的区域活跃性下降了.
+      <span class="kw">分辨 · 挥 · 可见 · 哪怕 · 元素 · 调整 · 位置 · 含意 · 区域 · 活跃</span>
+    </li>
+    <li>
+      <b>Вывод</b>
+      这表明，我们的大脑注意到了原作的布局，并且可以感知其背后的用意，即使我们还没有清楚地感受到这个事实. Оговорка: 至少目前可以这么说，没有证据表明黑猩猩或儿童可以这样做. И финал всего учебника: 我们的大脑究竟如何感知抽象艺术，是一个有趣的话题. 每个人对抽象艺术可以有不同的解读，这既是挑战，也是自由.
+      <span class="kw">布局 · 事实 · 目前 · 证据 · 话题</span>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <h2>40 слов по гнёздам <span class="cn">生词</span></h2>
+  <p style="font-size:14px;color:var(--brick)"><span class="star">★</span> — слово сверх программы HSK 5 (в учебнике со звёздочкой).</p>
+
+  <div class="audiobar" id="audiobar">
+    <div class="ab-t">Озвучка слов</div>
+    <div class="ab-row">
+      <input id="ab-pat" type="text" spellcheck="false" value="audio/{hz}.mp3" aria-label="Шаблон пути к mp3">
+      <button type="button" id="ab-auto">Подобрать</button>
+      <button type="button" id="ab-test">Проверить</button>
+    </div>
+    <div class="ab-status" id="ab-status"></div>
+    <div class="ab-note">
+      По умолчанию ищутся файлы вида <code>иероглиф.mp3</code> — сначала в папке
+      <code>audio</code> рядом с этим файлом, потом прямо рядом с ним. Нужная папка
+      определяется сама при открытии страницы. Если ваши mp3 лежат где-то ещё, впишите путь
+      вручную: доступны подстановки <code>{hz}</code> иероглифы, <code>{py}</code> пиньинь с
+      тонами, <code>{pyn}</code> пиньинь без диакритики, <code>{num}</code> номер слова в списке
+      учебника, <code>{L}</code> номер урока. Работает только если открыть файл у себя на диске —
+      в предпросмотре доступа к вашим папкам нет.
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>I. Искусство и картина<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Тематическое гнездо. 幅 и 组 — счётные слова, их надо знать вместе с сочетаниями.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">抽象</span><span class="py">chōuxiàng</span><button class="pb" type="button" data-hz="抽象" data-hz2="抽象" data-py="chōuxiàng" data-pyn="chouxiang" data-num="1" aria-label="Прослушать 抽象" title="Прослушать 抽象">&#9654;</button><span class="ru">абстрактный; абстрагировать</span><span class="ex">抽象艺术 / 抽象派</span></div>
+      <div class="w-item"><span class="hz">古典</span><span class="py">gǔdiǎn</span><button class="pb" type="button" data-hz="古典" data-hz2="古典" data-py="gǔdiǎn" data-pyn="gudian" data-num="2" aria-label="Прослушать 古典" title="Прослушать 古典">&#9654;</button><span class="ru">классический</span><span class="ex">古典文学 / 小说 / 戏剧 / 音乐</span></div>
+      <div class="w-item"><span class="hz">欣赏</span><span class="py">xīnshǎng</span><button class="pb" type="button" data-hz="欣赏" data-hz2="欣赏" data-py="xīnshǎng" data-pyn="xinshang" data-num="3" aria-label="Прослушать 欣赏" title="Прослушать 欣赏">&#9654;</button><span class="ru">любоваться, ценить</span><span class="ex">欣赏音乐 / 我很欣赏他</span></div>
+      <div class="w-item"><span class="hz">作品</span><span class="py">zuòpǐn</span><button class="pb" type="button" data-hz="作品" data-hz2="作品" data-py="zuòpǐn" data-pyn="zuopin" data-num="7" aria-label="Прослушать 作品" title="Прослушать 作品">&#9654;</button><span class="ru">произведение</span><span class="ex">一幅作品 / 设计作品</span></div>
+      <div class="w-item"><span class="hz">布</span><span class="py">bù</span><button class="pb" type="button" data-hz="布" data-hz2="布" data-py="bù" data-pyn="bu" data-num="4" aria-label="Прослушать 布" title="Прослушать 布">&#9654;</button><span class="ru">ткань, холст</span><span class="ex">画布 / 一块布</span></div>
+      <div class="w-item"><span class="hz">规则</span><span class="py">guīzé</span><button class="pb" type="button" data-hz="规则" data-hz2="规则" data-py="guīzé" data-pyn="guize" data-num="5" aria-label="Прослушать 规则" title="Прослушать 规则">&#9654;</button><span class="ru">правило; регулярный</span><span class="ex">不规则的色块 / 交通规则</span></div>
+      <div class="w-item"><span class="hz">派</span><span class="py">pài</span><button class="pb" type="button" data-hz="派" data-hz2="派" data-py="pài" data-pyn="pai" data-num="6" aria-label="Прослушать 派" title="Прослушать 派">&#9654;</button><span class="ru">школа, направление, течение</span><span class="ex">抽象派（в уроке 15 — «послать»!）</span></div>
+      <div class="w-item"><span class="hz">洒</span><span class="py">sǎ</span><button class="pb" type="button" data-hz="洒" data-hz2="洒" data-py="sǎ" data-pyn="sa" data-num="8" aria-label="Прослушать 洒" title="Прослушать 洒">&#9654;</button><span class="ru">брызгать, разбрызгивать</span><span class="ex">洒上颜料 / 洒水</span></div>
+      <div class="w-item"><span class="hz">设计</span><span class="py">shèjì</span><button class="pb" type="button" data-hz="设计" data-hz2="设计" data-py="shèjì" data-pyn="sheji" data-num="13" aria-label="Прослушать 设计" title="Прослушать 设计">&#9654;</button><span class="ru">проектировать; замысел</span><span class="ex">设计图 / 作品 / 方案</span></div>
+      <div class="w-item"><span class="hz">组</span><span class="py">zǔ</span><button class="pb" type="button" data-hz="组" data-hz2="组" data-py="zǔ" data-pyn="zu" data-num="14" aria-label="Прослушать 组" title="Прослушать 组">&#9654;</button><span class="ru">группа; сч. сл. для комплектов</span><span class="ex">一组照片 / 两两一组</span></div>
+      <div class="w-item"><span class="hz">幅</span><span class="py">fú</span><button class="pb" type="button" data-hz="幅" data-hz2="幅" data-py="fú" data-pyn="fu" data-num="15" aria-label="Прослушать 幅" title="Прослушать 幅">&#9654;</button><span class="ru">сч. сл. для картин и свитков</span><span class="ex">一幅画儿（не 副 и не 服!）</span></div>
+      <div class="w-item"><span class="hz">布局</span><span class="py">bùjú</span><span class="star">★</span><button class="pb" type="button" data-hz="布局" data-hz2="布局" data-py="bùjú" data-pyn="buju" data-num="36" aria-label="Прослушать 布局" title="Прослушать 布局">&#9654;</button><span class="ru">композиция, компоновка</span><span class="ex">原作的布局</span></div>
+      <div class="w-item"><span class="hz">元素</span><span class="py">yuánsù</span><span class="star">★</span><button class="pb" type="button" data-hz="元素" data-hz2="元素" data-py="yuánsù" data-pyn="yuansu" data-num="30" aria-label="Прослушать 元素" title="Прослушать 元素">&#9654;</button><span class="ru">элемент</span><span class="ex">画面元素（ср. 因素 «фактор»）</span></div>
+      <div class="w-item"><span class="hz">位置</span><span class="py">wèizhì</span><button class="pb" type="button" data-hz="位置" data-hz2="位置" data-py="wèizhì" data-pyn="weizhi" data-num="32" aria-label="Прослушать 位置" title="Прослушать 位置">&#9654;</button><span class="ru">место, положение</span><span class="ex">位置变化</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>II. Эксперимент и авторство<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Слова, на которых держится вся интрига текста: кто автор и можно ли это понять.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">出自</span><span class="py">chūzì</span><button class="pb" type="button" data-hz="出自" data-hz2="出自" data-py="chūzì" data-pyn="chuzi" data-num="16" aria-label="Прослушать 出自" title="Прослушать 出自">&#9654;</button><span class="ru">происходить из, принадлежать (кисти)</span><span class="ex">出自艺术家之手</span></div>
+      <div class="w-item"><span class="hz">业余</span><span class="py">yèyú</span><button class="pb" type="button" data-hz="业余" data-hz2="业余" data-py="yèyú" data-pyn="yeyu" data-num="17" aria-label="Прослушать 业余" title="Прослушать 业余">&#9654;</button><span class="ru">любительский; внерабочий</span><span class="ex">业余爱好者 / 业余时间</span></div>
+      <div class="w-item"><span class="hz">婴儿</span><span class="py">yīng'ér</span><span class="star">★</span><button class="pb" type="button" data-hz="婴儿" data-hz2="婴儿" data-py="yīng'ér" data-pyn="yinger" data-num="18" aria-label="Прослушать 婴儿" title="Прослушать 婴儿">&#9654;</button><span class="ru">младенец</span></div>
+      <div class="w-item"><span class="hz">黑猩猩</span><span class="py">hēixīngxing</span><span class="star">★</span><button class="pb" type="button" data-hz="黑猩猩" data-hz2="黑猩猩" data-py="hēixīngxing" data-pyn="heixingxing" data-num="19" aria-label="Прослушать 黑猩猩" title="Прослушать 黑猩猩">&#9654;</button><span class="ru">шимпанзе</span></div>
+      <div class="w-item"><span class="hz">涂鸦</span><span class="py">túyā</span><span class="star">★</span><button class="pb" type="button" data-hz="涂鸦" data-hz2="涂鸦" data-py="túyā" data-pyn="tuya" data-num="20" aria-label="Прослушать 涂鸦" title="Прослушать 涂鸦">&#9654;</button><span class="ru">каракули, мазня; граффити</span><span class="ex">随手涂鸦</span></div>
+      <div class="w-item"><span class="hz">签</span><span class="py">qiān</span><button class="pb" type="button" data-hz="签" data-hz2="签" data-py="qiān" data-pyn="qian" data-num="21" aria-label="Прослушать 签" title="Прослушать 签">&#9654;</button><span class="ru">подписывать</span><span class="ex">签名 / 签字 / 签合同</span></div>
+      <div class="w-item"><span class="hz">其余</span><span class="py">qíyú</span><button class="pb" type="button" data-hz="其余" data-hz2="其余" data-py="qíyú" data-pyn="qiyu" data-num="22" aria-label="Прослушать 其余" title="Прослушать 其余">&#9654;</button><span class="ru">остальные, прочие</span><span class="ex">其余的同学呢？</span></div>
+      <div class="w-item"><span class="hz">身份</span><span class="py">shēnfèn</span><button class="pb" type="button" data-hz="身份" data-hz2="身份" data-py="shēnfèn" data-pyn="shenfen" data-num="23" aria-label="Прослушать 身份" title="Прослушать 身份">&#9654;</button><span class="ru">личность, статус</span><span class="ex">标明身份 / 身份证</span></div>
+      <div class="w-item"><span class="hz">确认</span><span class="py">quèrèn</span><button class="pb" type="button" data-hz="确认" data-hz2="确认" data-py="quèrèn" data-pyn="queren" data-num="24" aria-label="Прослушать 确认" title="Прослушать 确认">&#9654;</button><span class="ru">удостовериться, подтвердить</span><span class="ex">无法确认</span></div>
+      <div class="w-item"><span class="hz">随手</span><span class="py">suíshǒu</span><button class="pb" type="button" data-hz="随手" data-hz2="随手" data-py="suíshǒu" data-pyn="suishou" data-num="25" aria-label="Прослушать 随手" title="Прослушать 随手">&#9654;</button><span class="ru">мимоходом, не задумываясь</span><span class="ex">随手涂鸦 / 随手关门</span></div>
+      <div class="w-item"><span class="hz">分辨</span><span class="py">fēnbiàn</span><span class="star">★</span><button class="pb" type="button" data-hz="分辨" data-hz2="分辨" data-py="fēnbiàn" data-pyn="fenbian" data-num="26" aria-label="Прослушать 分辨" title="Прослушать 分辨">&#9654;</button><span class="ru">различать, отличать</span><span class="ex">分辨不出来（辨 с 刂 внутри）</span></div>
+      <div class="w-item"><span class="hz">挥</span><span class="py">huī</span><button class="pb" type="button" data-hz="挥" data-hz2="挥" data-py="huī" data-pyn="hui" data-num="27" aria-label="Прослушать 挥" title="Прослушать 挥">&#9654;</button><span class="ru">взмахнуть, водить (кистью)</span><span class="ex">挥笔 / 挥手</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>III. Впечатление и оценка<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Как текст описывает восприятие. Отсюда же берутся слова для сочинения.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">极其</span><span class="py">jíqí</span><button class="pb" type="button" data-hz="极其" data-hz2="极其" data-py="jíqí" data-pyn="jiqi" data-num="9" aria-label="Прослушать 极其" title="Прослушать 极其">&#9654;</button><span class="ru">крайне, чрезвычайно (книжн.)</span><span class="ex">极其神秘 / 极其少见</span></div>
+      <div class="w-item"><span class="hz">神秘</span><span class="py">shénmì</span><button class="pb" type="button" data-hz="神秘" data-hz2="神秘" data-py="shénmì" data-pyn="shenmi" data-num="10" aria-label="Прослушать 神秘" title="Прослушать 神秘">&#9654;</button><span class="ru">загадочный, таинственный</span></div>
+      <div class="w-item"><span class="hz">丑（陋）</span><span class="py">chǒu(lòu)</span><button class="pb" type="button" data-hz="丑" data-hz2="丑陋" data-py="chǒu" data-pyn="chou" data-num="11" aria-label="Прослушать 丑" title="Прослушать 丑">&#9654;</button><span class="ru">уродливый, некрасивый</span><span class="ex">↔ 美</span></div>
+      <div class="w-item"><span class="hz">自由</span><span class="py">zìyóu</span><button class="pb" type="button" data-hz="自由" data-hz2="自由" data-py="zìyóu" data-pyn="ziyou" data-num="12" aria-label="Прослушать 自由" title="Прослушать 自由">&#9654;</button><span class="ru">свобода; свободный</span><span class="ex">对自由的赞美</span></div>
+      <div class="w-item"><span class="hz">活跃</span><span class="py">huóyuè</span><button class="pb" type="button" data-hz="活跃" data-hz2="活跃" data-py="huóyuè" data-pyn="huoyue" data-num="35" aria-label="Прослушать 活跃" title="Прослушать 活跃">&#9654;</button><span class="ru">активный; оживлять</span><span class="ex">活跃气氛 / 活跃性下降</span></div>
+      <div class="w-item"><span class="hz">调整</span><span class="py">tiáozhěng</span><button class="pb" type="button" data-hz="调整" data-hz2="调整" data-py="tiáozhěng" data-pyn="tiaozheng" data-num="31" aria-label="Прослушать 调整" title="Прослушать 调整">&#9654;</button><span class="ru">корректировать, перестраивать</span><span class="ex">调整价格 / 计划（调 — tiáo）</span></div>
+      <div class="w-item"><span class="hz">含意</span><span class="py">hányì</span><span class="star">★</span><button class="pb" type="button" data-hz="含意" data-hz2="含意" data-py="hányì" data-pyn="hanyi" data-num="33" aria-label="Прослушать 含意" title="Прослушать 含意">&#9654;</button><span class="ru">подразумеваемый смысл</span></div>
+      <div class="w-item"><span class="hz">区域</span><span class="py">qūyù</span><span class="star">★</span><button class="pb" type="button" data-hz="区域" data-hz2="区域" data-py="qūyù" data-pyn="quyu" data-num="34" aria-label="Прослушать 区域" title="Прослушать 区域">&#9654;</button><span class="ru">область, зона</span><span class="ex">大脑的区域</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>IV. Осторожные выводы<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Лексика научной оговорки. В 阅读 такие слова стоят ровно там, где спрятан правильный ответ.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">可见</span><span class="py">kějiàn</span><button class="pb" type="button" data-hz="可见" data-hz2="可见" data-py="kějiàn" data-pyn="kejian" data-num="28" aria-label="Прослушать 可见" title="Прослушать 可见">&#9654;</button><span class="ru">отсюда видно, что…</span><span class="ex">由此可见……</span></div>
+      <div class="w-item"><span class="hz">哪怕</span><span class="py">nǎpà</span><button class="pb" type="button" data-hz="哪怕" data-hz2="哪怕" data-py="nǎpà" data-pyn="napa" data-num="29" aria-label="Прослушать 哪怕" title="Прослушать 哪怕">&#9654;</button><span class="ru">даже если, пусть даже</span><span class="ex">哪怕……也……</span></div>
+      <div class="w-item"><span class="hz">事实</span><span class="py">shìshí</span><button class="pb" type="button" data-hz="事实" data-hz2="事实" data-py="shìshí" data-pyn="shishi" data-num="37" aria-label="Прослушать 事实" title="Прослушать 事实">&#9654;</button><span class="ru">факт</span><span class="ex">事实上 / 忽略了一个事实</span></div>
+      <div class="w-item"><span class="hz">目前</span><span class="py">mùqián</span><button class="pb" type="button" data-hz="目前" data-hz2="目前" data-py="mùqián" data-pyn="muqian" data-num="38" aria-label="Прослушать 目前" title="Прослушать 目前">&#9654;</button><span class="ru">на данный момент, сейчас</span><span class="ex">至少目前 / 到目前为止</span></div>
+      <div class="w-item"><span class="hz">证据</span><span class="py">zhèngjù</span><button class="pb" type="button" data-hz="证据" data-hz2="证据" data-py="zhèngjù" data-pyn="zhengju" data-num="39" aria-label="Прослушать 证据" title="Прослушать 证据">&#9654;</button><span class="ru">доказательство, улика</span><span class="ex">可靠的证据 / 没有证据表明</span></div>
+      <div class="w-item"><span class="hz">话题</span><span class="py">huàtí</span><button class="pb" type="button" data-hz="话题" data-hz2="话题" data-py="huàtí" data-pyn="huati" data-num="40" aria-label="Прослушать 话题" title="Прослушать 话题">&#9654;</button><span class="ru">тема (разговора)</span><span class="ex">有趣的话题 / 换个话题</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>На слух: где рука ошибётся <span class="cn">听写陷阱</span></h2>
+  <p>Последний урок собирает почти все типы ловушек сразу: и счётные слова-омофоны, и три графически близких иероглифа, и полиграмматичное 派 из пятнадцатого урока.</p>
+
+  <div class="warn">Тройка, которую путают чаще всего</div>
+  <div class="trap">
+    <div><span class="hz">分辨</span><span class="py">fēnbiàn</span><span class="n">различать. 辨 = 辛 + <b>刂</b> + 辛 — в середине нож</span></div>
+    <div><span class="hz">辩论 / 辫子</span><span class="py">biànlùn / biànzi</span><span class="n">спорить (в середине <b>讠</b>) / коса (в середине <b>纟</b>). Звучат одинаково, различить можно только глазами</span></div>
+  </div>
+
+  <div class="warn">Счётные слова fú / fù</div>
+  <div class="trap">
+    <div><span class="hz">一幅</span><span class="py">yì fú</span><span class="n">для картин и свитков: 一幅画儿, 一幅作品</span></div>
+    <div><span class="hz">一副</span><span class="py">yí fù</span><span class="n">для парных предметов: 一副眼镜, 一副手套. Плюс 衣服 fú — тот же слог</span></div>
+  </div>
+
+  <div class="warn">Один иероглиф — два урока</div>
+  <div class="trap">
+    <div><span class="hz">派</span><span class="py">pài</span><span class="n">урок 18: школа, направление — 抽象派</span></div>
+    <div><span class="hz">派</span><span class="py">pài</span><span class="n">урок 15: послать, направить кого-то — 赵国派廉颇迎战</span></div>
+  </div>
+  <div class="trap">
+    <div><span class="hz">调整</span><span class="py"><b>tiáo</b>zhěng</span><span class="n">урок 18: корректировать — 调 читается tiáo</span></div>
+    <div><span class="hz">调动 / 调回</span><span class="py"><b>diào</b>dòng</span><span class="n">урок 15: перевести, перебросить — то же 调, но diào</span></div>
+  </div>
+
+  <div class="warn">Пары с соседними уроками</div>
+  <table class="pair-tbl">
+    <tr><th>Пара</th><th>Как развести</th></tr>
+    <tr><td>抽象 chōuxiàng<br>现象 xiànxiàng (16)<br>想象 xiǎngxiàng</td><td>Все три оканчиваются на -xiàng. 抽象 — абстрактный, 现象 — явление, 想象 — воображать.</td></tr>
+    <tr><td>元素 yuánsù<br>因素 yīnsù</td><td>Общий 素. 元素 — составная часть целого (画面元素, 化学元素). 因素 — фактор, влияющий на результат (重要因素).</td></tr>
+    <tr><td>区域 qūyù<br>趋势 qūshì (16)</td><td>Общий первый слог qū. 区域 — участок пространства, 趋势 — направление изменения.</td></tr>
+    <tr><td>业余 yèyú<br>其余 qíyú</td><td>Оба с 余. 业余 — любительский, 其余 — остальные. В тексте стоят в одном абзаце.</td></tr>
+    <tr><td>事实 shìshí<br>实际 shíjì<br>其实 qíshí<br>确实 quèshí</td><td>Целое семейство с 实. Упражнение 2 проверяет 事实 против 实际: 事实 — факт как вещь, 实际 — реальность как свойство (实际情况, 实际上).</td></tr>
+    <tr><td>随手 suíshǒu<br>随便 suíbiàn</td><td>随手 — «попутно, тем же движением руки» (随手关门). 随便 — «как угодно, без разбора». Упражнение 2 требует именно 随手.</td></tr>
+    <tr><td>洒 sǎ<br>酒 jiǔ<br>撒 sā</td><td>洒 и 酒 различаются одной чертой в правой части. 撒 — рассыпать, с ключом «рука».</td></tr>
+    <tr><td>丑 chǒu<br>臭 chòu</td><td>丑 — уродливый (3-й тон), 臭 — вонючий (4-й тон).</td></tr>
+  </table>
+
+  <div class="warn">Тяжёлые для руки иероглифы</div>
+  <div class="card">
+    <ul style="margin-bottom:0">
+      <li><b>辨</b> (分辨) — 20 черт, посередине именно 刂. Сравните с 辩 (讠) и 辫 (纟).</li>
+      <li><b>猩</b> (黑猩猩) = 犭 + 星; <b>婴</b> (婴儿) = 贝 + 贝 сверху и 女 снизу.</li>
+      <li><b>鸦</b> (涂鸦) = 牙 + 鸟 «ворона». <b>涂</b> = 氵 + 余 — то же 余, что в 其余 и 业余.</li>
+      <li><b>域</b> (区域) = 土 + 或. Не путать с 城 (成 справа).</li>
+      <li><b>跃</b> (活跃) = 足 + 夭. <b>挥</b> = 扌 + 军.</li>
+      <li><b>秘</b> (神秘) = 禾 + 必, ключ «злак» слева, а не 示.</li>
+      <li><b>据</b> (证据) = 扌 + 居 — то же 居, что в 锯 (урок 13), но с другим ключом.</li>
+      <li><b>幅</b> = 巾 + 畐. Ключ «полотно» слева — потому что картина на ткани.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Грамматика: три детали <span class="cn">注释</span></h2>
+
+  <h3>1 · 极其 jíqí</h3>
+  <div class="card red">
+    <p>Наречие «крайне, чрезвычайно» = 非常, но книжное. Главное ограничение: <b>только перед двусложными и многосложными</b> прилагательными.</p>
+    <p class="cn-ex">在有人看来<span class="hl">极其</span>神秘甚至丑陋。</p>
+    <p class="cn-ex">在中国，餐桌上放一把刀是<span class="hl">极其</span>少见的现象。</p>
+    <p class="cn-ex">每天说“太糟糕了”的人，遇到的困难也格外多，运气也显得<span class="hl">极其</span>糟糕。</p>
+    <p class="tr" style="margin:0">Поэтому ✗极其丑, ✗极其好, ✗极其大 — с односложными нужно 非常 / 特别. Именно это проверяет упражнение 2 урока.</p>
+  </div>
+
+  <h3>2 · 其余 qíyú</h3>
+  <div class="card blue">
+    <p>Местоимение «остальные, оставшаяся часть». Может стоять самостоятельно или с 的.</p>
+    <p class="cn-ex">其中三分之一的画作作者没有签名，而<span class="hl">其余</span>的则标明了身份。</p>
+    <p class="cn-ex">怎么只有你们两个人？<span class="hl">其余</span>的同学呢？</p>
+    <p class="cn-ex">只有一个房间亮着灯，<span class="hl">其余</span>窗户都是黑的。</p>
+    <p class="tr" style="margin:0">Обратите внимание на пример из текста: 其余 отлично сочетается с 则 из урока 14 — «одни…, а остальные…». Такая связка сразу поднимает уровень письменной речи.</p>
+  </div>
+
+  <h3>3 · 可见 kějiàn</h3>
+  <div class="card yellow">
+    <p>Союз: делает вывод из только что сказанного. Обычная форма — <b>……，（由此）可见……</b></p>
+    <p class="cn-ex">他已经住院好几天了，一直诊断不出是什么问题，<span class="hl">可见</span>情况不太好。</p>
+    <p class="cn-ex">由此<span class="hl">可见</span>，志愿者能够从画作中感知艺术家的用心。</p>
+    <p class="cn-ex">汉语中有个成语叫“自知之明”，把“自知”称为“明”，<span class="hl">可见</span>“自知”是一种智慧。</p>
+    <p class="tr" style="margin:0">Схема простая: сначала факт, потом 可见 + ваш вывод. Отличная связка для последнего абзаца сочинения — на месте русского «отсюда видно, что».</p>
+  </div>
+</section>
+
+<section>
+  <h2>Сочетаемость <span class="cn">词语搭配</span></h2>
+  <table>
+    <tr><th style="width:38%">Модель</th><th>Что подставляем</th></tr>
+    <tr><td class="han">调整 + O</td><td class="han">调整时间 / 价格 / 计划 / 结构 / 市场</td></tr>
+    <tr><td class="han">活跃 + O</td><td class="han">活跃气氛 / 市场 / 经济</td></tr>
+    <tr><td class="han">古典 + N</td><td class="han">古典文学 / 小说 / 戏剧 / 音乐</td></tr>
+    <tr><td class="han">…… 规则</td><td class="han">交通规则 / 比赛（的）规则 / 游戏（的）规则</td></tr>
+    <tr><td class="han">设计 + N</td><td class="han">设计图 / 设计作品 / 设计方案</td></tr>
+    <tr><td class="han">业余 + N</td><td class="han">业余时间 / 爱好 / 水平 / 合唱团</td></tr>
+    <tr><td class="han">一组 + N</td><td class="han">一组学生 / 照片 / 服装 / 工具</td></tr>
+    <tr><td class="han">一幅 + N</td><td class="han">一幅画儿 / 一幅作品</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>目前 или 现在 <span class="cn">词语辨析</span></h2>
+  <p>Оба — существительные времени «сейчас», и часто взаимозаменяемы (至少目前/现在可以这么说). Различий два:</p>
+  <table>
+    <tr><th style="width:50%">目前 mùqián</th><th>现在 xiànzài</th></tr>
+    <tr>
+      <td>Обычно про <b>отрезок от какого-то момента в прошлом до сих пор</b>.<br><span class="han">到目前为止，事情还没有变化。</span></td>
+      <td>Может обозначать и отрезок, и <b>точку</b>, а также подчёркивать <b>контраст с прошлым</b>.<br><span class="han">我现在就去。</span></td>
+    </tr>
+    <tr>
+      <td><b>Не сочетается</b> с конкретным указанием времени.</td>
+      <td>С конкретным временем сочетается свободно.<br><span class="han">现在是北京时间上午十点钟。</span></td>
+    </tr>
+  </table>
+  <p style="font-size:14.5px;color:var(--brick);margin:0">Быстрый тест: если рядом стоит или подразумевается точное время либо «сейчас же, немедленно» — только 现在. Если смысл «на сегодняшний день, пока что» — 目前, и оно же уместнее в письменном тексте.</p>
+</section>
+
+<section>
+  <h2>Проверьте себя <span class="cn">练习 · 答案</span></h2>
+  <p>Ответы к упражнениям со стр. 155–156 — сначала решите, потом раскройте.</p>
+
+  <details>
+    <summary>做一做 · 目前 / 现在</summary>
+    <div class="in">
+      <p>① 我们很着急，你<span class="k">现在</span>能过来一趟吗？（«сейчас же» — точка во времени）<br>
+      ② 选择性失忆<span class="k">目前</span>还无法治疗。（на сегодняшний день）<br>
+      ③ 66.9%的女性对<span class="k">目前</span>的工作不满意。（нынешняя работа как положение дел）<br>
+      ④ <span class="k">现在</span>的年轻人，跟我们那时候真不一样！（контраст с прошлым）</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 1 · 选择合适的词语填空 （幅 规则 活跃 调整 业余 证据）</summary>
+    <div class="in">
+      <p>① 墙上挂着一<span class="k">幅</span>静物画。<br>
+      ② 我们正准备<span class="k">调整</span>产品价格。<br>
+      ③ 只有一些不<span class="k">规则</span>的色块。<br>
+      ④ 我们只是一支<span class="k">业余</span>的乐队。<br>
+      ⑤ 要靠他来<span class="k">活跃</span>气氛。<br>
+      ⑥ 如果没有可靠的<span class="k">证据</span>，你就不能这么说。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 2 · 选择正确答案</summary>
+    <div class="in">
+      <p>① 那个人长得<span class="k">非常</span>丑（A）— 极其 не ставится перед односложным прилагательным.<br>
+      ② 一<span class="k">组</span>服装是由七<span class="k">套</span>戏服组成的 — 组 для комплекта в целом, 套 для отдельных костюмов.<br>
+      ③ 出门时我<span class="k">随手</span>把钥匙放在桌子上了（B）— тем же движением, не задумываясь.<br>
+      ④ 忽略了一个十分重要的<span class="k">事实</span>（A）— 实际 не бывает исчисляемым существительным.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 3 · 给括号里的词选择适当的位置</summary>
+    <div class="in">
+      <p>① <span class="k">B</span> — 我对这个人<span class="k">极其</span>欣赏，我认为他很有才华。<br>
+      ② <span class="k">C</span> — 这是我新<span class="k">设计</span>的作品，请您过目。<br>
+      ③ <span class="k">C</span> — 我只认识这两个字，<span class="k">其余</span>都不认识。<br>
+      ④ <span class="k">A</span> — <span class="k">哪怕</span>熬夜，我今天也得把这个计划做完。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>扩展 · 影视艺术 （导演 角色 明星 动画片 娱乐 录音 麦克风 频道 字幕 乐器 美术）</summary>
+    <div class="in">
+      <p>① 在<span class="k">录音</span>设备发明之前……<br>
+      ② 主持人，你胸前的<span class="k">麦克风</span>歪了。<br>
+      ③ 这个连续剧最近好几个<span class="k">频道</span>都在放。<br>
+      ④ 除了钢琴，我没有学过别的<span class="k">乐器</span>。</p>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Сочинение <span class="cn">我喜爱的艺术</span></h2>
+  <p>Задание урока: рассказать о виде искусства, который вам интересен. Не менее 100 иероглифов. Образец на ~180 знаков — все три грамматические точки внутри.</p>
+  <div class="card red">
+    <p class="cn-ex" style="line-height:2">我最喜爱的艺术是摄影，虽然我只是<span class="hl">业余</span>水平。有人认为摄影不过是<span class="hl">随手</span>按一下快门，其实每一<span class="hl">幅</span>好<span class="hl">作品</span>的背后都有认真的<span class="hl">设计</span>：光线、色彩、人物的<span class="hl">位置</span>，任何一个<span class="hl">元素</span><span class="hl">调整</span>一下，<span class="hl">含意</span>就完全不同了。这一点和<span class="hl">抽象</span>画很像。抽象艺术在有些人看来<span class="hl">极其</span><span class="hl">神秘</span>，可我觉得，看不懂并不等于没有意义，<span class="hl">其余</span>那些说不清的地方，正是它的<span class="hl">自由</span>所在。由此<span class="hl">可见</span>，<span class="hl">欣赏</span>艺术需要的不是知识，而是耐心。</p>
+  </div>
+  <h3>Готовые связки</h3>
+  <div class="card">
+    <ul style="margin-bottom:0">
+      <li class="cn-ex">我最喜爱的艺术是……，虽然我只是业余水平</li>
+      <li class="cn-ex">有人认为……不过是……，其实……</li>
+      <li class="cn-ex">在有些人看来极其……，可我觉得……</li>
+      <li class="cn-ex">看不懂并不等于没有意义</li>
+      <li class="cn-ex">哪怕……，也……</li>
+      <li class="cn-ex">由此可见，……需要的不是……，而是……</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Что делать до экзамена <span class="cn">复习计划</span></h2>
+  <ol class="route">
+    <li><b>Расскажите два эксперимента.</b> Что показывали, что было с подписями, что выбрали волонтёры, что происходило с мозгом во втором опыте. Четыре предложения — и почти вся лексика урока активирована.</li>
+    <li><b>Три иероглифа под лупу.</b> 辨 / 辩 / 辫 — различаются только серединой (刂 / 讠 / 纟), а звучат одинаково. Это самая надёжная ошибка урока в диктанте.</li>
+    <li><b>Счётные слова.</b> 一幅画儿 против 一副眼镜, плюс 一组 для комплектов. В 阅读 их подставляют в пропуск постоянно.</li>
+    <li><b>Два иероглифа из прошлых уроков.</b> 派 (15: послать → 18: направление в искусстве) и 调 (15: diào «перевести» → 18: tiáo «настроить»). Экзамен любит именно такие возвраты.</li>
+    <li><b>Три конструкции — по своему предложению.</b> 极其 + двусложное прилагательное · A……，其余…… · ……，由此可见…… . Последняя особенно ценна: она закрывает сочинение выводом.</li>
+  </ol>
+
+  <div class="finale">
+    <b>5A пройден целиком</b>
+    <p>Восемнадцать уроков, шесть юнитов, около 700 новых слов. Если перед экзаменом остаётся мало времени, самое выгодное — не перечитывать конспекты подряд, а пройтись по сводной таблице на главной странице: она показывает все 词语例释 и все пары 辨析 учебника на одном экране. Там сразу видно, какие точки помните твёрдо, а к каким стоит вернуться.</p>
+  </div>
+</section>
+
+<nav class="botnav"><a href="hsk5a-lesson-17.html"><span>Предыдущий урок</span>17 · 在最美好的时刻离开</a><a href="index.html"><span>Оглавление</span>Все 18 уроков 5A</a></nav>
+
+<footer>
+  Конспект по «HSK 标准教程 5（上）», урок 18 «抽象艺术美不美», стр. 150–157 · Unit 6 修养身心<br>
+  Схема построена по описанию двух экспериментов из текста; изображения картин — условные, нарисованы для этого конспекта.
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML =
+      '<span class="w">' + z.dataset.w + '</span>' +
+      '<span class="p">' + z.dataset.p + '</span>' +
+      '<span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    out.innerHTML = def;
+  }
+
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+
+  document.querySelector('.lab-box svg').addEventListener('mouseleave', clear);
+})();
+</script>
+<script>
+(function(){
+  var LESSON = "18";
+  var DIRS = ["audio/", "", "mp3/", "media/", "аудио/", "audio/15/", "15/"];
+  var CAND = [];
+  DIRS.forEach(function(d){ CAND.push(d + "{hz}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{hz2}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{pyn}.mp3"); });
+
+  var patIn  = document.getElementById('ab-pat');
+  var status = document.getElementById('ab-status');
+  var btns   = Array.prototype.slice.call(document.querySelectorAll('.pb[data-hz]'));
+  var cur = null, curBtn = null, queue = null;
+
+  function pad(n){ n = String(n||''); return n.length === 1 ? '0'+n : n; }
+
+  function resolve(pat, b){
+    return pat
+      .replace(/\{hz2\}/g, b.dataset.hz2 || b.dataset.hz)
+      .replace(/\{hz\}/g,  b.dataset.hz)
+      .replace(/\{pyn\}/g, b.dataset.pyn)
+      .replace(/\{py\}/g,  b.dataset.py)
+      .replace(/\{num\}/g, pad(b.dataset.num))
+      .replace(/\{n\}/g,   b.dataset.num || '')
+      .replace(/\{L\}/g,   LESSON);
+  }
+
+  function setStatus(t, cls){
+    status.textContent = t || '';
+    status.className = 'ab-status' + (cls ? ' ' + cls : '');
+  }
+
+  function test(pat, b){
+    return new Promise(function(res){
+      var a = new Audio(), done = false;
+      function ok(){ if(!done){ done = true; res(true); } }
+      function no(){ if(!done){ done = true; res(false); } }
+      a.addEventListener('loadedmetadata', ok);
+      a.addEventListener('canplay', ok);
+      a.addEventListener('error', no);
+      a.preload = 'metadata';
+      a.src = encodeURI(resolve(pat, b));
+      setTimeout(no, 2500);
+    });
+  }
+
+  function stop(){
+    if(cur){ cur.pause(); cur = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn = null; }
+    queue = null;
+    document.querySelectorAll('.pball.playing').forEach(function(x){ x.classList.remove('playing'); });
+  }
+
+  /* проигрывание с запасными вариантами имени для этого слова */
+  function play(b, onEnd){
+    stop();
+    var tries = [patIn.value.trim()];
+    var alt = (b.dataset.hz2 && b.dataset.hz2 !== b.dataset.hz)
+      ? patIn.value.trim().replace('{hz}', '{hz2}') : null;
+    if(alt && tries.indexOf(alt) < 0) tries.push(alt);
+    CAND.forEach(function(p){ if(tries.indexOf(p) < 0) tries.push(p); });
+
+    b.classList.add('playing');
+    var i = 0;
+    (function attempt(){
+      if(i >= tries.length){
+        b.classList.remove('playing');
+        b.classList.add('missing');
+        b.title = 'Не найден файл для ' + b.dataset.hz;
+        setStatus('Не найден файл для ' + b.dataset.hz + ' — проверьте папку или шаблон.', 'bad');
+        if(onEnd) onEnd();
+        return;
+      }
+      var src = resolve(tries[i++], b);
+      var a = new Audio(encodeURI(src));
+      var started = false;
+      a.addEventListener('canplay', function(){ started = true; });
+      a.addEventListener('ended', function(){
+        b.classList.remove('playing');
+        if(cur === a){ cur = null; curBtn = null; }
+        if(onEnd) onEnd();
+      });
+      a.addEventListener('error', function(){
+        if(!started){ attempt(); }
+        else { b.classList.remove('playing'); if(onEnd) onEnd(); }
+      });
+      cur = a; curBtn = b;
+      b.classList.remove('missing');
+      a.play().catch(function(){});
+    })();
+  }
+
+  /* автопоиск папки при открытии */
+  function autodetect(quiet){
+    if(!btns.length) return;
+    if(!quiet) setStatus('Перебираю варианты…');
+    var i = 0;
+    (function next(){
+      if(i >= CAND.length){
+        setStatus(quiet
+          ? 'Папка с mp3 не найдена. Положите файлы в audio рядом с этим документом.'
+          : 'Ни один из типовых вариантов не подошёл. Впишите путь вручную.',
+          quiet ? '' : 'bad');
+        return;
+      }
+      var p = CAND[i++];
+      test(p, btns[0]).then(function(ok){
+        if(ok){
+          patIn.value = p;
+          document.querySelectorAll('.pb.missing').forEach(function(x){
+            x.classList.remove('missing'); x.title = '';
+          });
+          setStatus('Озвучка подключена: ' + p, 'ok');
+        } else next();
+      });
+    })();
+  }
+
+  document.getElementById('ab-auto').addEventListener('click', function(){ autodetect(false); });
+  document.getElementById('ab-test').addEventListener('click', function(){
+    if(!btns.length) return;
+    setStatus('Проверяю…');
+    test(patIn.value.trim(), btns[0]).then(function(ok){
+      setStatus((ok ? 'Файл найден: ' : 'Не найден: ') + resolve(patIn.value.trim(), btns[0]),
+                ok ? 'ok' : 'bad');
+    });
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(curBtn === b && cur){ stop(); return; }
+      play(b);
+    });
+  });
+
+  document.querySelectorAll('.pball').forEach(function(pb){
+    pb.addEventListener('click', function(){
+      if(pb.classList.contains('playing')){ stop(); return; }
+      var list = Array.prototype.slice.call(
+        pb.closest('.cluster').querySelectorAll('.pb[data-hz]'));
+      stop();
+      pb.classList.add('playing');
+      var i = 0;
+      queue = list;
+      (function step(){
+        if(queue !== list || i >= list.length){ pb.classList.remove('playing'); return; }
+        play(list[i++], function(){ setTimeout(step, 350); });
+      })();
+    });
+  });
+
+  autodetect(true);
+})();
+</script>
+</body>
+</html>

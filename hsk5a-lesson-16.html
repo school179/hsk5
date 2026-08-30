@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 16 · 体重与节食 · HSK 标准教程 5上</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1b2026;
+  --paper:#dfe3e2;
+  --card:#f0f3f1;
+  --brick:#606b6d;
+  --red:#b03a48;
+  --blue:#3d6b8e;
+  --green:#4e8065;
+  --line:rgba(27,32,38,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:
+    linear-gradient(rgba(255,255,255,.4) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.4) 1px,transparent 1px);
+  background-size:24px 24px}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+header{padding:40px 0 26px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;color:var(--red);letter-spacing:-.03em}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:44px;line-height:1.06;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brick);margin-top:10px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+section{margin-top:56px}
+h2{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+
+/* ——— график ——— */
+.chart-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px}
+.chart-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone .fillable{transition:opacity .18s ease,stroke-width .18s ease}
+.zone .fillable{opacity:.9}
+.zone:hover .fillable,.zone.on .fillable{opacity:1}
+.zone:hover .thick,.zone.on .thick{stroke-width:5}
+.zone:focus{outline:none}
+.zone:focus-visible .fillable{stroke-dasharray:none}
+.clab{font-family:var(--han);font-size:13px;font-weight:600;pointer-events:none}
+.cpin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.05em}
+.cax{font-family:var(--mono);font-size:10px;fill:var(--brick);pointer-events:none;letter-spacing:.1em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:64px}
+.readout .w{font-family:var(--han);font-size:21px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:12.5px;color:var(--blue)}
+.readout .d{display:block;margin-top:5px;font-size:15px;line-height:1.55}
+.readout .hint{color:var(--brick);font-style:italic}
+
+.moves{list-style:none;padding:0;margin:0;counter-reset:mv}
+.moves li{counter-increment:mv;position:relative;padding:14px 0 14px 62px;border-bottom:1px solid var(--line)}
+.moves li::before{content:counter(mv,decimal-leading-zero);position:absolute;left:0;top:14px;
+  font-family:var(--mono);font-size:13px;font-weight:700;color:var(--red);letter-spacing:.05em}
+.moves b{font-family:var(--disp);font-size:18px;letter-spacing:.02em;display:block;margin-bottom:3px}
+.moves .kw{display:block;margin-top:6px;font-family:var(--han);font-size:15px;color:var(--brick)}
+
+.cluster{margin-top:26px}
+.cluster .why{font-size:14px;color:var(--brick);margin:-4px 0 14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--blue);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--blue);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.blue{border-left:4px solid var(--blue)}
+.card.green{border-left:4px solid var(--green)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--card);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.b{background:var(--blue)}
+.tag.g{background:var(--green)}
+.tag.r{background:var(--red)}
+
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(27,32,38,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+.trap{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--blue);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+details{background:var(--card);border:1px solid var(--line);margin:10px 0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;font-family:var(--disp);
+  font-weight:700;font-size:22px;color:var(--red);width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  .lesson-no{font-size:64px}
+  h1{font-size:32px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index.html">&#8592; Все уроки 5A</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（上） · Unit 6 修养身心 · Cultivating Physical and Mental Health</div>
+  <div class="title-row">
+    <div class="lesson-no">16</div>
+    <h1>体重与节食<span class="lat">Вес и режим питания · 627 字 · стр. 134–141</span></h1>
+  </div>
+  <div class="meta">
+    <span><b>41</b> новое слово</span>
+    <span><b>3</b> грамматические точки</span>
+    <span>ключ: <b>即 · 个别 · 非</b></span>
+  </div>
+</header>
+
+<section>
+  <p class="lede">Новый юнит — новый жанр. После описания, военной хроники и притчи здесь научно-популярная заметка: пересказ медицинского исследования с выборкой, методикой и выводом. Такие тексты в 阅读 встречаются чаще всего, а лексика у них своя — «данные, тенденция, различие, показывать, включать в анализ». Учебник сам рисует в таблице пересказа три ломаные линии, так что опорой будет график недели.</p>
+  <p style="font-size:15px;color:var(--brick);margin:0"><b>Суть исследования одной фразой:</b> вес колеблется внутри недели по чёткому графику — растёт после выходных, падает в рабочие дни, минимум в пятницу. Три группы участников отличаются не самим колебанием, а тем, что происходит между понедельником и пятницей.</p>
+</section>
+
+<section id="chart">
+  <h2>Неделя на графике <span class="cn">体重波动的模式</span></h2>
+  <div class="chart-box">
+    <svg viewBox="0 0 620 360" role="img" aria-label="График колебаний веса по дням недели для трёх групп участников">
+      <!-- сетка -->
+      <line x1="66" y1="40" x2="66" y2="290" stroke="rgba(27,32,38,.35)" stroke-width="1.4"/>
+      <line x1="66" y1="290" x2="592" y2="290" stroke="rgba(27,32,38,.35)" stroke-width="1.4"/>
+      <g stroke="rgba(27,32,38,.1)" stroke-width="1">
+        <line x1="141" y1="40" x2="141" y2="290"/><line x1="216" y1="40" x2="216" y2="290"/>
+        <line x1="291" y1="40" x2="291" y2="290"/><line x1="366" y1="40" x2="366" y2="290"/>
+        <line x1="441" y1="40" x2="441" y2="290"/><line x1="516" y1="40" x2="516" y2="290"/>
+      </g>
+      <text class="cax" x="66" y="308" text-anchor="middle">周一</text>
+      <text class="cax" x="141" y="308" text-anchor="middle">周二</text>
+      <text class="cax" x="216" y="308" text-anchor="middle">周三</text>
+      <text class="cax" x="291" y="308" text-anchor="middle">周四</text>
+      <text class="cax" x="366" y="308" text-anchor="middle">周五</text>
+      <text class="cax" x="441" y="308" text-anchor="middle">周六</text>
+      <text class="cax" x="516" y="308" text-anchor="middle">周日</text>
+      <text class="cax" x="58" y="46" text-anchor="end">体重</text>
+
+      <!-- зона выходных -->
+      <g class="zone" tabindex="0" data-w="周末：升 · 就餐 · 放纵 · 借口" data-p="shēng · jiùcān · fàngzòng · jièkǒu" data-d="Рост начинается с субботы: 多数人体重的增加会从周六开始, потому что 人们在周末会有更多的时间外出就餐. Небольшое послабление (稍微有些放纵) само по себе влияет мало, но текст предупреждает: 周末之后不要再找任何吃美食的借口.">
+        <rect class="fillable" x="404" y="40" width="188" height="250" fill="#b03a48" opacity=".08"/>
+        <text class="cpin" x="498" y="58" text-anchor="middle">周末 · 就餐 · 放纵</text>
+      </g>
+
+      <!-- линия 增加者 -->
+      <g class="zone" tabindex="0" data-w="体重增加者：差异 · 存在 · 明显" data-p="chāyì · cúnzài · míngxiǎn" data-d="Прибавляющие в весе ведут себя иначе всех: 每天的体重都存在差异，他们在工作日的体重并无明显减轻. Рост выходных не отыгрывается — линия ползёт вверх неделя за неделей.">
+        <polyline class="fillable thick" points="66,150 141,144 216,150 291,140 366,146 441,120 516,104"
+          fill="none" stroke="#b03a48" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="66" cy="150" r="4" fill="#b03a48"/><circle cx="366" cy="146" r="4" fill="#b03a48"/>
+        <circle cx="516" cy="104" r="4" fill="#b03a48"/>
+        <text class="clab" x="524" y="98" fill="#b03a48">增加者</text>
+      </g>
+
+      <!-- линия 保持者 -->
+      <g class="zone" tabindex="0" data-w="体重保持者：规律 · 现象 · 临时 · 非" data-p="xiànxiàng · línshí · fēi" data-d="У сохраняющих вес подъём выходных полностью отыгрывается за рабочую неделю. Именно про них вывод текста: 工作日和周末体重的临时变化应该被视为正常现象，而非真正的体重增加.">
+        <polyline class="fillable thick" points="66,188 141,186 216,196 291,204 366,212 441,192 516,176"
+          fill="none" stroke="#3d6b8e" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="66" cy="188" r="4" fill="#3d6b8e"/><circle cx="366" cy="212" r="4" fill="#3d6b8e"/>
+        <circle cx="516" cy="176" r="4" fill="#3d6b8e"/>
+        <text class="clab" x="524" y="172" fill="#3d6b8e">保持者</text>
+      </g>
+
+      <!-- линия 减轻者 -->
+      <g class="zone" tabindex="0" data-w="体重减轻者：补偿 · 立即 · 趋势" data-p="bǔcháng · lìjí · qūshì" data-d="У худеющих — выраженная компенсаторная модель: 在周末之后体重立即下降，这一下降趋势直至周五结束. Падение начинается сразу и не прерывается всю рабочую неделю.">
+        <polyline class="fillable thick" points="66,224 141,232 216,244 291,254 366,264 441,240 516,226"
+          fill="none" stroke="#4e8065" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="66" cy="224" r="4" fill="#4e8065"/><circle cx="366" cy="264" r="4" fill="#4e8065"/>
+        <circle cx="516" cy="226" r="4" fill="#4e8065"/>
+        <text class="clab" x="524" y="222" fill="#4e8065">减轻者</text>
+      </g>
+
+      <!-- точка пятницы -->
+      <g class="zone" tabindex="0" data-w="周五最低点：达到 · 清晰 · 模式 · 即" data-p="dá dào · qīngxī · móshì · jí" data-d="Общая для всех черта: 体重变化表现出清晰的模式，即周末之后体重升高，在工作日体重减轻（周五达到最低点）. Это же предложение — образцовое употребление 即 из урока.">
+        <line class="fillable" x1="366" y1="40" x2="366" y2="290" stroke="#1b2026" stroke-width="1.6" stroke-dasharray="5 4"/>
+        <rect class="fillable" x="306" y="20" width="120" height="20" fill="#1b2026"/>
+        <text class="clab" x="366" y="35" text-anchor="middle" fill="#f0f3f1">周五：最低点</text>
+      </g>
+
+      <!-- методика -->
+      <g class="zone" tabindex="0" data-w="研究方法：称 · 可靠 · 志愿者 · 跟踪 · 纳入 · 分析" data-p="chēng · kěkào · zhìyuànzhě · gēnzōng · nàrù" data-d="80 взрослых от 25 до 62 лет взвешивались (称) каждое утро после подъёма и до завтрака. 为了保证可靠性，只有那些至少连续7天以上称过体重的人才会被纳入分析. Наблюдение (跟踪调查) длилось от 15 до 330 дней.">
+        <rect class="fillable" x="20" y="112" width="34" height="120" fill="#3d6b8e" opacity=".14"/>
+        <text class="cpin" x="37" y="106" text-anchor="middle">称</text>
+        <text class="cpin" x="37" y="248" text-anchor="middle">可靠</text>
+        <text class="cpin" x="37" y="262" text-anchor="middle">跟踪</text>
+        <text class="cpin" x="37" y="276" text-anchor="middle">纳入</text>
+      </g>
+
+      <!-- меры -->
+      <g class="zone" tabindex="0" data-w="结论：采取措施 · 阻止上升趋势" data-p="cǎiqǔ cuòshī" data-d="Практический вывод текста: 想要变苗条的节食者应注意到这种变化规律，应及时采取措施阻止这一上升趋势. Глагол 阻止 — из 15 урока, конструкция 采取措施 — устойчивая пара.">
+        <rect class="fillable" x="404" y="322" width="188" height="26" fill="#b03a48"/>
+        <text class="clab" x="498" y="340" text-anchor="middle" fill="#f0f3f1">采取措施 · 阻止趋势</text>
+      </g>
+    </svg>
+    <div class="readout" id="readout">
+      <span class="hint">Наведите курсор или коснитесь линии, зоны выходных или оси — появятся слова этого фрагмента и их роль в тексте.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Текст в четырёх кадрах <span class="cn">课文复述</span></h2>
+  <p style="font-size:14.5px;color:var(--brick)">Ровно те четыре блока, по которым учебник просит пересказать текст (стр. 140). Три последних удобно рассказывать, водя пальцем по соответствующей линии графика.</p>
+  <ol class="moves">
+    <li>
+      <b>Новое открытие медиков</b>
+      据报道, специалисты провели новое исследование и обнаружили: 由于人们在一周内的营养摄入和饮食模式会影响到他们的体重变化，因此节食者的体重会在一周内上下波动.
+      <span class="kw">报道 · 营养 · 摄入 · 模式 · 波动 · 节食</span>
+    </li>
+    <li>
+      <b>Методика и общая картина</b>
+      总共有80名年龄在25~62岁之间的成年人参与了这项研究. Исследователи (研究人员) разделили их по относительному изменению веса на три 类型: худеющие, прибавляющие и сохраняющие вес. Взвешивались ежедневно после подъёма и до завтрака; 为了保证可靠性，只有那些至少连续7天以上称过体重的人才会被纳入分析. 跟踪调查 длилось от 15 до 330 дней. 研究成果显示: вес меняется по 清晰的模式, 即 после выходных растёт, в рабочие дни снижается и 周五达到最低点.
+      <span class="kw">总共 · 参与 · 人员 · 相对 · 类型 · 称 · 可靠 · 纳入 · 分析 · 志愿者 · 跟踪 · 成果 · 清晰 · 即 · 升 · 达到</span>
+    </li>
+    <li>
+      <b>Чем группы отличаются друг от друга</b>
+      研究人员还意外地发现, что модели колебаний у худеющих и прибавляющих 存在着明显不同. У первых — выраженная 补偿模式: 在周末之后体重立即下降，这一下降趋势直至周五结束. У вторых 每天的体重都存在差异，他们在工作日的体重并无明显减轻.
+      <span class="kw">意外 · 存在 · 明显 · 补偿 · 立即 · 趋势 · 差异</span>
+    </li>
+    <li>
+      <b>Вывод и практический совет</b>
+      这项联合多所医学院校所做的研究发现: 除了个别人以外, прибавка начинается с субботы, а снижение — со вторника, особенно у худеющих и сохраняющих вес. 它表明人们的体重变化在一周内会显示出一种明显的规律, а 工作日和周末体重的临时变化应该被视为正常现象，而非真正的体重增加 — ведь на выходных больше времени 外出就餐. Небольшое послабление влияет мало, но тем, кто хочет 变苗条, стоит знать эту закономерность, не искать 借口 после выходных и вовремя 采取措施阻止这一上升趋势.
+      <span class="kw">联合 · 个别 · 表明 · 临时 · 现象 · 非 · 就餐 · 放纵 · 苗条 · 借口 · 采取 · 措施</span>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <h2>41 слово по гнёздам <span class="cn">生词</span></h2>
+  <p style="font-size:14px;color:var(--brick)"><span class="star">★</span> — слово сверх программы HSK 5 (в учебнике со звёздочкой). Первые два гнезда — универсальный набор для любого научного текста, их стоит выучить в первую очередь.</p>
+
+  <div class="audiobar" id="audiobar">
+    <div class="ab-t">Озвучка слов</div>
+    <div class="ab-row">
+      <input id="ab-pat" type="text" spellcheck="false" value="audio/{hz}.mp3" aria-label="Шаблон пути к mp3">
+      <button type="button" id="ab-auto">Подобрать</button>
+      <button type="button" id="ab-test">Проверить</button>
+    </div>
+    <div class="ab-status" id="ab-status"></div>
+    <div class="ab-note">
+      По умолчанию ищутся файлы вида <code>иероглиф.mp3</code> — сначала в папке
+      <code>audio</code> рядом с этим файлом, потом прямо рядом с ним. Нужная папка
+      определяется сама при открытии страницы. Если ваши mp3 лежат где-то ещё, впишите путь
+      вручную: доступны подстановки <code>{hz}</code> иероглифы, <code>{py}</code> пиньинь с
+      тонами, <code>{pyn}</code> пиньинь без диакритики, <code>{num}</code> номер слова в списке
+      учебника, <code>{L}</code> номер урока. Работает только если открыть файл у себя на диске —
+      в предпросмотре доступа к вашим папкам нет.
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>I. Как устроено исследование<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Самое ценное гнездо урока: эти слова встречаются в каждом втором тексте 阅读 про опросы, статистику и эксперименты.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">报道</span><span class="py">bàodào</span><button class="pb" type="button" data-hz="报道" data-hz2="报道" data-py="bàodào" data-pyn="baodao" data-num="2" aria-label="Прослушать 报道" title="Прослушать 报道">&#9654;</button><span class="ru">сообщать; репортаж</span><span class="ex">据报道 / 可靠的报道</span></div>
+      <div class="w-item"><span class="hz">总共</span><span class="py">zǒnggòng</span><button class="pb" type="button" data-hz="总共" data-hz2="总共" data-py="zǒnggòng" data-pyn="zonggong" data-num="7" aria-label="Прослушать 总共" title="Прослушать 总共">&#9654;</button><span class="ru">всего, в общей сложности</span><span class="ex">总共80名成年人</span></div>
+      <div class="w-item"><span class="hz">参与</span><span class="py">cānyù</span><button class="pb" type="button" data-hz="参与" data-hz2="参与" data-py="cānyù" data-pyn="canyu" data-num="8" aria-label="Прослушать 参与" title="Прослушать 参与">&#9654;</button><span class="ru">принимать участие (в деле, проекте)</span><span class="ex">积极参与 / 参与管理</span></div>
+      <div class="w-item"><span class="hz">人员</span><span class="py">rényuán</span><button class="pb" type="button" data-hz="人员" data-hz2="人员" data-py="rényuán" data-pyn="renyuan" data-num="9" aria-label="Прослушать 人员" title="Прослушать 人员">&#9654;</button><span class="ru">персонал, сотрудники</span><span class="ex">研究人员 / 工作人员</span></div>
+      <div class="w-item"><span class="hz">志愿者</span><span class="py">zhìyuànzhě</span><button class="pb" type="button" data-hz="志愿者" data-hz2="志愿者" data-py="zhìyuànzhě" data-pyn="zhiyuanzhe" data-num="16" aria-label="Прослушать 志愿者" title="Прослушать 志愿者">&#9654;</button><span class="ru">доброволец, волонтёр</span></div>
+      <div class="w-item"><span class="hz">类型</span><span class="py">lèixíng</span><button class="pb" type="button" data-hz="类型" data-hz2="类型" data-py="lèixíng" data-pyn="leixing" data-num="11" aria-label="Прослушать 类型" title="Прослушать 类型">&#9654;</button><span class="ru">тип, категория</span><span class="ex">分为三种类型</span></div>
+      <div class="w-item"><span class="hz">相对</span><span class="py">xiāngduì</span><button class="pb" type="button" data-hz="相对" data-hz2="相对" data-py="xiāngduì" data-pyn="xiangdui" data-num="10" aria-label="Прослушать 相对" title="Прослушать 相对">&#9654;</button><span class="ru">относительный, сравнительный</span><span class="ex">相对体重变化 / 相对来说</span></div>
+      <div class="w-item"><span class="hz">称</span><span class="py">chēng</span><button class="pb" type="button" data-hz="称" data-hz2="称" data-py="chēng" data-pyn="cheng" data-num="12" aria-label="Прослушать 称" title="Прослушать 称">&#9654;</button><span class="ru">взвешивать</span><span class="ex">称一下体重</span></div>
+      <div class="w-item"><span class="hz">可靠</span><span class="py">kěkào</span><button class="pb" type="button" data-hz="可靠" data-hz2="可靠" data-py="kěkào" data-pyn="kekao" data-num="13" aria-label="Прослушать 可靠" title="Прослушать 可靠">&#9654;</button><span class="ru">надёжный, достоверный</span><span class="ex">保证可靠性 / 可靠的消息</span></div>
+      <div class="w-item"><span class="hz">纳入</span><span class="py">nàrù</span><span class="star">★</span><button class="pb" type="button" data-hz="纳入" data-hz2="纳入" data-py="nàrù" data-pyn="naru" data-num="14" aria-label="Прослушать 纳入" title="Прослушать 纳入">&#9654;</button><span class="ru">включать в, вносить в</span><span class="ex">被纳入分析</span></div>
+      <div class="w-item"><span class="hz">跟踪</span><span class="py">gēnzōng</span><span class="star">★</span><button class="pb" type="button" data-hz="跟踪" data-hz2="跟踪" data-py="gēnzōng" data-pyn="genzong" data-num="17" aria-label="Прослушать 跟踪" title="Прослушать 跟踪">&#9654;</button><span class="ru">отслеживать, вести наблюдение</span><span class="ex">跟踪调查</span></div>
+      <div class="w-item"><span class="hz">分析</span><span class="py">fēnxī</span><button class="pb" type="button" data-hz="分析" data-hz2="分析" data-py="fēnxī" data-pyn="fenxi" data-num="15" aria-label="Прослушать 分析" title="Прослушать 分析">&#9654;</button><span class="ru">анализировать</span><span class="ex">分析原因 / 情况 / 问题</span></div>
+      <div class="w-item"><span class="hz">成果</span><span class="py">chéngguǒ</span><button class="pb" type="button" data-hz="成果" data-hz2="成果" data-py="chéngguǒ" data-pyn="chengguo" data-num="18" aria-label="Прослушать 成果" title="Прослушать 成果">&#9654;</button><span class="ru">результат, достижение (труда)</span><span class="ex">研究成果 / 重大的成果</span></div>
+      <div class="w-item"><span class="hz">表明</span><span class="py">biǎomíng</span><button class="pb" type="button" data-hz="表明" data-hz2="表明" data-py="biǎomíng" data-pyn="biaoming" data-num="32" aria-label="Прослушать 表明" title="Прослушать 表明">&#9654;</button><span class="ru">свидетельствовать, показывать</span><span class="ex">结果表明 / 清楚地表明</span></div>
+      <div class="w-item"><span class="hz">联合</span><span class="py">liánhé</span><button class="pb" type="button" data-hz="联合" data-hz2="联合" data-py="liánhé" data-pyn="lianhe" data-num="30" aria-label="Прослушать 联合" title="Прослушать 联合">&#9654;</button><span class="ru">объединять(ся); совместный</span><span class="ex">联合多所院校</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>II. Язык чисел и графиков<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Слова, которыми описывают динамику. Пригодятся и в 书写, когда нужно описать таблицу или диаграмму.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">波动</span><span class="py">bōdòng</span><span class="star">★</span><button class="pb" type="button" data-hz="波动" data-hz2="波动" data-py="bōdòng" data-pyn="bodong" data-num="6" aria-label="Прослушать 波动" title="Прослушать 波动">&#9654;</button><span class="ru">колебаться, флуктуировать</span><span class="ex">上下波动 / 价格波动</span></div>
+      <div class="w-item"><span class="hz">模式</span><span class="py">móshì</span><span class="star">★</span><button class="pb" type="button" data-hz="模式" data-hz2="模式" data-py="móshì" data-pyn="moshi" data-num="5" aria-label="Прослушать 模式" title="Прослушать 模式">&#9654;</button><span class="ru">модель, паттерн, схема</span><span class="ex">饮食模式 / 补偿模式</span></div>
+      <div class="w-item"><span class="hz">升</span><span class="py">shēng</span><button class="pb" type="button" data-hz="升" data-hz2="升" data-py="shēng" data-pyn="sheng" data-num="21" aria-label="Прослушать 升" title="Прослушать 升">&#9654;</button><span class="ru">подниматься, расти</span><span class="ex">体重升高 ↔ 下降</span></div>
+      <div class="w-item"><span class="hz">达到</span><span class="py">dá dào</span><button class="pb" type="button" data-hz="达到" data-hz2="达到" data-py="dá dào" data-pyn="dadao" data-num="22" aria-label="Прослушать 达到" title="Прослушать 达到">&#9654;</button><span class="ru">достигать</span><span class="ex">达到最低点 / 目的 / 要求</span></div>
+      <div class="w-item"><span class="hz">趋势</span><span class="py">qūshì</span><button class="pb" type="button" data-hz="趋势" data-hz2="趋势" data-py="qūshì" data-pyn="qushi" data-num="28" aria-label="Прослушать 趋势" title="Прослушать 趋势">&#9654;</button><span class="ru">тенденция, тренд</span><span class="ex">上升的 / 下降的趋势</span></div>
+      <div class="w-item"><span class="hz">差异</span><span class="py">chāyì</span><button class="pb" type="button" data-hz="差异" data-hz2="差异" data-py="chāyì" data-pyn="chayi" data-num="29" aria-label="Прослушать 差异" title="Прослушать 差异">&#9654;</button><span class="ru">различие, расхождение</span><span class="ex">存在差异（差 — chā）</span></div>
+      <div class="w-item"><span class="hz">存在</span><span class="py">cúnzài</span><button class="pb" type="button" data-hz="存在" data-hz2="存在" data-py="cúnzài" data-pyn="cunzai" data-num="24" aria-label="Прослушать 存在" title="Прослушать 存在">&#9654;</button><span class="ru">существовать, иметь место</span><span class="ex">存在着明显不同</span></div>
+      <div class="w-item"><span class="hz">明显</span><span class="py">míngxiǎn</span><button class="pb" type="button" data-hz="明显" data-hz2="明显" data-py="míngxiǎn" data-pyn="mingxian" data-num="25" aria-label="Прослушать 明显" title="Прослушать 明显">&#9654;</button><span class="ru">явный, заметный</span><span class="ex">明显提高 / 并无明显减轻</span></div>
+      <div class="w-item"><span class="hz">清晰</span><span class="py">qīngxī</span><span class="star">★</span><button class="pb" type="button" data-hz="清晰" data-hz2="清晰" data-py="qīngxī" data-pyn="qingxi" data-num="19" aria-label="Прослушать 清晰" title="Прослушать 清晰">&#9654;</button><span class="ru">чёткий, отчётливый</span><span class="ex">清晰的模式 / 清晰的照片</span></div>
+      <div class="w-item"><span class="hz">现象</span><span class="py">xiànxiàng</span><button class="pb" type="button" data-hz="现象" data-hz2="现象" data-py="xiànxiàng" data-pyn="xianxiang" data-num="34" aria-label="Прослушать 现象" title="Прослушать 现象">&#9654;</button><span class="ru">явление</span><span class="ex">正常 / 表面的现象</span></div>
+      <div class="w-item"><span class="hz">意外</span><span class="py">yìwài</span><button class="pb" type="button" data-hz="意外" data-hz2="意外" data-py="yìwài" data-pyn="yiwai" data-num="23" aria-label="Прослушать 意外" title="Прослушать 意外">&#9654;</button><span class="ru">неожиданный; несчастный случай</span><span class="ex">意外地发现 / 意外的消息</span></div>
+      <div class="w-item"><span class="hz">立即</span><span class="py">lìjí</span><button class="pb" type="button" data-hz="立即" data-hz2="立即" data-py="lìjí" data-pyn="liji" data-num="27" aria-label="Прослушать 立即" title="Прослушать 立即">&#9654;</button><span class="ru">немедленно, сразу же</span><span class="ex">体重立即下降</span></div>
+      <div class="w-item"><span class="hz">临时</span><span class="py">línshí</span><button class="pb" type="button" data-hz="临时" data-hz2="临时" data-py="línshí" data-pyn="linshi" data-num="33" aria-label="Прослушать 临时" title="Прослушать 临时">&#9654;</button><span class="ru">временный; в последний момент</span><span class="ex">临时变化 / 临时工作</span></div>
+      <div class="w-item"><span class="hz">补偿</span><span class="py">bǔcháng</span><span class="star">★</span><button class="pb" type="button" data-hz="补偿" data-hz2="补偿" data-py="bǔcháng" data-pyn="buchang" data-num="26" aria-label="Прослушать 补偿" title="Прослушать 补偿">&#9654;</button><span class="ru">компенсировать, возмещать</span><span class="ex">补偿模式 / 补偿损失</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>III. Питание и вес<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Тематическое гнездо урока. Оно же понадобится в сочинении.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">节食</span><span class="py">jiéshí</span><button class="pb" type="button" data-hz="节食" data-hz2="节食" data-py="jiéshí" data-pyn="jieshi" data-num="1" aria-label="Прослушать 节食" title="Прослушать 节食">&#9654;</button><span class="ru">ограничивать себя в еде, соблюдать режим питания</span><span class="ex">节食者 / 节食减肥</span></div>
+      <div class="w-item"><span class="hz">营养</span><span class="py">yíngyǎng</span><button class="pb" type="button" data-hz="营养" data-hz2="营养" data-py="yíngyǎng" data-pyn="yingyang" data-num="3" aria-label="Прослушать 营养" title="Прослушать 营养">&#9654;</button><span class="ru">питание, питательные вещества</span><span class="ex">营养摄入 / 有营养</span></div>
+      <div class="w-item"><span class="hz">摄入</span><span class="py">shèrù</span><span class="star">★</span><button class="pb" type="button" data-hz="摄入" data-hz2="摄入" data-py="shèrù" data-pyn="sheru" data-num="4" aria-label="Прослушать 摄入" title="Прослушать 摄入">&#9654;</button><span class="ru">потреблять, поступление (в организм)</span></div>
+      <div class="w-item"><span class="hz">就餐</span><span class="py">jiùcān</span><span class="star">★</span><button class="pb" type="button" data-hz="就餐" data-hz2="就餐" data-py="jiùcān" data-pyn="jiucan" data-num="36" aria-label="Прослушать 就餐" title="Прослушать 就餐">&#9654;</button><span class="ru">принимать пищу, столоваться</span><span class="ex">外出就餐</span></div>
+      <div class="w-item"><span class="hz">放纵</span><span class="py">fàngzòng</span><span class="star">★</span><button class="pb" type="button" data-hz="放纵" data-hz2="放纵" data-py="fàngzòng" data-pyn="fangzong" data-num="37" aria-label="Прослушать 放纵" title="Прослушать 放纵">&#9654;</button><span class="ru">давать себе волю, не сдерживаться</span><span class="ex">稍微有些放纵</span></div>
+      <div class="w-item"><span class="hz">苗条</span><span class="py">miáotiao</span><button class="pb" type="button" data-hz="苗条" data-hz2="苗条" data-py="miáotiao" data-pyn="miaotiao" data-num="38" aria-label="Прослушать 苗条" title="Прослушать 苗条">&#9654;</button><span class="ru">стройный</span><span class="ex">变苗条（条 — нейтральный тон）</span></div>
+      <div class="w-item"><span class="hz">借口</span><span class="py">jièkǒu</span><button class="pb" type="button" data-hz="借口" data-hz2="借口" data-py="jièkǒu" data-pyn="jiekou" data-num="39" aria-label="Прослушать 借口" title="Прослушать 借口">&#9654;</button><span class="ru">предлог, отговорка; отговариваться</span><span class="ex">找借口 / 他借口家里有事</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>IV. Служебные и действия<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Три из этих слов — грамматические точки урока, а 采取措施 стоит запомнить целиком как одну единицу.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">即</span><span class="py">jí</span><button class="pb" type="button" data-hz="即" data-hz2="即" data-py="jí" data-pyn="ji" data-num="20" aria-label="Прослушать 即" title="Прослушать 即">&#9654;</button><span class="ru">то есть, а именно; сразу же</span><span class="ex">……，即…… / 一学即会</span></div>
+      <div class="w-item"><span class="hz">个别</span><span class="py">gèbié</span><button class="pb" type="button" data-hz="个别" data-hz2="个别" data-py="gèbié" data-pyn="gebie" data-num="31" aria-label="Прослушать 个别" title="Прослушать 个别">&#9654;</button><span class="ru">отдельный, индивидуальный; единичный</span><span class="ex">个别谈话 / 个别人</span></div>
+      <div class="w-item"><span class="hz">非</span><span class="py">fēi</span><button class="pb" type="button" data-hz="非" data-hz2="非" data-py="fēi" data-pyn="fei" data-num="35" aria-label="Прослушать 非" title="Прослушать 非">&#9654;</button><span class="ru">не-, вне-; не есть</span><span class="ex">而非 / 非专业 / 非……不可</span></div>
+      <div class="w-item"><span class="hz">采取</span><span class="py">cǎiqǔ</span><button class="pb" type="button" data-hz="采取" data-hz2="采取" data-py="cǎiqǔ" data-pyn="caiqu" data-num="40" aria-label="Прослушать 采取" title="Прослушать 采取">&#9654;</button><span class="ru">принимать, применять (меры, способ)</span><span class="ex">采取措施 / 采取方式</span></div>
+      <div class="w-item"><span class="hz">措施</span><span class="py">cuòshī</span><button class="pb" type="button" data-hz="措施" data-hz2="措施" data-py="cuòshī" data-pyn="cuoshi" data-num="41" aria-label="Прослушать 措施" title="Прослушать 措施">&#9654;</button><span class="ru">мера, мероприятие</span><span class="ex">有效措施 / 采取措施</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>На слух: где рука ошибётся <span class="cn">听写陷阱</span></h2>
+  <p>Урок научный, и вся его опасность — в <b>семействах похожих двусложных слов</b>. Половина из них уже проверяется в упражнениях учебника.</p>
+
+  <div class="warn">Семейство -guǒ: четыре «результата»</div>
+  <table class="pair-tbl">
+    <tr><th>Слово</th><th>Когда именно оно</th></tr>
+    <tr><td>成果 chéngguǒ</td><td>Плод труда, достижение: 研究成果, 重大的成果. Всегда положительно.</td></tr>
+    <tr><td>结果 jiéguǒ</td><td>Итог, чем дело кончилось; часто как союз «в итоге». Нейтрально. Именно оно нужно в упражнении 2.</td></tr>
+    <tr><td>后果 hòuguǒ</td><td>Последствия — всегда плохие: 严重的后果.</td></tr>
+    <tr><td>效果 xiàoguǒ</td><td>Эффект, отдача: 效果很好.</td></tr>
+  </table>
+
+  <div class="warn">Пары, где переставлены слоги или тон</div>
+  <div class="trap">
+    <div><span class="hz">现象</span><span class="py">xiànxiàng</span><span class="n">явление — этот урок</span></div>
+    <div><span class="hz">想象</span><span class="py">xiǎngxiàng</span><span class="n">воображать. Различие только в первом слоге: xiàn vs xiǎng</span></div>
+  </div>
+  <div class="trap">
+    <div><span class="hz">意外</span><span class="py">yìwài</span><span class="n">неожиданный — 意外地发现</span></div>
+    <div><span class="hz">以外</span><span class="py">yǐwài</span><span class="n">кроме, за пределами — 除了个别人以外. Оба стоят в этом уроке, в соседних абзацах!</span></div>
+  </div>
+  <div class="trap">
+    <div><span class="hz">趋势</span><span class="py">qūshì</span><span class="n">тенденция — урок 16</span></div>
+    <div><span class="hz">形势</span><span class="py">xíngshì</span><span class="n">обстановка — урок 15. Плюс 姿势 zīshì «поза». Все три на -shì</span></div>
+  </div>
+  <div class="trap">
+    <div><span class="hz">参与</span><span class="py">cānyù</span><span class="n">участвовать в деле, проекте, управлении — книжнее</span></div>
+    <div><span class="hz">参加</span><span class="py">cānjiā</span><span class="n">участвовать в мероприятии: 参加考试/婚礼. Упражнение 2 проверяет именно эту разницу</span></div>
+  </div>
+
+  <div class="warn">Нестандартные чтения</div>
+  <table class="pair-tbl">
+    <tr><th>Слово</th><th>В чём подвох</th></tr>
+    <tr><td>差异 <b>chā</b>yì</td><td>差 здесь chā «разница», а не chà «плохой» (成绩很差) и не chāi (出差).</td></tr>
+    <tr><td>补偿 bǔ<b>cháng</b></td><td>偿 читается cháng, не shǎng (это 赏). Ср. 赔偿 péicháng.</td></tr>
+    <tr><td>苗条 miáo<b>tiao</b></td><td>条 в нейтральном тоне, хотя обычно tiáo.</td></tr>
+    <tr><td><b>相</b>对 <b>xiāng</b>duì</td><td>相 в первом тоне («взаимно»), не xiàng (照相, 相片).</td></tr>
+    <tr><td>称 chēng</td><td>«Взвешивать» и «называть» — chēng. Но 称心如意 — chèn.</td></tr>
+  </table>
+
+  <div class="warn">Прочие пары внутри урока</div>
+  <table class="pair-tbl">
+    <tr><th>Пара</th><th>Как развести</th></tr>
+    <tr><td>临时 línshí<br>暂时 zànshí</td><td>Полный разбор ниже, в разделе 辨析. Коротко: 临时 — «в последний момент» и «непостоянный» (临时工作), 暂时 — «пока что, до поры» (暂时不打算卖).</td></tr>
+    <tr><td>明显 míngxiǎn<br>清晰 qīngxī<br>清楚 qīngchu</td><td>明显 — заметный со стороны (明显提高). 清晰 — чёткий по контуру, книжное (清晰的模式, 清晰的照片). 清楚 — понятный, разговорное.</td></tr>
+    <tr><td>立即 lìjí<br>即 jí<br>及时 jíshí</td><td>Все с jí. 立即 — наречие «немедленно». 即 — «то есть» или книжное «сразу». 及时 — «вовремя, своевременно».</td></tr>
+    <tr><td>采取 cǎiqǔ<br>争取 zhēngqǔ</td><td>Общий второй слог 取. 采取 + 措施/方式/态度 — применить. 争取 — добиваться, побороться за.</td></tr>
+    <tr><td>纳入 nàrù<br>摄入 shèrù</td><td>Оба на -rù. 纳入 — включить в состав (纳入分析). 摄入 — принять внутрь организма (营养摄入).</td></tr>
+    <tr><td>非 fēi<br>飞 fēi</td><td>Полные омофоны. 非 всегда служебное: 而非, 并非, 非……不可.</td></tr>
+  </table>
+
+  <div class="warn">Тяжёлые для руки иероглифы</div>
+  <div class="card">
+    <ul style="margin-bottom:0">
+      <li><b>摄</b> (摄入) = 扌 + 聂 (три «уха» 耳). <b>纳</b> = 纟 + 内.</li>
+      <li><b>踪</b> (跟踪) = 足 + 宗. <b>晰</b> (清晰) = 日 + 析 — то же 析, что в 分析.</li>
+      <li><b>偿</b> (补偿) = 亻 + 尝. <b>趋</b> (趋势) = 走 + 刍, ключ «идти» слева-снизу.</li>
+      <li><b>措施</b> — оба знака часто пишут неверно: 措 = 扌 + 昔, 施 = 方 + 也 через 㫃.</li>
+      <li><b>纵</b> (放纵) = 纟 + 从. <b>餐</b> (就餐) — 16 черт, самый громоздкий знак урока.</li>
+      <li><b>营养</b> — 营 пишется с 艹 сверху и двумя 口 внутри 冖; 养 = 䒑 + 介 сверху вниз.</li>
+      <li><b>即</b> — левая часть 艮 без последней откидной, справа 卩. Не путать с 既 jì (既然).</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Грамматика: три детали <span class="cn">注释</span></h2>
+
+  <h3>1 · 即 jí</h3>
+  <div class="card red">
+    <p><span class="tag r">значение A</span> Книжный глагол-связка «то есть, а именно» = 就是. Вводит расшифровку только что названного.</p>
+    <p class="cn-ex">这些人的体重变化表现出清晰的模式，<span class="hl">即</span>周末之后体重升高，在工作日体重减轻。</p>
+    <p class="cn-ex">“旦”是象形字，<span class="hl">即</span>太阳从地平线上升起。</p>
+    <p class="tr">Схема: X，即 Y。Запятая перед 即 обязательна — это разъяснение, а не часть предложения.</p>
+    <p><span class="tag r">значение B</span> Наречие «сразу, тут же» = 就 / 便. Только в книжных и четырёхсложных сочетаниях.</p>
+    <p class="cn-ex">不懂<span class="hl">即</span>问是他最大的优点，也是他成功的主要原因。</p>
+    <p class="cn-ex" style="margin-bottom:0">这次的机会让他俩一拍<span class="hl">即</span>合。</p>
+  </div>
+
+  <h3>2 · 个别 gèbié</h3>
+  <div class="card blue">
+    <p><span class="tag b">значение A</span> «Индивидуальный, поодиночке, с каждым в отдельности».</p>
+    <p class="cn-ex">他经常采取<span class="hl">个别</span>谈话的方式了解情况和解决问题。</p>
+    <p class="cn-ex">教练针对他的技术特点进行了<span class="hl">个别</span>训练，达到了比较好的效果。</p>
+    <p><span class="tag b">значение B</span> «Единичный, очень немногие» — крайне малое количество.</p>
+    <p class="cn-ex">除了<span class="hl">个别</span>人以外，多数人体重的增加会从周六开始。</p>
+    <p class="cn-ex">天气预报说今晚有小到中雨，<span class="hl">个别</span>地区可能有大雨。</p>
+    <p class="tr" style="margin:0">Как различить: если рядом 谈话、训练、辅导 — значение A. Если 人、地区、现象、情况 и есть противопоставление с 多数 — значение B.</p>
+  </div>
+
+  <h3>3 · 非 fēi — три роли</h3>
+  <div class="card green">
+    <p><span class="tag g">приставка</span> Перед существительным: «не относящийся к этому кругу».</p>
+    <p class="cn-ex">在<span class="hl">非</span>语言的交流中，眼睛起着重要的作用。</p>
+    <p class="cn-ex">技术部门都是专业人员；<span class="hl">非</span>专业人员做服务工作。</p>
+    <p><span class="tag g">глагол</span> «Не есть» = 不是. Книжное, чаще всего в связке 而非 и 并非.</p>
+    <p class="cn-ex">工作日和周末体重的临时变化应该被视为正常现象，<span class="hl">而非</span>真正的体重增加。</p>
+    <p class="cn-ex">成功有时候<span class="hl">并非</span>想象中那么难。</p>
+    <p><span class="tag g">наречие · 非……不可</span> Упрямое намерение или необходимость: «непременно, только так и никак иначе».</p>
+    <p class="cn-ex">他<span class="hl">非</span>要离婚，我们谁拦也拦不住。</p>
+    <p class="cn-ex">补办学生证的事<span class="hl">非</span>你本人去<span class="hl">不可</span>。</p>
+    <p class="tr" style="margin:0">Рамка 非……不可 обхватывает целое сочетание: 非你本人去不可, 非让孩子考第一名不可. Это самая экзаменуемая из трёх ролей.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Сочетаемость <span class="cn">词语搭配</span></h2>
+  <table>
+    <tr><th style="width:38%">Модель</th><th>Что подставляем</th></tr>
+    <tr><td class="han">达到 + O</td><td class="han">达到水平 / 程度 / 规模 / 目的 / 要求</td></tr>
+    <tr><td class="han">分析 + O</td><td class="han">分析情况 / 问题 / 心理 / 原因 / 语法 / 病句</td></tr>
+    <tr><td class="han">意外的 + N</td><td class="han">意外的礼物 / 消息 / 机会 / 结果 / 发现</td></tr>
+    <tr><td class="han">可靠的 + N</td><td class="han">可靠的朋友 / 质量 / 材料 / 报道 / 消息 / 结论</td></tr>
+    <tr><td class="han">…… 的 + 趋势</td><td class="han">战争的 / 上升的 / 好的 / 健康的趋势</td></tr>
+    <tr><td class="han">…… 的 + 现象</td><td class="han">自然 / 表面 / 怪 / 不良 / 个别（的）现象</td></tr>
+    <tr><td class="han">…… 地 + 表明</td><td class="han">主动 / 充分 / 直接 / 清楚地表明</td></tr>
+    <tr><td class="han">…… + 参与</td><td class="han">部分 / 共同 / 正式 / 积极参与</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>临时 или 暂时 <span class="cn">词语辨析</span></h2>
+  <p>Оба значат «в течение короткого времени», и в части фраз взаимозаменяемы (没找到满意的房子前，我临时/暂时借住在朋友家里). Различий три:</p>
+  <table>
+    <tr><th style="width:50%">临时 línshí</th><th>暂时 zànshí</th></tr>
+    <tr>
+      <td>Может значить <b>«когда дело уже подошло, в последний момент»</b>.<br><span class="han">早到了30分钟，所以我临时决定去旁边的书店看看。</span></td>
+      <td>Такого значения нет.</td>
+    </tr>
+    <tr>
+      <td>Такого значения нет.</td>
+      <td>Обозначает <b>неопределённый ближайший отрезок времени</b> — «пока что».<br><span class="han">这套房子我很喜欢，暂时还不打算卖掉。</span></td>
+    </tr>
+    <tr>
+      <td>Бывает <b>определением</b> со значением «краткосрочный, неофициальный».<br><span class="han">帮刘方的女儿找份临时工作。</span></td>
+      <td>Так не употребляется.</td>
+    </tr>
+  </table>
+  <p style="font-size:14.5px;color:var(--brick);margin:0">Быстрый тест: если можно заменить на «на время, пока что» — 暂时. Если на «спонтанно, в последний момент» или «подработка, не насовсем» — 临时.</p>
+</section>
+
+<section>
+  <h2>Проверьте себя <span class="cn">练习 · 答案</span></h2>
+  <p>Ответы к упражнениям со стр. 139–141 — сначала решите, потом раскройте.</p>
+
+  <details>
+    <summary>做一做 · 临时 / 暂时</summary>
+    <div class="in">
+      <p>① 租下一所房子作为<span class="k">临时</span>的家。（определение «временный, не насовсем»）<br>
+      ② 我想<span class="k">暂时</span>休息一段时间。（пока что, до поры）<br>
+      ③ 公司遇到一些<span class="k">暂时</span>的困难。（трудности пройдут — «временные»）<br>
+      ④ 这件事你<span class="k">暂时</span>先不要告诉他。（пока не говори）</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 1 · 选择合适的词语填空 （总共 借口 达到 采取 可靠 参与）</summary>
+    <div class="in">
+      <p>① 让学生主动<span class="k">参与</span>班集体管理。<br>
+      ② 几乎<span class="k">达到</span>不可一日无茶的程度。<br>
+      ③ 这种方法并不<span class="k">可靠</span>。<br>
+      ④ 您<span class="k">总共</span>消费了747元。<br>
+      ⑤ 他<span class="k">借口</span>家里有事，提前离开了会场。（здесь 借口 — глагол «под предлогом»）<br>
+      ⑥ 可以<span class="k">采取</span>有效措施。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 2 · 选择正确答案</summary>
+    <div class="in">
+      <p>① 对教育子女的<span class="k">参与</span>程度（A）— 参加 не образует «степень участия».<br>
+      ② 兴趣<span class="k">明显</span>提高了（A）— 明显 может быть обстоятельством, 清楚 в таком значении нет.<br>
+      ③ <span class="k">结果</span>现在那边有更重要的事（B）— здесь «в итоге, а вышло так»; 成果 — только плод труда.<br>
+      ④ 相关的<span class="k">报道</span>特别多（A）— 报名 значит «записаться», не подходит.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 3 · 画线连接</summary>
+    <div class="in">
+      <p>(1) 达到—目的 ／ 报道—新闻 ／ 采取—措施 ／ 分析—原因<br>
+      (2) 下降的—趋势 ／ 可靠的—报道 ／ 重大的—成果 ／ 表面的—现象</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>扩展 · 医务1 （挂号 急诊 救护车 内科 过敏 打喷嚏 着凉 吐 痒 消化）</summary>
+    <div class="in">
+      <p>① 你是不是着凉了？怎么一直在<span class="k">打喷嚏</span>？<br>
+      ② 一到春天开花的时候，我的鼻子就<span class="k">过敏</span>。<br>
+      ③ 不知道被什么咬了，特别<span class="k">痒</span>。<br>
+      ④ 饭后做些运动帮助<span class="k">消化</span>食物。</p>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Сочинение <span class="cn">我支持（或反对）节食减肥的做法</span></h2>
+  <p>Задание урока: не менее 100 иероглифов, своя позиция с аргументами. Образец на ~180 знаков — с 非, 个别 и лексикой первых двух гнёзд. Обратите внимание на структуру: тезис → данные исследования → возражение → вывод. Она же годится для любой темы «за или против» в 书写.</p>
+  <div class="card red">
+    <p class="cn-ex" style="line-height:2">我不太支持只靠节食来减肥。据<span class="hl">报道</span>，医学专家的研究<span class="hl">表明</span>，人的体重在一周内本来就会上下<span class="hl">波动</span>：周末之后升高，工作日下降，这是一种正常<span class="hl">现象</span>，而<span class="hl">非</span>真正的体重增加。<span class="hl">个别</span>人不了解这一<span class="hl">模式</span>，一看到数字上升就<span class="hl">立即</span>减少<span class="hl">营养</span>摄入，结果不但没有<span class="hl">达到</span>目的，反而影响了健康。在我看来，与其把节食当成唯一的<span class="hl">措施</span>，不如<span class="hl">采取</span>更<span class="hl">可靠</span>的办法：规律地<span class="hl">就餐</span>，适当地运动。<span class="hl">苗条</span>固然好看，但健康才是更值得追求的目标。</p>
+  </div>
+  <h3>Готовые связки</h3>
+  <div class="card">
+    <ul style="margin-bottom:0">
+      <li class="cn-ex">我（不）太支持……的做法</li>
+      <li class="cn-ex">据报道，研究表明……</li>
+      <li class="cn-ex">这是一种正常现象，而非……</li>
+      <li class="cn-ex">个别人不了解这一点，结果不但没有达到目的，反而……</li>
+      <li class="cn-ex">与其把……当成唯一的措施，不如采取更可靠的办法</li>
+      <li class="cn-ex">……固然好，但……才是更值得追求的目标</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Что делать до экзамена <span class="cn">复习计划</span></h2>
+  <ol class="route">
+    <li><b>Расскажите график, а не текст.</b> Три линии: зелёная падает всю неделю, синяя возвращается на место, красная ползёт вверх. Объясните вслух, чем 减轻者 отличается от 增加者 — и половина лексики второго гнезда выйдет сама.</li>
+    <li><b>Первое гнездо — приоритет.</b> 报道、参与、人员、分析、成果、表明、可靠、趋势、现象、明显 работают в любом научном тексте 阅读, независимо от темы. Если времени мало, учите его первым.</li>
+    <li><b>Семейство -guǒ под запись.</b> 成果 / 结果 / 后果 / 效果. Экзамен любит эту четвёрку, и упражнение 2 урока проверяет именно её.</li>
+    <li><b>Три конструкции — по своему предложению.</b> ……，即…… · 个别人 / 个别谈话 · 非……不可. Последнюю проще всего запомнить целой фразой: 这件事非你去不可.</li>
+    <li><b>Пара 意外 и 以外.</b> Они стоят в этом уроке в соседних абзацах, звучат почти одинаково и пишутся по-разному. Продиктуйте себе оба и запишите от руки — это самая вероятная ошибка урока.</li>
+  </ol>
+  <p style="margin-top:24px;font-size:15px;color:var(--brick)">Unit 6 открыт. Остаются уроки 17 «在最美好的时刻离开» и 18 «抽象艺术美不美» — и учебник закрыт целиком.</p>
+</section>
+
+<nav class="botnav"><a href="hsk5a-lesson-15.html"><span>Предыдущий урок</span>15 · 纸上谈兵</a><a href="hsk5a-lesson-17.html"><span>Следующий урок</span>17 · 在最美好的时刻离开</a></nav>
+
+<footer>
+  Конспект по «HSK 标准教程 5（上）», урок 16 «体重与节食», стр. 134–141 · Unit 6 修养身心<br>
+  График построен по описанию из текста: рост с субботы, снижение со вторника, минимум в пятницу; три линии — 减轻者, 保持者, 增加者.
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML =
+      '<span class="w">' + z.dataset.w + '</span>' +
+      '<span class="p">' + z.dataset.p + '</span>' +
+      '<span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    out.innerHTML = def;
+  }
+
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+
+  document.querySelector('.chart-box svg').addEventListener('mouseleave', clear);
+})();
+</script>
+<script>
+(function(){
+  var LESSON = "16";
+  var DIRS = ["audio/", "", "mp3/", "media/", "аудио/", "audio/15/", "15/"];
+  var CAND = [];
+  DIRS.forEach(function(d){ CAND.push(d + "{hz}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{hz2}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{pyn}.mp3"); });
+
+  var patIn  = document.getElementById('ab-pat');
+  var status = document.getElementById('ab-status');
+  var btns   = Array.prototype.slice.call(document.querySelectorAll('.pb[data-hz]'));
+  var cur = null, curBtn = null, queue = null;
+
+  function pad(n){ n = String(n||''); return n.length === 1 ? '0'+n : n; }
+
+  function resolve(pat, b){
+    return pat
+      .replace(/\{hz2\}/g, b.dataset.hz2 || b.dataset.hz)
+      .replace(/\{hz\}/g,  b.dataset.hz)
+      .replace(/\{pyn\}/g, b.dataset.pyn)
+      .replace(/\{py\}/g,  b.dataset.py)
+      .replace(/\{num\}/g, pad(b.dataset.num))
+      .replace(/\{n\}/g,   b.dataset.num || '')
+      .replace(/\{L\}/g,   LESSON);
+  }
+
+  function setStatus(t, cls){
+    status.textContent = t || '';
+    status.className = 'ab-status' + (cls ? ' ' + cls : '');
+  }
+
+  function test(pat, b){
+    return new Promise(function(res){
+      var a = new Audio(), done = false;
+      function ok(){ if(!done){ done = true; res(true); } }
+      function no(){ if(!done){ done = true; res(false); } }
+      a.addEventListener('loadedmetadata', ok);
+      a.addEventListener('canplay', ok);
+      a.addEventListener('error', no);
+      a.preload = 'metadata';
+      a.src = encodeURI(resolve(pat, b));
+      setTimeout(no, 2500);
+    });
+  }
+
+  function stop(){
+    if(cur){ cur.pause(); cur = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn = null; }
+    queue = null;
+    document.querySelectorAll('.pball.playing').forEach(function(x){ x.classList.remove('playing'); });
+  }
+
+  /* проигрывание с запасными вариантами имени для этого слова */
+  function play(b, onEnd){
+    stop();
+    var tries = [patIn.value.trim()];
+    var alt = (b.dataset.hz2 && b.dataset.hz2 !== b.dataset.hz)
+      ? patIn.value.trim().replace('{hz}', '{hz2}') : null;
+    if(alt && tries.indexOf(alt) < 0) tries.push(alt);
+    CAND.forEach(function(p){ if(tries.indexOf(p) < 0) tries.push(p); });
+
+    b.classList.add('playing');
+    var i = 0;
+    (function attempt(){
+      if(i >= tries.length){
+        b.classList.remove('playing');
+        b.classList.add('missing');
+        b.title = 'Не найден файл для ' + b.dataset.hz;
+        setStatus('Не найден файл для ' + b.dataset.hz + ' — проверьте папку или шаблон.', 'bad');
+        if(onEnd) onEnd();
+        return;
+      }
+      var src = resolve(tries[i++], b);
+      var a = new Audio(encodeURI(src));
+      var started = false;
+      a.addEventListener('canplay', function(){ started = true; });
+      a.addEventListener('ended', function(){
+        b.classList.remove('playing');
+        if(cur === a){ cur = null; curBtn = null; }
+        if(onEnd) onEnd();
+      });
+      a.addEventListener('error', function(){
+        if(!started){ attempt(); }
+        else { b.classList.remove('playing'); if(onEnd) onEnd(); }
+      });
+      cur = a; curBtn = b;
+      b.classList.remove('missing');
+      a.play().catch(function(){});
+    })();
+  }
+
+  /* автопоиск папки при открытии */
+  function autodetect(quiet){
+    if(!btns.length) return;
+    if(!quiet) setStatus('Перебираю варианты…');
+    var i = 0;
+    (function next(){
+      if(i >= CAND.length){
+        setStatus(quiet
+          ? 'Папка с mp3 не найдена. Положите файлы в audio рядом с этим документом.'
+          : 'Ни один из типовых вариантов не подошёл. Впишите путь вручную.',
+          quiet ? '' : 'bad');
+        return;
+      }
+      var p = CAND[i++];
+      test(p, btns[0]).then(function(ok){
+        if(ok){
+          patIn.value = p;
+          document.querySelectorAll('.pb.missing').forEach(function(x){
+            x.classList.remove('missing'); x.title = '';
+          });
+          setStatus('Озвучка подключена: ' + p, 'ok');
+        } else next();
+      });
+    })();
+  }
+
+  document.getElementById('ab-auto').addEventListener('click', function(){ autodetect(false); });
+  document.getElementById('ab-test').addEventListener('click', function(){
+    if(!btns.length) return;
+    setStatus('Проверяю…');
+    test(patIn.value.trim(), btns[0]).then(function(ok){
+      setStatus((ok ? 'Файл найден: ' : 'Не найден: ') + resolve(patIn.value.trim(), btns[0]),
+                ok ? 'ok' : 'bad');
+    });
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(curBtn === b && cur){ stop(); return; }
+      play(b);
+    });
+  });
+
+  document.querySelectorAll('.pball').forEach(function(pb){
+    pb.addEventListener('click', function(){
+      if(pb.classList.contains('playing')){ stop(); return; }
+      var list = Array.prototype.slice.call(
+        pb.closest('.cluster').querySelectorAll('.pb[data-hz]'));
+      stop();
+      pb.classList.add('playing');
+      var i = 0;
+      queue = list;
+      (function step(){
+        if(queue !== list || i >= list.length){ pb.classList.remove('playing'); return; }
+        play(list[i++], function(){ setTimeout(step, 350); });
+      })();
+    });
+  });
+
+  autodetect(true);
+})();
+</script>
+</body>
+</html>
