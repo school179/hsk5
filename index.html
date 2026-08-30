@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HSK 标准教程 5（上） — конспекты</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c1a16;
+  --paper:#e2e0d7;
+  --card:#f3f1e9;
+  --brick:#6d6455;
+  --red:#a8332a;
+  --line:rgba(28,26,22,.18);
+  --u1:#a8332a; --u2:#a8813c; --u3:#4a6b4e; --u4:#4e6e86; --u5:#7a5f8a; --u6:#5d6b6d;
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px 90px}
+
+header{padding:56px 0 26px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+h1{margin:14px 0 0;font-family:var(--han);font-weight:900;font-size:46px;line-height:1.06;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brick);margin-top:10px}
+.counter{margin-top:22px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.counter .big{font-family:var(--disp);font-weight:700;font-size:34px;color:var(--red);line-height:1}
+.counter .txt{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brick)}
+.bar{flex:1 1 200px;height:8px;background:rgba(28,26,22,.12);min-width:160px}
+.bar i{display:block;height:100%;background:var(--red)}
+
+section{margin-top:52px}
+h2{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:12px}
+h2 .cn{font-family:var(--han);font-size:19px;color:var(--red);font-weight:600;text-transform:none;letter-spacing:.05em}
+
+/* ——— юниты ——— */
+.unit{margin-bottom:34px}
+.unit-head{display:flex;align-items:baseline;gap:14px;padding:8px 0 10px;border-bottom:2px solid var(--uc);flex-wrap:wrap}
+.unit-head .n{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--uc)}
+.unit-head .cn{font-family:var(--han);font-size:20px;font-weight:600}
+.unit-head .ru{font-size:14px;color:var(--brick)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:14px}
+.lesson{display:block;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--uc);
+  padding:15px 17px;text-decoration:none;color:inherit;position:relative;
+  transition:transform .14s ease,box-shadow .14s ease}
+a.lesson:hover{transform:translateY(-2px);box-shadow:0 4px 0 rgba(28,26,22,.12)}
+.lesson .no{font-family:var(--disp);font-weight:700;font-size:26px;color:var(--uc);line-height:1;float:right;margin-left:10px}
+.lesson .cn{font-family:var(--han);font-size:19px;font-weight:600;display:block;line-height:1.35}
+.lesson .ru{display:block;font-size:14.5px;margin-top:3px}
+.lesson .pts{display:block;font-family:var(--han);font-size:13px;color:var(--brick);margin-top:9px;
+  padding-top:8px;border-top:1px dashed var(--line)}
+.lesson .pg{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--brick);text-transform:uppercase}
+.lesson.soon{opacity:.5}
+.lesson .flag{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--uc);color:var(--card);padding:2px 6px;margin-bottom:8px}
+.lesson.soon .flag{background:transparent;color:var(--brick);border:1px solid var(--line)}
+
+/* ——— сводная таблица ——— */
+table{width:100%;border-collapse:collapse;background:var(--card);font-size:14.5px;margin-top:10px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;background:rgba(28,26,22,.05)}
+td.n{font-family:var(--disp);font-weight:700;font-size:17px;width:44px;text-align:center;color:var(--red)}
+td .han{font-family:var(--han);font-size:15px}
+tr.done td.n{background:var(--red);color:var(--card)}
+
+.card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--red);padding:20px 22px;margin:16px 0}
+.card code{font-family:var(--mono);font-size:13px;background:rgba(28,26,22,.06);padding:1px 5px}
+ul{margin:0 0 0 0;padding-left:20px}
+li{margin-bottom:8px}
+p{margin:0 0 14px}
+footer{margin-top:60px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em;line-height:1.7}
+
+@media (max-width:620px){
+  h1{font-size:33px}
+  .wrap{padding:0 15px 60px}
+  .grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Конспекты · подготовка к HSK 5</div>
+  <h1>HSK 标准教程 5（上）<span class="lat">Standard Course 5A · 18 уроков · 6 юнитов</span></h1>
+  <div class="counter">
+    <span class="big" id="cnt">2/18</span>
+    <span class="txt">конспектов готово</span>
+    <span class="bar"><i id="barfill" style="width:11%"></i></span>
+  </div>
+</header>
+
+<section>
+  <div class="unit" style="--uc:var(--u1)">
+    <div class="unit-head"><span class="n">Unit 1</span><span class="cn">了解生活</span><span class="ru">Понять жизнь</span></div>
+    <div class="grid">
+      <div class="lesson soon"><span class="no">01</span><span class="flag">скоро</span><span class="cn">爱的细节</span><span class="ru">Детали любви</span><span class="pts">如何 · 靠 · 居然 ／ 如何—怎么 <span class="pg">стр. 2</span></span></div>
+      <div class="lesson soon"><span class="no">02</span><span class="flag">скоро</span><span class="cn">留串钥匙给父母</span><span class="ru">Оставить родителям связку ключей</span><span class="pts">以来 · 临 · 立刻 ／ 悄悄—偷偷 <span class="pg">стр. 9</span></span></div>
+      <div class="lesson soon"><span class="no">03</span><span class="flag">скоро</span><span class="cn">人生有选择，一切可改变</span><span class="ru">Есть выбор — всё можно изменить</span><span class="pts">包括 · 各自 · 勿 · 时刻 ／ 舒适—舒服 <span class="pg">стр. 16</span></span></div>
+    </div>
+  </div>
+
+  <div class="unit" style="--uc:var(--u2)">
+    <div class="unit-head"><span class="n">Unit 2</span><span class="cn">谈古说今</span><span class="ru">О прошлом и настоящем</span></div>
+    <div class="grid">
+      <div class="lesson soon"><span class="no">04</span><span class="flag">скоро</span><span class="cn">子路背米</span><span class="ru">Цзы Лу несёт рис</span><span class="pts">至今 · 顶 · ……得不行 · 反而 ／ 满足—满意 <span class="pg">стр. 26</span></span></div>
+      <div class="lesson soon"><span class="no">05</span><span class="flag">скоро</span><span class="cn">济南的泉水</span><span class="ru">Источники Цзинаня</span><span class="pts">从而 · 于 · 为 · 起来 ／ 美丽—优美 <span class="pg">стр. 34</span></span></div>
+      <div class="lesson soon"><span class="no">06</span><span class="flag">скоро</span><span class="cn">除夕的由来</span><span class="ru">Откуда взялся канун Нового года</span><span class="pts">替 · 说不定 · 似的 · 纷纷 ／ 打听—询问 <span class="pg">стр. 43</span></span></div>
+    </div>
+  </div>
+
+  <div class="unit" style="--uc:var(--u3)">
+    <div class="unit-head"><span class="n">Unit 3</span><span class="cn">倾听故事</span><span class="ru">Слушая истории</span></div>
+    <div class="grid">
+      <div class="lesson soon"><span class="no">07</span><span class="flag">скоро</span><span class="cn">成语故事两则</span><span class="ru">Две истории о чэнъюях</span><span class="pts">瞎 · 分别 · 根 · 便 ／ 忽然—突然 <span class="pg">стр. 54</span></span></div>
+      <div class="lesson soon"><span class="no">08</span><span class="flag">скоро</span><span class="cn">“朝三暮四”的古今义</span><span class="ru">«Три утром, четыре вечером»: тогда и сейчас</span><span class="pts">倒 · ……来……去 · 要不 ／ 彼此—互相 <span class="pg">стр. 63</span></span></div>
+      <div class="lesson soon"><span class="no">09</span><span class="flag">скоро</span><span class="cn">别样鲁迅</span><span class="ru">Другой Лу Синь</span><span class="pts">算 · 作为 · 曾经 ／ 亲自—自己 <span class="pg">стр. 71</span></span></div>
+    </div>
+  </div>
+
+  <div class="unit" style="--uc:var(--u4)">
+    <div class="unit-head"><span class="n">Unit 4</span><span class="cn">走近科学</span><span class="ru">Ближе к науке</span></div>
+    <div class="grid">
+      <div class="lesson soon"><span class="no">10</span><span class="flag">скоро</span><span class="cn">争论的奇迹</span><span class="ru">Чудо спора</span><span class="pts">毕竟 · 逐渐 · 或许 ／ 显示—显得 <span class="pg">стр. 80</span></span></div>
+      <div class="lesson soon"><span class="no">11</span><span class="flag">скоро</span><span class="cn">闹钟的危害</span><span class="ru">Чем вреден будильник</span><span class="pts">来/过来 · 所 · 相当 · 数 ／ 持续—继续 <span class="pg">стр. 88</span></span></div>
+      <div class="lesson soon"><span class="no">12</span><span class="flag">скоро</span><span class="cn">海外用户玩儿微信</span><span class="ru">Зарубежные пользователи WeChat</span><span class="pts">以及 · 程度 ／ 发达—发展 <span class="pg">стр. 97</span></span></div>
+    </div>
+  </div>
+
+  <div class="unit" style="--uc:var(--u5)">
+    <div class="unit-head"><span class="n">Unit 5</span><span class="cn">放眼世界</span><span class="ru">Взгляд на мир</span></div>
+    <div class="grid">
+      <div class="lesson soon"><span class="no">13</span><span class="flag">скоро</span><span class="cn">锯掉生活的“筐底”</span><span class="ru">Отпилить у жизни «дно корзины»</span><span class="pts">何况 · 何必 · 多亏 ／ 激烈—强烈 <span class="pg">стр. 106</span></span></div>
+      <a class="lesson" href="hsk5a-lesson-14.html"><span class="no">14</span><span class="flag">готово</span><span class="cn">北京的四合院</span><span class="ru">Пекинский сыхэюань</span><span class="pts">所谓 · 则 · 为……所…… · 起 ／ 通常—常常 <span class="pg">стр. 114</span></span></a>
+      <a class="lesson" href="hsk5a-lesson-15.html"><span class="no">15</span><span class="flag">готово</span><span class="cn">纸上谈兵</span><span class="ru">Стратег на бумаге</span><span class="pts">过 · 迟早 · 再三 ／ 胜利—成功 <span class="pg">стр. 123</span></span></a>
+    </div>
+  </div>
+
+  <div class="unit" style="--uc:var(--u6)">
+    <div class="unit-head"><span class="n">Unit 6</span><span class="cn">修养身心</span><span class="ru">Тело и душа</span></div>
+    <div class="grid">
+      <div class="lesson soon"><span class="no">16</span><span class="flag">скоро</span><span class="cn">体重与节食</span><span class="ru">Вес и диета</span><span class="pts">即 · 个别 · 非 ／ 临时—暂时 <span class="pg">стр. 134</span></span></div>
+      <div class="lesson soon"><span class="no">17</span><span class="flag">скоро</span><span class="cn">在最美好的时刻离开</span><span class="ru">Уйти в лучший момент</span><span class="pts">以 · 平常 · 宁可 ／ 忽视—轻视 <span class="pg">стр. 142</span></span></div>
+      <div class="lesson soon"><span class="no">18</span><span class="flag">скоро</span><span class="cn">抽象艺术美不美</span><span class="ru">Красиво ли абстрактное искусство</span><span class="pts">极其 · 其余 · 可见 ／ 目前—现在 <span class="pg">стр. 150</span></span></div>
+    </div>
+  </div>
+</section>
+
+<section id="grammar">
+  <h2>Все точки 5A на одном листе <span class="cn">词语例释 · 辨析 · 扩展</span></h2>
+  <p style="font-size:14.5px;color:var(--brick)">Перед экзаменом удобно пробегать глазами весь учебник целиком: что разбиралось в каждом уроке, какая пара слов противопоставлялась и какая тематическая группа шла в 扩展.</p>
+  <table>
+    <tr><th class="n">№</th><th>Урок</th><th>词语例释</th><th>词语辨析</th><th>扩展</th></tr>
+    <tr><td class="n">1</td><td class="han">爱的细节</td><td class="han">如何；靠；居然</td><td class="han">如何—怎么</td><td class="han">人体</td></tr>
+    <tr><td class="n">2</td><td class="han">留串钥匙给父母</td><td class="han">以来；临；立刻</td><td class="han">悄悄—偷偷</td><td class="han">亲属称谓；交往1</td></tr>
+    <tr><td class="n">3</td><td class="han">人生有选择，一切可改变</td><td class="han">包括；各自；勿；时刻</td><td class="han">舒适—舒服</td><td class="han">天气；生产</td></tr>
+    <tr><td class="n">4</td><td class="han">子路背米</td><td class="han">至今；顶；……得+不行；反而</td><td class="han">满足—满意</td><td class="han">社交称谓</td></tr>
+    <tr><td class="n">5</td><td class="han">济南的泉水</td><td class="han">从而；于；为（wéi）；起来</td><td class="han">美丽—优美</td><td class="han">文学</td></tr>
+    <tr><td class="n">6</td><td class="han">除夕的由来</td><td class="han">替；说不定；似的；纷纷</td><td class="han">打听—询问</td><td class="han">旅游；节日</td></tr>
+    <tr><td class="n">7</td><td class="han">成语故事两则</td><td class="han">瞎；分别；根；便</td><td class="han">忽然—突然</td><td class="han">语言文字</td></tr>
+    <tr><td class="n">8</td><td class="han">“朝三暮四”的古今义</td><td class="han">倒；……来……去；要不</td><td class="han">彼此—互相</td><td class="han">饮食1</td></tr>
+    <tr><td class="n">9</td><td class="han">别样鲁迅</td><td class="han">算；作为；曾经</td><td class="han">亲自—自己</td><td class="han">社会</td></tr>
+    <tr><td class="n">10</td><td class="han">争论的奇迹</td><td class="han">毕竟；逐渐；或许</td><td class="han">显示—显得</td><td class="han">服饰</td></tr>
+    <tr><td class="n">11</td><td class="han">闹钟的危害</td><td class="han">来/过来；所；相当；数</td><td class="han">持续—继续</td><td class="han">家居</td></tr>
+    <tr><td class="n">12</td><td class="han">海外用户玩儿微信</td><td class="han">以及；程度</td><td class="han">发达—发展</td><td class="han">电脑网络</td></tr>
+    <tr><td class="n">13</td><td class="han">锯掉生活的“筐底”</td><td class="han">何况；何必；多亏</td><td class="han">激烈—强烈</td><td class="han">体育</td></tr>
+    <tr class="done"><td class="n">14</td><td class="han">北京的四合院</td><td class="han">所谓；则；为……所……；起</td><td class="han">通常—常常</td><td class="han">建筑</td></tr>
+    <tr class="done"><td class="n">15</td><td class="han">纸上谈兵</td><td class="han">过；迟早；再三</td><td class="han">胜利—成功</td><td class="han">军事</td></tr>
+    <tr><td class="n">16</td><td class="han">体重与节食</td><td class="han">即；个别；非</td><td class="han">临时—暂时</td><td class="han">医务1</td></tr>
+    <tr><td class="n">17</td><td class="han">在最美好的时刻离开</td><td class="han">以；平常；宁可</td><td class="han">忽视—轻视</td><td class="han">医务2</td></tr>
+    <tr><td class="n">18</td><td class="han">抽象艺术美不美</td><td class="han">极其；其余；可见</td><td class="han">目前—现在</td><td class="han">影视艺术</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>Как устроено <span class="cn">说明</span></h2>
+  <div class="card">
+    <ul>
+      <li><b>Озвучка.</b> Кнопка ▶ у каждого слова ищет файл вида <code>иероглиф.mp3</code> — сначала в папке <code>audio</code> рядом с сайтом, потом в корне. Папка определяется сама при открытии страницы. Кнопка «▶ подряд» в заголовке гнезда проигрывает всю группу слов по очереди.</li>
+      <li><b>Схема наверху каждого урока</b> — не украшение, а способ вспомнить лексику: наведите или коснитесь любого элемента, и появится слово с его ролью в тексте. Пересказывать текст удобнее по ней, а не по списку.</li>
+      <li><b>Ответы к упражнениям</b> спрятаны под раскрывающимися блоками — сначала решайте, потом сверяйтесь.</li>
+      <li><b>Раздел «На слух»</b> в каждом уроке собирает именно те пары, на которых ломается диктант: омофоны, тоновые пары и иероглифы, тяжёлые для руки.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  HSK 标准教程 5（上） · Higher Education Press<br>
+  Конспекты для личной подготовки к экзамену. Аудио и текст учебника — собственность правообладателя.
+</footer>
+
+</div>
+</body>
+</html>
