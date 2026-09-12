@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>书写 · Раздел «Письмо» HSK 5 — разбор и заготовки</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1e2228;
+  --paper:#e7e5df;
+  --card:#faf9f6;
+  --brick:#67635b;
+  --red:#cc3b30;
+  --blue:#2f5d7c;
+  --green:#4a7a5a;
+  --line:rgba(30,34,40,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:
+    linear-gradient(rgba(204,59,48,.07) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(204,59,48,.07) 1px,transparent 1px);
+  background-size:30px 30px}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px 100px}
+
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+
+header{padding:34px 0 26px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.tgrid{display:flex;gap:10px;margin:18px 0 16px;flex-wrap:wrap}
+.tbox{width:74px;height:74px;border:2px solid var(--red);position:relative;display:flex;
+  align-items:center;justify-content:center;background:var(--card)}
+.tbox::before,.tbox::after{content:"";position:absolute;background:rgba(204,59,48,.32)}
+.tbox::before{left:50%;top:4px;bottom:4px;width:1px;transform:translateX(-.5px)}
+.tbox::after{top:50%;left:4px;right:4px;height:1px;transform:translateY(-.5px)}
+.tbox span{font-family:var(--han);font-size:44px;font-weight:600;line-height:1;position:relative;z-index:1}
+h1{margin:0;font-family:var(--disp);font-weight:700;font-size:38px;line-height:1.08;letter-spacing:.01em}
+h1 .lat{display:block;font-family:var(--mono);font-weight:400;font-size:12px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brick);margin-top:10px}
+.meta{margin-top:18px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+section{margin-top:54px}
+h2{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+h4{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase;
+  margin:22px 0 8px;color:var(--brick)}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+
+/* схема слотов */
+.slot-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px}
+.slot-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone .fillable{transition:opacity .18s ease}
+.zone .fillable{opacity:.88}
+.zone:hover .fillable,.zone.on .fillable{opacity:1}
+.zone:focus{outline:none}
+.slab{font-family:var(--han);font-size:13px;font-weight:600;pointer-events:none}
+.spin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.05em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:66px}
+.readout .w{font-family:var(--han);font-size:20px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:12px;color:var(--blue)}
+.readout .d{display:block;margin-top:5px;font-size:15px;line-height:1.55}
+.readout .hint{color:var(--brick);font-style:italic}
+
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.blue{border-left:4px solid var(--blue)}
+.card.green{border-left:4px solid var(--green)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--card);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.r{background:var(--red)}
+.tag.b{background:var(--blue)}
+.tag.g{background:var(--green)}
+
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(30,34,40,.05)}
+td .han{font-family:var(--han);font-size:16px}
+td.num{width:52px;text-align:center;font-family:var(--disp);font-weight:700;font-size:17px;color:var(--red)}
+.cl-tbl td:first-child{width:44%;font-family:var(--han);font-size:16px}
+
+.steps{counter-reset:st;list-style:none;padding:0;margin:14px 0 0}
+.steps li{counter-increment:st;position:relative;padding-left:52px;margin-bottom:18px}
+.steps li::before{content:counter(st);position:absolute;left:0;top:-4px;font-family:var(--disp);
+  font-weight:700;font-size:26px;color:var(--red);width:36px;text-align:right}
+.steps b{font-family:var(--disp);font-size:17px;letter-spacing:.02em;display:block;margin-bottom:2px}
+
+.wrong{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--red);
+  padding:14px 18px;margin-bottom:12px}
+.wrong .bad{font-family:var(--han);font-size:16px;color:var(--red);text-decoration:line-through;
+  text-decoration-color:rgba(204,59,48,.5)}
+.wrong .good{font-family:var(--han);font-size:16px;color:var(--green);font-weight:600}
+.wrong .why{display:block;font-size:14px;color:var(--brick);margin-top:5px}
+.arrow{font-family:var(--mono);color:var(--brick);margin:0 8px}
+
+details{background:var(--card);border:1px solid var(--line);margin:10px 0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.95;margin:0}
+details .in .cnt{display:block;font-family:var(--mono);font-size:11px;color:var(--brick);
+  margin-top:8px;letter-spacing:.06em;font-weight:400}
+
+.drill{background:var(--card);border:1px solid var(--line);padding:16px 18px;margin-bottom:10px}
+.drill .set{font-family:var(--han);font-size:18px;font-weight:600;letter-spacing:.08em}
+.drill .kind{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--brick);display:block;margin-bottom:6px}
+
+.checklist{list-style:none;padding:0;margin:14px 0 0}
+.checklist li{position:relative;padding-left:34px;margin-bottom:10px}
+.checklist li::before{content:"□";position:absolute;left:0;top:-2px;font-size:20px;color:var(--red)}
+
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+footer{margin-top:40px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em;line-height:1.7}
+
+@media (max-width:620px){
+  h1{font-size:28px}
+  .tbox{width:58px;height:58px}
+  .tbox span{font-size:34px}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index.html">&#8592; Все уроки 5A</a>
+<a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 5 · подготовка к экзамену</div>
+  <div class="tgrid">
+    <div class="tbox"><span>书</span></div>
+    <div class="tbox"><span>写</span></div>
+  </div>
+  <h1>Раздел «Письмо»: разбор, каркасы и заготовки<span class="lat">Часть 3 экзамена · 10 заданий · 40 минут</span></h1>
+  <div class="meta">
+    <span>задания <b>91–98</b> — собрать предложение</span>
+    <span>задание <b>99</b> — 5 слов → текст</span>
+    <span>задание <b>100</b> — картинка → текст</span>
+  </div>
+</header>
+
+<section>
+  <p class="lede">Письмо — самая управляемая часть экзамена. В аудировании и чтении результат зависит от того, попался ли знакомый материал; здесь же почти всё решается заранее подготовленными шаблонами. Восемь заданий на порядок слов проверяют одни и те же десять конструкций, а два текста по 80 знаков пишутся по одному и тому же каркасу, в который остаётся подставить лексику.</p>
+</section>
+
+<section>
+  <h2>Формат и тайминг <span class="cn">考试结构</span></h2>
+  <p>Раздел состоит из двух частей: первая — 8 заданий, где нужно расставить данные слова в правильном порядке и получить предложение; вторая — 2 задания, в первом даётся 5 слов и нужно написать текст примерно на 80 знаков, во втором даётся картинка и текст пишется по ней. На все 10 заданий отводится 40 минут.</p>
+  <table>
+    <tr><th class="num">№</th><th>Что дают</th><th>Что нужно</th><th>Сколько времени</th></tr>
+    <tr><td class="num">91–98</td><td>4–6 слов и словосочетаний вразбивку</td><td>Одно правильное предложение со знаком в конце</td><td>по 1–1,5 минуты, всего ≈ 12</td></tr>
+    <tr><td class="num">99</td><td>5 слов, все обязательны</td><td>Связный текст ≈ 80 знаков</td><td>≈ 12 минут</td></tr>
+    <tr><td class="num">100</td><td>Одна фотография</td><td>Связный текст ≈ 80 знаков по картинке</td><td>≈ 12 минут</td></tr>
+  </table>
+  <div class="card red">
+    <p style="margin:0"><b>Порядок действий на экзамене.</b> Сначала 91–98: они быстрые и дают восемь баллов почти механически. Потом задание 100 (картинка) — оно легче, потому что сюжет вы выбираете сами, а не подстраиваетесь под чужие пять слов. Задание 99 оставьте на конец, но не меньше 12 минут: именно там чаще всего не хватает времени. Последние 4 минуты — проверка по чек-листу в конце страницы.</p>
+  </div>
+</section>
+
+<section id="order">
+  <h2>Порядок слов: схема, которая решает 91–98 <span class="cn">句子成分</span></h2>
+  <p>Почти все восемь заданий сводятся к одному: расставить элементы по слотам. Порядок в китайском предложении жёсткий, и если помнить последовательность, задание перестаёт быть головоломкой.</p>
+  <div class="slot-box">
+    <svg viewBox="0 0 620 300" role="img" aria-label="Схема порядка членов китайского предложения">
+      <text class="spin" x="14" y="18" letter-spacing="0.16em">ПОРЯДОК СЛОТОВ В КИТАЙСКОМ ПРЕДЛОЖЕНИИ</text>
+
+      <g class="zone" tabindex="0" data-w="定语 + 主语" data-p="dìngyǔ + zhǔyǔ" data-d="Подлежащее с определениями. Порядок определений: принадлежность (我的、学校的) → место и время → указательное + счётное (这三本) → качественное прилагательное с 的 (漂亮的) → существительное-признак без 的 (木头桌子) → само существительное.">
+        <rect class="fillable" x="14" y="30" width="112" height="46" fill="#2f5d7c" opacity=".18" stroke="#2f5d7c" stroke-width="1.4"/>
+        <text class="slab" x="70" y="52" text-anchor="middle">定语 + 主语</text>
+        <text class="spin" x="70" y="68" text-anchor="middle">кто / что</text>
+      </g>
+
+      <g class="zone" tabindex="0" data-w="状语：时间 → 副词 → 能愿 → 介词短语 → 方式" data-p="zhuàngyǔ" data-d="Самый частый источник ошибок. Внутри обстоятельств порядок тоже жёсткий: время (昨天、上午) → наречие или отрицание (也、都、不、再三) → модальный глагол (要、能、可以) → предложная группа (把、被、在、对、跟、用) → описательное обстоятельство на 地 (认真地). Запомните цепочку «время — наречие — модальный — предлог — способ».">
+        <rect class="fillable" x="140" y="30" width="270" height="46" fill="#cc3b30" opacity=".18" stroke="#cc3b30" stroke-width="1.4"/>
+        <text class="slab" x="275" y="52" text-anchor="middle">时间 · 副词 · 能愿 · 介词短语 · 地</text>
+        <text class="spin" x="275" y="68" text-anchor="middle">когда / как / чем / кому</text>
+      </g>
+
+      <g class="zone" tabindex="0" data-w="谓语（动词/形容词）" data-p="wèiyǔ" data-d="Сказуемое. Находите его первым: обычно это единственный глагол или прилагательное в наборе. Всё остальное встаёт вокруг него. Если в наборе есть 很、非常、极其 — сказуемое, скорее всего, прилагательное, и дополнения не будет.">
+        <rect class="fillable" x="424" y="30" width="76" height="46" fill="#4a7a5a" opacity=".22" stroke="#4a7a5a" stroke-width="1.4"/>
+        <text class="slab" x="462" y="52" text-anchor="middle">谓语</text>
+        <text class="spin" x="462" y="68" text-anchor="middle">действие</text>
+      </g>
+
+      <g class="zone" tabindex="0" data-w="补语 + 定语 + 宾语" data-p="bǔyǔ + bīnyǔ" data-d="После сказуемого: дополнение результата или степени (得很好、完、起来、一下), затем дополнение с его определениями. Важно: 得-комплемент и дополнение не уживаются просто так — 他做饭做得很好, глагол повторяется.">
+        <rect class="fillable" x="514" y="30" width="92" height="46" fill="#2f5d7c" opacity=".18" stroke="#2f5d7c" stroke-width="1.4"/>
+        <text class="slab" x="560" y="52" text-anchor="middle">补语 + 宾语</text>
+        <text class="spin" x="560" y="68" text-anchor="middle">как / что</text>
+      </g>
+
+      <line x1="14" y1="94" x2="606" y2="94" stroke="rgba(30,34,40,.2)" stroke-width="1"/>
+
+      <text class="spin" x="14" y="122" letter-spacing="0.14em">ПРИМЕР 1 — ЗАДАНИЕ ИЗ ОБРАЗЦА ЭКЗАМЕНА</text>
+      <g class="zone" tabindex="0" data-w="大家 用热烈的掌声 欢迎 他的到来。" data-p="пример 96" data-d="Дано: 热烈的 · 掌声 · 他的到来 · 大家用. Сказуемое — 欢迎. Подлежащее — 大家. 用热烈的掌声 — предложная группа, значит идёт перед сказуемым. 他的到来 — дополнение с определением, значит после.">
+        <rect class="fillable" x="14" y="134" width="80" height="34" fill="#2f5d7c" opacity=".16"/>
+        <text class="slab" x="54" y="156" text-anchor="middle">大家</text>
+        <rect class="fillable" x="100" y="134" width="184" height="34" fill="#cc3b30" opacity=".16"/>
+        <text class="slab" x="192" y="156" text-anchor="middle">用热烈的掌声</text>
+        <rect class="fillable" x="290" y="134" width="72" height="34" fill="#4a7a5a" opacity=".2"/>
+        <text class="slab" x="326" y="156" text-anchor="middle">欢迎</text>
+        <rect class="fillable" x="368" y="134" width="120" height="34" fill="#2f5d7c" opacity=".16"/>
+        <text class="slab" x="428" y="156" text-anchor="middle">他的到来。</text>
+      </g>
+
+      <text class="spin" x="14" y="202" letter-spacing="0.14em">ПРИМЕР 2 — С 把 И ДОПОЛНЕНИЕМ РЕЗУЛЬТАТА</text>
+      <g class="zone" tabindex="0" data-w="上午 要 把任务 分配 一下。" data-p="пример 98" data-d="Дано: 上午 · 任务 · 一下 · 把 · 要 · 分配. Здесь видна вся цепочка обстоятельств: время 上午, модальный 要, предложная группа 把任务, потом сказуемое 分配 и дополнение 一下. Подлежащее опущено — так бывает, это не ошибка.">
+        <rect class="fillable" x="14" y="214" width="74" height="34" fill="#cc3b30" opacity=".16"/>
+        <text class="slab" x="51" y="236" text-anchor="middle">上午</text>
+        <rect class="fillable" x="94" y="214" width="60" height="34" fill="#cc3b30" opacity=".22"/>
+        <text class="slab" x="124" y="236" text-anchor="middle">要</text>
+        <rect class="fillable" x="160" y="214" width="118" height="34" fill="#cc3b30" opacity=".28"/>
+        <text class="slab" x="219" y="236" text-anchor="middle">把任务</text>
+        <rect class="fillable" x="284" y="214" width="80" height="34" fill="#4a7a5a" opacity=".2"/>
+        <text class="slab" x="324" y="236" text-anchor="middle">分配</text>
+        <rect class="fillable" x="370" y="214" width="86" height="34" fill="#2f5d7c" opacity=".16"/>
+        <text class="slab" x="413" y="236" text-anchor="middle">一下。</text>
+      </g>
+
+      <text class="spin" x="14" y="278">Порядок обстоятельств: время → наречие → модальный глагол → предлог (把/被/在/对/用) → способ на 地</text>
+    </svg>
+    <div class="readout" id="readout">
+      <span class="hint">Коснитесь любого слота или примера — появится объяснение, что туда попадает.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Часть 1: алгоритм за минуту <span class="cn">完成句子</span></h2>
+  <ol class="steps">
+    <li>
+      <b>Найдите сказуемое</b>
+      Единственный глагол или прилагательное в наборе. Если видите 很、非常、极其、特别 — сказуемое почти наверняка прилагательное, и дополнения не будет: 这次手术很成功。
+    </li>
+    <li>
+      <b>Найдите маркеры-подсказки</b>
+      Они сразу задают структуру: 把 и 被 требуют своей рамки, 得 требует конструкции «глагол + 得 + оценка», 的 в конце набора вместе с 是 означает рамку 是……的, 被 требует результата после глагола (摔坏了, а не просто 摔).
+    </li>
+    <li>
+      <b>Соберите именные группы</b>
+      Определения приклейте к их существительным: 热烈的 + 掌声, 良好的 + 教育, 那家 + 工厂. Обычно в наборе 2–3 таких блока, и после склейки остаётся всего 3–4 элемента.
+    </li>
+    <li>
+      <b>Расставьте по слотам схемы</b>
+      Подлежащее → обстоятельства в порядке «время, наречие, модальный, предлог, способ» → сказуемое → комплемент → дополнение.
+    </li>
+    <li>
+      <b>Поставьте знак препинания</b>
+      Точка 。 или вопросительный знак ？ Если в наборе есть 吗、什么、怎么、谁、多少 — это вопрос, и без ？ балл снимут. Пропущенный знак в конце — самая обидная потеря в этой части.
+    </li>
+  </ol>
+
+  <h3>Десять конструкций, которые проверяют чаще всего</h3>
+  <table>
+    <tr><th style="width:30%">Конструкция</th><th>Как узнать в наборе и как собрать</th></tr>
+    <tr><td class="han">把</td><td>Есть 把 и глагол с результатом. Схема: 主语 + 把 + 宾语 + 动词 + 结果/了/一下。<span class="han">上午要把任务分配一下。</span></td></tr>
+    <tr><td class="han">被</td><td>Есть 被 и 了. После глагола обязателен результат: <span class="han">玩具被摔坏了。</span> Книжный вариант — 为……所…… (урок 14).</td></tr>
+    <tr><td class="han">是……的</td><td>В наборе есть и 是, и 的, а речь о прошлом: подчёркивается время, место или способ. <span class="han">这篇论文是什么时候发表的？</span></td></tr>
+    <tr><td class="han">得 + оценка</td><td>Есть 得 и прилагательное: <span class="han">老王的水煮鱼做得很地道。</span> Если есть дополнение, глагол повторяется: 他说汉语说得很流利。</td></tr>
+    <tr><td class="han">比 / 不如</td><td>Схема: A + 比 + B + прилагательное (+ 得多 / 一点儿). Наречие степени 很、非常 с 比 не употребляется.</td></tr>
+    <tr><td class="han">существование 着</td><td>Место + глагол + 着 + предмет: <span class="han">墙角堆着一些木箱子。</span> Место идёт первым, а не последним.</td></tr>
+    <tr><td class="han">连……都/也</td><td>连 + выделяемое + 都/也 + сказуемое. Часто вместе с 何况 (урок 13).</td></tr>
+    <tr><td class="han">越……越……</td><td>Два 越, два глагола: 高峰之后，终点出现得越迅速，印象就越深刻 (урок 17).</td></tr>
+    <tr><td class="han">парные союзы</td><td>不但……而且 / 虽然……但是 / 因为……所以 / 只有……才 / 无论……都 / 既……又. Ищите вторую половину пары — она задаёт место первой.</td></tr>
+    <tr><td class="han">рамки с 为</td><td>任命……为…… / 称……为…… / 评……为…… / 以……为…… (урок 17). В этих рамках 为 обязательно.</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>Задание 99: пять слов <span class="cn">写一篇80字左右的短文</span></h2>
+  <p>Пять слов даются вразбивку и часто из разных сфер. Их не нужно связывать логически — нужен один сюжет, в который все пять поместятся.</p>
+
+  <h4>Алгоритм</h4>
+  <ol class="steps">
+    <li><b>Определите часть речи каждого слова</b> и отметьте самое «трудное» — обычно одно слово выбивается из ряда. Сюжет придумывайте под него, остальные четыре встанут легко.</li>
+    <li><b>Выберите одну из трёх безотказных тем:</b> случай из жизни (学习/работа/семья), мнение по вопросу («за или против»), описание привычки или опыта. Первая подходит почти всегда.</li>
+    <li><b>Напишите каркас из пяти предложений</b> по схеме ниже, распределив по одному слову на предложение.</li>
+    <li><b>Считайте знаки грубо:</b> 80 знаков — это примерно 5 предложений по 16 знаков. Меньше 60 — снимут баллы, больше 120 — риск не успеть и наделать ошибок.</li>
+  </ol>
+
+  <div class="card blue">
+    <h4 style="margin-top:0">Универсальный каркас на 80 знаков</h4>
+    <ul style="margin-bottom:0">
+      <li><b>1. Зачин.</b> Время или общая рамка: 我有一个……的习惯。／ 去年夏天，我…… ／ 对我来说，……是一件很重要的事。</li>
+      <li><b>2–3. Развитие.</b> Что произошло или в чём суть. Сюда уходят 2–3 из пяти слов.</li>
+      <li><b>4. Поворот или причина.</b> 但是…… ／ 后来…… ／ 这是因为……</li>
+      <li><b>5. Вывод или чувство.</b> 从那以后，我…… ／ 由此可见，…… ／ 我觉得，……才是最重要的。</li>
+    </ul>
+  </div>
+
+  <h4>Разобранный пример</h4>
+  <div class="card">
+    <p class="tr" style="margin-bottom:8px">Слова: <b class="han">压力 · 坚持 · 效果 · 从此 · 锻炼</b></p>
+    <p class="cn-ex">去年工作最忙的时候，我的<span class="hl">压力</span>特别大，晚上常常睡不着。朋友建议我每天<span class="hl">锻炼</span>半个小时，我本来觉得没什么用，但还是<span class="hl">坚持</span>了下来。一个月后，<span class="hl">效果</span>出乎我的意料：不但睡得好了，心情也轻松了很多。<span class="hl">从此</span>我明白，解决问题有时候不需要复杂的办法。</p>
+    <p class="tr" style="margin:8px 0 0">Пять предложений, ≈ 105 знаков, каждое слово на своём месте, финал — вывод. Заметьте: слова использованы в том порядке, в каком удобно сюжету, а не в том, в каком даны.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Задание 100: картинка <span class="cn">结合图片写短文</span></h2>
+  <p>Здесь свободы больше: сюжет вы задаёте сами. Достаточно, чтобы текст явно относился к изображению — проверяющий должен увидеть связь.</p>
+
+  <h4>Что обычно на фотографии</h4>
+  <table>
+    <tr><th style="width:36%">Сюжет</th><th>Опорная лексика</th></tr>
+    <tr><td>Собеседование, офис, совещание</td><td class="han">面试、简历、应聘、紧张、经验、资格、合作、方案、参与</td></tr>
+    <tr><td>Спорт, бег, зал</td><td class="han">锻炼、项目、训练、坚持、健康、激烈、气氛、比赛、教练</td></tr>
+    <tr><td>Врач, больница</td><td class="han">挂号、诊断、着凉、病毒、传染、休息、健康、措施</td></tr>
+    <tr><td>Семейный ужин, праздник</td><td class="han">团聚、气氛、亲切、长辈、度过、幸福、节日、热闹</td></tr>
+    <tr><td>Учёба, экзамен, библиотека</td><td class="han">复习、集中、注意力、压力、理论、实际、成果、争取</td></tr>
+    <tr><td>Покупки, деньги, интернет</td><td class="han">消费、价格、调整、广告、选择、方便、习惯、趋势</td></tr>
+    <tr><td>Путешествие, природа, город</td><td class="han">旅行、建筑、风景、欣赏、印象深刻、拍照、留念</td></tr>
+    <tr><td>Свадьба, встреча друзей</td><td class="han">婚礼、告别、聚会、美好、记忆、祝福、深刻</td></tr>
+  </table>
+
+  <div class="card green">
+    <h4 style="margin-top:0">Каркас под картинку</h4>
+    <ul style="margin-bottom:0">
+      <li><b>1. Что изображено.</b> 图片上是…… ／ 这张图片上，一个……正在…… ／ 照片里的……看起来很……</li>
+      <li><b>2–3. Кто это и что происходит.</b> Придумайте имя и обстоятельства: 他叫小王，是一家公司的职员。</li>
+      <li><b>4. Ваше отношение или причина.</b> 我觉得…… ／ 这让我想起……</li>
+      <li><b>5. Вывод.</b> 由此可见，…… ／ 这也说明，……</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <p class="tr" style="margin-bottom:8px">Пример: фотография бегущей женщины в парке</p>
+    <p class="cn-ex">图片上是一位正在公园里跑步的女士，看起来精神很好。她叫小李，是一家公司的会计。以前她总说工作太忙，没有时间锻炼，后来体检的结果让她下定了决心。现在她每天早上都跑半个小时，哪怕下雨也不停。由此可见，坚持一件小事，效果往往比我们想象的大。</p>
+  </div>
+</section>
+
+<section>
+  <h2>Клише по местам в тексте <span class="cn">常用句式</span></h2>
+
+  <h4>Зачин</h4>
+  <table class="cl-tbl">
+    <tr><td>每到……的时候，我都会……</td><td>Каждый раз, когда…</td></tr>
+    <tr><td>去年夏天的一个下午，……</td><td>Однажды летом прошлого года…</td></tr>
+    <tr><td>对我来说，……是一件很重要的事</td><td>Для меня … очень важно</td></tr>
+    <tr><td>据报道，一项研究表明……</td><td>Сообщается, что исследование показало… <i>(урок 16)</i></td></tr>
+    <tr><td>在我看来，……</td><td>На мой взгляд…</td></tr>
+    <tr><td>图片上是……，看起来……</td><td>На фотографии… и выглядит…</td></tr>
+  </table>
+
+  <h4>Середина: развитие и поворот</h4>
+  <table class="cl-tbl">
+    <tr><td>我本来以为……，可是……</td><td>Я думал…, но…</td></tr>
+    <tr><td>不但……，而且……</td><td>Не только…, но и…</td></tr>
+    <tr><td>一方面……，另一方面……</td><td>С одной стороны…, с другой…</td></tr>
+    <tr><td>A……，B 则……</td><td>Одни…, а другие… <i>(урок 14)</i></td></tr>
+    <tr><td>与其……，不如……</td><td>Чем…, лучше…</td></tr>
+    <tr><td>虽然……，但依然……</td><td>Хотя…, всё же… <i>(урок 17)</i></td></tr>
+    <tr><td>多亏了……，要不……</td><td>Спасибо, что…, иначе бы… <i>(урок 13)</i></td></tr>
+    <tr><td>结果不但没有……，反而……</td><td>В итоге не только не…, а наоборот…</td></tr>
+  </table>
+
+  <h4>Концовка</h4>
+  <table class="cl-tbl">
+    <tr><td>从那以后，我……</td><td>С тех пор я…</td></tr>
+    <tr><td>由此可见，……</td><td>Отсюда видно, что… <i>(урок 18)</i></td></tr>
+    <tr><td>这也说明，……</td><td>Это показывает, что…</td></tr>
+    <tr><td>我觉得，……才是最重要的</td><td>По-моему, важнее всего именно…</td></tr>
+    <tr><td>……固然好，但……更值得追求</td><td>… хорошо, но … стоит большего</td></tr>
+    <tr><td>只有这样，才能……</td><td>Только так можно…</td></tr>
+    <tr><td>这样的人迟早会……</td><td>Такие люди рано или поздно… <i>(урок 15)</i></td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>Конструкции из 5A, которые поднимают балл <span class="cn">加分句式</span></h2>
+  <p>Одна такая конструкция в тексте заметно меняет впечатление: она показывает владение письменным регистром, а не только разговорным. Две-три — оптимум; больше выглядит натужно.</p>
+  <table>
+    <tr><th class="num">Урок</th><th>Конструкция</th><th>Готовая заготовка</th></tr>
+    <tr><td class="num">13</td><td class="han">多亏了……，要不……</td><td class="han">多亏了朋友的提醒，要不我肯定会错过这次机会。</td></tr>
+    <tr><td class="num">13</td><td class="han">连……都……，何况……呢？</td><td class="han">连大人都受不了，何况孩子呢？</td></tr>
+    <tr><td class="num">13</td><td class="han">何必……呢？</td><td class="han">何必这么麻烦呢？换个办法不就行了吗？</td></tr>
+    <tr><td class="num">14</td><td class="han">为……所……</td><td class="han">这种做法早已为大家所接受。</td></tr>
+    <tr><td class="num">14</td><td class="han">A……，B 则……</td><td class="han">有的人喜欢热闹，有的人则更愿意安静地待着。</td></tr>
+    <tr><td class="num">14</td><td class="han">所谓……，就是……</td><td class="han">所谓“慢生活”，就是把速度降下来，好好感受每一天。</td></tr>
+    <tr><td class="num">15</td><td class="han">迟早会……</td><td class="han">只会空谈理论的人，迟早会吃亏。</td></tr>
+    <tr><td class="num">15</td><td class="han">再三……</td><td class="han">他再三请求，我只好答应了。</td></tr>
+    <tr><td class="num">15</td><td class="han">V + 不过</td><td class="han">谈起这个话题，谁也说不过他。</td></tr>
+    <tr><td class="num">16</td><td class="han">……，即……</td><td class="han">这些人表现出清晰的模式，即周末升高、工作日下降。</td></tr>
+    <tr><td class="num">16</td><td class="han">而非…… / 并非……</td><td class="han">这是一种正常现象，而非真正的问题。</td></tr>
+    <tr><td class="num">16</td><td class="han">非……不可</td><td class="han">这件事非你本人去不可。</td></tr>
+    <tr><td class="num">17</td><td class="han">……，以……</td><td class="han">我们投入了很多时间，以创造良好的效果。</td></tr>
+    <tr><td class="num">17</td><td class="han">宁可……，也不…… / 也要……</td><td class="han">我宁可多花点儿钱，也要买质量好的。</td></tr>
+    <tr><td class="num">18</td><td class="han">由此可见，……</td><td class="han">由此可见，坚持比天分更重要。</td></tr>
+    <tr><td class="num">18</td><td class="han">哪怕……，也……</td><td class="han">哪怕下雨，她也不会停下来。</td></tr>
+    <tr><td class="num">18</td><td class="han">极其 + двусложное прил.</td><td class="han">这在当时是极其少见的现象。</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>Слова-усилители: чем заменить простое <span class="cn">高级替换</span></h2>
+  <p>Самый дешёвый способ поднять уровень текста — заменить десяток бытовых слов на письменные синонимы. Всё из таблиц 词语搭配 пройденных уроков.</p>
+  <table>
+    <tr><th style="width:30%">Вместо простого</th><th>Письменный вариант</th></tr>
+    <tr><td class="han">很好的</td><td class="han">良好的（效果/习惯/环境）· 宝贵的（机会/经验/时间）</td></tr>
+    <tr><td class="han">很多人参加</td><td class="han">积极参与 · 共同参与</td></tr>
+    <tr><td class="han">做了措施 <span class="arrow">✗</span></td><td class="han">采取有效措施 · 及时采取措施</td></tr>
+    <tr><td class="han">变好了</td><td class="han">明显提高 · 形势好转 · 达到了预期的效果</td></tr>
+    <tr><td class="han">说明</td><td class="han">表明 · 显示 · 证明 · 由此可见</td></tr>
+    <tr><td class="han">想得到</td><td class="han">争取（时间/机会）· 达到（目的/要求）</td></tr>
+    <tr><td class="han">不注意</td><td class="han">忽视 · 轻视（урок 17：忽视 — не заметил，轻视 — недооценил）</td></tr>
+    <tr><td class="han">有很多问题</td><td class="han">存在明显的差异 · 产生矛盾 · 造成困难</td></tr>
+    <tr><td class="han">很努力地做</td><td class="han">认真地训练 · 全力以赴 · 投入了很多时间</td></tr>
+    <tr><td class="han">得到经验</td><td class="han">积累经验 · 从经验中体会到</td></tr>
+    <tr><td class="han">现在</td><td class="han">目前 · 到目前为止（в письменном тексте лучше）</td></tr>
+    <tr><td class="han">越来越多的人</td><td class="han">呈上升趋势 · 越来越普遍</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>Ошибки, которые стоят баллов <span class="cn">常见错误</span></h2>
+  <p>Подборка из тех, что встречаются чаще всего, — включая те, что уже попадались в ваших разобранных письмах.</p>
+
+  <div class="wrong">
+    <span class="bad">胜利了这场战争</span><span class="arrow">→</span><span class="good">赢得了这场战争的胜利</span>
+    <span class="why">Непереходный глагол с дополнением. 胜利、成功、失败、毕业、见面 не берут прямого объекта. Проверяйте: можно ли по-китайски «сделать это кому-то»?</span>
+  </div>
+  <div class="wrong">
+    <span class="bad">被任命赵国的大将</span><span class="arrow">→</span><span class="good">被任命<b>为</b>赵国的大将</span>
+    <span class="why">Рамки с обязательным 为: 任命……为…… · 称……为…… · 评……为…… · 视……为…… · 以……为…… .</span>
+  </div>
+  <div class="wrong">
+    <span class="bad">骂了、散布了、进攻了、胜利了</span><span class="arrow">→</span><span class="good">骂他是胆小鬼，四处散布谣言，最后打败了赵军</span>
+    <span class="why">Цепочка 了 при перечислении событий. Достаточно одного 了 — в последнем звене.</span>
+  </div>
+  <div class="wrong">
+    <span class="bad">一边学习努力，一边积累经验</span><span class="arrow">→</span><span class="good">既要努力学习，又要积累经验</span>
+    <span class="why">一边……一边…… — про одновременные физические действия (一边听一边记). Для «и то, и другое» нужно 既……又…… или 不但……而且…… .</span>
+  </div>
+  <div class="wrong">
+    <span class="bad">这个小说教我们……</span><span class="arrow">→</span><span class="good">这则故事告诉我们……</span>
+    <span class="why">教 требует конкретного навыка (教我们汉语). Для морали текста — 告诉 / 说明 / 提醒. Плюс счётное слово: 一则故事, 一部小说.</span>
+  </div>
+  <div class="wrong">
+    <span class="bad">两场最美的建筑</span><span class="arrow">→</span><span class="good">两<b>座</b>最美的建筑</span>
+    <span class="why">Счётные слова, которые экзамен проверяет постоянно: 座 (здания, горы), 幅 (картины), 副 (парные предметы), 则 (короткие тексты), 部 (фильмы, романы), 项 (виды спорта, проекты).</span>
+  </div>
+  <div class="wrong">
+    <span class="bad">它的现代的样式</span><span class="arrow">→</span><span class="good">它现代的样式</span>
+    <span class="why">Два 的 подряд. При нескольких определениях 的 ставится только у последнего.</span>
+  </div>
+  <div class="wrong">
+    <span class="bad">我为它的样式所吸引<b>了</b></span><span class="arrow">→</span><span class="good">我为它的样式所吸引</span>
+    <span class="why">В книжных конструкциях 为……所…… и 是……的 суффикс 了 не ставится.</span>
+  </div>
+  <div class="wrong">
+    <span class="bad">中国两个最美丽的城市</span><span class="arrow">→</span><span class="good">中国最美丽的两个城市</span>
+    <span class="why">Порядок определений: качественное прилагательное с 的 идёт перед счётным комплексом, а не после.</span>
+  </div>
+  <div class="wrong">
+    <span class="bad">极其好 · 极其丑</span><span class="arrow">→</span><span class="good">非常好 · 非常丑</span>
+    <span class="why">极其 сочетается только с двусложными прилагательными (极其神秘, 极其糟糕). Для односложных — 非常 / 特别.</span>
+  </div>
+  <div class="wrong">
+    <span class="bad">写完预定的字数就停</span><span class="arrow">→</span><span class="good">дописать предложение до конца</span>
+    <span class="why">Оборванная фраза в конце текста читается как незаконченная работа. Лучше 70 законченных знаков, чем 85 с обрывом.</span>
+  </div>
+</section>
+
+<section>
+  <h2>Тренировка <span class="cn">模拟练习</span></h2>
+  <p>Шесть наборов для задания 99 и четыре сюжета для задания 100. Напишите сами, потом сверьтесь с образцом — не ради дословного совпадения, а чтобы увидеть, как распределены слова по предложениям.</p>
+
+  <div class="drill">
+    <span class="kind">Задание 99 · набор 1</span>
+    <span class="set">节食 · 营养 · 坚持 · 效果 · 措施</span>
+  </div>
+  <details>
+    <summary>Образец к набору 1</summary>
+    <div class="in">
+      <p>我的同事小李去年开始<span style="color:var(--red)">节食</span>，希望能瘦下来。刚开始她几乎不吃主食，结果<span style="color:var(--red)">营养</span>跟不上，人也没精神。后来医生建议她换一种<span style="color:var(--red)">措施</span>：正常吃饭，每天走一万步。她<span style="color:var(--red)">坚持</span>了三个月，<span style="color:var(--red)">效果</span>反而比以前好得多。由此可见，最简单的办法往往最可靠。<span class="cnt">≈ 105 знаков · 5 предложений</span></p>
+    </div>
+  </details>
+
+  <div class="drill">
+    <span class="kind">Задание 99 · набор 2</span>
+    <span class="set">理论 · 实际 · 经验 · 迟早 · 灵活</span>
+  </div>
+  <details>
+    <summary>Образец к набору 2</summary>
+    <div class="in">
+      <p>刚毕业时我总以为，只要<span style="color:var(--red)">理论</span>学得好，工作就没问题。可是到了公司才发现，<span style="color:var(--red)">实际</span>情况千变万化，书上的办法常常用不上。带我的师傅说，年轻人缺的不是知识，而是<span style="color:var(--red)">经验</span>。他还提醒我，做事一定要<span style="color:var(--red)">灵活</span>，否则<span style="color:var(--red)">迟早</span>会吃亏。现在我越来越觉得他说得对。<span class="cnt">≈ 115 знаков</span></p>
+    </div>
+  </details>
+
+  <div class="drill">
+    <span class="kind">Задание 99 · набор 3</span>
+    <span class="set">建筑 · 印象 · 欣赏 · 传统 · 深刻</span>
+  </div>
+  <details>
+    <summary>Образец к набору 3</summary>
+    <div class="in">
+      <p>去年春天我第一次去北京，最想看的不是高楼，而是<span style="color:var(--red)">传统</span>的四合院。那种<span style="color:var(--red)">建筑</span>不高也不华丽，可是走进院子的那一刻，我一下子安静了下来。院子里有人种花，有人养金鱼，生活的气息特别浓。那天给我留下的<span style="color:var(--red)">印象</span>非常<span style="color:var(--red)">深刻</span>。我这才明白，<span style="color:var(--red)">欣赏</span>建筑其实是在欣赏一种生活方式。<span class="cnt">≈ 125 знаков</span></p>
+    </div>
+  </details>
+
+  <div class="drill">
+    <span class="kind">Задание 99 · набор 4</span>
+    <span class="set">压力 · 集中 · 休息 · 效率 · 规律</span>
+  </div>
+  <details>
+    <summary>Образец к набору 4</summary>
+    <div class="in">
+      <p>考试前的那个月，我的<span style="color:var(--red)">压力</span>特别大，每天复习到深夜，可是注意力总也<span style="color:var(--red)">集中</span>不起来。后来同学建议我换个方法：学五十分钟就<span style="color:var(--red)">休息</span>十分钟。一个星期以后，我的<span style="color:var(--red)">效率</span>明显提高了。原来学习和身体一样，也需要<span style="color:var(--red)">规律</span>。<span class="cnt">≈ 95 знаков</span></p>
+    </div>
+  </details>
+
+  <div class="drill">
+    <span class="kind">Задание 99 · набор 5</span>
+    <span class="set">网络 · 交流 · 方便 · 忽视 · 面对面</span>
+  </div>
+  <details>
+    <summary>Образец к набору 5</summary>
+    <div class="in">
+      <p>有了<span style="color:var(--red)">网络</span>，跟家人朋友<span style="color:var(--red)">交流</span>确实<span style="color:var(--red)">方便</span>多了，哪怕相隔千里，也能天天见面。不过我也发现，很多人一边跟远方的朋友聊天，一边<span style="color:var(--red)">忽视</span>了身边的人。在我看来，<span style="color:var(--red)">面对面</span>的谈话是任何技术都替代不了的。<span class="cnt">≈ 95 знаков</span></p>
+    </div>
+  </details>
+
+  <div class="drill">
+    <span class="kind">Задание 99 · набор 6</span>
+    <span class="set">机会 · 争取 · 后悔 · 勇气 · 决定</span>
+  </div>
+  <details>
+    <summary>Образец к набору 6</summary>
+    <div class="in">
+      <p>两年前公司要派人去上海工作，我很想去，可是又担心自己做不好，犹豫了很久。母亲对我说，<span style="color:var(--red)">机会</span>要靠自己去<span style="color:var(--red)">争取</span>，不去试一试，将来一定会<span style="color:var(--red)">后悔</span>。她的话给了我<span style="color:var(--red)">勇气</span>，我最后还是做了那个<span style="color:var(--red)">决定</span>。现在回头看，那是我这些年最正确的选择。<span class="cnt">≈ 110 знаков</span></p>
+    </div>
+  </details>
+
+  <div class="drill">
+    <span class="kind">Задание 100 · сюжет A</span>
+    <span class="set">Человек на собеседовании пожимает руку интервьюеру</span>
+  </div>
+  <details>
+    <summary>Образец к сюжету A</summary>
+    <div class="in">
+      <p>图片上是一场面试，一位年轻人正和面试官握手，看起来有些紧张。他叫小张，刚刚大学毕业，这是他第一次应聘。为了这次机会，他准备了整整一个星期，把可能被问到的问题都写了下来。虽然经验不多，但他的态度非常认真。我相信，认真准备过的人，迟早会得到自己想要的结果。<span class="cnt">≈ 120 знаков</span></p>
+    </div>
+  </details>
+
+  <div class="drill">
+    <span class="kind">Задание 100 · сюжет B</span>
+    <span class="set">Семья за большим столом, праздничный ужин</span>
+  </div>
+  <details>
+    <summary>Образец к сюжету B</summary>
+    <div class="in">
+      <p>图片上是一家人围坐在一起吃饭，桌上摆满了菜，气氛特别热闹。这样的场面让我想起自己的春节：无论多忙，全家人都会赶回来团聚。长辈们在一边聊天，孩子们在院子里跑来跑去。对我来说，节日最珍贵的并不是那顿饭，而是这种亲切的气氛。<span class="cnt">≈ 105 знаков</span></p>
+    </div>
+  </details>
+
+  <div class="drill">
+    <span class="kind">Задание 100 · сюжет C</span>
+    <span class="set">Студент в библиотеке за стопкой книг</span>
+  </div>
+  <details>
+    <summary>Образец к сюжету C</summary>
+    <div class="in">
+      <p>照片里的女孩坐在图书馆里，面前堆着一摞书，看样子正在为考试做准备。她叫小雨，下个月要参加汉语水平考试。每天下课以后，她都来这里复习三个小时，哪怕周末也不休息。她说，紧张是难免的，但准备得越充分，心里就越踏实。我很欣赏这样的态度。<span class="cnt">≈ 110 знаков</span></p>
+    </div>
+  </details>
+
+  <div class="drill">
+    <span class="kind">Задание 100 · сюжет D</span>
+    <span class="set">Пожилой человек занимается тайцзи в парке утром</span>
+  </div>
+  <details>
+    <summary>Образец к сюжету D</summary>
+    <div class="in">
+      <p>图片上是一位正在公园里打太极拳的老人，动作很慢，却十分有力。在中国，早晨的公园总能看到这样的画面。这位老人今年七十多岁了，坚持锻炼已经二十年。他说，年轻时总以为身体是靠不完的，后来才明白，健康是要一天一天积累的。由此可见，最普通的习惯，效果往往最大。<span class="cnt">≈ 125 знаков</span></p>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Последние четыре минуты <span class="cn">检查清单</span></h2>
+  <p>Проверяйте в этом порядке — от самых дорогих ошибок к мелким.</p>
+  <ul class="checklist">
+    <li>В заданиях 91–98 в конце каждого предложения стоит 。 или ？ Вопросительные слова 吗、什么、怎么、谁 требуют ？</li>
+    <li>Все пять слов задания 99 действительно использованы и именно в той форме, в какой даны.</li>
+    <li>После 被 у глагола есть результат (摔坏了, а не 摔了).</li>
+    <li>После 把 дополнение стоит перед глаголом, а у глагола есть 了、一下 или результат.</li>
+    <li>Нет двух 的 подряд и нет 的 там, где нужно 地 (перед глаголом) или 得 (после глагола).</li>
+    <li>Счётные слова на месте: 座楼、幅画、则故事、部电影、项运动.</li>
+    <li>Ни один текст не оборван на середине предложения.</li>
+    <li>Объём в обоих текстах — от 80 до 120 знаков, не меньше 60.</li>
+    <li>Иероглифы написаны разборчиво и помещаются в клетку: неразборчивый знак засчитывается как ошибка.</li>
+  </ul>
+
+  <div class="card red">
+    <p style="margin:0"><b>Если время кончается.</b> Лучше короткий законченный текст, чем длинный с обрывом. Допишите начатое предложение, поставьте точку и добавьте одну фразу-вывод из списка клише — этого достаточно, чтобы текст читался как целый.</p>
+  </div>
+</section>
+
+<nav class="botnav">
+  <a href="index.html"><span>Оглавление</span>Все 18 уроков 5A</a>
+  <a href="hsk5a-lesson-18.html"><span>Последний урок</span>18 · 抽象艺术美不美</a>
+</nav>
+
+<footer>
+  Формат раздела приведён по официальному описанию экзамена HSK (пятый уровень).<br>
+  Конструкции и лексика — из уроков «HSK 标准教程 5（上）»; примеры текстов написаны для этого конспекта.
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML =
+      '<span class="w">' + z.dataset.w + '</span>' +
+      '<span class="p">' + z.dataset.p + '</span>' +
+      '<span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    out.innerHTML = def;
+  }
+
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+
+  document.querySelector('.slot-box svg').addEventListener('mouseleave', clear);
+})();
+</script>
+</body>
+</html>
