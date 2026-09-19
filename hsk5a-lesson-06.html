@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 6 · 除夕的由来 · HSK 标准教程 5上</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#251517;
+  --paper:#dfd3cd;
+  --card:#f6efea;
+  --brick:#6f5b56;
+  --red:#b32c2c;
+  --gold:#c08a2e;
+  --night:#2c2438;
+  --line:rgba(37,21,23,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:repeating-linear-gradient(90deg,transparent 0 30px,rgba(37,21,23,.04) 30px 31px)}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+header{padding:40px 0 26px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;color:var(--red);letter-spacing:-.03em}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:44px;line-height:1.06;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brick);margin-top:10px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+section{margin-top:56px}
+h2{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+
+.night-box{background:var(--night);padding:18px 18px 12px}
+.night-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone .fillable{transition:opacity .18s ease}
+.zone .fillable{opacity:.85}
+.zone:hover .fillable,.zone.on .fillable{opacity:1}
+.zone:focus{outline:none}
+.nlab{font-family:var(--han);font-size:14px;font-weight:600;fill:#f6efea;pointer-events:none}
+.npin{font-family:var(--mono);font-size:9px;fill:#a79aa8;pointer-events:none;letter-spacing:.05em}
+.readout{margin-top:14px;border-top:1px dashed rgba(246,239,234,.3);padding-top:12px;min-height:64px;color:#f6efea}
+.readout .w{font-family:var(--han);font-size:21px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:12.5px;color:var(--gold)}
+.readout .d{display:block;margin-top:5px;font-size:15px;line-height:1.55}
+.readout .hint{color:#a79aa8;font-style:italic}
+
+.moves{list-style:none;padding:0;margin:0;counter-reset:mv}
+.moves li{counter-increment:mv;position:relative;padding:14px 0 14px 62px;border-bottom:1px solid var(--line)}
+.moves li::before{content:counter(mv,decimal-leading-zero);position:absolute;left:0;top:14px;
+  font-family:var(--mono);font-size:13px;font-weight:700;color:var(--red);letter-spacing:.05em}
+.moves b{font-family:var(--disp);font-size:18px;letter-spacing:.02em;display:block;margin-bottom:3px}
+.moves .kw{display:block;margin-top:6px;font-family:var(--han);font-size:15px;color:var(--brick)}
+
+.cluster{margin-top:26px}
+.cluster .why{font-size:14px;color:var(--brick);margin:-4px 0 14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--night);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--gold);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.gold{border-left:4px solid var(--gold)}
+.card.night{border-left:4px solid var(--night)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--card);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.g{background:var(--gold)}
+.tag.n{background:var(--night)}
+.tag.r{background:var(--red)}
+
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(37,21,23,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+.trap{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--night);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+details{background:var(--card);border:1px solid var(--line);margin:10px 0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;font-family:var(--disp);
+  font-weight:700;font-size:22px;color:var(--red);width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  .lesson-no{font-size:64px}
+  h1{font-size:32px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index.html">&#8592; Все уроки 5A</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（上） · Unit 2 谈古说今 · Talking about the Past and the Present</div>
+  <div class="title-row">
+    <div class="lesson-no">06</div>
+    <h1>除夕的由来<span class="lat">Откуда взялся канун Нового года · 671 字 · стр. 43–51</span></h1>
+  </div>
+  <div class="meta">
+    <span><b>41</b> новое слово + 2 имени</span>
+    <span><b>4</b> грамматические точки</span>
+    <span>ключ: <b>替 · 说不定 · 似的 · 纷纷</b></span>
+  </div>
+</header>
+
+<section>
+  <p class="lede">Шестой урок закрывает второй юнит и объясняет происхождение обычая: почему ночь на тридцатое число двенадцатого лунного месяца называется 除夕 и почему в эту ночь не спят и шумят. Это народная сказка о чудовище по имени «Си», и построена она как классическая охота: узнать повадки — расставить ловушку — победить. Отсюда и опора — новогодняя ночь с тремя этапами.</p>
+  <p style="font-size:15px;color:var(--brick);margin:0"><b>Разгадка названия:</b> 除 значит «убрать, извести», 夕 — имя чудовища. 除夕 буквально «извести Си». Отсюда же и весь обычай: 守岁, бессонная ночь и хлопушки — это повторение той самой ночи, когда шумом выгнали чудовище.</p>
+</section>
+
+<section id="night">
+  <h2>Ночь, когда извели Си <span class="cn">除掉“夕”</span></h2>
+  <div class="night-box">
+    <svg viewBox="0 0 620 340" role="img" aria-label="Схема новогодней ночи: повадки чудовища, ловушка и итог">
+      <circle cx="560" cy="44" r="16" fill="#c08a2e" opacity=".8"/>
+      <text class="npin" x="16" y="20" letter-spacing="0.16em">БОЛЬШОЙ ТРИДЦАТЫЙ ДЕНЬ · 大年三十</text>
+
+      <!-- чудовище -->
+      <g class="zone" tabindex="0" data-w="“夕”：怪物 · 伤害 · 恨 · 骨头 · 无奈 · 制造 · 灾害" data-p="guàiwù · shānghài · hèn · wúnài" data-d="传说在很久以前，有个叫作“夕”的怪物，经常出来伤害百姓，百姓对其恨之入骨，但是又十分无奈. Позже Ци Лан решает 除掉这个制造灾害的东西. Устойчивое выражение 恨之入骨 — «ненавидеть до мозга костей».">
+        <path class="fillable" d="M20 108 q34 -46 68 0 q-14 34 -34 34 q-20 0 -34 -34 z" fill="#b32c2c"/>
+        <circle cx="42" cy="104" r="4" fill="#f6efea"/><circle cx="66" cy="104" r="4" fill="#f6efea"/>
+        <text class="nlab" x="54" y="166" text-anchor="middle">“夕”</text>
+        <text class="npin" x="54" y="184" text-anchor="middle">怪物 · 伤害</text>
+        <text class="npin" x="54" y="198" text-anchor="middle">恨之入骨 · 无奈</text>
+      </g>
+
+      <!-- герой -->
+      <g class="zone" tabindex="0" data-w="七郎：英雄 · 英俊 · 咬 · 替 · 杀 · 除" data-p="yīngxióng · yīngjùn · yǎo · tì" data-d="当时有个英雄叫作七郎，他英俊高大，力大无比。七郎还有一条狗，这条狗非常勇敢，无论咬住什么都不会松口. Узнав, что внучка соседа 被“夕”吃掉了, он 暗暗下定决心一定要杀死“夕”，替百姓除掉这个制造灾害的东西. Здесь работает 替 — «за, вместо кого-то».">
+        <rect class="fillable" x="126" y="86" width="116" height="84" fill="#c08a2e" opacity=".26" stroke="#c08a2e" stroke-width="1.4"/>
+        <text class="nlab" x="184" y="112" text-anchor="middle">七郎和他的狗</text>
+        <text class="npin" x="184" y="132" text-anchor="middle">英雄 · 英俊 · 咬住不松口</text>
+        <text class="npin" x="184" y="152" text-anchor="middle">替百姓除掉它</text>
+      </g>
+
+      <!-- разведка -->
+      <g class="zone" tabindex="0" data-w="打听一年：外公 · 询问 · 天真 · 逃 · 影子 · 此外 · 说不定" data-p="xúnwèn · táo · yǐngzi · cǐwài" data-d="Год Ци Лан 到处打听“夕”的消息. Узнал он вот что: 它一般在太阳落山后出来害人，到天亮前又会逃得连影子都找不着了；此外，它还特别害怕声响. Отсюда его предупреждение жителям: “夕”说不定晚上要出来伤害大家.">
+        <rect class="fillable" x="264" y="86" width="164" height="84" fill="#5a4a6a" opacity=".5" stroke="#8d7ba0" stroke-width="1.2"/>
+        <text class="nlab" x="346" y="110" text-anchor="middle">了解到的情况</text>
+        <text class="npin" x="346" y="130" text-anchor="middle">日落后出来 · 天亮前逃走</text>
+        <text class="npin" x="346" y="146" text-anchor="middle">连影子都找不着</text>
+        <text class="npin" x="346" y="162" text-anchor="middle">此外：特别害怕声响</text>
+      </g>
+
+      <!-- ловушка -->
+      <g class="zone" tabindex="0" data-w="布置：熬夜 · 赶紧 · 敲打 · 锅 · 盆 · 整个" data-p="áo yè · gǎnjǐn · guō · pénzi · zhěnggè" data-d="于是七郎告诉这里的百姓，让大家今晚熬夜等着，一见到“夕”就赶紧敲打东西，大家一起把“夕”杀掉. Когда чудовище появилось, 被这家人发现了，于是他们立刻敲响了家中的锅和盆子，跟着整个镇子都响了起来.">
+        <rect class="fillable" x="450" y="86" width="154" height="84" fill="#c08a2e" opacity=".34" stroke="#c08a2e" stroke-width="1.4"/>
+        <text class="nlab" x="527" y="112" text-anchor="middle">全镇敲锅打盆</text>
+        <text class="npin" x="527" y="132" text-anchor="middle">熬夜等着 · 赶紧敲打</text>
+        <text class="npin" x="527" y="152" text-anchor="middle">整个镇子都响了起来</text>
+      </g>
+
+      <!-- развязка -->
+      <g class="zone" tabindex="0" data-w="结局：果然 · 姑娘 · 吓 · 似的 · 追 · 箭 · 射" data-p="guǒrán · xià · shìde · zhuī · jiàn" data-d="太阳很快落山了，到了晚上，“夕”果然出来了。它想吃一户人家的姑娘，被发现后 “夕”吓得什么似的，急忙往外逃。七郎的狗追上了“夕”，并死死地咬住了它。七郎跑上前去，一箭射死了“夕”. Конструкция 吓得什么似的 — третья точка урока.">
+        <rect class="fillable" x="20" y="222" width="290" height="46" fill="#b32c2c"/>
+        <text class="nlab" x="165" y="242" text-anchor="middle" style="font-size:13px">一箭射死了“夕”</text>
+        <text class="npin" x="165" y="260" text-anchor="middle">果然 · 吓得什么似的 · 逃 · 追 · 箭 · 射</text>
+      </g>
+
+      <!-- обычай -->
+      <g class="zone" tabindex="0" data-w="风俗：纷纷 · 表达 · 意义 · 守岁 · 鞭炮 · 农历" data-p="fēnfēn · biǎodá · shǒusuì · biānpào" data-d="除掉“夕”以后，百姓纷纷对七郎表达谢意。由于这一天很有意义，于是人们就在每年的年三十这天晚上，仍然像那天一样整晚不睡觉，敲打出响声。就这样一代代传下来，形成了除夕夜守岁、放鞭炮的风俗.">
+        <rect class="fillable" x="330" y="222" width="274" height="46" fill="#c08a2e"/>
+        <text class="nlab" x="467" y="242" text-anchor="middle" fill="#2c2438" style="font-size:13px">除夕夜守岁、放鞭炮的风俗</text>
+        <text class="npin" x="467" y="260" text-anchor="middle" fill="#4a3d2a">纷纷 · 表达 · 意义 · 一代代传下来</text>
+      </g>
+
+      <text class="npin" x="20" y="300">除 = 除掉 · 夕 = 怪物的名字 → 除夕 «извести Си»</text>
+      <text class="npin" x="20" y="320">农历十二月三十 · 全家吃年夜饭 · 守岁</text>
+    </svg>
+    <div class="readout" id="readout">
+      <span class="hint">Наведите курсор или коснитесь любого блока — появятся слова этого эпизода и их роль в тексте.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Текст в трёх кадрах <span class="cn">课文复述</span></h2>
+  <p style="font-size:14.5px;color:var(--brick)">Три блока учебника (стр. 50): повадки чудовища, ход охоты, итоговый обычай.</p>
+  <ol class="moves">
+    <li>
+      <b>Что такое «Си» и как он себя вёл</b>
+      在中国，人们把农历十二月三十日这一年中的最后一天叫作除夕，这一天，全家人会一起吃年夜饭，守岁. Откуда название? 传说在很久以前，有个叫作“夕”的怪物，经常出来伤害百姓，百姓对其恨之入骨，但是又十分无奈. За год поисков Ци Лан выяснил: 它一般在太阳落山后出来害人，到天亮前又会逃得连影子都找不着了；此外，它还特别害怕声响.
+      <span class="kw">除夕 · 由来 · 农历 · 守岁 · 怪物 · 伤害 · 恨 · 骨头 · 无奈 · 逃 · 影子 · 此外 · 制造 · 灾害</span>
+    </li>
+    <li>
+      <b>Как его извели</b>
+      当时有个英雄叫作七郎，他英俊高大，力大无比, а его пёс 无论咬住什么都不会松口. Однажды он увидел плачущего деда соседской девочки; 一问才知道，原来天真可爱的女孩被“夕”吃掉了. 七郎暗暗下定决心一定要杀死“夕”，替百姓除掉这个制造灾害的东西. Он предупредил жителей: 让大家今晚熬夜等着，一见到“夕”就赶紧敲打东西. Вечером 太阳很快落山了，“夕”果然出来了; его заметили, 立刻敲响了家中的锅和盆子，跟着整个镇子都响了起来. 夕 吓得什么似的，急忙往外逃; собака догнала и вцепилась, а 七郎跑上前去，一箭射死了“夕”.
+      <span class="kw">英雄 · 英俊 · 咬 · 外公 · 询问 · 天真 · 杀 · 替 · 除 · 说不定 · 熬夜 · 赶紧 · 果然 · 姑娘 · 锅 · 盆子 · 整个 · 吓 · 似的 · 追 · 箭 · 射</span>
+    </li>
+    <li>
+      <b>Откуда обычай</b>
+      除掉“夕”以后，百姓纷纷对七郎表达谢意。由于这一天很有意义，于是人们就在每年的年三十这天晚上，仍然像那天一样整晚不睡觉，敲打出响声。就这样一代代传下来，形成了除夕夜守岁、放鞭炮的风俗。
+      <span class="kw">纷纷 · 表达 · 意义 · 守岁 · 鞭炮 · 风俗</span>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <h2>41 слово по гнёздам <span class="cn">生词</span></h2>
+  <p style="font-size:14px;color:var(--brick)"><span class="star">★</span> — слово сверх программы HSK 5 (в учебнике со звёздочкой).</p>
+
+  <div class="audiobar" id="audiobar">
+    <div class="ab-t">Озвучка слов</div>
+    <div class="ab-row">
+      <input id="ab-pat" type="text" spellcheck="false" value="audio/{hz}.mp3" aria-label="Шаблон пути к mp3">
+      <button type="button" id="ab-auto">Подобрать</button>
+      <button type="button" id="ab-test">Проверить</button>
+    </div>
+    <div class="ab-status" id="ab-status"></div>
+    <div class="ab-note">
+      По умолчанию ищутся файлы вида <code>иероглиф.mp3</code> — сначала в папке
+      <code>audio</code> рядом с этим файлом, потом прямо рядом с ним. Нужная папка
+      определяется сама при открытии страницы. Если ваши mp3 лежат где-то ещё, впишите путь
+      вручную: доступны подстановки <code>{hz}</code> иероглифы, <code>{py}</code> пиньинь с
+      тонами, <code>{pyn}</code> пиньинь без диакритики, <code>{num}</code> номер слова в списке
+      учебника, <code>{L}</code> номер урока. Работает только если открыть файл у себя на диске —
+      в предпросмотре доступа к вашим папкам нет.
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>I. Праздник и обычай<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Тематическое гнездо. Пригодится и в сочинении этого урока, и в любом задании про праздники.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">除夕</span><span class="py">chúxī</span><button class="pb" type="button" data-hz="除夕" data-hz2="除夕" data-py="chúxī" data-pyn="chuxi" data-num="1" aria-label="Прослушать 除夕" title="Прослушать 除夕">&#9654;</button><span class="ru">канун лунного Нового года</span><span class="ex">除夕夜 / 年夜饭</span></div>
+      <div class="w-item"><span class="hz">由来</span><span class="py">yóulái</span><span class="star">★</span><button class="pb" type="button" data-hz="由来" data-hz2="由来" data-py="yóulái" data-pyn="youlai" data-num="2" aria-label="Прослушать 由来" title="Прослушать 由来">&#9654;</button><span class="ru">происхождение, истоки</span></div>
+      <div class="w-item"><span class="hz">农历</span><span class="py">nónglì</span><span class="star">★</span><button class="pb" type="button" data-hz="农历" data-hz2="农历" data-py="nónglì" data-pyn="nongli" data-num="3" aria-label="Прослушать 农历" title="Прослушать 农历">&#9654;</button><span class="ru">лунный календарь</span><span class="ex">农历十二月三十日</span></div>
+      <div class="w-item"><span class="hz">守岁</span><span class="py">shǒusuì</span><button class="pb" type="button" data-hz="守岁" data-hz2="守岁" data-py="shǒusuì" data-pyn="shousui" data-num="4" aria-label="Прослушать 守岁" title="Прослушать 守岁">&#9654;</button><span class="ru">встречать Новый год не ложась спать</span></div>
+      <div class="w-item"><span class="hz">鞭炮</span><span class="py">biānpào</span><button class="pb" type="button" data-hz="鞭炮" data-hz2="鞭炮" data-py="biānpào" data-pyn="bianpao" data-num="40" aria-label="Прослушать 鞭炮" title="Прослушать 鞭炮">&#9654;</button><span class="ru">хлопушки, петарды</span><span class="ex">放鞭炮</span></div>
+      <div class="w-item"><span class="hz">风俗</span><span class="py">fēngsú</span><button class="pb" type="button" data-hz="风俗" data-hz2="风俗" data-py="fēngsú" data-pyn="fengsu" data-num="41" aria-label="Прослушать 风俗" title="Прослушать 风俗">&#9654;</button><span class="ru">обычай, нравы</span><span class="ex">风俗习惯 / 形成风俗</span></div>
+      <div class="w-item"><span class="hz">意义</span><span class="py">yìyì</span><button class="pb" type="button" data-hz="意义" data-hz2="意义" data-py="yìyì" data-pyn="yiyi" data-num="39" aria-label="Прослушать 意义" title="Прослушать 意义">&#9654;</button><span class="ru">значение, смысл</span><span class="ex">很有意义</span></div>
+      <div class="w-item"><span class="hz">表达</span><span class="py">biǎodá</span><button class="pb" type="button" data-hz="表达" data-hz2="表达" data-py="biǎodá" data-pyn="biaoda" data-num="38" aria-label="Прослушать 表达" title="Прослушать 表达">&#9654;</button><span class="ru">выражать (мысль, чувство)</span><span class="ex">表达思想 / 决心 / 感受 / 看法</span></div>
+      <div class="w-item"><span class="hz">纷纷</span><span class="py">fēnfēn</span><button class="pb" type="button" data-hz="纷纷" data-hz2="纷纷" data-py="fēnfēn" data-pyn="fenfen" data-num="37" aria-label="Прослушать 纷纷" title="Прослушать 纷纷">&#9654;</button><span class="ru">один за другим; во множестве</span><span class="ex">纷纷表达谢意 / 落叶纷纷</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>II. Чудовище и беда<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Сюжетное гнездо. 伤害、制造、灾害 частотны далеко за пределами сказки.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">怪物</span><span class="py">guàiwù</span><span class="star">★</span><button class="pb" type="button" data-hz="怪物" data-hz2="怪物" data-py="guàiwù" data-pyn="guaiwu" data-num="5" aria-label="Прослушать 怪物" title="Прослушать 怪物">&#9654;</button><span class="ru">чудовище, монстр</span></div>
+      <div class="w-item"><span class="hz">伤害</span><span class="py">shānghài</span><button class="pb" type="button" data-hz="伤害" data-hz2="伤害" data-py="shānghài" data-pyn="shanghai" data-num="6" aria-label="Прослушать 伤害" title="Прослушать 伤害">&#9654;</button><span class="ru">вредить, наносить ущерб</span><span class="ex">伤害百姓 / 伤害身体</span></div>
+      <div class="w-item"><span class="hz">恨</span><span class="py">hèn</span><button class="pb" type="button" data-hz="恨" data-hz2="恨" data-py="hèn" data-pyn="hen" data-num="7" aria-label="Прослушать 恨" title="Прослушать 恨">&#9654;</button><span class="ru">ненавидеть</span><span class="ex">恨之入骨 / 恨得什么似的</span></div>
+      <div class="w-item"><span class="hz">骨（头）</span><span class="py">gǔ(tou)</span><button class="pb" type="button" data-hz="骨" data-hz2="骨头" data-py="gǔ" data-pyn="gu" data-num="8" aria-label="Прослушать 骨" title="Прослушать 骨">&#9654;</button><span class="ru">кость</span><span class="ex">恨之入骨</span></div>
+      <div class="w-item"><span class="hz">无奈</span><span class="py">wúnài</span><button class="pb" type="button" data-hz="无奈" data-hz2="无奈" data-py="wúnài" data-pyn="wunai" data-num="9" aria-label="Прослушать 无奈" title="Прослушать 无奈">&#9654;</button><span class="ru">быть бессильным, ничего не поделать</span><span class="ex">十分无奈</span></div>
+      <div class="w-item"><span class="hz">制造</span><span class="py">zhìzào</span><button class="pb" type="button" data-hz="制造" data-hz2="制造" data-py="zhìzào" data-pyn="zhizao" data-num="19" aria-label="Прослушать 制造" title="Прослушать 制造">&#9654;</button><span class="ru">производить; создавать (проблемы)</span><span class="ex">制造飞机 / 机会 / 战争 / 难题</span></div>
+      <div class="w-item"><span class="hz">灾害</span><span class="py">zāihài</span><button class="pb" type="button" data-hz="灾害" data-hz2="灾害" data-py="zāihài" data-pyn="zaihai" data-num="20" aria-label="Прослушать 灾害" title="Прослушать 灾害">&#9654;</button><span class="ru">бедствие, стихийное бедствие</span></div>
+      <div class="w-item"><span class="hz">逃</span><span class="py">táo</span><button class="pb" type="button" data-hz="逃" data-hz2="逃" data-py="táo" data-pyn="tao" data-num="21" aria-label="Прослушать 逃" title="Прослушать 逃">&#9654;</button><span class="ru">бежать, спасаться бегством</span><span class="ex">往外逃 / 逃得连影子都找不着</span></div>
+      <div class="w-item"><span class="hz">影子</span><span class="py">yǐngzi</span><button class="pb" type="button" data-hz="影子" data-hz2="影子" data-py="yǐngzi" data-pyn="yingzi" data-num="22" aria-label="Прослушать 影子" title="Прослушать 影子">&#9654;</button><span class="ru">тень</span></div>
+      <div class="w-item"><span class="hz">吓</span><span class="py">xià</span><button class="pb" type="button" data-hz="吓" data-hz2="吓" data-py="xià" data-pyn="xia" data-num="32" aria-label="Прослушать 吓" title="Прослушать 吓">&#9654;</button><span class="ru">пугать, напугать</span><span class="ex">吓得什么似的 / 吓了一跳</span></div>
+      <div class="w-item"><span class="hz">杀</span><span class="py">shā</span><button class="pb" type="button" data-hz="杀" data-hz2="杀" data-py="shā" data-pyn="sha" data-num="16" aria-label="Прослушать 杀" title="Прослушать 杀">&#9654;</button><span class="ru">убить</span><span class="ex">杀死 / 射死</span></div>
+      <div class="w-item"><span class="hz">除</span><span class="py">chú</span><button class="pb" type="button" data-hz="除" data-hz2="除" data-py="chú" data-pyn="chu" data-num="18" aria-label="Прослушать 除" title="Прослушать 除">&#9654;</button><span class="ru">устранить, убрать</span><span class="ex">除掉 / 除去</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>III. Герой и охота<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Гнездо действия. Слова конкретные, и почти все они — глаголы движения.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">英雄</span><span class="py">yīngxióng</span><button class="pb" type="button" data-hz="英雄" data-hz2="英雄" data-py="yīngxióng" data-pyn="yingxiong" data-num="10" aria-label="Прослушать 英雄" title="Прослушать 英雄">&#9654;</button><span class="ru">герой</span></div>
+      <div class="w-item"><span class="hz">英俊</span><span class="py">yīngjùn</span><button class="pb" type="button" data-hz="英俊" data-hz2="英俊" data-py="yīngjùn" data-pyn="yingjun" data-num="11" aria-label="Прослушать 英俊" title="Прослушать 英俊">&#9654;</button><span class="ru">статный, красивый (о мужчине)</span></div>
+      <div class="w-item"><span class="hz">咬</span><span class="py">yǎo</span><button class="pb" type="button" data-hz="咬" data-hz2="咬" data-py="yǎo" data-pyn="yao" data-num="12" aria-label="Прослушать 咬" title="Прослушать 咬">&#9654;</button><span class="ru">кусать, вцепиться</span><span class="ex">咬住不松口</span></div>
+      <div class="w-item"><span class="hz">外公</span><span class="py">wàigōng</span><button class="pb" type="button" data-hz="外公" data-hz2="外公" data-py="wàigōng" data-pyn="waigong" data-num="13" aria-label="Прослушать 外公" title="Прослушать 外公">&#9654;</button><span class="ru">дедушка по матери</span></div>
+      <div class="w-item"><span class="hz">询问</span><span class="py">xúnwèn</span><button class="pb" type="button" data-hz="询问" data-hz2="询问" data-py="xúnwèn" data-pyn="xunwen" data-num="14" aria-label="Прослушать 询问" title="Прослушать 询问">&#9654;</button><span class="ru">осведомляться, расспрашивать (книжн.)</span><span class="ex">仔细地 / 关心地询问</span></div>
+      <div class="w-item"><span class="hz">天真</span><span class="py">tiānzhēn</span><button class="pb" type="button" data-hz="天真" data-hz2="天真" data-py="tiānzhēn" data-pyn="tianzhen" data-num="15" aria-label="Прослушать 天真" title="Прослушать 天真">&#9654;</button><span class="ru">наивный, простодушный</span><span class="ex">天真的孩子 / 性格 / 想法</span></div>
+      <div class="w-item"><span class="hz">熬夜</span><span class="py">áo yè</span><button class="pb" type="button" data-hz="熬夜" data-hz2="熬夜" data-py="áo yè" data-pyn="aoye" data-num="25" aria-label="Прослушать 熬夜" title="Прослушать 熬夜">&#9654;</button><span class="ru">не спать всю ночь</span><span class="ex">经常熬夜对身体不好</span></div>
+      <div class="w-item"><span class="hz">赶紧</span><span class="py">gǎnjǐn</span><button class="pb" type="button" data-hz="赶紧" data-hz2="赶紧" data-py="gǎnjǐn" data-pyn="ganjin" data-num="26" aria-label="Прослушать 赶紧" title="Прослушать 赶紧">&#9654;</button><span class="ru">поскорее, немедленно</span><span class="ex">赶紧敲打东西</span></div>
+      <div class="w-item"><span class="hz">果然</span><span class="py">guǒrán</span><button class="pb" type="button" data-hz="果然" data-hz2="果然" data-py="guǒrán" data-pyn="guoran" data-num="27" aria-label="Прослушать 果然" title="Прослушать 果然">&#9654;</button><span class="ru">действительно, как и ожидали</span><span class="ex">果然出来了</span></div>
+      <div class="w-item"><span class="hz">姑娘</span><span class="py">gūniang</span><button class="pb" type="button" data-hz="姑娘" data-hz2="姑娘" data-py="gūniang" data-pyn="guniang" data-num="28" aria-label="Прослушать 姑娘" title="Прослушать 姑娘">&#9654;</button><span class="ru">девушка</span></div>
+      <div class="w-item"><span class="hz">锅</span><span class="py">guō</span><button class="pb" type="button" data-hz="锅" data-hz2="锅" data-py="guō" data-pyn="guo" data-num="29" aria-label="Прослушать 锅" title="Прослушать 锅">&#9654;</button><span class="ru">котёл, кастрюля</span></div>
+      <div class="w-item"><span class="hz">盆（子）</span><span class="py">pén(zi)</span><button class="pb" type="button" data-hz="盆" data-hz2="盆子" data-py="pén" data-pyn="pen" data-num="30" aria-label="Прослушать 盆" title="Прослушать 盆">&#9654;</button><span class="ru">таз, чан</span><span class="ex">大盆养金鱼（урок 14）</span></div>
+      <div class="w-item"><span class="hz">整个</span><span class="py">zhěnggè</span><button class="pb" type="button" data-hz="整个" data-hz2="整个" data-py="zhěnggè" data-pyn="zhengge" data-num="31" aria-label="Прослушать 整个" title="Прослушать 整个">&#9654;</button><span class="ru">весь, целиком</span><span class="ex">整个房间 / 社会 / 计划 / 过程</span></div>
+      <div class="w-item"><span class="hz">追</span><span class="py">zhuī</span><button class="pb" type="button" data-hz="追" data-hz2="追" data-py="zhuī" data-pyn="zhui" data-num="34" aria-label="Прослушать 追" title="Прослушать 追">&#9654;</button><span class="ru">догонять, преследовать</span><span class="ex">追上了 / 追不上</span></div>
+      <div class="w-item"><span class="hz">箭</span><span class="py">jiàn</span><span class="star">★</span><button class="pb" type="button" data-hz="箭" data-hz2="箭" data-py="jiàn" data-pyn="jian" data-num="35" aria-label="Прослушать 箭" title="Прослушать 箭">&#9654;</button><span class="ru">стрела</span><span class="ex">一箭射死</span></div>
+      <div class="w-item"><span class="hz">射（击）</span><span class="py">shè(jī)</span><button class="pb" type="button" data-hz="射" data-hz2="射击" data-py="shè" data-pyn="she" data-num="36" aria-label="Прослушать 射" title="Прослушать 射">&#9654;</button><span class="ru">стрелять, поражать</span><span class="ex">射死 / 射击（урок 15）</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>IV. Служебные<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Три из четырёх грамматических точек урока.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">（代）替</span><span class="py">(dài)tì</span><button class="pb" type="button" data-hz="替" data-hz2="替" data-py="tì" data-pyn="ti" data-num="17" aria-label="Прослушать 替" title="Прослушать 替">&#9654;</button><span class="ru">заменять; за, вместо кого-то</span><span class="ex">替我向他问好</span></div>
+      <div class="w-item"><span class="hz">说不定</span><span class="py">shuōbudìng</span><button class="pb" type="button" data-hz="说不定" data-hz2="说不定" data-py="shuōbudìng" data-pyn="shuobuding" data-num="24" aria-label="Прослушать 说不定" title="Прослушать 说不定">&#9654;</button><span class="ru">пожалуй, чего доброго; трудно сказать</span></div>
+      <div class="w-item"><span class="hz">似的</span><span class="py">shìde</span><button class="pb" type="button" data-hz="似的" data-hz2="似的" data-py="shìde" data-pyn="shide" data-num="33" aria-label="Прослушать 似的" title="Прослушать 似的">&#9654;</button><span class="ru">словно, как будто (частица)</span><span class="ex">像……似的 / 得什么似的</span></div>
+      <div class="w-item"><span class="hz">此外</span><span class="py">cǐwài</span><button class="pb" type="button" data-hz="此外" data-hz2="此外" data-py="cǐwài" data-pyn="ciwai" data-num="23" aria-label="Прослушать 此外" title="Прослушать 此外">&#9654;</button><span class="ru">кроме того, к тому же</span></div>
+      <div class="w-item"><span class="hz">夕 / 七郎</span><span class="py">Xī / Qīláng</span><button class="pb" type="button" data-hz="夕" data-hz2="夕" data-py="Xī" data-pyn="Xi" data-num="" aria-label="Прослушать 夕" title="Прослушать 夕">&#9654;</button><span class="ru">Си, имя чудовища; Ци Лан, имя героя</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>На слух: где рука ошибётся <span class="cn">听写陷阱</span></h2>
+  <p>Урок опасен <b>словами на -rán</b>: их в 5A набралось уже четыре, и они постоянно попадают в один вопрос.</p>
+
+  <div class="warn">Семейство -rán: четыре слова из четырёх разных уроков</div>
+  <table class="pair-tbl">
+    <tr><th>Слово</th><th>Когда именно оно</th></tr>
+    <tr><td>果然 guǒrán (урок 6)</td><td>Вышло <b>так, как и ждали</b>: 果然出来了. Ожидание подтвердилось.</td></tr>
+    <tr><td>居然 jūrán (1)</td><td>Вышло <b>вопреки ожиданиям</b>: 居然放弃了这次机会. Прямая противоположность 果然.</td></tr>
+    <tr><td>依然 yīrán (17)</td><td>«По-прежнему», продолжение прежнего состояния.</td></tr>
+    <tr><td>仍然 réngrán</td><td>То же, что 依然, но чуть нейтральнее. В тексте: 仍然像那天一样整晚不睡觉.</td></tr>
+  </table>
+  <p class="tr">Упражнение 2 урока проверяет именно 果然 против 居然 — то есть подтверждённое ожидание против опровергнутого.</p>
+
+  <div class="warn">Пары, которые путаются</div>
+  <div class="trap">
+    <div><span class="hz">制造</span><span class="py">zhìzào</span><span class="n">производить; создавать проблемы — 制造灾害</span></div>
+    <div><span class="hz">造成</span><span class="py">zàochéng</span><span class="n">приводить к плохому (урок 13). Те же два знака в обратном порядке!</span></div>
+  </div>
+  <div class="trap">
+    <div><span class="hz">表达</span><span class="py">biǎodá</span><span class="n">выразить словами мысль или чувство — 表达看法</span></div>
+    <div><span class="hz">表示</span><span class="py">biǎoshì</span><span class="n">выразить отношение, обозначить. Упражнение 2 требует 表达</span></div>
+  </div>
+  <div class="trap">
+    <div><span class="hz">此外</span><span class="py">cǐwài</span><span class="n">кроме того (добавляет новое) — 此外，它还害怕声响</span></div>
+    <div><span class="hz">另外</span><span class="py">lìngwài</span><span class="n">другой, иной (выбирает из имеющегося). Упражнение 2 требует 另外</span></div>
+  </div>
+  <table class="pair-tbl">
+    <tr><th>Пара</th><th>Как развести</th></tr>
+    <tr><td>打听 dǎting<br>询问 xúnwèn</td><td>Полный разбор ниже, в 辨析. Коротко: 打听 разговорное и про поиск сведений, 询问 книжное и про официальный расспрос.</td></tr>
+    <tr><td>赶紧 gǎnjǐn<br>急忙 jímáng<br>赶快 gǎnkuài</td><td>赶紧 — «давай скорее», побуждение к действию. 急忙 — описание уже происходящей спешки (急忙往外逃). Упражнение 2 требует 赶紧.</td></tr>
+    <tr><td>影子 yǐngzi<br>影响 yǐngxiǎng</td><td>Общий 影. 影子 — тень, 影响 — влияние. В тексте стоит 连影子都找不着.</td></tr>
+    <tr><td>吓 xià<br>下 xià</td><td>Полные омофоны. 吓 с ключом 口: пугают голосом.</td></tr>
+    <tr><td>咬 yǎo<br>要 yào</td><td>咬 — третий тон, с ключом 口. 要 — четвёртый.</td></tr>
+    <tr><td>熬夜 áo yè<br>半夜 bànyè (урок 1)</td><td>熬 читается áo, второй тон. Раздельное слово: 熬了一夜.</td></tr>
+  </table>
+
+  <div class="warn">Тяжёлые для руки иероглифы</div>
+  <div class="card">
+    <ul style="margin-bottom:0">
+      <li><b>怪</b> = 忄 + 圣; <b>奈</b> (无奈) = 大 + 示.</li>
+      <li><b>询</b> = 讠 + 旬 (десять дней); <b>俊</b> (英俊) = 亻 + 夋.</li>
+      <li><b>熬</b> (熬夜) = 敖 + 灬 «огонь снизу» — четыре точки, а не 火.</li>
+      <li><b>箭</b> = ⺮ + 前: стрелы делали из бамбука. Рядом 篮、筐 — тот же ключ.</li>
+      <li><b>鞭</b> (鞭炮) = 革 «кожа» + 便; <b>炮</b> = 火 + 包.</li>
+      <li><b>灾</b> (灾害) = 宀 + 火 «огонь под крышей» — самая наглядная мнемоника урока.</li>
+      <li><b>盆</b> = 分 + 皿 «посуда снизу». Тот же ключ 皿 в 盘、盐.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Грамматика: четыре детали <span class="cn">注释</span></h2>
+
+  <h3>1 · 替 tì</h3>
+  <div class="card red">
+    <p><span class="tag r">глагол</span> «Заменить, подменить» = 代替.</p>
+    <p class="cn-ex">刘老师今天有点儿事来不了，你能<span class="hl">替替</span>他吗？</p>
+    <p><span class="tag r">предлог</span> «За кого-то, вместо кого-то, ради кого-то» = 给 / 为.</p>
+    <p class="cn-ex">见了外公，你<span class="hl">替</span>我向他问好。</p>
+    <p class="cn-ex">七郎暗暗下定决心一定要杀死“夕”，<span class="hl">替</span>百姓除掉这个制造灾害的东西。</p>
+    <p class="cn-ex">李阳要去留学了，我们都<span class="hl">替</span>他高兴。</p>
+    <p class="tr" style="margin:0">Тонкость: 替他高兴 — радоваться <b>за</b> него, а не вместо него. С чувствами 替 всегда значит «за».</p>
+  </div>
+
+  <h3>2 · 说不定 shuōbudìng</h3>
+  <div class="card night">
+    <p><span class="tag n">глагол</span> «Нельзя сказать точно, ещё неизвестно». Стоит в конце.</p>
+    <p class="cn-ex">这事儿经理已经同意了，只是出发的时间还<span class="hl">说不定</span>。</p>
+    <p class="cn-ex">咱俩到底谁赢谁输还真<span class="hl">说不定</span>呢。</p>
+    <p><span class="tag n">наречие</span> «Пожалуй, чего доброго, вполне может быть». Стоит перед сказуемым.</p>
+    <p class="cn-ex">“夕”<span class="hl">说不定</span>晚上要出来伤害大家。</p>
+    <p class="cn-ex">别随随便便就说放弃，<span class="hl">说不定</span>下次就成功了。</p>
+    <p class="tr" style="margin:0">Отличие от 也许 и 可能: 说不定 разговорнее и обычно намекает на <b>благоприятный</b> или неожиданный поворот.</p>
+  </div>
+
+  <h3>3 · 似的 shìde</h3>
+  <div class="card gold">
+    <p><span class="tag g">сравнение</span> Рамка 像 / 跟 / 好像 …… 似的 — «словно, будто». Книжное.</p>
+    <p class="cn-ex">消息一出来，询问情况的电话雪片<span class="hl">似的</span>纷纷打来。</p>
+    <p class="cn-ex">我不敢相信这是真的，好像做梦<span class="hl">似的</span>。</p>
+    <p><span class="tag g">усиление</span> Рамка ……得 + 什么<span class="hl">似的</span> — преувеличенная степень.</p>
+    <p class="cn-ex">“夕”<span class="hl">吓得什么似的</span>，急忙往外逃。</p>
+    <p class="cn-ex">刘方背着重重的电脑包挤地铁，下班回到家<span class="hl">累得什么似的</span>。</p>
+    <p class="tr" style="margin:0">Второе значение стоит запомнить целиком как ещё один «хвост степени» — рядом с 得不行 (урок 4) и 得不得了 (урок 2). По списку 搭配 так работают 吓、急、恨、羡慕、后悔、吵.</p>
+  </div>
+
+  <h3>4 · 纷纷 fēnfēn</h3>
+  <div class="card red">
+    <p><span class="tag r">прилагательное</span> «Во множестве и беспорядочно» — о падающем или о разговорах.</p>
+    <p class="cn-ex">秋风刮起，落叶<span class="hl">纷纷</span>。</p>
+    <p class="cn-ex">事后，人们议论<span class="hl">纷纷</span>。</p>
+    <p><span class="tag r">наречие</span> «Один за другим» — много людей делают одно и то же подряд.</p>
+    <p class="cn-ex">除掉“夕”以后，百姓<span class="hl">纷纷</span>对七郎表达谢意。</p>
+    <p class="cn-ex">要下雨了，路上的人<span class="hl">纷纷</span>往家里跑。</p>
+    <p class="tr" style="margin:0">Важно: подлежащее должно быть <b>множественным</b>. ✗他纷纷跑回家 — один человек так делать не может.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Сочетаемость <span class="cn">词语搭配</span></h2>
+  <table>
+    <tr><th style="width:38%">Модель</th><th>Что подставляем</th></tr>
+    <tr><td class="han">制造 + O</td><td class="han">制造飞机 / 机会 / 战争 / 难题</td></tr>
+    <tr><td class="han">表达 + O</td><td class="han">表达思想 / 决心 / 心情 / 感受 / 意见 / 看法</td></tr>
+    <tr><td class="han">天真的 + N</td><td class="han">天真的孩子 / 性格 / 想法</td></tr>
+    <tr><td class="han">整个 + N</td><td class="han">整个房间 / 社会 / 计划 / 夏天 / 过程</td></tr>
+    <tr><td class="han">…… 地 + 询问</td><td class="han">仔细地 / 关心地 / 急忙 / 纷纷询问</td></tr>
+    <tr><td class="han">…… 地 + 表达</td><td class="han">准确地 / 生动地 / 形象地表达</td></tr>
+    <tr><td class="han">除 + 补语</td><td class="han">除掉 / 除去</td></tr>
+    <tr><td class="han">…… 得 + 什么似的</td><td class="han">吓 / 急 / 恨 / 羡慕 / 后悔 / 吵得什么似的</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>打听 или 询问 <span class="cn">词语辨析</span></h2>
+  <p>Оба значат «спрашивать», и в части фраз взаимозаменяемы (他打听/询问了老人的身体和生活情况). Различий три:</p>
+  <table>
+    <tr><th style="width:50%">打听 dǎting</th><th>询问 xúnwèn</th></tr>
+    <tr>
+      <td>Преимущественно <b>устная</b> речь.<br><span class="han">我跟您打听一下，附近有邮局吗？</span></td>
+      <td>Преимущественно <b>письменная</b>.<br><span class="han">他仔细地询问了公司近年来的发展情况。</span></td>
+    </tr>
+    <tr>
+      <td>Про <b>поиск сведений</b>; берёт дополнение результата 到.<br><span class="han">我到处打听也没打听到这家公司。</span></td>
+      <td>Дополнение 到 <b>не берёт</b>; есть дополнительный смысл «запросить мнение».<br><span class="han">他打电话询问刘教授对论文的意见。</span></td>
+    </tr>
+    <tr>
+      <td>Не бывает существительным.</td>
+      <td>Может брать объект-человека и работать существительным.<br><span class="han">警察询问了当天见过他的邻居。</span></td>
+    </tr>
+  </table>
+  <p style="font-size:14.5px;color:var(--brick);margin:0">Быстрый тест: если можно добавить «разузнать, поспрашивать у людей» — 打听. Если это официальный опрос или запрос мнения — 询问.</p>
+</section>
+
+<section>
+  <h2>Проверьте себя <span class="cn">练习 · 答案</span></h2>
+  <p>Ответы к упражнениям со стр. 48–50 — сначала решите, потом раскройте.</p>
+
+  <details>
+    <summary>做一做 · 打听 / 询问</summary>
+    <div class="in">
+      <p>① 向您<span class="k">打听</span>件事。（разговорное）<br>
+      ② 她<span class="k">打听</span>到北京有位医生能治这个病。（с 到 — только 打听）<br>
+      ③ 我<span class="k">打听</span>了一下，附近像这样的房子差不多都得一百万。<br>
+      ④ 我<span class="k">询问</span>了几个修过机器的顾客。（объект — люди, запрос мнения）</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 1 · 选择合适的词语填空 （赶紧 无奈 制造 果然 伤害 此外）</summary>
+    <div class="in">
+      <p>① 还真让你说对了，他<span class="k">果然</span>还不知道这件事。<br>
+      ② 两岁的果果是我们家最能<span class="k">制造</span>麻烦的人。<br>
+      ③ 姑娘脸上表现出很<span class="k">无奈</span>的样子。<br>
+      ④ 他喜欢音乐、电影、运动，<span class="k">此外</span>还喜欢旅行。<br>
+      ⑤ 不用送了，<span class="k">赶紧</span>回去吧。<br>
+      ⑥ 经常熬夜对身体的<span class="k">伤害</span>极大。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 2 · 选择正确答案</summary>
+    <div class="in">
+      <p>① 无法用语言准确<span class="k">表达</span>（B）— выразить мысль словами.<br>
+      ② 你<span class="k">赶紧</span>给他回个电话（B）— побуждение; 急忙 описывает, а не побуждает.<br>
+      ③ 你<span class="k">另外</span>安排一个时间（B）— «другое» из возможных; 此外 добавляет пункт.<br>
+      ④ 明星的影响力<span class="k">果然</span>不一般（A）— подтвердилось ожидание.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 3 · 给括号里的词选择适当的位置</summary>
+    <div class="in">
+      <p>① <span class="k">C</span> — 今天李阳<span class="k">果然</span>没有通过面试。<br>
+      ② <span class="k">B</span> — 学院<span class="k">整个</span>所有的老师同学都在议论这件事。（перед 所有的）<br>
+      ③ <span class="k">D</span> — 阻止他，<span class="k">替</span>他说：“方向错了。”<br>
+      ④ <span class="k">C</span> — 他看见小木屋的方向升起了黑烟，<span class="k">急忙</span>跑过去看。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>扩展 · 旅游 и 节日 （名胜古迹 风景 展览 合影 预订 结账 团 时差 ／ 国庆节 元旦 除夕）</summary>
+    <div class="in">
+      <p>① 我们还是先<span class="k">预订</span>好宾馆吧。<br>
+      ② 我要退房，现在可以<span class="k">结账</span>吗？<br>
+      ③ 我昨天刚从英国回来，<span class="k">时差</span>还没倒过来。<br>
+      ④ 这里的各大<span class="k">名胜古迹</span>我都看遍了。</p>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Сочинение <span class="cn">我眼中的中国春节</span></h2>
+  <p>Задание урока: не менее 100 иероглифов о том, что вы знаете о китайском Новом годе. Образец на ~180 знаков — с 替, 说不定 и 纷纷.</p>
+  <div class="card red">
+    <p class="cn-ex" style="line-height:2">在我眼中，中国的春节最有意思的地方是它的<span class="hl">由来</span>。原来“除夕”的“除”是除掉的意思，“夕”则是一个<span class="hl">怪物</span>的名字。传说七郎<span class="hl">替</span>百姓杀死了“夕”，从那以后，人们每年这一天都<span class="hl">熬夜</span>敲打，慢慢<span class="hl">形成</span>了<span class="hl">守岁</span>和放<span class="hl">鞭炮</span>的<span class="hl">风俗</span>。我们国家的新年也很热闹，但更像一个晚会；中国的春节<span class="hl">则</span>是全家人一起吃年夜饭。<span class="hl">说不定</span>哪一年我能在中国过一次春节，亲眼看看家家户户<span class="hl">纷纷</span>贴春联的样子。</p>
+  </div>
+  <h3>Готовые связки</h3>
+  <div class="card">
+    <ul style="margin-bottom:0">
+      <li class="cn-ex">在我眼中，……最有意思的地方是……</li>
+      <li class="cn-ex">原来“X”的意思是……，而“Y”则是……</li>
+      <li class="cn-ex">从那以后，……慢慢形成了……的风俗</li>
+      <li class="cn-ex">我们国家的……也很热闹，但更像……；中国的……则是……</li>
+      <li class="cn-ex">说不定哪一年我能……，亲眼看看……</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Что делать до экзамена <span class="cn">复习计划</span></h2>
+  <ol class="route">
+    <li><b>Пересказ по схеме ночи.</b> Чудовище и его повадки → герой и пёс → год расспросов → предупреждение жителям → грохот посуды → погоня и стрела → обычай. Семь шагов, три абзаца.</li>
+    <li><b>Семейство -rán целиком.</b> 果然 (подтвердилось) · 居然 (не ожидал) · 依然 / 仍然 (по-прежнему). Четыре слова, четыре разных урока, один вопрос на экзамене.</li>
+    <li><b>Третий «хвост степени».</b> К 得不得了 (урок 2) и 得不行 (урок 4) добавьте 得什么似的. Три взаимозаменяемых конца — учите одним блоком.</li>
+    <li><b>Пара 制造 и 造成.</b> Одни и те же два знака в обратном порядке, и значения разные: 制造灾害 «создавать бедствия» против 造成困难 «приводить к трудностям».</li>
+    <li><b>Четыре конструкции — по своему предложению.</b> 替我…… · 说不定…… · 像……似的 · 纷纷…… . Последняя требует множественного подлежащего — на этом чаще всего и ошибаются.</li>
+  </ol>
+  <p style="margin-top:24px;font-size:15px;color:var(--brick)">Unit 2 закрыт: уроки 4, 5 и 6 — «子路背米», «济南的泉水» и «除夕的由来».</p>
+</section>
+
+<nav class="botnav"><a href="hsk5a-lesson-05.html"><span>Предыдущий урок</span>5 · 济南的泉水</a><a href="index.html"><span>Оглавление</span>Все 18 уроков 5A</a></nav>
+
+<footer>
+  Конспект по «HSK 标准教程 5（上）», урок 6 «除夕的由来», стр. 43–51 · Unit 2 谈古说今<br>
+  Схема построена по сюжету урока: повадки чудовища, герой с собакой, год расспросов, грохот посуды на весь посёлок и происхождение обычая.
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML = '<span class="w">' + z.dataset.w + '</span><span class="p">' + z.dataset.p +
+      '</span><span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){ zones.forEach(function(o){ o.classList.remove('on'); }); out.innerHTML = def; }
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+  document.querySelector('.night-box svg').addEventListener('mouseleave', clear);
+})();
+</script>
+<script>
+(function(){
+  var LESSON = "06";
+  var DIRS = ["audio/", "", "mp3/", "media/", "аудио/", "audio/15/", "15/"];
+  var CAND = [];
+  DIRS.forEach(function(d){ CAND.push(d + "{hz}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{hz2}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{pyn}.mp3"); });
+
+  var patIn  = document.getElementById('ab-pat');
+  var status = document.getElementById('ab-status');
+  var btns   = Array.prototype.slice.call(document.querySelectorAll('.pb[data-hz]'));
+  var cur = null, curBtn = null, queue = null;
+
+  function pad(n){ n = String(n||''); return n.length === 1 ? '0'+n : n; }
+
+  function resolve(pat, b){
+    return pat
+      .replace(/\{hz2\}/g, b.dataset.hz2 || b.dataset.hz)
+      .replace(/\{hz\}/g,  b.dataset.hz)
+      .replace(/\{pyn\}/g, b.dataset.pyn)
+      .replace(/\{py\}/g,  b.dataset.py)
+      .replace(/\{num\}/g, pad(b.dataset.num))
+      .replace(/\{n\}/g,   b.dataset.num || '')
+      .replace(/\{L\}/g,   LESSON);
+  }
+
+  function setStatus(t, cls){
+    status.textContent = t || '';
+    status.className = 'ab-status' + (cls ? ' ' + cls : '');
+  }
+
+  function test(pat, b){
+    return new Promise(function(res){
+      var a = new Audio(), done = false;
+      function ok(){ if(!done){ done = true; res(true); } }
+      function no(){ if(!done){ done = true; res(false); } }
+      a.addEventListener('loadedmetadata', ok);
+      a.addEventListener('canplay', ok);
+      a.addEventListener('error', no);
+      a.preload = 'metadata';
+      a.src = encodeURI(resolve(pat, b));
+      setTimeout(no, 2500);
+    });
+  }
+
+  function stop(){
+    if(cur){ cur.pause(); cur = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn = null; }
+    queue = null;
+    document.querySelectorAll('.pball.playing').forEach(function(x){ x.classList.remove('playing'); });
+  }
+
+  /* проигрывание с запасными вариантами имени для этого слова */
+  function play(b, onEnd){
+    stop();
+    var tries = [patIn.value.trim()];
+    var alt = (b.dataset.hz2 && b.dataset.hz2 !== b.dataset.hz)
+      ? patIn.value.trim().replace('{hz}', '{hz2}') : null;
+    if(alt && tries.indexOf(alt) < 0) tries.push(alt);
+    CAND.forEach(function(p){ if(tries.indexOf(p) < 0) tries.push(p); });
+
+    b.classList.add('playing');
+    var i = 0;
+    (function attempt(){
+      if(i >= tries.length){
+        b.classList.remove('playing');
+        b.classList.add('missing');
+        b.title = 'Не найден файл для ' + b.dataset.hz;
+        setStatus('Не найден файл для ' + b.dataset.hz + ' — проверьте папку или шаблон.', 'bad');
+        if(onEnd) onEnd();
+        return;
+      }
+      var src = resolve(tries[i++], b);
+      var a = new Audio(encodeURI(src));
+      var started = false;
+      a.addEventListener('canplay', function(){ started = true; });
+      a.addEventListener('ended', function(){
+        b.classList.remove('playing');
+        if(cur === a){ cur = null; curBtn = null; }
+        if(onEnd) onEnd();
+      });
+      a.addEventListener('error', function(){
+        if(!started){ attempt(); }
+        else { b.classList.remove('playing'); if(onEnd) onEnd(); }
+      });
+      cur = a; curBtn = b;
+      b.classList.remove('missing');
+      a.play().catch(function(){});
+    })();
+  }
+
+  /* автопоиск папки при открытии */
+  function autodetect(quiet){
+    if(!btns.length) return;
+    if(!quiet) setStatus('Перебираю варианты…');
+    var i = 0;
+    (function next(){
+      if(i >= CAND.length){
+        setStatus(quiet
+          ? 'Папка с mp3 не найдена. Положите файлы в audio рядом с этим документом.'
+          : 'Ни один из типовых вариантов не подошёл. Впишите путь вручную.',
+          quiet ? '' : 'bad');
+        return;
+      }
+      var p = CAND[i++];
+      test(p, btns[0]).then(function(ok){
+        if(ok){
+          patIn.value = p;
+          document.querySelectorAll('.pb.missing').forEach(function(x){
+            x.classList.remove('missing'); x.title = '';
+          });
+          setStatus('Озвучка подключена: ' + p, 'ok');
+        } else next();
+      });
+    })();
+  }
+
+  document.getElementById('ab-auto').addEventListener('click', function(){ autodetect(false); });
+  document.getElementById('ab-test').addEventListener('click', function(){
+    if(!btns.length) return;
+    setStatus('Проверяю…');
+    test(patIn.value.trim(), btns[0]).then(function(ok){
+      setStatus((ok ? 'Файл найден: ' : 'Не найден: ') + resolve(patIn.value.trim(), btns[0]),
+                ok ? 'ok' : 'bad');
+    });
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(curBtn === b && cur){ stop(); return; }
+      play(b);
+    });
+  });
+
+  document.querySelectorAll('.pball').forEach(function(pb){
+    pb.addEventListener('click', function(){
+      if(pb.classList.contains('playing')){ stop(); return; }
+      var list = Array.prototype.slice.call(
+        pb.closest('.cluster').querySelectorAll('.pb[data-hz]'));
+      stop();
+      pb.classList.add('playing');
+      var i = 0;
+      queue = list;
+      (function step(){
+        if(queue !== list || i >= list.length){ pb.classList.remove('playing'); return; }
+        play(list[i++], function(){ setTimeout(step, 350); });
+      })();
+    });
+  });
+
+  autodetect(true);
+})();
+</script>
+</body>
+</html>

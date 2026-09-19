@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 5 · 济南的泉水 · HSK 标准教程 5上</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16262b;
+  --paper:#d4dedd;
+  --card:#eff4f3;
+  --brick:#5c6b6b;
+  --red:#a8483c;
+  --blue:#1f6a7a;
+  --jade:#4f8b74;
+  --stone:#8a8474;
+  --line:rgba(22,38,43,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:repeating-linear-gradient(0deg,transparent 0 34px,rgba(22,38,43,.04) 34px 35px)}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+header{padding:40px 0 26px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;color:var(--blue);letter-spacing:-.03em}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:44px;line-height:1.06;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brick);margin-top:10px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+section{margin-top:56px}
+h2{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+
+.geo-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px}
+.geo-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone .fillable{transition:opacity .18s ease}
+.zone .fillable{opacity:.88}
+.zone:hover .fillable,.zone.on .fillable{opacity:1}
+.zone:focus{outline:none}
+.glab{font-family:var(--han);font-size:14px;font-weight:600;fill:var(--ink);pointer-events:none}
+.gpin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.05em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:64px}
+.readout .w{font-family:var(--han);font-size:21px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:12.5px;color:var(--blue)}
+.readout .d{display:block;margin-top:5px;font-size:15px;line-height:1.55}
+.readout .hint{color:var(--brick);font-style:italic}
+
+.moves{list-style:none;padding:0;margin:0;counter-reset:mv}
+.moves li{counter-increment:mv;position:relative;padding:14px 0 14px 62px;border-bottom:1px solid var(--line)}
+.moves li::before{content:counter(mv,decimal-leading-zero);position:absolute;left:0;top:14px;
+  font-family:var(--mono);font-size:13px;font-weight:700;color:var(--red);letter-spacing:.05em}
+.moves b{font-family:var(--disp);font-size:18px;letter-spacing:.02em;display:block;margin-bottom:3px}
+.moves .kw{display:block;margin-top:6px;font-family:var(--han);font-size:15px;color:var(--brick)}
+
+.cluster{margin-top:26px}
+.cluster .why{font-size:14px;color:var(--brick);margin:-4px 0 14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--blue);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--stone);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.blue{border-left:4px solid var(--blue)}
+.card.jade{border-left:4px solid var(--jade)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--card);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.j{background:var(--jade)}
+.tag.b{background:var(--blue)}
+.tag.r{background:var(--red)}
+
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(22,38,43,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+.trap{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--blue);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+details{background:var(--card);border:1px solid var(--line);margin:10px 0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;font-family:var(--disp);
+  font-weight:700;font-size:22px;color:var(--red);width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  .lesson-no{font-size:64px}
+  h1{font-size:32px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index.html">&#8592; Все уроки 5A</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（上） · Unit 2 谈古说今 · Talking about the Past and the Present</div>
+  <div class="title-row">
+    <div class="lesson-no">05</div>
+    <h1>济南的泉水<span class="lat">Источники Цзинаня · 633 字 · стр. 34–42</span></h1>
+  </div>
+  <div class="meta">
+    <span><b>46</b> новых слов + 5 имён</span>
+    <span><b>4</b> грамматические точки</span>
+    <span>ключ: <b>从而 · 于 · 为(wéi) · 起来</b></span>
+  </div>
+</header>
+
+<section>
+  <p class="lede">Пятый урок — научно-популярный очерк о городе источников. Текст собран из четырёх разных слоёв: история и поэзия, легенда о нефритовом кувшине, происхождение названий и, самое трудное, геологическое объяснение. Последняя часть тяжелее всего читается и лучше всего запоминается по картинке, поэтому опорой будет разрез местности.</p>
+  <p style="font-size:15px;color:var(--brick);margin:0"><b>Механизм в одной фразе:</b> вода с гор уходит под землю сквозь известняк, слой которого наклонён к северу; у центра города путь ей преграждает вулканическая порода, вода накапливается и 无处可流，就得另找出路 — и бьёт наружу. Это и есть ответ на вопрос, почему Цзинань называют 泉城.</p>
+</section>
+
+<section id="geo">
+  <h2>Почему бьют источники <span class="cn">泉水是如何形成的</span></h2>
+  <div class="geo-box">
+    <svg viewBox="0 0 620 340" role="img" aria-label="Геологический разрез: горы на юге, наклонный слой известняка, вулканическая порода и источники в старом городе">
+      <text class="gpin" x="16" y="18" letter-spacing="0.16em">РАЗРЕЗ С ЮГА (СЛЕВА) НА СЕВЕР (СПРАВА)</text>
+      <rect x="16" y="26" width="588" height="46" fill="#cfe0e4" opacity=".5"/>
+
+      <!-- горы -->
+      <g class="zone" tabindex="0" data-w="山区：来自于 · 广大 · 岩石 · 亿" data-p="láizì yú · guǎngdà · yánshí · yì" data-d="济南的泉水，来自于济南市以南的广大山区，这些山区的岩石是大约四亿年前形成的一层厚厚的石灰岩. Здесь же работает грамматическая точка 于: 来自于 = «происходить из».">
+        <path class="fillable" d="M16 150 L86 54 L156 150 z" fill="#8a8474"/>
+        <path class="fillable" d="M96 150 L150 76 L204 150 z" fill="#9d9788"/>
+        <text class="gpin" x="110" y="44" text-anchor="middle">广大山区 · 岩石 · 四亿年前</text>
+      </g>
+
+      <!-- известняк -->
+      <g class="zone" tabindex="0" data-w="石灰岩：斜 · 角度 · 表面 · 地区" data-p="xié · jiǎodù · biǎomiàn · dìqū" data-d="在这种石灰岩地区，陆地表面的水很容易进入地下。山区的石灰岩层，以大约三十度的角度，由南向北斜，因此大量的地下水向济南运动. Наклон в 30 градусов и гонит воду на север.">
+        <path class="fillable" d="M16 158 L404 208 L404 244 L16 194 z" fill="#c8c2ae" stroke="#6b6552" stroke-width="1.4"/>
+        <text class="glab" x="180" y="196" text-anchor="middle" style="font-size:13px">石灰岩 · 30度 · 由南向北斜</text>
+        <path d="M60 210 v26 M130 220 v26 M200 230 v26" stroke="#1f6a7a" stroke-width="2" opacity=".7"/>
+        <text class="gpin" x="140" y="268" text-anchor="middle">地下水向北运动</text>
+      </g>
+
+      <!-- вулканическая порода -->
+      <g class="zone" tabindex="0" data-w="火成岩：为 · 碰 · 挡 · 积蓄起来" data-p="wéi · pèng · dǎng · jīxù qǐlái" data-d="而济南市区的地下岩石变为了火成岩，地下水流到这里，碰到火成岩挡住了路，就积蓄起来，越积越多. Здесь сразу две точки урока: 变为 (为 = «стать») и 积蓄起来 (V+起来 = «собраться воедино»).">
+        <rect class="fillable" x="404" y="170" width="112" height="120" fill="#5b5a56" stroke="#2a2a28" stroke-width="1.6"/>
+        <text class="glab" x="460" y="212" text-anchor="middle" fill="#eff4f3" style="font-size:13px">火成岩</text>
+        <text class="gpin" x="460" y="232" text-anchor="middle" fill="#c2c8c6">碰到 · 挡住了路</text>
+        <text class="gpin" x="460" y="250" text-anchor="middle" fill="#c2c8c6">积蓄起来 · 越积越多</text>
+      </g>
+
+      <!-- источники -->
+      <g class="zone" tabindex="0" data-w="旧城：地势 · 冲 · 形成 · 天然" data-p="dìshì · chōng · xíngchéng · tiānrán" data-d="济南旧城一带，地势低，有的地方甚至低过了地下水的水面，地下水就冲出地表，形成了众多的泉水。这就是济南“泉城”美名得来的原因. В городе 分布着大大小小七百多个天然泉.">
+        <rect class="fillable" x="330" y="128" width="72" height="40" fill="#4f8b74" opacity=".3"/>
+        <path class="fillable" d="M352 128 v-34 M366 128 v-46 M380 128 v-30" stroke="#1f6a7a" stroke-width="2.6" stroke-linecap="round"/>
+        <text class="glab" x="366" y="74" text-anchor="middle" style="font-size:13px">泉水冲出地表</text>
+        <text class="gpin" x="366" y="150" text-anchor="middle">旧城 · 地势低</text>
+      </g>
+
+      <!-- легенда -->
+      <g class="zone" tabindex="0" data-w="传说：善良 · 救 · 晕 · 龙 · 治疗 · 玉壶 · 抢 · 埋 · 藏起来" data-p="shànliáng · jiù · yūn · yù hú · mái" data-d="相传很久以前，济南城里有个善良的青年，名叫鲍全，他学习医术，救了很多人。一次，他在路边救了一位晕倒的老人，并把老人接回家照顾。这老人其实是东海龙王的哥哥. Через него Бао Цюань получил 治病救人的白玉壶, а чтобы 不被坏人抢走，他把壶埋入地下藏了起来 — так появился 趵突泉, 天下第一泉.">
+        <rect class="fillable" x="16" y="296" width="290" height="38" fill="#a8483c" opacity=".16" stroke="#a8483c" stroke-width="1.2"/>
+        <text class="gpin" x="161" y="312" text-anchor="middle">传说：善良 · 救 · 晕 · 龙 · 玉壶 · 抢 · 埋 · 藏起来</text>
+        <text class="gpin" x="161" y="328" text-anchor="middle">→ “天下第一泉” 趵突泉</text>
+      </g>
+
+      <!-- названия -->
+      <g class="zone" tabindex="0" data-w="名字：优美 · 独特 · 反映 · 命名 · 珍珠" data-p="yōuměi · dútè · fǎnyìng · zhēnzhū" data-d="济南泉水的优美，还可从那独特的名字上反映出来: 以人名命名的舜泉，以动物命名的黑虎泉，以形状命名的珍珠泉，等等. Здесь 以……命名 — та же рамка 以……为……, что разбиралась в уроке 17.">
+        <rect class="fillable" x="322" y="296" width="282" height="38" fill="#4f8b74" opacity=".2" stroke="#4f8b74" stroke-width="1.2"/>
+        <text class="gpin" x="463" y="312" text-anchor="middle">优美 · 独特 · 反映 · 分布 · 天然</text>
+        <text class="gpin" x="463" y="328" text-anchor="middle">以人名 / 动物 / 形状命名</text>
+      </g>
+    </svg>
+    <div class="readout" id="readout">
+      <span class="hint">Наведите курсор или коснитесь любого слоя разреза или нижних блоков — появятся слова этого фрагмента.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Текст в четырёх кадрах <span class="cn">课文复述</span></h2>
+  <p style="font-size:14.5px;color:var(--brick)">Четыре блока учебника (стр. 41). Первые три — про культуру, четвёртый — по схеме выше.</p>
+  <ol class="moves">
+    <li>
+      <b>Красота источников</b>
+      济南的泉水，历史悠久，最早的文字记载可以推到3000多年前。许多文人都对它的声音、颜色、形状、味道进行过描写，留下了许多赞美泉水的诗文。而济南的老百姓住在泉边，喝着这甜美的泉水，自然对它充满感激之情，从而也产生了许多关于泉水的美丽传说。
+      <span class="kw">悠久 · 文字 · 记载 · 形状 · 描写 · 赞美 · 诗 · 老百姓 · 充满 · 感激 · 从而 · 产生 · 传说</span>
+    </li>
+    <li>
+      <b>Легенда о «первом источнике Поднебесной»</b>
+      相传很久以前，济南城里有个善良的青年，名叫鲍全，他学习医术，救了很多人。一次，他在路边救了一位晕倒的老人，并把老人接回家照顾。这老人其实是东海龙王的哥哥。通过老人的介绍，鲍全从龙王那儿求到了治病救人的白玉壶。为了不被坏人抢走，他把壶埋入地下藏了起来，于是就变成了今天有“天下第一泉”美名的趵突泉。
+      <span class="kw">善良 · 救 · 晕 · 龙 · 治疗 · 玉 · 壶 · 抢 · 埋 · 藏 · 起来</span>
+    </li>
+    <li>
+      <b>Названия</b>
+      如今的济南市区内，分布着大大小小七百多个天然泉，这在国内外城市中是极为少有的。济南泉水的优美，还可从那独特的名字上反映出来，如：以人名命名的舜泉，以动物命名的黑虎泉，以形状命名的珍珠泉，等等。
+      <span class="kw">如今 · 分布 · 天然 · 优美 · 独特 · 反映 · 珍珠</span>
+    </li>
+    <li>
+      <b>Как они образовались</b>
+      济南的泉水，来自于济南市以南的广大山区，这些山区的岩石是大约四亿年前形成的一层厚厚的石灰岩. Поверхностная вода легко уходит вниз; слой известняка 以大约三十度的角度，由南向北斜, поэтому 大量的地下水向济南运动. Но 济南市区的地下岩石变为了火成岩，地下水流到这里，碰到火成岩挡住了路，就积蓄起来，越积越多。它无处可流，就得另找出路。 А 济南旧城一带，地势低, местами даже ниже уровня грунтовых вод, и 地下水就冲出地表，形成了众多的泉水.
+      <span class="kw">形成 · 于 · 广大 · 岩石 · 亿 · 石灰岩 · 地区 · 表面 · 角度 · 斜 · 为 · 火成岩 · 碰 · 挡 · 地势 · 冲</span>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <h2>46 слов по гнёздам <span class="cn">生词</span></h2>
+  <p style="font-size:14px;color:var(--brick)"><span class="star">★</span> — слово сверх программы HSK 5 (в учебнике со звёздочкой). Самый большой словарь в 5A, но половина — это одно геологическое гнездо.</p>
+
+  <div class="audiobar" id="audiobar">
+    <div class="ab-t">Озвучка слов</div>
+    <div class="ab-row">
+      <input id="ab-pat" type="text" spellcheck="false" value="audio/{hz}.mp3" aria-label="Шаблон пути к mp3">
+      <button type="button" id="ab-auto">Подобрать</button>
+      <button type="button" id="ab-test">Проверить</button>
+    </div>
+    <div class="ab-status" id="ab-status"></div>
+    <div class="ab-note">
+      По умолчанию ищутся файлы вида <code>иероглиф.mp3</code> — сначала в папке
+      <code>audio</code> рядом с этим файлом, потом прямо рядом с ним. Нужная папка
+      определяется сама при открытии страницы. Если ваши mp3 лежат где-то ещё, впишите путь
+      вручную: доступны подстановки <code>{hz}</code> иероглифы, <code>{py}</code> пиньинь с
+      тонами, <code>{pyn}</code> пиньинь без диакритики, <code>{num}</code> номер слова в списке
+      учебника, <code>{L}</code> номер урока. Работает только если открыть файл у себя на диске —
+      в предпросмотре доступа к вашим папкам нет.
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>I. Культура и описание<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Гнездо для любого текста про историю, литературу и достопримечательности. 悠久、记载、描写、赞美 — частотные слова 阅读.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">悠久</span><span class="py">yōujiǔ</span><button class="pb" type="button" data-hz="悠久" data-hz2="悠久" data-py="yōujiǔ" data-pyn="youjiu" data-num="1" aria-label="Прослушать 悠久" title="Прослушать 悠久">&#9654;</button><span class="ru">давний, многовековой</span><span class="ex">历史悠久 / 悠久的文化 / 传统</span></div>
+      <div class="w-item"><span class="hz">文字</span><span class="py">wénzì</span><button class="pb" type="button" data-hz="文字" data-hz2="文字" data-py="wénzì" data-pyn="wenzi" data-num="2" aria-label="Прослушать 文字" title="Прослушать 文字">&#9654;</button><span class="ru">письменность, письменные знаки</span><span class="ex">文字记载</span></div>
+      <div class="w-item"><span class="hz">记载</span><span class="py">jìzǎi</span><span class="star">★</span><button class="pb" type="button" data-hz="记载" data-hz2="记载" data-py="jìzǎi" data-pyn="jizai" data-num="3" aria-label="Прослушать 记载" title="Прослушать 记载">&#9654;</button><span class="ru">записывать; запись, свидетельство</span></div>
+      <div class="w-item"><span class="hz">形状</span><span class="py">xíngzhuàng</span><button class="pb" type="button" data-hz="形状" data-hz2="形状" data-py="xíngzhuàng" data-pyn="xingzhuang" data-num="4" aria-label="Прослушать 形状" title="Прослушать 形状">&#9654;</button><span class="ru">форма, очертания</span><span class="ex">以形状命名</span></div>
+      <div class="w-item"><span class="hz">描写</span><span class="py">miáoxiě</span><button class="pb" type="button" data-hz="描写" data-hz2="描写" data-py="miáoxiě" data-pyn="miaoxie" data-num="5" aria-label="Прослушать 描写" title="Прослушать 描写">&#9654;</button><span class="ru">описывать, изображать</span><span class="ex">生动地 / 正确地描写</span></div>
+      <div class="w-item"><span class="hz">赞美</span><span class="py">zànměi</span><button class="pb" type="button" data-hz="赞美" data-hz2="赞美" data-py="zànměi" data-pyn="zanmei" data-num="6" aria-label="Прослушать 赞美" title="Прослушать 赞美">&#9654;</button><span class="ru">восхвалять, воспевать</span><span class="ex">赞美泉水的诗文</span></div>
+      <div class="w-item"><span class="hz">诗</span><span class="py">shī</span><button class="pb" type="button" data-hz="诗" data-hz2="诗" data-py="shī" data-pyn="shi" data-num="7" aria-label="Прослушать 诗" title="Прослушать 诗">&#9654;</button><span class="ru">стихи, поэзия</span><span class="ex">一首诗 / 诗文</span></div>
+      <div class="w-item"><span class="hz">老百姓</span><span class="py">lǎobǎixìng</span><button class="pb" type="button" data-hz="老百姓" data-hz2="老百姓" data-py="lǎobǎixìng" data-pyn="laobaixing" data-num="8" aria-label="Прослушать 老百姓" title="Прослушать 老百姓">&#9654;</button><span class="ru">простой народ, обыватели</span></div>
+      <div class="w-item"><span class="hz">充满</span><span class="py">chōngmǎn</span><button class="pb" type="button" data-hz="充满" data-hz2="充满" data-py="chōngmǎn" data-pyn="chongman" data-num="9" aria-label="Прослушать 充满" title="Прослушать 充满">&#9654;</button><span class="ru">быть полным чего-то</span><span class="ex">充满阳光 / 力量 / 希望 / 欢乐</span></div>
+      <div class="w-item"><span class="hz">感激</span><span class="py">gǎnjī</span><button class="pb" type="button" data-hz="感激" data-hz2="感激" data-py="gǎnjī" data-pyn="ganji" data-num="10" aria-label="Прослушать 感激" title="Прослушать 感激">&#9654;</button><span class="ru">быть глубоко благодарным</span><span class="ex">充满感激之情</span></div>
+      <div class="w-item"><span class="hz">传说</span><span class="py">chuánshuō</span><button class="pb" type="button" data-hz="传说" data-hz2="传说" data-py="chuánshuō" data-pyn="chuanshuo" data-num="13" aria-label="Прослушать 传说" title="Прослушать 传说">&#9654;</button><span class="ru">легенда, предание</span><span class="ex">美丽的传说 / 相传……</span></div>
+      <div class="w-item"><span class="hz">产生</span><span class="py">chǎnshēng</span><button class="pb" type="button" data-hz="产生" data-hz2="产生" data-py="chǎnshēng" data-pyn="chansheng" data-num="12" aria-label="Прослушать 产生" title="Прослушать 产生">&#9654;</button><span class="ru">возникать, порождать</span><span class="ex">产生影响 / 矛盾 / 兴趣</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>II. Легенда<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Сюжетное гнездо. Почти все слова конкретные, запоминаются вместе с картинкой.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">善良</span><span class="py">shànliáng</span><button class="pb" type="button" data-hz="善良" data-hz2="善良" data-py="shànliáng" data-pyn="shanliang" data-num="14" aria-label="Прослушать 善良" title="Прослушать 善良">&#9654;</button><span class="ru">добрый, добросердечный</span><span class="ex">善良的性格 / 青年</span></div>
+      <div class="w-item"><span class="hz">救</span><span class="py">jiù</span><button class="pb" type="button" data-hz="救" data-hz2="救" data-py="jiù" data-pyn="jiu" data-num="15" aria-label="Прослушать 救" title="Прослушать 救">&#9654;</button><span class="ru">спасать, выручать</span><span class="ex">救活 / 救起 / 救出 / 救过来</span></div>
+      <div class="w-item"><span class="hz">晕</span><span class="py">yūn</span><button class="pb" type="button" data-hz="晕" data-hz2="晕" data-py="yūn" data-pyn="yun" data-num="16" aria-label="Прослушать 晕" title="Прослушать 晕">&#9654;</button><span class="ru">терять сознание; кружиться (о голове)</span><span class="ex">晕倒 / 晕过去 / 打晕</span></div>
+      <div class="w-item"><span class="hz">龙</span><span class="py">lóng</span><button class="pb" type="button" data-hz="龙" data-hz2="龙" data-py="lóng" data-pyn="long" data-num="17" aria-label="Прослушать 龙" title="Прослушать 龙">&#9654;</button><span class="ru">дракон</span><span class="ex">龙王</span></div>
+      <div class="w-item"><span class="hz">治（疗）</span><span class="py">zhì(liáo)</span><button class="pb" type="button" data-hz="治" data-hz2="治疗" data-py="zhì" data-pyn="zhi" data-num="18" aria-label="Прослушать 治" title="Прослушать 治">&#9654;</button><span class="ru">лечить</span><span class="ex">治病救人 / 无法治疗</span></div>
+      <div class="w-item"><span class="hz">玉</span><span class="py">yù</span><span class="star">★</span><button class="pb" type="button" data-hz="玉" data-hz2="玉" data-py="yù" data-pyn="yu" data-num="19" aria-label="Прослушать 玉" title="Прослушать 玉">&#9654;</button><span class="ru">нефрит, яшма</span><span class="ex">白玉壶</span></div>
+      <div class="w-item"><span class="hz">壶</span><span class="py">hú</span><button class="pb" type="button" data-hz="壶" data-hz2="壶" data-py="hú" data-pyn="hu" data-num="20" aria-label="Прослушать 壶" title="Прослушать 壶">&#9654;</button><span class="ru">чайник, кувшин</span></div>
+      <div class="w-item"><span class="hz">抢</span><span class="py">qiǎng</span><button class="pb" type="button" data-hz="抢" data-hz2="抢" data-py="qiǎng" data-pyn="qiang" data-num="21" aria-label="Прослушать 抢" title="Прослушать 抢">&#9654;</button><span class="ru">отнимать, хватать; расхватывать</span><span class="ex">被坏人抢走 / 抢光</span></div>
+      <div class="w-item"><span class="hz">埋</span><span class="py">mái</span><span class="star">★</span><button class="pb" type="button" data-hz="埋" data-hz2="埋" data-py="mái" data-pyn="mai" data-num="22" aria-label="Прослушать 埋" title="Прослушать 埋">&#9654;</button><span class="ru">закапывать, хоронить</span><span class="ex">埋入地下</span></div>
+      <div class="w-item"><span class="hz">（躲）藏</span><span class="py">(duǒ) cáng</span><button class="pb" type="button" data-hz="藏" data-hz2="藏" data-py="cáng" data-pyn="cang" data-num="23" aria-label="Прослушать 藏" title="Прослушать 藏">&#9654;</button><span class="ru">прятать(ся)</span><span class="ex">藏起来 / 躲起来</span></div>
+      <div class="w-item"><span class="hz">珍珠</span><span class="py">zhēnzhū</span><span class="star">★</span><button class="pb" type="button" data-hz="珍珠" data-hz2="珍珠" data-py="zhēnzhū" data-pyn="zhenzhu" data-num="30" aria-label="Прослушать 珍珠" title="Прослушать 珍珠">&#9654;</button><span class="ru">жемчуг</span><span class="ex">珍珠泉</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>III. Город и его источники<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Оценочные слова, которыми описывают место. 独特 и 反映 постоянно встречаются в 书写.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">如今</span><span class="py">rújīn</span><button class="pb" type="button" data-hz="如今" data-hz2="如今" data-py="rújīn" data-pyn="rujin" data-num="24" aria-label="Прослушать 如今" title="Прослушать 如今">&#9654;</button><span class="ru">ныне, в наши дни</span><span class="ex">书меннее, чем 现在</span></div>
+      <div class="w-item"><span class="hz">分布</span><span class="py">fēnbù</span><button class="pb" type="button" data-hz="分布" data-hz2="分布" data-py="fēnbù" data-pyn="fenbu" data-num="25" aria-label="Прослушать 分布" title="Прослушать 分布">&#9654;</button><span class="ru">быть распределённым, располагаться</span><span class="ex">分布着七百多个泉</span></div>
+      <div class="w-item"><span class="hz">天然</span><span class="py">tiānrán</span><span class="star">★</span><button class="pb" type="button" data-hz="天然" data-hz2="天然" data-py="tiānrán" data-pyn="tianran" data-num="26" aria-label="Прослушать 天然" title="Прослушать 天然">&#9654;</button><span class="ru">природный, естественный</span><span class="ex">天然泉 / 天然气</span></div>
+      <div class="w-item"><span class="hz">优美</span><span class="py">yōuměi</span><button class="pb" type="button" data-hz="优美" data-hz2="优美" data-py="yōuměi" data-pyn="youmei" data-num="27" aria-label="Прослушать 优美" title="Прослушать 优美">&#9654;</button><span class="ru">изящный, благозвучный</span><span class="ex">优美的歌声 / 动作</span></div>
+      <div class="w-item"><span class="hz">独特</span><span class="py">dútè</span><button class="pb" type="button" data-hz="独特" data-hz2="独特" data-py="dútè" data-pyn="dute" data-num="28" aria-label="Прослушать 独特" title="Прослушать 独特">&#9654;</button><span class="ru">своеобразный, неповторимый</span><span class="ex">独特的位置 / 看法 / 形状 / 建筑</span></div>
+      <div class="w-item"><span class="hz">反映</span><span class="py">fǎnyìng</span><button class="pb" type="button" data-hz="反映" data-hz2="反映" data-py="fǎnyìng" data-pyn="fanying" data-num="29" aria-label="Прослушать 反映" title="Прослушать 反映">&#9654;</button><span class="ru">отражать; доводить до сведения</span><span class="ex">反映生活 / 水平 / 情况 / 能力</span></div>
+      <div class="w-item"><span class="hz">广大</span><span class="py">guǎngdà</span><button class="pb" type="button" data-hz="广大" data-hz2="广大" data-py="guǎngdà" data-pyn="guangda" data-num="33" aria-label="Прослушать 广大" title="Прослушать 广大">&#9654;</button><span class="ru">обширный; широкие (массы)</span><span class="ex">广大山区 / 广大读者</span></div>
+      <div class="w-item"><span class="hz">地区</span><span class="py">dìqū</span><button class="pb" type="button" data-hz="地区" data-hz2="地区" data-py="dìqū" data-pyn="diqu" data-num="37" aria-label="Прослушать 地区" title="Прослушать 地区">&#9654;</button><span class="ru">район, регион</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>IV. Геология: самое трудное гнездо<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Четырнадцать слов последнего абзаца. По отдельности они почти не употребляются, зато вместе описывают весь механизм — учите их по схеме, а не списком.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">形成</span><span class="py">xíngchéng</span><button class="pb" type="button" data-hz="形成" data-hz2="形成" data-py="xíngchéng" data-pyn="xingcheng" data-num="31" aria-label="Прослушать 形成" title="Прослушать 形成">&#9654;</button><span class="ru">складываться, образовываться</span><span class="ex">自然 / 逐渐形成</span></div>
+      <div class="w-item"><span class="hz">岩石</span><span class="py">yánshí</span><span class="star">★</span><button class="pb" type="button" data-hz="岩石" data-hz2="岩石" data-py="yánshí" data-pyn="yanshi" data-num="34" aria-label="Прослушать 岩石" title="Прослушать 岩石">&#9654;</button><span class="ru">горная порода</span></div>
+      <div class="w-item"><span class="hz">石灰岩</span><span class="py">shíhuīyán</span><span class="star">★</span><button class="pb" type="button" data-hz="石灰岩" data-hz2="石灰岩" data-py="shíhuīyán" data-pyn="shihuiyan" data-num="36" aria-label="Прослушать 石灰岩" title="Прослушать 石灰岩">&#9654;</button><span class="ru">известняк</span></div>
+      <div class="w-item"><span class="hz">火成岩</span><span class="py">huǒchéngyán</span><span class="star">★</span><button class="pb" type="button" data-hz="火成岩" data-hz2="火成岩" data-py="huǒchéngyán" data-pyn="huochengyan" data-num="42" aria-label="Прослушать 火成岩" title="Прослушать 火成岩">&#9654;</button><span class="ru">вулканическая порода</span></div>
+      <div class="w-item"><span class="hz">亿</span><span class="py">yì</span><button class="pb" type="button" data-hz="亿" data-hz2="亿" data-py="yì" data-pyn="yi" data-num="35" aria-label="Прослушать 亿" title="Прослушать 亿">&#9654;</button><span class="ru">сто миллионов</span><span class="ex">四亿年前</span></div>
+      <div class="w-item"><span class="hz">表面</span><span class="py">biǎomiàn</span><button class="pb" type="button" data-hz="表面" data-hz2="表面" data-py="biǎomiàn" data-pyn="biaomian" data-num="38" aria-label="Прослушать 表面" title="Прослушать 表面">&#9654;</button><span class="ru">поверхность; внешняя сторона</span><span class="ex">陆地表面 / 表面现象</span></div>
+      <div class="w-item"><span class="hz">角度</span><span class="py">jiǎodù</span><button class="pb" type="button" data-hz="角度" data-hz2="角度" data-py="jiǎodù" data-pyn="jiaodu" data-num="39" aria-label="Прослушать 角度" title="Прослушать 角度">&#9654;</button><span class="ru">угол; точка зрения</span><span class="ex">三十度的角度 / 换个角度</span></div>
+      <div class="w-item"><span class="hz">斜</span><span class="py">xié</span><button class="pb" type="button" data-hz="斜" data-hz2="斜" data-py="xié" data-pyn="xie" data-num="40" aria-label="Прослушать 斜" title="Прослушать 斜">&#9654;</button><span class="ru">наклонный; наклоняться</span><span class="ex">由南向北斜</span></div>
+      <div class="w-item"><span class="hz">碰</span><span class="py">pèng</span><button class="pb" type="button" data-hz="碰" data-hz2="碰" data-py="pèng" data-pyn="peng" data-num="43" aria-label="Прослушать 碰" title="Прослушать 碰">&#9654;</button><span class="ru">натолкнуться, столкнуться</span><span class="ex">碰见 / 碰到 / 碰上</span></div>
+      <div class="w-item"><span class="hz">挡</span><span class="py">dǎng</span><button class="pb" type="button" data-hz="挡" data-hz2="挡" data-py="dǎng" data-pyn="dang" data-num="44" aria-label="Прослушать 挡" title="Прослушать 挡">&#9654;</button><span class="ru">преграждать, заслонять</span><span class="ex">挡住了路</span></div>
+      <div class="w-item"><span class="hz">地势</span><span class="py">dìshì</span><span class="star">★</span><button class="pb" type="button" data-hz="地势" data-hz2="地势" data-py="dìshì" data-pyn="dishi" data-num="45" aria-label="Прослушать 地势" title="Прослушать 地势">&#9654;</button><span class="ru">рельеф, высота местности</span><span class="ex">地势低</span></div>
+      <div class="w-item"><span class="hz">冲</span><span class="py">chōng</span><button class="pb" type="button" data-hz="冲" data-hz2="冲" data-py="chōng" data-pyn="chong" data-num="46" aria-label="Прослушать 冲" title="Прослушать 冲">&#9654;</button><span class="ru">вырываться, устремляться; промывать</span><span class="ex">冲出地表 / 冲进来</span></div>
+      <div class="w-item"><span class="hz">从而</span><span class="py">cóng'ér</span><button class="pb" type="button" data-hz="从而" data-hz2="从而" data-py="cóng'ér" data-pyn="conger" data-num="11" aria-label="Прослушать 从而" title="Прослушать 从而">&#9654;</button><span class="ru">и тем самым, вследствие чего</span></div>
+      <div class="w-item"><span class="hz">于 / 为</span><span class="py">yú / wéi</span><button class="pb" type="button" data-hz="于" data-hz2="于" data-py="yú" data-pyn="yu" data-num="32" aria-label="Прослушать 于" title="Прослушать 于">&#9654;</button><span class="ru">предлог «в, из, чем» / глагол «стать»</span><span class="ex">来自于…… / 变为……</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>На слух: где рука ошибётся <span class="cn">听写陷阱</span></h2>
+  <p>Здесь много слогов, уже встречавшихся в других уроках с другими иероглифами, — это и есть главная опасность.</p>
+
+  <div class="warn">Семейство -chéng: уже четвёртое слово</div>
+  <table class="pair-tbl">
+    <tr><th>Слово</th><th>Когда именно оно</th></tr>
+    <tr><td>形成 xíngchéng (урок 5)</td><td>Складываться само собой, постепенно: 逐渐形成, 形成习惯, 风俗是怎么形成的.</td></tr>
+    <tr><td>造成 zàochéng (13)</td><td>Приводить к чему-то плохому: 造成困难, 造成伤害.</td></tr>
+    <tr><td>组成 zǔchéng (14)</td><td>Состоять из частей: 由三部分组成.</td></tr>
+    <tr><td>成为 chéngwéi</td><td>Становиться кем-то. А в этом уроке рядом стоит 变为 — «превратиться в».</td></tr>
+  </table>
+
+  <div class="warn">Одинаковые слоги, разные знаки</div>
+  <div class="trap">
+    <div><span class="hz">充满</span><span class="py">chōngmǎn</span><span class="n">быть полным — 充满希望</span></div>
+    <div><span class="hz">冲</span><span class="py">chōng</span><span class="n">вырываться — 冲出地表. Оба в этом уроке и оба chōng; 充 без ключа, 冲 с 冫</span></div>
+  </div>
+  <div class="trap">
+    <div><span class="hz">感激</span><span class="py">gǎnjī</span><span class="n">глубокая благодарность — сильнее, чем 感谢</span></div>
+    <div><span class="hz">激烈</span><span class="py">jīliè</span><span class="n">ожесточённый (урок 13). Общий 激, разные вторые слоги</span></div>
+  </div>
+  <div class="trap">
+    <div><span class="hz">形状</span><span class="py">xíngzhuàng</span><span class="n">форма предмета — урок 5</span></div>
+    <div><span class="hz">形式 / 形势</span><span class="py">xíngshì</span><span class="n">форма (14) и обстановка (15). Три слова на 形, и все разные</span></div>
+  </div>
+  <table class="pair-tbl">
+    <tr><th>Пара</th><th>Как развести</th></tr>
+    <tr><td>美丽 měilì<br>优美 yōuměi</td><td>Полный разбор ниже, в 辨析. Коротко: 美丽 — про внешний вид, 优美 — про движение, голос, язык.</td></tr>
+    <tr><td>感激 gǎnjī<br>感谢 gǎnxiè</td><td>感激 — сильное чувство внутри, часто не высказанное. 感谢 — поблагодарить словом или делом. Упражнение 2 требует 感激.</td></tr>
+    <tr><td>赞美 zànměi<br>表扬 biǎoyáng</td><td>赞美 — воспевать, восхищаться (赞美泉水). 表扬 — похвалить подчинённого, ребёнка, ученика. Упражнение 2 требует 表扬.</td></tr>
+    <tr><td>独特 dútè<br>特别 tèbié</td><td>独特 — «не такой, как у других» (独特的风格). 特别 — «очень» или «особенно». Упражнение 2 требует 特别.</td></tr>
+    <tr><td>如今 rújīn<br>现在 xiànzài<br>目前 mùqián (18)</td><td>如今 — письменное «в наши дни», с оттенком сравнения с прошлым; о часах и минутах не говорят. Упражнение 2 требует 现在.</td></tr>
+    <tr><td>晕 yūn / yùn</td><td>yūn — потерять сознание (晕倒). yùn — укачивать (晕车, 晕船).</td></tr>
+    <tr><td>藏 cáng / zàng</td><td>cáng — прятать (藏起来). zàng — хранилище, Тибет (西藏).</td></tr>
+  </table>
+
+  <div class="warn">Тяжёлые для руки иероглифы</div>
+  <div class="card">
+    <ul style="margin-bottom:0">
+      <li><b>载</b> (记载) = 十 + 车 внутри 戈. Читается zǎi здесь и zài в 下载.</li>
+      <li><b>赞</b> (赞美) = 先 + 先 + 贝; <b>激</b> = 氵 + 敫.</li>
+      <li><b>壶</b> = 士 + 冖 + 业 + 一. Не путать с 壹.</li>
+      <li><b>埋</b> = 土 + 里 «в землю»; <b>藏</b> = 艹 + 臧, 17 черт.</li>
+      <li><b>珍珠</b> — оба знака с ключом 王 (玉): жемчуг проходит по разряду драгоценностей.</li>
+      <li><b>斜</b> = 余 + 斗; <b>挡</b> = 扌 + 当; <b>碰</b> = 石 + 并.</li>
+      <li><b>岩</b> = 山 + 石 «горный камень» — самая логичная мнемоника урока.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Грамматика: четыре детали <span class="cn">注释</span></h2>
+
+  <h3>1 · 从而 cóng'ér</h3>
+  <div class="card blue">
+    <p>Союз между частями предложения: первая называет причину или способ, вторая — результат или цель. Книжное.</p>
+    <p class="cn-ex">比赛前做好思想准备可以减少运动员的压力，<span class="hl">从而</span>取得比赛的成功。</p>
+    <p class="cn-ex">在学习过程中及时复习，可以尽早发现和解决问题，加深理解，<span class="hl">从而</span>取得更好的成绩。</p>
+    <p class="cn-ex">济南的老百姓喝着这甜美的泉水，自然对它充满感激之情，<span class="hl">从而</span>也产生了许多关于泉水的美丽传说。</p>
+    <p class="tr" style="margin:0">Отличие от 因而 (урок 14): 因而 просто указывает следствие, 从而 подчёркивает, что первое действие стало <b>средством</b> для второго. Обе половины должны иметь одно подлежащее.</p>
+  </div>
+
+  <h3>2 · 于 yú</h3>
+  <div class="card jade">
+    <p>Книжный предлог, заменяющий сразу несколько: 在、从、对、向、比. Ставится <b>после</b> глагола, приклеиваясь к нему.</p>
+    <table style="margin:10px 0">
+      <tr><th style="width:26%">Значение</th><th>Пример</th></tr>
+      <tr><td>время (= 在)</td><td class="han">这家公司成立<b>于</b>1997年。</td></tr>
+      <tr><td>сфера (= 在…方面)</td><td class="han">这种药主要用<b>于</b>感冒的治疗。</td></tr>
+      <tr><td>место (= 从)</td><td class="han">济南的泉水，来自<b>于</b>济南市以南的广大山区。</td></tr>
+      <tr><td>объект (= 对)</td><td class="han">运动有助<b>于</b>健康。／ 只好求助<b>于</b>老同学。</td></tr>
+      <tr><td>сравнение (= 比)</td><td class="han">对方的水平远远高<b>于</b>自己。</td></tr>
+    </table>
+    <p class="tr" style="margin:0">Запоминать выгоднее целыми блоками: 成立于 · 来自于 · 用于 · 有助于 · 求助于 · 高于 / 低于 · 属于 · 在于. В сочинении любая такая пара сразу поднимает регистр.</p>
+  </div>
+
+  <h3>3 · 为 wéi</h3>
+  <div class="card red">
+    <p><span class="tag r">значение A</span> Глагол «стать, превратиться». Чаще всего в связке 变为 / 成为.</p>
+    <p class="cn-ex">济南市区的地下岩石<span class="hl">变为</span>了火成岩。</p>
+    <p class="cn-ex">压力也可以<span class="hl">变为</span>动力。</p>
+    <p><span class="tag r">значение B</span> «Считать чем-то, брать в качестве». Рамки 以……为…… и 称……为…….</p>
+    <p class="cn-ex">很多人会以收入多少<span class="hl">为</span>第一标准。</p>
+    <p class="cn-ex">在他看来，没有工作的生活就不能称其<span class="hl">为</span>生活。</p>
+    <p class="tr" style="margin:0">Тот же 为 (wéi, второй тон) работает и в книжном пассиве 为……所…… из урока 14. Не путайте с 为 (wèi, четвёртый тон) «для, ради»: 为了你, 为生活发愁.</p>
+  </div>
+
+  <h3>4 · глагол + 起来</h3>
+  <div class="card blue">
+    <p><span class="tag b">значение A</span> Собрать разрозненное воедино.</p>
+    <p class="cn-ex">地下水流到这里，碰到火成岩挡住了路，就<span class="hl">积蓄起来</span>，越积越多。</p>
+    <p class="cn-ex">渔夫想，这网一<span class="hl">收起来</span>，鱼一定可以装满整条船。</p>
+    <p><span class="tag b">значение B</span> Убрать из виду, спрятать.</p>
+    <p class="cn-ex">为了不被坏人抢走，他把壶埋入地下<span class="hl">藏了起来</span>。</p>
+    <p class="cn-ex">刘丽知道自己做得不对，<span class="hl">躲起来</span>不敢见我。</p>
+    <p class="tr" style="margin:0">Сравните с другими значениями 起来: начало действия (下起雨来), движение вверх (站起来), оценка при пробе (看起来很好). В этом уроке — только «свести вместе» и «убрать».</p>
+  </div>
+</section>
+
+<section>
+  <h2>Сочетаемость <span class="cn">词语搭配</span></h2>
+  <table>
+    <tr><th style="width:38%">Модель</th><th>Что подставляем</th></tr>
+    <tr><td class="han">充满 + O</td><td class="han">充满阳光 / 力量 / 希望 / 欢乐</td></tr>
+    <tr><td class="han">反映 + O</td><td class="han">反映生活 / 水平 / 情况 / 能力</td></tr>
+    <tr><td class="han">悠久的 + N</td><td class="han">悠久的文化 / 历史 / 传统</td></tr>
+    <tr><td class="han">独特的 + N</td><td class="han">独特的位置 / 看法 / 形状 / 建筑</td></tr>
+    <tr><td class="han">…… 地 + 描写</td><td class="han">生动（地）/ 正确地 / 认真地描写</td></tr>
+    <tr><td class="han">…… + 形成</td><td class="han">自然形成 / 逐渐形成</td></tr>
+    <tr><td class="han">晕 + 补语</td><td class="han">晕倒 / 晕过去</td></tr>
+    <tr><td class="han">救 + 补语</td><td class="han">救活 / 救起 / 救出 / 救过来</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>美丽 или 优美 <span class="cn">词语辨析</span></h2>
+  <p>Оба — прилагательные, и оба описывают пейзаж или обстановку (济南是一座风景美丽/优美的城市). Различий три:</p>
+  <table>
+    <tr><th style="width:50%">美丽 měilì</th><th>优美 yōuměi</th></tr>
+    <tr>
+      <td>Чаще про <b>внешность, вид, наряд</b>.<br><span class="han">她有一双美丽的大眼睛。</span></td>
+      <td>Чаще про <b>движение и образ</b> — то, что производит приятное впечатление.<br><span class="han">演员们的动作十分优美。</span></td>
+    </tr>
+    <tr>
+      <td>Описывает в основном <b>зрительное</b> впечатление.<br><span class="han">雨后天空中出现了一道美丽的彩虹。</span></td>
+      <td>Описывает и <b>незрительное</b>.<br><span class="han">一进院子就听到了丽丽那优美的歌声。</span></td>
+    </tr>
+    <tr>
+      <td>Бывает <b>переносным</b>: прекрасный, благородный.<br><span class="han">她有一颗美丽善良的心。</span></td>
+      <td>Переносного значения нет.</td>
+    </tr>
+  </table>
+  <p style="font-size:14.5px;color:var(--brick);margin:0">Быстрый тест: если речь о голосе, языке, движении или мелодии — 优美. Если о внешности, пейзаже или о душе в переносном смысле — 美丽.</p>
+</section>
+
+<section>
+  <h2>Проверьте себя <span class="cn">练习 · 答案</span></h2>
+  <p>Ответы к упражнениям со стр. 40–42 — сначала решите, потом раскройте.</p>
+
+  <details>
+    <summary>做一做 · 美丽 / 优美</summary>
+    <div class="in">
+      <p>① 这篇文章的语言生动<span class="k">优美</span>。（о языке — незрительное）<br>
+      ② 就看不到外面的<span class="k">美丽</span>和热闹。（здесь существительное «красота»）<br>
+      ③ 这里流传着许多<span class="k">美丽</span>的传说。（устойчиво: 美丽的传说）<br>
+      ④ 当地<span class="k">美丽／优美</span>的自然风景吸引了游客。（подходят оба）</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 1 · 选择合适的词语填空 （于 为 充满 从而 产生 描写）</summary>
+    <div class="in">
+      <p>① 这首诗主要<span class="k">描写</span>了一对年轻人的恋爱经历。<br>
+      ② 使我对公司的未来<span class="k">充满</span>信心。<br>
+      ③ 会对身体<span class="k">产生</span>不好的影响。<br>
+      ④ 活动改<span class="k">为</span>下周一了。（改为）<br>
+      ⑤ 刘经理毕业<span class="k">于</span>北京大学经济学院。<br>
+      ⑥ 正好就能发现问题的关键，<span class="k">从而</span>找到解决问题的答案。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 2 · 选择正确答案</summary>
+    <div class="in">
+      <p>① <span class="k">现在</span>是五点（B）— с точным временем 如今 не употребляется.<br>
+      ② 长得不是<span class="k">特别</span>漂亮（A）— здесь нужно наречие степени; 独特 — прилагательное.<br>
+      ③ 想当面向你表示<span class="k">感激</span>（B）— сильное чувство, а не формальное спасибо.<br>
+      ④ 护士小姐<span class="k">表扬</span>女儿很勇敢（B）— похвалить ребёнка; 赞美 слишком высоко.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 3 · 画线连接</summary>
+    <div class="in">
+      <p>(1) 打—晕 ／ 碰—见 ／ 救—活 ／ 抢—光<br>
+      (2) 悠久的—文化 ／ 善良的—性格 ／ 独特的—味道 ／ 广大的—农村</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>扩展 · 文学 （作品 诗 传说 神话 戏剧 风格 形象 魅力 生动）</summary>
+    <div class="in">
+      <p>① 这个电视剧取材于一个<span class="k">神话</span>传说。<br>
+      ② 咱家的装修<span class="k">风格</span>搭配这样的家具很合适。<br>
+      ③ 写下了这个<span class="k">生动</span>感人的神话故事。<br>
+      ④ 好听的嗓音会让一个人更有<span class="k">魅力</span>。</p>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Сочинение <span class="cn">节约每一滴水</span></h2>
+  <p>Задание урока: не менее 100 иероглифов об экономии воды. Образец на ~180 знаков — с 从而, 于 и 起来.</p>
+  <div class="card red">
+    <p class="cn-ex" style="line-height:2">济南有七百多个<span class="hl">天然</span>泉，可前些年由于气候干旱和人们不注意节水，很多泉都干了。直到2003年，趵突泉才再次流出了甜美的<span class="hl">泉水</span>。这件事让我明白，水并不是取之不尽的。<span class="hl">如今</span>我们打开水龙头就有水，<span class="hl">从而</span>忘了它有多<span class="hl">宝贵</span>。其实节约用水并不难：洗菜的水可以存<span class="hl">起来</span>浇花，刷牙时把水关上，一年就能省下不少。水<span class="hl">来自于</span>自然，也应该被我们好好对待。</p>
+  </div>
+  <h3>Готовые связки</h3>
+  <div class="card">
+    <ul style="margin-bottom:0">
+      <li class="cn-ex">由于……，很多……都干了</li>
+      <li class="cn-ex">这件事让我明白，……并不是取之不尽的</li>
+      <li class="cn-ex">如今我们……，从而忘了它有多宝贵</li>
+      <li class="cn-ex">其实……并不难：……，一年就能省下不少</li>
+      <li class="cn-ex">……来自于自然，也应该被我们好好对待</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Что делать до экзамена <span class="cn">复习计划</span></h2>
+  <ol class="route">
+    <li><b>Последний абзац — только по схеме.</b> Горы на юге → известняк с наклоном 30° → вода идёт на север → упирается в вулканическую породу → накапливается → в старом городе рельеф низкий → бьёт наружу. Семь шагов, и четырнадцать слов геологического гнезда становятся осмысленными.</li>
+    <li><b>Семейство -chéng целиком.</b> 形成 (5) · 造成 (13) · 组成 (14) · 成为 · 变为. Пять слов, которые экзамен ставит в один вопрос.</li>
+    <li><b>Блоки с 于 наизусть.</b> 成立于 · 来自于 · 用于 · 有助于 · 高于 · 属于 · 在于. Их незачем разбирать грамматически — достаточно помнить как готовые связки.</li>
+    <li><b>Пара 充满 и 冲.</b> Оба chōng, оба в этом уроке. 充 без ключа воды, 冲 с 冫.</li>
+    <li><b>Четвёртое значение 起来.</b> К «начать» и «вверх» добавьте «свести вместе» (积蓄起来) и «спрятать» (藏起来). В уроке 14 будет ещё одно — 关闭起大门.</li>
+  </ol>
+</section>
+
+<nav class="botnav"><a href="hsk5a-lesson-04.html"><span>Предыдущий урок</span>4 · 子路背米</a><a href="hsk5a-lesson-06.html"><span>Следующий урок</span>6 · 除夕的由来</a></nav>
+
+<footer>
+  Конспект по «HSK 标准教程 5（上）», урок 5 «济南的泉水», стр. 34–42 · Unit 2 谈古说今<br>
+  Разрез нарисован по описанию из текста: известняк с наклоном около тридцати градусов с юга на север, вулканическая порода под центром города и выход воды в низком старом городе.
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML = '<span class="w">' + z.dataset.w + '</span><span class="p">' + z.dataset.p +
+      '</span><span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){ zones.forEach(function(o){ o.classList.remove('on'); }); out.innerHTML = def; }
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+  document.querySelector('.geo-box svg').addEventListener('mouseleave', clear);
+})();
+</script>
+<script>
+(function(){
+  var LESSON = "05";
+  var DIRS = ["audio/", "", "mp3/", "media/", "аудио/", "audio/15/", "15/"];
+  var CAND = [];
+  DIRS.forEach(function(d){ CAND.push(d + "{hz}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{hz2}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{pyn}.mp3"); });
+
+  var patIn  = document.getElementById('ab-pat');
+  var status = document.getElementById('ab-status');
+  var btns   = Array.prototype.slice.call(document.querySelectorAll('.pb[data-hz]'));
+  var cur = null, curBtn = null, queue = null;
+
+  function pad(n){ n = String(n||''); return n.length === 1 ? '0'+n : n; }
+
+  function resolve(pat, b){
+    return pat
+      .replace(/\{hz2\}/g, b.dataset.hz2 || b.dataset.hz)
+      .replace(/\{hz\}/g,  b.dataset.hz)
+      .replace(/\{pyn\}/g, b.dataset.pyn)
+      .replace(/\{py\}/g,  b.dataset.py)
+      .replace(/\{num\}/g, pad(b.dataset.num))
+      .replace(/\{n\}/g,   b.dataset.num || '')
+      .replace(/\{L\}/g,   LESSON);
+  }
+
+  function setStatus(t, cls){
+    status.textContent = t || '';
+    status.className = 'ab-status' + (cls ? ' ' + cls : '');
+  }
+
+  function test(pat, b){
+    return new Promise(function(res){
+      var a = new Audio(), done = false;
+      function ok(){ if(!done){ done = true; res(true); } }
+      function no(){ if(!done){ done = true; res(false); } }
+      a.addEventListener('loadedmetadata', ok);
+      a.addEventListener('canplay', ok);
+      a.addEventListener('error', no);
+      a.preload = 'metadata';
+      a.src = encodeURI(resolve(pat, b));
+      setTimeout(no, 2500);
+    });
+  }
+
+  function stop(){
+    if(cur){ cur.pause(); cur = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn = null; }
+    queue = null;
+    document.querySelectorAll('.pball.playing').forEach(function(x){ x.classList.remove('playing'); });
+  }
+
+  /* проигрывание с запасными вариантами имени для этого слова */
+  function play(b, onEnd){
+    stop();
+    var tries = [patIn.value.trim()];
+    var alt = (b.dataset.hz2 && b.dataset.hz2 !== b.dataset.hz)
+      ? patIn.value.trim().replace('{hz}', '{hz2}') : null;
+    if(alt && tries.indexOf(alt) < 0) tries.push(alt);
+    CAND.forEach(function(p){ if(tries.indexOf(p) < 0) tries.push(p); });
+
+    b.classList.add('playing');
+    var i = 0;
+    (function attempt(){
+      if(i >= tries.length){
+        b.classList.remove('playing');
+        b.classList.add('missing');
+        b.title = 'Не найден файл для ' + b.dataset.hz;
+        setStatus('Не найден файл для ' + b.dataset.hz + ' — проверьте папку или шаблон.', 'bad');
+        if(onEnd) onEnd();
+        return;
+      }
+      var src = resolve(tries[i++], b);
+      var a = new Audio(encodeURI(src));
+      var started = false;
+      a.addEventListener('canplay', function(){ started = true; });
+      a.addEventListener('ended', function(){
+        b.classList.remove('playing');
+        if(cur === a){ cur = null; curBtn = null; }
+        if(onEnd) onEnd();
+      });
+      a.addEventListener('error', function(){
+        if(!started){ attempt(); }
+        else { b.classList.remove('playing'); if(onEnd) onEnd(); }
+      });
+      cur = a; curBtn = b;
+      b.classList.remove('missing');
+      a.play().catch(function(){});
+    })();
+  }
+
+  /* автопоиск папки при открытии */
+  function autodetect(quiet){
+    if(!btns.length) return;
+    if(!quiet) setStatus('Перебираю варианты…');
+    var i = 0;
+    (function next(){
+      if(i >= CAND.length){
+        setStatus(quiet
+          ? 'Папка с mp3 не найдена. Положите файлы в audio рядом с этим документом.'
+          : 'Ни один из типовых вариантов не подошёл. Впишите путь вручную.',
+          quiet ? '' : 'bad');
+        return;
+      }
+      var p = CAND[i++];
+      test(p, btns[0]).then(function(ok){
+        if(ok){
+          patIn.value = p;
+          document.querySelectorAll('.pb.missing').forEach(function(x){
+            x.classList.remove('missing'); x.title = '';
+          });
+          setStatus('Озвучка подключена: ' + p, 'ok');
+        } else next();
+      });
+    })();
+  }
+
+  document.getElementById('ab-auto').addEventListener('click', function(){ autodetect(false); });
+  document.getElementById('ab-test').addEventListener('click', function(){
+    if(!btns.length) return;
+    setStatus('Проверяю…');
+    test(patIn.value.trim(), btns[0]).then(function(ok){
+      setStatus((ok ? 'Файл найден: ' : 'Не найден: ') + resolve(patIn.value.trim(), btns[0]),
+                ok ? 'ok' : 'bad');
+    });
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(curBtn === b && cur){ stop(); return; }
+      play(b);
+    });
+  });
+
+  document.querySelectorAll('.pball').forEach(function(pb){
+    pb.addEventListener('click', function(){
+      if(pb.classList.contains('playing')){ stop(); return; }
+      var list = Array.prototype.slice.call(
+        pb.closest('.cluster').querySelectorAll('.pb[data-hz]'));
+      stop();
+      pb.classList.add('playing');
+      var i = 0;
+      queue = list;
+      (function step(){
+        if(queue !== list || i >= list.length){ pb.classList.remove('playing'); return; }
+        play(list[i++], function(){ setTimeout(step, 350); });
+      })();
+    });
+  });
+
+  autodetect(true);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 4 · 子路背米 · HSK 标准教程 5上</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#241f1a;
+  --paper:#ddd6c6;
+  --card:#f4efe3;
+  --brick:#6b6152;
+  --red:#9e3b2e;
+  --gold:#9a7b35;
+  --slate:#4d5a58;
+  --line:rgba(36,31,26,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:repeating-linear-gradient(90deg,transparent 0 31px,rgba(36,31,26,.04) 31px 32px)}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+header{padding:40px 0 26px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;color:var(--red);letter-spacing:-.03em}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:44px;line-height:1.06;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brick);margin-top:10px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+section{margin-top:56px}
+h2{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+
+.road-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px}
+.road-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone .fillable{transition:opacity .18s ease}
+.zone .fillable{opacity:.88}
+.zone:hover .fillable,.zone.on .fillable{opacity:1}
+.zone:focus{outline:none}
+.rlab{font-family:var(--han);font-size:14px;font-weight:600;fill:var(--ink);pointer-events:none}
+.rpin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.05em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:64px}
+.readout .w{font-family:var(--han);font-size:21px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:12.5px;color:var(--slate)}
+.readout .d{display:block;margin-top:5px;font-size:15px;line-height:1.55}
+.readout .hint{color:var(--brick);font-style:italic}
+
+.moves{list-style:none;padding:0;margin:0;counter-reset:mv}
+.moves li{counter-increment:mv;position:relative;padding:14px 0 14px 62px;border-bottom:1px solid var(--line)}
+.moves li::before{content:counter(mv,decimal-leading-zero);position:absolute;left:0;top:14px;
+  font-family:var(--mono);font-size:13px;font-weight:700;color:var(--red);letter-spacing:.05em}
+.moves b{font-family:var(--disp);font-size:18px;letter-spacing:.02em;display:block;margin-bottom:3px}
+.moves .kw{display:block;margin-top:6px;font-family:var(--han);font-size:15px;color:var(--brick)}
+
+.cluster{margin-top:26px}
+.cluster .why{font-size:14px;color:var(--brick);margin:-4px 0 14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--slate);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--gold);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.gold{border-left:4px solid var(--gold)}
+.card.slate{border-left:4px solid var(--slate)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--card);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.g{background:var(--gold)}
+.tag.s{background:var(--slate)}
+.tag.r{background:var(--red)}
+
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(36,31,26,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+.trap{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--slate);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+details{background:var(--card);border:1px solid var(--line);margin:10px 0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;font-family:var(--disp);
+  font-weight:700;font-size:22px;color:var(--red);width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  .lesson-no{font-size:64px}
+  h1{font-size:32px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index.html">&#8592; Все уроки 5A</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（上） · Unit 2 谈古说今 · Talking about the Past and the Present</div>
+  <div class="title-row">
+    <div class="lesson-no">04</div>
+    <h1>子路背米<span class="lat">Цзы Лу несёт рис · 711 字 · стр. 26–33</span></h1>
+  </div>
+  <div class="meta">
+    <span><b>40</b> новых слов + 4 имени</span>
+    <span><b>4</b> грамматические точки</span>
+    <span>ключ: <b>至今 · 顶 · ……得+不行 · 反而</b></span>
+  </div>
+</header>
+
+<section>
+  <p class="lede">Второй юнит открывается притчей из эпохи Чуньцю — о Цзы Лу, ученике Конфуция, который прошёл сто ли туда и обратно ради мешка риса для родителей. Самый длинный текст учебника (711 знаков), но устроен он просто: одна дорога, пройденная дважды. Поэтому опорой будет путь с верстовым столбом на отметке «百里».</p>
+  <p style="font-size:15px;color:var(--brick);margin:0"><b>Поворот в конце:</b> когда Цзы Лу стал чиновником в царстве Чу и получил 优厚的待遇, он 并没有因为物质条件好而感到欢喜，反而常常诚恳地说, что хотел бы делить хорошие дни с родителями — да их уже нет. Здесь же и четвёртая грамматическая точка урока.</p>
+</section>
+
+<section id="road">
+  <h2>Сто ли туда и обратно <span class="cn">百里背米</span></h2>
+  <div class="road-box">
+    <svg viewBox="0 0 620 330" role="img" aria-label="Схема пути Цзы Лу за рисом и обратно">
+      <line x1="20" y1="180" x2="600" y2="180" stroke="rgba(36,31,26,.28)" stroke-width="1.6"/>
+
+      <!-- дом -->
+      <g class="zone" tabindex="0" data-w="家里：农民 · 战争 · 满足 · 惭愧 · 决心 · 委屈" data-p="nóngmín · mǎnzú · cánkuì · juéxīn" data-d="子路的父母都是农民。由于连年的战争，家里生活非常困难. Однажды он услышал, как родители говорят: 活了大半辈子了，别说鱼肉，只要能饱饱地吃上一顿米饭，也就满足啦！ 子路听了，心里觉得十分惭愧, и 暗下决心：一定要让父母吃上米饭，不能再委屈他们了！">
+        <path class="fillable" d="M20 148 L62 116 L104 148 z" fill="#6b6152"/>
+        <rect class="fillable" x="30" y="148" width="64" height="32" fill="#9a8d76"/>
+        <text class="rlab" x="62" y="204" text-anchor="middle">家</text>
+        <text class="rpin" x="62" y="222" text-anchor="middle">农民 · 战争 · 困难</text>
+        <text class="rpin" x="62" y="238" text-anchor="middle">满足 · 惭愧 · 决心 · 委屈</text>
+      </g>
+
+      <!-- дорога туда -->
+      <g class="zone" tabindex="0" data-w="打听 · 百里之外 · 缺干活儿的人" data-p="dǎting" data-d="子路打听到百里之外有个有钱人，家里缺干活儿的人，决定去试一试. Глагол 打听 — «разузнать, расспросить»; отличается от 询问 официальностью: 打听 бытовое, 询问 формальное.">
+        <path class="fillable" d="M120 174 h130" stroke="#9e3b2e" stroke-width="2.6" fill="none" marker-end="url(#ar4)"/>
+        <defs><marker id="ar4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M0 0 L10 5 L0 10 z" fill="#9e3b2e"/></marker></defs>
+        <text class="rpin" x="185" y="164" text-anchor="middle">打听 · 决定去试一试</text>
+      </g>
+
+      <!-- верстовой столб -->
+      <rect x="258" y="140" width="24" height="40" fill="#241f1a"/>
+      <text class="rlab" x="270" y="132" text-anchor="middle" style="font-size:12px">百里</text>
+
+      <!-- работа -->
+      <g class="zone" tabindex="0" data-w="主人家：结实 · 勤奋 · 老实 · 银子" data-p="jiēshi · qínfèn · lǎoshi · yínzi" data-d="那家主人见他身体结实，就留下了他。子路干起活来十分勤奋，主人很喜欢这个小伙子. Через полгода 发现主人给的银子比他应该得到的多了许多，子路老老实实地告诉了主人. Хозяин ответил: 工钱没算错，你做事勤快，这是我给你加的奖金.">
+        <rect class="fillable" x="298" y="118" width="128" height="62" fill="#9a7b35" opacity=".22" stroke="#9a7b35" stroke-width="1.4"/>
+        <text class="rlab" x="362" y="142" text-anchor="middle">主人家 · 半年</text>
+        <text class="rpin" x="362" y="162" text-anchor="middle">结实 · 勤奋 · 老实 · 银子</text>
+      </g>
+
+      <!-- обратный путь -->
+      <g class="zone" tabindex="0" data-w="路过镇上：镇 · 背 · 后背 · 滑 · 甩 · 顶 · 扶 · 冻得不行" data-p="zhèn · bēi · huá · shuǎi · dǐng · fú" data-d="谢过主人，子路高兴地上路了。路过镇上，他买了一袋米、一块肉、两条鱼，背在后背上。天气非常寒冷，雪地很滑，子路不小心滑了一下，背上的米袋差点儿被甩出去。他顶着大雪往前走，扶着米袋的双手冻得不行，就停下来暖暖，再继续赶路. Здесь сразу две грамматические точки: 顶 и ……得不行.">
+        <path class="fillable" d="M442 174 h-130" stroke="#4d5a58" stroke-width="2.6" fill="none" marker-end="url(#ar4b)"/>
+        <defs><marker id="ar4b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M0 0 L10 5 L0 10 z" fill="#4d5a58"/></marker></defs>
+        <rect class="fillable" x="20" y="262" width="288" height="54" fill="#4d5a58" opacity=".2" stroke="#4d5a58" stroke-width="1.2"/>
+        <text class="rlab" x="164" y="284" text-anchor="middle" style="font-size:13px">大雪 · 雪地很滑</text>
+        <text class="rpin" x="164" y="303" text-anchor="middle">镇 · 背 · 后背 · 滑 · 甩 · 顶 · 扶 · 冻得不行</text>
+      </g>
+
+      <!-- Чу -->
+      <g class="zone" tabindex="0" data-w="楚国：去世 · 国君 · 本领 · 人才 · 官 · 物质 · 反而 · 诚恳 · 成就" data-p="qùshì · běnlǐng · réncái · fǎn'ér" data-d="后来子路的父母去世了，他也南下到了楚国。楚国国君觉得他很有本领，是个人才，就留他做了官，并给他很优厚的待遇。但他并没有因为物质条件好而感到欢喜，反而常常诚恳地说：“多么希望父母能和我一起过好日子！我现在有了一点儿成就，可他们已经不在了……”">
+        <rect class="fillable" x="448" y="118" width="152" height="62" fill="#9e3b2e" opacity=".18" stroke="#9e3b2e" stroke-width="1.4"/>
+        <text class="rlab" x="524" y="142" text-anchor="middle">楚国 · 做了官</text>
+        <text class="rpin" x="524" y="162" text-anchor="middle">国君 · 本领 · 人才 · 优厚待遇</text>
+        <text class="rpin" x="524" y="204" text-anchor="middle">物质条件好 → 反而不欢喜</text>
+      </g>
+
+      <!-- мораль -->
+      <g class="zone" tabindex="0" data-w="古话：古代 · 孝顺 · 美德 · 占 · 食物" data-p="gǔdài · xiàoshùn · měidé · zhàn" data-d="中国古代有句话叫“百善孝为先”，意思是说，孝顺父母是各种美德中占第一位的。子路为了让父母吃到较好的食物，不怕辛苦，这种做法确实值得我们学习.">
+        <rect class="fillable" x="324" y="262" width="276" height="54" fill="#9e3b2e"/>
+        <text class="rlab" x="462" y="284" text-anchor="middle" fill="#f4efe3" style="font-size:13px">百善孝为先</text>
+        <text class="rpin" x="462" y="303" text-anchor="middle" fill="#e0cfc4">古代 · 孝顺 · 美德 · 占第一位 · 食物</text>
+      </g>
+
+      <!--團圓 -->
+      <g class="zone" tabindex="0" data-w="到家：团圆 · 一顿团圆饭" data-p="tuányuán" data-d="终于到家了，见到父母，子路把给他们买的东西及剩下的工钱都交给了他们。一家人高高兴兴地生火做饭，饱饱地吃了顿团圆饭. Счётное слово 顿 — то же, что в уроке 3 (一顿海鲜).">
+        <circle class="fillable" cx="270" cy="222" r="22" fill="#9a7b35" opacity=".4"/>
+        <text class="rpin" x="270" y="226" text-anchor="middle">团圆饭</text>
+      </g>
+    </svg>
+    <div class="readout" id="readout">
+      <span class="hint">Наведите курсор или коснитесь любого отрезка пути — появятся слова этого эпизода.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Текст в четырёх кадрах <span class="cn">课文复述</span></h2>
+  <p style="font-size:14.5px;color:var(--brick)">Четыре блока учебника (стр. 32).</p>
+  <ol class="moves">
+    <li>
+      <b>Цзы Лу возвращается домой</b>
+      Родители его были 农民, и 由于连年的战争，家里生活非常困难. Он услышал их разговор: 活了大半辈子了，别说鱼肉，只要能饱饱地吃上一顿米饭，也就满足啦！ 子路听了，心里觉得十分惭愧, и 暗下决心：一定要让父母吃上米饭，不能再委屈他们了！
+      <span class="kw">农民 · 战争 · 满足 · 惭愧 · 决心 · 委屈</span>
+    </li>
+    <li>
+      <b>Работа за сто ли от дома</b>
+      子路打听到百里之外有个有钱人，家里缺干活儿的人，决定去试一试。那家主人见他身体结实，就留下了他。子路干起活来十分勤奋. Через полгода при расчёте он заметил, что 银子比他应该得到的多了许多, и 老老实实地告诉了主人. Тот ответил: 工钱没算错，你做事勤快，这是我给你加的奖金。
+      <span class="kw">打听 · 主人 · 结实 · 勤奋 · 银子 · 老实</span>
+    </li>
+    <li>
+      <b>Дорога домой</b>
+      路过镇上，他买了一袋米、一块肉、两条鱼，背在后背上。天气非常寒冷，雪地很滑，子路不小心滑了一下，背上的米袋差点儿被甩出去。他顶着大雪往前走，扶着米袋的双手冻得不行，就停下来暖暖，再继续赶路。终于到家了 — и вся семья 饱饱地吃了顿团圆饭.
+      <span class="kw">镇 · 背 · 后背 · 滑 · 甩 · 顶 · 扶 · ……得不行 · 团圆</span>
+    </li>
+    <li>
+      <b>Чу и мораль</b>
+      后来子路的父母去世了，他也南下到了楚国。楚国国君觉得他很有本领，是个人才，就留他做了官，并给他很优厚的待遇。但他并没有因为物质条件好而感到欢喜，反而常常诚恳地说：多么希望父母能和我一起过好日子！我现在有了一点儿成就，可他们已经不在了. 中国古代有句话叫“百善孝为先”，意思是说，孝顺父母是各种美德中占第一位的。
+      <span class="kw">去世 · 国君 · 本领 · 人才 · 官 · 物质 · 反而 · 诚恳 · 成就 · 古代 · 孝顺 · 美德 · 占 · 食物</span>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <h2>40 слов по гнёздам <span class="cn">生词</span></h2>
+  <p style="font-size:14px;color:var(--brick)"><span class="star">★</span> — слово сверх программы HSK 5 (в учебнике со звёздочкой).</p>
+
+  <div class="audiobar" id="audiobar">
+    <div class="ab-t">Озвучка слов</div>
+    <div class="ab-row">
+      <input id="ab-pat" type="text" spellcheck="false" value="audio/{hz}.mp3" aria-label="Шаблон пути к mp3">
+      <button type="button" id="ab-auto">Подобрать</button>
+      <button type="button" id="ab-test">Проверить</button>
+    </div>
+    <div class="ab-status" id="ab-status"></div>
+    <div class="ab-note">
+      По умолчанию ищутся файлы вида <code>иероглиф.mp3</code> — сначала в папке
+      <code>audio</code> рядом с этим файлом, потом прямо рядом с ним. Нужная папка
+      определяется сама при открытии страницы. Если ваши mp3 лежат где-то ещё, впишите путь
+      вручную: доступны подстановки <code>{hz}</code> иероглифы, <code>{py}</code> пиньинь с
+      тонами, <code>{pyn}</code> пиньинь без диакритики, <code>{num}</code> номер слова в списке
+      учебника, <code>{L}</code> номер урока. Работает только если открыть файл у себя на диске —
+      в предпросмотре доступа к вашим папкам нет.
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>I. Бедность и решимость<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Первый абзац. 满足、决心、委屈 — базовые слова для любого текста про чувства и намерения.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">从前</span><span class="py">cóngqián</span><button class="pb" type="button" data-hz="从前" data-hz2="从前" data-py="cóngqián" data-pyn="congqian" data-num="2" aria-label="Прослушать 从前" title="Прослушать 从前">&#9654;</button><span class="ru">некогда, в прежние времена</span><span class="ex">从前有个人…… (зачин сказки)</span></div>
+      <div class="w-item"><span class="hz">时期</span><span class="py">shíqī</span><button class="pb" type="button" data-hz="时期" data-hz2="时期" data-py="shíqī" data-pyn="shiqi" data-num="3" aria-label="Прослушать 时期" title="Прослушать 时期">&#9654;</button><span class="ru">период, эпоха</span><span class="ex">春秋时期</span></div>
+      <div class="w-item"><span class="hz">农民</span><span class="py">nóngmín</span><button class="pb" type="button" data-hz="农民" data-hz2="农民" data-py="nóngmín" data-pyn="nongmin" data-num="7" aria-label="Прослушать 农民" title="Прослушать 农民">&#9654;</button><span class="ru">крестьянин</span></div>
+      <div class="w-item"><span class="hz">战争</span><span class="py">zhànzhēng</span><button class="pb" type="button" data-hz="战争" data-hz2="战争" data-py="zhànzhēng" data-pyn="zhanzheng" data-num="8" aria-label="Прослушать 战争" title="Прослушать 战争">&#9654;</button><span class="ru">война</span><span class="ex">连年的战争 / 阻止战争</span></div>
+      <div class="w-item"><span class="hz">满足</span><span class="py">mǎnzú</span><button class="pb" type="button" data-hz="满足" data-hz2="满足" data-py="mǎnzú" data-pyn="manzu" data-num="9" aria-label="Прослушать 满足" title="Прослушать 满足">&#9654;</button><span class="ru">довольствоваться; удовлетворять</span><span class="ex">满足要求 / 需要 / 条件</span></div>
+      <div class="w-item"><span class="hz">惭愧</span><span class="py">cánkuì</span><button class="pb" type="button" data-hz="惭愧" data-hz2="惭愧" data-py="cánkuì" data-pyn="cankui" data-num="10" aria-label="Прослушать 惭愧" title="Прослушать 惭愧">&#9654;</button><span class="ru">стыдно, совестно</span><span class="ex">觉得十分惭愧</span></div>
+      <div class="w-item"><span class="hz">决心</span><span class="py">juéxīn</span><button class="pb" type="button" data-hz="决心" data-hz2="决心" data-py="juéxīn" data-pyn="juexin" data-num="11" aria-label="Прослушать 决心" title="Прослушать 决心">&#9654;</button><span class="ru">решимость; решиться</span><span class="ex">下决心 / 有决心 / 表决心</span></div>
+      <div class="w-item"><span class="hz">委屈</span><span class="py">wěiqu</span><button class="pb" type="button" data-hz="委屈" data-hz2="委屈" data-py="wěiqu" data-pyn="weiqu" data-num="12" aria-label="Прослушать 委屈" title="Прослушать 委屈">&#9654;</button><span class="ru">обижать; чувствовать себя обиженным</span><span class="ex">委屈地说 / 委屈了他们</span></div>
+      <div class="w-item"><span class="hz">食物</span><span class="py">shíwù</span><button class="pb" type="button" data-hz="食物" data-hz2="食物" data-py="shíwù" data-pyn="shiwu" data-num="40" aria-label="Прослушать 食物" title="Прослушать 食物">&#9654;</button><span class="ru">пища, еда</span><span class="ex">较好的食物</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>II. Работа у хозяина<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Гнездо про характер и труд. 勤奋 и 老实 постоянно встречаются в описаниях людей.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">打听</span><span class="py">dǎting</span><button class="pb" type="button" data-hz="打听" data-hz2="打听" data-py="dǎting" data-pyn="dating" data-num="13" aria-label="Прослушать 打听" title="Прослушать 打听">&#9654;</button><span class="ru">разузнать, расспросить</span><span class="ex">暗中打听一下</span></div>
+      <div class="w-item"><span class="hz">主人</span><span class="py">zhǔrén</span><button class="pb" type="button" data-hz="主人" data-hz2="主人" data-py="zhǔrén" data-pyn="zhuren" data-num="14" aria-label="Прослушать 主人" title="Прослушать 主人">&#9654;</button><span class="ru">хозяин</span></div>
+      <div class="w-item"><span class="hz">结实</span><span class="py">jiēshi</span><button class="pb" type="button" data-hz="结实" data-hz2="结实" data-py="jiēshi" data-pyn="jieshi" data-num="15" aria-label="Прослушать 结实" title="Прослушать 结实">&#9654;</button><span class="ru">крепкий, прочный</span><span class="ex">身体结实 / 结实的桌子</span></div>
+      <div class="w-item"><span class="hz">勤奋</span><span class="py">qínfèn</span><button class="pb" type="button" data-hz="勤奋" data-hz2="勤奋" data-py="qínfèn" data-pyn="qinfen" data-num="16" aria-label="Прослушать 勤奋" title="Прослушать 勤奋">&#9654;</button><span class="ru">усердный, прилежный</span><span class="ex">勤奋（地）学习 / 工作 / 干活儿</span></div>
+      <div class="w-item"><span class="hz">老实</span><span class="py">lǎoshi</span><button class="pb" type="button" data-hz="老实" data-hz2="老实" data-py="lǎoshi" data-pyn="laoshi" data-num="18" aria-label="Прослушать 老实" title="Прослушать 老实">&#9654;</button><span class="ru">честный, простодушный; смирно</span><span class="ex">老老实实地告诉 / 你老实点儿</span></div>
+      <div class="w-item"><span class="hz">银（子）</span><span class="py">yín(zi)</span><button class="pb" type="button" data-hz="银" data-hz2="银子" data-py="yín" data-pyn="yin" data-num="17" aria-label="Прослушать 银" title="Прослушать 银">&#9654;</button><span class="ru">серебро, серебряные деньги</span></div>
+      <div class="w-item"><span class="hz">镇</span><span class="py">zhèn</span><span class="star">★</span><button class="pb" type="button" data-hz="镇" data-hz2="镇" data-py="zhèn" data-pyn="zhen" data-num="19" aria-label="Прослушать 镇" title="Прослушать 镇">&#9654;</button><span class="ru">посёлок, городок</span><span class="ex">路过镇上</span></div>
+      <div class="w-item"><span class="hz">流传</span><span class="py">liúchuán</span><button class="pb" type="button" data-hz="流传" data-hz2="流传" data-py="liúchuán" data-pyn="liuchuan" data-num="4" aria-label="Прослушать 流传" title="Прослушать 流传">&#9654;</button><span class="ru">передаваться, ходить (о преданиях)</span><span class="ex">流传至今 / 流传了一千年</span></div>
+      <div class="w-item"><span class="hz">至今</span><span class="py">zhìjīn</span><button class="pb" type="button" data-hz="至今" data-hz2="至今" data-py="zhìjīn" data-pyn="zhijin" data-num="5" aria-label="Прослушать 至今" title="Прослушать 至今">&#9654;</button><span class="ru">до сих пор, по сей день</span><span class="ex">从古至今 / 流传至今</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>III. Дорога в снегу<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Восемь физических глаголов подряд. Как и в первом уроке, их легче запомнить, проиграв движение.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">背</span><span class="py">bēi</span><button class="pb" type="button" data-hz="背" data-hz2="背" data-py="bēi" data-pyn="bei" data-num="1" aria-label="Прослушать 背" title="Прослушать 背">&#9654;</button><span class="ru">нести на спине</span><span class="ex">背起来 / 背在…… / 背不动</span></div>
+      <div class="w-item"><span class="hz">后背</span><span class="py">hòubèi</span><button class="pb" type="button" data-hz="后背" data-hz2="后背" data-py="hòubèi" data-pyn="houbei" data-num="20" aria-label="Прослушать 后背" title="Прослушать 后背">&#9654;</button><span class="ru">спина</span><span class="ex">背在后背上（背 здесь bèi!）</span></div>
+      <div class="w-item"><span class="hz">滑</span><span class="py">huá</span><button class="pb" type="button" data-hz="滑" data-hz2="滑" data-py="huá" data-pyn="hua" data-num="21" aria-label="Прослушать 滑" title="Прослушать 滑">&#9654;</button><span class="ru">скользкий; поскользнуться</span><span class="ex">雪地很滑 / 滑了一下</span></div>
+      <div class="w-item"><span class="hz">甩</span><span class="py">shuǎi</span><button class="pb" type="button" data-hz="甩" data-hz2="甩" data-py="shuǎi" data-pyn="shuai" data-num="22" aria-label="Прослушать 甩" title="Прослушать 甩">&#9654;</button><span class="ru">отбросить, сбросить, махнуть</span><span class="ex">差点儿被甩出去</span></div>
+      <div class="w-item"><span class="hz">顶</span><span class="py">dǐng</span><button class="pb" type="button" data-hz="顶" data-hz2="顶" data-py="dǐng" data-pyn="ding" data-num="23" aria-label="Прослушать 顶" title="Прослушать 顶">&#9654;</button><span class="ru">идти навстречу; макушка; сч. сл.</span><span class="ex">顶着大雪 / 山顶 / 一顶帽子</span></div>
+      <div class="w-item"><span class="hz">扶</span><span class="py">fú</span><button class="pb" type="button" data-hz="扶" data-hz2="扶" data-py="fú" data-pyn="fu" data-num="24" aria-label="Прослушать 扶" title="Прослушать 扶">&#9654;</button><span class="ru">поддерживать рукой, придерживать</span><span class="ex">扶一下 / 扶一把 / 扶老人</span></div>
+      <div class="w-item"><span class="hz">不行</span><span class="py">bùxíng</span><button class="pb" type="button" data-hz="不行" data-hz2="不行" data-py="bùxíng" data-pyn="buxing" data-num="25" aria-label="Прослушать 不行" title="Прослушать 不行">&#9654;</button><span class="ru">ужасно, донельзя (после 得)</span><span class="ex">冻得不行 / 累得不行</span></div>
+      <div class="w-item"><span class="hz">团圆</span><span class="py">tuányuán</span><span class="star">★</span><button class="pb" type="button" data-hz="团圆" data-hz2="团圆" data-py="tuányuán" data-pyn="tuanyuan" data-num="26" aria-label="Прослушать 团圆" title="Прослушать 团圆">&#9654;</button><span class="ru">воссоединяться (о семье)</span><span class="ex">团圆饭 / 一家团圆</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>IV. Чу, должность и мораль<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Последний абзац плюс 反而 — самая экзаменуемая точка урока.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">去世</span><span class="py">qùshì</span><button class="pb" type="button" data-hz="去世" data-hz2="去世" data-py="qùshì" data-pyn="qushi" data-num="27" aria-label="Прослушать 去世" title="Прослушать 去世">&#9654;</button><span class="ru">скончаться (вежливо)</span></div>
+      <div class="w-item"><span class="hz">国君</span><span class="py">guójūn</span><span class="star">★</span><button class="pb" type="button" data-hz="国君" data-hz2="国君" data-py="guójūn" data-pyn="guojun" data-num="28" aria-label="Прослушать 国君" title="Прослушать 国君">&#9654;</button><span class="ru">государь, правитель</span></div>
+      <div class="w-item"><span class="hz">本领</span><span class="py">běnlǐng</span><button class="pb" type="button" data-hz="本领" data-hz2="本领" data-py="běnlǐng" data-pyn="benling" data-num="29" aria-label="Прослушать 本领" title="Прослушать 本领">&#9654;</button><span class="ru">способности, умение</span><span class="ex">很有本领 / 本领高强</span></div>
+      <div class="w-item"><span class="hz">人才</span><span class="py">réncái</span><button class="pb" type="button" data-hz="人才" data-hz2="人才" data-py="réncái" data-pyn="rencai" data-num="30" aria-label="Прослушать 人才" title="Прослушать 人才">&#9654;</button><span class="ru">талант, ценный работник</span><span class="ex">缺乏人才</span></div>
+      <div class="w-item"><span class="hz">官</span><span class="py">guān</span><button class="pb" type="button" data-hz="官" data-hz2="官" data-py="guān" data-pyn="guan" data-num="31" aria-label="Прослушать 官" title="Прослушать 官">&#9654;</button><span class="ru">чиновник, должностное лицо</span><span class="ex">做了官 / 当官</span></div>
+      <div class="w-item"><span class="hz">物质</span><span class="py">wùzhì</span><button class="pb" type="button" data-hz="物质" data-hz2="物质" data-py="wùzhì" data-pyn="wuzhi" data-num="32" aria-label="Прослушать 物质" title="Прослушать 物质">&#9654;</button><span class="ru">материальный; вещество</span><span class="ex">物质条件 ↔ 精神</span></div>
+      <div class="w-item"><span class="hz">反而</span><span class="py">fǎn'ér</span><button class="pb" type="button" data-hz="反而" data-hz2="反而" data-py="fǎn'ér" data-pyn="faner" data-num="33" aria-label="Прослушать 反而" title="Прослушать 反而">&#9654;</button><span class="ru">наоборот, напротив</span><span class="ex">不但没有……，反而……</span></div>
+      <div class="w-item"><span class="hz">诚恳</span><span class="py">chéngkěn</span><button class="pb" type="button" data-hz="诚恳" data-hz2="诚恳" data-py="chéngkěn" data-pyn="chengken" data-num="34" aria-label="Прослушать 诚恳" title="Прослушать 诚恳">&#9654;</button><span class="ru">искренний, сердечный</span><span class="ex">诚恳的态度</span></div>
+      <div class="w-item"><span class="hz">成就</span><span class="py">chéngjiù</span><button class="pb" type="button" data-hz="成就" data-hz2="成就" data-py="chéngjiù" data-pyn="chengjiu" data-num="35" aria-label="Прослушать 成就" title="Прослушать 成就">&#9654;</button><span class="ru">достижение, успех</span><span class="ex">有了一点儿成就</span></div>
+      <div class="w-item"><span class="hz">古代</span><span class="py">gǔdài</span><button class="pb" type="button" data-hz="古代" data-hz2="古代" data-py="gǔdài" data-pyn="gudai" data-num="36" aria-label="Прослушать 古代" title="Прослушать 古代">&#9654;</button><span class="ru">древность</span><span class="ex">中国古代 ↔ 现代</span></div>
+      <div class="w-item"><span class="hz">孝顺</span><span class="py">xiàoshùn</span><button class="pb" type="button" data-hz="孝顺" data-hz2="孝顺" data-py="xiàoshùn" data-pyn="xiaoshun" data-num="37" aria-label="Прослушать 孝顺" title="Прослушать 孝顺">&#9654;</button><span class="ru">почтительный к родителям</span><span class="ex">孝顺父母</span></div>
+      <div class="w-item"><span class="hz">孝敬</span><span class="py">xiàojìng</span><span class="star">★</span><button class="pb" type="button" data-hz="孝敬" data-hz2="孝敬" data-py="xiàojìng" data-pyn="xiaojing" data-num="6" aria-label="Прослушать 孝敬" title="Прослушать 孝敬">&#9654;</button><span class="ru">почитать старших, заботиться о них</span></div>
+      <div class="w-item"><span class="hz">美德</span><span class="py">měidé</span><span class="star">★</span><button class="pb" type="button" data-hz="美德" data-hz2="美德" data-py="měidé" data-pyn="meide" data-num="38" aria-label="Прослушать 美德" title="Прослушать 美德">&#9654;</button><span class="ru">добродетель</span></div>
+      <div class="w-item"><span class="hz">占</span><span class="py">zhàn</span><button class="pb" type="button" data-hz="占" data-hz2="占" data-py="zhàn" data-pyn="zhan" data-num="39" aria-label="Прослушать 占" title="Прослушать 占">&#9654;</button><span class="ru">занимать, составлять</span><span class="ex">占第一位 / 占一半 / 占座位</span></div>
+      <div class="w-item"><span class="hz">子路 / 孔子</span><span class="py">Zǐlù / Kǒngzǐ</span><button class="pb" type="button" data-hz="子路" data-hz2="子路" data-py="Zǐlù" data-pyn="Zilu" data-num="" aria-label="Прослушать 子路" title="Прослушать 子路">&#9654;</button><span class="ru">Цзы Лу, ученик Конфуция; Конфуций</span></div>
+      <div class="w-item"><span class="hz">春秋 / 楚国</span><span class="py">Chūnqiū / Chǔguó</span><button class="pb" type="button" data-hz="春秋" data-hz2="春秋" data-py="Chūnqiū" data-pyn="Chunqiu" data-num="" aria-label="Прослушать 春秋" title="Прослушать 春秋">&#9654;</button><span class="ru">эпоха Чуньцю (770–476 до н. э.); царство Чу</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>На слух: где рука ошибётся <span class="cn">听写陷阱</span></h2>
+  <p>Главная ловушка урока — <b>многочтимый 背</b>: в одном предложении он встречается дважды и читается по-разному.</p>
+
+  <div class="warn">Один иероглиф, два чтения — в одной фразе</div>
+  <div class="trap">
+    <div><span class="hz">背</span><span class="py">bēi</span><span class="n">нести на спине — 背米, 背起来. Первый тон</span></div>
+    <div><span class="hz">后背</span><span class="py">hòubèi</span><span class="n">спина — существительное, четвёртый тон. В тексте: 背在后背上</span></div>
+  </div>
+  <p class="tr">Третье чтение того же знака — 背 bèi «учить наизусть»: 背课文, 背单词. Всего одно написание и три употребления.</p>
+
+  <div class="warn">Пары, которые путаются</div>
+  <table class="pair-tbl">
+    <tr><th>Пара</th><th>Как развести</th></tr>
+    <tr><td>老实 lǎoshi<br>诚实 chéngshí<br>诚恳 chéngkěn</td><td>老实 — простодушный, послушный, «без фокусов» (你老实点儿). 诚实 — честный, не лжёт. 诚恳 — искренний по тону, о манере говорить. Упражнение 2 проверяет 老实 против 诚实.</td></tr>
+    <tr><td>从前 cóngqián<br>以前 yǐqián</td><td>从前 — «давным-давно», зачин рассказа, без точки отсчёта. 以前 — «до того как», с привязкой ко времени: 10点以前. Упражнение 2 требует именно 以前.</td></tr>
+    <tr><td>满足 mǎnzú<br>满意 mǎnyì</td><td>Полный разбор ниже, в 辨析. Коротко: 满足 — «больше не надо», 满意 — «совпало с ожиданием».</td></tr>
+    <tr><td>反而 fǎn'ér<br>而且 érqiě<br>因而 yīn'ér (14)</td><td>反而 — вопреки ожидаемому. 而且 — добавление в ту же сторону. 因而 — следствие. Упражнение 2 проверяет 反而 против 而且.</td></tr>
+    <tr><td>结实 jiēshi<br>结束 jiéshù</td><td>结 в 结实 — первый тон и нейтральный второй слог; в 结束 — второй тон.</td></tr>
+    <tr><td>本领 běnlǐng<br>本来 běnlái<br>领导 lǐngdǎo</td><td>本领 склеено из двух знакомых знаков, но значит «умение, способности», а не «изначально» и не «руководить».</td></tr>
+    <tr><td>占 zhàn<br>站 zhàn</td><td>Полные омофоны. 占 — занимать место или долю, 站 — стоять, станция.</td></tr>
+    <tr><td>甩 shuǎi<br>摔 shuāi</td><td>甩 — отбросить, стряхнуть (третий тон). 摔 — упасть, разбить (первый тон). Графически тоже близки.</td></tr>
+  </table>
+
+  <div class="warn">Тяжёлые для руки иероглифы</div>
+  <div class="card">
+    <ul style="margin-bottom:0">
+      <li><b>惭愧</b> — оба знака с 忄: стыд живёт в сердце.</li>
+      <li><b>勤奋</b> — 勤 = 堇 + 力, 奋 = 大 + 田. Оба про усилие.</li>
+      <li><b>甩</b> — 5 черт, похоже на 用, но последняя черта уходит крюком влево.</li>
+      <li><b>扶</b> = 扌 + 夫; <b>顶</b> = 丁 + 页 (ключ 页 «голова» — отсюда «макушка»).</li>
+      <li><b>滑</b> = 氵 + 骨 «кость» — лёд скользкий, как мокрая кость.</li>
+      <li><b>德</b> (美德) = 彳 + 十 + 罒 + 一 + 心. Внутри есть горизонтальная черта над 心 — её часто забывают.</li>
+      <li><b>恳</b> (诚恳) = 艮 + 心; <b>愧</b> = 忄 + 鬼.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Грамматика: четыре детали <span class="cn">注释</span></h2>
+
+  <h3>1 · 至今 zhìjīn</h3>
+  <div class="card gold">
+    <p>Наречие «до сих пор, по сей день». Стоит в начале части предложения или перед глаголом.</p>
+    <p class="cn-ex">我在北京出生、长大，<span class="hl">至今</span>还没离开过呢。</p>
+    <p class="cn-ex"><span class="hl">至今</span>，很多国家并没有规定什么才是健康食品。</p>
+    <p class="cn-ex">流传<span class="hl">至今</span>的“百里背米”讲的就是他孝敬父母的故事。</p>
+    <p class="tr" style="margin:0">Устойчивые рамки: 从古至今 · 流传至今 · 至今为止. Часто рядом стоит 还 или 仍然.</p>
+  </div>
+
+  <h3>2 · 顶 dǐng — четыре роли</h3>
+  <div class="card red">
+    <p><span class="tag r">существительное</span> Макушка, верхняя точка: 头顶, 山顶.</p>
+    <p class="cn-ex">画上是一座山，<span class="hl">山顶</span>有一个人往下看。</p>
+    <p><span class="tag r">глагол · головой</span> Действие головой — поднять, упереться.</p>
+    <p class="cn-ex">院子里有两只羊正在打架，它们头<span class="hl">顶</span>着头，角对着角。</p>
+    <p><span class="tag r">глагол · навстречу</span> Идти против чего-то, превозмогать.</p>
+    <p class="cn-ex">天气非常寒冷，子路<span class="hl">顶</span>着大雪往前走。</p>
+    <p class="cn-ex">您为什么要<span class="hl">顶</span>着压力来做这件事呢？</p>
+    <p><span class="tag r">счётное слово</span> Для шляп и всего зонтообразного.</p>
+    <p class="cn-ex" style="margin-bottom:0">我这<span class="hl">顶</span>新帽子怎么样？ ／ 这项计划将成为儿童健康的一<span class="hl">顶</span>保护伞。</p>
+  </div>
+
+  <h3>3 · ……得 + 不行</h3>
+  <div class="card slate">
+    <p>Дополнение степени: «до невозможности». Однотипные варианты — 得很 и 得不得了 (последнее было в уроке 2).</p>
+    <p class="cn-ex">扶着米袋的双手<span class="hl">冻得不行</span>，就停下来暖暖。</p>
+    <p class="cn-ex">这个地方这么热闹，孩子们<span class="hl">高兴得不得了</span>！</p>
+    <p class="cn-ex">他心里<span class="hl">烦得很</span>，自言自语地抱怨：“怎么还有那么远啊！”</p>
+    <p class="tr" style="margin:0">Все три ставятся <b>после 得</b> и только с прилагательными или глаголами состояния: 累得不行, 疼得很, 急得不得了. ✗很冻得不行 — усилитель стоит либо до, либо после, но не оба сразу.</p>
+  </div>
+
+  <h3>4 · 反而 fǎn'ér</h3>
+  <div class="card red">
+    <p>Наречие: вторая часть предложения идёт вразрез с тем, чего ждали от первой.</p>
+    <p class="cn-ex">这样不但不能提高他们的阅读能力，<span class="hl">反而</span>有可能降低他们的阅读兴趣和热情。</p>
+    <p class="cn-ex">大城市的生活虽然很精彩，但一辈子生活在农村的父母<span class="hl">反而</span>会不适应。</p>
+    <p class="cn-ex">但他并没有因为物质条件好而感到欢喜，<span class="hl">反而</span>常常诚恳地说……</p>
+    <p class="tr" style="margin:0">Частая полная рамка: <b>不但没有……，反而……</b>. Позиция — после подлежащего второй части. Не путайте с 而且: 而且 добавляет в ту же сторону, 反而 разворачивает.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Сочетаемость <span class="cn">词语搭配</span></h2>
+  <table>
+    <tr><th style="width:38%">Модель</th><th>Что подставляем</th></tr>
+    <tr><td class="han">下 / 有 / 表（示）+ 决心</td><td class="han">下决心 / 有决心 / 表决心</td></tr>
+    <tr><td class="han">占 + O</td><td class="han">占一半 / 多数 / 总数的百分之八十 / 座位 / 地方 / 便宜</td></tr>
+    <tr><td class="han">诚恳的 + N</td><td class="han">诚恳的态度</td></tr>
+    <tr><td class="han">美味的 / 精美的 + N</td><td class="han">美味的食物 / 精美的食物</td></tr>
+    <tr><td class="han">委屈地 + V</td><td class="han">委屈地说 / 委屈地哭</td></tr>
+    <tr><td class="han">勤奋（地）+ V</td><td class="han">勤奋学习 / 工作 / 干活儿</td></tr>
+    <tr><td class="han">背 + 补语</td><td class="han">背起来 / 背在…… / 背不动</td></tr>
+    <tr><td class="han">流传 + 补语</td><td class="han">流传至今 / 流传到…… / 流传了一千年</td></tr>
+    <tr><td class="han">扶 + 数量词</td><td class="han">扶一下 / 扶一把</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>满足 или 满意 <span class="cn">词语辨析</span></h2>
+  <p>Оба — глаголы «чувствовать, что достаточно; желаемое исполнилось», и часто взаимозаменяемы (我对现在的生活感到非常满足/满意). Различий три:</p>
+  <table>
+    <tr><th style="width:50%">满足 mǎnzú</th><th>满意 mǎnyì</th></tr>
+    <tr>
+      <td>Подчёркивает, что <b>больше ничего не нужно</b>.<br><span class="han">只要能饱饱地吃上一顿米饭，也就满足啦！</span></td>
+      <td>Подчёркивает, что <b>совпало с ожиданием</b>.<br><span class="han">老师说她对我这次的作业非常满意。</span></td>
+    </tr>
+    <tr>
+      <td>Обычно <b>не бывает</b> определением или обстоятельством.</td>
+      <td>Бывает и тем, и другим.<br><span class="han">他找到了一份满意的工作。</span></td>
+    </tr>
+    <tr>
+      <td>Сочетается с 需要、要求、条件、愿望 как с прямым дополнением.<br><span class="han">它不能满足我们的需要。</span></td>
+      <td>Прямое дополнение берёт редко — обычно через 对……满意.</td>
+    </tr>
+  </table>
+  <p style="font-size:14.5px;color:var(--brick);margin:0">Быстрый тест: если после слова идёт 要求 / 需要 / 条件 — только 满足. Если перед ним стоит 对 или оно стоит перед существительным с 的 — только 满意.</p>
+</section>
+
+<section>
+  <h2>Проверьте себя <span class="cn">练习 · 答案</span></h2>
+  <p>Ответы к упражнениям со стр. 31–33 — сначала решите, потом раскройте.</p>
+
+  <details>
+    <summary>做一做 · 满足 / 满意</summary>
+    <div class="in">
+      <p>① 我对新公司的工作条件感到很<span class="k">满意</span>。（совпало с ожиданием）<br>
+      ② 父母总是会想办法<span class="k">满足</span>孩子的要求。（满足 + 要求）<br>
+      ③ 听到这个消息，他<span class="k">满意</span>地笑了。（обстоятельство — только 满意）<br>
+      ④ 你不能仅仅通过考试就<span class="k">满足</span>了。（«и хватит с меня»）</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 1 · 选择合适的词语填空 （扶 占 从前 本领 决心 委屈）</summary>
+    <div class="in">
+      <p>① <span class="k">从前</span>有个人叫乐广。（зачин рассказа）<br>
+      ② 帮我<span class="k">占</span>个座位，好吗？<br>
+      ③ 请您先在这儿<span class="k">委屈</span>一晚。（вежливое «потерпите неудобство»）<br>
+      ④ 邻居家有一条<span class="k">本领</span>高强的小狗。<br>
+      ⑤ 他把那位老爷爷<span class="k">扶</span>过了马路。<br>
+      ⑥ 我下<span class="k">决心</span>从明天开始早睡早起。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 2 · 选择正确答案</summary>
+    <div class="in">
+      <p>① 是他<span class="k">背</span>着我去的医院（A）— нужен глагол; 后背 — существительное.<br>
+      ② 会在10点<span class="k">以前</span>回家（B）— есть точка отсчёта; 从前 значит «давным-давно».<br>
+      ③ 你给我<span class="k">老实</span>点儿！别乱动！（A）— «веди себя смирно»; 诚实 так не работает.<br>
+      ④ 他没有接受那份优厚的待遇，<span class="k">反而</span>辞职了（B）— вопреки ожидаемому.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 3 · 给括号里的词选择适当的位置</summary>
+    <div class="in">
+      <p>① <span class="k">C</span> — 这个美丽的故事一直<span class="k">流传</span>到现在。<br>
+      ② <span class="k">B</span> — 请你暗中<span class="k">打听</span>一下这件事。<br>
+      ③ <span class="k">C</span> — 球被那个球员<span class="k">顶</span>了回来。<br>
+      ④ <span class="k">C</span> — 这几天作业太多了，我累<span class="k">得</span>不得了。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>扩展 · 社交称谓 （国王 王子 公主 总理 总统 主席 总裁 主任 老板 领导）</summary>
+    <div class="in">
+      <p>① 美国正在进行四年一次的<span class="k">总统</span>大选。<br>
+      ② 想自己开公司，自己做<span class="k">老板</span>。<br>
+      ③ 大家可以叫他王<span class="k">主任</span>。<br>
+      ④ 有些国家既有总统也有<span class="k">总理</span>。</p>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Сочинение <span class="cn">从《子路背米》想到的</span></h2>
+  <p>Задание урока: не менее 100 иероглифов о своём взгляде на эту историю и на само понятие 孝. Образец на ~180 знаков — с 至今, 反而 и ……得不行.</p>
+  <div class="card red">
+    <p class="cn-ex" style="line-height:2">《子路背米》这个故事流传<span class="hl">至今</span>，讲的其实不是米，而是心意。子路家里很穷，父母只盼着吃上一顿米饭，他听了觉得十分<span class="hl">惭愧</span>，于是下<span class="hl">决心</span>去百里之外干活儿。回来的路上大雪很<span class="hl">滑</span>，双手冻<span class="hl">得不行</span>，可他一步也没停。后来他做了<span class="hl">官</span>，<span class="hl">物质</span>条件好了，却并不欢喜，<span class="hl">反而</span>常常想起父母。在我看来，<span class="hl">孝顺</span>并不需要多少钱，重要的是趁父母还在的时候多陪陪他们。</p>
+  </div>
+  <h3>Готовые связки</h3>
+  <div class="card">
+    <ul style="margin-bottom:0">
+      <li class="cn-ex">这个故事流传至今，讲的其实不是……，而是……</li>
+      <li class="cn-ex">他听了觉得十分惭愧，于是下决心……</li>
+      <li class="cn-ex">……冻得不行，可他一步也没停</li>
+      <li class="cn-ex">物质条件好了，却并不欢喜，反而……</li>
+      <li class="cn-ex">在我看来，孝顺并不需要多少钱，重要的是……</li>
+      <li class="cn-ex">百善孝为先 · 值得我们学习</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Что делать до экзамена <span class="cn">复习计划</span></h2>
+  <ol class="route">
+    <li><b>Пересказ по дороге.</b> Дом → расспросил и ушёл за сто ли → полгода у хозяина → серебро и честность → посёлок и покупки → снег, скользко, замёрзшие руки → общий ужин → Чу и должность → мораль. Девять точек, четыре абзаца.</li>
+    <li><b>背 под диктовку.</b> Три употребления одного знака: 背米 (bēi, нести), 后背 (bèi, спина), 背课文 (bèi, учить наизусть). Первые два стоят в одной фразе текста.</li>
+    <li><b>Четвёрка «честных» слов.</b> 老实 / 诚实 / 诚恳 / 结实. Все похожи по составу, но значат разное, и упражнение 2 проверяет первые два.</li>
+    <li><b>Четыре конструкции — по своему предложению.</b> 流传至今 · 顶着压力 · ……得不行 · 不但没有……反而…… . Последняя особенно ценна в сочинении: она сразу показывает умение строить контраст.</li>
+    <li><b>Степень после 得.</b> 得不行 (урок 4), 得不得了 (урок 2), 得很. Три взаимозаменяемых хвоста — выучите их одним блоком.</li>
+  </ol>
+</section>
+
+<nav class="botnav"><a href="hsk5a-lesson-03.html"><span>Предыдущий урок</span>3 · 人生有选择</a><a href="hsk5a-lesson-05.html"><span>Следующий урок</span>5 · 济南的泉水</a></nav>
+
+<footer>
+  Конспект по «HSK 标准教程 5（上）», урок 4 «子路背米», стр. 26–33 · Unit 2 谈古说今<br>
+  Схема построена по сюжету урока: дом, сто ли до дома богача, полгода работы, обратный путь в снегу и служба в царстве Чу.
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML = '<span class="w">' + z.dataset.w + '</span><span class="p">' + z.dataset.p +
+      '</span><span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){ zones.forEach(function(o){ o.classList.remove('on'); }); out.innerHTML = def; }
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+  document.querySelector('.road-box svg').addEventListener('mouseleave', clear);
+})();
+</script>
+<script>
+(function(){
+  var LESSON = "04";
+  var DIRS = ["audio/", "", "mp3/", "media/", "аудио/", "audio/15/", "15/"];
+  var CAND = [];
+  DIRS.forEach(function(d){ CAND.push(d + "{hz}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{hz2}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{pyn}.mp3"); });
+
+  var patIn  = document.getElementById('ab-pat');
+  var status = document.getElementById('ab-status');
+  var btns   = Array.prototype.slice.call(document.querySelectorAll('.pb[data-hz]'));
+  var cur = null, curBtn = null, queue = null;
+
+  function pad(n){ n = String(n||''); return n.length === 1 ? '0'+n : n; }
+
+  function resolve(pat, b){
+    return pat
+      .replace(/\{hz2\}/g, b.dataset.hz2 || b.dataset.hz)
+      .replace(/\{hz\}/g,  b.dataset.hz)
+      .replace(/\{pyn\}/g, b.dataset.pyn)
+      .replace(/\{py\}/g,  b.dataset.py)
+      .replace(/\{num\}/g, pad(b.dataset.num))
+      .replace(/\{n\}/g,   b.dataset.num || '')
+      .replace(/\{L\}/g,   LESSON);
+  }
+
+  function setStatus(t, cls){
+    status.textContent = t || '';
+    status.className = 'ab-status' + (cls ? ' ' + cls : '');
+  }
+
+  function test(pat, b){
+    return new Promise(function(res){
+      var a = new Audio(), done = false;
+      function ok(){ if(!done){ done = true; res(true); } }
+      function no(){ if(!done){ done = true; res(false); } }
+      a.addEventListener('loadedmetadata', ok);
+      a.addEventListener('canplay', ok);
+      a.addEventListener('error', no);
+      a.preload = 'metadata';
+      a.src = encodeURI(resolve(pat, b));
+      setTimeout(no, 2500);
+    });
+  }
+
+  function stop(){
+    if(cur){ cur.pause(); cur = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn = null; }
+    queue = null;
+    document.querySelectorAll('.pball.playing').forEach(function(x){ x.classList.remove('playing'); });
+  }
+
+  /* проигрывание с запасными вариантами имени для этого слова */
+  function play(b, onEnd){
+    stop();
+    var tries = [patIn.value.trim()];
+    var alt = (b.dataset.hz2 && b.dataset.hz2 !== b.dataset.hz)
+      ? patIn.value.trim().replace('{hz}', '{hz2}') : null;
+    if(alt && tries.indexOf(alt) < 0) tries.push(alt);
+    CAND.forEach(function(p){ if(tries.indexOf(p) < 0) tries.push(p); });
+
+    b.classList.add('playing');
+    var i = 0;
+    (function attempt(){
+      if(i >= tries.length){
+        b.classList.remove('playing');
+        b.classList.add('missing');
+        b.title = 'Не найден файл для ' + b.dataset.hz;
+        setStatus('Не найден файл для ' + b.dataset.hz + ' — проверьте папку или шаблон.', 'bad');
+        if(onEnd) onEnd();
+        return;
+      }
+      var src = resolve(tries[i++], b);
+      var a = new Audio(encodeURI(src));
+      var started = false;
+      a.addEventListener('canplay', function(){ started = true; });
+      a.addEventListener('ended', function(){
+        b.classList.remove('playing');
+        if(cur === a){ cur = null; curBtn = null; }
+        if(onEnd) onEnd();
+      });
+      a.addEventListener('error', function(){
+        if(!started){ attempt(); }
+        else { b.classList.remove('playing'); if(onEnd) onEnd(); }
+      });
+      cur = a; curBtn = b;
+      b.classList.remove('missing');
+      a.play().catch(function(){});
+    })();
+  }
+
+  /* автопоиск папки при открытии */
+  function autodetect(quiet){
+    if(!btns.length) return;
+    if(!quiet) setStatus('Перебираю варианты…');
+    var i = 0;
+    (function next(){
+      if(i >= CAND.length){
+        setStatus(quiet
+          ? 'Папка с mp3 не найдена. Положите файлы в audio рядом с этим документом.'
+          : 'Ни один из типовых вариантов не подошёл. Впишите путь вручную.',
+          quiet ? '' : 'bad');
+        return;
+      }
+      var p = CAND[i++];
+      test(p, btns[0]).then(function(ok){
+        if(ok){
+          patIn.value = p;
+          document.querySelectorAll('.pb.missing').forEach(function(x){
+            x.classList.remove('missing'); x.title = '';
+          });
+          setStatus('Озвучка подключена: ' + p, 'ok');
+        } else next();
+      });
+    })();
+  }
+
+  document.getElementById('ab-auto').addEventListener('click', function(){ autodetect(false); });
+  document.getElementById('ab-test').addEventListener('click', function(){
+    if(!btns.length) return;
+    setStatus('Проверяю…');
+    test(patIn.value.trim(), btns[0]).then(function(ok){
+      setStatus((ok ? 'Файл найден: ' : 'Не найден: ') + resolve(patIn.value.trim(), btns[0]),
+                ok ? 'ok' : 'bad');
+    });
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(curBtn === b && cur){ stop(); return; }
+      play(b);
+    });
+  });
+
+  document.querySelectorAll('.pball').forEach(function(pb){
+    pb.addEventListener('click', function(){
+      if(pb.classList.contains('playing')){ stop(); return; }
+      var list = Array.prototype.slice.call(
+        pb.closest('.cluster').querySelectorAll('.pb[data-hz]'));
+      stop();
+      pb.classList.add('playing');
+      var i = 0;
+      queue = list;
+      (function step(){
+        if(queue !== list || i >= list.length){ pb.classList.remove('playing'); return; }
+        play(list[i++], function(){ setTimeout(step, 350); });
+      })();
+    });
+  });
+
+  autodetect(true);
+})();
+</script>
+</body>
+</html>

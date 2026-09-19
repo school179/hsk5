@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 2 · 留串钥匙给父母 · HSK 标准教程 5上</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c2126;
+  --paper:#d8dbdc;
+  --card:#f1f2f0;
+  --brick:#5f676b;
+  --red:#a53f38;
+  --warm:#c98a2e;
+  --blue:#3a5568;
+  --line:rgba(28,33,38,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:repeating-linear-gradient(90deg,transparent 0 29px,rgba(28,33,38,.045) 29px 30px)}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+header{padding:40px 0 26px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;color:var(--warm);letter-spacing:-.03em}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:42px;line-height:1.06;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brick);margin-top:10px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+section{margin-top:56px}
+h2{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+
+.road-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px}
+.road-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone .fillable{transition:opacity .18s ease}
+.zone .fillable{opacity:.88}
+.zone:hover .fillable,.zone.on .fillable{opacity:1}
+.zone:focus{outline:none}
+.rlab{font-family:var(--han);font-size:14px;font-weight:600;fill:var(--ink);pointer-events:none}
+.rpin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.05em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:64px}
+.readout .w{font-family:var(--han);font-size:21px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:12.5px;color:var(--blue)}
+.readout .d{display:block;margin-top:5px;font-size:15px;line-height:1.55}
+.readout .hint{color:var(--brick);font-style:italic}
+
+.moves{list-style:none;padding:0;margin:0;counter-reset:mv}
+.moves li{counter-increment:mv;position:relative;padding:14px 0 14px 62px;border-bottom:1px solid var(--line)}
+.moves li::before{content:counter(mv,decimal-leading-zero);position:absolute;left:0;top:14px;
+  font-family:var(--mono);font-size:13px;font-weight:700;color:var(--red);letter-spacing:.05em}
+.moves b{font-family:var(--disp);font-size:18px;letter-spacing:.02em;display:block;margin-bottom:3px}
+.moves .kw{display:block;margin-top:6px;font-family:var(--han);font-size:15px;color:var(--brick)}
+
+.cluster{margin-top:26px}
+.cluster .why{font-size:14px;color:var(--brick);margin:-4px 0 14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--blue);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--warm);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.warm{border-left:4px solid var(--warm)}
+.card.blue{border-left:4px solid var(--blue)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--card);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.w{background:var(--warm)}
+.tag.b{background:var(--blue)}
+.tag.r{background:var(--red)}
+
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(28,33,38,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+.trap{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--blue);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+details{background:var(--card);border:1px solid var(--line);margin:10px 0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;font-family:var(--disp);
+  font-weight:700;font-size:22px;color:var(--red);width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  .lesson-no{font-size:64px}
+  h1{font-size:30px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index.html">&#8592; Все уроки 5A</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（上） · Unit 1 了解生活 · Understanding Life</div>
+  <div class="title-row">
+    <div class="lesson-no">02</div>
+    <h1>留串钥匙给父母<span class="lat">Оставить родителям связку ключей · 593 字 · стр. 9–15</span></h1>
+  </div>
+  <div class="meta">
+    <span><b>39</b> новых слов</span>
+    <span><b>3</b> грамматические точки</span>
+    <span>ключ: <b>以来 · 临 · 立刻</b></span>
+  </div>
+</header>
+
+<section>
+  <p class="lede">Второй урок — тоже рассказ с отложенной развязкой, но устроен он иначе: история движется по времени, от старого деревенского дома к новой квартире в уезде и обратно. Ключи переходят из рук в руки трижды, и каждый раз значат другое. Поэтому опора здесь — дорога, а не таблица.</p>
+  <p style="font-size:15px;color:var(--brick);margin:0"><b>Развязка одной фразой:</b> отец просил ключи под предлогом «проветрить одеяла и прибраться», а на самом деле — 只是为了让我们回来时，能立刻感受到家的温暖. Как и в первом уроке, главное сказано не словами, а поступком.</p>
+</section>
+
+<section id="road">
+  <h2>История как дорога <span class="cn">老屋 → 新房 → 钥匙</span></h2>
+  <div class="road-box">
+    <svg viewBox="0 0 620 340" role="img" aria-label="Схема сюжета: старый дом, новая квартира, ключи и освещённое окно">
+      <line x1="20" y1="168" x2="600" y2="168" stroke="rgba(28,33,38,.25)" stroke-width="1.6" stroke-dasharray="6 6"/>
+
+      <!--老屋 -->
+      <g class="zone" tabindex="0" data-w="老屋：一辈子 · 农村 · 以来 · 坚决" data-p="yíbèizi · nóngcūn · yǐlái · jiānjué" data-d="Родители 一辈子住在农村老家, и привязанность к старому дому — как у ребёнка к матери. 因此长年以来，父母很少离开老屋，尽管姥姥、舅舅和姑姑都在城里，父母也坚决不在城里住.">
+        <path class="fillable" d="M22 140 L74 104 L126 140 z" fill="#5f676b"/>
+        <rect class="fillable" x="34" y="140" width="80" height="48" fill="#8a9296"/>
+        <rect x="62" y="158" width="24" height="30" fill="#3a5568"/>
+        <text class="rlab" x="74" y="210" text-anchor="middle">老屋</text>
+        <text class="rpin" x="74" y="226" text-anchor="middle">一辈子 · 农村</text>
+        <text class="rpin" x="74" y="240" text-anchor="middle">以来 · 坚决</text>
+      </g>
+
+      <!-- 新房 -->
+      <g class="zone" tabindex="0" data-w="新房：打工 · 挣 · 县 · 套 · 装修 · 不得了" data-p="dǎ gōng · zhèng · xiàn · tào · zhuāngxiū" data-d="去年，在我和妻子的努力下，我们终于用打工挣的钱，在县里买了一套新房。 Когда ремонт закончился и родители впервые вошли в квартиру, 高兴得不得了. Заметьте счётное слово: 一套房子 — как и 一套家具, 一套西服.">
+        <rect class="fillable" x="168" y="96" width="76" height="92" fill="#3a5568"/>
+        <g fill="#c8ccc8">
+          <rect x="178" y="106" width="16" height="16"/><rect x="202" y="106" width="16" height="16"/>
+          <rect x="178" y="130" width="16" height="16"/><rect x="202" y="130" width="16" height="16"/>
+          <rect x="178" y="154" width="16" height="16"/><rect x="202" y="154" width="16" height="16"/>
+        </g>
+        <text class="rlab" x="206" y="210" text-anchor="middle">新房（县里）</text>
+        <text class="rpin" x="206" y="226" text-anchor="middle">打工 · 挣 · 一套</text>
+        <text class="rpin" x="206" y="240" text-anchor="middle">装修 · 不得了</text>
+      </g>
+
+      <!-- отказ от ключей -->
+      <g class="zone" tabindex="0" data-w="第一次给钥匙：串 · 拒绝 · 醉 · 强烈 · 夜" data-p="chuàn · zuì · qiángliè" data-d="妻子提出留一串钥匙给父母，可他们拒绝了. В тот день отец выпил лишнего (喝醉了), и когда проснулся, было уже поздно. 我和妻子强烈留父母在新房住一夜，第二天再回，但他们仍坚持坐上了最后一趟回老家的车. Счётное слово 串 — для связок и низок: 一串钥匙, 一串葡萄.">
+        <rect class="fillable" x="270" y="112" width="112" height="56" fill="#a53f38" opacity=".16" stroke="#a53f38" stroke-width="1.4"/>
+        <text class="rlab" x="326" y="136" text-anchor="middle" style="font-size:13px">一串钥匙</text>
+        <text class="rpin" x="326" y="154" text-anchor="middle">父母拒绝了</text>
+        <text class="rpin" x="326" y="210" text-anchor="middle">醉 · 强烈 · 夜</text>
+      </g>
+
+      <!-- просьба отца -->
+      <g class="zone" tabindex="0" data-w="临走那天：锁 · 临 · 悄悄 · 晒 · 被子" data-p="suǒ · lín · qiāoqiāo · shài · bèizi" data-d="Через время супруги снова уехали на заработки, и 新房只能上锁空着. 临走那天，父亲从老家赶来送我们，悄悄把我拉到一边说: оставьте всё-таки ключи, мало ли захотим пожить пару дней, 顺便给你们晒晒被子，打扫打扫卫生. Говоря это, отец 还红着脸，像个害羞的孩子.">
+        <rect class="fillable" x="408" y="112" width="120" height="56" fill="#c98a2e" opacity=".22" stroke="#c98a2e" stroke-width="1.4"/>
+        <text class="rlab" x="468" y="136" text-anchor="middle" style="font-size:13px">父亲要钥匙</text>
+        <text class="rpin" x="468" y="154" text-anchor="middle">“晒晒被子、打扫卫生”</text>
+        <text class="rpin" x="468" y="210" text-anchor="middle">锁 · 临 · 悄悄 · 晒 · 被子</text>
+      </g>
+
+      <!-- возвращение -->
+      <g class="zone" tabindex="0" data-w="回家：长途 · 冻 · 想象 · 灰尘" data-p="chángtú · dòng · xiǎngxiàng · huīchén" data-d="转眼又是半年，我们回家时是一个深冬的夜里。下了长途车，儿子被冻得大哭。我和妻子想象着打开家门满是灰尘、冷冷清清的景象，觉得心里发寒. Именно эта заготовленная картинка и делает развязку сильной.">
+        <rect class="fillable" x="20" y="262" width="184" height="52" fill="#3a5568" opacity=".18" stroke="#3a5568" stroke-width="1.2"/>
+        <text class="rlab" x="112" y="284" text-anchor="middle" style="font-size:13px">深冬的夜 · 长途车</text>
+        <text class="rpin" x="112" y="302" text-anchor="middle">冻 · 想象 · 灰尘 · 心里发寒</text>
+      </g>
+
+      <!-- окно -->
+      <g class="zone" tabindex="0" data-w="亮着灯：亮 · 微笑 · 温暖 · 立刻 · 扑" data-p="liàng · wēixiào · wēnnuǎn · lìkè · pū" data-d="来到楼下，抬头一看，却发现自家亮着灯光。上了楼，开门的竟是微笑着的父母，温暖的气息立刻扑面而来: 室内打扫得干干净净，暖气开着，水已温热，卧室床上的被子已铺好，厨房里飘来阵阵饭菜香.">
+        <rect class="fillable" x="226" y="252" width="172" height="62" fill="#c98a2e" opacity=".3" stroke="#c98a2e" stroke-width="1.6"/>
+        <rect x="244" y="266" width="26" height="34" fill="#f6dda0"/>
+        <text class="rlab" x="336" y="282" text-anchor="middle" style="font-size:13px">自家亮着灯</text>
+        <text class="rpin" x="336" y="300" text-anchor="middle">微笑 · 温暖 · 立刻 · 扑 · 铺 · 飘 · 阵</text>
+      </g>
+
+      <!-- развязка -->
+      <g class="zone" tabindex="0" data-w="真相：感受 · 流泪" data-p="gǎnshòu · liú lèi" data-d="父亲说：“你妈昨天接到电话，知道你们今晚回来，今天来新房忙了一天了。” 原来父母要我留下串钥匙，只是为了让我们回来时，能立刻感受到家的温暖！我鼻子一酸，流下了热泪. Вот зачем на самом деле нужны были ключи.">
+        <rect class="fillable" x="420" y="252" width="180" height="62" fill="#a53f38" opacity=".18" stroke="#a53f38" stroke-width="1.4"/>
+        <text class="rlab" x="510" y="278" text-anchor="middle" style="font-size:13px">原来钥匙是为了……</text>
+        <text class="rpin" x="510" y="298" text-anchor="middle">感受到家的温暖 · 流泪</text>
+      </g>
+    </svg>
+    <div class="readout" id="readout">
+      <span class="hint">Наведите курсор или коснитесь любого этапа — появятся слова этого фрагмента и их роль в тексте.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Текст в четырёх кадрах <span class="cn">课文复述</span></h2>
+  <p style="font-size:14.5px;color:var(--brick)">Четыре блока учебника (стр. 14). Пересказывайте по дороге выше, слева направо и сверху вниз.</p>
+  <ol class="moves">
+    <li>
+      <b>Привычка родителей</b>
+      父母一辈子住在农村老家，对老屋的感情，就像没断奶的孩子对母亲一样。因此长年以来，父母很少离开老屋，尽管姥姥、舅舅和姑姑都在城里，父母也坚决不在城里住。
+      <span class="kw">一辈子 · 农村 · 屋子 · 断 · 以来 · 姥姥 · 舅舅 · 姑姑 · 坚决</span>
+    </li>
+    <li>
+      <b>Новая квартира</b>
+      去年 супруги 用打工挣的钱，在县里买了一套新房. Когда ремонт был закончен и родители впервые вошли внутрь, 高兴得不得了. Жена предложила 留一串钥匙给父母，可他们拒绝了. В тот день отец 喝醉了, а когда проснулся, 天色已晚; молодые 强烈留父母在新房住一夜, но те 仍坚持坐上了最后一趟回老家的车.
+      <span class="kw">打工 · 挣 · 县 · 套 · 装修 · 不得了 · 串 · 醉 · 强烈 · 夜</span>
+    </li>
+    <li>
+      <b>Перед отъездом</b>
+      Через время супруги снова уехали работать, и 新房只能上锁空着. 临走那天，父亲从老家赶来送我们，悄悄把我拉到一边 и попросил всё-таки оставить ключи: 要是我和你妈什么时候想来了，就来住上几天，顺便给你们晒晒被子，打扫打扫卫生. Говорил он это 轻声细语，还红着脸，像个害羞的孩子.
+      <span class="kw">锁 · 临 · 悄悄 · 晒 · 被子</span>
+    </li>
+    <li>
+      <b>Возвращение и развязка</b>
+      转眼又是半年. Приехали они 一个深冬的夜里; 下了长途车，儿子被冻得大哭. Супруги 想象着打开家门满是灰尘、冷冷清清的景象，觉得心里发寒. Но 来到楼下，抬头一看，却发现自家亮着灯光: дверь открыли 微笑着的父母, и 温暖的气息立刻扑面而来. Оказалось, мать узнала о приезде накануне и целый день готовила квартиру. 原来父母要我留下串钥匙，只是为了让我们回来时，能立刻感受到家的温暖！我鼻子一酸，流下了热泪。
+      <span class="kw">长途 · 冻 · 想象 · 灰尘 · 亮 · 微笑 · 温暖 · 立刻 · 扑 · 卧室 · 铺 · 飘 · 阵 · 感受 · 流泪</span>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <h2>39 слов по гнёздам <span class="cn">生词</span></h2>
+  <p style="font-size:14px;color:var(--brick)"><span class="star">★</span> — слово сверх программы HSK 5 (в учебнике со звёздочкой).</p>
+
+  <div class="audiobar" id="audiobar">
+    <div class="ab-t">Озвучка слов</div>
+    <div class="ab-row">
+      <input id="ab-pat" type="text" spellcheck="false" value="audio/{hz}.mp3" aria-label="Шаблон пути к mp3">
+      <button type="button" id="ab-auto">Подобрать</button>
+      <button type="button" id="ab-test">Проверить</button>
+    </div>
+    <div class="ab-status" id="ab-status"></div>
+    <div class="ab-note">
+      По умолчанию ищутся файлы вида <code>иероглиф.mp3</code> — сначала в папке
+      <code>audio</code> рядом с этим файлом, потом прямо рядом с ним. Нужная папка
+      определяется сама при открытии страницы. Если ваши mp3 лежат где-то ещё, впишите путь
+      вручную: доступны подстановки <code>{hz}</code> иероглифы, <code>{py}</code> пиньинь с
+      тонами, <code>{pyn}</code> пиньинь без диакритики, <code>{num}</code> номер слова в списке
+      учебника, <code>{L}</code> номер урока. Работает только если открыть файл у себя на диске —
+      в предпросмотре доступа к вашим папкам нет.
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>I. Дом и родня<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Тематическое гнездо, к нему же примыкает раздел 扩展 с названиями родственников.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">一辈子</span><span class="py">yíbèizi</span><button class="pb" type="button" data-hz="一辈子" data-hz2="一辈子" data-py="yíbèizi" data-pyn="yibeizi" data-num="2" aria-label="Прослушать 一辈子" title="Прослушать 一辈子">&#9654;</button><span class="ru">вся жизнь, весь век</span><span class="ex">一辈子住在农村</span></div>
+      <div class="w-item"><span class="hz">农村</span><span class="py">nóngcūn</span><button class="pb" type="button" data-hz="农村" data-hz2="农村" data-py="nóngcūn" data-pyn="nongcun" data-num="3" aria-label="Прослушать 农村" title="Прослушать 农村">&#9654;</button><span class="ru">деревня, село</span><span class="ex">↔ 城里 / 城市</span></div>
+      <div class="w-item"><span class="hz">屋（子）</span><span class="py">wū(zi)</span><button class="pb" type="button" data-hz="屋" data-hz2="屋子" data-py="wū" data-pyn="wu" data-num="4" aria-label="Прослушать 屋" title="Прослушать 屋">&#9654;</button><span class="ru">дом, комната</span><span class="ex">老屋 / 屋子里</span></div>
+      <div class="w-item"><span class="hz">县</span><span class="py">xiàn</span><button class="pb" type="button" data-hz="县" data-hz2="县" data-py="xiàn" data-pyn="xian" data-num="13" aria-label="Прослушать 县" title="Прослушать 县">&#9654;</button><span class="ru">уезд (административная единица)</span></div>
+      <div class="w-item"><span class="hz">卧室</span><span class="py">wòshì</span><button class="pb" type="button" data-hz="卧室" data-hz2="卧室" data-py="wòshì" data-pyn="woshi" data-num="34" aria-label="Прослушать 卧室" title="Прослушать 卧室">&#9654;</button><span class="ru">спальня</span></div>
+      <div class="w-item"><span class="hz">姥姥</span><span class="py">lǎolao</span><button class="pb" type="button" data-hz="姥姥" data-hz2="姥姥" data-py="lǎolao" data-pyn="laolao" data-num="7" aria-label="Прослушать 姥姥" title="Прослушать 姥姥">&#9654;</button><span class="ru">бабушка по матери</span></div>
+      <div class="w-item"><span class="hz">舅舅</span><span class="py">jiùjiu</span><button class="pb" type="button" data-hz="舅舅" data-hz2="舅舅" data-py="jiùjiu" data-pyn="jiujiu" data-num="8" aria-label="Прослушать 舅舅" title="Прослушать 舅舅">&#9654;</button><span class="ru">дядя, брат матери</span></div>
+      <div class="w-item"><span class="hz">姑姑</span><span class="py">gūgu</span><button class="pb" type="button" data-hz="姑姑" data-hz2="姑姑" data-py="gūgu" data-pyn="gugu" data-num="9" aria-label="Прослушать 姑姑" title="Прослушать 姑姑">&#9654;</button><span class="ru">тётя, сестра отца</span></div>
+      <div class="w-item"><span class="hz">套</span><span class="py">tào</span><button class="pb" type="button" data-hz="套" data-hz2="套" data-py="tào" data-pyn="tao" data-num="14" aria-label="Прослушать 套" title="Прослушать 套">&#9654;</button><span class="ru">сч. сл. для комплектов, квартир</span><span class="ex">一套房子 / 家具 / 西服</span></div>
+      <div class="w-item"><span class="hz">串</span><span class="py">chuàn</span><span class="star">★</span><button class="pb" type="button" data-hz="串" data-hz2="串" data-py="chuàn" data-pyn="chuan" data-num="1" aria-label="Прослушать 串" title="Прослушать 串">&#9654;</button><span class="ru">сч. сл. для связок, низок</span><span class="ex">一串钥匙 / 一串葡萄</span></div>
+      <div class="w-item"><span class="hz">阵</span><span class="py">zhèn</span><button class="pb" type="button" data-hz="阵" data-hz2="阵" data-py="zhèn" data-pyn="zhen" data-num="37" aria-label="Прослушать 阵" title="Прослушать 阵">&#9654;</button><span class="ru">сч. сл. для кратких явлений</span><span class="ex">一阵风 / 雨 / 歌声 / 香味</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>II. Работа, деньги, ремонт<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Бытовое гнездо, которое пригодится почти в любом задании 书写 про жизнь и переезд.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">打工</span><span class="py">dǎ gōng</span><button class="pb" type="button" data-hz="打工" data-hz2="打工" data-py="dǎ gōng" data-pyn="dagong" data-num="11" aria-label="Прослушать 打工" title="Прослушать 打工">&#9654;</button><span class="ru">работать по найму, подрабатывать</span><span class="ex">出去打工（раздельное слово）</span></div>
+      <div class="w-item"><span class="hz">挣</span><span class="py">zhèng</span><button class="pb" type="button" data-hz="挣" data-hz2="挣" data-py="zhèng" data-pyn="zheng" data-num="12" aria-label="Прослушать 挣" title="Прослушать 挣">&#9654;</button><span class="ru">зарабатывать</span><span class="ex">挣钱</span></div>
+      <div class="w-item"><span class="hz">装修</span><span class="py">zhuāngxiū</span><button class="pb" type="button" data-hz="装修" data-hz2="装修" data-py="zhuāngxiū" data-pyn="zhuangxiu" data-num="15" aria-label="Прослушать 装修" title="Прослушать 装修">&#9654;</button><span class="ru">делать ремонт, отделку</span></div>
+      <div class="w-item"><span class="hz">锁</span><span class="py">suǒ</span><button class="pb" type="button" data-hz="锁" data-hz2="锁" data-py="suǒ" data-pyn="suo" data-num="20" aria-label="Прослушать 锁" title="Прослушать 锁">&#9654;</button><span class="ru">замок; запирать</span><span class="ex">上锁 / 锁上门</span></div>
+      <div class="w-item"><span class="hz">晒</span><span class="py">shài</span><button class="pb" type="button" data-hz="晒" data-hz2="晒" data-py="shài" data-pyn="shai" data-num="23" aria-label="Прослушать 晒" title="Прослушать 晒">&#9654;</button><span class="ru">сушить на солнце; загорать</span><span class="ex">晒被子 / 衣服 / 太阳</span></div>
+      <div class="w-item"><span class="hz">被子</span><span class="py">bèizi</span><button class="pb" type="button" data-hz="被子" data-hz2="被子" data-py="bèizi" data-pyn="beizi" data-num="24" aria-label="Прослушать 被子" title="Прослушать 被子">&#9654;</button><span class="ru">одеяло</span></div>
+      <div class="w-item"><span class="hz">铺</span><span class="py">pū</span><span class="star">★</span><button class="pb" type="button" data-hz="铺" data-hz2="铺" data-py="pū" data-pyn="pu" data-num="35" aria-label="Прослушать 铺" title="Прослушать 铺">&#9654;</button><span class="ru">стелить, расстилать</span><span class="ex">被子已铺好</span></div>
+      <div class="w-item"><span class="hz">灰尘</span><span class="py">huīchén</span><button class="pb" type="button" data-hz="灰尘" data-hz2="灰尘" data-py="huīchén" data-pyn="huichen" data-num="28" aria-label="Прослушать 灰尘" title="Прослушать 灰尘">&#9654;</button><span class="ru">пыль</span><span class="ex">满是灰尘</span></div>
+      <div class="w-item"><span class="hz">长途</span><span class="py">chángtú</span><button class="pb" type="button" data-hz="长途" data-hz2="长途" data-py="chángtú" data-pyn="changtu" data-num="25" aria-label="Прослушать 长途" title="Прослушать 长途">&#9654;</button><span class="ru">дальний, междугородный</span><span class="ex">长途旅行 / 汽车 / 电话</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>III. Чувства и состояния<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Слова, на которых держится эмоциональная часть текста, — и они же самые полезные для сочинения.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">坚决</span><span class="py">jiānjué</span><button class="pb" type="button" data-hz="坚决" data-hz2="坚决" data-py="jiānjué" data-pyn="jianjue" data-num="10" aria-label="Прослушать 坚决" title="Прослушать 坚决">&#9654;</button><span class="ru">решительный, наотрез</span><span class="ex">坚决反对 / 坚决改正</span></div>
+      <div class="w-item"><span class="hz">不得了</span><span class="py">bùdéliǎo</span><button class="pb" type="button" data-hz="不得了" data-hz2="不得了" data-py="bùdéliǎo" data-pyn="budeliao" data-num="16" aria-label="Прослушать 不得了" title="Прослушать 不得了">&#9654;</button><span class="ru">крайне, ужас как</span><span class="ex">高兴得不得了（после 得）</span></div>
+      <div class="w-item"><span class="hz">醉</span><span class="py">zuì</span><button class="pb" type="button" data-hz="醉" data-hz2="醉" data-py="zuì" data-pyn="zui" data-num="17" aria-label="Прослушать 醉" title="Прослушать 醉">&#9654;</button><span class="ru">пьянеть</span><span class="ex">喝醉了</span></div>
+      <div class="w-item"><span class="hz">强烈</span><span class="py">qiángliè</span><button class="pb" type="button" data-hz="强烈" data-hz2="强烈" data-py="qiángliè" data-pyn="qianglie" data-num="18" aria-label="Прослушать 强烈" title="Прослушать 强烈">&#9654;</button><span class="ru">настоятельный, сильный</span><span class="ex">强烈的阳光 / 感情 / 对比</span></div>
+      <div class="w-item"><span class="hz">悄悄</span><span class="py">qiāoqiāo</span><button class="pb" type="button" data-hz="悄悄" data-hz2="悄悄" data-py="qiāoqiāo" data-pyn="qiaoqiao" data-num="22" aria-label="Прослушать 悄悄" title="Прослушать 悄悄">&#9654;</button><span class="ru">тихонько, негромко</span><span class="ex">悄悄地说</span></div>
+      <div class="w-item"><span class="hz">冻</span><span class="py">dòng</span><button class="pb" type="button" data-hz="冻" data-hz2="冻" data-py="dòng" data-pyn="dong" data-num="26" aria-label="Прослушать 冻" title="Прослушать 冻">&#9654;</button><span class="ru">мёрзнуть, замерзать</span><span class="ex">冻得大哭 / 冻住了</span></div>
+      <div class="w-item"><span class="hz">想象</span><span class="py">xiǎngxiàng</span><button class="pb" type="button" data-hz="想象" data-hz2="想象" data-py="xiǎngxiàng" data-pyn="xiangxiang" data-num="27" aria-label="Прослушать 想象" title="Прослушать 想象">&#9654;</button><span class="ru">воображать, представлять</span><span class="ex">想象不到 / 想象力</span></div>
+      <div class="w-item"><span class="hz">亮</span><span class="py">liàng</span><button class="pb" type="button" data-hz="亮" data-hz2="亮" data-py="liàng" data-pyn="liang" data-num="29" aria-label="Прослушать 亮" title="Прослушать 亮">&#9654;</button><span class="ru">светлый; светиться</span><span class="ex">亮着灯 / 天亮了</span></div>
+      <div class="w-item"><span class="hz">微笑</span><span class="py">wēixiào</span><button class="pb" type="button" data-hz="微笑" data-hz2="微笑" data-py="wēixiào" data-pyn="weixiao" data-num="30" aria-label="Прослушать 微笑" title="Прослушать 微笑">&#9654;</button><span class="ru">улыбаться; улыбка</span><span class="ex">微笑着的父母</span></div>
+      <div class="w-item"><span class="hz">温暖</span><span class="py">wēnnuǎn</span><button class="pb" type="button" data-hz="温暖" data-hz2="温暖" data-py="wēnnuǎn" data-pyn="wennuan" data-num="31" aria-label="Прослушать 温暖" title="Прослушать 温暖">&#9654;</button><span class="ru">тёплый; согревать</span><span class="ex">家的温暖</span></div>
+      <div class="w-item"><span class="hz">扑</span><span class="py">pū</span><span class="star">★</span><button class="pb" type="button" data-hz="扑" data-hz2="扑" data-py="pū" data-pyn="pu" data-num="33" aria-label="Прослушать 扑" title="Прослушать 扑">&#9654;</button><span class="ru">броситься, обдать</span><span class="ex">扑面而来</span></div>
+      <div class="w-item"><span class="hz">飘</span><span class="py">piāo</span><button class="pb" type="button" data-hz="飘" data-hz2="飘" data-py="piāo" data-pyn="piao" data-num="36" aria-label="Прослушать 飘" title="Прослушать 飘">&#9654;</button><span class="ru">нестись по воздуху, доноситься</span><span class="ex">飘来阵阵饭菜香</span></div>
+      <div class="w-item"><span class="hz">感受</span><span class="py">gǎnshòu</span><button class="pb" type="button" data-hz="感受" data-hz2="感受" data-py="gǎnshòu" data-pyn="ganshou" data-num="38" aria-label="Прослушать 感受" title="Прослушать 感受">&#9654;</button><span class="ru">почувствовать; впечатление</span><span class="ex">感受到家的温暖</span></div>
+      <div class="w-item"><span class="hz">流泪</span><span class="py">liú lèi</span><button class="pb" type="button" data-hz="流泪" data-hz2="流泪" data-py="liú lèi" data-pyn="liulei" data-num="39" aria-label="Прослушать 流泪" title="Прослушать 流泪">&#9654;</button><span class="ru">проливать слёзы</span></div>
+      <div class="w-item"><span class="hz">夜</span><span class="py">yè</span><button class="pb" type="button" data-hz="夜" data-hz2="夜" data-py="yè" data-pyn="ye" data-num="19" aria-label="Прослушать 夜" title="Прослушать 夜">&#9654;</button><span class="ru">ночь</span><span class="ex">住一夜 / 深冬的夜里</span></div>
+      <div class="w-item"><span class="hz">断</span><span class="py">duàn</span><button class="pb" type="button" data-hz="断" data-hz2="断" data-py="duàn" data-pyn="duan" data-num="5" aria-label="Прослушать 断" title="Прослушать 断">&#9654;</button><span class="ru">обрывать, прерывать</span><span class="ex">断水 / 断电 / 断联系</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>IV. Служебные<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Все три грамматические точки урока.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">以来</span><span class="py">yǐlái</span><button class="pb" type="button" data-hz="以来" data-hz2="以来" data-py="yǐlái" data-pyn="yilai" data-num="6" aria-label="Прослушать 以来" title="Прослушать 以来">&#9654;</button><span class="ru">с тех пор как, за период</span><span class="ex">长年以来 / 改革开放以来</span></div>
+      <div class="w-item"><span class="hz">临</span><span class="py">lín</span><button class="pb" type="button" data-hz="临" data-hz2="临" data-py="lín" data-pyn="lin" data-num="21" aria-label="Прослушать 临" title="Прослушать 临">&#9654;</button><span class="ru">прилегать к; перед самым</span><span class="ex">临街的房子 / 临走那天</span></div>
+      <div class="w-item"><span class="hz">立刻</span><span class="py">lìkè</span><button class="pb" type="button" data-hz="立刻" data-hz2="立刻" data-py="lìkè" data-pyn="like" data-num="32" aria-label="Прослушать 立刻" title="Прослушать 立刻">&#9654;</button><span class="ru">немедленно, тут же</span><span class="ex">立刻感受到</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>На слух: где рука ошибётся <span class="cn">听写陷阱</span></h2>
+  <p>Урок насыщен счётными словами и парами «почти одинаковый слог, разный иероглиф».</p>
+
+  <div class="warn">Счётные слова урока</div>
+  <table class="pair-tbl">
+    <tr><th>Слово</th><th>С чем идёт</th></tr>
+    <tr><td>一<b>套</b> tào</td><td>房子 / 家具 / 餐具 / 邮票 / 西服 — комплект, набор, квартира.</td></tr>
+    <tr><td>一<b>串</b> chuàn</td><td>钥匙 / 葡萄 / 珍珠 — то, что нанизано на нитку или кольцо.</td></tr>
+    <tr><td>一<b>阵</b> zhèn</td><td>风 / 雨 / 歌声 / 香味 — короткий порыв, волна чего-то.</td></tr>
+    <tr><td>一<b>趟</b> tàng</td><td>车 / 旅行 — рейс, поездка (в тексте: 最后一趟回老家的车).</td></tr>
+  </table>
+
+  <div class="warn">Пары с одинаковым слогом</div>
+  <div class="trap">
+    <div><span class="hz">挣</span><span class="py">zhèng</span><span class="n">зарабатывать — 挣钱. В другом чтении zhēng «вырываться»</span></div>
+    <div><span class="hz">正 / 政</span><span class="py">zhèng</span><span class="n">Все на zhèng. 挣 пишется с ключом 扌 — деньги «делают руками»</span></div>
+  </div>
+  <div class="trap">
+    <div><span class="hz">锁</span><span class="py">suǒ</span><span class="n">замок, запирать — 钅 + 小 + 贝</span></div>
+    <div><span class="hz">所</span><span class="py">suǒ</span><span class="n">служебное (所谓 — урок 14, 为……所…… — там же). Полные омофоны</span></div>
+  </div>
+  <div class="trap">
+    <div><span class="hz">铺</span><span class="py">pū</span><span class="n">стелить (постель) — 铺被子</span></div>
+    <div><span class="hz">扑</span><span class="py">pū</span><span class="n">броситься, обдать — 扑面而来. Оба в этом уроке и оба pū!</span></div>
+  </div>
+  <div class="trap">
+    <div><span class="hz">晒</span><span class="py">shài</span><span class="n">сушить на солнце — 日 + 西</span></div>
+    <div><span class="hz">洒</span><span class="py">sǎ</span><span class="n">брызгать (урок 18) — 氵 + 西. Похожи графически, разные слоги</span></div>
+  </div>
+  <table class="pair-tbl">
+    <tr><th>Пара</th><th>Как развести</th></tr>
+    <tr><td>悄悄 qiāoqiāo<br>偷偷 tōutōu</td><td>Разбор ниже, в 辨析. Коротко: 悄悄 — про тихий звук, 偷偷 — про скрытность.</td></tr>
+    <tr><td>立刻 lìkè<br>马上 mǎshàng<br>立即 lìjí (16)</td><td>Все три «немедленно». 立刻 и 立即 книжнее, 马上 разговорное и может значить «скоро», а не «сию секунду». Упражнение 2 проверяет 立刻 против 马上.</td></tr>
+    <tr><td>坚决 jiānjué<br>坚持 jiānchí</td><td>坚决 — прилагательное «решительный» (态度很坚决). 坚持 — глагол «упорствовать, продолжать». Проверяется в упражнении 2.</td></tr>
+    <tr><td>温暖 wēnnuǎn<br>暖和 nuǎnhuo</td><td>温暖 годится и в переносном смысле (家的温暖, 温暖的微笑), 暖和 — только про физическое тепло.</td></tr>
+    <tr><td>想象 xiǎngxiàng<br>现象 xiànxiàng (16)<br>抽象 chōuxiàng (18)</td><td>Три слова на -xiàng из разных уроков. Различаются первым слогом: xiǎng / xiàn / chōu.</td></tr>
+    <tr><td>强烈 qiángliè<br>激烈 jīliè (13)</td><td>强烈 — про свет, чувства, требования. 激烈 — про борьбу и споры. Полный разбор в уроке 13.</td></tr>
+  </table>
+
+  <div class="warn">Тяжёлые для руки иероглифы</div>
+  <div class="card">
+    <ul style="margin-bottom:0">
+      <li><b>挣</b> = 扌 + 争; <b>锁</b> = 钅 + 小 + 贝; <b>醉</b> = 酉 «кувшин вина» + 卒.</li>
+      <li><b>铺</b> = 钅 + 甫 против <b>扑</b> = 扌 + 卜. Оба читаются pū и оба в этом уроке.</li>
+      <li><b>灰尘</b> — 尘 = 小 + 土 «мелкая земля», отличная мнемоника.</li>
+      <li><b>悄</b> = 忄 + 肖; <b>飘</b> = 票 + 风.</li>
+      <li><b>姥姥、舅舅、姑姑</b> — все с ключом 女 или про родню по женской линии; 舅 = 臼 + 男.</li>
+      <li><b>冻</b> = 冫 «лёд» (две черты, не три, как у 氵) + 东.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Грамматика: три детали <span class="cn">注释</span></h2>
+
+  <h3>1 · 以来 yǐlái</h3>
+  <div class="card blue">
+    <p>Существительное: отрезок времени от некоторого момента в прошлом до сих пор. Всегда <b>после</b> указания на точку отсчёта: <b>……以来</b>.</p>
+    <p class="cn-ex">改革开放<span class="hl">以来</span>，中国发生了巨大的变化。</p>
+    <p class="cn-ex">因此长年<span class="hl">以来</span>，父母很少离开老屋。</p>
+    <p class="cn-ex">一直<span class="hl">以来</span>，“80后”这个词儿都含有年轻的味道。</p>
+    <p class="tr" style="margin:0">Частые сочетания: 长期以来 · 长年以来 · 一直以来 · 有史以来 · 到中国以来. Важно: период должен тянуться до настоящего момента, поэтому ✗去年以来我在那儿工作了三个月（законченный отрезок）.</p>
+  </div>
+
+  <h3>2 · 临 lín</h3>
+  <div class="card warm">
+    <p><span class="tag w">значение A</span> Глагол: находиться вплотную к чему-то, выходить на что-то.</p>
+    <p class="cn-ex">我想买一套不<span class="hl">临</span>街的房子，这样不会太吵。</p>
+    <p class="cn-ex"><span class="hl">临</span>江新修了一条路，晚饭后很多人都去那儿散步。</p>
+    <p><span class="tag w">значение B</span> Предлог: 临 + глагол + （时/前）— «перед самым тем, как…».</p>
+    <p class="cn-ex">这是我<span class="hl">临</span>离开北京的时候买的。</p>
+    <p class="cn-ex"><span class="hl">临</span>走那天，父亲从老家赶来送我们。</p>
+    <p class="tr" style="margin:0">Отсюда же 临时 (урок 16) — «в последний момент». Связь прямая: 临 значит «подойти вплотную к моменту».</p>
+  </div>
+
+  <h3>3 · 立刻 lìkè</h3>
+  <div class="card red">
+    <p>Наречие: действие происходит сразу вслед за предыдущим. Схема — <b>立刻 + глагол</b>.</p>
+    <p class="cn-ex">上了楼，开门的竟是微笑着的父母，温暖的气息<span class="hl">立刻</span>扑面而来。</p>
+    <p class="cn-ex">原来父母要我留下串钥匙，只是为了让我们回来时，能<span class="hl">立刻</span>感受到家的温暖！</p>
+    <p class="cn-ex">那两只羊一见到青草，就<span class="hl">立刻</span>去吃草了。</p>
+    <p class="tr" style="margin:0">Отличие от 马上: 立刻 — строго «в ту же секунду», 马上 может значить «скоро, вот-вот» (我马上就来 — может быть и через десять минут). В письменной речи 立刻 и 立即 предпочтительнее.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Сочетаемость <span class="cn">词语搭配</span></h2>
+  <table>
+    <tr><th style="width:38%">Модель</th><th>Что подставляем</th></tr>
+    <tr><td class="han">断 + O</td><td class="han">断水 / 断电 / 断联系</td></tr>
+    <tr><td class="han">晒 + O</td><td class="han">晒被子 / 衣服 / 太阳</td></tr>
+    <tr><td class="han">强烈的 + N</td><td class="han">强烈的阳光 / 感情 / 对比</td></tr>
+    <tr><td class="han">长途 + N</td><td class="han">长途旅行 / 汽车 / 电话</td></tr>
+    <tr><td class="han">一辈子 + V</td><td class="han">一辈子住在农村 / 一辈子没出过国</td></tr>
+    <tr><td class="han">坚决 + V</td><td class="han">坚决反对 / 坚决改正</td></tr>
+    <tr><td class="han">V + 断</td><td class="han">打断 / 挣断 / 摔断</td></tr>
+    <tr><td class="han">V/adj 得 + 不得了</td><td class="han">热得 / 累得 / 急得 / 兴奋得 / 热闹得不得了</td></tr>
+    <tr><td class="han">一套 + N</td><td class="han">一套房子 / 家具 / 餐具 / 邮票 / 西服</td></tr>
+    <tr><td class="han">一阵 + N</td><td class="han">一阵风 / 雨 / 歌声 / 香味</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>悄悄 или 偷偷 <span class="cn">词语辨析</span></h2>
+  <p>Оба — наречия «так, чтобы не заметили», и часто взаимозаменяемы (他悄悄/偷偷地走了出去). Разница в том, <b>что именно</b> скрывается:</p>
+  <table>
+    <tr><th style="width:50%">悄悄 qiāoqiāo</th><th>偷偷 tōutōu</th></tr>
+    <tr>
+      <td>Подчёркивает, что <b>звук тихий</b>.<br><span class="han">父亲悄悄把我拉到一边说话。</span></td>
+      <td>Подчёркивает, что <b>действие не хотят обнародовать</b>.<br><span class="han">他谁也没告诉，偷偷去旅行了。</span></td>
+    </tr>
+  </table>
+  <p style="font-size:14.5px;color:var(--brick);margin:0">Быстрый тест: если можно добавить «шёпотом, вполголоса» — 悄悄. Если «тайком, втихаря, никому не сказав» — 偷偷.</p>
+</section>
+
+<section>
+  <h2>Проверьте себя <span class="cn">练习 · 答案</span></h2>
+  <p>Ответы к упражнениям со стр. 13–15 — сначала решите, потом раскройте.</p>
+
+  <details>
+    <summary>做一做 · 悄悄 / 偷偷</summary>
+    <div class="in">
+      <p>① 晚饭前姑姑就一个人<span class="k">悄悄／偷偷</span>地走了。（оба）<br>
+      ② 考试已经开始了，他才<span class="k">悄悄</span>走进来。（чтобы не шуметь）<br>
+      ③ 孩子睡着了，爸爸在妈妈耳边<span class="k">悄悄</span>说了几句话。（шёпотом）<br>
+      ④ 别人都不知道，她只是<span class="k">偷偷</span>地把这件事告诉了我。（тайком）</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 1 · 选择合适的词语填空 （断 套 锁 挣 长途 打工 强烈 想象）</summary>
+    <div class="in">
+      <p>① 我穿这<span class="k">套</span>西服去电视台参加节目怎么样？<br>
+      ② 我不能<span class="k">想象</span>她喝醉了会是什么样子。<br>
+      ③ 国际<span class="k">长途</span>电话很贵。<br>
+      ④ 因为同学们<span class="k">强烈</span>要求，我们决定这个周末出去活动。<br>
+      ⑤ 房门被反<span class="k">锁</span>上了，他从窗户里跳出来，把腿摔<span class="k">断</span>了。<br>
+      ⑥ 暑假的时候我想去<span class="k">打</span>两个月<span class="k">工</span>，<span class="k">挣</span>点儿钱。（раздельное слово — числительное внутрь!）</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 2 · 选择正确答案</summary>
+    <div class="in">
+      <p>① 他的态度很<span class="k">坚决</span>（A）— нужно прилагательное; 坚持 — глагол.<br>
+      ② 春节<span class="k">马上</span>就要到了（B）— «вот-вот наступит»; 立刻 значит «сию секунду» и с 就要 не идёт.<br>
+      ③ 河里的水都被<span class="k">冻</span>住了（A）— нужен глагол; 冷 — прилагательное.<br>
+      ④ 一个<span class="k">温暖</span>的微笑（B）— переносное тепло; 暖和 только про температуру.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 3 · 给括号里的词选择适当的位置</summary>
+    <div class="in">
+      <p>① <span class="k">C</span> — 但我会照顾她<span class="k">一辈子</span>。<br>
+      ② <span class="k">C</span> — 他们俩大吵<span class="k">了不得了</span>… точнее: 他们俩大吵了一架，А 不得了 ставится в <span class="k">A</span> — 不得了，他们俩大吵了一架！（восклицание в начале）<br>
+      ③ <span class="k">B</span> — 他病了，老师和同学们<span class="k">立刻</span>把他送进了医院。<br>
+      ④ <span class="k">C</span> — 花园里飘来<span class="k">一阵</span>花香。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>扩展 · 亲属称谓 и 交往1 （外公 姥姥 姑姑 舅舅 老婆 太太 兄弟 ／ 小气 周到 坦率）</summary>
+    <div class="in">
+      <p>① 妈妈说她哥哥明天会来，我还从来没见过这个<span class="k">舅舅</span>呢。<br>
+      ② <span class="k">坦率</span>地说，我觉得你不应该这么做。<br>
+      ③ 你怎么这么<span class="k">小气</span>啊？好朋友借点儿钱都不愿意。<br>
+      ④ 你们照顾得非常<span class="k">周到</span>，非常感谢！</p>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Сочинение <span class="cn">最深的爱</span></h2>
+  <p>Задание урока: не менее 100 иероглифов о родителях из текста и о ваших отношениях со своими. Образец на ~180 знаков.</p>
+  <div class="card red">
+    <p class="cn-ex" style="line-height:2">课文里的父母一开始拒绝了钥匙，后来却<span class="hl">悄悄</span>要了回去，只是为了让孩子回家时能<span class="hl">立刻</span>感受到家的<span class="hl">温暖</span>。这就是父母的爱：他们很少说，却什么都做了。我自己也有类似的经历。上大学<span class="hl">以来</span>，我每年只回两三次家，可每次<span class="hl">临</span>走前，母亲总会把我的包塞得满满的。小时候我觉得麻烦，现在却常常<span class="hl">想象</span>那个画面。也许最深的爱从来不在话里，而在那些不起眼的细节里。</p>
+  </div>
+  <h3>Готовые связки</h3>
+  <div class="card">
+    <ul style="margin-bottom:0">
+      <li class="cn-ex">这就是父母的爱：他们很少说，却什么都做了</li>
+      <li class="cn-ex">上大学以来，我每年只回两三次家</li>
+      <li class="cn-ex">每次临走前，母亲总会……</li>
+      <li class="cn-ex">小时候我觉得麻烦，现在却常常想起</li>
+      <li class="cn-ex">最深的爱从来不在话里，而在那些不起眼的细节里</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Что делать до экзамена <span class="cn">复习计划</span></h2>
+  <ol class="route">
+    <li><b>Пересказ по дороге.</b> Старый дом → новая квартира → отказ от ключей → просьба отца перед отъездом → зимняя ночь → освещённое окно → объяснение. Семь точек, четыре абзаца текста.</li>
+    <li><b>Счётные слова отдельной строкой.</b> 一套房子、一串钥匙、一阵风、一趟车. Экзамен подставляет их в пропуск постоянно, а в первом уроке уже было 一项.</li>
+    <li><b>Пара 铺 и 扑.</b> Оба pū, оба в этом уроке, разные ключи: 钅 против 扌. Продиктуйте себе и запишите от руки — это самая вероятная ошибка урока.</li>
+    <li><b>Три конструкции — по своему предложению.</b> ……以来 · 临走那天 · 立刻…… . Первая особенно полезна в зачине сочинения: 来中国以来，我…… .</li>
+    <li><b>Раздельные слова.</b> 打工 из этого урока и 吵架、离婚 из первого. Упражнение 1 прямо требует вставить 打…两个月…工 — с числительным внутри.</li>
+  </ol>
+</section>
+
+<nav class="botnav"><a href="hsk5a-lesson-01.html"><span>Предыдущий урок</span>1 · 爱的细节</a><a href="hsk5a-lesson-03.html"><span>Следующий урок</span>3 · 人生有选择</a></nav>
+
+<footer>
+  Конспект по «HSK 标准教程 5（上）», урок 2 «留串钥匙给父母», стр. 9–15 · Unit 1 了解生活<br>
+  Схема построена по сюжету урока: старый дом в деревне, новая квартира в уезде, связка ключей и освещённое окно зимней ночью.
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML = '<span class="w">' + z.dataset.w + '</span><span class="p">' + z.dataset.p +
+      '</span><span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){ zones.forEach(function(o){ o.classList.remove('on'); }); out.innerHTML = def; }
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+  document.querySelector('.road-box svg').addEventListener('mouseleave', clear);
+})();
+</script>
+<script>
+(function(){
+  var LESSON = "02";
+  var DIRS = ["audio/", "", "mp3/", "media/", "аудио/", "audio/15/", "15/"];
+  var CAND = [];
+  DIRS.forEach(function(d){ CAND.push(d + "{hz}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{hz2}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{pyn}.mp3"); });
+
+  var patIn  = document.getElementById('ab-pat');
+  var status = document.getElementById('ab-status');
+  var btns   = Array.prototype.slice.call(document.querySelectorAll('.pb[data-hz]'));
+  var cur = null, curBtn = null, queue = null;
+
+  function pad(n){ n = String(n||''); return n.length === 1 ? '0'+n : n; }
+
+  function resolve(pat, b){
+    return pat
+      .replace(/\{hz2\}/g, b.dataset.hz2 || b.dataset.hz)
+      .replace(/\{hz\}/g,  b.dataset.hz)
+      .replace(/\{pyn\}/g, b.dataset.pyn)
+      .replace(/\{py\}/g,  b.dataset.py)
+      .replace(/\{num\}/g, pad(b.dataset.num))
+      .replace(/\{n\}/g,   b.dataset.num || '')
+      .replace(/\{L\}/g,   LESSON);
+  }
+
+  function setStatus(t, cls){
+    status.textContent = t || '';
+    status.className = 'ab-status' + (cls ? ' ' + cls : '');
+  }
+
+  function test(pat, b){
+    return new Promise(function(res){
+      var a = new Audio(), done = false;
+      function ok(){ if(!done){ done = true; res(true); } }
+      function no(){ if(!done){ done = true; res(false); } }
+      a.addEventListener('loadedmetadata', ok);
+      a.addEventListener('canplay', ok);
+      a.addEventListener('error', no);
+      a.preload = 'metadata';
+      a.src = encodeURI(resolve(pat, b));
+      setTimeout(no, 2500);
+    });
+  }
+
+  function stop(){
+    if(cur){ cur.pause(); cur = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn = null; }
+    queue = null;
+    document.querySelectorAll('.pball.playing').forEach(function(x){ x.classList.remove('playing'); });
+  }
+
+  /* проигрывание с запасными вариантами имени для этого слова */
+  function play(b, onEnd){
+    stop();
+    var tries = [patIn.value.trim()];
+    var alt = (b.dataset.hz2 && b.dataset.hz2 !== b.dataset.hz)
+      ? patIn.value.trim().replace('{hz}', '{hz2}') : null;
+    if(alt && tries.indexOf(alt) < 0) tries.push(alt);
+    CAND.forEach(function(p){ if(tries.indexOf(p) < 0) tries.push(p); });
+
+    b.classList.add('playing');
+    var i = 0;
+    (function attempt(){
+      if(i >= tries.length){
+        b.classList.remove('playing');
+        b.classList.add('missing');
+        b.title = 'Не найден файл для ' + b.dataset.hz;
+        setStatus('Не найден файл для ' + b.dataset.hz + ' — проверьте папку или шаблон.', 'bad');
+        if(onEnd) onEnd();
+        return;
+      }
+      var src = resolve(tries[i++], b);
+      var a = new Audio(encodeURI(src));
+      var started = false;
+      a.addEventListener('canplay', function(){ started = true; });
+      a.addEventListener('ended', function(){
+        b.classList.remove('playing');
+        if(cur === a){ cur = null; curBtn = null; }
+        if(onEnd) onEnd();
+      });
+      a.addEventListener('error', function(){
+        if(!started){ attempt(); }
+        else { b.classList.remove('playing'); if(onEnd) onEnd(); }
+      });
+      cur = a; curBtn = b;
+      b.classList.remove('missing');
+      a.play().catch(function(){});
+    })();
+  }
+
+  /* автопоиск папки при открытии */
+  function autodetect(quiet){
+    if(!btns.length) return;
+    if(!quiet) setStatus('Перебираю варианты…');
+    var i = 0;
+    (function next(){
+      if(i >= CAND.length){
+        setStatus(quiet
+          ? 'Папка с mp3 не найдена. Положите файлы в audio рядом с этим документом.'
+          : 'Ни один из типовых вариантов не подошёл. Впишите путь вручную.',
+          quiet ? '' : 'bad');
+        return;
+      }
+      var p = CAND[i++];
+      test(p, btns[0]).then(function(ok){
+        if(ok){
+          patIn.value = p;
+          document.querySelectorAll('.pb.missing').forEach(function(x){
+            x.classList.remove('missing'); x.title = '';
+          });
+          setStatus('Озвучка подключена: ' + p, 'ok');
+        } else next();
+      });
+    })();
+  }
+
+  document.getElementById('ab-auto').addEventListener('click', function(){ autodetect(false); });
+  document.getElementById('ab-test').addEventListener('click', function(){
+    if(!btns.length) return;
+    setStatus('Проверяю…');
+    test(patIn.value.trim(), btns[0]).then(function(ok){
+      setStatus((ok ? 'Файл найден: ' : 'Не найден: ') + resolve(patIn.value.trim(), btns[0]),
+                ok ? 'ok' : 'bad');
+    });
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(curBtn === b && cur){ stop(); return; }
+      play(b);
+    });
+  });
+
+  document.querySelectorAll('.pball').forEach(function(pb){
+    pb.addEventListener('click', function(){
+      if(pb.classList.contains('playing')){ stop(); return; }
+      var list = Array.prototype.slice.call(
+        pb.closest('.cluster').querySelectorAll('.pb[data-hz]'));
+      stop();
+      pb.classList.add('playing');
+      var i = 0;
+      queue = list;
+      (function step(){
+        if(queue !== list || i >= list.length){ pb.classList.remove('playing'); return; }
+        play(list[i++], function(){ setTimeout(step, 350); });
+      })();
+    });
+  });
+
+  autodetect(true);
+})();
+</script>
+</body>
+</html>
