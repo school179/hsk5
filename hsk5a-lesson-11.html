@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 11 · 闹钟的危害 · HSK 标准教程 5上</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1d26;
+  --paper:#d9dae0;
+  --card:#f2f2f5;
+  --brick:#5d6069;
+  --red:#b03a3a;
+  --dawn:#d99b3c;
+  --night:#3a4160;
+  --line:rgba(26,29,38,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:repeating-linear-gradient(0deg,transparent 0 32px,rgba(26,29,38,.04) 32px 33px)}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+header{padding:40px 0 26px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;color:var(--dawn);letter-spacing:-.03em}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:44px;line-height:1.06;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brick);margin-top:10px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+section{margin-top:56px}
+h2{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+
+.sleep-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px}
+.sleep-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone .fillable{transition:opacity .18s ease}
+.zone .fillable{opacity:.88}
+.zone:hover .fillable,.zone.on .fillable{opacity:1}
+.zone:focus{outline:none}
+.slab{font-family:var(--han);font-size:14px;font-weight:600;fill:var(--ink);pointer-events:none}
+.spin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.05em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:64px}
+.readout .w{font-family:var(--han);font-size:21px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:12.5px;color:var(--night)}
+.readout .d{display:block;margin-top:5px;font-size:15px;line-height:1.55}
+.readout .hint{color:var(--brick);font-style:italic}
+
+.moves{list-style:none;padding:0;margin:0;counter-reset:mv}
+.moves li{counter-increment:mv;position:relative;padding:14px 0 14px 62px;border-bottom:1px solid var(--line)}
+.moves li::before{content:counter(mv,decimal-leading-zero);position:absolute;left:0;top:14px;
+  font-family:var(--mono);font-size:13px;font-weight:700;color:var(--red);letter-spacing:.05em}
+.moves b{font-family:var(--disp);font-size:18px;letter-spacing:.02em;display:block;margin-bottom:3px}
+.moves .kw{display:block;margin-top:6px;font-family:var(--han);font-size:15px;color:var(--brick)}
+
+.cluster{margin-top:26px}
+.cluster .why{font-size:14px;color:var(--brick);margin:-4px 0 14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--night);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--dawn);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.dawn{border-left:4px solid var(--dawn)}
+.card.night{border-left:4px solid var(--night)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--card);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.d{background:var(--dawn)}
+.tag.n{background:var(--night)}
+.tag.r{background:var(--red)}
+
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(26,29,38,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+.trap{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--night);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+details{background:var(--card);border:1px solid var(--line);margin:10px 0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;font-family:var(--disp);
+  font-weight:700;font-size:22px;color:var(--red);width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  .lesson-no{font-size:64px}
+  h1{font-size:32px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index.html">&#8592; Все уроки 5A</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（上） · Unit 4 走近科学 · Approaching Science</div>
+  <div class="title-row">
+    <div class="lesson-no">11</div>
+    <h1>闹钟的危害<span class="lat">Чем вреден будильник · 673 字 · стр. 88–96</span></h1>
+  </div>
+  <div class="meta">
+    <span><b>41</b> новое слово + 4 термина</span>
+    <span><b>4</b> грамматические точки</span>
+    <span>ключ: <b>来/过来 · 所 · 相当 · 数</b></span>
+  </div>
+</header>
+
+<section>
+  <p class="lede">Одиннадцатый урок — научно-популярный текст о механике пробуждения. Он устроен как сравнение двух сценариев: как человек просыпается сам и что происходит, когда его будит звонок. Разница описана цифрами — дыхание, пульс, память, адреналин, — поэтому опорой будет шкала сна от глубокой фазы до бодрствования с двумя разными выходами.</p>
+  <p style="font-size:15px;color:var(--brick);margin:0"><b>Самая запоминающаяся цифра текста:</b> при резком пробуждении из глубокого сна кратковременная память и способность считать падают до 65% от нормы — 与醉酒者相当, то есть на уровне пьяного человека.</p>
+</section>
+
+<section id="sleep">
+  <h2>Два способа проснуться <span class="cn">自然醒 ↔ 被闹钟叫醒</span></h2>
+  <div class="sleep-box">
+    <svg viewBox="0 0 620 380" role="img" aria-label="Схема: естественное пробуждение через световой переход и резкое пробуждение будильником">
+      <text class="spin" x="16" y="18" letter-spacing="0.16em">ГЛУБИНА СНА → ПРОБУЖДЕНИЕ</text>
+
+      <!-- механизм -->
+      <g class="zone" tabindex="0" data-w="睡眠机制：人类 · 机制 · 生物钟 · 规律 · 光线 · 必要" data-p="jīzhì · shēngwùzhōng · guīlǜ · bìyào" data-d="医学研究证明，人类睡眠有其特定的机制，自然醒是最符合人体生物钟规律的。光线是自然醒的必要条件，是人体内的生物闹钟. Свет — не просто фон, а именно 必要条件, биологический будильник внутри тела.">
+        <rect class="fillable" x="16" y="28" width="588" height="30" fill="#3a4160" opacity=".16"/>
+        <text class="slab" x="310" y="48" text-anchor="middle">人类睡眠有其特定的机制 · 光线 = 人体内的生物闹钟</text>
+      </g>
+
+      <!-- солнце -->
+      <g class="zone" tabindex="0" data-w="自然醒：早晨 · 新陈代谢 · 熟睡 · 过渡 · 浅睡 · 醒来" data-p="guòdù · qiǎn · xǐng lái" data-d="早晨，人体感受到逐渐变强的太阳光线，新陈代谢随之加快，人逐渐从熟睡过渡到浅睡，直到醒来。这就是阴雨天人们往往喜欢睡懒觉的原因. Здесь же работает грамматическая точка 醒来 — переход ко сну наяву.">
+        <circle class="fillable" cx="76" cy="104" r="22" fill="#d99b3c"/>
+        <g class="fillable" stroke="#d99b3c" stroke-width="2">
+          <line x1="76" y1="72" x2="76" y2="62"/><line x1="76" y1="136" x2="76" y2="146"/>
+          <line x1="44" y1="104" x2="34" y2="104"/><line x1="108" y1="104" x2="118" y2="104"/>
+        </g>
+        <text class="spin" x="76" y="168" text-anchor="middle">太阳光线逐渐变强</text>
+        <text class="spin" x="76" y="182" text-anchor="middle">新陈代谢加快</text>
+      </g>
+
+      <!-- плавная кривая -->
+      <g class="zone" tabindex="0" data-w="平缓的过渡：熟睡 → 浅睡 → 清醒 · 享受 · 舒适" data-p="shúshuì · qīngxǐng · xiǎngshòu" data-d="Плавный путь: 熟睡 (глубокий сон) → 浅睡 (поверхностный) → 清醒 (ясное сознание). Именно его 紧张的现代生活 отнимает у работающих людей: 使很多上班的人无法享受轻松舒适的睡眠、自然地醒来.">
+        <path class="fillable" d="M136 206 C 190 206, 220 150, 268 128 C 300 114, 320 108, 348 106"
+          fill="none" stroke="#d99b3c" stroke-width="3.4" stroke-linecap="round"/>
+        <text class="spin" x="160" y="226" text-anchor="middle">熟睡</text>
+        <text class="spin" x="248" y="150" text-anchor="middle">浅睡</text>
+        <text class="spin" x="348" y="96" text-anchor="middle">清醒</text>
+        <text class="slab" x="246" y="196" text-anchor="middle" style="font-size:12px;fill:#8a6a2a">自然醒：逐渐过渡</text>
+      </g>
+
+      <!-- будильник -->
+      <g class="zone" tabindex="0" data-w="闹钟叫醒：铃 · 用途 · 实验 · 所 · 反应 · 状态" data-p="líng · yòngtú · shíyàn · suǒ" data-d="紧张的现代生活……闹钟的用途就显得格外重要了。但实验研究证明，人们对自然醒与被闹钟铃声叫醒这两种方式所产生的反应是很不相同的. Здесь же — вторая точка урока, частица 所 перед глаголом.">
+        <rect class="fillable" x="396" y="86" width="56" height="44" fill="#b03a3a"/>
+        <circle cx="408" cy="80" r="7" fill="#b03a3a"/><circle cx="440" cy="80" r="7" fill="#b03a3a"/>
+        <text class="slab" x="424" y="114" text-anchor="middle" fill="#f2f2f5" style="font-size:16px">铃</text>
+        <path class="fillable" d="M348 142 L396 110" stroke="#b03a3a" stroke-width="3" stroke-dasharray="4 4"/>
+        <text class="spin" x="424" y="148" text-anchor="middle">所产生的反应很不相同</text>
+      </g>
+
+      <!-- цифры -->
+      <g class="zone" tabindex="0" data-w="生理变化：呼吸 · 心跳 · 16→24次/分钟 · 加快10次" data-p="hūxī" data-d="从睡眠状态过渡到清醒状态时，人的呼吸会从16次/分钟提高到24次/分钟，心跳每分钟加快10次. Это нормальная цифра перехода — она одинакова при любом пробуждении, резкость добавляет остальное.">
+        <rect class="fillable" x="16" y="212" width="184" height="58" fill="#3a4160" opacity=".2" stroke="#3a4160" stroke-width="1.2"/>
+        <text class="slab" x="108" y="234" text-anchor="middle" style="font-size:13px">呼吸 16 → 24 次/分钟</text>
+        <text class="spin" x="108" y="254" text-anchor="middle">心跳每分钟加快10次</text>
+      </g>
+
+      <!-- психика -->
+      <g class="zone" tabindex="0" data-w="心理影响：心理 · 慌（张）· 情绪 · 低落 · 记忆 · 计算 · 相当" data-p="xīnlǐ · huāng · qíngxù · dīluò · xiāngdāng" data-d="如果突然被闹钟叫醒，将在心理上使人产生心慌、情绪低落、感觉没睡醒等不适。如果是从深度睡眠中被突然叫醒，那么，人的短期记忆能力、计算技能都会受到影响，这些能力最多为正常状态的65%，与醉酒者相当.">
+        <rect class="fillable" x="216" y="212" width="184" height="58" fill="#b03a3a" opacity=".2" stroke="#b03a3a" stroke-width="1.2"/>
+        <text class="slab" x="308" y="234" text-anchor="middle" style="font-size:13px">记忆、计算 → 65%</text>
+        <text class="spin" x="308" y="254" text-anchor="middle">与醉酒者相当 · 心慌 · 情绪低落</text>
+      </g>
+
+      <!-- адреналин -->
+      <g class="zone" tabindex="0" data-w="长期危害：肾上腺素 · 持续 · 数 · 导致 · 高血压 · 失眠 · 精神" data-p="chíxù · shù · dǎozhì · shīmián" data-d="出于自我保护，被闹钟叫醒时我们的身体会提高体内的肾上腺素水平。这种状态如果持续数天、数周、数月，将导致高血压、失眠和一些精神问题等. Здесь сразу две точки: 持续 (в 辨析) и 数 как книжное «несколько».">
+        <rect class="fillable" x="416" y="212" width="188" height="58" fill="#3a4160" opacity=".32" stroke="#3a4160" stroke-width="1.2"/>
+        <text class="slab" x="510" y="234" text-anchor="middle" style="font-size:13px">肾上腺素持续升高</text>
+        <text class="spin" x="510" y="254" text-anchor="middle">数天、数周、数月 → 高血压 · 失眠 · 精神问题</text>
+      </g>
+
+      <!-- решение -->
+      <g class="zone" tabindex="0" data-w="专家建议：专家 · 采用 · 柔和 · 发病" data-p="zhuānjiā · cǎiyòng · róuhé" data-d="研究发现，突然被闹铃惊醒的人比自然醒的人血压更高、心跳更快。对此，专家解释说，人在睡眠时，身体会发生一些变化，因此人们在早上醒来时更容易发病，而闹铃则会使发病的可能性变得更大。如果你必须定个闹钟，应采用柔和的声音或音乐.">
+        <rect class="fillable" x="16" y="292" width="284" height="48" fill="#d99b3c" opacity=".3" stroke="#d99b3c" stroke-width="1.4"/>
+        <text class="slab" x="158" y="314" text-anchor="middle" style="font-size:13px">应采用柔和的声音或音乐</text>
+        <text class="spin" x="158" y="332" text-anchor="middle">专家 · 血压更高 · 更容易发病</text>
+      </g>
+
+      <!-- световой будильник -->
+      <g class="zone" tabindex="0" data-w="光闹钟：愿望 · 窗帘 · 市场 · 产品 · 模仿 · 避免 · 传统" data-p="yuànwàng · chuānglián · mófǎng · bìmiǎn" data-d="各种醒来方式中，当然是自然醒最符合我们的愿望。可谁能替你拉开窗帘让阳光照进来呢？近年来，市场上出现了一种新的电子产品，名为“光闹钟”。它能在室内模仿早晨自然光线的变化，通过光线的作用使人在设定的时间里自然地醒来，可避免传统闹钟突然惊醒对人体健康的伤害.">
+        <rect class="fillable" x="316" y="292" width="288" height="48" fill="#d99b3c" opacity=".5" stroke="#d99b3c" stroke-width="1.6"/>
+        <text class="slab" x="460" y="314" text-anchor="middle" style="font-size:13px">“光闹钟”：模仿早晨自然光线</text>
+        <text class="spin" x="460" y="332" text-anchor="middle">市场 · 电子产品 · 避免传统闹钟的伤害</text>
+      </g>
+
+      <text class="spin" x="16" y="366">希望这样能向真正的“自然醒”走近一点，再走近一点。</text>
+    </svg>
+    <div class="readout" id="readout">
+      <span class="hint">Наведите курсор или коснитесь любого блока — появятся слова этого фрагмента и их роль в тексте.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Текст в трёх кадрах <span class="cn">课文复述</span></h2>
+  <p style="font-size:14.5px;color:var(--brick)">Три блока учебника (стр. 95): как работает естественное пробуждение, чем вреден обычный будильник, что предлагает «световой будильник».</p>
+  <ol class="moves">
+    <li>
+      <b>Процесс естественного пробуждения</b>
+      医学研究证明，人类睡眠有其特定的机制，自然醒是最符合人体生物钟规律的。光线是自然醒的必要条件，是人体内的生物闹钟。 早晨，人体感受到逐渐变强的太阳光线，新陈代谢随之加快，人逐渐从熟睡过渡到浅睡，直到醒来。这就是阴雨天人们往往喜欢睡懒觉的原因。
+      <span class="kw">闹钟 · 危害 · 人类 · 机制 · 生物 · 规律 · 光线 · 必要 · 过渡 · 浅 · 醒来</span>
+    </li>
+    <li>
+      <b>Вред традиционного будильника</b>
+      紧张的现代生活，使很多上班的人无法享受轻松舒适的睡眠、自然地醒来，闹钟的用途就显得格外重要了。但实验研究证明，人们对自然醒与被闹钟铃声叫醒这两种方式所产生的反应是很不相同的。 При переходе ко сну наяву 人的呼吸会从16次/分钟提高到24次/分钟，心跳每分钟加快10次. Но если разбудить резко — 将在心理上使人产生心慌、情绪低落、感觉没睡醒等不适; а из глубокого сна — 人的短期记忆能力、计算技能都会受到影响，这些能力最多为正常状态的65%，与醉酒者相当. Кроме того, 被闹钟叫醒时我们的身体会提高体内的肾上腺素水平。这种状态如果持续数天、数周、数月，将导致高血压、失眠和一些精神问题等.
+      <span class="kw">现代 · 享受 · 用途 · 实验 · 铃 · 所 · 状态 · 清醒 · 呼吸 · 心理 · 慌张 · 情绪 · 低落 · 记忆 · 计算 · 相当 · 持续 · 数 · 导致 · 失眠 · 精神</span>
+    </li>
+    <li>
+      <b>«Световой будильник» как улучшение</b>
+      研究发现，突然被闹铃惊醒的人比自然醒的人血压更高、心跳更快. Специалисты объясняют: 人在睡眠时，身体会发生一些变化，因此人们在早上醒来时更容易发病，而闹铃则会使发病的可能性变得更大。如果你必须定个闹钟，应采用柔和的声音或音乐。 Естественное пробуждение отвечает нашему желанию лучше всего, 可谁能替你拉开窗帘让阳光照进来呢？ Поэтому 市场上出现了一种新的电子产品，名为“光闹钟”。它能在室内模仿早晨自然光线的变化，通过光线的作用使人在设定的时间里自然地醒来，可避免传统闹钟突然惊醒对人体健康的伤害。
+      <span class="kw">专家 · 采用 · 柔和 · 愿望 · 窗帘 · 市场 · 产品 · 模仿 · 避免 · 传统</span>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <h2>41 слово по гнёздам <span class="cn">生词</span></h2>
+  <p style="font-size:14px;color:var(--brick)"><span class="star">★</span> — слово сверх программы HSK 5 (в учебнике со звёздочкой).</p>
+
+  <div class="audiobar" id="audiobar">
+    <div class="ab-t">Озвучка слов</div>
+    <div class="ab-row">
+      <input id="ab-pat" type="text" spellcheck="false" value="audio/{hz}.mp3" aria-label="Шаблон пути к mp3">
+      <button type="button" id="ab-auto">Подобрать</button>
+      <button type="button" id="ab-test">Проверить</button>
+    </div>
+    <div class="ab-status" id="ab-status"></div>
+    <div class="ab-note">
+      По умолчанию ищутся файлы вида <code>иероглиф.mp3</code> — сначала в папке
+      <code>audio</code> рядом с этим файлом, потом прямо рядом с ним. Нужная папка
+      определяется сама при открытии страницы. Если ваши mp3 лежат где-то ещё, впишите путь
+      вручную: доступны подстановки <code>{hz}</code> иероглифы, <code>{py}</code> пиньинь с
+      тонами, <code>{pyn}</code> пиньинь без диакритики, <code>{num}</code> номер слова в списке
+      учебника, <code>{L}</code> номер урока. Работает только если открыть файл у себя на диске —
+      в предпросмотре доступа к вашим папкам нет.
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>I. Сон и пробуждение<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Тематическое гнездо урока. Почти все эти слова нужны и в сочинении, и в текстах про здоровье.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">闹钟</span><span class="py">nàozhōng</span><button class="pb" type="button" data-hz="闹钟" data-hz2="闹钟" data-py="nàozhōng" data-pyn="naozhong" data-num="1" aria-label="Прослушать 闹钟" title="Прослушать 闹钟">&#9654;</button><span class="ru">будильник</span><span class="ex">定个闹钟</span></div>
+      <div class="w-item"><span class="hz">危害</span><span class="py">wēihài</span><button class="pb" type="button" data-hz="危害" data-hz2="危害" data-py="wēihài" data-pyn="weihai" data-num="2" aria-label="Прослушать 危害" title="Прослушать 危害">&#9654;</button><span class="ru">вредить, наносить вред; вред</span><span class="ex">危害健康 / 危害社会安全</span></div>
+      <div class="w-item"><span class="hz">人类</span><span class="py">rénlèi</span><button class="pb" type="button" data-hz="人类" data-hz2="人类" data-py="rénlèi" data-pyn="renlei" data-num="3" aria-label="Прослушать 人类" title="Прослушать 人类">&#9654;</button><span class="ru">человечество, человек как вид</span></div>
+      <div class="w-item"><span class="hz">机制</span><span class="py">jīzhì</span><span class="star">★</span><button class="pb" type="button" data-hz="机制" data-hz2="机制" data-py="jīzhì" data-pyn="jizhi" data-num="4" aria-label="Прослушать 机制" title="Прослушать 机制">&#9654;</button><span class="ru">механизм (работы чего-либо)</span><span class="ex">特定的机制</span></div>
+      <div class="w-item"><span class="hz">生物</span><span class="py">shēngwù</span><span class="star">★</span><button class="pb" type="button" data-hz="生物" data-hz2="生物" data-py="shēngwù" data-pyn="shengwu" data-num="5" aria-label="Прослушать 生物" title="Прослушать 生物">&#9654;</button><span class="ru">живые организмы; биологический</span><span class="ex">生物钟</span></div>
+      <div class="w-item"><span class="hz">规律</span><span class="py">guīlǜ</span><button class="pb" type="button" data-hz="规律" data-hz2="规律" data-py="guīlǜ" data-pyn="guilu" data-num="6" aria-label="Прослушать 规律" title="Прослушать 规律">&#9654;</button><span class="ru">закономерность; размеренный</span><span class="ex">符合规律 / 有规律的运动</span></div>
+      <div class="w-item"><span class="hz">光线</span><span class="py">guāngxiàn</span><button class="pb" type="button" data-hz="光线" data-hz2="光线" data-py="guāngxiàn" data-pyn="guangxian" data-num="7" aria-label="Прослушать 光线" title="Прослушать 光线">&#9654;</button><span class="ru">свет, световой луч</span><span class="ex">光线昏暗 / 明亮</span></div>
+      <div class="w-item"><span class="hz">必要</span><span class="py">bìyào</span><button class="pb" type="button" data-hz="必要" data-hz2="必要" data-py="bìyào" data-pyn="biyao" data-num="8" aria-label="Прослушать 必要" title="Прослушать 必要">&#9654;</button><span class="ru">необходимый; необходимость</span><span class="ex">必要条件 / 很有必要</span></div>
+      <div class="w-item"><span class="hz">过渡</span><span class="py">guòdù</span><span class="star">★</span><button class="pb" type="button" data-hz="过渡" data-hz2="过渡" data-py="guòdù" data-pyn="guodu" data-num="9" aria-label="Прослушать 过渡" title="Прослушать 过渡">&#9654;</button><span class="ru">переходить (из состояния в состояние)</span><span class="ex">从熟睡过渡到浅睡</span></div>
+      <div class="w-item"><span class="hz">浅</span><span class="py">qiǎn</span><button class="pb" type="button" data-hz="浅" data-hz2="浅" data-py="qiǎn" data-pyn="qian" data-num="10" aria-label="Прослушать 浅" title="Прослушать 浅">&#9654;</button><span class="ru">мелкий, неглубокий; светлый</span><span class="ex">浅睡 ↔ 熟睡 / 深</span></div>
+      <div class="w-item"><span class="hz">清醒</span><span class="py">qīngxǐng</span><span class="star">★</span><button class="pb" type="button" data-hz="清醒" data-hz2="清醒" data-py="qīngxǐng" data-pyn="qingxing" data-num="18" aria-label="Прослушать 清醒" title="Прослушать 清醒">&#9654;</button><span class="ru">ясное сознание; прийти в себя</span><span class="ex">清醒过来 / 头脑清醒</span></div>
+      <div class="w-item"><span class="hz">呼吸</span><span class="py">hūxī</span><button class="pb" type="button" data-hz="呼吸" data-hz2="呼吸" data-py="hūxī" data-pyn="huxi" data-num="19" aria-label="Прослушать 呼吸" title="Прослушать 呼吸">&#9654;</button><span class="ru">дышать; дыхание</span></div>
+      <div class="w-item"><span class="hz">失眠</span><span class="py">shīmián</span><button class="pb" type="button" data-hz="失眠" data-hz2="失眠" data-py="shīmián" data-pyn="shimian" data-num="30" aria-label="Прослушать 失眠" title="Прослушать 失眠">&#9654;</button><span class="ru">страдать бессонницей</span></div>
+      <div class="w-item"><span class="hz">铃</span><span class="py">líng</span><button class="pb" type="button" data-hz="铃" data-hz2="铃" data-py="líng" data-pyn="ling" data-num="15" aria-label="Прослушать 铃" title="Прослушать 铃">&#9654;</button><span class="ru">звонок, колокольчик</span><span class="ex">闹铃 / 铃声</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>II. Психика и состояние<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Гнездо про самочувствие. 情绪、精神、状态 постоянно встречаются в 阅读 и в заданиях про стресс.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">状态</span><span class="py">zhuàngtài</span><button class="pb" type="button" data-hz="状态" data-hz2="状态" data-py="zhuàngtài" data-pyn="zhuangtai" data-num="17" aria-label="Прослушать 状态" title="Прослушать 状态">&#9654;</button><span class="ru">состояние, режим</span><span class="ex">正常状态 / 工作状态</span></div>
+      <div class="w-item"><span class="hz">心理</span><span class="py">xīnlǐ</span><button class="pb" type="button" data-hz="心理" data-hz2="心理" data-py="xīnlǐ" data-pyn="xinli" data-num="20" aria-label="Прослушать 心理" title="Прослушать 心理">&#9654;</button><span class="ru">психика, психология</span><span class="ex">在心理上 / 心理问题</span></div>
+      <div class="w-item"><span class="hz">慌（张）</span><span class="py">huāng(zhāng)</span><button class="pb" type="button" data-hz="慌" data-hz2="慌张" data-py="huāng" data-pyn="huang" data-num="21" aria-label="Прослушать 慌" title="Прослушать 慌">&#9654;</button><span class="ru">растерянный, в панике</span><span class="ex">心慌 / 别慌</span></div>
+      <div class="w-item"><span class="hz">情绪</span><span class="py">qíngxù</span><button class="pb" type="button" data-hz="情绪" data-hz2="情绪" data-py="qíngxù" data-pyn="qingxu" data-num="22" aria-label="Прослушать 情绪" title="Прослушать 情绪">&#9654;</button><span class="ru">настроение, эмоции</span><span class="ex">稳定的 / 不满的 / 紧张的情绪</span></div>
+      <div class="w-item"><span class="hz">低落</span><span class="py">dīluò</span><button class="pb" type="button" data-hz="低落" data-hz2="低落" data-py="dīluò" data-pyn="diluo" data-num="23" aria-label="Прослушать 低落" title="Прослушать 低落">&#9654;</button><span class="ru">подавленный, упавший</span><span class="ex">情绪低落</span></div>
+      <div class="w-item"><span class="hz">记忆</span><span class="py">jìyì</span><button class="pb" type="button" data-hz="记忆" data-hz2="记忆" data-py="jìyì" data-pyn="jiyi" data-num="24" aria-label="Прослушать 记忆" title="Прослушать 记忆">&#9654;</button><span class="ru">помнить; память</span><span class="ex">童年的 / 难忘的记忆</span></div>
+      <div class="w-item"><span class="hz">计算</span><span class="py">jìsuàn</span><button class="pb" type="button" data-hz="计算" data-hz2="计算" data-py="jìsuàn" data-pyn="jisuan" data-num="25" aria-label="Прослушать 计算" title="Прослушать 计算">&#9654;</button><span class="ru">вычислять, подсчитывать</span><span class="ex">计算出（来）</span></div>
+      <div class="w-item"><span class="hz">精神</span><span class="py">jīngshén / jīngshen</span><button class="pb" type="button" data-hz="精神" data-hz2="精神" data-py="jīngshén" data-pyn="jingshen" data-num="31" aria-label="Прослушать 精神" title="Прослушать 精神">&#9654;</button><span class="ru">дух, бодрость; бодрый</span><span class="ex">精神愉快 / 放松 / 饱满</span></div>
+      <div class="w-item"><span class="hz">享受</span><span class="py">xiǎngshòu</span><button class="pb" type="button" data-hz="享受" data-hz2="享受" data-py="xiǎngshòu" data-pyn="xiangshou" data-num="12" aria-label="Прослушать 享受" title="Прослушать 享受">&#9654;</button><span class="ru">наслаждаться, пользоваться</span><span class="ex">享受自由 / 艺术 / 人生 / 幸福</span></div>
+      <div class="w-item"><span class="hz">导致</span><span class="py">dǎozhì</span><button class="pb" type="button" data-hz="导致" data-hz2="导致" data-py="dǎozhì" data-pyn="daozhi" data-num="29" aria-label="Прослушать 导致" title="Прослушать 导致">&#9654;</button><span class="ru">приводить к (плохому)</span><span class="ex">导致错误 / 失败 / 失眠 / 危险</span></div>
+      <div class="w-item"><span class="hz">持续</span><span class="py">chíxù</span><button class="pb" type="button" data-hz="持续" data-hz2="持续" data-py="chíxù" data-pyn="chixu" data-num="27" aria-label="Прослушать 持续" title="Прослушать 持续">&#9654;</button><span class="ru">длиться непрерывно</span><span class="ex">持续三天 / 持续的高温</span></div>
+      <div class="w-item"><span class="hz">相当</span><span class="py">xiāngdāng</span><button class="pb" type="button" data-hz="相当" data-hz2="相当" data-py="xiāngdāng" data-pyn="xiangdang" data-num="26" aria-label="Прослушать 相当" title="Прослушать 相当">&#9654;</button><span class="ru">быть равным; весьма</span><span class="ex">与……相当 / 相当满意</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>III. Техника и решение<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Гнездо последнего абзаца. 采用、模仿、避免、产品 — универсальные слова для текстов про технологии.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">现代</span><span class="py">xiàndài</span><button class="pb" type="button" data-hz="现代" data-hz2="现代" data-py="xiàndài" data-pyn="xiandai" data-num="11" aria-label="Прослушать 现代" title="Прослушать 现代">&#9654;</button><span class="ru">современность; современный</span><span class="ex">现代生活（↔ 近代 — урок 9）</span></div>
+      <div class="w-item"><span class="hz">用途</span><span class="py">yòngtú</span><button class="pb" type="button" data-hz="用途" data-hz2="用途" data-py="yòngtú" data-pyn="yongtu" data-num="13" aria-label="Прослушать 用途" title="Прослушать 用途">&#9654;</button><span class="ru">назначение, применение</span></div>
+      <div class="w-item"><span class="hz">实验</span><span class="py">shíyàn</span><button class="pb" type="button" data-hz="实验" data-hz2="实验" data-py="shíyàn" data-pyn="shiyan" data-num="14" aria-label="Прослушать 实验" title="Прослушать 实验">&#9654;</button><span class="ru">эксперимент; экспериментировать</span><span class="ex">实验研究（≠ 试验 — урок 10）</span></div>
+      <div class="w-item"><span class="hz">专家</span><span class="py">zhuānjiā</span><button class="pb" type="button" data-hz="专家" data-hz2="专家" data-py="zhuānjiā" data-pyn="zhuanjia" data-num="32" aria-label="Прослушать 专家" title="Прослушать 专家">&#9654;</button><span class="ru">специалист, эксперт</span></div>
+      <div class="w-item"><span class="hz">采用</span><span class="py">cǎiyòng</span><button class="pb" type="button" data-hz="采用" data-hz2="采用" data-py="cǎiyòng" data-pyn="caiyong" data-num="33" aria-label="Прослушать 采用" title="Прослушать 采用">&#9654;</button><span class="ru">применять, использовать (способ)</span><span class="ex">采用柔和的声音</span></div>
+      <div class="w-item"><span class="hz">柔和</span><span class="py">róuhé</span><span class="star">★</span><button class="pb" type="button" data-hz="柔和" data-hz2="柔和" data-py="róuhé" data-pyn="rouhe" data-num="34" aria-label="Прослушать 柔和" title="Прослушать 柔和">&#9654;</button><span class="ru">мягкий, нежный (о звуке, свете)</span></div>
+      <div class="w-item"><span class="hz">愿望</span><span class="py">yuànwàng</span><button class="pb" type="button" data-hz="愿望" data-hz2="愿望" data-py="yuànwàng" data-pyn="yuanwang" data-num="35" aria-label="Прослушать 愿望" title="Прослушать 愿望">&#9654;</button><span class="ru">желание, чаяние</span><span class="ex">符合我们的愿望</span></div>
+      <div class="w-item"><span class="hz">窗帘</span><span class="py">chuānglián</span><button class="pb" type="button" data-hz="窗帘" data-hz2="窗帘" data-py="chuānglián" data-pyn="chuanglian" data-num="36" aria-label="Прослушать 窗帘" title="Прослушать 窗帘">&#9654;</button><span class="ru">штора, занавеска</span><span class="ex">拉开窗帘</span></div>
+      <div class="w-item"><span class="hz">市场</span><span class="py">shìchǎng</span><button class="pb" type="button" data-hz="市场" data-hz2="市场" data-py="shìchǎng" data-pyn="shichang" data-num="37" aria-label="Прослушать 市场" title="Прослушать 市场">&#9654;</button><span class="ru">рынок</span><span class="ex">市场上出现了……</span></div>
+      <div class="w-item"><span class="hz">产品</span><span class="py">chǎnpǐn</span><button class="pb" type="button" data-hz="产品" data-hz2="产品" data-py="chǎnpǐn" data-pyn="chanpin" data-num="38" aria-label="Прослушать 产品" title="Прослушать 产品">&#9654;</button><span class="ru">продукция, изделие</span><span class="ex">电子产品</span></div>
+      <div class="w-item"><span class="hz">模仿</span><span class="py">mófǎng</span><button class="pb" type="button" data-hz="模仿" data-hz2="模仿" data-py="mófǎng" data-pyn="mofang" data-num="39" aria-label="Прослушать 模仿" title="Прослушать 模仿">&#9654;</button><span class="ru">подражать, имитировать</span><span class="ex">准确地 / 成功地模仿</span></div>
+      <div class="w-item"><span class="hz">避免</span><span class="py">bìmiǎn</span><button class="pb" type="button" data-hz="避免" data-hz2="避免" data-py="bìmiǎn" data-pyn="bimian" data-num="40" aria-label="Прослушать 避免" title="Прослушать 避免">&#9654;</button><span class="ru">избегать, предотвращать</span><span class="ex">努力 / 尽量 / 完全避免</span></div>
+      <div class="w-item"><span class="hz">传统</span><span class="py">chuántǒng</span><button class="pb" type="button" data-hz="传统" data-hz2="传统" data-py="chuántǒng" data-pyn="chuantong" data-num="41" aria-label="Прослушать 传统" title="Прослушать 传统">&#9654;</button><span class="ru">традиция; традиционный</span><span class="ex">传统闹钟 / 传统文化</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>IV. Служебные и термины<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Здесь 所 и 数 — две грамматические точки, а четыре научных термина достаточно узнавать на слух.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">所</span><span class="py">suǒ</span><button class="pb" type="button" data-hz="所" data-hz2="所" data-py="suǒ" data-pyn="suo" data-num="16" aria-label="Прослушать 所" title="Прослушать 所">&#9654;</button><span class="ru">частица перед глаголом; сч. сл. для учреждений</span><span class="ex">所产生的反应 / 一所大学</span></div>
+      <div class="w-item"><span class="hz">数</span><span class="py">shù</span><button class="pb" type="button" data-hz="数" data-hz2="数" data-py="shù" data-pyn="shu" data-num="28" aria-label="Прослушать 数" title="Прослушать 数">&#9654;</button><span class="ru">несколько (книжн.)</span><span class="ex">数天 / 数周 / 数月（shǔ — считать）</span></div>
+      <div class="w-item"><span class="hz">生物钟</span><span class="py">shēngwùzhōng</span><button class="pb" type="button" data-hz="生物钟" data-hz2="生物钟" data-py="shēngwùzhōng" data-pyn="shengwuzhong" data-num="" aria-label="Прослушать 生物钟" title="Прослушать 生物钟">&#9654;</button><span class="ru">биологические часы</span></div>
+      <div class="w-item"><span class="hz">新陈代谢</span><span class="py">xīnchén-dàixiè</span><button class="pb" type="button" data-hz="新陈代谢" data-hz2="新陈代谢" data-py="xīnchén-dàixiè" data-pyn="xinchen-daixie" data-num="" aria-label="Прослушать 新陈代谢" title="Прослушать 新陈代谢">&#9654;</button><span class="ru">обмен веществ</span></div>
+      <div class="w-item"><span class="hz">肾上腺素</span><span class="py">shènshàngxiànsù</span><button class="pb" type="button" data-hz="肾上腺素" data-hz2="肾上腺素" data-py="shènshàngxiànsù" data-pyn="shenshangxiansu" data-num="" aria-label="Прослушать 肾上腺素" title="Прослушать 肾上腺素">&#9654;</button><span class="ru">адреналин</span></div>
+      <div class="w-item"><span class="hz">血压</span><span class="py">xuèyā</span><button class="pb" type="button" data-hz="血压" data-hz2="血压" data-py="xuèyā" data-pyn="xueya" data-num="" aria-label="Прослушать 血压" title="Прослушать 血压">&#9654;</button><span class="ru">кровяное давление</span><span class="ex">高血压（血 — xuè）</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>На слух: где рука ошибётся <span class="cn">听写陷阱</span></h2>
+  <p>Главная опасность урока — <b>почти-омофон с предыдущим</b>: 实验 и 试验 стоят в соседних уроках и различаются одним тоном.</p>
+
+  <div class="warn">Пара из двух соседних уроков</div>
+  <div class="trap">
+    <div><span class="hz">实验</span><span class="py"><b>shí</b>yàn</span><span class="n">научный эксперимент — урок 11: 实验研究证明</span></div>
+    <div><span class="hz">试验</span><span class="py"><b>shì</b>yàn</span><span class="n">проба, испытание на практике — урок 10: 经过艰苦的试验. Различие только в тоне первого слога</span></div>
+  </div>
+
+  <div class="warn">Многочтимые иероглифы</div>
+  <div class="trap">
+    <div><span class="hz">数</span><span class="py">shù</span><span class="n">несколько; число — 数天, 数月, 字数. Урок 11</span></div>
+    <div><span class="hz">数</span><span class="py">shǔ</span><span class="n">считать, пересчитывать — 数一数, 数得过来. Третья точка урока разбирает оба</span></div>
+  </div>
+  <div class="trap">
+    <div><span class="hz">血压</span><span class="py"><b>xuè</b>yā</span><span class="n">письменное чтение血 — xuè</span></div>
+    <div><span class="hz">流血</span><span class="py"><b>xiě</b></span><span class="n">разговорное чтение — xiě. В учебнике встречается оба раза</span></div>
+  </div>
+
+  <div class="warn">Пары, которые путаются</div>
+  <table class="pair-tbl">
+    <tr><th>Пара</th><th>Как развести</th></tr>
+    <tr><td>持续 chíxù<br>继续 jìxù</td><td>Полный разбор ниже, в 辨析. Коротко: 持续 без пауз, 继续 после паузы.</td></tr>
+    <tr><td>危害 wēihài<br>伤害 shānghài (6)<br>灾害 zāihài (6)</td><td>危害 — вредить чему-то большому (社会安全, 健康). 伤害 — ранить конкретное (身体, 感情). Упражнение 2 проверяет первые два.</td></tr>
+    <tr><td>情绪 qíngxù<br>精神 jīngshén</td><td>情绪 — настроение, которое меняется. 精神 — дух, бодрость, и в 打起精神 «взбодриться». Упражнение 2 требует 精神.</td></tr>
+    <tr><td>愿望 yuànwàng<br>希望 xīwàng</td><td>愿望 — существительное «желание, мечта», глаголом не бывает. 希望 — и то, и другое. Упражнение 2 требует 希望.</td></tr>
+    <tr><td>现代 xiàndài<br>近代 jìndài (9)<br>当代 dāngdài</td><td>В китайской периодизации 近代 — 1840–1919, 现代 — после 1919, 当代 — наши дни. В уроке 9 это уже проверялось.</td></tr>
+    <tr><td>必要 bìyào<br>需要 xūyào<br>重要 zhòngyào</td><td>必要 — необходимый как условие (必要条件, 很有必要). 需要 — нуждаться. 重要 — важный.</td></tr>
+    <tr><td>慌 huāng<br>黄 huáng</td><td>慌 — первый тон, с ключом 忄. Часто пишут без 忄.</td></tr>
+    <tr><td>避免 bìmiǎn<br>免费 miǎnfèi</td><td>Общий 免. 避免 — предотвратить, 免 — освободить от. Ключ 辶 в 避 — «уйти в сторону».</td></tr>
+  </table>
+
+  <div class="warn">Тяжёлые для руки иероглифы</div>
+  <div class="card">
+    <ul style="margin-bottom:0">
+      <li><b>渡</b> (过渡) = 氵 + 度 «переправиться». Не путать с 度过 (урок 17) — там именно 度 без воды.</li>
+      <li><b>慌</b> = 忄 + 荒; <b>绪</b> (情绪) = 纟 + 者; <b>避</b> = 辶 + 辟.</li>
+      <li><b>醒</b> = 酉 + 星: тот же ключ 酉 «кувшин», что в 醉 (урок 2) — проспаться и опьянеть пишутся родственно.</li>
+      <li><b>仿</b> (模仿) = 亻 + 方; <b>柔</b> = 矛 + 木.</li>
+      <li><b>帘</b> (窗帘) = 宀 + 巾 «ткань под крышей» — отличная мнемоника.</li>
+      <li><b>致</b> (导致) = 至 + 攵. То же 至 в 至今 (урок 4).</li>
+      <li><b>眠</b> (失眠) = 目 + 民. Ключ «глаз», как и у 睡.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Грамматика: четыре детали <span class="cn">注释</span></h2>
+
+  <h3>1 · 来 / 过来</h3>
+  <div class="card dawn">
+    <p><span class="tag d">значение A</span> 醒来 — переход от сна к бодрствованию. Направительный глагол после 醒.</p>
+    <p class="cn-ex">人逐渐从熟睡过渡到浅睡，直到<span class="hl">醒来</span>。</p>
+    <p class="cn-ex">早晨<span class="hl">醒来</span>，我发现窗外正下着大雪。</p>
+    <p><span class="tag d">значение B</span> 过来 после глагола — возвращение к прежнему, нормальному состоянию.</p>
+    <p class="cn-ex">我被一阵吵闹声突然惊醒，过了半天，脑子才<span class="hl">清醒过来</span>。</p>
+    <p class="cn-ex">你刚回来，这事等你<span class="hl">休息过来</span>再说。</p>
+    <p><span class="tag d">значение C</span> Глагол + 得 / 不 + 过来 — хватает или не хватает сил справиться. Чаще в отрицании.</p>
+    <p class="cn-ex">天上的星星那么多，谁<span class="hl">数得过来</span>呀？</p>
+    <p class="cn-ex">最近手头的工作太多了，我都<span class="hl">忙不过来</span>了。</p>
+    <p class="tr" style="margin:0">По таблице 搭配 так работают: 改过来 · 救过来 · 清醒过来 · 明白过来 · 反应过来.</p>
+  </div>
+
+  <h3>2 · 所 suǒ</h3>
+  <div class="card night">
+    <p><span class="tag n">частица</span> Ставится перед глаголом в конструкции «подлежащее + 所 + глагол + 的», образуя определение.</p>
+    <p class="cn-ex">山水画<span class="hl">所</span>表现的是人与自然的关系。</p>
+    <p class="cn-ex">人们对自然醒与被闹钟铃声叫醒这两种方式<span class="hl">所</span>产生的反应是很不相同的。</p>
+    <p><span class="tag n">有/无 + 所 + глагол</span> Устойчивая рамка.</p>
+    <p class="cn-ex">调查显示，随着年龄的增大，女性的职场幸福感<span class="hl">有所</span>提高。</p>
+    <p class="cn-ex">我和李阳是<span class="hl">无所</span>不谈的好朋友。</p>
+    <p><span class="tag n">счётное слово</span> Для учреждений и жилищ.</p>
+    <p class="cn-ex" style="margin-bottom:0">来自北京一<span class="hl">所</span>大学的学生做了关于这个问题的实验。</p>
+    <p class="tr" style="margin:0">Тот же 所 работает в 所谓 (урок 14) и в книжном пассиве 为……所…… (там же). По сути это одна и та же частица в разных рамках.</p>
+  </div>
+
+  <h3>3 · 相当 xiāngdāng</h3>
+  <div class="card red">
+    <p><span class="tag r">глагол</span> «Быть примерно равным» — о количестве, условиях, положении. Часто с 与 или 于.</p>
+    <p class="cn-ex">这些能力最多为正常状态的65%，与醉酒者<span class="hl">相当</span>。</p>
+    <p class="cn-ex">这种鸟一天所食的害虫<span class="hl">相当于</span>自己的体重。</p>
+    <p><span class="tag r">наречие</span> «Весьма, довольно» — высокая степень.</p>
+    <p class="cn-ex">菜的味道好极了，服务也挺周到，我<span class="hl">相当</span>满意。</p>
+    <p class="cn-ex">有<span class="hl">相当</span>一部分人会以收入多少作为标准。</p>
+    <p class="tr" style="margin:0">Отличие от 非常: 相当 чуть сдержаннее, «весьма» против «чрезвычайно». В сочинении звучит взрослее.</p>
+  </div>
+
+  <h3>4 · 数 shǔ / shù</h3>
+  <div class="card night">
+    <p><span class="tag n">глагол shǔ</span> Считать, пересчитывать.</p>
+    <p class="cn-ex">我大概<span class="hl">数</span>了一下，车上有32个学生。</p>
+    <p class="cn-ex">先生，这是找您的钱，58块6，您<span class="hl">数数</span>。</p>
+    <p><span class="tag n">рамка shǔ</span> 数……（最）…… — «если считать, то самый…». Выделяет лучшего.</p>
+    <p class="cn-ex">我觉得北京最美、最有名气的公园要<span class="hl">数</span>颐和园了。</p>
+    <p class="cn-ex">要说我们班跑得最快的，那就<span class="hl">数</span>李阳了。</p>
+    <p><span class="tag n">числительное shù</span> «Несколько» — книжное, вместо 几.</p>
+    <p class="cn-ex">这里夏季的雷阵雨一般可持续<span class="hl">数</span>小时或者更久的时间。</p>
+    <p class="cn-ex" style="margin-bottom:0">这种状态如果持续<span class="hl">数</span>天、<span class="hl">数</span>周、<span class="hl">数</span>月，将导致高血压、失眠和一些精神问题等。</p>
+  </div>
+</section>
+
+<section>
+  <h2>Сочетаемость <span class="cn">词语搭配</span></h2>
+  <table>
+    <tr><th style="width:38%">Модель</th><th>Что подставляем</th></tr>
+    <tr><td class="han">享受 + O</td><td class="han">享受自由 / 艺术 / 人生 / 美酒 / 幸福 / 快乐</td></tr>
+    <tr><td class="han">导致 + O</td><td class="han">导致错误 / 失败 / 失眠 / 危险</td></tr>
+    <tr><td class="han">…… 的 + 情绪</td><td class="han">稳定的 / 不满的 / 紧张的情绪</td></tr>
+    <tr><td class="han">…… 的 + 记忆</td><td class="han">（关于）家的 / 童年的 / 难忘的记忆</td></tr>
+    <tr><td class="han">…… 地 + 避免</td><td class="han">努力 / 尽量 / 主动 / 故意 / 完全 / 永远避免</td></tr>
+    <tr><td class="han">…… 地 + 模仿</td><td class="han">准确地 / 成功地 / 专门 / 故意模仿</td></tr>
+    <tr><td class="han">计算 + 补语</td><td class="han">计算出 / 计算出来</td></tr>
+    <tr><td class="han">V + 过来</td><td class="han">改过来 / 救过来 / 清醒过来 / 明白过来 / 反应过来</td></tr>
+    <tr><td class="han">精神 + adj</td><td class="han">精神愉快 / 放松 / 饱满</td></tr>
+    <tr><td class="han">光线 + adj</td><td class="han">光线昏暗 / 明亮</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>持续 или 继续 <span class="cn">词语辨析</span></h2>
+  <p>Оба — глаголы со значением «продолжаться», но <b>замена невозможна</b>: смысловая разница слишком велика. Различий три:</p>
+  <table>
+    <tr><th style="width:50%">持续 chíxù</th><th>继续 jìxù</th></tr>
+    <tr>
+      <td>Действие идёт <b>непрерывно, без пауз</b>.<br><span class="han">这场雨持续下了两个多小时。</span></td>
+      <td>В середине <b>может быть пауза</b>.<br><span class="han">对不起！打扰了，你们继续学习吧。</span></td>
+    </tr>
+    <tr>
+      <td>Может быть <b>определением</b>.<br><span class="han">持续的高温让许多老人感到不适。</span></td>
+      <td>Определением быть не может.</td>
+    </tr>
+    <tr>
+      <td>Берёт <b>обстоятельство длительности</b>.<br><span class="han">小明发烧持续三天了，家里人都很着急。</span></td>
+      <td>Обычно обстоятельство длительности не берёт.</td>
+    </tr>
+  </table>
+  <p style="font-size:14.5px;color:var(--brick);margin:0">Быстрый тест: если после слова стоит срок (три дня, два часа) или перед существительным с 的 — только 持续. Если смысл «продолжай, не буду мешать» — только 继续.</p>
+</section>
+
+<section>
+  <h2>Проверьте себя <span class="cn">练习 · 答案</span></h2>
+  <p>Ответы к упражнениям со стр. 94–95 — сначала решите, потом раскройте.</p>
+
+  <details>
+    <summary>做一做 · 持续 / 继续</summary>
+    <div class="in">
+      <p>① 真希望刘老师能<span class="k">继续</span>给我们上课。（после перерыва）<br>
+      ② 这次的宣传活动将<span class="k">持续</span>到9月底。（непрерывно, до срока）<br>
+      ③ 生活总要<span class="k">继续</span>下去。<br>
+      ④ 鼓励你<span class="k">继续</span>前进的人。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 1 · 选择合适的词语填空 （所 享受 导致 过渡 必要 规律）</summary>
+    <div class="in">
+      <p>① 听听父母的意见还是很有<span class="k">必要</span>的。<br>
+      ② 由于近一个月来没有降水，<span class="k">导致</span>河水水位持续下降。<br>
+      ③ 正如你<span class="k">所</span>估计的那样，李岩确实改变了主意。<br>
+      ④ 让你从放松的休息状态自然<span class="k">过渡</span>到工作状态。<br>
+      ⑤ 有<span class="k">规律</span>的运动对于身体健康大有好处。<br>
+      ⑥ 为了<span class="k">享受</span>轻松的生活，夫妻俩决定把家搬到这个安静的小镇。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 2 · 选择正确答案</summary>
+    <div class="in">
+      <p>① 打起<span class="k">精神</span>从头再来（B）— «взбодриться»; 情绪 так не употребляется.<br>
+      ② 坚持<span class="k">数</span>年之后（B）— книжное «несколько лет».<br>
+      ③ 我们当然<span class="k">希望</span>他能成为一个有用的人才（B）— нужен глагол; 愿望 — существительное.<br>
+      ④ 他的行为已经严重<span class="k">危害</span>到了社会安全（A）— вред обществу; 伤害 — про конкретное живое.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 3 · 画线连接</summary>
+    <div class="in">
+      <p>(1) 享受—音乐 ／ 导致—灾害 ／ 危害—社会 ／ 避免—麻烦<br>
+      (2) 满足—愿望 ／ 稳定—情绪 ／ 集中—精神 ／ 重视—传统</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>扩展 · 家居 （抽屉 书架 窗帘 地毯 被子 玩具 日历 日期 包裹）</summary>
+    <div class="in">
+      <p>① 这块<span class="k">地毯</span>是去年夏天我和太太去新疆旅游时买回来的。<br>
+      ② 李阳很喜欢作家老舍，<span class="k">书架</span>上摆满了他不同时期的作品。<br>
+      ③ 我建议您给孩子买这个<span class="k">玩具</span>火车。<br>
+      ④ 我把光盘放在书桌左边的第二个<span class="k">抽屉</span>里了。</p>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Сочинение <span class="cn">你真的需要闹钟吗？</span></h2>
+  <p>Задание урока: не менее 100 иероглифов о том, нужен ли будильник. Образец на ~180 знаков — с 所, 相当 и 数.</p>
+  <div class="card red">
+    <p class="cn-ex" style="line-height:2">说实话，我离不开<span class="hl">闹钟</span>：如果早上有课，不定闹钟我一定会迟到。但读完这一课，我开始重新考虑。课文里说，被闹铃叫醒和自然醒<span class="hl">所</span>产生的反应完全不同：从深度睡眠中被突然叫醒，人的<span class="hl">记忆</span>和<span class="hl">计算</span>能力只有正常<span class="hl">状态</span>的65%，与醉酒者<span class="hl">相当</span>；这种情况<span class="hl">持续</span><span class="hl">数</span>周，还可能<span class="hl">导致</span><span class="hl">失眠</span>。所以我决定先做两件事：把铃声换成<span class="hl">柔和</span>的音乐，晚上早点儿睡。这样也许能<span class="hl">避免</span>一部分<span class="hl">危害</span>。</p>
+  </div>
+  <h3>Готовые связки</h3>
+  <div class="card">
+    <ul style="margin-bottom:0">
+      <li class="cn-ex">说实话，我离不开……，但读完这一课，我开始重新考虑</li>
+      <li class="cn-ex">课文里说，……所产生的反应完全不同</li>
+      <li class="cn-ex">……只有正常状态的65%，与……相当</li>
+      <li class="cn-ex">这种情况持续数周，还可能导致……</li>
+      <li class="cn-ex">所以我决定先做两件事：……</li>
+      <li class="cn-ex">这样也许能避免一部分危害</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Что делать до экзамена <span class="cn">复习计划</span></h2>
+  <ol class="route">
+    <li><b>Расскажите схему двумя путями.</b> Слева: свет → обмен веществ ускоряется → 熟睡 переходит в 浅睡 → 醒来. Справа: звонок → дыхание и пульс скачком → память 65% → адреналин неделями → 高血压、失眠. Два маршрута, и вся лексика урока распределяется между ними.</li>
+    <li><b>实验 и 试验 под диктовку.</b> Уроки 10 и 11 стоят рядом, слова различаются одним тоном: shíyàn — научный эксперимент, shìyàn — практическое испытание. Это самая вероятная ошибка диктанта.</li>
+    <li><b>数 в двух чтениях.</b> shǔ — считать (数一数, 要数颐和园了), shù — несколько (数天, 数月). Третья точка урока разбирает оба, и экзамен любит такие пары.</li>
+    <li><b>Хвост 过来 — четвёртый в коллекции.</b> К 得不得了, 得不行 и 得什么似的 добавьте V+得/不+过来: 数得过来, 忙不过来. Плюс значение «прийти в себя»: 清醒过来, 反应过来.</li>
+    <li><b>Четыре конструкции — по своему предложению.</b> ……所产生的…… · 与……相当 · 持续数天 · 忙不过来. Первая особенно ценна в сочинении: она мгновенно делает фразу письменной.</li>
+  </ol>
+</section>
+
+<nav class="botnav"><a href="hsk5a-lesson-10.html"><span>Предыдущий урок</span>10 · 争论的奇迹</a><a href="hsk5a-lesson-12.html"><span>Следующий урок</span>12 · 海外用户玩儿微信</a></nav>
+
+<footer>
+  Конспект по «HSK 标准教程 5（上）», урок 11 «闹钟的危害», стр. 88–96 · Unit 4 走近科学<br>
+  Схема построена по описанию из текста: плавный световой переход 熟睡 → 浅睡 → 清醒 против резкого пробуждения звонком и его последствий.
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML = '<span class="w">' + z.dataset.w + '</span><span class="p">' + z.dataset.p +
+      '</span><span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){ zones.forEach(function(o){ o.classList.remove('on'); }); out.innerHTML = def; }
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+  document.querySelector('.sleep-box svg').addEventListener('mouseleave', clear);
+})();
+</script>
+<script>
+(function(){
+  var LESSON = "11";
+  var DIRS = ["audio/", "", "mp3/", "media/", "аудио/", "audio/15/", "15/"];
+  var CAND = [];
+  DIRS.forEach(function(d){ CAND.push(d + "{hz}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{hz2}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{pyn}.mp3"); });
+
+  var patIn  = document.getElementById('ab-pat');
+  var status = document.getElementById('ab-status');
+  var btns   = Array.prototype.slice.call(document.querySelectorAll('.pb[data-hz]'));
+  var cur = null, curBtn = null, queue = null;
+
+  function pad(n){ n = String(n||''); return n.length === 1 ? '0'+n : n; }
+
+  function resolve(pat, b){
+    return pat
+      .replace(/\{hz2\}/g, b.dataset.hz2 || b.dataset.hz)
+      .replace(/\{hz\}/g,  b.dataset.hz)
+      .replace(/\{pyn\}/g, b.dataset.pyn)
+      .replace(/\{py\}/g,  b.dataset.py)
+      .replace(/\{num\}/g, pad(b.dataset.num))
+      .replace(/\{n\}/g,   b.dataset.num || '')
+      .replace(/\{L\}/g,   LESSON);
+  }
+
+  function setStatus(t, cls){
+    status.textContent = t || '';
+    status.className = 'ab-status' + (cls ? ' ' + cls : '');
+  }
+
+  function test(pat, b){
+    return new Promise(function(res){
+      var a = new Audio(), done = false;
+      function ok(){ if(!done){ done = true; res(true); } }
+      function no(){ if(!done){ done = true; res(false); } }
+      a.addEventListener('loadedmetadata', ok);
+      a.addEventListener('canplay', ok);
+      a.addEventListener('error', no);
+      a.preload = 'metadata';
+      a.src = encodeURI(resolve(pat, b));
+      setTimeout(no, 2500);
+    });
+  }
+
+  function stop(){
+    if(cur){ cur.pause(); cur = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn = null; }
+    queue = null;
+    document.querySelectorAll('.pball.playing').forEach(function(x){ x.classList.remove('playing'); });
+  }
+
+  /* проигрывание с запасными вариантами имени для этого слова */
+  function play(b, onEnd){
+    stop();
+    var tries = [patIn.value.trim()];
+    var alt = (b.dataset.hz2 && b.dataset.hz2 !== b.dataset.hz)
+      ? patIn.value.trim().replace('{hz}', '{hz2}') : null;
+    if(alt && tries.indexOf(alt) < 0) tries.push(alt);
+    CAND.forEach(function(p){ if(tries.indexOf(p) < 0) tries.push(p); });
+
+    b.classList.add('playing');
+    var i = 0;
+    (function attempt(){
+      if(i >= tries.length){
+        b.classList.remove('playing');
+        b.classList.add('missing');
+        b.title = 'Не найден файл для ' + b.dataset.hz;
+        setStatus('Не найден файл для ' + b.dataset.hz + ' — проверьте папку или шаблон.', 'bad');
+        if(onEnd) onEnd();
+        return;
+      }
+      var src = resolve(tries[i++], b);
+      var a = new Audio(encodeURI(src));
+      var started = false;
+      a.addEventListener('canplay', function(){ started = true; });
+      a.addEventListener('ended', function(){
+        b.classList.remove('playing');
+        if(cur === a){ cur = null; curBtn = null; }
+        if(onEnd) onEnd();
+      });
+      a.addEventListener('error', function(){
+        if(!started){ attempt(); }
+        else { b.classList.remove('playing'); if(onEnd) onEnd(); }
+      });
+      cur = a; curBtn = b;
+      b.classList.remove('missing');
+      a.play().catch(function(){});
+    })();
+  }
+
+  /* автопоиск папки при открытии */
+  function autodetect(quiet){
+    if(!btns.length) return;
+    if(!quiet) setStatus('Перебираю варианты…');
+    var i = 0;
+    (function next(){
+      if(i >= CAND.length){
+        setStatus(quiet
+          ? 'Папка с mp3 не найдена. Положите файлы в audio рядом с этим документом.'
+          : 'Ни один из типовых вариантов не подошёл. Впишите путь вручную.',
+          quiet ? '' : 'bad');
+        return;
+      }
+      var p = CAND[i++];
+      test(p, btns[0]).then(function(ok){
+        if(ok){
+          patIn.value = p;
+          document.querySelectorAll('.pb.missing').forEach(function(x){
+            x.classList.remove('missing'); x.title = '';
+          });
+          setStatus('Озвучка подключена: ' + p, 'ok');
+        } else next();
+      });
+    })();
+  }
+
+  document.getElementById('ab-auto').addEventListener('click', function(){ autodetect(false); });
+  document.getElementById('ab-test').addEventListener('click', function(){
+    if(!btns.length) return;
+    setStatus('Проверяю…');
+    test(patIn.value.trim(), btns[0]).then(function(ok){
+      setStatus((ok ? 'Файл найден: ' : 'Не найден: ') + resolve(patIn.value.trim(), btns[0]),
+                ok ? 'ok' : 'bad');
+    });
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(curBtn === b && cur){ stop(); return; }
+      play(b);
+    });
+  });
+
+  document.querySelectorAll('.pball').forEach(function(pb){
+    pb.addEventListener('click', function(){
+      if(pb.classList.contains('playing')){ stop(); return; }
+      var list = Array.prototype.slice.call(
+        pb.closest('.cluster').querySelectorAll('.pb[data-hz]'));
+      stop();
+      pb.classList.add('playing');
+      var i = 0;
+      queue = list;
+      (function step(){
+        if(queue !== list || i >= list.length){ pb.classList.remove('playing'); return; }
+        play(list[i++], function(){ setTimeout(step, 350); });
+      })();
+    });
+  });
+
+  autodetect(true);
+})();
+</script>
+</body>
+</html>

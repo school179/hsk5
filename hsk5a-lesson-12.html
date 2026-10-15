@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 12 · 海外用户玩儿微信 · HSK 标准教程 5上</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#12241f;
+  --paper:#d3dcd6;
+  --card:#eef3ef;
+  --brick:#566560;
+  --red:#a33f36;
+  --green:#2d7a56;
+  --blue:#2a5a7a;
+  --line:rgba(18,36,31,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:
+    linear-gradient(rgba(255,255,255,.35) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.35) 1px,transparent 1px);
+  background-size:26px 26px}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+header{padding:40px 0 26px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;color:var(--green);letter-spacing:-.03em}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:42px;line-height:1.06;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brick);margin-top:10px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+section{margin-top:56px}
+h2{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+
+.tl-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px}
+.tl-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone .fillable{transition:opacity .18s ease}
+.zone .fillable{opacity:.88}
+.zone:hover .fillable,.zone.on .fillable{opacity:1}
+.zone:focus{outline:none}
+.tlab{font-family:var(--han);font-size:14px;font-weight:600;fill:var(--ink);pointer-events:none}
+.tpin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.05em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:64px}
+.readout .w{font-family:var(--han);font-size:21px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:12.5px;color:var(--blue)}
+.readout .d{display:block;margin-top:5px;font-size:15px;line-height:1.55}
+.readout .hint{color:var(--brick);font-style:italic}
+
+.moves{list-style:none;padding:0;margin:0;counter-reset:mv}
+.moves li{counter-increment:mv;position:relative;padding:14px 0 14px 62px;border-bottom:1px solid var(--line)}
+.moves li::before{content:counter(mv,decimal-leading-zero);position:absolute;left:0;top:14px;
+  font-family:var(--mono);font-size:13px;font-weight:700;color:var(--red);letter-spacing:.05em}
+.moves b{font-family:var(--disp);font-size:18px;letter-spacing:.02em;display:block;margin-bottom:3px}
+.moves .kw{display:block;margin-top:6px;font-family:var(--han);font-size:15px;color:var(--brick)}
+
+.cluster{margin-top:26px}
+.cluster .why{font-size:14px;color:var(--brick);margin:-4px 0 14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--blue);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--red);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.green{border-left:4px solid var(--green)}
+.card.blue{border-left:4px solid var(--blue)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--card);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.g{background:var(--green)}
+.tag.b{background:var(--blue)}
+.tag.r{background:var(--red)}
+
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(18,36,31,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+.trap{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--blue);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+details{background:var(--card);border:1px solid var(--line);margin:10px 0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;font-family:var(--disp);
+  font-weight:700;font-size:22px;color:var(--red);width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+.finale{background:var(--ink);color:var(--card);padding:26px 28px;margin-top:30px}
+.finale b{font-family:var(--disp);font-size:20px;letter-spacing:.03em;display:block;margin-bottom:8px}
+.finale p{margin:0;font-size:15.5px;line-height:1.7}
+.finale a{color:#9fd4b4}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  .lesson-no{font-size:64px}
+  h1{font-size:30px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index.html">&#8592; Все уроки 5A</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（上） · Unit 4 走近科学 · последний урок учебника</div>
+  <div class="title-row">
+    <div class="lesson-no">12</div>
+    <h1>海外用户玩儿微信<span class="lat">Зарубежные пользователи WeChat · 562 字 · стр. 97–103</span></h1>
+  </div>
+  <div class="meta">
+    <span><b>43</b> новых слова + 5 имён</span>
+    <span><b>2</b> грамматические точки</span>
+    <span>ключ: <b>以及 · 程度</b></span>
+  </div>
+</header>
+
+<section>
+  <p class="lede">Последний урок 5A — газетная статья о выходе WeChat на международный рынок. Это самый «деловой» текст учебника: компания, президент, вице-президент, разработка, маркетинг, доли рынка. Структура у него хронологическая — от рекламы с Месси до истории развития продукта, — поэтому опорой будет линия времени.</p>
+  <p style="font-size:15px;color:var(--brick);margin:0"><b>Главный довод текста:</b> в эпоху персональных компьютеров китайский интернет отставал от развитых стран 用户数量以及市场成熟程度 и потому не мог лидировать в создании нового; 而移动互联网是一个重新开始的机会 — мобильный интернет дал шанс начать с нуля.</p>
+</section>
+
+<section id="tl">
+  <h2>История WeChat <span class="cn">2010 → 2013</span></h2>
+  <div class="tl-box">
+    <svg viewBox="0 0 620 380" role="img" aria-label="Линия времени развития WeChat с подписями лексики урока">
+      <text class="tpin" x="16" y="18" letter-spacing="0.16em">РЕКЛАМА, ЦИФРЫ И ИСТОРИЯ ПРОДУКТА</text>
+
+      <!-- реклама с Месси -->
+      <g class="zone" tabindex="0" data-w="梅西的广告：用户 · 颠球 · 明星 · 直播 · 宝贝 · 逗 · 宣传 · 手笔 · 推广" data-p="diān qiú · zhíbō · dòu · shǒubǐ" data-d="举着手机，边颠着球边拍……国际足球明星梅西用微信直播自己的颠球技术，把手机另一头一个正在哭的小宝贝逗笑。这条30秒的全新广告宣传片在全球15个国家和地区同步上线。如此大手笔的推广，腾讯自有其底气所在.">
+        <rect class="fillable" x="16" y="30" width="286" height="70" fill="#a33f36" opacity=".16" stroke="#a33f36" stroke-width="1.4"/>
+        <text class="tlab" x="159" y="52" text-anchor="middle">30秒广告宣传片</text>
+        <text class="tpin" x="159" y="72" text-anchor="middle">梅西直播颠球 · 逗笑小宝贝</text>
+        <text class="tpin" x="159" y="88" text-anchor="middle">15个国家同步上线 · 大手笔的推广</text>
+      </g>
+
+      <!-- конференция -->
+      <g class="zone" tabindex="0" data-w="合作伙伴大会：注册 · 召开 · 合作 · 伙伴 · 总裁 · 骄傲" data-p="zhùcè · zhàokāi · huǒbàn · zǒngcái" data-d="微信“在海外注册用户已经超过7000万，且在快速增长当中”。7月3日，在北京召开的2013腾讯合作伙伴大会上，腾讯总裁刘炽平言语间充满了骄傲. Глагол 召开 — только про собрания и съезды, не про магазины.">
+        <rect class="fillable" x="318" y="30" width="286" height="70" fill="#2a5a7a" opacity=".2" stroke="#2a5a7a" stroke-width="1.4"/>
+        <text class="tlab" x="461" y="52" text-anchor="middle">2013 合作伙伴大会</text>
+        <text class="tpin" x="461" y="72" text-anchor="middle">海外注册用户超过7000万</text>
+        <text class="tpin" x="461" y="88" text-anchor="middle">总裁刘炽平 · 充满了骄傲</text>
+      </g>
+
+      <!-- линия времени -->
+      <line x1="40" y1="190" x2="596" y2="190" stroke="rgba(18,36,31,.3)" stroke-width="2"/>
+
+      <g class="zone" tabindex="0" data-w="2010年底：开发 · 中心 · 相关 · 业务 · 起步" data-p="kāifā · zhōngxīn · xiāngguān · yèwù" data-d="被称为“微信之父”的腾讯公司高级副总裁张小龙介绍了微信的发展过程：微信的研究开发工作开展得很早，2010年底，移动互联网刚起步，腾讯广州产品研发中心就开始考虑相关业务.">
+        <circle class="fillable" cx="76" cy="190" r="8" fill="#2d7a56"/>
+        <text class="tlab" x="76" y="172" text-anchor="middle" style="font-size:12px">2010年底</text>
+        <text class="tpin" x="76" y="214" text-anchor="middle">研发中心</text>
+        <text class="tpin" x="76" y="228" text-anchor="middle">考虑相关业务</text>
+      </g>
+
+      <g class="zone" tabindex="0" data-w="2011年1月：上线" data-p="shàngxiàn" data-d="2011年1月，微信上线. Отправная точка: продукт появился в Китае.">
+        <circle class="fillable" cx="196" cy="190" r="8" fill="#2d7a56"/>
+        <text class="tlab" x="196" y="172" text-anchor="middle" style="font-size:12px">2011.1</text>
+        <text class="tpin" x="196" y="214" text-anchor="middle">微信上线</text>
+      </g>
+
+      <g class="zone" tabindex="0" data-w="2011年4月：WeChat 进入国际市场" data-p="guójì shìchǎng" data-d="同年4月，以英文名WeChat正式进入国际市场. Обратите внимание на рамку 以……名 — «под именем», тот же 以, что в уроке 17.">
+        <circle class="fillable" cx="316" cy="190" r="8" fill="#2d7a56"/>
+        <text class="tlab" x="316" y="172" text-anchor="middle" style="font-size:12px">2011.4</text>
+        <text class="tpin" x="316" y="214" text-anchor="middle">以英文名 WeChat</text>
+        <text class="tpin" x="316" y="228" text-anchor="middle">进入国际市场</text>
+      </g>
+
+      <g class="zone" tabindex="0" data-w="2011年12月：实现 · 支持100个国家短信注册" data-p="shíxiàn" data-d="2011年12月，实现支持全球100个国家的短信注册. Глагол 实现 — «осуществить задуманное»; не путать с 现实 «реальность», упражнение 2 проверяет эту пару.">
+        <circle class="fillable" cx="436" cy="190" r="8" fill="#2d7a56"/>
+        <text class="tlab" x="436" y="172" text-anchor="middle" style="font-size:12px">2011.12</text>
+        <text class="tpin" x="436" y="214" text-anchor="middle">实现100个国家</text>
+        <text class="tpin" x="436" y="228" text-anchor="middle">短信注册</text>
+      </g>
+
+      <g class="zone" tabindex="0" data-w="如今：覆盖 · 移动 · 通信 · 应用" data-p="fùgài · yídòng · tōngxìn · yìngyòng" data-d="2012年底，覆盖国家和地区超过100个。如今，微信已经覆盖了200多个国家和地区、支持16种外语，是全球使用人数最多的移动通信应用.">
+        <circle class="fillable" cx="556" cy="190" r="10" fill="#a33f36"/>
+        <text class="tlab" x="556" y="170" text-anchor="middle" style="font-size:12px">如今</text>
+        <text class="tpin" x="556" y="214" text-anchor="middle">覆盖200多个国家</text>
+        <text class="tpin" x="556" y="228" text-anchor="middle">支持16种外语</text>
+      </g>
+
+      <!-- почему именно сейчас -->
+      <g class="zone" tabindex="0" data-w="历史机会：企业 · 称霸 · 背景 · 现实 · 个人 · 以及 · 程度 · 发达 · 创新 · 领导 · 地位" data-p="chēngbà · xiànshí · yǐjí · chéngdù · fādá" data-d="在美国互联网企业“称霸”全球的背景下，作为中国自己的移动互联网产品，微信的出现，自然吸引了更多的关注。 Ключевая мысль: 在个人计算机时代，由于中国互联网的用户数量以及市场成熟程度等都低于发达国家，在产品创新上难有领导地位，而移动互联网是一个重新开始的机会.">
+        <rect class="fillable" x="16" y="256" width="286" height="62" fill="#2a5a7a" opacity=".24" stroke="#2a5a7a" stroke-width="1.4"/>
+        <text class="tlab" x="159" y="278" text-anchor="middle" style="font-size:13px">个人计算机时代：难有领导地位</text>
+        <text class="tpin" x="159" y="298" text-anchor="middle">用户数量以及市场成熟程度低于发达国家</text>
+        <text class="tpin" x="159" y="312" text-anchor="middle">→ 移动互联网是重新开始的机会</text>
+      </g>
+
+      <!-- маркетинг -->
+      <g class="zone" tabindex="0" data-w="经营销售：经营 · 销售 · 针对 · 当地 · 代言 · 华裔 · 移民" data-p="jīngyíng · xiāoshòu · zhēnduì · dàiyán" data-d="在经营销售上，微信针对不同的国家和地区，推出了不同的广告片，邀请当地明星和名人代言，收效相当不错。海外用户群中不仅有华裔和新移民，还出现了更多的外国人. Здесь и 相当 из урока 11 — «весьма неплохо».">
+        <rect class="fillable" x="318" y="256" width="286" height="62" fill="#2d7a56" opacity=".28" stroke="#2d7a56" stroke-width="1.4"/>
+        <text class="tlab" x="461" y="278" text-anchor="middle" style="font-size:13px">针对不同国家推出不同广告片</text>
+        <text class="tpin" x="461" y="298" text-anchor="middle">邀请当地明星代言 · 收效相当不错</text>
+        <text class="tpin" x="461" y="312" text-anchor="middle">华裔 · 新移民 · 更多外国人</text>
+      </g>
+
+      <text class="tpin" x="16" y="352">腾讯 Téngxùn · 刘炽平 Liú Chìpíng（总裁）· 张小龙 Zhāng Xiǎolóng（“微信之父”，高级副总裁）</text>
+      <text class="tpin" x="16" y="368">梅西 Méixī · 微信 Wēixìn / WeChat</text>
+    </svg>
+    <div class="readout" id="readout">
+      <span class="hint">Наведите курсор или коснитесь любой точки линии времени или блока — появятся слова этого фрагмента.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Текст в трёх кадрах <span class="cn">课文复述</span></h2>
+  <p style="font-size:14.5px;color:var(--brick)">Три блока учебника (стр. 102): реклама, развитие, разработка и маркетинг.</p>
+  <ol class="moves">
+    <li>
+      <b>Реклама WeChat</b>
+      举着手机，边颠着球边拍……国际足球明星梅西用微信直播自己的颠球技术，把手机另一头一个正在哭的小宝贝逗笑。这条30秒的全新广告宣传片在全球15个国家和地区同步上线。 如此大手笔的推广，腾讯自有其底气所在.
+      <span class="kw">用户 · 颠球 · 明星 · 直播 · 宝贝 · 逗 · 宣传 · 手笔 · 推广</span>
+    </li>
+    <li>
+      <b>Как развивался WeChat</b>
+      微信“在海外注册用户已经超过7000万，且在快速增长当中”。7月3日，在北京召开的2013腾讯合作伙伴大会上，腾讯总裁刘炽平言语间充满了骄傲。 Хронология: 2011年1月，微信上线；同年4月，以英文名WeChat正式进入国际市场；2011年12月，实现支持全球100个国家的短信注册；2012年底，覆盖国家和地区超过100个。如今，微信已经覆盖了200多个国家和地区、支持16种外语，是全球使用人数最多的移动通信应用。 И контекст: 在美国互联网企业“称霸”全球的背景下，作为中国自己的移动互联网产品，微信的出现，自然吸引了更多的关注。
+      <span class="kw">注册 · 召开 · 合作 · 伙伴 · 总裁 · 实现 · 覆盖 · 移动 · 通信 · 应用 · 企业 · 称霸 · 背景</span>
+    </li>
+    <li>
+      <b>Разработка и маркетинг</b>
+      被称为“微信之父”的腾讯公司高级副总裁张小龙介绍了微信的发展过程：微信的研究开发工作开展得很早，2010年底，移动互联网刚起步，腾讯广州产品研发中心就开始考虑相关业务。他们清楚地认识到了这样的现实——在个人计算机时代，由于中国互联网的用户数量以及市场成熟程度等都低于发达国家，在产品创新上难有领导地位，而移动互联网是一个重新开始的机会。 Что до продаж: 在经营销售上，微信针对不同的国家和地区，推出了不同的广告片，邀请当地明星和名人代言，收效相当不错。海外用户群中不仅有华裔和新移民，还出现了更多的外国人。
+      <span class="kw">高级 · 副 · 开发 · 中心 · 相关 · 业务 · 现实 · 个人 · 以及 · 程度 · 发达 · 创新 · 领导 · 地位 · 经营 · 销售 · 针对 · 当地 · 代言 · 华裔 · 移民</span>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <h2>43 слова по гнёздам <span class="cn">生词</span></h2>
+  <p style="font-size:14px;color:var(--brick)"><span class="star">★</span> — слово сверх программы HSK 5 (в учебнике со звёздочкой).</p>
+
+  <div class="audiobar" id="audiobar">
+    <div class="ab-t">Озвучка слов</div>
+    <div class="ab-row">
+      <input id="ab-pat" type="text" spellcheck="false" value="audio/{hz}.mp3" aria-label="Шаблон пути к mp3">
+      <button type="button" id="ab-auto">Подобрать</button>
+      <button type="button" id="ab-test">Проверить</button>
+    </div>
+    <div class="ab-status" id="ab-status"></div>
+    <div class="ab-note">
+      По умолчанию ищутся файлы вида <code>иероглиф.mp3</code> — сначала в папке
+      <code>audio</code> рядом с этим файлом, потом прямо рядом с ним. Нужная папка
+      определяется сама при открытии страницы. Если ваши mp3 лежат где-то ещё, впишите путь
+      вручную: доступны подстановки <code>{hz}</code> иероглифы, <code>{py}</code> пиньинь с
+      тонами, <code>{pyn}</code> пиньинь без диакритики, <code>{num}</code> номер слова в списке
+      учебника, <code>{L}</code> номер урока. Работает только если открыть файл у себя на диске —
+      в предпросмотре доступа к вашим папкам нет.
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>I. Компания и люди<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Деловое гнездо. Эти слова нужны в любом тексте про бизнес, а 总裁、副、高级 ещё и в разделе 扩展 урока 4 про должности.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">企业</span><span class="py">qǐyè</span><button class="pb" type="button" data-hz="企业" data-hz2="企业" data-py="qǐyè" data-pyn="qiye" data-num="20" aria-label="Прослушать 企业" title="Прослушать 企业">&#9654;</button><span class="ru">предприятие, компания</span><span class="ex">一家企业 / 互联网企业</span></div>
+      <div class="w-item"><span class="hz">总裁</span><span class="py">zǒngcái</span><button class="pb" type="button" data-hz="总裁" data-hz2="总裁" data-py="zǒngcái" data-pyn="zongcai" data-num="14" aria-label="Прослушать 总裁" title="Прослушать 总裁">&#9654;</button><span class="ru">президент компании</span></div>
+      <div class="w-item"><span class="hz">高级</span><span class="py">gāojí</span><button class="pb" type="button" data-hz="高级" data-hz2="高级" data-py="gāojí" data-pyn="gaoji" data-num="23" aria-label="Прослушать 高级" title="Прослушать 高级">&#9654;</button><span class="ru">высокого ранга; высший</span><span class="ex">高级副总裁 / 高级产品</span></div>
+      <div class="w-item"><span class="hz">副</span><span class="py">fù</span><span class="star">★</span><button class="pb" type="button" data-hz="副" data-hz2="副" data-py="fù" data-pyn="fu" data-num="24" aria-label="Прослушать 副" title="Прослушать 副">&#9654;</button><span class="ru">заместитель, вице-</span><span class="ex">副总裁 / 副经理</span></div>
+      <div class="w-item"><span class="hz">领导</span><span class="py">lǐngdǎo</span><button class="pb" type="button" data-hz="领导" data-hz2="领导" data-py="lǐngdǎo" data-pyn="lingdao" data-num="35" aria-label="Прослушать 领导" title="Прослушать 领导">&#9654;</button><span class="ru">руководитель; руководить</span><span class="ex">领导地位 / 公司领导</span></div>
+      <div class="w-item"><span class="hz">合作</span><span class="py">hézuò</span><button class="pb" type="button" data-hz="合作" data-hz2="合作" data-py="hézuò" data-pyn="hezuo" data-num="12" aria-label="Прослушать 合作" title="Прослушать 合作">&#9654;</button><span class="ru">сотрудничать</span><span class="ex">合作伙伴 / 公司 / 精神</span></div>
+      <div class="w-item"><span class="hz">伙伴</span><span class="py">huǒbàn</span><button class="pb" type="button" data-hz="伙伴" data-hz2="伙伴" data-py="huǒbàn" data-pyn="huoban" data-num="13" aria-label="Прослушать 伙伴" title="Прослушать 伙伴">&#9654;</button><span class="ru">партнёр, напарник</span></div>
+      <div class="w-item"><span class="hz">召开</span><span class="py">zhàokāi</span><button class="pb" type="button" data-hz="召开" data-hz2="召开" data-py="zhàokāi" data-pyn="zhaokai" data-num="11" aria-label="Прослушать 召开" title="Прослушать 召开">&#9654;</button><span class="ru">созывать, проводить (собрание)</span><span class="ex">按时 / 顺利 / 成功地召开</span></div>
+      <div class="w-item"><span class="hz">业务</span><span class="py">yèwù</span><button class="pb" type="button" data-hz="业务" data-hz2="业务" data-py="yèwù" data-pyn="yewu" data-num="28" aria-label="Прослушать 业务" title="Прослушать 业务">&#9654;</button><span class="ru">дело, профессиональная работа</span><span class="ex">一笔业务 / 一项业务</span></div>
+      <div class="w-item"><span class="hz">中心</span><span class="py">zhōngxīn</span><button class="pb" type="button" data-hz="中心" data-hz2="中心" data-py="zhōngxīn" data-pyn="zhongxin" data-num="26" aria-label="Прослушать 中心" title="Прослушать 中心">&#9654;</button><span class="ru">центр</span><span class="ex">研发 / 城市 / 经济中心</span></div>
+      <div class="w-item"><span class="hz">开发</span><span class="py">kāifā</span><button class="pb" type="button" data-hz="开发" data-hz2="开发" data-py="kāifā" data-pyn="kaifa" data-num="25" aria-label="Прослушать 开发" title="Прослушать 开发">&#9654;</button><span class="ru">разрабатывать, осваивать</span><span class="ex">开发出（来）/ 开发成功</span></div>
+      <div class="w-item"><span class="hz">创新</span><span class="py">chuàngxīn</span><span class="star">★</span><button class="pb" type="button" data-hz="创新" data-hz2="创新" data-py="chuàngxīn" data-pyn="chuangxin" data-num="34" aria-label="Прослушать 创新" title="Прослушать 创新">&#9654;</button><span class="ru">создавать новое; инновация</span><span class="ex">产品创新</span></div>
+      <div class="w-item"><span class="hz">地位</span><span class="py">dìwèi</span><button class="pb" type="button" data-hz="地位" data-hz2="地位" data-py="dìwèi" data-pyn="diwei" data-num="36" aria-label="Прослушать 地位" title="Прослушать 地位">&#9654;</button><span class="ru">положение, статус</span><span class="ex">领导地位 / 社会地位</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>II. Продукт и рынок<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Второе деловое гнездо — про продвижение. 推广、宣传、经营、销售、针对 постоянно встречаются в 阅读 про экономику.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">用户</span><span class="py">yònghù</span><span class="star">★</span><button class="pb" type="button" data-hz="用户" data-hz2="用户" data-py="yònghù" data-pyn="yonghu" data-num="1" aria-label="Прослушать 用户" title="Прослушать 用户">&#9654;</button><span class="ru">пользователь, абонент</span><span class="ex">注册用户 / 海外用户</span></div>
+      <div class="w-item"><span class="hz">注册</span><span class="py">zhùcè</span><button class="pb" type="button" data-hz="注册" data-hz2="注册" data-py="zhùcè" data-pyn="zhuce" data-num="10" aria-label="Прослушать 注册" title="Прослушать 注册">&#9654;</button><span class="ru">регистрировать(ся)</span><span class="ex">注册公司 / 邮箱 / 会员</span></div>
+      <div class="w-item"><span class="hz">宣传</span><span class="py">xuānchuán</span><button class="pb" type="button" data-hz="宣传" data-hz2="宣传" data-py="xuānchuán" data-pyn="xuanchuan" data-num="7" aria-label="Прослушать 宣传" title="Прослушать 宣传">&#9654;</button><span class="ru">пропагандировать, рекламировать</span><span class="ex">宣传片 / 做宣传</span></div>
+      <div class="w-item"><span class="hz">推广</span><span class="py">tuīguǎng</span><button class="pb" type="button" data-hz="推广" data-hz2="推广" data-py="tuīguǎng" data-pyn="tuiguang" data-num="9" aria-label="Прослушать 推广" title="Прослушать 推广">&#9654;</button><span class="ru">распространять, продвигать</span><span class="ex">推广汉语普通话 / 新技术 / 产品</span></div>
+      <div class="w-item"><span class="hz">手笔</span><span class="py">shǒubǐ</span><span class="star">★</span><button class="pb" type="button" data-hz="手笔" data-hz2="手笔" data-py="shǒubǐ" data-pyn="shoubi" data-num="8" aria-label="Прослушать 手笔" title="Прослушать 手笔">&#9654;</button><span class="ru">размах, манера ведения дел</span><span class="ex">大手笔的推广</span></div>
+      <div class="w-item"><span class="hz">经营</span><span class="py">jīngyíng</span><button class="pb" type="button" data-hz="经营" data-hz2="经营" data-py="jīngyíng" data-pyn="jingying" data-num="37" aria-label="Прослушать 经营" title="Прослушать 经营">&#9654;</button><span class="ru">вести дело, управлять</span><span class="ex">经营销售 / 经营公司</span></div>
+      <div class="w-item"><span class="hz">销售</span><span class="py">xiāoshòu</span><button class="pb" type="button" data-hz="销售" data-hz2="销售" data-py="xiāoshòu" data-pyn="xiaoshou" data-num="38" aria-label="Прослушать 销售" title="Прослушать 销售">&#9654;</button><span class="ru">продавать, сбывать</span><span class="ex">销售得…… / 销售到……</span></div>
+      <div class="w-item"><span class="hz">针对</span><span class="py">zhēnduì</span><button class="pb" type="button" data-hz="针对" data-hz2="针对" data-py="zhēnduì" data-pyn="zhendui" data-num="39" aria-label="Прослушать 针对" title="Прослушать 针对">&#9654;</button><span class="ru">быть нацеленным на, применительно к</span><span class="ex">针对这个问题</span></div>
+      <div class="w-item"><span class="hz">当地</span><span class="py">dāngdì</span><button class="pb" type="button" data-hz="当地" data-hz2="当地" data-py="dāngdì" data-pyn="dangdi" data-num="40" aria-label="Прослушать 当地" title="Прослушать 当地">&#9654;</button><span class="ru">местный, на месте</span><span class="ex">当地明星 / 当地人</span></div>
+      <div class="w-item"><span class="hz">代言</span><span class="py">dàiyán</span><span class="star">★</span><button class="pb" type="button" data-hz="代言" data-hz2="代言" data-py="dàiyán" data-pyn="daiyan" data-num="41" aria-label="Прослушать 代言" title="Прослушать 代言">&#9654;</button><span class="ru">быть лицом бренда, рекламировать</span></div>
+      <div class="w-item"><span class="hz">明星</span><span class="py">míngxīng</span><button class="pb" type="button" data-hz="明星" data-hz2="明星" data-py="míngxīng" data-pyn="mingxing" data-num="3" aria-label="Прослушать 明星" title="Прослушать 明星">&#9654;</button><span class="ru">звезда, знаменитость</span><span class="ex">足球明星 / 电影明星</span></div>
+      <div class="w-item"><span class="hz">直播</span><span class="py">zhíbō</span><span class="star">★</span><button class="pb" type="button" data-hz="直播" data-hz2="直播" data-py="zhíbō" data-pyn="zhibo" data-num="4" aria-label="Прослушать 直播" title="Прослушать 直播">&#9654;</button><span class="ru">вести прямую трансляцию</span></div>
+      <div class="w-item"><span class="hz">颠球</span><span class="py">diān qiú</span><span class="star">★</span><button class="pb" type="button" data-hz="颠球" data-hz2="颠球" data-py="diān qiú" data-pyn="dianqiu" data-num="2" aria-label="Прослушать 颠球" title="Прослушать 颠球">&#9654;</button><span class="ru">набивать мяч, чеканить</span></div>
+      <div class="w-item"><span class="hz">宝贝</span><span class="py">bǎobèi</span><button class="pb" type="button" data-hz="宝贝" data-hz2="宝贝" data-py="bǎobèi" data-pyn="baobei" data-num="5" aria-label="Прослушать 宝贝" title="Прослушать 宝贝">&#9654;</button><span class="ru">малыш; сокровище</span></div>
+      <div class="w-item"><span class="hz">逗</span><span class="py">dòu</span><button class="pb" type="button" data-hz="逗" data-hz2="逗" data-py="dòu" data-pyn="dou" data-num="6" aria-label="Прослушать 逗" title="Прослушать 逗">&#9654;</button><span class="ru">забавлять, смешить, дразнить</span><span class="ex">逗笑 / 逗孩子</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>III. Технологии и охват<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Гнездо про интернет. 应用 и 实现 — самые частотные слова этого гнезда, они есть и в заданиях про науку.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">实现</span><span class="py">shíxiàn</span><button class="pb" type="button" data-hz="实现" data-hz2="实现" data-py="shíxiàn" data-pyn="shixian" data-num="15" aria-label="Прослушать 实现" title="Прослушать 实现">&#9654;</button><span class="ru">осуществить, воплотить</span><span class="ex">实现愿望 / 实现目标</span></div>
+      <div class="w-item"><span class="hz">覆盖</span><span class="py">fùgài</span><span class="star">★</span><button class="pb" type="button" data-hz="覆盖" data-hz2="覆盖" data-py="fùgài" data-pyn="fugai" data-num="16" aria-label="Прослушать 覆盖" title="Прослушать 覆盖">&#9654;</button><span class="ru">покрывать, охватывать</span><span class="ex">覆盖200多个国家</span></div>
+      <div class="w-item"><span class="hz">移动</span><span class="py">yídòng</span><button class="pb" type="button" data-hz="移动" data-hz2="移动" data-py="yídòng" data-pyn="yidong" data-num="17" aria-label="Прослушать 移动" title="Прослушать 移动">&#9654;</button><span class="ru">перемещать(ся); мобильный</span><span class="ex">移动互联网 / 移动通信</span></div>
+      <div class="w-item"><span class="hz">通信</span><span class="py">tōngxìn</span><span class="star">★</span><button class="pb" type="button" data-hz="通信" data-hz2="通信" data-py="tōngxìn" data-pyn="tongxin" data-num="18" aria-label="Прослушать 通信" title="Прослушать 通信">&#9654;</button><span class="ru">связь, коммуникация</span></div>
+      <div class="w-item"><span class="hz">应用</span><span class="py">yìngyòng</span><button class="pb" type="button" data-hz="应用" data-hz2="应用" data-py="yìngyòng" data-pyn="yingyong" data-num="19" aria-label="Прослушать 应用" title="Прослушать 应用">&#9654;</button><span class="ru">применять; приложение</span><span class="ex">普遍 / 大量地应用</span></div>
+      <div class="w-item"><span class="hz">称霸</span><span class="py">chēngbà</span><span class="star">★</span><button class="pb" type="button" data-hz="称霸" data-hz2="称霸" data-py="chēngbà" data-pyn="chengba" data-num="21" aria-label="Прослушать 称霸" title="Прослушать 称霸">&#9654;</button><span class="ru">господствовать, доминировать</span><span class="ex">称霸全球</span></div>
+      <div class="w-item"><span class="hz">背景</span><span class="py">bèijǐng</span><button class="pb" type="button" data-hz="背景" data-hz2="背景" data-py="bèijǐng" data-pyn="beijing" data-num="22" aria-label="Прослушать 背景" title="Прослушать 背景">&#9654;</button><span class="ru">фон, обстановка, контекст</span><span class="ex">在……的背景下</span></div>
+      <div class="w-item"><span class="hz">相关</span><span class="py">xiāngguān</span><button class="pb" type="button" data-hz="相关" data-hz2="相关" data-py="xiāngguān" data-pyn="xiangguan" data-num="27" aria-label="Прослушать 相关" title="Прослушать 相关">&#9654;</button><span class="ru">относящийся к делу, связанный</span><span class="ex">相关业务 / 相关的报道</span></div>
+      <div class="w-item"><span class="hz">现实</span><span class="py">xiànshí</span><button class="pb" type="button" data-hz="现实" data-hz2="现实" data-py="xiànshí" data-pyn="xianshi" data-num="29" aria-label="Прослушать 现实" title="Прослушать 现实">&#9654;</button><span class="ru">действительность, реальность</span><span class="ex">认识到现实（≠ 实现!）</span></div>
+      <div class="w-item"><span class="hz">个人</span><span class="py">gèrén</span><button class="pb" type="button" data-hz="个人" data-hz2="个人" data-py="gèrén" data-pyn="geren" data-num="30" aria-label="Прослушать 个人" title="Прослушать 个人">&#9654;</button><span class="ru">отдельный человек; личный</span><span class="ex">个人计算机 / 个人爱好</span></div>
+      <div class="w-item"><span class="hz">发达</span><span class="py">fādá</span><button class="pb" type="button" data-hz="发达" data-hz2="发达" data-py="fādá" data-pyn="fada" data-num="33" aria-label="Прослушать 发达" title="Прослушать 发达">&#9654;</button><span class="ru">развитый, процветающий</span><span class="ex">发达国家 / 交通发达</span></div>
+      <div class="w-item"><span class="hz">华裔</span><span class="py">huáyì</span><button class="pb" type="button" data-hz="华裔" data-hz2="华裔" data-py="huáyì" data-pyn="huayi" data-num="42" aria-label="Прослушать 华裔" title="Прослушать 华裔">&#9654;</button><span class="ru">этнический китаец с иностранным гражданством</span></div>
+      <div class="w-item"><span class="hz">移民</span><span class="py">yímín</span><button class="pb" type="button" data-hz="移民" data-hz2="移民" data-py="yímín" data-pyn="yimin" data-num="43" aria-label="Прослушать 移民" title="Прослушать 移民">&#9654;</button><span class="ru">мигрант; переселяться</span><span class="ex">新移民</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>IV. Служебные<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Обе грамматические точки урока — самого короткого по грамматике в учебнике.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">以及</span><span class="py">yǐjí</span><button class="pb" type="button" data-hz="以及" data-hz2="以及" data-py="yǐjí" data-pyn="yiji" data-num="31" aria-label="Прослушать 以及" title="Прослушать 以及">&#9654;</button><span class="ru">а также, и ещё</span><span class="ex">A、B 以及 C</span></div>
+      <div class="w-item"><span class="hz">程度</span><span class="py">chéngdù</span><button class="pb" type="button" data-hz="程度" data-hz2="程度" data-py="chéngdù" data-pyn="chengdu" data-num="32" aria-label="Прослушать 程度" title="Прослушать 程度">&#9654;</button><span class="ru">степень, уровень</span><span class="ex">成熟程度 / 在很大程度上</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>На слух: где рука ошибётся <span class="cn">听写陷阱</span></h2>
+  <p>Последний урок собирает две классические пары с переставленными слогами — такие экзамен любит больше всего.</p>
+
+  <div class="warn">Переставленные слоги: одни и те же знаки в обратном порядке</div>
+  <div class="trap">
+    <div><span class="hz">实现</span><span class="py">shíxiàn</span><span class="n">осуществить, воплотить (глагол) — 实现愿望</span></div>
+    <div><span class="hz">现实</span><span class="py">xiànshí</span><span class="n">реальность (существительное) — 认识到现实. Оба слова <b>в одном уроке</b>, упражнение 2 их проверяет</span></div>
+  </div>
+
+  <div class="warn">Семейство 用-</div>
+  <table class="pair-tbl">
+    <tr><th>Слово</th><th>Когда именно оно</th></tr>
+    <tr><td>应用 yìngyòng (урок 12)</td><td>Применять технологию в области; приложение: 移动通信应用, 普遍应用.</td></tr>
+    <tr><td>使用 shǐyòng</td><td>Просто пользоваться вещью: 使用筷子. Упражнение 2 требует именно его.</td></tr>
+    <tr><td>运用 yùnyòng (17)</td><td>Применять знание, метод, закон: 灵活地运用.</td></tr>
+    <tr><td>采用 cǎiyòng (11)</td><td>Взять на вооружение способ: 采用柔和的声音.</td></tr>
+    <tr><td>用户 yònghù · 用途 yòngtú (11)</td><td>Пользователь и назначение — те же 用, но существительные.</td></tr>
+  </table>
+
+  <div class="warn">Пары, которые путаются</div>
+  <table class="pair-tbl">
+    <tr><th>Пара</th><th>Как развести</th></tr>
+    <tr><td>发达 fādá<br>发展 fāzhǎn</td><td>Полный разбор ниже, в 辨析. Коротко: 发达 — прилагательное «развитый», 发展 — глагол «развивать(ся)».</td></tr>
+    <tr><td>宣传 xuānchuán<br>推广 tuīguǎng</td><td>宣传 — рассказывать о чём-то, чтобы знали. 推广 — внедрять, чтобы пользовались. Упражнение 2 требует 推广.</td></tr>
+    <tr><td>个人 gèrén<br>自己 zìjǐ (9)</td><td>个人 — «личный, индивидуальный» как определение (个人爱好, 个人计算机). 自己 — «сам». Упражнение 2 требует 个人.</td></tr>
+    <tr><td>以及 yǐjí<br>及时 jíshí<br>以来 yǐlái (2)</td><td>以及 — союз «а также». Не путать с 及时 «вовремя» и 以来 «с тех пор как».</td></tr>
+    <tr><td>覆盖 fùgài<br>副 fù<br>富 fù</td><td>Три разных знака на fù. 覆 — 17 черт, 副 — «заместитель», 富 — «богатый».</td></tr>
+    <tr><td>程度 chéngdù<br>成都 Chéngdū<br>程序 chéngxù</td><td>程度 — степень. 程序 из 扩展 — программа. Общий 程 сбивает на слух.</td></tr>
+    <tr><td>通信 tōngxìn<br>通知 tōngzhī<br>相信 xiāngxìn</td><td>通信 — связь как отрасль. Второй слог 信 тот же, что в 微信 и 相信.</td></tr>
+  </table>
+
+  <div class="warn">Тяжёлые для руки иероглифы</div>
+  <div class="card">
+    <ul style="margin-bottom:0">
+      <li><b>覆</b> (覆盖) — 18 черт: 覀 сверху, 彳 + 复 снизу. Самый громоздкий знак урока.</li>
+      <li><b>裁</b> (总裁) = 𢦏 + 衣; <b>销</b> (销售) = 钅 + 肖; <b>营</b> (经营) = 艹 + 冖 + 吕.</li>
+      <li><b>霸</b> (称霸) = 雨 + 革 + 月, 21 черта. Узнавать на слух достаточно.</li>
+      <li><b>裔</b> (华裔) = 衣 с 冏 внутри; <b>伙</b> = 亻 + 火.</li>
+      <li><b>颠</b> (颠球) = 真 + 页 — тот же ключ 页, что в 顶 (4) и 颗 (8).</li>
+      <li><b>逗</b> = 辶 + 豆; <b>针</b> (针对) = 钅 + 十.</li>
+      <li><b>册</b> (注册) — 5 черт, пишется как две «дощечки» с перекладиной: старинная книга из бамбуковых планок.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Грамматика: две детали <span class="cn">注释</span></h2>
+
+  <h3>1 · 以及 yǐjí</h3>
+  <div class="card green">
+    <p>Союз, соединяющий однородные члены. Главное отличие от 和: соединяемые части обычно <b>неравнозначны</b> — есть главное и второстепенное, или идёт последовательность.</p>
+    <p class="cn-ex">吃饭时不要用筷子敲打碗、盘子<span class="hl">以及</span>桌面。</p>
+    <p class="cn-ex">学校的领导、教师<span class="hl">以及</span>一些学生代表观看了演出。</p>
+    <p class="cn-ex">由于中国互联网的用户数量<span class="hl">以及</span>市场成熟程度等都低于发达国家，在产品创新上难有领导地位。</p>
+    <p class="tr" style="margin:0">Схема: A、B <b>以及</b> C — перечисление через запятую-паузу, а перед последним элементом 以及. Книжнее, чем 和, и в сочинении звучит заметно лучше.</p>
+  </div>
+
+  <h3>2 · 程度 chéngdù</h3>
+  <div class="card blue">
+    <p>Существительное «уровень, степень, до какой отметки дошло».</p>
+    <p class="cn-ex">由于中国互联网的用户数量以及市场成熟<span class="hl">程度</span>等都低于发达国家……</p>
+    <p class="cn-ex">问题已经发展到了十分严重的<span class="hl">程度</span>。</p>
+    <p class="cn-ex">在很大<span class="hl">程度</span>上，一个人的未来取决于他所受的教育。</p>
+    <p class="tr" style="margin:0">Три готовые рамки: ……的程度 (成熟程度, 严重程度) · 到了……的程度 · 在很大程度上. Последняя — отличная связка для сочинения, вместо простого 很.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Сочетаемость <span class="cn">词语搭配</span></h2>
+  <table>
+    <tr><th style="width:38%">Модель</th><th>Что подставляем</th></tr>
+    <tr><td class="han">推广 + O</td><td class="han">推广汉语普通话 / 新技术 / 产品 / 经验</td></tr>
+    <tr><td class="han">注册 + O</td><td class="han">注册公司 / 邮箱 / 会员</td></tr>
+    <tr><td class="han">合作 + N</td><td class="han">合作伙伴 / 公司 / 精神</td></tr>
+    <tr><td class="han">…… + 中心</td><td class="han">城市 / 政治 / 经济 / 工作 / 研发中心</td></tr>
+    <tr><td class="han">…… 地 + 召开</td><td class="han">按时 / 顺利 / 成功（地）召开</td></tr>
+    <tr><td class="han">…… 地 + 应用</td><td class="han">普遍 / 大量（地）应用</td></tr>
+    <tr><td class="han">开发 + 补语</td><td class="han">开发出（来）/ 开发成功</td></tr>
+    <tr><td class="han">销售 + 补语</td><td class="han">销售得…… / 销售到……</td></tr>
+    <tr><td class="han">一家 + 企业</td><td class="han">一家企业 / 一家公司</td></tr>
+    <tr><td class="han">一笔 / 一项 + 业务</td><td class="han">一笔业务 / 一项业务</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>发达 или 发展 <span class="cn">词语辨析</span></h2>
+  <p>Значения связаны, но <b>замена невозможна</b>, потому что это разные части речи. Различий два:</p>
+  <table>
+    <tr><th style="width:50%">发达 fādá</th><th>发展 fāzhǎn</th></tr>
+    <tr>
+      <td><b>Прилагательное</b>.<br><span class="han">这个城市的经济不太发达。</span></td>
+      <td><b>Глагол</b>.<br><span class="han">这个城市正在大力发展经济。</span></td>
+    </tr>
+    <tr>
+      <td>Описывает <b>высокий достигнутый уровень</b>.<br><span class="han">由于中国互联网的用户数量以及市场成熟程度等都低于发达国家……</span></td>
+      <td>Обозначает <b>сам процесс изменения</b>.<br><span class="han">中国还是一个发展中国家。</span></td>
+    </tr>
+  </table>
+  <p style="font-size:14.5px;color:var(--brick);margin:0">Быстрый тест: если перед словом можно поставить 很 или 不太 — это 发达. Если после него идёт дополнение (经济, 旅游业) — это 发展. Запомните пару терминов: 发达国家 «развитая страна» против 发展中国家 «развивающаяся».</p>
+</section>
+
+<section>
+  <h2>Проверьте себя <span class="cn">练习 · 答案</span></h2>
+  <p>Ответы к упражнениям со стр. 101–102 — сначала решите, потом раскройте.</p>
+
+  <details>
+    <summary>做一做 · 发达 / 发展</summary>
+    <div class="in">
+      <p>① 四川是茶馆文化最<span class="k">发达</span>的地区之一。（高уровень — прилагательное）<br>
+      ② 其实它的大脑很<span class="k">发达</span>。（после 很 — только 发达）<br>
+      ③ 方便的交通是<span class="k">发展</span>经济的基础。（с дополнением — глагол）<br>
+      ④ 她的病情<span class="k">发展</span>得比我们想象的还要快。（процесс изменения）</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 1 · 选择合适的词语填空 （逗 合作 推广 业务 召开 注册）</summary>
+    <div class="in">
+      <p>① 为了<span class="k">推广</span>这项新产品，公司做了很多宣传。<br>
+      ② 原本定在周三上午<span class="k">召开</span>的会议改时间了。<br>
+      ③ 你做这么多事，难道只是为了<span class="k">逗</span>女朋友开心？<br>
+      ④ 要想在这个网站购物，你必须先<span class="k">注册</span>一个它的邮箱。<br>
+      ⑤ 那个新来的销售员这个月做成了三笔大<span class="k">业务</span>，真厉害！<br>
+      ⑥ 我们跟这家公司<span class="k">合作</span>过两次，很愉快。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 2 · 选择正确答案</summary>
+    <div class="in">
+      <p>① 我们应该重点<span class="k">推广</span>（B）— внедрять, чтобы пользовались; 宣传 только рассказывает.<br>
+      ② 你首先要学会<span class="k">使用</span>筷子（B）— пользоваться вещью; 应用 — внедрять технологию.<br>
+      ③ 我的愿望终于<span class="k">实现</span>了（B）— глагол «осуществиться»; 现实 — существительное.<br>
+      ④ 这是我的<span class="k">个人</span>爱好（A）— определение «личный»; 自己 так не работает.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 3 · 给括号里的词选择适当的位置</summary>
+    <div class="in">
+      <p>① <span class="k">D</span> — 这个问题是在什么样的背景<span class="k">下</span>提出来的？<br>
+      ② <span class="k">C</span> — 公司新开发<span class="k">出</span>的产品很受消费者欢迎。<br>
+      ③ <span class="k">C</span> — 本店销售电视、冰箱、洗衣机<span class="k">以及</span>其他电器。<br>
+      ④ <span class="k">A</span> — <span class="k">针对</span>这个问题，我们开会讨论了好几次。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>扩展 · 电脑网络 （键盘 鼠标 光盘 信息 硬件 软件 数码 数据 程序 系统 网络 信号 充电器）</summary>
+    <div class="in">
+      <p>① 我忘带手机<span class="k">充电器</span>了，得节省着用，先关机吧。<br>
+      ② 汉字是一个整体的<span class="k">系统</span>，字与字之间是有联系的。<br>
+      ③ 调查<span class="k">数据</span>显示，用户们对微信的服务很满意。<br>
+      ④ 喂，您说什么？我听不清。这里<span class="k">信号</span>不太好。</p>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Сочинение <span class="cn">网络（手机等）改变我的生活</span></h2>
+  <p>Задание урока: не менее 100 иероглифов о том, как техника изменила вашу жизнь. Образец на ~190 знаков — с 以及 и 程度.</p>
+  <div class="card red">
+    <p class="cn-ex" style="line-height:2">手机改变我的生活，首先是在联系方式上。以前跟家人打国际长途要算好时差，现在用微信这样的<span class="hl">应用</span>，随时都能看到他们的脸。像微信这样的产品已经<span class="hl">覆盖</span>了两百多个国家，<span class="hl">用户</span>里不仅有<span class="hl">华裔</span>和<span class="hl">移民</span>，还有越来越多的外国人，我就是其中之一。不过手机也带来了问题：它占用时间的<span class="hl">程度</span>超出了我的想象，我常常一边吃饭一边看手机，忽略了身边的人<span class="hl">以及</span>真正重要的事。所以我给自己定了个规矩：吃饭时把手机放下。</p>
+  </div>
+  <h3>Готовые связки</h3>
+  <div class="card">
+    <ul style="margin-bottom:0">
+      <li class="cn-ex">……改变我的生活，首先是在……上</li>
+      <li class="cn-ex">以前……，现在用……，随时都能……</li>
+      <li class="cn-ex">用户里不仅有……，还有……，我就是其中之一</li>
+      <li class="cn-ex">不过……也带来了问题：它占用时间的程度超出了我的想象</li>
+      <li class="cn-ex">忽略了身边的人以及真正重要的事</li>
+      <li class="cn-ex">所以我给自己定了个规矩：……</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Что делать до экзамена <span class="cn">复习计划</span></h2>
+  <ol class="route">
+    <li><b>Пересказ по линии времени.</b> 2010 конец — отдел разработки, 2011.1 — запуск, 2011.4 — выход в мир под именем WeChat, 2011.12 — сто стран, 2012 конец — больше ста, сегодня — двести с лишним и шестнадцать языков. Пять точек, и второй абзац пересказывается сам.</li>
+    <li><b>实现 и 现实 под диктовку.</b> Одни и те же знаки в обратном порядке, оба слова в одном уроке: 实现愿望 «осуществить мечту» против 认识到现实 «осознать реальность». Это самая вероятная ошибка.</li>
+    <li><b>Семейство 用- целиком.</b> 应用 (12) · 使用 · 运用 (17) · 采用 (11) · 用户 и 用途 (11). Пять слов из трёх уроков — выпишите их одним столбиком с примерами.</li>
+    <li><b>Пара терминов наизусть.</b> 发达国家 против 发展中国家. Это готовый блок, который почти наверняка встретится в 阅读.</li>
+    <li><b>Две конструкции — по своему предложению.</b> A、B 以及 C · 在很大程度上…… . Вторая мгновенно поднимает регистр сочинения, заменяя обычное 很.</li>
+  </ol>
+
+  <div class="finale">
+    <b>Учебник пройден целиком</b>
+    <p>Восемнадцать уроков, шесть юнитов, около 700 новых слов, 60 грамматических точек и 18 пар 辨析. Если до экзамена осталось немного времени, самое выгодное — не перечитывать конспекты подряд, а открыть <a href="index.html">сводную таблицу на главной</a>: там все 词语例释 и все пары 辨析 учебника на одном экране, и сразу видно, какие точки помните твёрдо. А затем пройти <a href="pismo-hsk5.html">разбор раздела «Письмо»</a> — это самая управляемая часть экзамена, и там же собраны конструкции из всех уроков 5A, которые поднимают балл.</p>
+  </div>
+</section>
+
+<nav class="botnav"><a href="hsk5a-lesson-11.html"><span>Предыдущий урок</span>11 · 闹钟的危害</a><a href="hsk5a-lesson-13.html"><span>Следующий урок</span>13 · 锯掉生活的“筐底”</a></nav>
+
+<footer>
+  Конспект по «HSK 标准教程 5（上）», урок 12 «海外用户玩儿微信», стр. 97–103 · Unit 4 走近科学<br>
+  Линия времени построена по датам из текста: 2010 — начало разработки, 2011 — запуск и выход на международный рынок, 2012 — свыше ста стран, сегодня — более двухсот.
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML = '<span class="w">' + z.dataset.w + '</span><span class="p">' + z.dataset.p +
+      '</span><span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){ zones.forEach(function(o){ o.classList.remove('on'); }); out.innerHTML = def; }
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+  document.querySelector('.tl-box svg').addEventListener('mouseleave', clear);
+})();
+</script>
+<script>
+(function(){
+  var LESSON = "12";
+  var DIRS = ["audio/", "", "mp3/", "media/", "аудио/", "audio/15/", "15/"];
+  var CAND = [];
+  DIRS.forEach(function(d){ CAND.push(d + "{hz}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{hz2}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{pyn}.mp3"); });
+
+  var patIn  = document.getElementById('ab-pat');
+  var status = document.getElementById('ab-status');
+  var btns   = Array.prototype.slice.call(document.querySelectorAll('.pb[data-hz]'));
+  var cur = null, curBtn = null, queue = null;
+
+  function pad(n){ n = String(n||''); return n.length === 1 ? '0'+n : n; }
+
+  function resolve(pat, b){
+    return pat
+      .replace(/\{hz2\}/g, b.dataset.hz2 || b.dataset.hz)
+      .replace(/\{hz\}/g,  b.dataset.hz)
+      .replace(/\{pyn\}/g, b.dataset.pyn)
+      .replace(/\{py\}/g,  b.dataset.py)
+      .replace(/\{num\}/g, pad(b.dataset.num))
+      .replace(/\{n\}/g,   b.dataset.num || '')
+      .replace(/\{L\}/g,   LESSON);
+  }
+
+  function setStatus(t, cls){
+    status.textContent = t || '';
+    status.className = 'ab-status' + (cls ? ' ' + cls : '');
+  }
+
+  function test(pat, b){
+    return new Promise(function(res){
+      var a = new Audio(), done = false;
+      function ok(){ if(!done){ done = true; res(true); } }
+      function no(){ if(!done){ done = true; res(false); } }
+      a.addEventListener('loadedmetadata', ok);
+      a.addEventListener('canplay', ok);
+      a.addEventListener('error', no);
+      a.preload = 'metadata';
+      a.src = encodeURI(resolve(pat, b));
+      setTimeout(no, 2500);
+    });
+  }
+
+  function stop(){
+    if(cur){ cur.pause(); cur = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn = null; }
+    queue = null;
+    document.querySelectorAll('.pball.playing').forEach(function(x){ x.classList.remove('playing'); });
+  }
+
+  /* проигрывание с запасными вариантами имени для этого слова */
+  function play(b, onEnd){
+    stop();
+    var tries = [patIn.value.trim()];
+    var alt = (b.dataset.hz2 && b.dataset.hz2 !== b.dataset.hz)
+      ? patIn.value.trim().replace('{hz}', '{hz2}') : null;
+    if(alt && tries.indexOf(alt) < 0) tries.push(alt);
+    CAND.forEach(function(p){ if(tries.indexOf(p) < 0) tries.push(p); });
+
+    b.classList.add('playing');
+    var i = 0;
+    (function attempt(){
+      if(i >= tries.length){
+        b.classList.remove('playing');
+        b.classList.add('missing');
+        b.title = 'Не найден файл для ' + b.dataset.hz;
+        setStatus('Не найден файл для ' + b.dataset.hz + ' — проверьте папку или шаблон.', 'bad');
+        if(onEnd) onEnd();
+        return;
+      }
+      var src = resolve(tries[i++], b);
+      var a = new Audio(encodeURI(src));
+      var started = false;
+      a.addEventListener('canplay', function(){ started = true; });
+      a.addEventListener('ended', function(){
+        b.classList.remove('playing');
+        if(cur === a){ cur = null; curBtn = null; }
+        if(onEnd) onEnd();
+      });
+      a.addEventListener('error', function(){
+        if(!started){ attempt(); }
+        else { b.classList.remove('playing'); if(onEnd) onEnd(); }
+      });
+      cur = a; curBtn = b;
+      b.classList.remove('missing');
+      a.play().catch(function(){});
+    })();
+  }
+
+  /* автопоиск папки при открытии */
+  function autodetect(quiet){
+    if(!btns.length) return;
+    if(!quiet) setStatus('Перебираю варианты…');
+    var i = 0;
+    (function next(){
+      if(i >= CAND.length){
+        setStatus(quiet
+          ? 'Папка с mp3 не найдена. Положите файлы в audio рядом с этим документом.'
+          : 'Ни один из типовых вариантов не подошёл. Впишите путь вручную.',
+          quiet ? '' : 'bad');
+        return;
+      }
+      var p = CAND[i++];
+      test(p, btns[0]).then(function(ok){
+        if(ok){
+          patIn.value = p;
+          document.querySelectorAll('.pb.missing').forEach(function(x){
+            x.classList.remove('missing'); x.title = '';
+          });
+          setStatus('Озвучка подключена: ' + p, 'ok');
+        } else next();
+      });
+    })();
+  }
+
+  document.getElementById('ab-auto').addEventListener('click', function(){ autodetect(false); });
+  document.getElementById('ab-test').addEventListener('click', function(){
+    if(!btns.length) return;
+    setStatus('Проверяю…');
+    test(patIn.value.trim(), btns[0]).then(function(ok){
+      setStatus((ok ? 'Файл найден: ' : 'Не найден: ') + resolve(patIn.value.trim(), btns[0]),
+                ok ? 'ok' : 'bad');
+    });
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(curBtn === b && cur){ stop(); return; }
+      play(b);
+    });
+  });
+
+  document.querySelectorAll('.pball').forEach(function(pb){
+    pb.addEventListener('click', function(){
+      if(pb.classList.contains('playing')){ stop(); return; }
+      var list = Array.prototype.slice.call(
+        pb.closest('.cluster').querySelectorAll('.pb[data-hz]'));
+      stop();
+      pb.classList.add('playing');
+      var i = 0;
+      queue = list;
+      (function step(){
+        if(queue !== list || i >= list.length){ pb.classList.remove('playing'); return; }
+        play(list[i++], function(){ setTimeout(step, 350); });
+      })();
+    });
+  });
+
+  autodetect(true);
+})();
+</script>
+</body>
+</html>
