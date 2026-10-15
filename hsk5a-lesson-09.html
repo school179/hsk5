@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 9 · 别样鲁迅 · HSK 标准教程 5上</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#241f1c;
+  --paper:#ddd4c6;
+  --card:#f4eee3;
+  --brick:#6b6156;
+  --red:#9a3b33;
+  --teal:#3f6360;
+  --gold:#a8852f;
+  --line:rgba(36,31,28,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:repeating-linear-gradient(0deg,transparent 0 30px,rgba(36,31,28,.04) 30px 31px)}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+header{padding:40px 0 26px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;color:var(--red);letter-spacing:-.03em}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:44px;line-height:1.06;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brick);margin-top:10px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+section{margin-top:56px}
+h2{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+
+.map-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px}
+.map-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone .fillable{transition:opacity .18s ease}
+.zone .fillable{opacity:.88}
+.zone:hover .fillable,.zone.on .fillable{opacity:1}
+.zone:focus{outline:none}
+.mlab{font-family:var(--han);font-size:14px;font-weight:600;fill:var(--ink);pointer-events:none}
+.mpin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.05em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:64px}
+.readout .w{font-family:var(--han);font-size:21px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:12.5px;color:var(--teal)}
+.readout .d{display:block;margin-top:5px;font-size:15px;line-height:1.55}
+.readout .hint{color:var(--brick);font-style:italic}
+
+.moves{list-style:none;padding:0;margin:0;counter-reset:mv}
+.moves li{counter-increment:mv;position:relative;padding:14px 0 14px 62px;border-bottom:1px solid var(--line)}
+.moves li::before{content:counter(mv,decimal-leading-zero);position:absolute;left:0;top:14px;
+  font-family:var(--mono);font-size:13px;font-weight:700;color:var(--red);letter-spacing:.05em}
+.moves b{font-family:var(--disp);font-size:18px;letter-spacing:.02em;display:block;margin-bottom:3px}
+.moves .kw{display:block;margin-top:6px;font-family:var(--han);font-size:15px;color:var(--brick)}
+
+.cluster{margin-top:26px}
+.cluster .why{font-size:14px;color:var(--brick);margin:-4px 0 14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--teal);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--gold);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.teal{border-left:4px solid var(--teal)}
+.card.gold{border-left:4px solid var(--gold)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--card);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.g{background:var(--gold)}
+.tag.t{background:var(--teal)}
+.tag.r{background:var(--red)}
+
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(36,31,28,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+.trap{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--teal);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+details{background:var(--card);border:1px solid var(--line);margin:10px 0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;font-family:var(--disp);
+  font-weight:700;font-size:22px;color:var(--red);width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  .lesson-no{font-size:64px}
+  h1{font-size:32px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index.html">&#8592; Все уроки 5A</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（上） · Unit 3 倾听故事 · Listening to Stories and Anecdotes</div>
+  <div class="title-row">
+    <div class="lesson-no">09</div>
+    <h1>别样鲁迅<span class="lat">Другой Лу Синь · 648 字 · стр. 71–78</span></h1>
+  </div>
+  <div class="meta">
+    <span><b>38</b> новых слов + 7 имён</span>
+    <span><b>3</b> грамматические точки</span>
+    <span>ключ: <b>算 · 作为 · 曾经</b></span>
+  </div>
+</header>
+
+<section>
+  <p class="lede">Девятый урок закрывает третий юнит и меняет угол зрения: вместо хрестоматийного писателя-борца перед нами Лу Синь-гурман. Текст восстанавливает его пекинскую жизнь буквально по дневникам — из них известно, что за один период он побывал в 65 разных ресторанах. Опора здесь — карта его любимых мест, потому что текст движется от одного адреса к другому.</p>
+  <p style="font-size:15px;color:var(--brick);margin:0"><b>Зачем это в учебнике:</b> первая фраза текста объясняет всё — 美食很大一部分是靠名人推动的，这一点在民国时期表现得尤其突出. Урок не про еду, а про то, как известный человек формирует моду.</p>
+</section>
+
+<section id="map">
+  <h2>Пекин Лу Синя <span class="cn">日记里的65家餐馆</span></h2>
+  <div class="map-box">
+    <svg viewBox="0 0 620 350" role="img" aria-label="Карта любимых мест Лу Синя в Пекине">
+      <text class="mpin" x="16" y="18" letter-spacing="0.16em">民国时期 · 北京</text>
+
+      <!-- Лу Синь -->
+      <g class="zone" tabindex="0" data-w="鲁迅：表现 · 突出 · 文学家 · 算 · 地道 · 行家 · 亲自 · 见解" data-p="tūchū · suàn · dìdao · hángjia · qīnzì" data-d="美食很大一部分是靠名人推动的，这一点在民国时期表现得尤其突出。例如著名的文学家鲁迅，在吃喝这件事上，就算是个地道的行家，不但会吃，还会亲自动手做，对许多美食都有独特的见解。这是近代新时尚. Здесь сразу две точки урока: 算 и 亲自 против 自己.">
+        <rect class="fillable" x="16" y="30" width="180" height="88" fill="#9a3b33" opacity=".16" stroke="#9a3b33" stroke-width="1.4"/>
+        <text class="mlab" x="106" y="54" text-anchor="middle">鲁迅（1881—1936）</text>
+        <text class="mpin" x="106" y="74" text-anchor="middle">文学家 · 算是地道的行家</text>
+        <text class="mpin" x="106" y="90" text-anchor="middle">会吃 · 亲自动手做</text>
+        <text class="mpin" x="106" y="106" text-anchor="middle">独特的见解 · 近代新时尚</text>
+      </g>
+
+      <!-- дневники -->
+      <g class="zone" tabindex="0" data-w="日记的数字：写作 · 作为 · 学问 · 讲究 · 占 · 平均" data-p="xiězuò · zuòwéi · jiǎngjiu · píngjūn" data-d="仅从这一时期鲁迅写作的日记中，我们发现他去过的知名餐馆就有65家；另外，他还很爱吃稻香村的点心。作为大作家、大学问家，鲁迅对吃很讲究，吃的内容在他的日记里占了很大一部分. К 广和居 он ходил 平均每周都要去一次.">
+        <rect class="fillable" x="212" y="30" width="180" height="88" fill="#3f6360" opacity=".2" stroke="#3f6360" stroke-width="1.4"/>
+        <text class="mlab" x="302" y="54" text-anchor="middle">日记里的数字</text>
+        <text class="mpin" x="302" y="74" text-anchor="middle">65 家知名餐馆</text>
+        <text class="mpin" x="302" y="90" text-anchor="middle">平均每周去一次广和居</text>
+        <text class="mpin" x="302" y="106" text-anchor="middle">作为 · 学问 · 讲究 · 占了很大一部分</text>
+      </g>
+
+      <!-- 稻香村 -->
+      <g class="zone" tabindex="0" data-w="稻香村：点心 · 时尚" data-p="diǎnxin" data-d="Кроме ресторанов, 他还很爱吃稻香村的点心. 稻香村 — знаменитая пекинская кондитерская, существующая до сих пор; 点心 здесь именно «сладости, выпечка», а не «закуски» в кантонском смысле 点心 dim sum.">
+        <rect class="fillable" x="408" y="30" width="196" height="88" fill="#a8852f" opacity=".26" stroke="#a8852f" stroke-width="1.4"/>
+        <text class="mlab" x="506" y="60" text-anchor="middle">稻香村</text>
+        <text class="mpin" x="506" y="82" text-anchor="middle">点心 · 很爱吃</text>
+      </g>
+
+      <!-- хутун -->
+      <g class="zone" tabindex="0" data-w="胡同：位于 · 距离近 · 斜对面" data-p="wèiyú" data-d="鲁迅经常到这家店的一个重要原因是距离近，广和居的大门就在他当时住的胡同的斜对面。位于菜市口附近的广和居是北京“八大居”之首. Глагол 位于 — книжный, «располагаться в»; 首 здесь «первый, главный среди».">
+        <rect class="fillable" x="16" y="152" width="140" height="62" fill="#6b6156" opacity=".28"/>
+        <text class="mlab" x="86" y="176" text-anchor="middle">他住的胡同</text>
+        <text class="mpin" x="86" y="196" text-anchor="middle">一条胡同 · 距离近</text>
+      </g>
+      <path d="M164 182 h44" stroke="#9a3b33" stroke-width="2.4" stroke-dasharray="5 4"/>
+      <text class="mpin" x="186" y="172" text-anchor="middle">斜对面</text>
+
+      <!-- 广和居 -->
+      <g class="zone" tabindex="0" data-w="广和居：位于 · 首 · 豪华 · 光临 · 聚会 · 高档 · 胃口" data-p="háohuá · guānglín · gāodàng · wèikǒu" data-d="广和居算不上豪华，但却很适合朋友在这里聚会、热闹。这里特别欢迎文人的光临，为他们的聚会创造了很好的条件。 Двор разделён на комнаты разного размера — от одиночных до залов на десять с лишним человек. 那里的菜既有高档的，也有适合普通百姓的，样样都让人有胃口.">
+        <rect class="fillable" x="216" y="140" width="184" height="86" fill="#9a3b33" opacity=".22" stroke="#9a3b33" stroke-width="1.6"/>
+        <text class="mlab" x="308" y="164" text-anchor="middle">广和居（菜市口）</text>
+        <text class="mpin" x="308" y="184" text-anchor="middle">“八大居”之首 · 算不上豪华</text>
+        <text class="mpin" x="308" y="200" text-anchor="middle">欢迎文人光临 · 大小房间</text>
+        <text class="mpin" x="308" y="216" text-anchor="middle">高档的 + 普通的 · 有胃口</text>
+      </g>
+
+      <!-- гостеприимство -->
+      <g class="zone" tabindex="0" data-w="爱交际：交际 · 大方 · 好客 · 呼朋唤友 · 招待" data-p="jiāojì · dàfang · hàokè · zhāodài" data-d="他爱好交际，大方好客，常呼朋唤友，多数是三五个人一起吃，有时甚至会直接让广和居送外卖到家里，在家招待朋友. Обратите внимание: 好客 читается hàokè — 好 в четвёртом тоне, как в 好奇 из урока 13.">
+        <rect class="fillable" x="416" y="140" width="188" height="86" fill="#3f6360" opacity=".24" stroke="#3f6360" stroke-width="1.4"/>
+        <text class="mlab" x="510" y="164" text-anchor="middle">爱好交际</text>
+        <text class="mpin" x="510" y="184" text-anchor="middle">大方 · 好客 · 呼朋唤友</text>
+        <text class="mpin" x="510" y="200" text-anchor="middle">三五个人一起吃</text>
+        <text class="mpin" x="510" y="216" text-anchor="middle">送外卖到家 · 在家招待朋友</text>
+      </g>
+
+      <!-- вино и здоровье -->
+      <g class="zone" tabindex="0" data-w="酒与胃病：明明 · 胃 · 戒 · 保存 · 资料 · 曾经" data-p="míngmíng · wèi · jiè · bǎocún · céngjīng" data-d="鲁迅也爱喝酒，虽然明明知道自己有胃病，不应该喝酒，但却很难戒掉。现在保存的历史资料记载，他和郁达夫一起喝酒的次数最多. Наречие 明明 — «ведь прекрасно же»; часто вводит противоречие с последующим 却.">
+        <rect class="fillable" x="16" y="256" width="284" height="58" fill="#6b6156" opacity=".3" stroke="#6b6156" stroke-width="1.2"/>
+        <text class="mlab" x="158" y="280" text-anchor="middle" style="font-size:13px">明明知道有胃病，却很难戒掉</text>
+        <text class="mpin" x="158" y="300" text-anchor="middle">保存的历史资料 · 记载 · 曾经</text>
+      </g>
+
+      <!-- стихи -->
+      <g class="zone" tabindex="0" data-w="郁达夫的诗：形容 · 蒙眬 · 悠悠 · 形象 · 描写" data-p="xíngróng · ménglóng · yōuyōu · xíngxiàng" data-d="郁达夫在1933年曾经作诗形容他：“醉眼蒙眬上酒楼，彷徨呐喊两悠悠”，描写得十分形象. В строке спрятаны названия двух сборников Лу Синя — 《彷徨》 и 《呐喊》, поэтому она и считается удачной.">
+        <rect class="fillable" x="316" y="256" width="288" height="58" fill="#a8852f" opacity=".3" stroke="#a8852f" stroke-width="1.2"/>
+        <text class="mlab" x="460" y="280" text-anchor="middle" style="font-size:13px">郁达夫的一首诗</text>
+        <text class="mpin" x="460" y="300" text-anchor="middle">形容 · 描写得十分形象 ·《彷徨》《呐喊》</text>
+      </g>
+    </svg>
+    <div class="readout" id="readout">
+      <span class="hint">Наведите курсор или коснитесь любого блока карты — появятся слова этого фрагмента.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Текст в трёх кадрах <span class="cn">课文复述</span></h2>
+  <p style="font-size:14.5px;color:var(--brick)">Три блока учебника (стр. 77): Лу Синь и еда, ресторан 广和居, Лу Синь и вино.</p>
+  <ol class="moves">
+    <li>
+      <b>Лу Синь и еда</b>
+      美食很大一部分是靠名人推动的，这一点在民国时期表现得尤其突出。例如著名的文学家鲁迅，在吃喝这件事上，就算是个地道的行家，不但会吃，还会亲自动手做，对许多美食都有独特的见解。这是近代新时尚。 По дневникам того периода: 他去过的知名餐馆就有65家; кроме того, 他还很爱吃稻香村的点心. 作为大作家、大学问家，鲁迅对吃很讲究，吃的内容在他的日记里占了很大一部分.
+      <span class="kw">表现 · 突出 · 文学家 · 算 · 地道 · 行家 · 亲自 · 见解 · 近代 · 时尚 · 写作 · 点心 · 作为 · 学问 · 讲究 · 占</span>
+    </li>
+    <li>
+      <b>Ресторан 广和居</b>
+      В числе многих ресторанов 鲁迅去得最多、最喜欢的是广和居，平均每周都要去一次. Причина проста: 距离近，广和居的大门就在他当时住的胡同的斜对面。位于菜市口附近的广和居是北京“八大居”之首，在民国时期非常出名。广和居算不上豪华，但却很适合朋友在这里聚会、热闹。这里特别欢迎文人的光临，为他们的聚会创造了很好的条件. Двор делился на комнаты разного размера — 有一个人的，有三五人小聚的，也有十多个人大聚会的. Это отвечало характеру Лу Синя: 他爱好交际，大方好客，常呼朋唤友; иногда он даже 直接让广和居送外卖到家里，在家招待朋友. Но главное — 广和居有鲁迅喜欢的菜: 那里的菜既有高档的，也有适合普通百姓的，样样都让人有胃口.
+      <span class="kw">平均 · 胡同 · 位于 · 首 · 豪华 · 光临 · 交际 · 大方 · 好客 · 呼朋唤友 · 招待 · 高档 · 胃口</span>
+    </li>
+    <li>
+      <b>Лу Синь и вино</b>
+      鲁迅也爱喝酒，虽然明明知道自己有胃病，不应该喝酒，但却很难戒掉. По сохранившимся историческим материалам, чаще всего он выпивал вместе с Юй Дафу. 郁达夫在1933年曾经作诗形容他：“醉眼蒙眬上酒楼，彷徨呐喊两悠悠”，描写得十分形象.
+      <span class="kw">明明 · 胃 · 戒 · 保存 · 资料 · 曾经 · 形容 · 蒙眬 · 悠悠 · 形象</span>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <h2>38 слов по гнёздам <span class="cn">生词</span></h2>
+  <p style="font-size:14px;color:var(--brick)"><span class="star">★</span> — слово сверх программы HSK 5 (в учебнике со звёздочкой).</p>
+
+  <div class="audiobar" id="audiobar">
+    <div class="ab-t">Озвучка слов</div>
+    <div class="ab-row">
+      <input id="ab-pat" type="text" spellcheck="false" value="audio/{hz}.mp3" aria-label="Шаблон пути к mp3">
+      <button type="button" id="ab-auto">Подобрать</button>
+      <button type="button" id="ab-test">Проверить</button>
+    </div>
+    <div class="ab-status" id="ab-status"></div>
+    <div class="ab-note">
+      По умолчанию ищутся файлы вида <code>иероглиф.mp3</code> — сначала в папке
+      <code>audio</code> рядом с этим файлом, потом прямо рядом с ним. Нужная папка
+      определяется сама при открытии страницы. Если ваши mp3 лежат где-то ещё, впишите путь
+      вручную: доступны подстановки <code>{hz}</code> иероглифы, <code>{py}</code> пиньинь с
+      тонами, <code>{pyn}</code> пиньинь без диакритики, <code>{num}</code> номер слова в списке
+      учебника, <code>{L}</code> номер урока. Работает только если открыть файл у себя на диске —
+      в предпросмотре доступа к вашим папкам нет.
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>I. Человек и репутация<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Гнездо для описания людей. 表现、突出、作为、学问 нужны в любом тексте про личность и в сочинении этого урока.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">表现</span><span class="py">biǎoxiàn</span><button class="pb" type="button" data-hz="表现" data-hz2="表现" data-py="biǎoxiàn" data-pyn="biaoxian" data-num="1" aria-label="Прослушать 表现" title="Прослушать 表现">&#9654;</button><span class="ru">проявлять(ся); показать себя</span><span class="ex">表现得很突出 / 表现很好</span></div>
+      <div class="w-item"><span class="hz">突出</span><span class="py">tūchū</span><button class="pb" type="button" data-hz="突出" data-hz2="突出" data-py="tūchū" data-pyn="tuchu" data-num="2" aria-label="Прослушать 突出" title="Прослушать 突出">&#9654;</button><span class="ru">выдающийся, заметный</span><span class="ex">表现突出 / 突出的特点</span></div>
+      <div class="w-item"><span class="hz">文学家</span><span class="py">wénxuéjiā</span><button class="pb" type="button" data-hz="文学家" data-hz2="文学家" data-py="wénxuéjiā" data-pyn="wenxuejia" data-num="3" aria-label="Прослушать 文学家" title="Прослушать 文学家">&#9654;</button><span class="ru">литератор, писатель</span></div>
+      <div class="w-item"><span class="hz">行家</span><span class="py">hángjia</span><span class="star">★</span><button class="pb" type="button" data-hz="行家" data-hz2="行家" data-py="hángjia" data-pyn="hangjia" data-num="6" aria-label="Прослушать 行家" title="Прослушать 行家">&#9654;</button><span class="ru">знаток, специалист</span><span class="ex">地道的行家（行 — háng!）</span></div>
+      <div class="w-item"><span class="hz">学问</span><span class="py">xuéwen</span><button class="pb" type="button" data-hz="学问" data-hz2="学问" data-py="xuéwen" data-pyn="xuewen" data-num="14" aria-label="Прослушать 学问" title="Прослушать 学问">&#9654;</button><span class="ru">познания, учёность</span><span class="ex">大学问家 / 很有学问</span></div>
+      <div class="w-item"><span class="hz">见解</span><span class="py">jiànjiě</span><span class="star">★</span><button class="pb" type="button" data-hz="见解" data-hz2="见解" data-py="jiànjiě" data-pyn="jianjie" data-num="8" aria-label="Прослушать 见解" title="Прослушать 见解">&#9654;</button><span class="ru">суждение, точка зрения</span><span class="ex">独特的见解</span></div>
+      <div class="w-item"><span class="hz">交际</span><span class="py">jiāojì</span><button class="pb" type="button" data-hz="交际" data-hz2="交际" data-py="jiāojì" data-pyn="jiaoji" data-num="22" aria-label="Прослушать 交际" title="Прослушать 交际">&#9654;</button><span class="ru">общение, контакты</span><span class="ex">爱好交际 / 交际能力</span></div>
+      <div class="w-item"><span class="hz">大方</span><span class="py">dàfang</span><button class="pb" type="button" data-hz="大方" data-hz2="大方" data-py="dàfang" data-pyn="dafang" data-num="23" aria-label="Прослушать 大方" title="Прослушать 大方">&#9654;</button><span class="ru">щедрый; непринуждённый</span><span class="ex">↔ 小气</span></div>
+      <div class="w-item"><span class="hz">好客</span><span class="py">hàokè</span><button class="pb" type="button" data-hz="好客" data-hz2="好客" data-py="hàokè" data-pyn="haoke" data-num="24" aria-label="Прослушать 好客" title="Прослушать 好客">&#9654;</button><span class="ru">гостеприимный</span><span class="ex">好 читается hào, 4-й тон</span></div>
+      <div class="w-item"><span class="hz">呼朋唤友</span><span class="py">hūpéng huànyǒu</span><button class="pb" type="button" data-hz="呼朋唤友" data-hz2="呼朋唤友" data-py="hūpéng huànyǒu" data-pyn="hupenghuanyou" data-num="25" aria-label="Прослушать 呼朋唤友" title="Прослушать 呼朋唤友">&#9654;</button><span class="ru">созывать друзей</span></div>
+      <div class="w-item"><span class="hz">招待</span><span class="py">zhāodài</span><button class="pb" type="button" data-hz="招待" data-hz2="招待" data-py="zhāodài" data-pyn="zhaodai" data-num="26" aria-label="Прослушать 招待" title="Прослушать 招待">&#9654;</button><span class="ru">принимать, угощать</span><span class="ex">在家招待朋友</span></div>
+      <div class="w-item"><span class="hz">亲自</span><span class="py">qīnzì</span><button class="pb" type="button" data-hz="亲自" data-hz2="亲自" data-py="qīnzì" data-pyn="qinzi" data-num="7" aria-label="Прослушать 亲自" title="Прослушать 亲自">&#9654;</button><span class="ru">лично, самолично</span><span class="ex">亲自动手做</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>II. Еда, вкус, мода<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Тематическое гнездо. 讲究 и 地道 — самые живые слова урока, их используют каждый день.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">算</span><span class="py">suàn</span><button class="pb" type="button" data-hz="算" data-hz2="算" data-py="suàn" data-pyn="suan" data-num="4" aria-label="Прослушать 算" title="Прослушать 算">&#9654;</button><span class="ru">считаться, сходить за</span><span class="ex">算得上 / 算不上 / 算了</span></div>
+      <div class="w-item"><span class="hz">地道</span><span class="py">dìdao</span><button class="pb" type="button" data-hz="地道" data-hz2="地道" data-py="dìdao" data-pyn="didao" data-num="5" aria-label="Прослушать 地道" title="Прослушать 地道">&#9654;</button><span class="ru">настоящий, аутентичный</span><span class="ex">地道的普通话 / 北京小吃</span></div>
+      <div class="w-item"><span class="hz">讲究</span><span class="py">jiǎngjiu</span><button class="pb" type="button" data-hz="讲究" data-hz2="讲究" data-py="jiǎngjiu" data-pyn="jiangjiu" data-num="15" aria-label="Прослушать 讲究" title="Прослушать 讲究">&#9654;</button><span class="ru">придавать значение, быть разборчивым; тонкость</span><span class="ex">讲究吃 / 穿 / 卫生 / 方法</span></div>
+      <div class="w-item"><span class="hz">点心</span><span class="py">diǎnxin</span><button class="pb" type="button" data-hz="点心" data-hz2="点心" data-py="diǎnxin" data-pyn="dianxin" data-num="12" aria-label="Прослушать 点心" title="Прослушать 点心">&#9654;</button><span class="ru">выпечка, сладости</span></div>
+      <div class="w-item"><span class="hz">高档</span><span class="py">gāodàng</span><button class="pb" type="button" data-hz="高档" data-hz2="高档" data-py="gāodàng" data-pyn="gaodang" data-num="27" aria-label="Прослушать 高档" title="Прослушать 高档">&#9654;</button><span class="ru">дорогой, высокого класса</span><span class="ex">高档（的）礼品 / 家具 / 服装</span></div>
+      <div class="w-item"><span class="hz">豪华</span><span class="py">háohuá</span><button class="pb" type="button" data-hz="豪华" data-hz2="豪华" data-py="háohuá" data-pyn="haohua" data-num="20" aria-label="Прослушать 豪华" title="Прослушать 豪华">&#9654;</button><span class="ru">роскошный</span><span class="ex">算不上豪华</span></div>
+      <div class="w-item"><span class="hz">胃口</span><span class="py">wèikǒu</span><button class="pb" type="button" data-hz="胃口" data-hz2="胃口" data-py="wèikǒu" data-pyn="weikou" data-num="28" aria-label="Прослушать 胃口" title="Прослушать 胃口">&#9654;</button><span class="ru">аппетит</span><span class="ex">让人有胃口 / 没胃口</span></div>
+      <div class="w-item"><span class="hz">胃</span><span class="py">wèi</span><button class="pb" type="button" data-hz="胃" data-hz2="胃" data-py="wèi" data-pyn="wei" data-num="30" aria-label="Прослушать 胃" title="Прослушать 胃">&#9654;</button><span class="ru">желудок</span><span class="ex">胃病 / 胃不舒服</span></div>
+      <div class="w-item"><span class="hz">戒</span><span class="py">jiè</span><button class="pb" type="button" data-hz="戒" data-hz2="戒" data-py="jiè" data-pyn="jie" data-num="31" aria-label="Прослушать 戒" title="Прослушать 戒">&#9654;</button><span class="ru">бросать (привычку)</span><span class="ex">戒烟 / 戒酒 / 很难戒掉</span></div>
+      <div class="w-item"><span class="hz">时尚</span><span class="py">shíshàng</span><button class="pb" type="button" data-hz="时尚" data-hz2="时尚" data-py="shíshàng" data-pyn="shishang" data-num="10" aria-label="Прослушать 时尚" title="Прослушать 时尚">&#9654;</button><span class="ru">мода, модное веяние</span><span class="ex">近代新时尚</span></div>
+      <div class="w-item"><span class="hz">近代</span><span class="py">jìndài</span><button class="pb" type="button" data-hz="近代" data-hz2="近代" data-py="jìndài" data-pyn="jindai" data-num="9" aria-label="Прослушать 近代" title="Прослушать 近代">&#9654;</button><span class="ru">новое время (сер. XIX в. — 1919)</span><span class="ex">近代历史 ↔ 现代 / 古代</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>III. Место и цифры<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Гнездо описания места. 位于 и 平均 регулярно встречаются в текстах 阅读 про города и статистику.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">胡同</span><span class="py">hútòng</span><button class="pb" type="button" data-hz="胡同" data-hz2="胡同" data-py="hútòng" data-pyn="hutong" data-num="17" aria-label="Прослушать 胡同" title="Прослушать 胡同">&#9654;</button><span class="ru">хутун, переулок</span><span class="ex">一条胡同 / 一个胡同</span></div>
+      <div class="w-item"><span class="hz">位于</span><span class="py">wèiyú</span><button class="pb" type="button" data-hz="位于" data-hz2="位于" data-py="wèiyú" data-pyn="weiyu" data-num="18" aria-label="Прослушать 位于" title="Прослушать 位于">&#9654;</button><span class="ru">располагаться, находиться в</span><span class="ex">位于……附近（книжн.）</span></div>
+      <div class="w-item"><span class="hz">首</span><span class="py">shǒu</span><button class="pb" type="button" data-hz="首" data-hz2="首" data-py="shǒu" data-pyn="shou" data-num="19" aria-label="Прослушать 首" title="Прослушать 首">&#9654;</button><span class="ru">глава, первый; сч. сл. для песен и стихов</span><span class="ex">“八大居”之首 / 一首诗</span></div>
+      <div class="w-item"><span class="hz">平均</span><span class="py">píngjūn</span><button class="pb" type="button" data-hz="平均" data-hz2="平均" data-py="píngjūn" data-pyn="pingjun" data-num="16" aria-label="Прослушать 平均" title="Прослушать 平均">&#9654;</button><span class="ru">средний, в среднем</span><span class="ex">平均每周一次 / 平均数</span></div>
+      <div class="w-item"><span class="hz">光临</span><span class="py">guānglín</span><button class="pb" type="button" data-hz="光临" data-hz2="光临" data-py="guānglín" data-pyn="guanglin" data-num="21" aria-label="Прослушать 光临" title="Прослушать 光临">&#9654;</button><span class="ru">посещать, пожаловать (вежл.)</span><span class="ex">欢迎光临</span></div>
+      <div class="w-item"><span class="hz">写作</span><span class="py">xiězuò</span><button class="pb" type="button" data-hz="写作" data-hz2="写作" data-py="xiězuò" data-pyn="xiezuo" data-num="11" aria-label="Прослушать 写作" title="Прослушать 写作">&#9654;</button><span class="ru">писать, заниматься литературой</span></div>
+      <div class="w-item"><span class="hz">保存</span><span class="py">bǎocún</span><button class="pb" type="button" data-hz="保存" data-hz2="保存" data-py="bǎocún" data-pyn="baocun" data-num="32" aria-label="Прослушать 保存" title="Прослушать 保存">&#9654;</button><span class="ru">сохранять, хранить</span><span class="ex">保存几百年 / 完好 / 至今</span></div>
+      <div class="w-item"><span class="hz">资料</span><span class="py">zīliào</span><button class="pb" type="button" data-hz="资料" data-hz2="资料" data-py="zīliào" data-pyn="ziliao" data-num="33" aria-label="Прослушать 资料" title="Прослушать 资料">&#9654;</button><span class="ru">материалы, данные</span><span class="ex">历史资料 / 参考资料</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>IV. Служебные и описание<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Здесь 作为 и 曾经 — две грамматические точки, а 形容 и 形象 пригодятся в сочинении.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">作为</span><span class="py">zuòwéi</span><button class="pb" type="button" data-hz="作为" data-hz2="作为" data-py="zuòwéi" data-pyn="zuowei" data-num="13" aria-label="Прослушать 作为" title="Прослушать 作为">&#9654;</button><span class="ru">в качестве, как; считать чем-то</span><span class="ex">作为大作家，他……</span></div>
+      <div class="w-item"><span class="hz">曾经</span><span class="py">céngjīng</span><button class="pb" type="button" data-hz="曾经" data-hz2="曾经" data-py="céngjīng" data-pyn="cengjing" data-num="34" aria-label="Прослушать 曾经" title="Прослушать 曾经">&#9654;</button><span class="ru">некогда, когда-то</span><span class="ex">曾经作诗 / 曾经说过</span></div>
+      <div class="w-item"><span class="hz">明明</span><span class="py">míngmíng</span><button class="pb" type="button" data-hz="明明" data-hz2="明明" data-py="míngmíng" data-pyn="mingming" data-num="29" aria-label="Прослушать 明明" title="Прослушать 明明">&#9654;</button><span class="ru">ведь очевидно же, явно</span><span class="ex">明明知道……，却……</span></div>
+      <div class="w-item"><span class="hz">形容</span><span class="py">xíngróng</span><button class="pb" type="button" data-hz="形容" data-hz2="形容" data-py="xíngróng" data-pyn="xingrong" data-num="35" aria-label="Прослушать 形容" title="Прослушать 形容">&#9654;</button><span class="ru">описывать, характеризовать</span><span class="ex">用一个词形容他</span></div>
+      <div class="w-item"><span class="hz">形象</span><span class="py">xíngxiàng</span><button class="pb" type="button" data-hz="形象" data-hz2="形象" data-py="xíngxiàng" data-pyn="xingxiang" data-num="38" aria-label="Прослушать 形象" title="Прослушать 形象">&#9654;</button><span class="ru">образный, наглядный; образ</span><span class="ex">描写得十分形象 / 形象好</span></div>
+      <div class="w-item"><span class="hz">蒙眬</span><span class="py">ménglóng</span><span class="star">★</span><button class="pb" type="button" data-hz="蒙眬" data-hz2="蒙眬" data-py="ménglóng" data-pyn="menglong" data-num="36" aria-label="Прослушать 蒙眬" title="Прослушать 蒙眬">&#9654;</button><span class="ru">осоловелый, полусонный</span><span class="ex">醉眼蒙眬</span></div>
+      <div class="w-item"><span class="hz">悠悠</span><span class="py">yōuyōu</span><span class="star">★</span><button class="pb" type="button" data-hz="悠悠" data-hz2="悠悠" data-py="yōuyōu" data-pyn="youyou" data-num="37" aria-label="Прослушать 悠悠" title="Прослушать 悠悠">&#9654;</button><span class="ru">неспешный, долгий</span></div>
+      <div class="w-item"><span class="hz">鲁迅 / 郁达夫</span><span class="py">Lǔ Xùn / Yù Dáfū</span><button class="pb" type="button" data-hz="鲁迅" data-hz2="鲁迅" data-py="Lǔ Xùn" data-pyn="LuXun" data-num="" aria-label="Прослушать 鲁迅" title="Прослушать 鲁迅">&#9654;</button><span class="ru">Лу Синь (1881–1936); Юй Дафу (1896–1945)</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>На слух: где рука ошибётся <span class="cn">听写陷阱</span></h2>
+  <p>Урок опасен <b>нестандартными чтениями</b> и целым выводком слов на 形-.</p>
+
+  <div class="warn">Иероглиф читается не так, как ожидается</div>
+  <table class="pair-tbl">
+    <tr><th>Слово</th><th>В чём подвох</th></tr>
+    <tr><td><b>行</b>家 <b>háng</b>jia</td><td>行 здесь háng «отрасль, профессия», а не xíng «идти». Ср. 银行, 一行人.</td></tr>
+    <tr><td><b>好</b>客 <b>hào</b>kè</td><td>好 в четвёртом тоне = «быть склонным к». Так же 好奇 hàoqí (урок 13).</td></tr>
+    <tr><td>地道 dì<b>dao</b></td><td>Второй слог нейтральный. Если прочесть dìdào — получится «туннель, подземный ход».</td></tr>
+    <tr><td>讲究 jiǎng<b>jiu</b></td><td>Второй слог нейтральный, не jiù.</td></tr>
+    <tr><td>学问 xué<b>wen</b></td><td>Нейтральный тон. Не 学文.</td></tr>
+    <tr><td>胡<b>同</b> hú<b>tòng</b></td><td>同 в четвёртом тоне, хотя обычно tóng.</td></tr>
+  </table>
+
+  <div class="warn">Семейство 形-</div>
+  <div class="trap">
+    <div><span class="hz">形容</span><span class="py">xíngróng</span><span class="n">описывать словами — 用一个词形容</span></div>
+    <div><span class="hz">形象</span><span class="py">xíngxiàng</span><span class="n">образный или образ — 描写得很形象, 形象好</span></div>
+  </div>
+  <p class="tr">Плюс из прошлых уроков: 形状 (5, форма предмета), 形式 (14, форма вида), 形势 (15, обстановка), 形成 (5, складываться). Шесть слов на 形 в одном учебнике — это семейство стоит выписать целиком.</p>
+
+  <div class="warn">Пары, которые путаются</div>
+  <table class="pair-tbl">
+    <tr><th>Пара</th><th>Как развести</th></tr>
+    <tr><td>亲自 qīnzì<br>自己 zìjǐ</td><td>Полный разбор ниже, в 辨析. Коротко: 亲自 — только наречие, 自己 — местоимение.</td></tr>
+    <tr><td>表现 biǎoxiàn<br>表达 biǎodá (6)<br>表示 biǎoshì</td><td>表现 — проявить себя в деле (表现得很突出). 表达 — выразить мысль словами. 表示 — обозначить отношение. Упражнение 2 проверяет 表现 против 表达.</td></tr>
+    <tr><td>近代 jìndài<br>现代 xiàndài<br>古代 gǔdài (4)</td><td>近代 в китайской периодизации — это 1840–1919; 现代 — после 1919. Упражнение 2 проверяет именно это.</td></tr>
+    <tr><td>胃 wèi<br>胃口 wèikǒu</td><td>胃 — орган (胃不舒服), 胃口 — аппетит (没胃口). Упражнение 2 ставит оба в одно предложение.</td></tr>
+    <tr><td>曾经 céngjīng<br>已经 yǐjīng</td><td>曾经 — «когда-то бывало, а теперь нет». 已经 — «уже» и сейчас. Упражнение 2 требует 曾经.</td></tr>
+    <tr><td>保存 bǎocún<br>保留 bǎoliú<br>存在 cúnzài (16)</td><td>保存 — сохранить в целости (保存至今). 保留 — оставить себе, не отдать. 存在 — существовать.</td></tr>
+    <tr><td>算 suàn<br>算了 suàn le</td><td>算 — считаться кем-то (算是行家). 算了 — «ладно, забудь» (扔掉算了).</td></tr>
+  </table>
+
+  <div class="warn">Тяжёлые для руки иероглифы</div>
+  <div class="card">
+    <ul style="margin-bottom:0">
+      <li><b>豪</b> (豪华) = 亠 + 口 + 冖 + 豕 «свинья» внизу, 14 черт.</li>
+      <li><b>档</b> (高档) = 木 + 当; <b>戒</b> = 戈 + 廾, всего 7 черт, но пишут его редко.</li>
+      <li><b>胡同</b> — 胡 = 古 + 月; <b>胃</b> = 田 + 月. Ключ 月 здесь «мясо», как во всех органах.</li>
+      <li><b>招待</b> — оба с ключами руки и шага: 招 = 扌 + 召, 待 = 彳 + 寺.</li>
+      <li><b>解</b> (见解) = 角 + 刀 + 牛: рогом и ножом разделывают быка — «разбирать».</li>
+      <li><b>蒙眬</b> — два редких знака, узнавать на слух достаточно.</li>
+      <li><b>临</b> (光临) = 丨 + 丿 + 臣. Тот же знак в 临时 (16) и 临走 (2).</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Грамматика: три детали <span class="cn">注释</span></h2>
+
+  <h3>1 · 算 suàn</h3>
+  <div class="card red">
+    <p><span class="tag r">значение A</span> «Считаться кем-то, сходить за» = 认作, 当作.</p>
+    <p class="cn-ex">例如著名的文学家鲁迅，在吃喝这件事上，就<span class="hl">算</span>是个地道的行家。</p>
+    <p class="cn-ex">这钱就<span class="hl">算</span>我借给你的，将来你有了的时候再还我。</p>
+    <p class="tr">Частые формы: 算得上 (вполне тянет на) и 算不上 (не дотягивает): 广和居<b>算不上</b>豪华.</p>
+    <p><span class="tag r">значение B</span> 算了 — «ладно, оставим, не будем считаться».</p>
+    <p class="cn-ex">不就是一个空瓶子吗？扔掉<span class="hl">算了</span>。</p>
+    <p class="cn-ex" style="margin-bottom:0"><span class="hl">算了</span>吧，你跑得再快，也追不上会飞的鸟啊。</p>
+  </div>
+
+  <h3>2 · 作为 zuòwéi</h3>
+  <div class="card teal">
+    <p><span class="tag t">глагол</span> «Считать чем-то, рассматривать как» = 看作.</p>
+    <p class="cn-ex">北海公园离家最近，所以我把那儿<span class="hl">作为</span>每晚散步的去处。</p>
+    <p class="cn-ex">经理要请我去吃顿饭，说是<span class="hl">作为</span>我加班的表扬。</p>
+    <p><span class="tag t">предлог</span> «В качестве, будучи» — вводит роль или статус. Стоит в начале предложения.</p>
+    <p class="cn-ex"><span class="hl">作为</span>大作家、大学问家，鲁迅对吃很讲究。</p>
+    <p class="cn-ex">中国<span class="hl">作为</span>主要生产国之一，也在扩大它的种植面积。</p>
+    <p class="tr" style="margin:0">Второе значение особенно полезно в сочинении: 作为一名学生，我认为…… — готовый зачин, который сразу задаёт позицию.</p>
+  </div>
+
+  <h3>3 · 曾经 céngjīng</h3>
+  <div class="card gold">
+    <p>Наречие: действие или состояние имело место <b>в прошлом и уже закончилось</b>.</p>
+    <p class="cn-ex">郁达夫在1933年<span class="hl">曾经</span>作诗形容他。</p>
+    <p class="cn-ex">鲁迅<span class="hl">曾经</span>说他是将别人喝牛奶、咖啡的时间用来学习。</p>
+    <p class="cn-ex">孔子<span class="hl">曾经</span>带着学生周游各国14年，传播他的思想。</p>
+    <p class="tr" style="margin:0">Ключевое отличие от 已经: 曾经 подразумевает, что сейчас этого <b>уже нет</b> (我曾经住在上海 — а теперь нет), 已经 — что состояние продолжается (我已经到了). Часто в связке с 过: 曾经去过.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Сочетаемость <span class="cn">词语搭配</span></h2>
+  <table>
+    <tr><th style="width:38%">Модель</th><th>Что подставляем</th></tr>
+    <tr><td class="han">讲究 + O</td><td class="han">讲究吃 / 穿 / 卫生 / 方法</td></tr>
+    <tr><td class="han">戒 + O</td><td class="han">戒烟 / 戒酒</td></tr>
+    <tr><td class="han">地道的 + N</td><td class="han">地道的普通话 / 北京小吃</td></tr>
+    <tr><td class="han">高档（的）+ N</td><td class="han">高档礼品 / 家具 / 服装</td></tr>
+    <tr><td class="han">算 + 补语</td><td class="han">算得上 / 算不上</td></tr>
+    <tr><td class="han">保存 + 补语</td><td class="han">保存几百年 / 完好 / 至今</td></tr>
+    <tr><td class="han">一条 / 一个 + 胡同</td><td class="han">一条胡同 / 一个胡同</td></tr>
+    <tr><td class="han">一首 + N</td><td class="han">一首歌 / 一首诗</td></tr>
+    <tr><td class="han">表现 + adj</td><td class="han">表现（很）好 / 突出 / 稳定</td></tr>
+    <tr><td class="han">描写 + adj</td><td class="han">描写得（很）形象</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>亲自 или 自己 <span class="cn">词语辨析</span></h2>
+  <p>Оба указывают, что действие выполняет сам человек (鲁迅不但会吃，还会亲自/自己动手做). Различий два, и оба грамматические:</p>
+  <table>
+    <tr><th style="width:50%">亲自 qīnzì</th><th>自己 zìjǐ</th></tr>
+    <tr>
+      <td><b>Наречие</b>: стоит только между подлежащим и глаголом.<br><span class="han">老人总是亲自喂养他的猴子。</span></td>
+      <td><b>Местоимение</b>: бывает подлежащим, дополнением и определением.<br><span class="han">请大家带好自己的资料。</span></td>
+    </tr>
+    <tr>
+      <td>Обычно о человеке <b>высокого положения</b> или о том, что он делает нечасто.<br><span class="han">这份礼物是市长亲自为生病的小女孩儿做的。</span></td>
+      <td>Просто подчёркивает, что исполнитель — сам человек, а не кто-то другой.<br><span class="han">你应该自己努力学习，不能总是靠别人。</span></td>
+    </tr>
+  </table>
+  <p style="font-size:14.5px;color:var(--brick);margin:0">Быстрый тест: если после слова идёт 的 или оно стоит после предлога — только 自己. Если хочется добавить «самолично, не поручив другим, хотя мог бы» — 亲自.</p>
+</section>
+
+<section>
+  <h2>Проверьте себя <span class="cn">练习 · 答案</span></h2>
+  <p>Ответы к упражнениям со стр. 76–78 — сначала решите, потом раскройте.</p>
+
+  <details>
+    <summary>做一做 · 亲自 / 自己</summary>
+    <div class="in">
+      <p>① 这是你<span class="k">自己</span>的事，应该<span class="k">自己</span>做。（определение с 的 — только 自己）<br>
+      ② 总裁<span class="k">亲自</span>给我发了奖金。（высокое положение）<br>
+      ③ 希望您能<span class="k">亲自</span>来参加这次活动。（вежливое приглашение）<br>
+      ④ 每个学生都有<span class="k">自己</span>的性格特点。（определение）</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 1 · 选择合适的词语填空 （戒 首 保存 地道 讲究 形象）</summary>
+    <div class="in">
+      <p>① 写了一<span class="k">首</span>题为《教我如何不想她》的小诗。<br>
+      ② 筷子……在使用上也有很多<span class="k">讲究</span>。（здесь существительное «тонкости»）<br>
+      ③ 你咳嗽得这么厉害，真得<span class="k">戒</span>烟了！<br>
+      ④ 能做出如此<span class="k">地道</span>的麻婆豆腐真是不容易。<br>
+      ⑤ 新鲜的葡萄不易<span class="k">保存</span>。<br>
+      ⑥ 公司这次要求招聘<span class="k">形象</span>好的职员。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 2 · 选择正确答案</summary>
+    <div class="in">
+      <p>① 在今晚的比赛中<span class="k">表现</span>得很突出（B）— проявить себя в деле, а не выразить мысль.<br>
+      ② 从1840年到1919年的中国<span class="k">近代</span>历史（A）— это ровно период 近代.<br>
+      ③ 我今天<span class="k">胃</span>不太舒服，所以没什么<span class="k">胃口</span> — орган и аппетит.<br>
+      ④ 人们<span class="k">曾经</span>把西红柿当作有害的果子（A）— когда-то так думали, а теперь нет.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 3 · 给括号里的词选择适当的位置</summary>
+    <div class="in">
+      <p>① <span class="k">B</span> — 这事你找我商量<span class="k">算</span>找对人了。<br>
+      ② <span class="k">C</span> — 我听说总理将<span class="k">亲自</span>参加这次活动。<br>
+      ③ <span class="k">D</span> — 然后算出他们月收入的<span class="k">平均</span>数。<br>
+      ④ <span class="k">D</span> — 这怎么是个缺点呢？<span class="k">明明</span>是个优点呀！</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>扩展 · 社会 （道德 传统 风俗 制度 秩序 权力 权利 义务 文明 人口 集体）</summary>
+    <div class="in">
+      <p>① 公司有严格的管理<span class="k">制度</span>。<br>
+      ② 每一个学龄儿童都有受教育的<span class="k">权利</span>。（权利 право ↔ 权力 власть）<br>
+      ③ 西安是世界四大<span class="k">文明</span>古都之一。<br>
+      ④ 好的公共<span class="k">秩序</span>需要我们每个人的努力。</p>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Сочинение <span class="cn">我喜欢的一位名人</span></h2>
+  <p>Задание урока: не менее 100 иероглифов о знаменитом человеке, который вам интересен. Образец на ~180 знаков — с 作为, 曾经 и 算.</p>
+  <div class="card red">
+    <p class="cn-ex" style="line-height:2"><span class="hl">作为</span>一名喜欢读书的人，我最感兴趣的名人是鲁迅。过去我只知道他是伟大的<span class="hl">文学家</span>，作品里充满批判；读了这一课才发现，他在吃喝这件事上也<span class="hl">算</span>得上<span class="hl">行家</span>，不但会吃，还会<span class="hl">亲自</span>动手做，对美食有独特的<span class="hl">见解</span>。他还很爱<span class="hl">交际</span>，<span class="hl">大方好客</span>，常常呼朋唤友。我<span class="hl">曾经</span>以为大作家的生活一定很严肃，现在才明白，越是有<span class="hl">学问</span>的人，生活往往越有意思。</p>
+  </div>
+  <h3>Готовые связки</h3>
+  <div class="card">
+    <ul style="margin-bottom:0">
+      <li class="cn-ex">作为一名……的人，我最感兴趣的名人是……</li>
+      <li class="cn-ex">过去我只知道他是……；读了这一课才发现……</li>
+      <li class="cn-ex">在……这件事上，他也算得上行家</li>
+      <li class="cn-ex">我曾经以为……，现在才明白……</li>
+      <li class="cn-ex">越是……的人，……往往越……</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Что делать до экзамена <span class="cn">复习计划</span></h2>
+  <ol class="route">
+    <li><b>Шесть слов на 形.</b> 形容 и 形象 (урок 9), 形状 и 形成 (5), 形式 (14), 形势 (15). Выпишите их одним столбиком с примером к каждому — экзамен любит ставить два из них в один вопрос.</li>
+    <li><b>Шесть нестандартных чтений.</b> 行家 háng, 好客 hào, 地道 dao, 讲究 jiu, 学问 wen, 胡同 tòng. Все шесть — в одном уроке, и все звучат не так, как пишутся «по логике».</li>
+    <li><b>Пара 曾经 и 已经.</b> Первое значит, что этого больше нет; второе — что уже есть. Разница чисто смысловая, и упражнение 2 её проверяет.</li>
+    <li><b>Три конструкции — по своему предложению.</b> 算得上 / 算不上 · 作为……，我…… · 曾经…… . Вторая — лучший зачин для сочинения из всех, что были в учебнике.</li>
+    <li><b>Пара 权利 и 权力 из 扩展.</b> Полные омофоны quánlì: 权利 — право (受教育的权利), 权力 — власть (行使权力). Классический вопрос экзамена.</li>
+  </ol>
+  <p style="margin-top:24px;font-size:15px;color:var(--brick)">Unit 3 закрыт: уроки 7, 8 и 9 — «成语故事两则», «“朝三暮四”的古今义» и «别样鲁迅».</p>
+</section>
+
+<nav class="botnav"><a href="hsk5a-lesson-08.html"><span>Предыдущий урок</span>8 · “朝三暮四”的古今义</a><a href="hsk5a-lesson-10.html"><span>Следующий урок</span>10 · 争论的奇迹</a></nav>
+
+<footer>
+  Конспект по «HSK 标准教程 5（上）», урок 9 «别样鲁迅», стр. 71–78 · Unit 3 倾听故事<br>
+  Схема построена по тексту урока: дневники, кондитерская 稻香村, ресторан 广和居 напротив хутуна и стихотворение Юй Дафу.
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML = '<span class="w">' + z.dataset.w + '</span><span class="p">' + z.dataset.p +
+      '</span><span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){ zones.forEach(function(o){ o.classList.remove('on'); }); out.innerHTML = def; }
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+  document.querySelector('.map-box svg').addEventListener('mouseleave', clear);
+})();
+</script>
+<script>
+(function(){
+  var LESSON = "09";
+  var DIRS = ["audio/", "", "mp3/", "media/", "аудио/", "audio/15/", "15/"];
+  var CAND = [];
+  DIRS.forEach(function(d){ CAND.push(d + "{hz}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{hz2}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{pyn}.mp3"); });
+
+  var patIn  = document.getElementById('ab-pat');
+  var status = document.getElementById('ab-status');
+  var btns   = Array.prototype.slice.call(document.querySelectorAll('.pb[data-hz]'));
+  var cur = null, curBtn = null, queue = null;
+
+  function pad(n){ n = String(n||''); return n.length === 1 ? '0'+n : n; }
+
+  function resolve(pat, b){
+    return pat
+      .replace(/\{hz2\}/g, b.dataset.hz2 || b.dataset.hz)
+      .replace(/\{hz\}/g,  b.dataset.hz)
+      .replace(/\{pyn\}/g, b.dataset.pyn)
+      .replace(/\{py\}/g,  b.dataset.py)
+      .replace(/\{num\}/g, pad(b.dataset.num))
+      .replace(/\{n\}/g,   b.dataset.num || '')
+      .replace(/\{L\}/g,   LESSON);
+  }
+
+  function setStatus(t, cls){
+    status.textContent = t || '';
+    status.className = 'ab-status' + (cls ? ' ' + cls : '');
+  }
+
+  function test(pat, b){
+    return new Promise(function(res){
+      var a = new Audio(), done = false;
+      function ok(){ if(!done){ done = true; res(true); } }
+      function no(){ if(!done){ done = true; res(false); } }
+      a.addEventListener('loadedmetadata', ok);
+      a.addEventListener('canplay', ok);
+      a.addEventListener('error', no);
+      a.preload = 'metadata';
+      a.src = encodeURI(resolve(pat, b));
+      setTimeout(no, 2500);
+    });
+  }
+
+  function stop(){
+    if(cur){ cur.pause(); cur = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn = null; }
+    queue = null;
+    document.querySelectorAll('.pball.playing').forEach(function(x){ x.classList.remove('playing'); });
+  }
+
+  /* проигрывание с запасными вариантами имени для этого слова */
+  function play(b, onEnd){
+    stop();
+    var tries = [patIn.value.trim()];
+    var alt = (b.dataset.hz2 && b.dataset.hz2 !== b.dataset.hz)
+      ? patIn.value.trim().replace('{hz}', '{hz2}') : null;
+    if(alt && tries.indexOf(alt) < 0) tries.push(alt);
+    CAND.forEach(function(p){ if(tries.indexOf(p) < 0) tries.push(p); });
+
+    b.classList.add('playing');
+    var i = 0;
+    (function attempt(){
+      if(i >= tries.length){
+        b.classList.remove('playing');
+        b.classList.add('missing');
+        b.title = 'Не найден файл для ' + b.dataset.hz;
+        setStatus('Не найден файл для ' + b.dataset.hz + ' — проверьте папку или шаблон.', 'bad');
+        if(onEnd) onEnd();
+        return;
+      }
+      var src = resolve(tries[i++], b);
+      var a = new Audio(encodeURI(src));
+      var started = false;
+      a.addEventListener('canplay', function(){ started = true; });
+      a.addEventListener('ended', function(){
+        b.classList.remove('playing');
+        if(cur === a){ cur = null; curBtn = null; }
+        if(onEnd) onEnd();
+      });
+      a.addEventListener('error', function(){
+        if(!started){ attempt(); }
+        else { b.classList.remove('playing'); if(onEnd) onEnd(); }
+      });
+      cur = a; curBtn = b;
+      b.classList.remove('missing');
+      a.play().catch(function(){});
+    })();
+  }
+
+  /* автопоиск папки при открытии */
+  function autodetect(quiet){
+    if(!btns.length) return;
+    if(!quiet) setStatus('Перебираю варианты…');
+    var i = 0;
+    (function next(){
+      if(i >= CAND.length){
+        setStatus(quiet
+          ? 'Папка с mp3 не найдена. Положите файлы в audio рядом с этим документом.'
+          : 'Ни один из типовых вариантов не подошёл. Впишите путь вручную.',
+          quiet ? '' : 'bad');
+        return;
+      }
+      var p = CAND[i++];
+      test(p, btns[0]).then(function(ok){
+        if(ok){
+          patIn.value = p;
+          document.querySelectorAll('.pb.missing').forEach(function(x){
+            x.classList.remove('missing'); x.title = '';
+          });
+          setStatus('Озвучка подключена: ' + p, 'ok');
+        } else next();
+      });
+    })();
+  }
+
+  document.getElementById('ab-auto').addEventListener('click', function(){ autodetect(false); });
+  document.getElementById('ab-test').addEventListener('click', function(){
+    if(!btns.length) return;
+    setStatus('Проверяю…');
+    test(patIn.value.trim(), btns[0]).then(function(ok){
+      setStatus((ok ? 'Файл найден: ' : 'Не найден: ') + resolve(patIn.value.trim(), btns[0]),
+                ok ? 'ok' : 'bad');
+    });
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(curBtn === b && cur){ stop(); return; }
+      play(b);
+    });
+  });
+
+  document.querySelectorAll('.pball').forEach(function(pb){
+    pb.addEventListener('click', function(){
+      if(pb.classList.contains('playing')){ stop(); return; }
+      var list = Array.prototype.slice.call(
+        pb.closest('.cluster').querySelectorAll('.pb[data-hz]'));
+      stop();
+      pb.classList.add('playing');
+      var i = 0;
+      queue = list;
+      (function step(){
+        if(queue !== list || i >= list.length){ pb.classList.remove('playing'); return; }
+        play(list[i++], function(){ setTimeout(step, 350); });
+      })();
+    });
+  });
+
+  autodetect(true);
+})();
+</script>
+</body>
+</html>

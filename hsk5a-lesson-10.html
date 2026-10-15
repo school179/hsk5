@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 10 · 争论的奇迹 · HSK 标准教程 5上</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1b1d24;
+  --paper:#d5d7d4;
+  --card:#f1f2ef;
+  --brick:#5e6167;
+  --red:#a83a34;
+  --blue:#2e5470;
+  --amber:#b3862c;
+  --line:rgba(27,29,36,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:repeating-linear-gradient(90deg,transparent 0 28px,rgba(27,29,36,.045) 28px 29px)}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+header{padding:40px 0 26px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;color:var(--red);letter-spacing:-.03em}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:44px;line-height:1.06;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brick);margin-top:10px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+section{margin-top:56px}
+h2{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+
+.exp-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px}
+.exp-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone .fillable{transition:opacity .18s ease}
+.zone .fillable{opacity:.88}
+.zone:hover .fillable,.zone.on .fillable{opacity:1}
+.zone:focus{outline:none}
+.elab{font-family:var(--han);font-size:14px;font-weight:600;fill:var(--ink);pointer-events:none}
+.epin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.05em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:64px}
+.readout .w{font-family:var(--han);font-size:21px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:12.5px;color:var(--blue)}
+.readout .d{display:block;margin-top:5px;font-size:15px;line-height:1.55}
+.readout .hint{color:var(--brick);font-style:italic}
+
+.moves{list-style:none;padding:0;margin:0;counter-reset:mv}
+.moves li{counter-increment:mv;position:relative;padding:14px 0 14px 62px;border-bottom:1px solid var(--line)}
+.moves li::before{content:counter(mv,decimal-leading-zero);position:absolute;left:0;top:14px;
+  font-family:var(--mono);font-size:13px;font-weight:700;color:var(--red);letter-spacing:.05em}
+.moves b{font-family:var(--disp);font-size:18px;letter-spacing:.02em;display:block;margin-bottom:3px}
+.moves .kw{display:block;margin-top:6px;font-family:var(--han);font-size:15px;color:var(--brick)}
+
+.cluster{margin-top:26px}
+.cluster .why{font-size:14px;color:var(--brick);margin:-4px 0 14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--blue);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--amber);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.blue{border-left:4px solid var(--blue)}
+.card.amber{border-left:4px solid var(--amber)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--card);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.a{background:var(--amber)}
+.tag.b{background:var(--blue)}
+.tag.r{background:var(--red)}
+
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(27,29,36,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+.trap{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--blue);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+details{background:var(--card);border:1px solid var(--line);margin:10px 0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;font-family:var(--disp);
+  font-weight:700;font-size:22px;color:var(--red);width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  .lesson-no{font-size:64px}
+  h1{font-size:32px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index.html">&#8592; Все уроки 5A</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（上） · Unit 4 走近科学 · Approaching Science</div>
+  <div class="title-row">
+    <div class="lesson-no">10</div>
+    <h1>争论的奇迹<span class="lat">Чудо спора · 560 字 · стр. 80–87</span></h1>
+  </div>
+  <div class="meta">
+    <span><b>37</b> новых слов + 5 имён</span>
+    <span><b>3</b> грамматические точки</span>
+    <span>ключ: <b>毕竟 · 逐渐 · 或许</b></span>
+  </div>
+</header>
+
+<section>
+  <p class="lede">Четвёртый юнит — научный, и открывает его история о том, как спор двух человек случайно привёл к изобретению кино. 1872 год, Калифорния: Стэнфорд и Коэн поспорили, отрывает ли скачущая лошадь все четыре копыта разом. Чтобы решить спор, фотограф Майбридж расставил вдоль дорожки двадцать четыре камеры — и получил первую в мире серию кадров движения.</p>
+  <p style="font-size:15px;color:var(--brick);margin:0"><b>Вывод текста:</b> 留心生活的每一瞬间，并为之争论，适时请求帮助、认真研究，或许重大发现就在你的眼前. Урок не про лошадей, а про то, что открытия часто рождаются из бытового спора.</p>
+</section>
+
+<section id="exp">
+  <h2>Эксперимент Майбриджа <span class="cn">24台相机 · 24根细线</span></h2>
+  <div class="exp-box">
+    <svg viewBox="0 0 620 350" role="img" aria-label="Схема эксперимента: беговая дорожка, 24 камеры и нити">
+      <text class="epin" x="16" y="18" letter-spacing="0.16em">1872 · КАЛИФОРНИЯ</text>
+
+      <!-- спор -->
+      <g class="zone" tabindex="0" data-w="辩论：争论 · 围绕 · 奔跑 · 蹄子 · 辩论 · 青蛙 · 始终" data-p="zhēnglùn · wéirào · bēnpǎo · shǐzhōng" data-d="1872年的一天，在美国加利福尼亚州的一个酒店里，斯坦福与科恩围绕“马奔跑时蹄子是否着地”进行了辩论。斯坦福认为，马奔跑得那么快，在跳起时四蹄应该都是不落地的；而科恩认为，马要是四蹄都不着地，那不是成了青蛙啦？应该是始终有一蹄着地。">
+        <rect class="fillable" x="16" y="30" width="286" height="66" fill="#a83a34" opacity=".16" stroke="#a83a34" stroke-width="1.4"/>
+        <text class="elab" x="159" y="52" text-anchor="middle">酒店里的辩论</text>
+        <text class="epin" x="159" y="72" text-anchor="middle">斯坦福：四蹄都不落地</text>
+        <text class="epin" x="159" y="88" text-anchor="middle">科恩：始终有一蹄着地 · 不然成了青蛙</text>
+      </g>
+
+      <!-- тупик -->
+      <g class="zone" tabindex="0" data-w="僵局：脖子 · 说服 · 摄影师 · 毕竟" data-p="bózi · shuōfú · shèyǐngshī · bìjìng" data-d="两人各执一词，争论得脸红脖子粗，谁也说服不了谁。于是他们就请英国摄影师麦布里奇来判断，可麦布里奇也弄不清楚。不过摄影师毕竟是摄影师，主意还是有的. Здесь и появляется 毕竟 — «всё-таки, как ни крути».">
+        <rect class="fillable" x="318" y="30" width="286" height="66" fill="#2e5470" opacity=".2" stroke="#2e5470" stroke-width="1.4"/>
+        <text class="elab" x="461" y="52" text-anchor="middle">谁也说服不了谁</text>
+        <text class="epin" x="461" y="72" text-anchor="middle">争论得脸红脖子粗</text>
+        <text class="epin" x="461" y="88" text-anchor="middle">请摄影师麦布里奇判断 · 毕竟是摄影师</text>
+      </g>
+
+      <!-- дорожка с камерами -->
+      <g class="zone" tabindex="0" data-w="操场布置：操场 · 洞 · 插 · 棍 · 系 · 拦 · 拍" data-p="cāochǎng · dòng · chā · gùn · jì · lán" data-d="他们一起来到一个操场，在一条跑道的一边等距离放上24个照相机，照相机对准跑道；在跑道另一边打24个洞，分别插进24根木棍，木棍上系着细线，细线穿过跑道，接上相机快门. Глагол 系 читается здесь jì «завязывать», а не xì.">
+        <rect class="fillable" x="16" y="128" width="588" height="20" fill="#5e6167" opacity=".28"/>
+        <g class="fillable">
+          <rect x="30" y="104" width="12" height="18" fill="#2e5470"/><rect x="78" y="104" width="12" height="18" fill="#2e5470"/>
+          <rect x="126" y="104" width="12" height="18" fill="#2e5470"/><rect x="174" y="104" width="12" height="18" fill="#2e5470"/>
+          <rect x="222" y="104" width="12" height="18" fill="#2e5470"/><rect x="270" y="104" width="12" height="18" fill="#2e5470"/>
+          <rect x="318" y="104" width="12" height="18" fill="#2e5470"/><rect x="366" y="104" width="12" height="18" fill="#2e5470"/>
+          <rect x="414" y="104" width="12" height="18" fill="#2e5470"/><rect x="462" y="104" width="12" height="18" fill="#2e5470"/>
+          <rect x="510" y="104" width="12" height="18" fill="#2e5470"/><rect x="558" y="104" width="12" height="18" fill="#2e5470"/>
+        </g>
+        <g class="fillable" stroke="#b3862c" stroke-width="1.2">
+          <line x1="36" y1="122" x2="36" y2="168"/><line x1="84" y1="122" x2="84" y2="168"/>
+          <line x1="132" y1="122" x2="132" y2="168"/><line x1="180" y1="122" x2="180" y2="168"/>
+          <line x1="228" y1="122" x2="228" y2="168"/><line x1="276" y1="122" x2="276" y2="168"/>
+          <line x1="324" y1="122" x2="324" y2="168"/><line x1="372" y1="122" x2="372" y2="168"/>
+          <line x1="420" y1="122" x2="420" y2="168"/><line x1="468" y1="122" x2="468" y2="168"/>
+          <line x1="516" y1="122" x2="516" y2="168"/><line x1="564" y1="122" x2="564" y2="168"/>
+        </g>
+        <g class="fillable">
+          <rect x="32" y="168" width="8" height="16" fill="#8a7a56"/><rect x="80" y="168" width="8" height="16" fill="#8a7a56"/>
+          <rect x="128" y="168" width="8" height="16" fill="#8a7a56"/><rect x="176" y="168" width="8" height="16" fill="#8a7a56"/>
+          <rect x="224" y="168" width="8" height="16" fill="#8a7a56"/><rect x="272" y="168" width="8" height="16" fill="#8a7a56"/>
+          <rect x="320" y="168" width="8" height="16" fill="#8a7a56"/><rect x="368" y="168" width="8" height="16" fill="#8a7a56"/>
+          <rect x="416" y="168" width="8" height="16" fill="#8a7a56"/><rect x="464" y="168" width="8" height="16" fill="#8a7a56"/>
+          <rect x="512" y="168" width="8" height="16" fill="#8a7a56"/><rect x="560" y="168" width="8" height="16" fill="#8a7a56"/>
+        </g>
+        <text class="epin" x="16" y="100">24台照相机 · 对准跑道</text>
+        <text class="epin" x="16" y="198">24个洞 · 24根木棍 · 系着细线 · 穿过跑道</text>
+      </g>
+
+      <!-- лошадь -->
+      <g class="zone" tabindex="0" data-w="一匹马：匹 · 拦 · 连续 · 差距 · 显示" data-p="pǐ · lán · chājù · xiǎnshì" data-d="一切都准备好了，麦布里奇让一匹马从跑道的一头飞奔到另一头，马一边跑，一边按顺序撞断拦路的24根细线，相机连续拍下了24张相片，相邻两张相片的差距都很小。相片显示：马奔跑时始终有一蹄着地，科恩赢了.">
+        <path class="fillable" d="M242 136 q22 -14 42 0 q-8 12 -22 12 q-14 0 -20 -12 z" fill="#8a5a3a"/>
+        <path class="fillable" d="M248 148 v10 M262 148 v12 M276 148 v9" stroke="#8a5a3a" stroke-width="2.4"/>
+        <text class="epin" x="264" y="216" text-anchor="middle">一匹马 · 撞断细线 · 连续拍下24张</text>
+      </g>
+
+      <!-- чудо -->
+      <g class="zone" tabindex="0" data-w="奇迹：意识 · 拉动 · 静止 → 运动 · 奇迹" data-p="yìshi · qíjì" data-d="事后，有人无意识地快速拉动那一长串相片，“奇迹”出现了：各张相片中静止的马连成了一匹运动的马，相片“活”了。这就是电影最早的样子. Слово 意识 здесь в форме 无意识地 — «сам того не сознавая».">
+        <rect class="fillable" x="16" y="238" width="286" height="46" fill="#b3862c" opacity=".3" stroke="#b3862c" stroke-width="1.4"/>
+        <text class="elab" x="159" y="258" text-anchor="middle" style="font-size:13px">无意识地拉动相片 → 相片“活”了</text>
+        <text class="epin" x="159" y="276" text-anchor="middle">静止的马 → 运动的马 · 电影最早的样子</text>
+      </g>
+
+      <!-- кино -->
+      <g class="zone" tabindex="0" data-w="电影诞生：艰苦 · 试验 · 逐渐 · 改进 · 成熟 · 兄弟 · 播放 · 纪念 · 导演" data-p="jiānkǔ · shìyàn · zhújiàn · gǎijìn" data-d="经过艰苦的试验，电影拍摄技术逐渐改进、成熟。1895年12月28日，法国人卢米埃尔兄弟在巴黎第一次向公众播放了短片《火车到站》，这一天后来成为电影产生的纪念日，兄弟俩也成为历史上最早的电影导演.">
+        <rect class="fillable" x="318" y="238" width="286" height="46" fill="#2e5470" opacity=".3" stroke="#2e5470" stroke-width="1.4"/>
+        <text class="elab" x="461" y="258" text-anchor="middle" style="font-size:13px">1895年12月28日 · 卢米埃尔兄弟</text>
+        <text class="epin" x="461" y="276" text-anchor="middle">艰苦的试验 · 逐渐改进、成熟 · 纪念日 · 导演</text>
+      </g>
+
+      <!-- мораль -->
+      <g class="zone" tabindex="0" data-w="结语：瞬间 · 请求 · 或许 · 重大" data-p="shùnjiān · qǐngqiú · huòxǔ · zhòngdà" data-d="留心生活的每一瞬间，并为之争论，适时请求帮助、认真研究，或许重大发现就在你的眼前. Здесь сразу два слова урока и последняя грамматическая точка 或许.">
+        <rect class="fillable" x="16" y="300" width="588" height="38" fill="#a83a34"/>
+        <text class="elab" x="310" y="324" text-anchor="middle" fill="#f1f2ef" style="font-size:13px">留心每一瞬间 · 适时请求帮助 · 或许重大发现就在眼前</text>
+      </g>
+    </svg>
+    <div class="readout" id="readout">
+      <span class="hint">Наведите курсор или коснитесь любого элемента схемы — появятся слова этого фрагмента.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Текст в трёх кадрах <span class="cn">课文复述</span></h2>
+  <p style="font-size:14.5px;color:var(--brick)">Три блока учебника (стр. 86): спор, метод Майбриджа, рождение кино.</p>
+  <ol class="moves">
+    <li>
+      <b>Спор Стэнфорда и Коэна</b>
+      1872年的一天，在美国加利福尼亚州的一个酒店里，斯坦福与科恩围绕“马奔跑时蹄子是否着地”进行了辩论。斯坦福认为，马奔跑得那么快，在跳起时四蹄应该都是不落地的；而科恩认为，马要是四蹄都不着地，那不是成了青蛙啦？应该是始终有一蹄着地。两人各执一词，争论得脸红脖子粗，谁也说服不了谁。
+      <span class="kw">争论 · 奇迹 · 围绕 · 奔跑 · 蹄子 · 辩论 · 青蛙 · 啦 · 始终 · 脖子 · 说服</span>
+    </li>
+    <li>
+      <b>Метод Майбриджа</b>
+      于是他们就请英国摄影师麦布里奇来判断，可麦布里奇也弄不清楚。不过摄影师毕竟是摄影师，主意还是有的。 Они пришли на спортивную площадку: 在一条跑道的一边等距离放上24个照相机，照相机对准跑道；在跑道另一边打24个洞，分别插进24根木棍，木棍上系着细线，细线穿过跑道，接上相机快门. Затем 麦布里奇让一匹马从跑道的一头飞奔到另一头，马一边跑，一边按顺序撞断拦路的24根细线，相机连续拍下了24张相片，相邻两张相片的差距都很小。相片显示：马奔跑时始终有一蹄着地，科恩赢了。
+      <span class="kw">摄影师 · 毕竟 · 操场 · 洞 · 插 · 棍 · 系 · 匹 · 拦 · 拍 · 差距 · 显示</span>
+    </li>
+    <li>
+      <b>Как родилось кино</b>
+      事后，有人无意识地快速拉动那一长串相片，“奇迹”出现了：各张相片中静止的马连成了一匹运动的马，相片“活”了。这就是电影最早的样子。 Дальше: 经过艰苦的试验，电影拍摄技术逐渐改进、成熟。1895年12月28日，法国人卢米埃尔兄弟在巴黎第一次向公众播放了短片《火车到站》，这一天后来成为电影产生的纪念日，兄弟俩也成为历史上最早的电影导演. Вывод: 留心生活的每一瞬间，并为之争论，适时请求帮助、认真研究，或许重大发现就在你的眼前。
+      <span class="kw">意识 · 艰苦 · 试验 · 逐渐 · 改进 · 成熟 · 兄弟 · 播放 · 纪念 · 导演 · 瞬间 · 请求 · 或许 · 重大</span>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <h2>37 слов по гнёздам <span class="cn">生词</span></h2>
+  <p style="font-size:14px;color:var(--brick)"><span class="star">★</span> — слово сверх программы HSK 5 (в учебнике со звёздочкой).</p>
+
+  <div class="audiobar" id="audiobar">
+    <div class="ab-t">Озвучка слов</div>
+    <div class="ab-row">
+      <input id="ab-pat" type="text" spellcheck="false" value="audio/{hz}.mp3" aria-label="Шаблон пути к mp3">
+      <button type="button" id="ab-auto">Подобрать</button>
+      <button type="button" id="ab-test">Проверить</button>
+    </div>
+    <div class="ab-status" id="ab-status"></div>
+    <div class="ab-note">
+      По умолчанию ищутся файлы вида <code>иероглиф.mp3</code> — сначала в папке
+      <code>audio</code> рядом с этим файлом, потом прямо рядом с ним. Нужная папка
+      определяется сама при открытии страницы. Если ваши mp3 лежат где-то ещё, впишите путь
+      вручную: доступны подстановки <code>{hz}</code> иероглифы, <code>{py}</code> пиньинь с
+      тонами, <code>{pyn}</code> пиньинь без диакритики, <code>{num}</code> номер слова в списке
+      учебника, <code>{L}</code> номер урока. Работает только если открыть файл у себя на диске —
+      в предпросмотре доступа к вашим папкам нет.
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>I. Спор и убеждение<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Гнездо для любой темы «за и против». 争论、辩论、说服、围绕 нужны и в 阅读, и в устной части.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">争论</span><span class="py">zhēnglùn</span><button class="pb" type="button" data-hz="争论" data-hz2="争论" data-py="zhēnglùn" data-pyn="zhenglun" data-num="1" aria-label="Прослушать 争论" title="Прослушать 争论">&#9654;</button><span class="ru">спорить, препираться</span><span class="ex">一场争论 / 激烈争论</span></div>
+      <div class="w-item"><span class="hz">辩论</span><span class="py">biànlùn</span><button class="pb" type="button" data-hz="辩论" data-hz2="辩论" data-py="biànlùn" data-pyn="bianlun" data-num="6" aria-label="Прослушать 辩论" title="Прослушать 辩论">&#9654;</button><span class="ru">вести дебаты, дискутировать</span><span class="ex">一场辩论 / 辩论赛</span></div>
+      <div class="w-item"><span class="hz">围绕</span><span class="py">wéirào</span><button class="pb" type="button" data-hz="围绕" data-hz2="围绕" data-py="wéirào" data-pyn="weirao" data-num="3" aria-label="Прослушать 围绕" title="Прослушать 围绕">&#9654;</button><span class="ru">вращаться вокруг; сосредоточиться на</span><span class="ex">围绕（着）重点进行讨论</span></div>
+      <div class="w-item"><span class="hz">说服</span><span class="py">shuōfú</span><button class="pb" type="button" data-hz="说服" data-hz2="说服" data-py="shuōfú" data-pyn="shuofu" data-num="11" aria-label="Прослушать 说服" title="Прослушать 说服">&#9654;</button><span class="ru">убедить, уговорить</span><span class="ex">谁也说服不了谁</span></div>
+      <div class="w-item"><span class="hz">始终</span><span class="py">shǐzhōng</span><button class="pb" type="button" data-hz="始终" data-hz2="始终" data-py="shǐzhōng" data-pyn="shizhong" data-num="9" aria-label="Прослушать 始终" title="Прослушать 始终">&#9654;</button><span class="ru">с начала до конца, всё время</span><span class="ex">始终坚持 / 始终保持</span></div>
+      <div class="w-item"><span class="hz">毕竟</span><span class="py">bìjìng</span><button class="pb" type="button" data-hz="毕竟" data-hz2="毕竟" data-py="bìjìng" data-pyn="bijing" data-num="13" aria-label="Прослушать 毕竟" title="Прослушать 毕竟">&#9654;</button><span class="ru">всё-таки, в конце концов</span><span class="ex">毕竟是摄影师</span></div>
+      <div class="w-item"><span class="hz">脖子</span><span class="py">bózi</span><button class="pb" type="button" data-hz="脖子" data-hz2="脖子" data-py="bózi" data-pyn="bozi" data-num="10" aria-label="Прослушать 脖子" title="Прослушать 脖子">&#9654;</button><span class="ru">шея</span><span class="ex">争论得脸红脖子粗</span></div>
+      <div class="w-item"><span class="hz">啦</span><span class="py">la</span><button class="pb" type="button" data-hz="啦" data-hz2="啦" data-py="la" data-pyn="la" data-num="8" aria-label="Прослушать 啦" title="Прослушать 啦">&#9654;</button><span class="ru">частица (了 + 啊)</span><span class="ex">那不是成了青蛙啦？</span></div>
+      <div class="w-item"><span class="hz">请求</span><span class="py">qǐngqiú</span><button class="pb" type="button" data-hz="请求" data-hz2="请求" data-py="qǐngqiú" data-pyn="qingqiu" data-num="35" aria-label="Прослушать 请求" title="Прослушать 请求">&#9654;</button><span class="ru">просить; просьба</span><span class="ex">请求帮助 / 辞职请求</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>II. Эксперимент: предметы и действия<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Конкретное гнездо. Все эти глаголы — про руки и установку, они легко запоминаются по схеме.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">奔跑</span><span class="py">bēnpǎo</span><span class="star">★</span><button class="pb" type="button" data-hz="奔跑" data-hz2="奔跑" data-py="bēnpǎo" data-pyn="benpao" data-num="4" aria-label="Прослушать 奔跑" title="Прослушать 奔跑">&#9654;</button><span class="ru">мчаться, нестись</span></div>
+      <div class="w-item"><span class="hz">蹄（子）</span><span class="py">tí(zi)</span><span class="star">★</span><button class="pb" type="button" data-hz="蹄" data-hz2="蹄子" data-py="tí" data-pyn="ti" data-num="5" aria-label="Прослушать 蹄" title="Прослушать 蹄">&#9654;</button><span class="ru">копыто</span><span class="ex">四蹄着地</span></div>
+      <div class="w-item"><span class="hz">青蛙</span><span class="py">qīngwā</span><span class="star">★</span><button class="pb" type="button" data-hz="青蛙" data-hz2="青蛙" data-py="qīngwā" data-pyn="qingwa" data-num="7" aria-label="Прослушать 青蛙" title="Прослушать 青蛙">&#9654;</button><span class="ru">лягушка</span></div>
+      <div class="w-item"><span class="hz">摄影师</span><span class="py">shèyǐngshī</span><button class="pb" type="button" data-hz="摄影师" data-hz2="摄影师" data-py="shèyǐngshī" data-pyn="sheyingshi" data-num="12" aria-label="Прослушать 摄影师" title="Прослушать 摄影师">&#9654;</button><span class="ru">фотограф</span></div>
+      <div class="w-item"><span class="hz">操场</span><span class="py">cāochǎng</span><button class="pb" type="button" data-hz="操场" data-hz2="操场" data-py="cāochǎng" data-pyn="caochang" data-num="14" aria-label="Прослушать 操场" title="Прослушать 操场">&#9654;</button><span class="ru">спортивная площадка</span></div>
+      <div class="w-item"><span class="hz">洞</span><span class="py">dòng</span><button class="pb" type="button" data-hz="洞" data-hz2="洞" data-py="dòng" data-pyn="dong" data-num="15" aria-label="Прослушать 洞" title="Прослушать 洞">&#9654;</button><span class="ru">яма, отверстие, нора</span><span class="ex">打24个洞</span></div>
+      <div class="w-item"><span class="hz">插</span><span class="py">chā</span><button class="pb" type="button" data-hz="插" data-hz2="插" data-py="chā" data-pyn="cha" data-num="16" aria-label="Прослушать 插" title="Прослушать 插">&#9654;</button><span class="ru">втыкать, вставлять</span><span class="ex">插进（去）/ 插到…… / 插在……</span></div>
+      <div class="w-item"><span class="hz">棍</span><span class="py">gùn</span><span class="star">★</span><button class="pb" type="button" data-hz="棍" data-hz2="棍" data-py="gùn" data-pyn="gun" data-num="17" aria-label="Прослушать 棍" title="Прослушать 棍">&#9654;</button><span class="ru">палка, шест</span><span class="ex">木棍</span></div>
+      <div class="w-item"><span class="hz">系</span><span class="py">jì</span><button class="pb" type="button" data-hz="系" data-hz2="系" data-py="jì" data-pyn="ji" data-num="18" aria-label="Прослушать 系" title="Прослушать 系">&#9654;</button><span class="ru">завязывать, привязывать</span><span class="ex">系领带 / 系着细线（jì!）</span></div>
+      <div class="w-item"><span class="hz">匹</span><span class="py">pǐ</span><button class="pb" type="button" data-hz="匹" data-hz2="匹" data-py="pǐ" data-pyn="pi" data-num="19" aria-label="Прослушать 匹" title="Прослушать 匹">&#9654;</button><span class="ru">сч. сл. для лошадей</span><span class="ex">一匹马</span></div>
+      <div class="w-item"><span class="hz">拦</span><span class="py">lán</span><button class="pb" type="button" data-hz="拦" data-hz2="拦" data-py="lán" data-pyn="lan" data-num="20" aria-label="Прослушать 拦" title="Прослушать 拦">&#9654;</button><span class="ru">преграждать, задерживать</span><span class="ex">拦住 / 拦在…… / 拦路</span></div>
+      <div class="w-item"><span class="hz">拍</span><span class="py">pāi</span><button class="pb" type="button" data-hz="拍" data-hz2="拍" data-py="pāi" data-pyn="pai" data-num="21" aria-label="Прослушать 拍" title="Прослушать 拍">&#9654;</button><span class="ru">снимать (фото, кино); хлопать</span><span class="ex">拍照片 / 拍电影 / 拍手</span></div>
+      <div class="w-item"><span class="hz">差距</span><span class="py">chājù</span><button class="pb" type="button" data-hz="差距" data-hz2="差距" data-py="chājù" data-pyn="chaju" data-num="22" aria-label="Прослушать 差距" title="Прослушать 差距">&#9654;</button><span class="ru">разрыв, различие</span><span class="ex">差距很小 / 很大的差距</span></div>
+      <div class="w-item"><span class="hz">显示</span><span class="py">xiǎnshì</span><button class="pb" type="button" data-hz="显示" data-hz2="显示" data-py="xiǎnshì" data-pyn="xianshi" data-num="23" aria-label="Прослушать 显示" title="Прослушать 显示">&#9654;</button><span class="ru">показывать, свидетельствовать</span><span class="ex">相片显示…… / 调查显示……</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>III. Развитие и изобретение<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Самое переносимое гнездо урока: 逐渐、改进、成熟、试验 годятся для любого текста про технику и прогресс.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">奇迹</span><span class="py">qíjì</span><button class="pb" type="button" data-hz="奇迹" data-hz2="奇迹" data-py="qíjì" data-pyn="qiji" data-num="2" aria-label="Прослушать 奇迹" title="Прослушать 奇迹">&#9654;</button><span class="ru">чудо, нечто небывалое</span><span class="ex">创造奇迹（урок 14）</span></div>
+      <div class="w-item"><span class="hz">意识</span><span class="py">yìshi</span><span class="star">★</span><button class="pb" type="button" data-hz="意识" data-hz2="意识" data-py="yìshi" data-pyn="yishi" data-num="24" aria-label="Прослушать 意识" title="Прослушать 意识">&#9654;</button><span class="ru">сознание; осознавать</span><span class="ex">无意识地 / 意识到</span></div>
+      <div class="w-item"><span class="hz">艰苦</span><span class="py">jiānkǔ</span><button class="pb" type="button" data-hz="艰苦" data-hz2="艰苦" data-py="jiānkǔ" data-pyn="jianku" data-num="25" aria-label="Прослушать 艰苦" title="Прослушать 艰苦">&#9654;</button><span class="ru">тяжёлый, суровый</span><span class="ex">艰苦（的）条件 / 生活</span></div>
+      <div class="w-item"><span class="hz">试验</span><span class="py">shìyàn</span><span class="star">★</span><button class="pb" type="button" data-hz="试验" data-hz2="试验" data-py="shìyàn" data-pyn="shiyan" data-num="26" aria-label="Прослушать 试验" title="Прослушать 试验">&#9654;</button><span class="ru">испытание, опыт; испытывать</span></div>
+      <div class="w-item"><span class="hz">逐渐</span><span class="py">zhújiàn</span><button class="pb" type="button" data-hz="逐渐" data-hz2="逐渐" data-py="zhújiàn" data-pyn="zhujian" data-num="27" aria-label="Прослушать 逐渐" title="Прослушать 逐渐">&#9654;</button><span class="ru">постепенно, мало-помалу</span><span class="ex">逐渐改进 / 逐渐流行</span></div>
+      <div class="w-item"><span class="hz">改进</span><span class="py">gǎijìn</span><button class="pb" type="button" data-hz="改进" data-hz2="改进" data-py="gǎijìn" data-pyn="gaijin" data-num="28" aria-label="Прослушать 改进" title="Прослушать 改进">&#9654;</button><span class="ru">улучшать, совершенствовать</span><span class="ex">改进工作 / 方法 / 态度</span></div>
+      <div class="w-item"><span class="hz">成熟</span><span class="py">chéngshú</span><button class="pb" type="button" data-hz="成熟" data-hz2="成熟" data-py="chéngshú" data-pyn="chengshu" data-num="29" aria-label="Прослушать 成熟" title="Прослушать 成熟">&#9654;</button><span class="ru">созревать; зрелый</span><span class="ex">成熟的经验 / 看法 / 条件</span></div>
+      <div class="w-item"><span class="hz">兄弟</span><span class="py">xiōngdì</span><button class="pb" type="button" data-hz="兄弟" data-hz2="兄弟" data-py="xiōngdì" data-pyn="xiongdi" data-num="30" aria-label="Прослушать 兄弟" title="Прослушать 兄弟">&#9654;</button><span class="ru">братья</span></div>
+      <div class="w-item"><span class="hz">播放</span><span class="py">bōfàng</span><button class="pb" type="button" data-hz="播放" data-hz2="播放" data-py="bōfàng" data-pyn="bofang" data-num="31" aria-label="Прослушать 播放" title="Прослушать 播放">&#9654;</button><span class="ru">транслировать, показывать</span><span class="ex">播放短片</span></div>
+      <div class="w-item"><span class="hz">纪念</span><span class="py">jìniàn</span><button class="pb" type="button" data-hz="纪念" data-hz2="纪念" data-py="jìniàn" data-pyn="jinian" data-num="32" aria-label="Прослушать 纪念" title="Прослушать 纪念">&#9654;</button><span class="ru">отмечать, чтить память; памятный</span><span class="ex">纪念日 / 留作纪念</span></div>
+      <div class="w-item"><span class="hz">导演</span><span class="py">dǎoyǎn</span><button class="pb" type="button" data-hz="导演" data-hz2="导演" data-py="dǎoyǎn" data-pyn="daoyan" data-num="33" aria-label="Прослушать 导演" title="Прослушать 导演">&#9654;</button><span class="ru">режиссёр; ставить</span></div>
+      <div class="w-item"><span class="hz">瞬间</span><span class="py">shùnjiān</span><span class="star">★</span><button class="pb" type="button" data-hz="瞬间" data-hz2="瞬间" data-py="shùnjiān" data-pyn="shunjian" data-num="34" aria-label="Прослушать 瞬间" title="Прослушать 瞬间">&#9654;</button><span class="ru">мгновение, миг</span><span class="ex">每一瞬间</span></div>
+      <div class="w-item"><span class="hz">或许</span><span class="py">huòxǔ</span><button class="pb" type="button" data-hz="或许" data-hz2="或许" data-py="huòxǔ" data-pyn="huoxu" data-num="36" aria-label="Прослушать 或许" title="Прослушать 或许">&#9654;</button><span class="ru">быть может, возможно</span><span class="ex">或许会有变化</span></div>
+      <div class="w-item"><span class="hz">重大</span><span class="py">zhòngdà</span><button class="pb" type="button" data-hz="重大" data-hz2="重大" data-py="zhòngdà" data-pyn="zhongda" data-num="37" aria-label="Прослушать 重大" title="Прослушать 重大">&#9654;</button><span class="ru">крупный, значительный</span><span class="ex">重大发现 / 影响 / 成果</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>На слух: где рука ошибётся <span class="cn">听写陷阱</span></h2>
+  <p>Главная ловушка урока — <b>多音字 系</b>: здесь он читается не так, как в знакомых словах.</p>
+
+  <div class="warn">Один иероглиф, два чтения</div>
+  <div class="trap">
+    <div><span class="hz">系</span><span class="py">jì</span><span class="n">завязывать — 系着细线, 系领带, 系安全带. Урок 10</span></div>
+    <div><span class="hz">系</span><span class="py">xì</span><span class="n">система, факультет — 关系, 中文系, 系统. То же написание</span></div>
+  </div>
+
+  <div class="warn">Пары, которые путаются</div>
+  <div class="trap">
+    <div><span class="hz">争论</span><span class="py">zhēnglùn</span><span class="n">спорить, не соглашаться — бытовое и эмоциональное</span></div>
+    <div><span class="hz">辩论</span><span class="py">biànlùn</span><span class="n">дебатировать — организованно, по правилам: 辩论赛. Упражнение 2 проверяет их</span></div>
+  </div>
+  <div class="trap">
+    <div><span class="hz">显示</span><span class="py">xiǎnshì</span><span class="n">показывать факт или данные, идёт с существительным: 调查显示……</span></div>
+    <div><span class="hz">显得</span><span class="py">xiǎnde</span><span class="n">выглядеть каким-то, идёт с прилагательным: 显得格外明亮 (урок 8)</span></div>
+  </div>
+  <table class="pair-tbl">
+    <tr><th>Пара</th><th>Как развести</th></tr>
+    <tr><td>始终 shǐzhōng<br>终于 zhōngyú</td><td>始终 — «всё время, от начала до конца» (始终保持联系). 终于 — «наконец-то» о результате. Упражнение 2 требует 始终.</td></tr>
+    <tr><td>差距 chājù<br>距离 jùlí</td><td>差距 — разрыв в уровне, качестве, результатах. 距离 — физическое расстояние. Упражнение 2 проверяет обе.</td></tr>
+    <tr><td>或许 huòxǔ<br>或者 huòzhě</td><td>或许 — «может быть» (предположение). 或者 — «или» (выбор). Упражнение 2 требует 或者.</td></tr>
+    <tr><td>逐渐 zhújiàn<br>渐渐 jiànjiàn<br>逐步 zhúbù</td><td>Почти синонимы. 逐渐 книжнее и чаще с изменением качества, 渐渐 разговорнее, 逐步 — по этапам плана.</td></tr>
+    <tr><td>差 chā / chà / chāi</td><td>В 差距 — chā (разница). 成绩很差 — chà. 出差 — chāi. Три чтения, и все встречаются в 5A.</td></tr>
+    <tr><td>拍 pāi<br>排 pái<br>派 pài (15)</td><td>Три слога на p-. 拍 — снимать и хлопать, 排 — ряд и выстраивать, 派 — послать.</td></tr>
+    <tr><td>试验 shìyàn<br>实验 shíyàn</td><td>Почти омофоны! 试验 — пробовать, испытывать на практике. 实验 — научный эксперимент (物理实验).</td></tr>
+  </table>
+
+  <div class="warn">Тяжёлые для руки иероглифы</div>
+  <div class="card">
+    <ul style="margin-bottom:0">
+      <li><b>蹄</b> = 足 + 帝, 16 черт. Ключ «нога» тот же, что в 蹲、踩、跟.</li>
+      <li><b>蛙</b> (青蛙) = 虫 + 圭; <b>脖</b> = 月 + 孛 — ключ «мясо», как у всех частей тела.</li>
+      <li><b>摄</b> (摄影) = 扌 + 聂 (три «уха»); <b>操</b> = 扌 + 喿.</li>
+      <li><b>棍</b> = 木 + 昆; <b>拦</b> = 扌 + 兰; <b>插</b> = 扌 + 臿. Четыре глагола урока с ключом 扌.</li>
+      <li><b>瞬</b> (瞬间) = 目 + 舜, 17 черт — «моргнуть глазом».</li>
+      <li><b>纪</b> (纪念) = 纟 + 己. Не путать с 记 (记念 так не пишут).</li>
+      <li><b>艰</b> (艰苦) = 又 + 艮. Упрощённый знак, всего 8 черт.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Грамматика: три детали <span class="cn">注释</span></h2>
+
+  <h3>1 · 毕竟 bìjìng</h3>
+  <div class="card red">
+    <p><span class="tag r">значение A</span> «В конце концов, всё же» — несмотря ни на что, результат достигнут.</p>
+    <p class="cn-ex">虽然我们遇到了很多困难，但<span class="hl">毕竟</span>完成了任务。</p>
+    <p><span class="tag r">значение B</span> Указывает на самое существенное обстоятельство: «ведь он как-никак…». Часто объясняет, почему вывод именно такой.</p>
+    <p class="cn-ex">不过摄影师<span class="hl">毕竟</span>是摄影师，主意还是有的。</p>
+    <p class="cn-ex">生活中总有无法解决的问题，<span class="hl">毕竟</span>不是所有的对错都能讲清楚。</p>
+    <p class="cn-ex">他不高兴是正常的，<span class="hl">毕竟</span>没有人能在摔得头破血流的时候，还高兴得起来。</p>
+    <p class="tr" style="margin:0">Второе значение — самое полезное: 毕竟 вводит смягчающее объяснение. Готовая связка для устной части: 你们<b>毕竟</b>是好朋友，别为这点小事生气.</p>
+  </div>
+
+  <h3>2 · 逐渐 zhújiàn</h3>
+  <div class="card blue">
+    <p>Наречие: количество или степень меняются <b>понемногу</b>. Ставится перед глаголом или прилагательным.</p>
+    <p class="cn-ex">食物越来越少，老人不得不<span class="hl">逐渐</span>限制猴子的食量。</p>
+    <p class="cn-ex">这项运动首先在亚太地区流行，并<span class="hl">逐渐</span>受到世界各地人们的欢迎。</p>
+    <p class="cn-ex">经过艰苦的试验，电影拍摄技术<span class="hl">逐渐</span>改进、成熟。</p>
+    <p class="tr" style="margin:0">Важно: 逐渐 не сочетается с однократным действием. ✗他逐渐打开门 — открыть дверь нельзя «постепенно». Нужен процесс: 逐渐习惯 · 逐渐提高 · 逐渐减少 · 逐渐形成.</p>
+  </div>
+
+  <h3>3 · 或许 huòxǔ</h3>
+  <div class="card amber">
+    <p>Наречие «возможно, пожалуй» = 也许. Книжнее, чем 说不定 из урока 6.</p>
+    <p class="cn-ex">虽然以前她不支持你，但<span class="hl">或许</span>这次会有变化。</p>
+    <p class="cn-ex"><span class="hl">或许</span>正是因为这一点一滴的努力，你就会走在别人的前面。</p>
+    <p class="cn-ex">适时请求帮助、认真研究，<span class="hl">或许</span>重大发现就在你的眼前。</p>
+    <p class="tr" style="margin:0">Три степени предположения в 5A: 说不定 (разговорное, часто о хорошем) → 或许 / 也许 (нейтральное) → 大概 / 可能 (о вероятности). В сочинении 或许 звучит лучше всех.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Сочетаемость <span class="cn">词语搭配</span></h2>
+  <table>
+    <tr><th style="width:38%">Модель</th><th>Что подставляем</th></tr>
+    <tr><td class="han">拍 + O</td><td class="han">拍手 / 桌子 / 照片 / 电影</td></tr>
+    <tr><td class="han">改进 + O</td><td class="han">改进工作 / 方法 / 态度</td></tr>
+    <tr><td class="han">艰苦（的）+ N</td><td class="han">艰苦的条件 / 生活</td></tr>
+    <tr><td class="han">成熟的 + N</td><td class="han">成熟的瓜果 / 人 / 经验 / 看法 / 条件</td></tr>
+    <tr><td class="han">围绕（着）……+ V</td><td class="han">围绕着重点进行讨论</td></tr>
+    <tr><td class="han">始终 + V</td><td class="han">始终坚持 / 始终保持</td></tr>
+    <tr><td class="han">插 + 补语</td><td class="han">插进（去）/ 插到…… / 插在……</td></tr>
+    <tr><td class="han">拦 + 补语</td><td class="han">拦住 / 拦在……</td></tr>
+    <tr><td class="han">一匹 + 马</td><td class="han">一匹马</td></tr>
+    <tr><td class="han">一场 + N</td><td class="han">一场争论 / 一场辩论</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>显示 или 显得 <span class="cn">词语辨析</span></h2>
+  <p>Оба значат «проявлять, давать увидеть», но <b>взаимозаменяемы почти никогда</b>. Различий два:</p>
+  <table>
+    <tr><th style="width:50%">显示 xiǎnshì</th><th>显得 xiǎnde</th></tr>
+    <tr>
+      <td>Показывает <b>позицию, способность или положение дел</b>.<br><span class="han">相片显示：马奔跑时始终有一蹄着地。</span></td>
+      <td>Показывает, что предмет <b>выглядит определённым образом</b>.<br><span class="han">几年不见，他显得成熟多了。</span></td>
+    </tr>
+    <tr>
+      <td>Идёт с <b>существительным</b> или целой частью предложения.<br><span class="han">这次活动的组织显示出了他的才能。</span></td>
+      <td>Идёт с <b>прилагательным</b>.<br><span class="han">中秋节那天，月亮显得格外明亮。</span></td>
+    </tr>
+  </table>
+  <p style="font-size:14.5px;color:var(--brick);margin:0">Быстрый тест по следующему слову: если после него прилагательное — 显得. Если существительное, данные или двоеточие с фактом — 显示.</p>
+</section>
+
+<section>
+  <h2>Проверьте себя <span class="cn">练习 · 答案</span></h2>
+  <p>Ответы к упражнениям со стр. 85–87 — сначала решите, потом раскройте.</p>
+
+  <details>
+    <summary>做一做 · 显示 / 显得</summary>
+    <div class="in">
+      <p>① 总是<span class="k">显得</span>不太高兴。（прилагательное）<br>
+      ② 调查<span class="k">显示</span>，只有37%的人愿意回到没有手机的时代。（данные）<br>
+      ③ 节日的北京<span class="k">显得</span>更加美丽。（прилагательное）<br>
+      ④ 你得<span class="k">显示</span>出自己的本领。（существительное + 出）</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 1 · 选择合适的词语填空 （插 系 拦 拍 说服 围绕）</summary>
+    <div class="in">
+      <p>① 你今天<span class="k">系</span>这条领带吧，比较正式。<br>
+      ② 地球为什么会<span class="k">围绕</span>太阳转。<br>
+      ③ 如果不是他在中间<span class="k">插</span>了一手，事情不会变成现在这样。<br>
+      ④ 这位导演<span class="k">拍</span>过二十几部电影。<br>
+      ⑤ 我始终没有办法<span class="k">说服</span>他接受这个结论。<br>
+      ⑥ 路被<span class="k">拦</span>住了。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 2 · 选择正确答案</summary>
+    <div class="in">
+      <p>① 在昨天举行的<span class="k">辩论</span>赛上（B）— 辩论赛 устойчиво; 争论 не образует «соревнование».<br>
+      ② 我们<span class="k">始终</span>保持着联系（A）— всё это время; 终于 значит «наконец-то».<br>
+      ③ 我们之间还有很大的<span class="k">差距</span>（A）— разрыв в уровне, а не расстояние.<br>
+      ④ 吃中餐<span class="k">或者</span>西餐都可以（B）— выбор из двух; 或许 — предположение.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 3 · 给括号里的词选择适当的位置</summary>
+    <div class="in">
+      <p>① <span class="k">D</span> — 您就放心<span class="k">啦</span>。<br>
+      ② <span class="k">B</span> — 是秋天了，<span class="k">毕竟</span>再热也不会像夏天那样。<br>
+      ③ <span class="k">D</span> — 这是已经经过很多人证明的<span class="k">成熟</span>经验。<br>
+      ④ <span class="k">C</span> — 真心希望您能同意我的<span class="k">请求</span>，帮我这个忙！</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>扩展 · 服饰 （围巾 领带 手套 牛仔裤 丝绸 布 耳环 戒指）</summary>
+    <div class="in">
+      <p>① 天气太冷了，你系条<span class="k">围巾</span>再出去吧。<br>
+      ② 我们去年买的那双<span class="k">手套</span>你放在哪儿了？<br>
+      ③ 今天不上班，不用穿西服，终于可以穿<span class="k">牛仔裤</span>了。<br>
+      ④ 您觉得这条<span class="k">领带</span>怎么样？</p>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Сочинение <span class="cn">日常生活中的大发现/发明</span></h2>
+  <p>Задание урока: не менее 100 иероглифов об открытии, родившемся из быта. Образец на ~180 знаков — с 毕竟, 逐渐 и 或许.</p>
+  <div class="card red">
+    <p class="cn-ex" style="line-height:2">历史上很多<span class="hl">重大</span>的发明并不是科学家专门研究出来的，而是在日常生活中<span class="hl">意识</span>到的。电影就是一个例子：两个人<span class="hl">围绕</span>“马奔跑时蹄子是否着地”<span class="hl">争论</span>不休，谁也<span class="hl">说服</span>不了谁，最后请来摄影师用24台相机<span class="hl">拍</span>下了答案。我还知道微波炉的故事：一位工程师站在雷达旁边，发现口袋里的糖化了，于是开始做<span class="hl">试验</span>，技术<span class="hl">逐渐</span>改进，才有了今天的微波炉。可见，留心生活的每一个<span class="hl">瞬间</span>，<span class="hl">或许</span>重大的发现就在眼前。</p>
+  </div>
+  <h3>Готовые связки</h3>
+  <div class="card">
+    <ul style="margin-bottom:0">
+      <li class="cn-ex">很多重大的发明并不是……，而是在日常生活中……的</li>
+      <li class="cn-ex">两个人围绕“……”争论不休，谁也说服不了谁</li>
+      <li class="cn-ex">我还知道……的故事：……</li>
+      <li class="cn-ex">技术逐渐改进，才有了今天的……</li>
+      <li class="cn-ex">可见，留心生活的每一个瞬间，或许重大的发现就在眼前</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Что делать до экзамена <span class="cn">复习计划</span></h2>
+  <ol class="route">
+    <li><b>Пересказ по схеме.</b> Спор в гостинице → тупик → площадка с 24 камерами и нитями → лошадь рвёт нити → снимки «ожили» → братья Люмьер → вывод. Семь шагов, три абзаца.</li>
+    <li><b>系 в двух чтениях.</b> jì «завязывать» (系领带, 系安全带) против xì «связь, факультет» (关系, 中文系). Оба наверняка есть в вашей колоде, и на слух они разные — важно не перепутать при записи.</li>
+    <li><b>Третье гнездо — приоритет.</b> 逐渐、改进、成熟、试验、显示、重大 работают в любом научном тексте, как и первое гнездо урока 16. Если времени мало, учите его первым.</li>
+    <li><b>Почти омофоны 试验 и 实验.</b> Первое — пробовать на практике, второе — научный опыт. Различие на слух почти нулевое: shìyàn против shíyàn.</li>
+    <li><b>Три конструкции — по своему предложению.</b> ……，毕竟…… · 逐渐…… · 或许…… . Первая особенно хороша в устной части: она позволяет мягко объяснить чужое поведение.</li>
+  </ol>
+</section>
+
+<nav class="botnav"><a href="hsk5a-lesson-09.html"><span>Предыдущий урок</span>9 · 别样鲁迅</a><a href="index.html"><span>Оглавление</span>Все 18 уроков 5A</a></nav>
+
+<footer>
+  Конспект по «HSK 标准教程 5（上）», урок 10 «争论的奇迹», стр. 80–87 · Unit 4 走近科学<br>
+  Схема построена по описанию из текста: 24 камеры вдоль дорожки, 24 колышка с нитями на другой стороне и лошадь, рвущая нити на бегу.
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML = '<span class="w">' + z.dataset.w + '</span><span class="p">' + z.dataset.p +
+      '</span><span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){ zones.forEach(function(o){ o.classList.remove('on'); }); out.innerHTML = def; }
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+  document.querySelector('.exp-box svg').addEventListener('mouseleave', clear);
+})();
+</script>
+<script>
+(function(){
+  var LESSON = "10";
+  var DIRS = ["audio/", "", "mp3/", "media/", "аудио/", "audio/15/", "15/"];
+  var CAND = [];
+  DIRS.forEach(function(d){ CAND.push(d + "{hz}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{hz2}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{pyn}.mp3"); });
+
+  var patIn  = document.getElementById('ab-pat');
+  var status = document.getElementById('ab-status');
+  var btns   = Array.prototype.slice.call(document.querySelectorAll('.pb[data-hz]'));
+  var cur = null, curBtn = null, queue = null;
+
+  function pad(n){ n = String(n||''); return n.length === 1 ? '0'+n : n; }
+
+  function resolve(pat, b){
+    return pat
+      .replace(/\{hz2\}/g, b.dataset.hz2 || b.dataset.hz)
+      .replace(/\{hz\}/g,  b.dataset.hz)
+      .replace(/\{pyn\}/g, b.dataset.pyn)
+      .replace(/\{py\}/g,  b.dataset.py)
+      .replace(/\{num\}/g, pad(b.dataset.num))
+      .replace(/\{n\}/g,   b.dataset.num || '')
+      .replace(/\{L\}/g,   LESSON);
+  }
+
+  function setStatus(t, cls){
+    status.textContent = t || '';
+    status.className = 'ab-status' + (cls ? ' ' + cls : '');
+  }
+
+  function test(pat, b){
+    return new Promise(function(res){
+      var a = new Audio(), done = false;
+      function ok(){ if(!done){ done = true; res(true); } }
+      function no(){ if(!done){ done = true; res(false); } }
+      a.addEventListener('loadedmetadata', ok);
+      a.addEventListener('canplay', ok);
+      a.addEventListener('error', no);
+      a.preload = 'metadata';
+      a.src = encodeURI(resolve(pat, b));
+      setTimeout(no, 2500);
+    });
+  }
+
+  function stop(){
+    if(cur){ cur.pause(); cur = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn = null; }
+    queue = null;
+    document.querySelectorAll('.pball.playing').forEach(function(x){ x.classList.remove('playing'); });
+  }
+
+  /* проигрывание с запасными вариантами имени для этого слова */
+  function play(b, onEnd){
+    stop();
+    var tries = [patIn.value.trim()];
+    var alt = (b.dataset.hz2 && b.dataset.hz2 !== b.dataset.hz)
+      ? patIn.value.trim().replace('{hz}', '{hz2}') : null;
+    if(alt && tries.indexOf(alt) < 0) tries.push(alt);
+    CAND.forEach(function(p){ if(tries.indexOf(p) < 0) tries.push(p); });
+
+    b.classList.add('playing');
+    var i = 0;
+    (function attempt(){
+      if(i >= tries.length){
+        b.classList.remove('playing');
+        b.classList.add('missing');
+        b.title = 'Не найден файл для ' + b.dataset.hz;
+        setStatus('Не найден файл для ' + b.dataset.hz + ' — проверьте папку или шаблон.', 'bad');
+        if(onEnd) onEnd();
+        return;
+      }
+      var src = resolve(tries[i++], b);
+      var a = new Audio(encodeURI(src));
+      var started = false;
+      a.addEventListener('canplay', function(){ started = true; });
+      a.addEventListener('ended', function(){
+        b.classList.remove('playing');
+        if(cur === a){ cur = null; curBtn = null; }
+        if(onEnd) onEnd();
+      });
+      a.addEventListener('error', function(){
+        if(!started){ attempt(); }
+        else { b.classList.remove('playing'); if(onEnd) onEnd(); }
+      });
+      cur = a; curBtn = b;
+      b.classList.remove('missing');
+      a.play().catch(function(){});
+    })();
+  }
+
+  /* автопоиск папки при открытии */
+  function autodetect(quiet){
+    if(!btns.length) return;
+    if(!quiet) setStatus('Перебираю варианты…');
+    var i = 0;
+    (function next(){
+      if(i >= CAND.length){
+        setStatus(quiet
+          ? 'Папка с mp3 не найдена. Положите файлы в audio рядом с этим документом.'
+          : 'Ни один из типовых вариантов не подошёл. Впишите путь вручную.',
+          quiet ? '' : 'bad');
+        return;
+      }
+      var p = CAND[i++];
+      test(p, btns[0]).then(function(ok){
+        if(ok){
+          patIn.value = p;
+          document.querySelectorAll('.pb.missing').forEach(function(x){
+            x.classList.remove('missing'); x.title = '';
+          });
+          setStatus('Озвучка подключена: ' + p, 'ok');
+        } else next();
+      });
+    })();
+  }
+
+  document.getElementById('ab-auto').addEventListener('click', function(){ autodetect(false); });
+  document.getElementById('ab-test').addEventListener('click', function(){
+    if(!btns.length) return;
+    setStatus('Проверяю…');
+    test(patIn.value.trim(), btns[0]).then(function(ok){
+      setStatus((ok ? 'Файл найден: ' : 'Не найден: ') + resolve(patIn.value.trim(), btns[0]),
+                ok ? 'ok' : 'bad');
+    });
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(curBtn === b && cur){ stop(); return; }
+      play(b);
+    });
+  });
+
+  document.querySelectorAll('.pball').forEach(function(pb){
+    pb.addEventListener('click', function(){
+      if(pb.classList.contains('playing')){ stop(); return; }
+      var list = Array.prototype.slice.call(
+        pb.closest('.cluster').querySelectorAll('.pb[data-hz]'));
+      stop();
+      pb.classList.add('playing');
+      var i = 0;
+      queue = list;
+      (function step(){
+        if(queue !== list || i >= list.length){ pb.classList.remove('playing'); return; }
+        play(list[i++], function(){ setTimeout(step, 350); });
+      })();
+    });
+  });
+
+  autodetect(true);
+})();
+</script>
+</body>
+</html>
