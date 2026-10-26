@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 20 · 小人书摊 · HSK 标准教程 5下</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#23262a;
+  --brick:#6f6b63;
+  --paper:#e3e1da;
+  --card:#f2f1ec;
+  --red:#b4342a;
+  --brass:#a8813c;
+  --bamboo:#4a6b4e;
+  --sky:#54748a;
+  --line:rgba(35,38,42,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:
+    linear-gradient(rgba(255,255,255,.35) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.35) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+/* ——— шапка ——— */
+header{padding:56px 0 28px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{
+  font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;
+  color:var(--red);letter-spacing:-.03em;
+}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:44px;line-height:1.05;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brick);margin-top:9px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+/* ——— секции ——— */
+section{margin-top:58px}
+h2{
+  font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px;
+}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+a{color:var(--red)}
+
+/* ——— план двора ——— */
+.plan-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px;
+  box-shadow:0 1px 0 rgba(35,38,42,.06)}
+.plan-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone rect,.zone circle,.zone path{transition:fill .18s ease}
+.zone:hover .fillable,.zone.on .fillable{fill:#e7cfc9}
+.zone:focus{outline:none}
+.zone:focus-visible .fillable{stroke:var(--red);stroke-width:2.5}
+.zlab{font-family:var(--han);font-size:15px;font-weight:600;fill:var(--ink);pointer-events:none}
+.zpin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.04em}
+.faint{font-family:var(--han);font-size:12px;fill:var(--brick);pointer-events:none}
+.compass{font-family:var(--mono);font-size:10px;fill:var(--brick);letter-spacing:.15em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:62px}
+.readout .w{font-family:var(--han);font-size:22px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:13px;color:var(--sky)}
+.readout .d{display:block;margin-top:4px;font-size:15px}
+.readout .hint{color:var(--brick);font-style:italic}
+
+/* ——— карточки слов ——— */
+.cluster{margin-top:26px}
+.cluster h3{margin-bottom:4px}
+.cluster .why{font-size:14px;color:var(--brick);margin-bottom:14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--brass);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+/* ——— общие блоки ——— */
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.green{border-left:4px solid var(--bamboo)}
+.card.brass{border-left:4px solid var(--brass)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--paper);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.b{background:var(--brass)}
+.tag.g{background:var(--bamboo)}
+.tag.r{background:var(--red)}
+
+/* ——— таблицы ——— */
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(35,38,42,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+/* ——— на слух ——— */
+.trap{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+/* ——— ответы ——— */
+details{background:var(--card);border:1px solid var(--line);margin:10px 0;padding:0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+/* ——— финал ——— */
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;
+  font-family:var(--disp);font-weight:700;font-size:22px;color:var(--red);
+  width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  .lesson-no{font-size:66px}
+  h1{font-size:32px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+
+
+:root{--red:#8d4a28;--brass:#9b7c3a;--bamboo:#4a6358;--sky:#4f6880;--paper:#e6e3d9;--card:#f5f2ea}
+.zone:hover .fillable,.zone.on .fillable{fill:#ead9bd}
+.rowlab{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;fill:var(--brick)}
+.tiny{font-family:var(--han);font-size:11.5px;fill:var(--brick);pointer-events:none}
+.spine{stroke:#8d4a28;stroke-width:3;stroke-linecap:round}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index-5b.html">&#8592; Все уроки 5B</a><a href="index.html">Учебник 5A</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（下） · Unit 7 交流文化 · Cultural exchange</div>
+  <div class="title-row">
+    <div class="lesson-no">20</div>
+    <h1>小人书摊<span class="lat">Лоток с книжками-картинками · 664 字 · стр. 10–17</span></h1>
+  </div>
+  <div class="meta">
+    <span><b>36</b> новых слов</span>
+    <span><b>3</b> грамматические точки</span>
+    <span>ключ: <b>动词+得/不+起 · 支 · 凭</b></span>
+  </div>
+</header>
+
+
+<section>
+  <p class="lede">Второй урок — воспоминание. Текст устроен как взгляд, который движется: сначала объясняет,
+  что такое 小人书 и почему их читали, потом подходит к самому лотку и разглядывает его по частям, потом
+  описывает, как книжку брали напрокат, и в конце отходит на шаг назад — в сегодняшний день. Эти четыре движения
+  и есть четыре блока пересказа, которые требует учебник. Схема ниже повторяет их в том же порядке.</p>
+</section>
+
+<section id="plan">
+  <h2>Лоток по частям <span class="cn">靠墙的一个小棚子</span></h2>
+  <div class="plan-box">
+    <svg viewBox="0 0 660 600" role="img" aria-label="Схема лотка с книжками-картинками и лексики урока"><text class="rowlab" x="18" y="28">1 · ЛОТОК У СТЕНЫ 靠墙的一个小棚子</text><rect x="30" y="38" width="420" height="214" fill="#efeadf" stroke="#23262a" stroke-width="1.2"/><g class="zone" tabindex="0" data-w="棚子" data-p="péngzi" data-d="一进街口靠墙的一个小棚子 — сарайчик у стены сразу на входе в переулок. 棚子 péngzi: лёгкий навес, не дом."><path class="fillable" d="M22 38 L458 38 L440 56 L40 56 z" fill="#d9cdb5" stroke="#23262a" stroke-width="1.6"/><text class="zpin" x="240" y="51" text-anchor="middle">棚子 · 靠墙 · 街口</text></g><g class="zone" tabindex="0" data-w="绳子 · 翻开 · 搭" data-p="shéngzi · fān · dā" data-d="墙边还拉了几根绳子，一本本书翻开搭在上面，五颜六色的 — вдоль стены натянуты верёвки, книжки раскрыты и перекинуты через них. 翻 fān — раскрыть, перелистнуть; 搭 dā — перекинуть, повесить поперёк."><path d="M44 86 h392 M44 126 h392" stroke="#23262a" stroke-width="1.1"/><path class="fillable" d="M60 86 l-15 26 h30 z" fill="#d7c3a8" stroke="#23262a" stroke-width="1"/><path class="fillable" d="M116 86 l-15 26 h30 z" fill="#c9d2c0" stroke="#23262a" stroke-width="1"/><path class="fillable" d="M172 86 l-15 26 h30 z" fill="#e0c8c6" stroke="#23262a" stroke-width="1"/><path class="fillable" d="M228 86 l-15 26 h30 z" fill="#cfd0dd" stroke="#23262a" stroke-width="1"/><path class="fillable" d="M284 86 l-15 26 h30 z" fill="#ddd4b8" stroke="#23262a" stroke-width="1"/><path class="fillable" d="M340 86 l-15 26 h30 z" fill="#c8d4d8" stroke="#23262a" stroke-width="1"/><path class="fillable" d="M396 86 l-15 26 h30 z" fill="#e2cdb8" stroke="#23262a" stroke-width="1"/><path class="fillable" d="M60 126 l-15 26 h30 z" fill="#cfd0dd" stroke="#23262a" stroke-width="1"/><path class="fillable" d="M116 126 l-15 26 h30 z" fill="#e0c8c6" stroke="#23262a" stroke-width="1"/><path class="fillable" d="M172 126 l-15 26 h30 z" fill="#ddd4b8" stroke="#23262a" stroke-width="1"/><path class="fillable" d="M228 126 l-15 26 h30 z" fill="#c9d2c0" stroke="#23262a" stroke-width="1"/><path class="fillable" d="M284 126 l-15 26 h30 z" fill="#c8d4d8" stroke="#23262a" stroke-width="1"/><path class="fillable" d="M340 126 l-15 26 h30 z" fill="#e2cdb8" stroke="#23262a" stroke-width="1"/><path class="fillable" d="M396 126 l-15 26 h30 z" fill="#d7c3a8" stroke="#23262a" stroke-width="1"/><text class="zpin" x="240" y="168" text-anchor="middle">一本本书翻开搭在上面 · 五颜六色</text></g><g class="zone" tabindex="0" data-w="床板 · 题材" data-p="chuángbǎn · tícái" data-d="棚子里有一张床板摆着各种题材的小人书 — на лежаке разложены книжки разных сюжетов. 题材 tícái — тема, сюжет произведения; не путать с 体裁 tǐcái «жанр»."><rect class="fillable" x="44" y="178" width="158" height="44" rx="3" fill="#ded5c0" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="123" y="206" text-anchor="middle">床板 · 各种题材</text></g><g class="zone" tabindex="0" data-w="牛皮纸封皮" data-p="fēngpí" data-d="为了减少损坏程度，每本小人书都用牛皮纸加了层封皮，封皮上用毛笔写上书名 — обёртка из крафта, название тушью. 整齐漂亮的毛笔字 показывали 文化水平 хозяина."><rect class="fillable" x="216" y="178" width="158" height="44" rx="3" fill="#ded5c0" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="295" y="206" text-anchor="middle">毛笔字 · 整齐漂亮</text></g><g class="zone" tabindex="0" data-w="砖头 支 粗糙的木头板子" data-p="zhuāntóu · zhī · cūcāo · mùtou" data-d="里面用几块砖头支着粗糙的木头板子供人们坐着看书 — несколько кирпичей подпирают грубую доску: это и есть сиденья. 支 zhī — подпирать, здесь первая грамматическая точка урока."><rect class="fillable" x="44" y="230" width="330" height="13" fill="#c7b89a" stroke="#23262a" stroke-width="1.3"/><rect class="fillable" x="62" y="243" width="26" height="9" fill="#b58b6e" stroke="#23262a" stroke-width="1"/><rect class="fillable" x="196" y="243" width="26" height="9" fill="#b58b6e" stroke="#23262a" stroke-width="1"/><rect class="fillable" x="330" y="243" width="26" height="9" fill="#b58b6e" stroke="#23262a" stroke-width="1"/><text class="zpin" x="208" y="241" text-anchor="middle">砖头支着粗糙的木头板子</text></g><g class="zone" tabindex="0" data-w="摊主" data-p="tānzhǔ" data-d="摊主是位上了年纪、身材瘦小的老人，总是穿着一件灰色长衫，静静地坐在一边 — хозяин лотка: в годах, щуплый, в сером халате, молча сидит рядом. 上了年纪 + 身材瘦小 — готовая формула портрета."><rect class="fillable" x="470" y="38" width="160" height="214" rx="3" fill="#efeadf" stroke="#23262a" stroke-width="1.4"/><circle cx="550" cy="104" r="19" fill="#ddd2c2" stroke="#23262a" stroke-width="1.4"/><path d="M550 123 q-34 6 -36 56 h72 q-2 -50 -36 -56 z" fill="#b9b3a6" stroke="#23262a" stroke-width="1.4"/><rect x="516" y="190" width="68" height="12" fill="#c7b89a" stroke="#23262a" stroke-width="1.1"/><text class="zlab" x="550" y="228" text-anchor="middle">摊主</text><text class="zpin" x="550" y="245" text-anchor="middle">年纪 · 身材 · 长衫</text></g><text class="rowlab" x="18" y="288">2 · КАК БРАЛИ КНИГИ 租借的手续</text><g class="zone" tabindex="0" data-w="在摊里看 · 每册1分钱" data-p="cè" data-d="在摊里看，每册1分钱，选好书坐下就看，看完连书带钱交给摊主 — читать на месте: фэнь за том. 册 cè — счётное слово для книг: 一册书."><rect class="fillable" x="30" y="298" width="190" height="60" rx="3" fill="#e7ddc8" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="125" y="320" text-anchor="middle">在摊里看</text><text class="zpin" x="125" y="339" text-anchor="middle">册 · 连书带钱交给摊主</text></g><g class="zone" tabindex="0" data-w="借走回家 · 每本每天2分" data-p="jiǎrú" data-d="假如借走回家看，则每本每天2分钱 — если унести домой, два фэня в день за книжку. 假如 jiǎrú — «если», книжный вариант 如果; 则 — противопоставление, знакомое из 5A."><rect class="fillable" x="236" y="298" width="190" height="60" rx="3" fill="#e7ddc8" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="331" y="320" text-anchor="middle">借走回家看</text><text class="zpin" x="331" y="339" text-anchor="middle">假如……则…… · 每本每天2分</text></g><g class="zone" tabindex="0" data-w="没有押金 · 全凭信用" data-p="yājīn · píng" data-d="印象中似乎没有什么押金，全凭信用 — залога, кажется, не было: всё на доверии. 凭 píng — опираться на, по (предъявлении); третья точка урока."><rect class="fillable" x="442" y="298" width="188" height="60" rx="3" fill="#e7ddc8" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="536" y="320" text-anchor="middle">没有押金</text><text class="zpin" x="536" y="339" text-anchor="middle">全凭信用</text></g><g class="zone" tabindex="0" data-w="登记" data-p="dēngjì" data-d="摊主仔细地将租书人的姓名、地址和所借小人书的书名登记在本子上 — хозяин записывал имя, адрес и название в тетрадь. 登记 dēngjì — внести в список; не путать с 登机 dēngjī «посадка в самолёт»."><rect class="fillable" x="30" y="376" width="120" height="46" rx="3" fill="#efeadf" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="90" y="405" text-anchor="middle">登记</text></g><path d="M150 399 h22" stroke="#23262a" stroke-width="1.2" marker-end="url(#ar2)"/><g class="zone" tabindex="0" data-w="收租金" data-p="zūjīn" data-d="收了租金就可以拿走了 — взял плату, и книгу можно уносить."><rect class="fillable" x="190" y="376" width="120" height="46" rx="3" fill="#efeadf" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="250" y="405" text-anchor="middle">收租金</text></g><path d="M310 399 h22" stroke="#23262a" stroke-width="1.2" marker-end="url(#ar2)"/><g class="zone" tabindex="0" data-w="画掉记录" data-p="jìlù" data-d="第二天还书时再把记录一个一个地画掉 — на следующий день записи вычёркивались одна за другой. 记录 jìlù — запись; пара 记录—纪录 разбирается ниже."><rect class="fillable" x="350" y="376" width="120" height="46" rx="3" fill="#efeadf" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="410" y="405" text-anchor="middle">画掉记录</text></g><path d="M470 399 h22" stroke="#23262a" stroke-width="1.2" marker-end="url(#ar2)"/><g class="zone" tabindex="0" data-w="手续办理好了" data-p="shǒuxù · bànlǐ" data-d="还书手续就算是办理好了 — на этом формальности считались законченными. 办理手续 — связка, которая нужна и в банке, и в визовом центре."><rect class="fillable" x="510" y="376" width="120" height="46" rx="3" fill="#efeadf" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="570" y="405" text-anchor="middle">手续办理好了</text></g><text class="rowlab" x="18" y="462">3 · ЧТО ОТ ЭТОГО ОСТАЛОСЬ 如今</text><g class="zone" tabindex="0" data-w="潘家园 · 护国寺的旧书摊" data-p="Pānjiāyuán · Hùguósì" data-d="如今只能在北京的潘家园、护国寺等地的旧书摊上找到 — сегодня такие книжки находят только на развалах старой книги в Паньцзяюане и у храма Хугосы."><rect class="fillable" x="30" y="472" width="290" height="60" rx="3" fill="#e2ddd0" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="175" y="494" text-anchor="middle">潘家园 · 护国寺</text><text class="zpin" x="175" y="513" text-anchor="middle">旧书摊 · 历史的记忆</text></g><g class="zone" tabindex="0" data-w="印刷精美 → 身价大涨 → 收藏品" data-p="yìnshuā · zhǎng · shōucáng" data-d="一些印刷精美、有特色的作品则身价大涨，成了收藏品，甚至进了博物馆 — отпечатанные хорошо и с характером поднялись в цене, стали предметом коллекционирования и попали в музей. 涨 zhǎng — расти (о цене)."><rect class="fillable" x="340" y="472" width="290" height="60" rx="3" fill="#e2ddd0" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="485" y="494" text-anchor="middle">印刷精美 → 身价大涨</text><text class="zpin" x="485" y="513" text-anchor="middle">收藏品 · 甚至进了博物馆</text></g><text class="tiny" x="330" y="562" text-anchor="middle">小人书和小人书摊已成为历史的记忆。</text><defs><marker id="ar2" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" fill="#23262a"/></marker></defs></svg>
+    <div class="readout" id="readout">
+      <span class="hint">Наведите курсор или коснитесь любой части лотка — появится слово и его роль в тексте.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Текст в четырёх движениях <span class="cn">课文 · 664 字</span></h2>
+
+  <div class="card red">
+    <p><span class="tag r">1</span><b>Почему их читали.</b> 小人书 — это 连环画, изданная в виде книжки.
+    В 五六十年代 жизнь была 单调: ни 网络, ни 动画片, и чтение 小人书 было 儿童最主要的娱乐之一.
+    Любили их не только малыши, но и 无数的青少年和大人. С модой появились и лотки, 从事租书业务:
+    для тех, кто хотел читать, но 买不起书, возможность прочитать книгу за гроши была 毫无疑问是件大好事.</p>
+    <p style="margin:0"><b>Слова:</b> <span class="cn-ex">连环画 · 出版 · 年代 · 单调 · 网络 · 动画片 · 娱乐 · 无数 · 青少年 · 从事 · 毫无 · 疑问 · 买不起</span></p>
+  </div>
+
+  <div class="card green">
+    <p><span class="tag g">2</span><b>Как он выглядел.</b> У входа в переулок, 靠墙 — маленький 棚子.
+    Внутри 几块砖头支着粗糙的木头板子, на них и сидели. На 床板 лежали книжки 各种题材, вдоль стены
+    натянуты 绳子, и книжки 翻开搭在上面, 五颜六色的. Каждую обернули 牛皮纸封皮 и подписали кистью:
+    整齐漂亮的毛笔字 выдавали 书摊主人的文化水平. Хозяин — 上了年纪、身材瘦小的老人 в сером халате,
+    молча сидел рядом.</p>
+    <p style="margin:0"><b>Слова:</b> <span class="cn-ex">摊 · 棚子 · 砖头 · 支 · 粗糙 · 木头 · 题材 · 翻 · 搭 · 整齐 · 年纪 · 身材</span></p>
+  </div>
+
+  <div class="card brass">
+    <p><span class="tag b">3</span><b>Как брали книгу.</b> Читали в основном дети из соседних домов и
+    кое-кто из 成人. На месте — 每册1分钱: выбрал, сел, прочитал, 连书带钱交给摊主. 假如 унести домой —
+    每本每天2分钱: хозяин аккуратно 登记 имя, адрес и название 在本子上, брал плату, а назавтра
+    把记录一个一个地画掉, и 手续就算是办理好了. 押金 никакого — 全凭信用.</p>
+    <p style="margin:0"><b>Слова:</b> <span class="cn-ex">成人 · 册 · 假如 · 登记 · 记录 · 手续 · 办理 · 押金 · 凭</span></p>
+  </div>
+
+  <div class="card">
+    <p><span class="tag">4</span><b>Что осталось.</b> 然而 — книжки, повлиявшие 数代人, сегодня встречаются
+    только на 旧书摊 в 潘家园 и у 护国寺. Те, что 印刷精美、有特色, 身价大涨, стали 收藏品
+    и даже попали в 博物馆. 小人书和小人书摊已成为历史的记忆。</p>
+    <p style="margin:0"><b>Слова:</b> <span class="cn-ex">印刷 · 涨 · 收藏 · 潘家园 · 护国寺</span></p>
+  </div>
+  <p style="font-size:14px;color:var(--brick)">改编自《中国电视报》，作者：俞万林</p>
+</section>
+
+<section>
+  <h2>36 слов по гнёздам <span class="cn">生词 + 专有名词</span></h2>
+  <p style="font-size:14px;color:var(--brick)"><span class="star">★</span> — слово сверх программы HSK 5 (в учебнике помечено звёздочкой). Последние два — имена собственные, их учить необязательно, но в тексте они держат финал.</p>
+
+  <div class="audiobar" id="audiobar">
+    <div class="ab-t">Озвучка слов</div>
+    <div class="ab-row">
+      <input id="ab-pat" type="text" spellcheck="false" value="audio/{hz}.mp3" aria-label="Шаблон пути к mp3">
+      <button type="button" id="ab-auto">Подобрать</button>
+      <button type="button" id="ab-test">Проверить</button>
+    </div>
+    <div class="ab-status" id="ab-status"></div>
+    <div class="ab-note">
+      Ищутся файлы вида <code>иероглиф.mp3</code> — сначала в папке <code>audio</code> рядом с этим документом,
+      потом прямо рядом с ним. Подстановки: <code>{hz}</code>, <code>{py}</code>, <code>{pyn}</code>,
+      <code>{num}</code>, <code>{L}</code>.
+    </div>
+  </div>
+<div class="cluster"><h3>I. Что это было<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Первый блок: книжка, эпоха и те, кто её читал.</div><div class="words"><div class="w-item"><span class="hz">连环画</span><span class="py">liánhuánhuà</span><span class="star">★</span><button class="pb" type="button" data-hz="连环画" data-hz2="连环画" data-py="liánhuánhuà" data-pyn="lianhuanhua" data-num="3" aria-label="Прослушать 连环画" title="Прослушать 连环画">&#9654;</button><span class="ru">книжка-картинка, комикс</span><span class="ex">以书的形式出版的连环画</span></div><div class="w-item"><span class="hz">出版</span><span class="py">chūbǎn</span><button class="pb" type="button" data-hz="出版" data-hz2="出版" data-py="chūbǎn" data-pyn="chuban" data-num="2" aria-label="Прослушать 出版" title="Прослушать 出版">&#9654;</button><span class="ru">издавать, выпускать</span><span class="ex">出版社 / 出版一本书</span></div><div class="w-item"><span class="hz">年代</span><span class="py">niándài</span><button class="pb" type="button" data-hz="年代" data-hz2="年代" data-py="niándài" data-pyn="niandai" data-num="4" aria-label="Прослушать 年代" title="Прослушать 年代">&#9654;</button><span class="ru">десятилетие века; эпоха</span><span class="ex">五六十年代 / 80年代</span></div><div class="w-item"><span class="hz">单调</span><span class="py">dāndiào</span><button class="pb" type="button" data-hz="单调" data-hz2="单调" data-py="dāndiào" data-pyn="dandiao" data-num="5" aria-label="Прослушать 单调" title="Прослушать 单调">&#9654;</button><span class="ru">однообразный, монотонный</span><span class="ex">生活很单调 / 色彩单调</span></div><div class="w-item"><span class="hz">网络</span><span class="py">wǎngluò</span><button class="pb" type="button" data-hz="网络" data-hz2="网络" data-py="wǎngluò" data-pyn="wangluo" data-num="6" aria-label="Прослушать 网络" title="Прослушать 网络">&#9654;</button><span class="ru">сеть, интернет</span><span class="ex">没有网络 / 网络用户</span></div><div class="w-item"><span class="hz">动画片</span><span class="py">dònghuàpiàn</span><button class="pb" type="button" data-hz="动画片" data-hz2="动画片" data-py="dònghuàpiàn" data-pyn="donghuapian" data-num="7" aria-label="Прослушать 动画片" title="Прослушать 动画片">&#9654;</button><span class="ru">мультфильм</span><span class="ex">看动画片</span></div><div class="w-item"><span class="hz">娱乐</span><span class="py">yúlè</span><button class="pb" type="button" data-hz="娱乐" data-hz2="娱乐" data-py="yúlè" data-pyn="yule" data-num="8" aria-label="Прослушать 娱乐" title="Прослушать 娱乐">&#9654;</button><span class="ru">развлечение; развлекать</span><span class="ex">最主要的娱乐之一 / 娱乐活动</span></div><div class="w-item"><span class="hz">无数</span><span class="py">wúshù</span><button class="pb" type="button" data-hz="无数" data-hz2="无数" data-py="wúshù" data-pyn="wushu" data-num="9" aria-label="Прослушать 无数" title="Прослушать 无数">&#9654;</button><span class="ru">бесчисленный</span><span class="ex">无数的青少年 / 无数次</span></div><div class="w-item"><span class="hz">青少年</span><span class="py">qīng-shàonián</span><button class="pb" type="button" data-hz="青少年" data-hz2="青少年" data-py="qīng-shàonián" data-pyn="qing-shaonian" data-num="10" aria-label="Прослушать 青少年" title="Прослушать 青少年">&#9654;</button><span class="ru">подростки и молодёжь</span><span class="ex">青少年和大人</span></div><div class="w-item"><span class="hz">成人</span><span class="py">chéngrén</span><button class="pb" type="button" data-hz="成人" data-hz2="成人" data-py="chéngrén" data-pyn="chengren" data-num="25" aria-label="Прослушать 成人" title="Прослушать 成人">&#9654;</button><span class="ru">взрослый</span><span class="ex">一些喜欢小人书的成人</span></div></div></div><div class="cluster"><h3>II. Лоток и его хозяин<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Самый плотный абзац текста — и самый «предметный» словарь урока.</div><div class="words"><div class="w-item"><span class="hz">摊</span><span class="py">tān</span><span class="star">★</span><button class="pb" type="button" data-hz="摊" data-hz2="摊" data-py="tān" data-pyn="tan" data-num="1" aria-label="Прослушать 摊" title="Прослушать 摊">&#9654;</button><span class="ru">лоток, прилавок</span><span class="ex">小人书摊 / 旧书摊 / 摊主</span></div><div class="w-item"><span class="hz">棚子</span><span class="py">péngzi</span><span class="star">★</span><button class="pb" type="button" data-hz="棚子" data-hz2="棚子" data-py="péngzi" data-pyn="pengzi" data-num="14" aria-label="Прослушать 棚子" title="Прослушать 棚子">&#9654;</button><span class="ru">навес, сарайчик</span><span class="ex">靠墙的一个小棚子</span></div><div class="w-item"><span class="hz">砖头</span><span class="py">zhuāntóu</span><span class="star">★</span><button class="pb" type="button" data-hz="砖头" data-hz2="砖头" data-py="zhuāntóu" data-pyn="zhuantou" data-num="15" aria-label="Прослушать 砖头" title="Прослушать 砖头">&#9654;</button><span class="ru">кирпич</span><span class="ex">几块砖头</span></div><div class="w-item"><span class="hz">支</span><span class="py">zhī</span><button class="pb" type="button" data-hz="支" data-hz2="支" data-py="zhī" data-pyn="zhi" data-num="16" aria-label="Прослушать 支" title="Прослушать 支">&#9654;</button><span class="ru">подпирать; счётное для палочек и песен</span><span class="ex">砖头支着板子 / 一支曲子 / 一支笔</span></div><div class="w-item"><span class="hz">粗糙</span><span class="py">cūcāo</span><button class="pb" type="button" data-hz="粗糙" data-hz2="粗糙" data-py="cūcāo" data-pyn="cucao" data-num="17" aria-label="Прослушать 粗糙" title="Прослушать 粗糙">&#9654;</button><span class="ru">грубый, шероховатый</span><span class="ex">粗糙的木头 / 皮肤粗糙</span></div><div class="w-item"><span class="hz">木头</span><span class="py">mùtou</span><button class="pb" type="button" data-hz="木头" data-hz2="木头" data-py="mùtou" data-pyn="mutou" data-num="18" aria-label="Прослушать 木头" title="Прослушать 木头">&#9654;</button><span class="ru">дерево, древесина</span><span class="ex">木头板子</span></div><div class="w-item"><span class="hz">题材</span><span class="py">tícái</span><span class="star">★</span><button class="pb" type="button" data-hz="题材" data-hz2="题材" data-py="tícái" data-pyn="ticai" data-num="19" aria-label="Прослушать 题材" title="Прослушать 题材">&#9654;</button><span class="ru">тема, сюжет (произведения)</span><span class="ex">各种题材的小人书</span></div><div class="w-item"><span class="hz">翻</span><span class="py">fān</span><button class="pb" type="button" data-hz="翻" data-hz2="翻" data-py="fān" data-pyn="fan" data-num="20" aria-label="Прослушать 翻" title="Прослушать 翻">&#9654;</button><span class="ru">перевернуть, листать</span><span class="ex">书翻开 / 打翻 / 翻一翻</span></div><div class="w-item"><span class="hz">搭</span><span class="py">dā</span><span class="star">★</span><button class="pb" type="button" data-hz="搭" data-hz2="搭" data-py="dā" data-pyn="da" data-num="21" aria-label="Прослушать 搭" title="Прослушать 搭">&#9654;</button><span class="ru">перекинуть, повесить поперёк</span><span class="ex">搭在绳子上</span></div><div class="w-item"><span class="hz">整齐</span><span class="py">zhěngqí</span><button class="pb" type="button" data-hz="整齐" data-hz2="整齐" data-py="zhěngqí" data-pyn="zhengqi" data-num="22" aria-label="Прослушать 整齐" title="Прослушать 整齐">&#9654;</button><span class="ru">аккуратный, ровный</span><span class="ex">整齐漂亮的毛笔字 / 房间整齐</span></div><div class="w-item"><span class="hz">年纪</span><span class="py">niánjì</span><button class="pb" type="button" data-hz="年纪" data-hz2="年纪" data-py="niánjì" data-pyn="nianji" data-num="23" aria-label="Прослушать 年纪" title="Прослушать 年纪">&#9654;</button><span class="ru">возраст (человека)</span><span class="ex">上了年纪 / 年纪大</span></div><div class="w-item"><span class="hz">身材</span><span class="py">shēncái</span><button class="pb" type="button" data-hz="身材" data-hz2="身材" data-py="shēncái" data-pyn="shencai" data-num="24" aria-label="Прослушать 身材" title="Прослушать 身材">&#9654;</button><span class="ru">фигура, телосложение</span><span class="ex">身材瘦小 / 身材高大</span></div></div></div><div class="cluster"><h3>III. Прокат и формальности<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Этот ряд потом пригодится в банке, в гостинице и в любом окне с бумагами.</div><div class="words"><div class="w-item"><span class="hz">从事</span><span class="py">cóngshì</span><button class="pb" type="button" data-hz="从事" data-hz2="从事" data-py="cóngshì" data-pyn="congshi" data-num="11" aria-label="Прослушать 从事" title="Прослушать 从事">&#9654;</button><span class="ru">заниматься (делом, профессией)</span><span class="ex">从事租书业务 / 从事教育工作</span></div><div class="w-item"><span class="hz">册</span><span class="py">cè</span><button class="pb" type="button" data-hz="册" data-hz2="册" data-py="cè" data-pyn="ce" data-num="26" aria-label="Прослушать 册" title="Прослушать 册">&#9654;</button><span class="ru">том, экземпляр (счётное для книг)</span><span class="ex">每册1分钱 / 一册书</span></div><div class="w-item"><span class="hz">假如</span><span class="py">jiǎrú</span><button class="pb" type="button" data-hz="假如" data-hz2="假如" data-py="jiǎrú" data-pyn="jiaru" data-num="27" aria-label="Прослушать 假如" title="Прослушать 假如">&#9654;</button><span class="ru">если, в случае если</span><span class="ex">假如借走回家看</span></div><div class="w-item"><span class="hz">登记</span><span class="py">dēngjì</span><button class="pb" type="button" data-hz="登记" data-hz2="登记" data-py="dēngjì" data-pyn="dengji" data-num="28" aria-label="Прослушать 登记" title="Прослушать 登记">&#9654;</button><span class="ru">регистрировать, вносить в список</span><span class="ex">登记在本子上 / 登记结婚</span></div><div class="w-item"><span class="hz">记录</span><span class="py">jìlù</span><button class="pb" type="button" data-hz="记录" data-hz2="记录" data-py="jìlù" data-pyn="jilu" data-num="29" aria-label="Прослушать 记录" title="Прослушать 记录">&#9654;</button><span class="ru">записывать; запись, протокол</span><span class="ex">把记录画掉 / 会议记录</span></div><div class="w-item"><span class="hz">手续</span><span class="py">shǒuxù</span><button class="pb" type="button" data-hz="手续" data-hz2="手续" data-py="shǒuxù" data-pyn="shouxu" data-num="30" aria-label="Прослушать 手续" title="Прослушать 手续">&#9654;</button><span class="ru">формальности, процедура</span><span class="ex">还书手续 / 办手续</span></div><div class="w-item"><span class="hz">办理</span><span class="py">bànlǐ</span><button class="pb" type="button" data-hz="办理" data-hz2="办理" data-py="bànlǐ" data-pyn="banli" data-num="31" aria-label="Прослушать 办理" title="Прослушать 办理">&#9654;</button><span class="ru">оформлять, улаживать</span><span class="ex">办理手续 / 办理业务</span></div><div class="w-item"><span class="hz">押金</span><span class="py">yājīn</span><button class="pb" type="button" data-hz="押金" data-hz2="押金" data-py="yājīn" data-pyn="yajin" data-num="32" aria-label="Прослушать 押金" title="Прослушать 押金">&#9654;</button><span class="ru">залог, депозит</span><span class="ex">没有押金 / 交押金</span></div><div class="w-item"><span class="hz">凭</span><span class="py">píng</span><button class="pb" type="button" data-hz="凭" data-hz2="凭" data-py="píng" data-pyn="ping" data-num="33" aria-label="Прослушать 凭" title="Прослушать 凭">&#9654;</button><span class="ru">опираться на; по (предъявлении)</span><span class="ex">全凭信用 / 凭票进站 / 光凭经验</span></div></div></div><div class="cluster"><h3>IV. Оценка и сегодняшний день<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Короткий ряд, но два слова из него — чистая экзаменационная лексика.</div><div class="words"><div class="w-item"><span class="hz">毫无</span><span class="py">háowú</span><span class="star">★</span><button class="pb" type="button" data-hz="毫无" data-hz2="毫无" data-py="háowú" data-pyn="haowu" data-num="12" aria-label="Прослушать 毫无" title="Прослушать 毫无">&#9654;</button><span class="ru">ни малейшего, совершенно не</span><span class="ex">毫无疑问 / 毫无办法</span></div><div class="w-item"><span class="hz">疑问</span><span class="py">yíwèn</span><button class="pb" type="button" data-hz="疑问" data-hz2="疑问" data-py="yíwèn" data-pyn="yiwen" data-num="13" aria-label="Прослушать 疑问" title="Прослушать 疑问">&#9654;</button><span class="ru">сомнение, вопрос</span><span class="ex">毫无疑问 / 有什么疑问</span></div><div class="w-item"><span class="hz">印刷</span><span class="py">yìnshuā</span><button class="pb" type="button" data-hz="印刷" data-hz2="印刷" data-py="yìnshuā" data-pyn="yinshua" data-num="34" aria-label="Прослушать 印刷" title="Прослушать 印刷">&#9654;</button><span class="ru">печатать (книги)</span><span class="ex">印刷精美 / 印刷厂</span></div><div class="w-item"><span class="hz">涨</span><span class="py">zhǎng</span><button class="pb" type="button" data-hz="涨" data-hz2="涨" data-py="zhǎng" data-pyn="zhang" data-num="35" aria-label="Прослушать 涨" title="Прослушать 涨">&#9654;</button><span class="ru">расти, подниматься (о цене, воде)</span><span class="ex">身价大涨 / 物价上涨</span></div><div class="w-item"><span class="hz">收藏</span><span class="py">shōucáng</span><span class="star">★</span><button class="pb" type="button" data-hz="收藏" data-hz2="收藏" data-py="shōucáng" data-pyn="shoucang" data-num="36" aria-label="Прослушать 收藏" title="Прослушать 收藏">&#9654;</button><span class="ru">коллекционировать, хранить</span><span class="ex">成了收藏品 / 收藏邮票</span></div><div class="w-item"><span class="hz">潘家园</span><span class="py">Pānjiāyuán</span><button class="pb" type="button" data-hz="潘家园" data-hz2="潘家园" data-py="Pānjiāyuán" data-pyn="panjiayuan" data-num="" aria-label="Прослушать 潘家园" title="Прослушать 潘家园">&#9654;</button><span class="ru">Паньцзяюань, рынок старины в Пекине</span><span class="ex">潘家园的旧书摊</span></div><div class="w-item"><span class="hz">护国寺</span><span class="py">Hùguósì</span><button class="pb" type="button" data-hz="护国寺" data-hz2="护国寺" data-py="Hùguósì" data-pyn="huguosi" data-num="" aria-label="Прослушать 护国寺" title="Прослушать 护国寺">&#9654;</button><span class="ru">Хугосы, торговая улица в Пекине</span><span class="ex">护国寺等地</span></div></div></div></section>
+<section>
+  <h2>На слух: где рука ошибётся <span class="cn">听写陷阱</span></h2>
+  <p>В этом уроке ловушки другого сорта, чем в девятнадцатом: там путались односложные глаголы кухни,
+  здесь — двусложные канцелярские слова, которые звучат почти одинаково и различаются только иероглифом.
+  Это ровно тот случай, когда диктант на слух проверяет не ухо, а знание значения.</p>
+<div class="warn">Полные омофоны — и это 辨析 урока</div><div class="trap"><div><span class="hz">记录</span><span class="py">jìlù</span><span class="n">запись, протокол; записывать. Глагол и существительное.</span></div><div><span class="hz">纪录</span><span class="py">jìlù</span><span class="n">рекорд; документальное. Только существительное.</span></div></div><div class="warn">Разница — один тон в конце</div><div class="trap"><div><span class="hz">登记</span><span class="py">dēngjì</span><span class="n">зарегистрировать, внести в список. 登记结婚, 登记在本子上.</span></div><div><span class="hz">登机</span><span class="py">dēngjī</span><span class="n">посадка в самолёт. 登机牌, 登机口.</span></div></div><div class="warn">Классическая пара экзамена</div><div class="trap"><div><span class="hz">题材</span><span class="py">tícái</span><span class="n">тема, сюжет: о чём произведение. 各种题材.</span></div><div><span class="hz">体裁</span><span class="py">tǐcái</span><span class="n">жанр, форма: роман, стихи, пьеса.</span></div></div><div class="warn">Четыре знака на один слог</div><div class="trap"><div><span class="hz">支</span><span class="py">zhī</span><span class="n">подпирать; счётное для палочек, ручек, песен.</span></div><div><span class="hz">只 / 知 / 织</span><span class="py">zhī</span><span class="n">«только; счётное для животных», «знать», «ткать».</span></div></div><div class="warn">Книжное счётное слово</div><div class="trap"><div><span class="hz">册</span><span class="py">cè</span><span class="n">том, экземпляр. 一册书.</span></div><div><span class="hz">侧 / 测 / 策</span><span class="py">cè</span><span class="n">«бок», «измерять», «план, стратегия».</span></div></div><div class="warn">Третья грамматическая точка</div><div class="trap"><div><span class="hz">凭</span><span class="py">píng</span><span class="n">опираться на, по предъявлении. 全凭信用.</span></div><div><span class="hz">平 / 评 / 瓶</span><span class="py">píng</span><span class="n">«ровный», «оценивать», «бутылка».</span></div></div><div class="warn">Один знак, два чтения</div><div class="trap"><div><span class="hz">涨</span><span class="py">zhǎng</span><span class="n">расти о цене и воде — так читается в 身价大涨.</span></div><div><span class="hz">涨</span><span class="py">zhàng</span><span class="n">zhàng — «вздуться, распирать»: 头昏脑涨.</span></div></div><div class="warn">Легко написать не тот</div><div class="trap"><div><span class="hz">翻</span><span class="py">fān</span><span class="n">перевернуть, листать. 书翻开 / 打翻.</span></div><div><span class="hz">番 / 帆</span><span class="py">fān</span><span class="n">«раз, подход» (一番话) и «парус».</span></div></div><div class="warn">Рука уйдёт к 答</div><div class="trap"><div><span class="hz">搭</span><span class="py">dā</span><span class="n">перекинуть, повесить; 搭车, 搭配.</span></div><div><span class="hz">答</span><span class="py">dā / dá</span><span class="n">dā в 答应, dá в 回答. Рука сама тянется к 答.</span></div></div><div class="warn">Ключ слева решает</div><div class="trap"><div><span class="hz">摊</span><span class="py">tān</span><span class="n">лоток, прилавок. 书摊, 摊主.</span></div><div><span class="hz">滩 / 贪</span><span class="py">tān</span><span class="n">«отмель, пляж» (海滩) и «жадничать» (贪心).</span></div></div><div class="warn">Три «年»-слова рядом</div><div class="trap"><div><span class="hz">年代</span><span class="py">niándài</span><span class="n">десятилетие века: 20世纪80年代.</span></div><div><span class="hz">年纪 / 时代</span><span class="py">niánjì / shídài</span><span class="n">«возраст человека» и «эпоха». В упражнении 2 ловят именно на этом.</span></div></div><div class="warn">Разные вещи, похожий звук</div><div class="trap"><div><span class="hz">身材</span><span class="py">shēncái</span><span class="n">фигура, телосложение. 身材高大.</span></div><div><span class="hz">身体</span><span class="py">shēntǐ</span><span class="n">«организм, здоровье». 身体好 ≠ 身材好.</span></div></div>
+  <div class="card green">
+    <p style="margin:0"><b>Как тренировать.</b> Канцелярские пары лучше заучивать не словом, а связкой:
+    <span class="cn-ex">办理手续 · 登记在本子上 · 会议记录 · 打破世界纪录 · 凭票进站 · 身价大涨</span>.
+    Когда в карточке звучит целая связка, рука сама выбирает нужный иероглиф — и в 书写 эти же связки
+    выходят готовыми кусками предложения.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Три точки урока <span class="cn">词语例释</span></h2>
+
+  <h3>1 · 动词 + 得／不 + 起</h3>
+  <div class="card red">
+    <p>Показывает, есть ли у человека <b>возможность или силы</b> что-то сделать или выдержать.
+    Чаще всего речь о деньгах, но не только.</p>
+    <p class="cn-ex">……这对于那些想看又<span class="hl">买不起</span>书的人来说，只用很少的钱就能看一本，毫无疑问是件大好事。</p>
+    <p class="cn-ex">古时候，有个十分好学的年轻人，但他家里很穷，<span class="hl">买不起</span>灯，一到晚上就不能读书。</p>
+    <p class="cn-ex">只有<span class="hl">经得起</span>困难和时间考验的朋友才算是真正的朋友。</p>
+    <p class="tr" style="margin:10px 0 0">Ходовой набор: 买得起／买不起 (по карману), 看得起／看不起 (уважать или
+    презирать), 经得起／经不起 (выдержать испытание), 对得起／对不起 (быть честным перед кем-то),
+    吃得起, 住得起, 伤不起.</p>
+  </div>
+
+  <h3>2 · 支 — подпирать и считать</h3>
+  <div class="card green">
+    <p><b>Глагол:</b> подпереть что-то, чтобы не упало.</p>
+    <p class="cn-ex">他的两只手放在桌上，<span class="hl">支</span>着脑袋，正在想事情。</p>
+    <p class="cn-ex">……里面用几块砖头<span class="hl">支</span>着粗糙的木头板子供人们坐着看书。</p>
+    <p><b>Счётное слово:</b> для музыкальных произведений, для отрядов и для всего палочкообразного.</p>
+    <p class="cn-ex">他弹第二<span class="hl">支</span>曲子时引起了牛的注意。</p>
+    <p class="cn-ex">给他十<span class="hl">支</span>枪，他就能拉起一<span class="hl">支</span>军队来。</p>
+    <p class="tr" style="margin:10px 0 0">Палочкообразное: 一支笔, 一支烟, 一支蜡烛, 一支枪. Про сигареты в упражнении
+    спрашивают именно так: 一包香烟有二十支.</p>
+  </div>
+
+  <h3>3 · 凭 — «опираясь на»</h3>
+  <div class="card brass">
+    <p><b>Глагол:</b> полагаться, опираться.</p>
+    <p class="cn-ex">干工作不能光<span class="hl">凭</span>经验，还要有创新。</p>
+    <p class="cn-ex">印象中似乎没有什么押金，全<span class="hl">凭</span>信用。</p>
+    <p><b>Предлог</b> в схеме 凭 + дополнение + глагол: «по чему-то, на основании чего-то».</p>
+    <p class="cn-ex">请旅客们准备好车票，<span class="hl">凭票</span>进站。</p>
+    <p class="cn-ex">你<span class="hl">凭什么</span>怀疑我偷了东西？</p>
+    <p class="tr" style="margin:10px 0 0">凭什么 в разговоре — это почти «с какой стати»: сильная, слегка
+    резкая фраза. В сочинении лучше брать 全凭 и 凭……进／办.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Сочетаемость <span class="cn">词语搭配</span></h2>
+  <table>
+    <tr><th>动词 + 宾语</th><th>примеры</th></tr>
+    <tr><td class="han">从事</td><td class="han">（……的）工作 / 业务 / 职业</td></tr>
+    <tr><td class="han">办理</td><td class="han">手续 / 业务 / 信用卡</td></tr>
+    <tr><th>定语 + 中心语</th><th></th></tr>
+    <tr><td class="han">粗糙的</td><td class="han">皮肤 / 地面 / 木板</td></tr>
+    <tr><td class="han">整齐的</td><td class="han">房间 / 军队 / 声音</td></tr>
+    <tr><th>中心语 + 补语</th><th></th></tr>
+    <tr><td class="han">登记</td><td class="han">清楚 / 好</td></tr>
+    <tr><td class="han">打 / 碰 / 闹</td><td class="han">翻</td></tr>
+    <tr><th>数量词 + 名词</th><th></th></tr>
+    <tr><td class="han">一册</td><td class="han">书</td></tr>
+    <tr><td class="han">一笔</td><td class="han">押金</td></tr>
+    <tr><th>主语 + 谓语</th><th></th></tr>
+    <tr><td class="han">生活 / 色彩 / 形式</td><td class="han">单调</td></tr>
+    <tr><td class="han">身材</td><td class="han">好 / 高大 / 矮小 / 苗条</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>记录 и 纪录 <span class="cn">词语辨析</span></h2>
+  <p>Звучат одинаково — <b>jìlù</b>, и это единственная пара в учебнике, которую на слух не развести вообще.
+  Разводить придётся по смыслу.</p>
+  <table class="pair-tbl">
+    <tr><th></th><th>记录 jìlù</th><th>纪录 jìlù</th></tr>
+    <tr><td>часть речи</td><td>глагол и существительное</td><td>только существительное</td></tr>
+    <tr><td>значение 1</td><td>записывать сказанное или случившееся<br><span class="han">我已经把这次会议的内容详细地记录下来了。</span></td><td>лучший результат за период<br><span class="han">他在本次比赛中打破了世界纪录。</span></td></tr>
+    <tr><td>значение 2</td><td>сама запись или человек, который её ведёт<br><span class="han">小刘，你来做这次会议的记录。</span></td><td>документальная фиксация событий<br><span class="han">学校带孩子们看了一部有教育意义的纪录片。</span></td></tr>
+  </table>
+  <p class="tr">Короткое правило: <b>纪录</b> — только в двух сочетаниях, 世界纪录 и 纪录片. Всё остальное — 记录.</p>
+</section>
+
+<section>
+  <h2>Ответы к упражнениям <span class="cn">练习 · 做一做 · 练一练</span></h2>
+<details><summary>练习 1 — 选择合适的词语填空（涨 办理 从事 粗糙 单调 整齐）</summary><div class="in">
+<p>① 我想<span class="k">从事</span>有挑战性的工作，因为那样可以更好地成长。<br>
+② 请96号顾客到2号窗口<span class="k">办理</span>业务。<br>
+③ 这房子装修得太<span class="k">粗糙</span>了！你看，地板都没铺平。<br>
+④ 窗外响起了一阵<span class="k">整齐</span>的歌声。<br>
+⑤ 他觉得在中国的生活很<span class="k">单调</span>，我却觉得很丰富。<br>
+⑥ 最近几年，物价<span class="k">涨</span>得很厉害。</p></div></details><details><summary>练习 2 — 选择正确答案</summary><div class="in">
+<p>① 一般来说，一包香烟有二十<span class="k">支</span>（B）。<br>
+② 今天的课就到这儿，大家有什么<span class="k">疑问</span>（A）吗？<br>
+③ 他<span class="k">身材</span>（B）高大，动作灵活，很适合打篮球。<br>
+④ 这可以说是20世纪80<span class="k">年代</span>（A）最流行的歌曲。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+② 疑问 — вопрос по существу, 怀疑 — подозрение. ③ 身材 о телосложении, 身体 о здоровье.
+④ 年代 — десятилетие внутри века, 时代 — целая эпоха.</p></div></details><details><summary>练习 3 — 给括号里的词选择适当的位置</summary><div class="in">
+<p>① 我的 <span class="k">A</span> 经验 B 来自于 C 错误的 D 判断。（无数）→ 我的<span class="k">无数</span>经验来自于错误的判断。<br>
+② 今天早上是谁打 <span class="k">A</span> 了 B 桌子上 C 的牛奶 D？（翻）→ 今天早上是谁打<span class="k">翻</span>了桌子上的牛奶？<br>
+③ <span class="k">A</span> 你每天都能 B 做好 C 一件事，D 那么你每天都能得到一份快乐。（假如）<br>
+④ 你的这个 A 结论 <span class="k">B</span> 全 C 经验和想象，我认为不 D 科学。（凭）→ ……全<span class="k">凭</span>经验和想象……</p></div></details><details><summary>做一做 — 记录 или 纪录</summary><div class="in">
+<p>(1) 他又创造了新的奥运会<span class="k">纪录</span>。<br>
+(2) 小张呢？不是安排她来做会议<span class="k">记录</span>吗？<br>
+(3) 我很喜欢看新闻<span class="k">纪录</span>片。<br>
+(4) 甲骨文<span class="k">记录</span>了3000多年以前的中国历史和社会生活。</p></div></details><details><summary>练一练 1 — 动词+得/不+起（образцы）</summary><div class="in">
+<p>(1) A: 寒假去旅游，我们是坐火车还是坐飞机呢？<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">坐火车吧，这个季节的机票我们可坐不起</span>。<br>
+(2) 我们应该降低价格，<span class="k">让普通家庭也买得起</span>。<br>
+(3) A: 你们这种新产品的质量怎么样？<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">您放心，我们的产品完全经得起检验</span>。</p></div></details><details><summary>练一练 2 — 支（образцы）</summary><div class="in">
+<p>(1) 快，这张桌子坏了，<span class="k">找块砖头支一下</span>。（动词）<br>
+(2) A: 这是什么曲子啊？这么好听。B: <span class="k">这是他新写的第三支曲子</span>。（量词）<br>
+(3) A: <span class="k">这支笔是新到的，写起来很顺</span>。B: 是吗？那我就买这个吧。（量词）</p></div></details><details><summary>练一练 3 — 凭（образцы）</summary><div class="in">
+<p>(1) A: 你以前去过吗？你是怎么找到那个房子的？<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: 没去过，<span class="k">全凭手机上的地图找到的</span>。<br>
+(2) A: 我以前见过他跟别人吵架，所以我对他印象不太好。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">你不能凭一件事就判断一个人</span>。<br>
+(3) A: 你看这几张照片，很漂亮吧！我们去那儿旅行怎么样？<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">光凭几张照片就决定，是不是太冒险了</span>？</p></div></details><details><summary>扩展 做一做 — 单位、场所 и 生产2</summary><div class="in">
+<p>(1) 我想报名参加射击<span class="k">俱乐部</span>，你有兴趣吗？<br>
+(2) 我已经下飞机了，但还没出<span class="k">海关</span>。<br>
+(3) 世界上没有绝对的<span class="k">公平</span>，比如鸡吃虫子，对虫子就是不公平的。<br>
+(4) 在这个国家，留学生在没有得到允许的情况下在校外打工，是不<span class="k">合法</span>的。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+单位、场所: 俱乐部、幼儿园、博物馆、酒吧、法院、海关.<br>
+生产2: 生产、发明、设计、业务、项目、效率、合法、公平.</p></div></details></section>
+<section>
+  <h2>Сочинение <span class="cn">命题写作：我的童年</span></h2>
+  <p>Задание — не меньше 100 знаков про собственное детство. Текст урока даёт готовую логику:
+  сначала «тогда было так», потом одна конкретная картинка, потом «а сейчас» — и этот трёхчастный
+  каркас работает в любой теме про прошлое.</p>
+  <div class="card green">
+    <p class="cn-ex" style="line-height:2">我的童年是在一个小城里过的。那时候生活很<span class="hl">单调</span>，没有<span class="hl">网络</span>，
+    也很少看<span class="hl">动画片</span>，孩子们最主要的<span class="hl">娱乐</span>就是在院子里玩儿。
+    我家附近有个租书的小<span class="hl">摊</span>，<span class="hl">摊主</span>是位上了<span class="hl">年纪</span>的老人，
+    <span class="hl">身材</span>瘦小，总是安安静静地坐在一边。书用牛皮纸包着，书名写得很<span class="hl">整齐</span>。
+    在那里看一本只要几分钱，<span class="hl">假如</span>借回家，他就把我的名字<span class="hl">登记</span>在本子上，
+    从来不收<span class="hl">押金</span>，全<span class="hl">凭</span>信用。<span class="hl">如今</span>那个书摊早就没有了，
+    可每次想起来，我还是很<span class="hl">怀念</span>那段时光。</p>
+  </div>
+  <h3>Связки, которые стоит взять с собой</h3>
+  <ul>
+    <li><span class="cn-ex">那时候……，如今……</span> — главная ось любого текста про прошлое;</li>
+    <li><span class="cn-ex">没有……，也很少……</span> — отрицанием описать эпоху, как в первом абзаце урока;</li>
+    <li><span class="cn-ex">假如……，就……</span> — книжное «если», заметнее простого 如果;</li>
+    <li><span class="cn-ex">毫无疑问，……是件大好事</span> — готовая оценочная вставка;</li>
+    <li><span class="cn-ex">……已成为历史的记忆</span> — сильная концовка, прямо из текста.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>План на урок <span class="cn">复习计划</span></h2>
+  <ol class="route">
+    <li><b>Прокликайте схему сверху вниз.</b> Навес — верёвки с раскрытыми книжками — лежак с сюжетами —
+    кирпичи и доска — хозяин. Это второй абзац целиком, в том порядке, в каком его видит глаз.</li>
+    <li><b>Соберите пересказ по таблице учебника.</b> Четыре блока: 为什么会流行 (出版、年代、单调、从事、买不起),
+    书摊的情况 (支、翻、整齐、身材), 租借的手续 (册、假如、登记、记录、办理、凭), 现状 (印刷、涨).</li>
+    <li><b>Отдельно — канцелярские пары.</b> 记录／纪录, 登记／登机, 题材／体裁, 年代／年纪／时代, 身材／身体.
+    Их проверяют и на слух, и в 选词填空, и в 完成句子.</li>
+    <li><b>Отработайте 动词+得/不+起.</b> Напишите по одному своему примеру на 买不起, 经得起, 看不起 —
+    эта конструкция регулярно встречается в заданиях 91–98.</li>
+    <li><b>Напишите сочинение.</b> 100 знаков про своё детство по схеме «那时候 — одна картинка — 如今»,
+    обязательно с 假如 и с одним 凭.</li>
+  </ol>
+</section>
+
+
+<nav class="botnav"><a href="hsk5b-lesson-19.html"><span>← Урок 19</span>家乡的萝卜饼</a><a href="index-5b.html"><span>Урок 21 — в работе</span>汉字叔叔：一个美国人的汉字情缘</a></nav>
+
+<footer>HSK 标准教程 5（下） · урок 20 «小人书摊» · конспект для подготовки к экзамену</footer>
+
+</div>
+<script>
+
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML =
+      '<span class="w">' + z.dataset.w + '</span>' +
+      '<span class="p">' + z.dataset.p + '</span>' +
+      '<span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    out.innerHTML = def;
+  }
+
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+
+  var box = document.querySelector('.plan-box svg');
+  box.addEventListener('mouseleave', clear);
+})();
+
+</script>
+<script>
+
+(function(){
+  var LESSON = "20";
+  var DIRS = ["audio/", "", "mp3/", "media/", "аудио/", "audio/20/", "20/"];
+  var CAND = [];
+  DIRS.forEach(function(d){ CAND.push(d + "{hz}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{hz2}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{pyn}.mp3"); });
+
+  var patIn  = document.getElementById('ab-pat');
+  var status = document.getElementById('ab-status');
+  var btns   = Array.prototype.slice.call(document.querySelectorAll('.pb[data-hz]'));
+  var cur = null, curBtn = null, queue = null;
+
+  function pad(n){ n = String(n||''); return n.length === 1 ? '0'+n : n; }
+
+  function resolve(pat, b){
+    return pat
+      .replace(/\{hz2\}/g, b.dataset.hz2 || b.dataset.hz)
+      .replace(/\{hz\}/g,  b.dataset.hz)
+      .replace(/\{pyn\}/g, b.dataset.pyn)
+      .replace(/\{py\}/g,  b.dataset.py)
+      .replace(/\{num\}/g, pad(b.dataset.num))
+      .replace(/\{n\}/g,   b.dataset.num || '')
+      .replace(/\{L\}/g,   LESSON);
+  }
+
+  function setStatus(t, cls){
+    status.textContent = t || '';
+    status.className = 'ab-status' + (cls ? ' ' + cls : '');
+  }
+
+  function test(pat, b){
+    return new Promise(function(res){
+      var a = new Audio(), done = false;
+      function ok(){ if(!done){ done = true; res(true); } }
+      function no(){ if(!done){ done = true; res(false); } }
+      a.addEventListener('loadedmetadata', ok);
+      a.addEventListener('canplay', ok);
+      a.addEventListener('error', no);
+      a.preload = 'metadata';
+      a.src = encodeURI(resolve(pat, b));
+      setTimeout(no, 2500);
+    });
+  }
+
+  function stop(){
+    if(cur){ cur.pause(); cur = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn = null; }
+    queue = null;
+    document.querySelectorAll('.pball.playing').forEach(function(x){ x.classList.remove('playing'); });
+  }
+
+  /* проигрывание с запасными вариантами имени для этого слова */
+  function play(b, onEnd){
+    stop();
+    var tries = [patIn.value.trim()];
+    var alt = (b.dataset.hz2 && b.dataset.hz2 !== b.dataset.hz)
+      ? patIn.value.trim().replace('{hz}', '{hz2}') : null;
+    if(alt && tries.indexOf(alt) < 0) tries.push(alt);
+    CAND.forEach(function(p){ if(tries.indexOf(p) < 0) tries.push(p); });
+
+    b.classList.add('playing');
+    var i = 0;
+    (function attempt(){
+      if(i >= tries.length){
+        b.classList.remove('playing');
+        b.classList.add('missing');
+        b.title = 'Не найден файл для ' + b.dataset.hz;
+        setStatus('Не найден файл для ' + b.dataset.hz + ' — проверьте папку или шаблон.', 'bad');
+        if(onEnd) onEnd();
+        return;
+      }
+      var src = resolve(tries[i++], b);
+      var a = new Audio(encodeURI(src));
+      var started = false;
+      a.addEventListener('canplay', function(){ started = true; });
+      a.addEventListener('ended', function(){
+        b.classList.remove('playing');
+        if(cur === a){ cur = null; curBtn = null; }
+        if(onEnd) onEnd();
+      });
+      a.addEventListener('error', function(){
+        if(!started){ attempt(); }
+        else { b.classList.remove('playing'); if(onEnd) onEnd(); }
+      });
+      cur = a; curBtn = b;
+      b.classList.remove('missing');
+      a.play().catch(function(){});
+    })();
+  }
+
+  /* автопоиск папки при открытии */
+  function autodetect(quiet){
+    if(!btns.length) return;
+    if(!quiet) setStatus('Перебираю варианты…');
+    var i = 0;
+    (function next(){
+      if(i >= CAND.length){
+        setStatus(quiet
+          ? 'Папка с mp3 не найдена. Положите файлы в audio рядом с этим документом.'
+          : 'Ни один из типовых вариантов не подошёл. Впишите путь вручную.',
+          quiet ? '' : 'bad');
+        return;
+      }
+      var p = CAND[i++];
+      test(p, btns[0]).then(function(ok){
+        if(ok){
+          patIn.value = p;
+          document.querySelectorAll('.pb.missing').forEach(function(x){
+            x.classList.remove('missing'); x.title = '';
+          });
+          setStatus('Озвучка подключена: ' + p, 'ok');
+        } else next();
+      });
+    })();
+  }
+
+  document.getElementById('ab-auto').addEventListener('click', function(){ autodetect(false); });
+  document.getElementById('ab-test').addEventListener('click', function(){
+    if(!btns.length) return;
+    setStatus('Проверяю…');
+    test(patIn.value.trim(), btns[0]).then(function(ok){
+      setStatus((ok ? 'Файл найден: ' : 'Не найден: ') + resolve(patIn.value.trim(), btns[0]),
+                ok ? 'ok' : 'bad');
+    });
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(curBtn === b && cur){ stop(); return; }
+      play(b);
+    });
+  });
+
+  document.querySelectorAll('.pball').forEach(function(pb){
+    pb.addEventListener('click', function(){
+      if(pb.classList.contains('playing')){ stop(); return; }
+      var list = Array.prototype.slice.call(
+        pb.closest('.cluster').querySelectorAll('.pb[data-hz]'));
+      stop();
+      pb.classList.add('playing');
+      var i = 0;
+      queue = list;
+      (function step(){
+        if(queue !== list || i >= list.length){ pb.classList.remove('playing'); return; }
+        play(list[i++], function(){ setTimeout(step, 350); });
+      })();
+    });
+  });
+
+  autodetect(true);
+})();
+
+</script>
+</body>
+</html>

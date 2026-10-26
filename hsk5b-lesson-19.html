@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 19 · 家乡的萝卜饼 · HSK 标准教程 5下</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#23262a;
+  --brick:#6f6b63;
+  --paper:#e3e1da;
+  --card:#f2f1ec;
+  --red:#b4342a;
+  --brass:#a8813c;
+  --bamboo:#4a6b4e;
+  --sky:#54748a;
+  --line:rgba(35,38,42,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:
+    linear-gradient(rgba(255,255,255,.35) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.35) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+/* ——— шапка ——— */
+header{padding:56px 0 28px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{
+  font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;
+  color:var(--red);letter-spacing:-.03em;
+}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:44px;line-height:1.05;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brick);margin-top:9px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+/* ——— секции ——— */
+section{margin-top:58px}
+h2{
+  font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px;
+}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+a{color:var(--red)}
+
+/* ——— план двора ——— */
+.plan-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px;
+  box-shadow:0 1px 0 rgba(35,38,42,.06)}
+.plan-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone rect,.zone circle,.zone path{transition:fill .18s ease}
+.zone:hover .fillable,.zone.on .fillable{fill:#e7cfc9}
+.zone:focus{outline:none}
+.zone:focus-visible .fillable{stroke:var(--red);stroke-width:2.5}
+.zlab{font-family:var(--han);font-size:15px;font-weight:600;fill:var(--ink);pointer-events:none}
+.zpin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.04em}
+.faint{font-family:var(--han);font-size:12px;fill:var(--brick);pointer-events:none}
+.compass{font-family:var(--mono);font-size:10px;fill:var(--brick);letter-spacing:.15em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:62px}
+.readout .w{font-family:var(--han);font-size:22px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:13px;color:var(--sky)}
+.readout .d{display:block;margin-top:4px;font-size:15px}
+.readout .hint{color:var(--brick);font-style:italic}
+
+/* ——— карточки слов ——— */
+.cluster{margin-top:26px}
+.cluster h3{margin-bottom:4px}
+.cluster .why{font-size:14px;color:var(--brick);margin-bottom:14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--brass);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+/* ——— общие блоки ——— */
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.green{border-left:4px solid var(--bamboo)}
+.card.brass{border-left:4px solid var(--brass)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--paper);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.b{background:var(--brass)}
+.tag.g{background:var(--bamboo)}
+.tag.r{background:var(--red)}
+
+/* ——— таблицы ——— */
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(35,38,42,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+/* ——— на слух ——— */
+.trap{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+/* ——— ответы ——— */
+details{background:var(--card);border:1px solid var(--line);margin:10px 0;padding:0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+/* ——— финал ——— */
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;
+  font-family:var(--disp);font-weight:700;font-size:22px;color:var(--red);
+  width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  .lesson-no{font-size:66px}
+  h1{font-size:32px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+
+
+:root{--red:#a8324a;--brass:#9a7a2c;--bamboo:#4e7046;--sky:#56708c;--paper:#e7e3d8;--card:#f4f2ec}
+.zone:hover .fillable,.zone.on .fillable{fill:#f0d4da}
+.stage{font-family:var(--disp);font-weight:700;font-size:11px;letter-spacing:.14em;fill:var(--brick);text-transform:uppercase}
+.rowlab{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;fill:var(--brick)}
+.tiny{font-family:var(--han);font-size:11.5px;fill:var(--brick);pointer-events:none}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index-5b.html">&#8592; Все уроки 5B</a><a href="index.html">Учебник 5A</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（下） · Unit 7 交流文化 · Cultural exchange</div>
+  <div class="title-row">
+    <div class="lesson-no">19</div>
+    <h1>家乡的萝卜饼<span class="lat">Лепёшки с редькой с моей родины · 547 字 · стр. 2–9</span></h1>
+  </div>
+  <div class="meta">
+    <span><b>44</b> новых слов</span>
+    <span><b>3</b> грамматические точки</span>
+    <span>ключ: <b>般 · 闻 · 趁</b></span>
+  </div>
+</header>
+
+
+<section>
+  <p class="lede">Первый урок второго тома — рецепт. Это удобно: почти вся лексика идёт по порядку приготовления,
+  и если в голове выстроится сама цепочка «нарезать — размешать — раскатать — сложить — на сковороду — под крышку — на
+  медленном огне», слова встанут на свои места без зубрёжки. Поэтому начинаем не со списка, а с плиты.</p>
+</section>
+
+<section id="plan">
+  <h2>Рецепт как схема <span class="cn">做法极其简单</span></h2>
+  <div class="plan-box">
+    <svg viewBox="0 0 660 584" role="img" aria-label="Схема приготовления萝卜饼 с лексикой урока"><text class="rowlab" x="18" y="30">1 · СЫРЬЁ 原料</text><g class="zone" tabindex="0" data-w="青萝卜" data-p="qīng" data-d="青 qīng — сине-зелёный. 青的甜中带点儿辣: сладкая с остринкой."><circle class="fillable" cx="150" cy="72" r="33" fill="#cfd9c8" stroke="#23262a" stroke-width="1.6"/><path d="M150 39 q6 -13 14 -16 q-4 10 -10 17" fill="#4e7046"/><text class="zlab" x="150" y="79" text-anchor="middle">青</text><text class="zpin" x="150" y="122" text-anchor="middle">甜中带点儿辣</text></g><g class="zone" tabindex="0" data-w="红萝卜" data-p="hóng" data-d="红的辣中带着甜 — острая со сладостью. Три цвета и дают 丰富的色彩."><circle class="fillable" cx="330" cy="72" r="33" fill="#e3c3c2" stroke="#23262a" stroke-width="1.6"/><path d="M330 39 q6 -13 14 -16 q-4 10 -10 17" fill="#4e7046"/><text class="zlab" x="330" y="79" text-anchor="middle">红</text><text class="zpin" x="330" y="122" text-anchor="middle">辣中带着甜</text></g><g class="zone" tabindex="0" data-w="紫萝卜" data-p="zǐ" data-d="紫的像山泉般清淡可口 — как горный родник: 清淡 (неяркая на вкус) и 可口 (вкусная). Здесь же первое 般."><circle class="fillable" cx="510" cy="72" r="33" fill="#d3c6dc" stroke="#23262a" stroke-width="1.6"/><path d="M510 39 q6 -13 14 -16 q-4 10 -10 17" fill="#4e7046"/><text class="zlab" x="510" y="79" text-anchor="middle">紫</text><text class="zpin" x="510" y="122" text-anchor="middle">像山泉般清淡可口</text></g><text class="tiny" x="330" y="143" text-anchor="middle">赏心悦目 · 丰富的色彩 · 微甜的口感</text><text class="rowlab" x="18" y="172">2 · ТЕСТО И НАЧИНКА 做法极其简单</text><g class="zone" tabindex="0" data-w="切 / 丝" data-p="qiē · sī" data-d="先把三色萝卜洗净切丝 — вымыть и нарезать соломкой. 丝 sī — «ниточка, соломка»: 肉丝, 土豆丝."><rect class="fillable" x="30" y="182" width="104" height="58" rx="3" fill="#e2ded4" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="82" y="217" text-anchor="middle">洗净切丝</text></g><path d="M134 211 h14" stroke="#23262a" stroke-width="1.2" marker-end="url(#ar)"/><g class="zone" tabindex="0" data-w="搅拌 / 均匀" data-p="jiǎobàn · jūnyún" data-d="放入油、盐等，用筷子搅拌均匀 — размешать равномерно. 均匀 уйдёт и в таблицу сочетаемости: 分布/呼吸均匀."><rect class="fillable" x="154" y="182" width="104" height="58" rx="3" fill="#e2ded4" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="206" y="217" text-anchor="middle">搅拌均匀</text></g><path d="M258 211 h14" stroke="#23262a" stroke-width="1.2" marker-end="url(#ar)"/><g class="zone" tabindex="0" data-w="擀 / 薄" data-p="gǎn · báo" data-d="最关键的功夫是擀面 — главное мастерство в раскатке: 擀得薄如白纸, тонко, как белая бумага."><rect class="fillable" x="278" y="182" width="104" height="58" rx="3" fill="#e2ded4" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="330" y="206" text-anchor="middle">擀</text><text class="zpin" x="330" y="224" text-anchor="middle">薄如白纸</text></g><path d="M382 211 h14" stroke="#23262a" stroke-width="1.2" marker-end="url(#ar)"/><g class="zone" tabindex="0" data-w="折叠" data-p="zhédié" data-d="拌好的萝卜丝儿铺到饼上后，得再折叠两三次 — сложить два-три раза, чтобы корка вышла 透明 и сквозь неё было видно соломку."><rect class="fillable" x="402" y="182" width="104" height="58" rx="3" fill="#e2ded4" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="454" y="206" text-anchor="middle">铺丝</text><text class="zpin" x="454" y="224" text-anchor="middle">折叠</text></g><path d="M506 211 h14" stroke="#23262a" stroke-width="1.2" marker-end="url(#ar)"/><g class="zone" tabindex="0" data-w="块状" data-p="kuàizhuàng" data-d="最后用刀切成块状，饼便做好了 — заготовка готова, дальше сковорода."><rect class="fillable" x="526" y="182" width="104" height="58" rx="3" fill="#e2ded4" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="578" y="217" text-anchor="middle">切成块状</text></g><text class="tiny" x="330" y="258" text-anchor="middle">既不必炒或煮，也不用油炸 — вся «кулинарная» лексика урока идёт через отрицание</text><text class="rowlab" x="18" y="292">3 · СКОВОРОДА 平底锅</text><rect x="70" y="302" width="520" height="92" rx="10" fill="#ded9cf" stroke="#23262a" stroke-width="2"/><path d="M590 334 h46 a8 8 0 0 1 0 16 h-46 z" fill="#b9b2a6" stroke="#23262a" stroke-width="1.6"/><g class="zone" tabindex="0" data-w="淋 / 圈" data-p="lín · quān" data-d="先在锅里淋一圈油 — плеснуть масла кругом. 淋 lín — лить сверху, поливать; 圈 quān — круг."><rect class="fillable" x="78" y="318" width="104" height="58" rx="3" fill="#efece4" stroke="#23262a" stroke-width="1.2"/><text class="zlab" x="130" y="353" text-anchor="middle">淋一圈油</text></g><g class="zone" tabindex="0" data-w="烫" data-p="tàng" data-d="待油锅烫手时，将切好的萝卜饼一块一块地放进锅里 — когда сковорода обжигает руку. 烫 tàng: 烫红 / 烫熟 / 烫破."><rect class="fillable" x="198" y="318" width="104" height="58" rx="3" fill="#efece4" stroke="#23262a" stroke-width="1.2"/><text class="zlab" x="250" y="353" text-anchor="middle">待油锅烫手</text></g><g class="zone" tabindex="0" data-w="盖 / 预防 / 糊" data-p="gài · yùfáng · hú" data-d="盖锅前须放进一些温水，预防糊底 — перед тем как накрыть крышкой, подлить тёплой воды, чтобы не пригорело. 糊 hú — пригореть."><rect class="fillable" x="318" y="318" width="104" height="58" rx="3" fill="#efece4" stroke="#23262a" stroke-width="1.2"/><text class="zlab" x="370" y="353" text-anchor="middle">盖锅 · 温水</text></g><g class="zone" tabindex="0" data-w="文火 / 闻" data-p="wénhuǒ · wén" data-d="火最好用文火，等能闻到香味时，便可开锅了 — на медленном огне, и как только запахло, снимать. 闻 здесь — нюхать, а не «слышать»."><rect class="fillable" x="438" y="318" width="104" height="58" rx="3" fill="#efece4" stroke="#23262a" stroke-width="1.2"/><text class="zlab" x="490" y="353" text-anchor="middle">文火 · 闻香</text></g><text class="rowlab" x="18" y="424">4 · ИЗ СКОВОРОДЫ 刚出锅</text><g class="zone" tabindex="0" data-w="趁热吃" data-p="chèn rè chī" data-d="萝卜饼要趁热吃 — есть, пока горячие. 趁 chèn — «пользуясь (временем, случаем)»: третья грамматическая точка урока."><rect class="fillable" x="70" y="434" width="248" height="58" rx="3" fill="#eadfd2" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="194" y="458" text-anchor="middle">趁热吃</text><text class="zpin" x="194" y="476" text-anchor="middle">喜欢口味重的：酱油和醋</text></g><g class="zone" tabindex="0" data-w="外焦里嫩" data-p="wài jiāo lǐ nèn" data-d="香味扑鼻，外焦里嫩 — аромат бьёт в нос, снаружи румяная корочка (焦), внутри мягко (嫩). Пара 焦—嫩 вытягивается одной формулой."><rect class="fillable" x="342" y="434" width="248" height="58" rx="3" fill="#eadfd2" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="466" y="458" text-anchor="middle">外焦里嫩</text><text class="zpin" x="466" y="476" text-anchor="middle">香味扑鼻 · 永远忘不了</text></g><text class="rowlab" x="18" y="514">5 · ЧЕГО ХОТЯТ 美食家</text><g class="zone" tabindex="0" data-w="观色 · 闻香 · 尝味 · 赏形 · 养生" data-p="guān sè · wén xiāng · cháng wèi · shǎng xíng · yǎngshēng" data-d="Финал текста: гурманы требуют не только смотреть, нюхать, пробовать и любоваться формой, но и пользы для здоровья (养生). 鱼生火，肉生痰，青菜萝卜保平安 — рыба даёт жар, мясо даёт мокроту, овощи и редька берегут здоровье."><rect class="fillable" x="70" y="522" width="520" height="46" rx="3" fill="#e4e8dd" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="330" y="551" text-anchor="middle">观色 · 闻香 · 尝味 · 赏形 · 养生</text></g><defs><marker id="ar" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" fill="#23262a"/></marker></defs></svg>
+    <div class="readout" id="readout">
+      <span class="hint">Наведите курсор или коснитесь любого шага — появится слово и его место в тексте.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Текст в трёх кадрах <span class="cn">课文 · 547 字</span></h2>
+
+  <div class="card red">
+    <p><span class="tag r">кадр 1</span><b>Родная редька.</b> Среди множества блюд родных мест 萝卜饼 — то, по чему автор
+    больше всего 怀念. Редька бывает трёх цветов — 青、红、紫; все три 赏心悦目, а на вкус зелёная сладкая с остринкой,
+    красная острая со сладостью, фиолетовая 像山泉般清淡可口. Земляки хвалят её поговоркой: «橘子、葡萄、梨，比不上咱的萝卜皮».</p>
+    <p style="margin:0"><b>Слова кадра:</b> <span class="cn-ex">家乡 · 萝卜 · 怀念 · 色彩 · 想念 · 青 · 紫 · 赏心悦目 · 般 · 清淡 · 可口 · 夸 · 橘子 · 梨</span></p>
+  </div>
+
+  <div class="card green">
+    <p><span class="tag g">кадр 2</span><b>Как это делается.</b> Способ 极其简单: ни 炒, ни 煮, ни 油炸. Редьку моют и режут
+    соломкой, добавляют масло и соль, палочками 搅拌均匀 — 原料 готово. Главное мастерство — 擀: раскатать 薄如白纸,
+    выложить соломку, 折叠 два-три раза, чтобы корка вышла 透明. Нарезать 块状. Затем 平底锅: 淋一圈油, дождаться,
+    пока масло 烫手, выложить лепёшки, перед крышкой подлить тёплой воды, чтобы 预防糊底, держать на 文火 и снимать,
+    как только можно 闻到香味.</p>
+    <p style="margin:0"><b>Слова кадра:</b> <span class="cn-ex">炒 · 煮 · 油炸 · 切 · 丝 · 搅拌 · 均匀 · 原料 · 擀 · 薄 · 折叠 · 透明 · 淋 · 圈 · 烫 · 盖 · 预防 · 糊 · 文火 · 闻</span></p>
+  </div>
+
+  <div class="card brass">
+    <p><span class="tag b">кадр 3</span><b>Чем они хороши.</b> Есть надо 趁热; кто любит поострее, добавляет 少许酱油和醋.
+    Только что из сковороды — 香味扑鼻，外焦里嫩. Сегодня гурманы требуют большего: 观色、闻香、尝味、赏形 и вдобавок
+    養生-свойства. Автор уверен, что его лепёшки 完全具备这几个方面的条件 — недаром говорят
+    «鱼生火，肉生痰，青菜萝卜保平安».</p>
+    <p style="margin:0"><b>Слова кадра:</b> <span class="cn-ex">趁 · 口味 · 少许 · 酱油 · 醋 · 焦 · 嫩 · 特色 · 痰 · 平安</span></p>
+  </div>
+  <p style="font-size:14px;color:var(--brick)">改编自《中国电视报》，作者：李星涛</p>
+</section>
+
+<section>
+  <h2>44 слова по гнёздам <span class="cn">生词</span></h2>
+  <p style="font-size:14px;color:var(--brick)"><span class="star">★</span> — слово сверх программы HSK 5 (в учебнике помечено звёздочкой). Порядок не по номерам, а по смыслу: так они цепляются друг за друга.</p>
+
+  <div class="audiobar" id="audiobar">
+    <div class="ab-t">Озвучка слов</div>
+    <div class="ab-row">
+      <input id="ab-pat" type="text" spellcheck="false" value="audio/{hz}.mp3" aria-label="Шаблон пути к mp3">
+      <button type="button" id="ab-auto">Подобрать</button>
+      <button type="button" id="ab-test">Проверить</button>
+    </div>
+    <div class="ab-status" id="ab-status"></div>
+    <div class="ab-note">
+      Как и в первом томе, ищутся файлы вида <code>иероглиф.mp3</code> — сначала в папке
+      <code>audio</code> рядом с этим документом, потом прямо рядом с ним. Нужная папка подбирается сама
+      при открытии. Доступны подстановки <code>{hz}</code>, <code>{py}</code>, <code>{pyn}</code>,
+      <code>{num}</code>, <code>{L}</code>.
+    </div>
+  </div>
+<div class="cluster"><h3>I. Цвет, вкус и память<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Первый и последний абзацы: по чему скучают и чем хвалятся.</div><div class="words"><div class="w-item"><span class="hz">家乡</span><span class="py">jiāxiāng</span><button class="pb" type="button" data-hz="家乡" data-hz2="家乡" data-py="jiāxiāng" data-pyn="jiaxiang" data-num="1" aria-label="Прослушать 家乡" title="Прослушать 家乡">&#9654;</button><span class="ru">родные места, родина</span><span class="ex">家乡的美食</span></div><div class="w-item"><span class="hz">萝卜</span><span class="py">luóbo</span><span class="star">★</span><button class="pb" type="button" data-hz="萝卜" data-hz2="萝卜" data-py="luóbo" data-pyn="luobo" data-num="2" aria-label="Прослушать 萝卜" title="Прослушать 萝卜">&#9654;</button><span class="ru">редька, редис</span><span class="ex">三色萝卜 / 萝卜饼</span></div><div class="w-item"><span class="hz">怀念</span><span class="py">huáiniàn</span><button class="pb" type="button" data-hz="怀念" data-hz2="怀念" data-py="huáiniàn" data-pyn="huainian" data-num="3" aria-label="Прослушать 怀念" title="Прослушать 怀念">&#9654;</button><span class="ru">вспоминать с теплом, тосковать</span><span class="ex">最让我怀念的</span></div><div class="w-item"><span class="hz">想念</span><span class="py">xiǎngniàn</span><button class="pb" type="button" data-hz="想念" data-hz2="想念" data-py="xiǎngniàn" data-pyn="xiangnian" data-num="5" aria-label="Прослушать 想念" title="Прослушать 想念">&#9654;</button><span class="ru">скучать, думать о ком-то</span><span class="ex">让我十分想念</span></div><div class="w-item"><span class="hz">色彩</span><span class="py">sècǎi</span><button class="pb" type="button" data-hz="色彩" data-hz2="色彩" data-py="sècǎi" data-pyn="secai" data-num="4" aria-label="Прослушать 色彩" title="Прослушать 色彩">&#9654;</button><span class="ru">краски, колорит</span><span class="ex">丰富的色彩 / 感情色彩</span></div><div class="w-item"><span class="hz">青</span><span class="py">qīng</span><button class="pb" type="button" data-hz="青" data-hz2="青" data-py="qīng" data-pyn="qing" data-num="6" aria-label="Прослушать 青" title="Прослушать 青">&#9654;</button><span class="ru">сине-зелёный</span><span class="ex">青萝卜 / 青菜</span></div><div class="w-item"><span class="hz">紫</span><span class="py">zǐ</span><button class="pb" type="button" data-hz="紫" data-hz2="紫" data-py="zǐ" data-pyn="zi" data-num="7" aria-label="Прослушать 紫" title="Прослушать 紫">&#9654;</button><span class="ru">фиолетовый</span><span class="ex">紫的萝卜</span></div><div class="w-item"><span class="hz">赏心悦目</span><span class="py">shǎngxīn-yuèmù</span><span class="star">★</span><button class="pb" type="button" data-hz="赏心悦目" data-hz2="赏心悦目" data-py="shǎngxīn-yuèmù" data-pyn="shangxin-yuemu" data-num="8" aria-label="Прослушать 赏心悦目" title="Прослушать 赏心悦目">&#9654;</button><span class="ru">радовать глаз и душу</span><span class="ex">看起来赏心悦目</span></div><div class="w-item"><span class="hz">清淡</span><span class="py">qīngdàn</span><button class="pb" type="button" data-hz="清淡" data-hz2="清淡" data-py="qīngdàn" data-pyn="qingdan" data-num="10" aria-label="Прослушать 清淡" title="Прослушать 清淡">&#9654;</button><span class="ru">неострый, пресноватый; лёгкий</span><span class="ex">清淡可口 / 饭菜很清淡</span></div><div class="w-item"><span class="hz">可口</span><span class="py">kěkǒu</span><span class="star">★</span><button class="pb" type="button" data-hz="可口" data-hz2="可口" data-py="kěkǒu" data-pyn="kekou" data-num="11" aria-label="Прослушать 可口" title="Прослушать 可口">&#9654;</button><span class="ru">вкусный, приятный на вкус</span><span class="ex">清淡可口</span></div><div class="w-item"><span class="hz">口味</span><span class="py">kǒuwèi</span><button class="pb" type="button" data-hz="口味" data-hz2="口味" data-py="kǒuwèi" data-pyn="kouwei" data-num="36" aria-label="Прослушать 口味" title="Прослушать 口味">&#9654;</button><span class="ru">вкус (чей-то), предпочтение</span><span class="ex">口味重 / 合口味</span></div><div class="w-item"><span class="hz">夸</span><span class="py">kuā</span><button class="pb" type="button" data-hz="夸" data-hz2="夸" data-py="kuā" data-pyn="kua" data-num="12" aria-label="Прослушать 夸" title="Прослушать 夸">&#9654;</button><span class="ru">хвалить</span><span class="ex">父老乡亲们夸它</span></div><div class="w-item"><span class="hz">橘子</span><span class="py">júzi</span><button class="pb" type="button" data-hz="橘子" data-hz2="橘子" data-py="júzi" data-pyn="juzi" data-num="13" aria-label="Прослушать 橘子" title="Прослушать 橘子">&#9654;</button><span class="ru">мандарин</span><span class="ex">橘子、葡萄、梨</span></div><div class="w-item"><span class="hz">梨</span><span class="py">lí</span><button class="pb" type="button" data-hz="梨" data-hz2="梨" data-py="lí" data-pyn="li" data-num="14" aria-label="Прослушать 梨" title="Прослушать 梨">&#9654;</button><span class="ru">груша</span><span class="ex">比不上咱的萝卜皮</span></div></div></div><div class="cluster"><h3>II. Что делают с продуктом<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Шесть глаголов кухни — они же шесть слов на слух, которые легко перепутать.</div><div class="words"><div class="w-item"><span class="hz">炒</span><span class="py">chǎo</span><button class="pb" type="button" data-hz="炒" data-hz2="炒" data-py="chǎo" data-pyn="chao" data-num="15" aria-label="Прослушать 炒" title="Прослушать 炒">&#9654;</button><span class="ru">жарить, обжаривать помешивая</span><span class="ex">炒菜 / 炒好</span></div><div class="w-item"><span class="hz">煮</span><span class="py">zhǔ</span><button class="pb" type="button" data-hz="煮" data-hz2="煮" data-py="zhǔ" data-pyn="zhu" data-num="16" aria-label="Прослушать 煮" title="Прослушать 煮">&#9654;</button><span class="ru">варить, отваривать</span><span class="ex">煮饺子 / 煮熟</span></div><div class="w-item"><span class="hz">油炸</span><span class="py">yóuzhá</span><button class="pb" type="button" data-hz="油炸" data-hz2="油炸" data-py="yóuzhá" data-pyn="youzha" data-num="17" aria-label="Прослушать 油炸" title="Прослушать 油炸">&#9654;</button><span class="ru">жарить во фритюре</span><span class="ex">不用油炸</span></div><div class="w-item"><span class="hz">切</span><span class="py">qiē</span><button class="pb" type="button" data-hz="切" data-hz2="切" data-py="qiē" data-pyn="qie" data-num="18" aria-label="Прослушать 切" title="Прослушать 切">&#9654;</button><span class="ru">резать, нарезать</span><span class="ex">切丝 / 切成块状 / 切蛋糕</span></div><div class="w-item"><span class="hz">丝</span><span class="py">sī</span><span class="star">★</span><button class="pb" type="button" data-hz="丝" data-hz2="丝" data-py="sī" data-pyn="si" data-num="19" aria-label="Прослушать 丝" title="Прослушать 丝">&#9654;</button><span class="ru">соломка, тонкая нить</span><span class="ex">萝卜丝儿 / 肉丝</span></div><div class="w-item"><span class="hz">搅拌</span><span class="py">jiǎobàn</span><span class="star">★</span><button class="pb" type="button" data-hz="搅拌" data-hz2="搅拌" data-py="jiǎobàn" data-pyn="jiaoban" data-num="20" aria-label="Прослушать 搅拌" title="Прослушать 搅拌">&#9654;</button><span class="ru">размешивать, перемешивать</span><span class="ex">搅拌均匀</span></div><div class="w-item"><span class="hz">均匀</span><span class="py">jūnyún</span><button class="pb" type="button" data-hz="均匀" data-hz2="均匀" data-py="jūnyún" data-pyn="junyun" data-num="21" aria-label="Прослушать 均匀" title="Прослушать 均匀">&#9654;</button><span class="ru">равномерный</span><span class="ex">搅拌均匀 / 呼吸均匀</span></div><div class="w-item"><span class="hz">原料</span><span class="py">yuánliào</span><button class="pb" type="button" data-hz="原料" data-hz2="原料" data-py="yuánliào" data-pyn="yuanliao" data-num="22" aria-label="Прослушать 原料" title="Прослушать 原料">&#9654;</button><span class="ru">сырьё, исходный материал</span><span class="ex">萝卜饼的原料</span></div><div class="w-item"><span class="hz">擀</span><span class="py">gǎn</span><span class="star">★</span><button class="pb" type="button" data-hz="擀" data-hz2="擀" data-py="gǎn" data-pyn="gan" data-num="23" aria-label="Прослушать 擀" title="Прослушать 擀">&#9654;</button><span class="ru">раскатывать (тесто)</span><span class="ex">擀面 / 擀得薄如白纸</span></div><div class="w-item"><span class="hz">薄</span><span class="py">báo</span><button class="pb" type="button" data-hz="薄" data-hz2="薄" data-py="báo" data-pyn="bao" data-num="24" aria-label="Прослушать 薄" title="Прослушать 薄">&#9654;</button><span class="ru">тонкий</span><span class="ex">薄如白纸</span></div><div class="w-item"><span class="hz">折叠</span><span class="py">zhédié</span><span class="star">★</span><button class="pb" type="button" data-hz="折叠" data-hz2="折叠" data-py="zhédié" data-pyn="zhedie" data-num="25" aria-label="Прослушать 折叠" title="Прослушать 折叠">&#9654;</button><span class="ru">складывать, сгибать</span><span class="ex">折叠两三次</span></div><div class="w-item"><span class="hz">透明</span><span class="py">tòumíng</span><button class="pb" type="button" data-hz="透明" data-hz2="透明" data-py="tòumíng" data-pyn="touming" data-num="26" aria-label="Прослушать 透明" title="Прослушать 透明">&#9654;</button><span class="ru">прозрачный</span><span class="ex">表皮是透明的 / 玻璃透明</span></div></div></div><div class="cluster"><h3>III. У плиты<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Вторая половина рецепта: от масла до готовой корочки.</div><div class="words"><div class="w-item"><span class="hz">淋</span><span class="py">lín</span><span class="star">★</span><button class="pb" type="button" data-hz="淋" data-hz2="淋" data-py="lín" data-pyn="lin" data-num="27" aria-label="Прослушать 淋" title="Прослушать 淋">&#9654;</button><span class="ru">полить, плеснуть сверху</span><span class="ex">淋一圈油</span></div><div class="w-item"><span class="hz">圈</span><span class="py">quān</span><button class="pb" type="button" data-hz="圈" data-hz2="圈" data-py="quān" data-pyn="quan" data-num="28" aria-label="Прослушать 圈" title="Прослушать 圈">&#9654;</button><span class="ru">круг, кольцо</span><span class="ex">淋一圈油 / 一圈儿</span></div><div class="w-item"><span class="hz">烫</span><span class="py">tàng</span><button class="pb" type="button" data-hz="烫" data-hz2="烫" data-py="tàng" data-pyn="tang" data-num="29" aria-label="Прослушать 烫" title="Прослушать 烫">&#9654;</button><span class="ru">обжигать; очень горячий</span><span class="ex">油锅烫手 / 烫红 / 趁热</span></div><div class="w-item"><span class="hz">盖</span><span class="py">gài</span><button class="pb" type="button" data-hz="盖" data-hz2="盖" data-py="gài" data-pyn="gai" data-num="30" aria-label="Прослушать 盖" title="Прослушать 盖">&#9654;</button><span class="ru">накрывать; крышка</span><span class="ex">盖锅 / 盖好 / 盖子</span></div><div class="w-item"><span class="hz">预防</span><span class="py">yùfáng</span><button class="pb" type="button" data-hz="预防" data-hz2="预防" data-py="yùfáng" data-pyn="yufang" data-num="31" aria-label="Прослушать 预防" title="Прослушать 预防">&#9654;</button><span class="ru">предупреждать, не допускать</span><span class="ex">预防糊底 / 预防感冒</span></div><div class="w-item"><span class="hz">糊</span><span class="py">hú</span><span class="star">★</span><button class="pb" type="button" data-hz="糊" data-hz2="糊" data-py="hú" data-pyn="hu" data-num="32" aria-label="Прослушать 糊" title="Прослушать 糊">&#9654;</button><span class="ru">пригореть, подгореть</span><span class="ex">预防糊底</span></div><div class="w-item"><span class="hz">文火</span><span class="py">wénhuǒ</span><span class="star">★</span><button class="pb" type="button" data-hz="文火" data-hz2="文火" data-py="wénhuǒ" data-pyn="wenhuo" data-num="33" aria-label="Прослушать 文火" title="Прослушать 文火">&#9654;</button><span class="ru">слабый огонь, медленный огонь</span><span class="ex">用文火</span></div><div class="w-item"><span class="hz">闻</span><span class="py">wén</span><button class="pb" type="button" data-hz="闻" data-hz2="闻" data-py="wén" data-pyn="wen" data-num="34" aria-label="Прослушать 闻" title="Прослушать 闻">&#9654;</button><span class="ru">нюхать; слышать (о вестях)</span><span class="ex">闻到香味 / 百闻不如一见</span></div><div class="w-item"><span class="hz">趁</span><span class="py">chèn</span><button class="pb" type="button" data-hz="趁" data-hz2="趁" data-py="chèn" data-pyn="chen" data-num="35" aria-label="Прослушать 趁" title="Прослушать 趁">&#9654;</button><span class="ru">пользуясь (временем, случаем)</span><span class="ex">趁热吃 / 趁这几天休息</span></div><div class="w-item"><span class="hz">少许</span><span class="py">shǎoxǔ</span><span class="star">★</span><button class="pb" type="button" data-hz="少许" data-hz2="少许" data-py="shǎoxǔ" data-pyn="shaoxu" data-num="37" aria-label="Прослушать 少许" title="Прослушать 少许">&#9654;</button><span class="ru">немного, чуть-чуть</span><span class="ex">加少许酱油</span></div><div class="w-item"><span class="hz">酱油</span><span class="py">jiàngyóu</span><button class="pb" type="button" data-hz="酱油" data-hz2="酱油" data-py="jiàngyóu" data-pyn="jiangyou" data-num="38" aria-label="Прослушать 酱油" title="Прослушать 酱油">&#9654;</button><span class="ru">соевый соус</span><span class="ex">少许酱油和醋</span></div><div class="w-item"><span class="hz">醋</span><span class="py">cù</span><button class="pb" type="button" data-hz="醋" data-hz2="醋" data-py="cù" data-pyn="cu" data-num="39" aria-label="Прослушать 醋" title="Прослушать 醋">&#9654;</button><span class="ru">уксус</span><span class="ex">加点儿醋</span></div><div class="w-item"><span class="hz">焦</span><span class="py">jiāo</span><span class="star">★</span><button class="pb" type="button" data-hz="焦" data-hz2="焦" data-py="jiāo" data-pyn="jiao" data-num="40" aria-label="Прослушать 焦" title="Прослушать 焦">&#9654;</button><span class="ru">подгоревший, румяный до корочки</span><span class="ex">外焦里嫩</span></div><div class="w-item"><span class="hz">嫩</span><span class="py">nèn</span><button class="pb" type="button" data-hz="嫩" data-hz2="嫩" data-py="nèn" data-pyn="nen" data-num="41" aria-label="Прослушать 嫩" title="Прослушать 嫩">&#9654;</button><span class="ru">нежный, мягкий</span><span class="ex">外焦里嫩 / 肉很嫩</span></div></div></div><div class="cluster"><h3>IV. Здоровье и особинка<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Четыре слова из последнего абзаца — они же самые «экзаменационные».</div><div class="words"><div class="w-item"><span class="hz">般</span><span class="py">bān</span><span class="star">★</span><button class="pb" type="button" data-hz="般" data-hz2="般" data-py="bān" data-pyn="ban" data-num="9" aria-label="Прослушать 般" title="Прослушать 般">&#9654;</button><span class="ru">словно, как (после существительного)</span><span class="ex">山泉般清淡 / 雪片般飞来</span></div><div class="w-item"><span class="hz">特色</span><span class="py">tèsè</span><button class="pb" type="button" data-hz="特色" data-hz2="特色" data-py="tèsè" data-pyn="tese" data-num="42" aria-label="Прослушать 特色" title="Прослушать 特色">&#9654;</button><span class="ru">особенность, самобытность</span><span class="ex">特色菜 / 中国的特色</span></div><div class="w-item"><span class="hz">痰</span><span class="py">tán</span><span class="star">★</span><button class="pb" type="button" data-hz="痰" data-hz2="痰" data-py="tán" data-pyn="tan" data-num="43" aria-label="Прослушать 痰" title="Прослушать 痰">&#9654;</button><span class="ru">мокрота</span><span class="ex">肉生痰</span></div><div class="w-item"><span class="hz">平安</span><span class="py">píng’ān</span><button class="pb" type="button" data-hz="平安" data-hz2="平安" data-py="píng’ān" data-pyn="ping’an" data-num="44" aria-label="Прослушать 平安" title="Прослушать 平安">&#9654;</button><span class="ru">благополучный, в безопасности</span><span class="ex">青菜萝卜保平安 / 平安度过</span></div></div></div></section>
+<section>
+  <h2>На слух: где рука ошибётся <span class="cn">听写陷阱</span></h2>
+  <p>Урок кулинарный, а значит плотно набит односложными словами — а это худший случай для диктанта:
+  слышно один слог, и выбирать иероглиф приходится по смыслу фразы, а не по звуку.</p>
+<div class="warn">Один слог, два разных мира</div><div class="trap"><div><span class="hz">炒</span><span class="py">chǎo</span><span class="n">жарить. Кухня.</span></div><div><span class="hz">吵</span><span class="py">chǎo</span><span class="n">шуметь, ссориться (吵架 из 1-го урока 5A).</span></div></div><div class="warn">Третий тон, три знака</div><div class="trap"><div><span class="hz">煮</span><span class="py">zhǔ</span><span class="n">варить. Снизу — четыре точки огня 灬.</span></div><div><span class="hz">主 / 住</span><span class="py">zhǔ / zhù</span><span class="n">«главный» и «жить». 煮 отличается только нижним элементом.</span></div></div><div class="warn">Три иероглифа на один слог</div><div class="trap"><div><span class="hz">般</span><span class="py">bān</span><span class="n">словно, как. Грамматическая точка урока.</span></div><div><span class="hz">搬 / 班</span><span class="py">bān</span><span class="n">«переносить» и «класс, смена». Все три — чистое bān.</span></div></div><div class="warn">Рука дрогнет здесь</div><div class="trap"><div><span class="hz">擀</span><span class="py">gǎn</span><span class="n">раскатывать. Рука 扌 + 干.</span></div><div><span class="hz">赶 / 敢</span><span class="py">gǎn</span><span class="n">«гнать, успеть» и «сметь». В диктанте спасает только контекст 擀面.</span></div></div><div class="warn">Ключ решает всё</div><div class="trap"><div><span class="hz">淋</span><span class="py">lín</span><span class="n">полить сверху. Вода 氵 + 林.</span></div><div><span class="hz">林 / 临</span><span class="py">lín</span><span class="n">«лес» и «подходить вплотную». 淋 без ключа воды — уже другое слово.</span></div></div><div class="warn">Огонь внизу</div><div class="trap"><div><span class="hz">烫</span><span class="py">tàng</span><span class="n">обжигать. Внизу — огонь 火.</span></div><div><span class="hz">趟 / 躺</span><span class="py">tàng / tǎng</span><span class="n">«раз (счётное)» и «лежать». 躺 — третий тон, это подсказка.</span></div></div><div class="warn">Четыре на один слог</div><div class="trap"><div><span class="hz">糊</span><span class="py">hú</span><span class="n">пригореть. Рис 米 + 胡.</span></div><div><span class="hz">湖 / 壶 / 胡</span><span class="py">hú</span><span class="n">«озеро», «чайник», «безрассудно». Четыре hú — рекорд урока.</span></div></div><div class="warn">Снова огонь</div><div class="trap"><div><span class="hz">焦</span><span class="py">jiāo</span><span class="n">подгоревший, румяный.</span></div><div><span class="hz">交 / 教 / 骄</span><span class="py">jiāo</span><span class="n">«сдавать», «учить», «гордиться». 焦 узнаётся по четырём точкам огня внизу.</span></div></div><div class="warn">Сосуд слева</div><div class="trap"><div><span class="hz">醋</span><span class="py">cù</span><span class="n">уксус. Слева — 酉, «сосуд для вина».</span></div><div><span class="hz">促 / 错</span><span class="py">cù / cuò</span><span class="n">«подгонять» и «ошибка». 错 — другой финаль, но на скорости слышится похоже.</span></div></div><div class="warn">Третья грамматическая точка</div><div class="trap"><div><span class="hz">趁</span><span class="py">chèn</span><span class="n">пользуясь случаем. Бежать 走 + 㐱.</span></div><div><span class="hz">称 / 衬</span><span class="py">chèn</span><span class="n">«называть; взвешивать» и «подкладка, 衬衫». Все три chèn.</span></div></div><div class="warn">Ухо в воротах</div><div class="trap"><div><span class="hz">闻</span><span class="py">wén</span><span class="n">нюхать; весть. Ухо 耳 в воротах 门.</span></div><div><span class="hz">文 / 问</span><span class="py">wén / wèn</span><span class="n">«текст» и «спрашивать». 问 отличается тоном, 文 — ничем.</span></div></div><div class="warn">Один знак, три чтения</div><div class="trap"><div><span class="hz">薄</span><span class="py">báo</span><span class="n">тонкий — так читается в 薄如白纸.</span></div><div><span class="hz">薄</span><span class="py">bó / bò</span><span class="n">bó — в книжных сочетаниях (薄弱, 单薄); bò — только в 薄荷 «мята».</span></div></div>
+  <div class="card green">
+    <p style="margin:0"><b>Как тренировать.</b> Для этого урока полезно слушать карточки не по одному слову,
+    а парами, которые звучат одинаково: 炒—吵, 般—搬, 擀—赶, 糊—湖, 焦—交. Если рука сама пишет не тот знак,
+    добавьте в карточку короткий контекст — <span class="cn-ex">擀面 · 趁热 · 闻香 · 预防糊底</span> — и ошибка исчезнет
+    за два-три повтора.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Три точки урока <span class="cn">词语例释</span></h2>
+
+  <h3>1 · 般 — «словно, как»</h3>
+  <div class="card red">
+    <p>Служебное слово, значит то же, что 一样 или 似的. Ставится <b>после существительного</b>, и получившееся
+    сочетание работает определением (перед 的) или обстоятельством.</p>
+    <p class="cn-ex">……紫的像<span class="hl">山泉般</span>清淡可口。</p>
+    <p class="cn-ex">说起那段往事，她的脸上露出了<span class="hl">阳光般</span>的笑容。</p>
+    <p class="cn-ex">望着爸爸远去的背影，我的眼泪<span class="hl">雨点般</span>不停地往下掉。</p>
+    <p class="tr" style="margin:10px 0 0">Схема: <b>существительное + 般 + прилагательное / глагол</b>. В отличие от 似的,
+    у 般 книжный оттенок — в сочинении это сразу плюс.</p>
+  </div>
+
+  <h3>2 · 闻 — «слышать» и «нюхать»</h3>
+  <div class="card green">
+    <p><b>Как морфема</b> (в составе слов и чэнъюев) 闻 — «слышать, услышанное, весть»:</p>
+    <p class="cn-ex">老话说：<span class="hl">百闻不如一见</span>。</p>
+    <p class="cn-ex">邻居们<span class="hl">闻声</span>赶来，纷纷跳入水中救起了落水的小海。</p>
+    <p class="cn-ex">所到之处、所<span class="hl">见所闻</span>，无不给人一种新鲜感。</p>
+    <p class="cn-ex">他常带孩子们到世界各地旅行，增长他们的<span class="hl">见闻</span>。</p>
+    <p><b>Как самостоятельный глагол</b> 闻 — «нюхать, чуять запах»:</p>
+    <p class="cn-ex">火最好用文火，等能<span class="hl">闻到</span>香味时，便可开锅了。</p>
+    <p class="cn-ex">他把壶盖儿打开，<span class="hl">闻了闻</span>，原来是酒。</p>
+    <p class="tr" style="margin:10px 0 0">Проверка простая: если рядом стоит 到 или 了闻 — это нос. Если слово
+    двусложное (见闻, 奇闻, 闻名) — это ухо.</p>
+  </div>
+
+  <h3>3 · 趁 — «пользуясь тем, что…»</h3>
+  <div class="card brass">
+    <p>Предлог. Значение — «воспользоваться временем или случаем». После него идёт существительное,
+    глагольное словосочетание, прилагательное или целое маленькое предложение.</p>
+    <p class="cn-ex"><span class="hl">趁着</span>这几天休息，我们去看看房子吧。</p>
+    <p class="cn-ex"><span class="hl">趁</span>电影还没开始，我去买两瓶矿泉水。</p>
+    <p class="cn-ex">萝卜饼要<span class="hl">趁热</span>吃，喜欢口味重的，还可以加少许酱油和醋。</p>
+    <p class="tr" style="margin:10px 0 0">Частая ошибка — спутать с 乘 и с 等. 趁 = «пока есть возможность»,
+    а 等 = «дождавшись, когда». В упражнении 2 урока на этом и ловят.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Сочетаемость <span class="cn">词语搭配</span></h2>
+  <table>
+    <tr><th>动词 + 宾语</th><th>примеры</th></tr>
+    <tr><td class="han">切</td><td class="han">蛋糕 / 菜 / 肉</td></tr>
+    <tr><td class="han">预防</td><td class="han">中毒 / 疾病 / 感冒 / 灾害</td></tr>
+    <tr><th>定语 + 中心语</th><th></th></tr>
+    <tr><td class="han">美丽的 / 时代的 / 神秘的 / 主观的 / 感情 / 民族 / 喜剧</td><td class="han">色彩</td></tr>
+    <tr><td class="han">中国的 / 作品的 / 共同的 / 基本的 / 主要的</td><td class="han">特色</td></tr>
+    <tr><th>中心语 + 补语</th><th></th></tr>
+    <tr><td class="han">搅拌 / 翻炒</td><td class="han">均匀</td></tr>
+    <tr><td class="han">烫</td><td class="han">红 / 熟 / 软 / 破</td></tr>
+    <tr><td class="han">盖</td><td class="han">好 / 严 / 紧 / 上（盖子）</td></tr>
+    <tr><td class="han">炒 / 煮 / 炸</td><td class="han">好 / 熟 / 烂 / 透</td></tr>
+    <tr><th>主语 + 谓语</th><th></th></tr>
+    <tr><td class="han">分布 / 呼吸</td><td class="han">均匀</td></tr>
+    <tr><td class="han">色彩</td><td class="han">鲜艳 / 丰富 / 强烈 / 明显</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>怀念 и 想念 <span class="cn">词语辨析</span></h2>
+  <p>Оба — глаголы, оба про то, что человека или обстановку нельзя забыть. Разводятся по двум признакам.</p>
+  <table class="pair-tbl">
+    <tr><th></th><th>怀念 huáiniàn</th><th>想念 xiǎngniàn</th></tr>
+    <tr><td>стиль</td><td>книжное; упор на «вспоминается, не забывается»</td><td>разговорное; упор на «хочу увидеть»</td></tr>
+    <tr><td>о ком и о чём</td><td>об ушедших и о том, что уже не вернуть</td><td>о живых и о том, что ещё можно увидеть</td></tr>
+    <tr><td>пример</td><td class="han">刘教授非常怀念年轻时在国外留学的那段生活。</td><td class="han">女儿告诉我，她很想念出差的爸爸。</td></tr>
+    <tr><td>общее</td><td colspan="2" class="han">每当回忆起小学时代的学习生活，我最怀念／想念的人就是刘老师。</td></tr>
+  </table>
+  <p class="tr">Мнемоника: 怀 — «за пазухой, в груди»; то, что носишь в себе и уже не достанешь. 想 — «думать»;
+  о том, кому можно позвонить.</p>
+</section>
+
+<section>
+  <h2>Ответы к упражнениям <span class="cn">练习 · 做一做 · 练一练</span></h2>
+<details><summary>练习 1 — 选择合适的词语填空（特色 预防 色彩 平安 清淡 均匀）</summary><div class="in">
+<p>① 也许是药物的作用，这一夜他<span class="k">平安</span>地度过了。<br>
+② 最后，我们用酱油、白糖、味精等做成汁，<span class="k">均匀</span>地浇在鸡肉上就做好了。<br>
+③ 饭菜很<span class="k">清淡</span>、很平常，却给我留下了极深的印象。<br>
+④ 请你给我们推荐几个你们这儿的<span class="k">特色</span>菜吧。<br>
+⑤ 研究发现，常吃胡萝卜能起到保护眼睛、<span class="k">预防</span>近视的效果。<br>
+⑥ 此菜的特点是<span class="k">色彩</span>美观，咸鲜滑嫩，味香可口，营养丰富。</p></div></details><details><summary>练习 2 — 选择正确答案</summary><div class="in">
+<p>① 女儿安静地睡在她身旁，呼吸也很<span class="k">均匀</span>（A）。<br>
+② 尽管这里感情<span class="k">色彩</span>（A）很重，但也不是没有道理。<br>
+③ <span class="k">等</span>（B）我们从天津回来时，才听说她出国的事。<br>
+④ 了解李阳的人都说，李阳最大的<span class="k">特点</span>（B）就是胆大、敢干。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+③ — ловушка на 趁: нужно «дождавшись возвращения», то есть 等, а не «пользуясь случаем».
+④ — 特色 о вкусе блюда или колорите места, 特点 о свойстве человека или вещи.</p></div></details><details><summary>练习 3 — 画线连接可以搭配的词语</summary><div class="in">
+<p>(1) 烫 — 手 ／ 闻 — 味道 ／ 炒 — 肉丝 ／ 煮 — 饺子<br>
+(2) 口味 — 清淡 ／ 色彩 — 丰富 ／ 玻璃 — 透明 ／ 特色 — 明显</p></div></details><details><summary>做一做 — 怀念 или 想念</summary><div class="in">
+<p>(1) 在南方的时候，我总是<span class="k">想念</span>北方雪花飘飘的美景。<br>
+(2) 在国外工作的那段时间，他时时刻刻都在<span class="k">想念</span>着家人。<br>
+(3) 一阵清风送来桂花的清香，令我<span class="k">怀念</span>起自己的家乡。<br>
+(4) 在楼房里住了十多年后，老李却开始<span class="k">怀念</span>起住在四合院里的生活。</p></div></details><details><summary>练一练 1 — 用 般 改写句子</summary><div class="in">
+<p>(1) 他在下半场的进球，为球队赢得了一场<span class="k">金子般</span>宝贵的胜利。<br>
+(2) 书法大赛开办以来，全国各地的参赛作品<span class="k">雪片般</span>飞来。<br>
+(3) 这时，从远处传来了孩子们一阵阵<span class="k">银铃般</span>清脆的笑声。</p></div></details><details><summary>练一练 2 — «闻» в каком значении</summary><div class="in">
+<p>(1) 一进村口，我们就闻到了清风送来的浓浓的玫瑰花香。— <span class="k">动词，用鼻子感知味道</span><br>
+(2) 说起她到上海留学的事，还真有一段奇闻趣事呢。— <span class="k">语素，听见的事情、消息</span><br>
+(3) 对人们的种种批评，她采取了听而不闻的态度。— <span class="k">语素，听见</span></p></div></details><details><summary>练一练 3 — 用 趁 完成句子（образцы）</summary><div class="in">
+<p>(1) 李老师退休了，她想<span class="k">趁身体还好，到各地走一走</span>。<br>
+(2) 天阴了，<span class="k">趁雨还没下，我们快把衣服收进来吧</span>。<br>
+(3) B: <span class="k">趁我还年轻，想多试试别的行业</span>，丰富一下自己的经历。</p></div></details><details><summary>扩展 做一做 — 饮食2</summary><div class="in">
+<p>(1) 龙井茶是绿茶，冲泡三四遍后颜色和味道就都变<span class="k">淡</span>了。<br>
+(2) 这种鲜牛奶保质期只有4天，这袋已经<span class="k">过期</span>好几天了。<br>
+(3) 你下班时顺路带点儿<span class="k">点心</span>吧，明天去公园玩儿丽丽肯定会要的。<br>
+(4) 湖南长沙当地有种用豆腐制作的美食，看上去黑黑的，闻着也有股<span class="k">臭</span>味，但吃起来味道棒极了。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+Слова темы: 零食、冰激凌、酱油、醋、开水、点心、营养、口味、胃口、淡、臭、软、嫩、过期.</p></div></details></section>
+<section>
+  <h2>Сочинение <span class="cn">命题写作：我喜欢／会做的中国菜</span></h2>
+  <p>Задание учебника — не меньше 100 знаков, с лексикой урока. Структура рецепта даёт готовый каркас,
+  который на экзамене переносится почти без изменений на любое «как это делается».</p>
+  <div class="card green">
+    <p class="cn-ex" style="line-height:2">我最喜欢的中国菜是西红柿炒鸡蛋。它的做法<span class="hl">极其简单</span>，既不用<span class="hl">油炸</span>，
+    也不必长时间地<span class="hl">煮</span>。先把西红柿洗净<span class="hl">切</span>成小块，把鸡蛋打散，用筷子<span class="hl">搅拌均匀</span>。
+    锅热以后<span class="hl">淋</span>一点儿油，等油<span class="hl">烫</span>了再放鸡蛋，炒好先盛出来。然后下西红柿，
+    加<span class="hl">少许</span>盐和糖，<span class="hl">盖</span>上锅<span class="hl">盖</span>，用<span class="hl">文火</span>煮一会儿，
+    等能<span class="hl">闻</span>到香味时再把鸡蛋倒回去。这道菜<span class="hl">色彩</span>好看，味道<span class="hl">清淡可口</span>，
+    要<span class="hl">趁热</span>吃才香。对我来说，它还有一种别的味道——那是我对<span class="hl">家乡</span>的<span class="hl">怀念</span>。</p>
+  </div>
+  <h3>Связки, которые стоит взять с собой</h3>
+  <ul>
+    <li><span class="cn-ex">先……然后……最后……</span> — скелет любого «как это делается»;</li>
+    <li><span class="cn-ex">既不……也不……</span> — отрицание двух вариантов подряд, как в тексте;</li>
+    <li><span class="cn-ex">等……时，便／就……</span> — «как только…, сразу…»: 等能闻到香味时，便可开锅了;</li>
+    <li><span class="cn-ex">最关键的是……</span> — вводит главное место рецепта или рассуждения;</li>
+    <li><span class="cn-ex">对我来说，它还有一种别的味道</span> — переход от описания к чувству, на котором держится концовка.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>План на урок <span class="cn">复习计划</span></h2>
+  <ol class="route">
+    <li><b>Пройдите схему глазами.</b> Закройте список слов и прокликайте схему сверху вниз: три редьки — пять шагов —
+    сковорода — готовое блюдо — пять требований. Это весь текст целиком, в правильном порядке.</li>
+    <li><b>Соберите пересказ по таблице учебника.</b> Три блока: 家乡的萝卜 (怀念、色彩、口感、清淡), 萝卜饼的做法
+    (极其、炒、煮、油炸、切、均匀、薄、烫、盖、闻), 萝卜饼的优点 (色、香、味、形、养生).</li>
+    <li><b>Отдельно отработайте диктант.</b> Пары 炒—吵, 般—搬, 擀—赶, 糊—湖, 焦—交, 闻—文 и три чтения 薄.
+    Именно здесь рука ошибается, а не на длинных словах.</li>
+    <li><b>Три точки в предложениях.</b> По два своих примера на 般, 闻 (оба значения) и 趁 — лучше всего про еду
+    и про собственные планы: такие фразы потом сами всплывают в 书写.</li>
+    <li><b>Напишите сочинение.</b> 100 знаков про своё блюдо, обязательно с 先……然后……最后 и с одним 趁.</li>
+  </ol>
+</section>
+
+
+<nav class="botnav"><a href="hsk5a-lesson-18.html"><span>← Урок 18 · конец 5A</span>抽象艺术美不美</a><a href="hsk5b-lesson-20.html"><span>Урок 20 →</span>小人书摊</a></nav>
+
+<footer>HSK 标准教程 5（下） · урок 19 «家乡的萝卜饼» · конспект для подготовки к экзамену</footer>
+
+</div>
+<script>
+
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML =
+      '<span class="w">' + z.dataset.w + '</span>' +
+      '<span class="p">' + z.dataset.p + '</span>' +
+      '<span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    out.innerHTML = def;
+  }
+
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+
+  var box = document.querySelector('.plan-box svg');
+  box.addEventListener('mouseleave', clear);
+})();
+
+</script>
+<script>
+
+(function(){
+  var LESSON = "19";
+  var DIRS = ["audio/", "", "mp3/", "media/", "аудио/", "audio/19/", "19/"];
+  var CAND = [];
+  DIRS.forEach(function(d){ CAND.push(d + "{hz}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{hz2}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{pyn}.mp3"); });
+
+  var patIn  = document.getElementById('ab-pat');
+  var status = document.getElementById('ab-status');
+  var btns   = Array.prototype.slice.call(document.querySelectorAll('.pb[data-hz]'));
+  var cur = null, curBtn = null, queue = null;
+
+  function pad(n){ n = String(n||''); return n.length === 1 ? '0'+n : n; }
+
+  function resolve(pat, b){
+    return pat
+      .replace(/\{hz2\}/g, b.dataset.hz2 || b.dataset.hz)
+      .replace(/\{hz\}/g,  b.dataset.hz)
+      .replace(/\{pyn\}/g, b.dataset.pyn)
+      .replace(/\{py\}/g,  b.dataset.py)
+      .replace(/\{num\}/g, pad(b.dataset.num))
+      .replace(/\{n\}/g,   b.dataset.num || '')
+      .replace(/\{L\}/g,   LESSON);
+  }
+
+  function setStatus(t, cls){
+    status.textContent = t || '';
+    status.className = 'ab-status' + (cls ? ' ' + cls : '');
+  }
+
+  function test(pat, b){
+    return new Promise(function(res){
+      var a = new Audio(), done = false;
+      function ok(){ if(!done){ done = true; res(true); } }
+      function no(){ if(!done){ done = true; res(false); } }
+      a.addEventListener('loadedmetadata', ok);
+      a.addEventListener('canplay', ok);
+      a.addEventListener('error', no);
+      a.preload = 'metadata';
+      a.src = encodeURI(resolve(pat, b));
+      setTimeout(no, 2500);
+    });
+  }
+
+  function stop(){
+    if(cur){ cur.pause(); cur = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn = null; }
+    queue = null;
+    document.querySelectorAll('.pball.playing').forEach(function(x){ x.classList.remove('playing'); });
+  }
+
+  /* проигрывание с запасными вариантами имени для этого слова */
+  function play(b, onEnd){
+    stop();
+    var tries = [patIn.value.trim()];
+    var alt = (b.dataset.hz2 && b.dataset.hz2 !== b.dataset.hz)
+      ? patIn.value.trim().replace('{hz}', '{hz2}') : null;
+    if(alt && tries.indexOf(alt) < 0) tries.push(alt);
+    CAND.forEach(function(p){ if(tries.indexOf(p) < 0) tries.push(p); });
+
+    b.classList.add('playing');
+    var i = 0;
+    (function attempt(){
+      if(i >= tries.length){
+        b.classList.remove('playing');
+        b.classList.add('missing');
+        b.title = 'Не найден файл для ' + b.dataset.hz;
+        setStatus('Не найден файл для ' + b.dataset.hz + ' — проверьте папку или шаблон.', 'bad');
+        if(onEnd) onEnd();
+        return;
+      }
+      var src = resolve(tries[i++], b);
+      var a = new Audio(encodeURI(src));
+      var started = false;
+      a.addEventListener('canplay', function(){ started = true; });
+      a.addEventListener('ended', function(){
+        b.classList.remove('playing');
+        if(cur === a){ cur = null; curBtn = null; }
+        if(onEnd) onEnd();
+      });
+      a.addEventListener('error', function(){
+        if(!started){ attempt(); }
+        else { b.classList.remove('playing'); if(onEnd) onEnd(); }
+      });
+      cur = a; curBtn = b;
+      b.classList.remove('missing');
+      a.play().catch(function(){});
+    })();
+  }
+
+  /* автопоиск папки при открытии */
+  function autodetect(quiet){
+    if(!btns.length) return;
+    if(!quiet) setStatus('Перебираю варианты…');
+    var i = 0;
+    (function next(){
+      if(i >= CAND.length){
+        setStatus(quiet
+          ? 'Папка с mp3 не найдена. Положите файлы в audio рядом с этим документом.'
+          : 'Ни один из типовых вариантов не подошёл. Впишите путь вручную.',
+          quiet ? '' : 'bad');
+        return;
+      }
+      var p = CAND[i++];
+      test(p, btns[0]).then(function(ok){
+        if(ok){
+          patIn.value = p;
+          document.querySelectorAll('.pb.missing').forEach(function(x){
+            x.classList.remove('missing'); x.title = '';
+          });
+          setStatus('Озвучка подключена: ' + p, 'ok');
+        } else next();
+      });
+    })();
+  }
+
+  document.getElementById('ab-auto').addEventListener('click', function(){ autodetect(false); });
+  document.getElementById('ab-test').addEventListener('click', function(){
+    if(!btns.length) return;
+    setStatus('Проверяю…');
+    test(patIn.value.trim(), btns[0]).then(function(ok){
+      setStatus((ok ? 'Файл найден: ' : 'Не найден: ') + resolve(patIn.value.trim(), btns[0]),
+                ok ? 'ok' : 'bad');
+    });
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(curBtn === b && cur){ stop(); return; }
+      play(b);
+    });
+  });
+
+  document.querySelectorAll('.pball').forEach(function(pb){
+    pb.addEventListener('click', function(){
+      if(pb.classList.contains('playing')){ stop(); return; }
+      var list = Array.prototype.slice.call(
+        pb.closest('.cluster').querySelectorAll('.pb[data-hz]'));
+      stop();
+      pb.classList.add('playing');
+      var i = 0;
+      queue = list;
+      (function step(){
+        if(queue !== list || i >= list.length){ pb.classList.remove('playing'); return; }
+        play(list[i++], function(){ setTimeout(step, 350); });
+      })();
+    });
+  });
+
+  autodetect(true);
+})();
+
+</script>
+</body>
+</html>

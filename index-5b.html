@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HSK 标准教程 5（下） — конспекты</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#191a1e; --paper:#dfe1dd; --card:#f2f3ef; --brick:#5f6168;
+  --red:#2f3f6b; --accent:#a8332a;
+  --line:rgba(25,26,30,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px 90px}
+
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 0 0;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;flex-wrap:wrap}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.topnav .home{font-weight:700}
+
+header{padding:40px 0 26px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+h1{margin:14px 0 0;font-family:var(--han);font-weight:900;font-size:46px;line-height:1.06;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brick);margin-top:10px}
+.counter{margin-top:22px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.counter .big{font-family:var(--disp);font-weight:700;font-size:34px;color:var(--red);line-height:1}
+.counter .txt{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brick)}
+.bar{flex:1 1 200px;height:8px;background:rgba(25,26,30,.12);min-width:160px}
+.bar i{display:block;height:100%;background:var(--red)}
+
+section{margin-top:52px}
+h2{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:12px}
+h2 .cn{font-family:var(--han);font-size:19px;color:var(--accent);font-weight:600;text-transform:none;letter-spacing:.05em}
+
+.unit{margin-bottom:34px}
+.unit-head{display:flex;align-items:baseline;gap:14px;padding:8px 0 10px;border-bottom:2px solid var(--uc);flex-wrap:wrap}
+.unit-head .n{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--uc)}
+.unit-head .cn{font-family:var(--han);font-size:20px;font-weight:600}
+.unit-head .ru{font-size:14px;color:var(--brick)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:14px}
+.lesson{display:block;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--uc);
+  padding:15px 17px;text-decoration:none;color:inherit;position:relative;
+  transition:transform .14s ease,box-shadow .14s ease}
+a.lesson:hover{transform:translateY(-2px);box-shadow:0 4px 0 rgba(25,26,30,.12)}
+.lesson .no{font-family:var(--disp);font-weight:700;font-size:26px;color:var(--uc);line-height:1;float:right;margin-left:10px}
+.lesson .cn{font-family:var(--han);font-size:19px;font-weight:600;display:block;line-height:1.35}
+.lesson .ru{display:block;font-size:14.5px;margin-top:3px}
+.lesson .pts{display:block;font-family:var(--han);font-size:13px;color:var(--brick);margin-top:9px;
+  padding-top:8px;border-top:1px dashed var(--line)}
+.lesson.soon{opacity:.55}
+.lesson .flag{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--uc);color:var(--card);padding:2px 6px;margin-bottom:8px}
+.lesson.soon .flag{background:transparent;color:var(--brick);border:1px solid var(--line)}
+
+table{width:100%;border-collapse:collapse;background:var(--card);font-size:14.5px;margin-top:10px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;background:rgba(25,26,30,.05)}
+td.n{font-family:var(--disp);font-weight:700;font-size:17px;width:44px;text-align:center;color:var(--red)}
+td .han{font-family:var(--han);font-size:15px}
+tr.done td.n{background:var(--red);color:var(--card)}
+
+.card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);padding:20px 22px;margin:16px 0}
+.card code{font-family:var(--mono);font-size:13px;background:rgba(25,26,30,.06);padding:1px 5px}
+
+.cross{display:block;background:var(--ink);color:var(--card);padding:22px 24px;margin-top:40px;
+  text-decoration:none;border-left:6px solid var(--accent);transition:transform .14s ease}
+a.cross:hover{transform:translateY(-2px)}
+.cross .k{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#9a968c}
+.cross .t{font-family:var(--han);font-size:25px;font-weight:600;display:block;margin:8px 0 4px}
+.cross .s{font-family:var(--disp);font-size:18px;letter-spacing:.02em;display:block}
+.cross .d{display:block;font-size:14.5px;color:#c3bfb6;margin-top:8px;line-height:1.55}
+
+ul{margin:0;padding-left:20px}
+li{margin-bottom:8px}
+p{margin:0 0 14px}
+footer{margin-top:60px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em;line-height:1.7}
+
+@media (max-width:620px){
+  h1{font-size:33px}
+  .wrap{padding:0 15px 60px}
+  .grid{grid-template-columns:1fr}
+  table{font-size:13.5px} th,td{padding:6px 7px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav">
+  <a class="home" href="index.html">← Учебник 5A · 18 уроков</a>
+  <span><a href="tetrad-hsk5a.html">тетрадь 5A</a> &nbsp;·&nbsp;
+        <a href="progress-hsk5a.html">дневник</a> &nbsp;·&nbsp;
+        <a href="pismo-hsk5.html">письмо</a></span>
+</nav>
+
+<header>
+  <div class="eyebrow">Конспекты · второй том · уроки 19–36</div>
+  <h1>HSK 标准教程 5（下）<span class="lat">Standard Course 5B · 18 уроков · юниты 7–12</span></h1>
+  <div class="counter">
+    <span class="big">2/18</span>
+    <span class="txt">уроков готово</span>
+    <span class="bar"><i style="width:11%"></i></span>
+  </div>
+</header>
+
+<section>
+  <div class="card">
+    <p style="margin:0 0 10px"><b>Второй том начат.</b> Разбор идёт тем же способом, что и в 5A: у каждого урока
+    своя интерактивная схема текста, пересказ по блокам из учебника, лексика по смысловым гнёздам с кнопками
+    озвучки, раздел «На слух» под диктант с рукописным вводом, грамматические точки, таблица сочетаемости,
+    пара 词语辨析, ответы ко всем упражнениям и образец сочинения.</p>
+    <p style="margin:0">Таблица внизу страницы уже показывает <b>весь второй том целиком</b> — какие точки
+    разбираются в каждом уроке, какая пара слов противопоставляется и какая тематическая группа идёт в 扩展.
+    По ней удобно планировать, даже пока конспекта ещё нет.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Уроки <span class="cn">课文</span></h2>
+  <div class="unit" style="--uc:#3f4f7a"><div class="unit-head"><span class="n">Unit 7</span><span class="cn">交流文化</span><span class="ru">Cultural exchange</span></div><div class="grid"><a class="lesson" href="hsk5b-lesson-19.html"><span class="no">19</span><span class="flag">готов</span><span class="cn">家乡的萝卜饼</span><span class="ru">Лепёшки с редькой с моей родины</span><span class="pts">般；闻；趁 · 怀念—想念 · 饮食2</span></a><a class="lesson" href="hsk5b-lesson-20.html"><span class="no">20</span><span class="flag">готов</span><span class="cn">小人书摊</span><span class="ru">Лоток с книжками-картинками</span><span class="pts">动词+得/不+起；支；凭 · 记录—纪录 · 单位、场所；生产2</span></a><div class="lesson soon"><span class="no">21</span><span class="flag">в работе</span><span class="cn">汉字叔叔：一个美国人的汉字情缘</span><span class="ru">Дядюшка Ханьцзы</span><span class="pts">硬；偶然；尽快 · 偶然—偶尔 · 学科；软件操作</span></div></div></div><div class="unit" style="--uc:#4a6b4e"><div class="unit-head"><span class="n">Unit 8</span><span class="cn">体会教育</span><span class="ru">Understanding education</span></div><div class="grid"><div class="lesson soon"><span class="no">22</span><span class="flag">в работе</span><span class="cn">阅读与思考</span><span class="ru">Чтение и размышление</span><span class="pts">一旦；难免；自从 · 平等—公平 · 写作表达</span></div><div class="lesson soon"><span class="no">23</span><span class="flag">в работе</span><span class="cn">放手</span><span class="ru">Отпустить</span><span class="pts">一致；某；幸亏 · 单独—独自 · 教学1；学术</span></div><div class="lesson soon"><span class="no">24</span><span class="flag">в работе</span><span class="cn">支教行动</span><span class="ru">Поехать учить в глубинку</span><span class="pts">行动；义务 · 发言—发表 · 教学2</span></div></div></div><div class="unit" style="--uc:#8a5a3c"><div class="unit-head"><span class="n">Unit 9</span><span class="cn">感受人生</span><span class="ru">Feelings about life</span></div><div class="grid"><div class="lesson soon"><span class="no">25</span><span class="flag">в работе</span><span class="cn">给自己加满水</span><span class="ru">Налить себе полный бак</span><span class="pts">朝；简直 · 严肃—严格 · 度量单位；学习用具</span></div><div class="lesson soon"><span class="no">26</span><span class="flag">в работе</span><span class="cn">你属于哪一种“忙”</span><span class="ru">Какая у вас занятость</span><span class="pts">来；至于；总算 · 总算—终于 · 社会关系；婚恋</span></div><div class="lesson soon"><span class="no">27</span><span class="flag">в работе</span><span class="cn">下棋</span><span class="ru">Игра в шахматы</span><span class="pts">动词+下来；舍不得 · 损失—失去 · 家居2</span></div></div></div><div class="unit" style="--uc:#7a5f8a"><div class="unit-head"><span class="n">Unit 10</span><span class="cn">关注经济</span><span class="ru">Focusing on economy</span></div><div class="grid"><div class="lesson soon"><span class="no">28</span><span class="flag">в работе</span><span class="cn">最受欢迎的毕业生</span><span class="ru">Самый желанный выпускник</span><span class="pts">从此；假设；堆 · 反应—反映 · 职业；求职</span></div><div class="lesson soon"><span class="no">29</span><span class="flag">в работе</span><span class="cn">培养对手</span><span class="ru">Растить себе соперника</span><span class="pts">不如；干脆；万一 · 挤—拥挤 · 经济1</span></div><div class="lesson soon"><span class="no">30</span><span class="flag">в работе</span><span class="cn">竞争让市场更高效</span><span class="ru">Конкуренция делает рынок эффективнее</span><span class="pts">无意；有利；的确 · 接近—靠近 · 经济2</span></div></div></div><div class="unit" style="--uc:#2f6a6a"><div class="unit-head"><span class="n">Unit 11</span><span class="cn">观察社会</span><span class="ru">Observing the society</span></div><div class="grid"><div class="lesson soon"><span class="no">31</span><span class="flag">в работе</span><span class="cn">登门槛效应</span><span class="ru">Эффект ноги в двери</span><span class="pts">嗯；轻易 · 轻易—容易 · 行为1</span></div><div class="lesson soon"><span class="no">32</span><span class="flag">в работе</span><span class="cn">身边的环保</span><span class="ru">Экология рядом</span><span class="pts">密切；尽量；逐步 · 鼓励—鼓舞 · 资源</span></div><div class="lesson soon"><span class="no">33</span><span class="flag">в работе</span><span class="cn">以堵治堵——缓解交通有妙招</span><span class="ru">Лечить пробку пробкой</span><span class="pts">照常；难怪；与其 · 表现—体现 · 交通</span></div></div></div><div class="unit" style="--uc:#8a7a2e"><div class="unit-head"><span class="n">Unit 12</span><span class="cn">亲近自然</span><span class="ru">Getting close to the nature</span></div><div class="grid"><div class="lesson soon"><span class="no">34</span><span class="flag">в работе</span><span class="cn">鸟儿的护肤术</span><span class="ru">Как птицы ухаживают за перьями</span><span class="pts">总之；动词+过；动词+开 · 反复—重复 · 地理环境</span></div><div class="lesson soon"><span class="no">35</span><span class="flag">в работе</span><span class="cn">植物会出汗</span><span class="ru">Растения тоже потеют</span><span class="pts">赶快；片；根本 · 特殊—特别 · 动物；植物</span></div><div class="lesson soon"><span class="no">36</span><span class="flag">в работе</span><span class="cn">老舍与养花</span><span class="ru">Лао Шэ и его цветы</span><span class="pts">除非；直；反正 · 应付—处理 · 行为2</span></div></div></div>
+</section>
+
+<section>
+  <h2>Весь 5B на одном листе <span class="cn">词语例释 · 辨析 · 扩展</span></h2>
+  <p style="font-size:14.5px;color:var(--brick)">Карта второго тома: что разбирается в каждом уроке.
+  Готовые уроки отмечены цветным номером.</p>
+  <table>
+    <tr><th>№</th><th>课文</th><th>词语例释</th><th>词语辨析</th><th>扩展</th></tr>
+    <tr class="done"><td class="n">19</td><td><span class="han">家乡的萝卜饼</span><br><span style="font-size:13px;color:var(--brick)">Лепёшки с редькой с моей родины</span></td><td class="han">般；闻；趁</td><td class="han">怀念—想念</td><td class="han">饮食2</td></tr><tr class="done"><td class="n">20</td><td><span class="han">小人书摊</span><br><span style="font-size:13px;color:var(--brick)">Лоток с книжками-картинками</span></td><td class="han">动词+得/不+起；支；凭</td><td class="han">记录—纪录</td><td class="han">单位、场所；生产2</td></tr><tr><td class="n">21</td><td><span class="han">汉字叔叔：一个美国人的汉字情缘</span><br><span style="font-size:13px;color:var(--brick)">Дядюшка Ханьцзы</span></td><td class="han">硬；偶然；尽快</td><td class="han">偶然—偶尔</td><td class="han">学科；软件操作</td></tr><tr><td class="n">22</td><td><span class="han">阅读与思考</span><br><span style="font-size:13px;color:var(--brick)">Чтение и размышление</span></td><td class="han">一旦；难免；自从</td><td class="han">平等—公平</td><td class="han">写作表达</td></tr><tr><td class="n">23</td><td><span class="han">放手</span><br><span style="font-size:13px;color:var(--brick)">Отпустить</span></td><td class="han">一致；某；幸亏</td><td class="han">单独—独自</td><td class="han">教学1；学术</td></tr><tr><td class="n">24</td><td><span class="han">支教行动</span><br><span style="font-size:13px;color:var(--brick)">Поехать учить в глубинку</span></td><td class="han">行动；义务</td><td class="han">发言—发表</td><td class="han">教学2</td></tr><tr><td class="n">25</td><td><span class="han">给自己加满水</span><br><span style="font-size:13px;color:var(--brick)">Налить себе полный бак</span></td><td class="han">朝；简直</td><td class="han">严肃—严格</td><td class="han">度量单位；学习用具</td></tr><tr><td class="n">26</td><td><span class="han">你属于哪一种“忙”</span><br><span style="font-size:13px;color:var(--brick)">Какая у вас занятость</span></td><td class="han">来；至于；总算</td><td class="han">总算—终于</td><td class="han">社会关系；婚恋</td></tr><tr><td class="n">27</td><td><span class="han">下棋</span><br><span style="font-size:13px;color:var(--brick)">Игра в шахматы</span></td><td class="han">动词+下来；舍不得</td><td class="han">损失—失去</td><td class="han">家居2</td></tr><tr><td class="n">28</td><td><span class="han">最受欢迎的毕业生</span><br><span style="font-size:13px;color:var(--brick)">Самый желанный выпускник</span></td><td class="han">从此；假设；堆</td><td class="han">反应—反映</td><td class="han">职业；求职</td></tr><tr><td class="n">29</td><td><span class="han">培养对手</span><br><span style="font-size:13px;color:var(--brick)">Растить себе соперника</span></td><td class="han">不如；干脆；万一</td><td class="han">挤—拥挤</td><td class="han">经济1</td></tr><tr><td class="n">30</td><td><span class="han">竞争让市场更高效</span><br><span style="font-size:13px;color:var(--brick)">Конкуренция делает рынок эффективнее</span></td><td class="han">无意；有利；的确</td><td class="han">接近—靠近</td><td class="han">经济2</td></tr><tr><td class="n">31</td><td><span class="han">登门槛效应</span><br><span style="font-size:13px;color:var(--brick)">Эффект ноги в двери</span></td><td class="han">嗯；轻易</td><td class="han">轻易—容易</td><td class="han">行为1</td></tr><tr><td class="n">32</td><td><span class="han">身边的环保</span><br><span style="font-size:13px;color:var(--brick)">Экология рядом</span></td><td class="han">密切；尽量；逐步</td><td class="han">鼓励—鼓舞</td><td class="han">资源</td></tr><tr><td class="n">33</td><td><span class="han">以堵治堵——缓解交通有妙招</span><br><span style="font-size:13px;color:var(--brick)">Лечить пробку пробкой</span></td><td class="han">照常；难怪；与其</td><td class="han">表现—体现</td><td class="han">交通</td></tr><tr><td class="n">34</td><td><span class="han">鸟儿的护肤术</span><br><span style="font-size:13px;color:var(--brick)">Как птицы ухаживают за перьями</span></td><td class="han">总之；动词+过；动词+开</td><td class="han">反复—重复</td><td class="han">地理环境</td></tr><tr><td class="n">35</td><td><span class="han">植物会出汗</span><br><span style="font-size:13px;color:var(--brick)">Растения тоже потеют</span></td><td class="han">赶快；片；根本</td><td class="han">特殊—特别</td><td class="han">动物；植物</td></tr><tr><td class="n">36</td><td><span class="han">老舍与养花</span><br><span style="font-size:13px;color:var(--brick)">Лао Шэ и его цветы</span></td><td class="han">除非；直；反正</td><td class="han">应付—处理</td><td class="han">行为2</td></tr>
+  </table>
+</section>
+
+<a class="cross" href="index.html">
+  <span class="k">первый том · 18 уроков · 743 слова · тест и тетрадь</span>
+  <span class="t">HSK 标准教程 5（上）</span>
+  <span class="s">Вернуться к 5A</span>
+  <span class="d">Там же поиск по словарю первого тома, контрольный тест на 192 вопроса,
+  рабочая тетрадь 练习册 с проверкой и аудио, дневник с динамикой и разбор письменной части экзамена.</span>
+</a>
+
+<footer>
+  HSK 标准教程 5（下） · конспекты уроков 19–36 · страницы статические, работают без интернета<br>
+  Озвучка подключается так же, как в первом томе: папка <code style="font-family:var(--mono)">audio</code> рядом с этими файлами.
+</footer>
+
+</div>
+</body>
+</html>
