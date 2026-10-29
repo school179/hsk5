@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HSK 标准教程 5（上） — конспекты</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c1a16;
+  --paper:#e2e0d7;
+  --card:#f3f1e9;
+  --brick:#6d6455;
+  --red:#a8332a;
+  --line:rgba(28,26,22,.18);
+  --u1:#a8332a; --u2:#a8813c; --u3:#4a6b4e; --u4:#4e6e86; --u5:#7a5f8a; --u6:#5d6b6d;
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px 90px}
+
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 0 0;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;flex-wrap:wrap}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+header{padding:56px 0 26px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+h1{margin:14px 0 0;font-family:var(--han);font-weight:900;font-size:46px;line-height:1.06;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brick);margin-top:10px}
+.counter{margin-top:22px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.counter .big{font-family:var(--disp);font-weight:700;font-size:34px;color:var(--red);line-height:1}
+.counter .txt{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brick)}
+.bar{flex:1 1 200px;height:8px;background:rgba(28,26,22,.12);min-width:160px}
+.bar i{display:block;height:100%;background:var(--red)}
+
+section{margin-top:52px}
+h2{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:12px}
+h2 .cn{font-family:var(--han);font-size:19px;color:var(--red);font-weight:600;text-transform:none;letter-spacing:.05em}
+
+/* ——— юниты ——— */
+.unit{margin-bottom:34px}
+.unit-head{display:flex;align-items:baseline;gap:14px;padding:8px 0 10px;border-bottom:2px solid var(--uc);flex-wrap:wrap}
+.unit-head .n{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--uc)}
+.unit-head .cn{font-family:var(--han);font-size:20px;font-weight:600}
+.unit-head .ru{font-size:14px;color:var(--brick)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:14px}
+.lesson{display:block;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--uc);
+  padding:15px 17px;text-decoration:none;color:inherit;position:relative;
+  transition:transform .14s ease,box-shadow .14s ease}
+a.lesson:hover{transform:translateY(-2px);box-shadow:0 4px 0 rgba(28,26,22,.12)}
+.lesson .no{font-family:var(--disp);font-weight:700;font-size:26px;color:var(--uc);line-height:1;float:right;margin-left:10px}
+.lesson .cn{font-family:var(--han);font-size:19px;font-weight:600;display:block;line-height:1.35}
+.lesson .ru{display:block;font-size:14.5px;margin-top:3px}
+.lesson .pts{display:block;font-family:var(--han);font-size:13px;color:var(--brick);margin-top:9px;
+  padding-top:8px;border-top:1px dashed var(--line)}
+.lesson .pg{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--brick);text-transform:uppercase}
+.lesson.soon{opacity:.5}
+.lesson .flag{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--uc);color:var(--card);padding:2px 6px;margin-bottom:8px}
+.lesson.soon .flag{background:transparent;color:var(--brick);border:1px solid var(--line)}
+
+/* ——— сводная таблица ——— */
+table{width:100%;border-collapse:collapse;background:var(--card);font-size:14.5px;margin-top:10px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;background:rgba(28,26,22,.05)}
+td.n{font-family:var(--disp);font-weight:700;font-size:17px;width:44px;text-align:center;color:var(--red)}
+td .han{font-family:var(--han);font-size:15px}
+tr.done td.n{background:var(--red);color:var(--card)}
+
+.card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--red);padding:20px 22px;margin:16px 0}
+.card code{font-family:var(--mono);font-size:13px;background:rgba(28,26,22,.06);padding:1px 5px}
+ul{margin:0 0 0 0;padding-left:20px}
+li{margin-bottom:8px}
+p{margin:0 0 14px}
+footer{margin-top:60px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em;line-height:1.7}
+
+@media (max-width:620px){
+  h1{font-size:33px}
+  .wrap{padding:0 15px 60px}
+  .grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.exam{display:block;background:var(--ink);color:var(--card);padding:24px 26px;margin-top:40px;
+  text-decoration:none;border-left:6px solid var(--red);transition:transform .14s ease}
+a.exam:hover{transform:translateY(-2px)}
+.exam .k{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#9a968c}
+.exam .t{font-family:var(--han);font-size:26px;font-weight:600;display:block;margin:8px 0 4px}
+.exam .s{font-family:var(--disp);font-size:19px;letter-spacing:.02em;display:block}
+.exam .d{display:block;font-size:14.5px;color:#c3bfb6;margin-top:8px;line-height:1.55}
+
+
+/* ——— поиск по словарю ——— */
+.search{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--red);
+  padding:22px 24px;margin-top:34px}
+.search .s-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.search .s-t{font-family:var(--disp);font-weight:700;font-size:17px;letter-spacing:.03em}
+.search .s-n{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brick)}
+.search .s-row{display:flex;gap:10px;flex-wrap:wrap}
+.s-input{flex:1 1 280px;min-width:0;font-family:var(--body);font-size:19px;padding:11px 14px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.s-input:focus{outline:2px solid var(--red);outline-offset:-1px}
+.s-clear{font-family:var(--disp);font-weight:700;font-size:14px;letter-spacing:.06em;padding:9px 16px;
+  border:1px solid var(--line);background:transparent;color:var(--brick);cursor:pointer}
+.s-clear:hover{border-color:var(--red);color:var(--red)}
+.s-hint{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.55}
+.s-hint b{font-family:var(--mono);font-size:12px;background:rgba(0,0,0,.05);padding:1px 5px;cursor:pointer}
+.s-hint b:hover{background:var(--red);color:var(--card)}
+
+.s-status{margin-top:16px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--brick)}
+.s-status.ok{color:var(--u3)}
+.s-status.no{color:var(--red)}
+.s-miss{margin-top:12px;background:rgba(168,51,42,.07);border-left:3px solid var(--red);
+  padding:13px 16px;font-size:14.5px;line-height:1.6}
+.s-miss b{font-family:var(--han);font-size:17px}
+
+.s-res{margin-top:14px;display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.s-res:empty{display:none;border:none}
+.s-item{background:var(--card);padding:12px 15px;display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+.s-item .hz{font-family:var(--han);font-size:22px;font-weight:600;letter-spacing:.04em;flex:0 0 auto}
+.s-item .py{font-family:var(--mono);font-size:13px;color:var(--u4);flex:0 0 auto}
+.s-item .ru{font-size:15px;flex:1 1 180px;min-width:0}
+.s-item .ex{font-family:var(--han);font-size:13.5px;color:var(--brick);flex:1 1 100%;margin-top:-2px}
+.s-item .lk{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-decoration:none;
+  background:var(--ink);color:var(--card);padding:3px 9px;flex:0 0 auto;white-space:nowrap}
+.s-item .lk:hover{background:var(--red)}
+.s-item .st{font-family:var(--mono);font-size:10px;color:var(--u2);letter-spacing:.08em;flex:0 0 auto}
+.s-item mark{background:rgba(217,165,55,.45);color:inherit;padding:0 1px}
+.s-more{background:var(--card);padding:10px 15px;font-family:var(--mono);font-size:11.5px;
+  color:var(--brick);letter-spacing:.06em}
+
+@media (max-width:620px){
+  .search{padding:18px 16px}
+  .s-item{gap:10px}
+  .s-item .hz{font-size:20px}
+}
+
+
+.exam.test{border-left-color:var(--u3)}
+.exam.test .k{color:#9fb8a4}
+.exam.book{border-left-color:var(--u4)}
+.exam.book .k{color:#9db4c4}
+.exam.diary{border-left-color:var(--u2)}
+.exam.diary .k{color:#cbb98e}
+.exam.vol2{border-left-color:var(--u5)}
+.exam.vol2 .k{color:#bda8c6}
+.exam-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:40px}
+@media (max-width:620px){.exam-pair{grid-template-columns:1fr}}
+.exam-pair .exam{margin-top:0}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav">
+  <a class="home" href="index.html">← Вся подготовка к HSK 5</a>
+  <span><a href="index-5b.html">учебник 5B</a> &nbsp;·&nbsp;
+        <a href="tetrad-hsk5a.html">тетрадь</a> &nbsp;·&nbsp;
+        <a href="progress-hsk5a.html">дневник</a> &nbsp;·&nbsp;
+        <a href="hskk-gaoji.html">HSKK 高级</a></span>
+</nav>
+
+<header>
+  <div class="eyebrow">Конспекты · подготовка к HSK 5</div>
+  <h1>HSK 标准教程 5（上）<span class="lat">Standard Course 5A · 18 уроков · 6 юнитов</span></h1>
+  <div class="counter">
+    <span class="big" id="cnt">18/18</span>
+    <span class="txt">конспектов готово</span>
+    <span class="bar"><i id="barfill" style="width:100%"></i></span>
+  </div>
+</header>
+<section class="search" id="search">
+  <div class="s-head">
+    <span class="s-t">Есть ли слово в 5A?</span>
+    <span class="s-n">743 слов · 18 уроков</span>
+  </div>
+  <div class="s-row">
+    <input class="s-input" id="sq" type="search" autocomplete="off" spellcheck="false"
+      placeholder="иероглифы, пиньинь или перевод…" aria-label="Поиск слова в словаре 5A">
+    <button class="s-clear" type="button" id="sclr">Очистить</button>
+  </div>
+  <div class="s-hint">
+    Ищет по иероглифам, пиньиню (с тонами и без) и русскому переводу; можно вводить часть слова.
+    Попробуйте: <b data-q="形">形</b> <b data-q="xingshi">xingshi</b> <b data-q="обстановка">обстановка</b>
+    <b data-q="所">所</b> <b data-q="shiyan">shiyan</b>
+  </div>
+  <div class="s-status" id="sst"></div>
+  <div id="smiss"></div>
+  <div class="s-res" id="sres"></div>
+</section>
+
+<section>
+  <div class="unit" style="--uc:var(--u1)">
+    <div class="unit-head"><span class="n">Unit 1</span><span class="cn">了解生活</span><span class="ru">Понять жизнь</span></div>
+    <div class="grid">
+      <a class="lesson" href="hsk5a-lesson-01.html"><span class="no">01</span><span class="flag">готово</span><span class="cn">爱的细节</span><span class="ru">Детали любви</span><span class="pts">如何 · 靠 · 居然 ／ 如何—怎么 <span class="pg">стр. 2</span></span></a>
+      <a class="lesson" href="hsk5a-lesson-02.html"><span class="no">02</span><span class="flag">готово</span><span class="cn">留串钥匙给父母</span><span class="ru">Оставить родителям связку ключей</span><span class="pts">以来 · 临 · 立刻 ／ 悄悄—偷偷 <span class="pg">стр. 9</span></span></a>
+      <a class="lesson" href="hsk5a-lesson-03.html"><span class="no">03</span><span class="flag">готово</span><span class="cn">人生有选择，一切可改变</span><span class="ru">Есть выбор — всё можно изменить</span><span class="pts">包括 · 各自 · 勿 · 时刻 ／ 舒适—舒服 <span class="pg">стр. 16</span></span></a>
+    </div>
+  </div>
+
+  <div class="unit" style="--uc:var(--u2)">
+    <div class="unit-head"><span class="n">Unit 2</span><span class="cn">谈古说今</span><span class="ru">О прошлом и настоящем</span></div>
+    <div class="grid">
+      <a class="lesson" href="hsk5a-lesson-04.html"><span class="no">04</span><span class="flag">готово</span><span class="cn">子路背米</span><span class="ru">Цзы Лу несёт рис</span><span class="pts">至今 · 顶 · ……得不行 · 反而 ／ 满足—满意 <span class="pg">стр. 26</span></span></a>
+      <a class="lesson" href="hsk5a-lesson-05.html"><span class="no">05</span><span class="flag">готово</span><span class="cn">济南的泉水</span><span class="ru">Источники Цзинаня</span><span class="pts">从而 · 于 · 为 · 起来 ／ 美丽—优美 <span class="pg">стр. 34</span></span></a>
+      <a class="lesson" href="hsk5a-lesson-06.html"><span class="no">06</span><span class="flag">готово</span><span class="cn">除夕的由来</span><span class="ru">Откуда взялся канун Нового года</span><span class="pts">替 · 说不定 · 似的 · 纷纷 ／ 打听—询问 <span class="pg">стр. 43</span></span></a>
+    </div>
+  </div>
+
+  <div class="unit" style="--uc:var(--u3)">
+    <div class="unit-head"><span class="n">Unit 3</span><span class="cn">倾听故事</span><span class="ru">Слушая истории</span></div>
+    <div class="grid">
+      <a class="lesson" href="hsk5a-lesson-07.html"><span class="no">07</span><span class="flag">готово</span><span class="cn">成语故事两则</span><span class="ru">Две истории о чэнъюях</span><span class="pts">瞎 · 分别 · 根 · 便 ／ 忽然—突然 <span class="pg">стр. 54</span></span></a>
+      <a class="lesson" href="hsk5a-lesson-08.html"><span class="no">08</span><span class="flag">готово</span><span class="cn">“朝三暮四”的古今义</span><span class="ru">«Три утром, четыре вечером»: тогда и сейчас</span><span class="pts">倒 · ……来……去 · 要不 ／ 彼此—互相 <span class="pg">стр. 63</span></span></a>
+      <a class="lesson" href="hsk5a-lesson-09.html"><span class="no">09</span><span class="flag">готово</span><span class="cn">别样鲁迅</span><span class="ru">Другой Лу Синь</span><span class="pts">算 · 作为 · 曾经 ／ 亲自—自己 <span class="pg">стр. 71</span></span></a>
+    </div>
+  </div>
+
+  <div class="unit" style="--uc:var(--u4)">
+    <div class="unit-head"><span class="n">Unit 4</span><span class="cn">走近科学</span><span class="ru">Ближе к науке</span></div>
+    <div class="grid">
+      <a class="lesson" href="hsk5a-lesson-10.html"><span class="no">10</span><span class="flag">готово</span><span class="cn">争论的奇迹</span><span class="ru">Чудо спора</span><span class="pts">毕竟 · 逐渐 · 或许 ／ 显示—显得 <span class="pg">стр. 80</span></span></a>
+      <a class="lesson" href="hsk5a-lesson-11.html"><span class="no">11</span><span class="flag">готово</span><span class="cn">闹钟的危害</span><span class="ru">Чем вреден будильник</span><span class="pts">来/过来 · 所 · 相当 · 数 ／ 持续—继续 <span class="pg">стр. 88</span></span></a>
+      <a class="lesson" href="hsk5a-lesson-12.html"><span class="no">12</span><span class="flag">готово</span><span class="cn">海外用户玩儿微信</span><span class="ru">Зарубежные пользователи WeChat</span><span class="pts">以及 · 程度 ／ 发达—发展 <span class="pg">стр. 97</span></span></a>
+    </div>
+  </div>
+
+  <div class="unit" style="--uc:var(--u5)">
+    <div class="unit-head"><span class="n">Unit 5</span><span class="cn">放眼世界</span><span class="ru">Взгляд на мир</span></div>
+    <div class="grid">
+      <a class="lesson" href="hsk5a-lesson-13.html"><span class="no">13</span><span class="flag">готово</span><span class="cn">锯掉生活的“筐底”</span><span class="ru">Отпилить у жизни «дно корзины»</span><span class="pts">何况 · 何必 · 多亏 ／ 激烈—强烈 <span class="pg">стр. 106</span></span></a>
+      <a class="lesson" href="hsk5a-lesson-14.html"><span class="no">14</span><span class="flag">готово</span><span class="cn">北京的四合院</span><span class="ru">Пекинский сыхэюань</span><span class="pts">所谓 · 则 · 为……所…… · 起 ／ 通常—常常 <span class="pg">стр. 114</span></span></a>
+      <a class="lesson" href="hsk5a-lesson-15.html"><span class="no">15</span><span class="flag">готово</span><span class="cn">纸上谈兵</span><span class="ru">Стратег на бумаге</span><span class="pts">过 · 迟早 · 再三 ／ 胜利—成功 <span class="pg">стр. 123</span></span></a>
+    </div>
+  </div>
+
+  <div class="unit" style="--uc:var(--u6)">
+    <div class="unit-head"><span class="n">Unit 6</span><span class="cn">修养身心</span><span class="ru">Тело и душа</span></div>
+    <div class="grid">
+      <a class="lesson" href="hsk5a-lesson-16.html"><span class="no">16</span><span class="flag">готово</span><span class="cn">体重与节食</span><span class="ru">Вес и диета</span><span class="pts">即 · 个别 · 非 ／ 临时—暂时 <span class="pg">стр. 134</span></span></a>
+      <a class="lesson" href="hsk5a-lesson-17.html"><span class="no">17</span><span class="flag">готово</span><span class="cn">在最美好的时刻离开</span><span class="ru">Уйти в лучший момент</span><span class="pts">以 · 平常 · 宁可 ／ 忽视—轻视 <span class="pg">стр. 142</span></span></a>
+      <a class="lesson" href="hsk5a-lesson-18.html"><span class="no">18</span><span class="flag">готово</span><span class="cn">抽象艺术美不美</span><span class="ru">Красиво ли абстрактное искусство</span><span class="pts">极其 · 其余 · 可见 ／ 目前—现在 <span class="pg">стр. 150</span></span></a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Перед экзаменом <span class="cn">备考</span></h2>
+  <div class="exam-pair">
+    <a class="exam test" href="test-hsk5a.html">
+      <span class="k">192 вопроса · 7 блоков</span>
+      <span class="t">总复习测试</span>
+      <span class="s">Контрольный тест по всему учебнику</span>
+      <span class="d">Пары 辨析, все 60 грамматических точек, счётные слова, чтения и порядок слов. Ответ проверяется сразу, итог показывает, какие уроки повторить.</span>
+    </a>
+    <a class="exam" href="pismo-hsk5.html">
+      <span class="k">Раздел 3 · 10 заданий · 40 минут</span>
+      <span class="t">书写</span>
+      <span class="s">Письмо: разбор, каркасы и заготовки</span>
+      <span class="d">Схема порядка слов для заданий 91–98, каркасы текстов на 80 знаков, клише по местам и конструкции из 5A, которые поднимают балл.</span>
+    </a>
+    <a class="exam book" href="tetrad-hsk5a.html">
+      <span class="k">18 уроков · 32 задания в каждом</span>
+      <span class="t">练习册</span>
+      <span class="s">Рабочая тетрадь: бланк и проверка</span>
+      <span class="d">Аудио к 听力 прямо на странице, бланк ответов 1–28, сборка предложений 29–31 с эталоном и место для сочинения. Итог по разделам и оценка за урок.</span>
+    </a>
+    <a class="exam diary" href="progress-hsk5a.html">
+      <span class="k">оценки · график · пробники</span>
+      <span class="t">成绩</span>
+      <span class="s">Дневник и динамика</span>
+      <span class="d">Пробник HSK считается по трём разделам из 300, уроки тетради попадают сюда сами. Видно средний балл, лучший результат и растёт ли он от попытки к попытке.</span>
+    </a>
+  </div>
+  <a class="exam vol2" href="index-5b.html">
+    <span class="k">второй том · уроки 19–36 · юниты 7–12</span>
+    <span class="t">HSK 标准教程 5（下）</span>
+    <span class="s">Продолжение: учебник 5B</span>
+    <span class="d">Конспекты второго тома — те же схемы, гнёзда лексики, «На слух» и разборы упражнений. Там же карта всего 5B: точки 词语例释, пары 辨析 и темы 扩展 по всем восемнадцати урокам.</span>
+  </a>
+</section>
+
+<section id="grammar">
+  <h2>Все точки 5A на одном листе <span class="cn">词语例释 · 辨析 · 扩展</span></h2>
+  <p style="font-size:14.5px;color:var(--brick)">Перед экзаменом удобно пробегать глазами весь учебник целиком: что разбиралось в каждом уроке, какая пара слов противопоставлялась и какая тематическая группа шла в 扩展.</p>
+  <table>
+    <tr><th class="n">№</th><th>Урок</th><th>词语例释</th><th>词语辨析</th><th>扩展</th></tr>
+    <tr class="done"><td class="n">1</td><td class="han">爱的细节</td><td class="han">如何；靠；居然</td><td class="han">如何—怎么</td><td class="han">人体</td></tr>
+    <tr class="done"><td class="n">2</td><td class="han">留串钥匙给父母</td><td class="han">以来；临；立刻</td><td class="han">悄悄—偷偷</td><td class="han">亲属称谓；交往1</td></tr>
+    <tr class="done"><td class="n">3</td><td class="han">人生有选择，一切可改变</td><td class="han">包括；各自；勿；时刻</td><td class="han">舒适—舒服</td><td class="han">天气；生产</td></tr>
+    <tr class="done"><td class="n">4</td><td class="han">子路背米</td><td class="han">至今；顶；……得+不行；反而</td><td class="han">满足—满意</td><td class="han">社交称谓</td></tr>
+    <tr class="done"><td class="n">5</td><td class="han">济南的泉水</td><td class="han">从而；于；为（wéi）；起来</td><td class="han">美丽—优美</td><td class="han">文学</td></tr>
+    <tr class="done"><td class="n">6</td><td class="han">除夕的由来</td><td class="han">替；说不定；似的；纷纷</td><td class="han">打听—询问</td><td class="han">旅游；节日</td></tr>
+    <tr class="done"><td class="n">7</td><td class="han">成语故事两则</td><td class="han">瞎；分别；根；便</td><td class="han">忽然—突然</td><td class="han">语言文字</td></tr>
+    <tr class="done"><td class="n">8</td><td class="han">“朝三暮四”的古今义</td><td class="han">倒；……来……去；要不</td><td class="han">彼此—互相</td><td class="han">饮食1</td></tr>
+    <tr class="done"><td class="n">9</td><td class="han">别样鲁迅</td><td class="han">算；作为；曾经</td><td class="han">亲自—自己</td><td class="han">社会</td></tr>
+    <tr class="done"><td class="n">10</td><td class="han">争论的奇迹</td><td class="han">毕竟；逐渐；或许</td><td class="han">显示—显得</td><td class="han">服饰</td></tr>
+    <tr class="done"><td class="n">11</td><td class="han">闹钟的危害</td><td class="han">来/过来；所；相当；数</td><td class="han">持续—继续</td><td class="han">家居</td></tr>
+    <tr class="done"><td class="n">12</td><td class="han">海外用户玩儿微信</td><td class="han">以及；程度</td><td class="han">发达—发展</td><td class="han">电脑网络</td></tr>
+    <tr class="done"><td class="n">13</td><td class="han">锯掉生活的“筐底”</td><td class="han">何况；何必；多亏</td><td class="han">激烈—强烈</td><td class="han">体育</td></tr>
+    <tr class="done"><td class="n">14</td><td class="han">北京的四合院</td><td class="han">所谓；则；为……所……；起</td><td class="han">通常—常常</td><td class="han">建筑</td></tr>
+    <tr class="done"><td class="n">15</td><td class="han">纸上谈兵</td><td class="han">过；迟早；再三</td><td class="han">胜利—成功</td><td class="han">军事</td></tr>
+    <tr class="done"><td class="n">16</td><td class="han">体重与节食</td><td class="han">即；个别；非</td><td class="han">临时—暂时</td><td class="han">医务1</td></tr>
+    <tr class="done"><td class="n">17</td><td class="han">在最美好的时刻离开</td><td class="han">以；平常；宁可</td><td class="han">忽视—轻视</td><td class="han">医务2</td></tr>
+    <tr class="done"><td class="n">18</td><td class="han">抽象艺术美不美</td><td class="han">极其；其余；可见</td><td class="han">目前—现在</td><td class="han">影视艺术</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>Как устроено <span class="cn">说明</span></h2>
+  <div class="card">
+    <ul>
+      <li><b>Поиск по словарю.</b> Поле наверху страницы ищет по всем 743 словам учебника — по иероглифам, пиньиню (с тонами и без) и русскому переводу, в том числе по части слова. В выдаче видно, в каком уроке слово и под каким номером оно стоит в списке 生词.</li>
+      <li><b>Озвучка.</b> Кнопка ▶ у каждого слова ищет файл вида <code>иероглиф.mp3</code> — сначала в папке <code>audio</code> рядом с сайтом, потом в корне. Папка определяется сама при открытии страницы. Кнопка «▶ подряд» в заголовке гнезда проигрывает всю группу слов по очереди.</li>
+      <li><b>Схема наверху каждого урока</b> — не украшение, а способ вспомнить лексику: наведите или коснитесь любого элемента, и появится слово с его ролью в тексте. Пересказывать текст удобнее по ней, а не по списку.</li>
+      <li><b>Ответы к упражнениям</b> спрятаны под раскрывающимися блоками — сначала решайте, потом сверяйтесь.</li>
+      <li><b>Раздел «На слух»</b> в каждом уроке собирает именно те пары, на которых ломается диктант: омофоны, тоновые пары и иероглифы, тяжёлые для руки.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  HSK 标准教程 5（上） · Higher Education Press<br>
+  Конспекты для личной подготовки к экзамену. Аудио и текст учебника — собственность правообладателя.
+</footer>
+
+</div>
+<script>
+(function(){
+  var W = [["细节","xìjié","xijie","деталь, подробность","生活的细节 / 注意细节","1",0,1],["电台","diàntái","diantai","радиостанция","电台记者 / 广播 / 新闻","2",0,1],["恩爱","ēn'ài","enai","любящие (о супругах)","最恩爱的夫妻","3",1,1],["对比","duìbǐ","duibi","сравнивать, сопоставлять","简单地 / 详细地对比","4",0,1],["入围","rùwéi","ruwei","пройти в финал, попасть в шорт-лист","","5",1,1],["评委","píngwěi","pingwei","член жюри","","6",1,1],["项","xiàng","xiang","сч. сл. для пунктов, наград, проектов","一项运动 / 任务 / 奖项","37",0,1],["瘫痪","tānhuàn","tanhuan","быть парализованным","全身瘫痪","8",1,1],["离婚","lí hūn","lihun","разводиться","跟她离婚（раздельное слово）","9",0,1],["自杀","zìshā","zisha","покончить с собой","","10",0,1],["抱怨","bàoyuàn","baoyuan","жаловаться, роптать","抱怨别人 / 从不抱怨","11",0,1],["爱护","àihù","aihu","беречь, заботиться","爱护环境 / 公物 / 学生","12",0,1],["患难与共","huànnàn-yǔgòng","huannan-yugong","делить и горе, и беду","","38",1,1],["婚姻","hūnyīn","hunyin","брак, супружество","婚姻生活","13",0,1],["吵架","chǎo jià","chaojia","ссориться","吵过架（раздельное слово!）","14",0,1],["相敬如宾","xiāngjìng-rúbīn","xiangjing-rubin","уважать друг друга как гостей","","15",1,1],["暗暗","àn'àn","anan","втайне, про себя","暗暗点头 / 暗暗决定","16",0,1],["轮","lún","lun","наступать очереди, чередоваться","轮到第三对夫妻了","17",0,1],["不耐烦","bú nàifán","bunaifan","нетерпеливый, раздражённый","等得有些不耐烦","18",0,1],["靠","kào","kao","опираться, прислоняться; полагаться","靠着桌子 / 靠自己","19",0,1],["肩膀","jiānbǎng","jianbang","плечо","","20",0,1],["喊","hǎn","han","кричать, окликать","大声地喊 / 喊醒","21",0,1],["伸","shēn","shen","протягивать, вытягивать","伸出 / 伸进去 / 伸到……","22",0,1],["手指","shǒuzhǐ","shouzhi","палец руки","","23",0,1],["歪歪扭扭","wāiwāiniǔniǔ","waiwainiuniu","криво, косо","歪歪扭扭地写","24",1,1],["递","dì","di","передавать (из рук в руки)","递给我 / 递过去","25",0,1],["脑袋","nǎodai","naodai","голова (разг.)","","26",0,1],["女士","nǚshì","nushi","госпожа, дама","","27",0,1],["叙述","xùshù","xushu","излагать, рассказывать","简单地叙述一下","28",0,1],["催","cuī","cui","торопить, подгонять","别催他","30",0,1],["等待","děngdài","dengdai","ждать, дожидаться","耐心地等待","31",0,1],["半夜","bànyè","banye","полночь, посреди ночи","","33",0,1],["蚊子","wénzi","wenzi","комар","","32",1,1],["叮","dīng","ding","кусать, жалить (о насекомом)","","34",1,1],["老婆","lǎopo","laopo","жена (разг.)","","35",0,1],["吵","chǎo","chao","шуметь; шумный","吵醒 / 这儿太吵了","36",0,1],["如何","rúhé","ruhe","как, каким образом (книжн.)","如何解决 / 情况如何？","7",0,1],["居然","jūrán","juran","надо же, неожиданно","居然放弃了这次机会","29",0,1],["一辈子","yíbèizi","yibeizi","вся жизнь, весь век","一辈子住在农村","2",0,2],["农村","nóngcūn","nongcun","деревня, село","↔ 城里 / 城市","3",0,2],["屋（子）","wū(zi)","wu","дом, комната","老屋 / 屋子里","4",0,2],["县","xiàn","xian","уезд (административная единица)","","13",0,2],["卧室","wòshì","woshi","спальня","","34",0,2],["姥姥","lǎolao","laolao","бабушка по матери","","7",0,2],["舅舅","jiùjiu","jiujiu","дядя, брат матери","","8",0,2],["姑姑","gūgu","gugu","тётя, сестра отца","","9",0,2],["套","tào","tao","сч. сл. для комплектов, квартир","一套房子 / 家具 / 西服","14",0,2],["串","chuàn","chuan","сч. сл. для связок, низок","一串钥匙 / 一串葡萄","1",1,2],["阵","zhèn","zhen","сч. сл. для кратких явлений","一阵风 / 雨 / 歌声 / 香味","37",0,2],["打工","dǎ gōng","dagong","работать по найму, подрабатывать","出去打工（раздельное слово）","11",0,2],["挣","zhèng","zheng","зарабатывать","挣钱","12",0,2],["装修","zhuāngxiū","zhuangxiu","делать ремонт, отделку","","15",0,2],["锁","suǒ","suo","замок; запирать","上锁 / 锁上门","20",0,2],["晒","shài","shai","сушить на солнце; загорать","晒被子 / 衣服 / 太阳","23",0,2],["被子","bèizi","beizi","одеяло","","24",0,2],["铺","pū","pu","стелить, расстилать","被子已铺好","35",1,2],["灰尘","huīchén","huichen","пыль","满是灰尘","28",0,2],["长途","chángtú","changtu","дальний, междугородный","长途旅行 / 汽车 / 电话","25",0,2],["坚决","jiānjué","jianjue","решительный, наотрез","坚决反对 / 坚决改正","10",0,2],["不得了","bùdéliǎo","budeliao","крайне, ужас как","高兴得不得了（после 得）","16",0,2],["醉","zuì","zui","пьянеть","喝醉了","17",0,2],["强烈","qiángliè","qianglie","настоятельный, сильный","强烈的阳光 / 感情 / 对比","18",0,2],["悄悄","qiāoqiāo","qiaoqiao","тихонько, негромко","悄悄地说","22",0,2],["冻","dòng","dong","мёрзнуть, замерзать","冻得大哭 / 冻住了","26",0,2],["想象","xiǎngxiàng","xiangxiang","воображать, представлять","想象不到 / 想象力","27",0,2],["亮","liàng","liang","светлый; светиться","亮着灯 / 天亮了","29",0,2],["微笑","wēixiào","weixiao","улыбаться; улыбка","微笑着的父母","30",0,2],["温暖","wēnnuǎn","wennuan","тёплый; согревать","家的温暖","31",0,2],["扑","pū","pu","броситься, обдать","扑面而来","33",1,2],["飘","piāo","piao","нестись по воздуху, доноситься","飘来阵阵饭菜香","36",0,2],["感受","gǎnshòu","ganshou","почувствовать; впечатление","感受到家的温暖","38",0,2],["流泪","liú lèi","liulei","проливать слёзы","","39",0,2],["夜","yè","ye","ночь","住一夜 / 深冬的夜里","19",0,2],["断","duàn","duan","обрывать, прерывать","断水 / 断电 / 断联系","5",0,2],["以来","yǐlái","yilai","с тех пор как, за период","长年以来 / 改革开放以来","6",0,2],["临","lín","lin","прилегать к; перед самым","临街的房子 / 临走那天","21",0,2],["立刻","lìkè","like","немедленно, тут же","立刻感受到","32",0,2],["人生","rénshēng","rensheng","жизнь (человеческая)","人生道路 / 人生有选择","1",0,3],["工人","gōngrén","gongren","рабочий","铁路工人","2",0,3],["稳定","wěndìng","wending","стабильный, устойчивый","稳定的工作 / 生活 / 收入","3",0,3],["待遇","dàiyù","daiyu","условия, оплата и льготы","待遇不错 / 个人待遇","4",0,3],["发愁","fā chóu","fachou","тревожиться, ломать голову","为生活发愁（为……发愁）","5",0,3],["平静","píngjìng","pingjing","спокойный, тихий","平静的海面 / 心情 / 生活","6",0,3],["辞职","cí zhí","cizhi","увольняться по своему желанию","辞了职（раздельное слово）","16",0,3],["陆地","lùdì","ludi","суша","↔ 海上","26",0,3],["未来","wèilái","weilai","будущее","通向未来","39",0,3],["时代","shídài","shidai","эпоха, время","信息时代 / 这个时代","41",0,3],["台阶","táijiē","taijie","ступень, лестница","人生道路上的台阶","38",0,3],["太太","tàitai","taitai","жена, супруга","","40",0,3],["帆船","fānchuán","fanchuan","парусник, яхта","","7",1,3],["艘","sōu","sou","сч. сл. для судов","一艘船 / 一艘客船","9",1,3],["航行","hángxíng","hangxing","идти под парусом, плыть, лететь","航行在海上 / 航海知识","10",1,3],["驾驶","jiàshǐ","jiashi","управлять (судном, машиной)","驾驶汽车 / 驾驶帆船","17",0,3],["海里","hǎilǐ","haili","морская миля","航行了4000多海里","37",1,3],["钓","diào","diao","удить, ловить на удочку","钓鱼","19",0,3],["海鲜","hǎixiān","haixian","морепродукты","","21",0,3],["顿","dùn","dun","сч. сл. для приёмов пищи","一顿饭 / 一顿海鲜","20",0,3],["二手","èrshǒu","ershou","подержанный, б/у","二手车 / 二手船","12",1,3],["积蓄","jīxù","jixu","сбережения; копить","没有积蓄","11",1,3],["撞","zhuàng","zhuang","врезаться, толкнуть, распахнуть","撞开 / 撞倒 / 撞伤","8",0,3],["轮流","lúnliú","lunliu","по очереди, поочерёдно","轮流驾船 / 休息 / 照看","18",0,3],["干活儿","gàn huór","ganhuor","работать, делать дела","干完活儿","24",0,3],["彩虹","cǎihóng","caihong","радуга","雨后彩虹 / “彩虹号”","13",0,3],["雷","léi","lei","гром","雷阵雨 / 雷电交加","32",0,3],["闪电","shǎndiàn","shandian","молния","一道闪电","34",0,3],["击","jī","ji","ударить, поразить","被闪电击到","35",0,3],["着火","zháo huǒ","zhaohuo","загораться","船身着火","30",0,3],["漏","lòu","lou","протекать, течь","漏水 / 漏光 / 漏掉","31",0,3],["随时","suíshí","suishi","в любой момент","随时有可能 / 随时给我打电话","33",0,3],["拥抱","yōngbào","yongbao","обнимать(ся)","紧紧地拥抱 / 热情地拥抱","36",0,3],["疯","fēng","feng","сойти с ума; помешаться","他疯了 / 疯狂","15",0,3],["傍晚","bàngwǎn","bangwan","под вечер, в сумерки","","22",0,3],["舒适","shūshì","shushi","комфортный, уютный (книжн.)","舒适的座位 / 生活环境","23",0,3],["盼望","pànwàng","panwang","ждать с нетерпением, чаять","盼望好消息 / 盼望已久","25",0,3],["包括","bāokuò","baokuo","включать в себя; в том числе","包括……在内","14",0,3],["各自","gèzì","gezi","каждый свой, каждый со своей стороны","各自的房间","27",0,3],["勿","wù","wu","не, не надо (книжн. запрет)","请勿入内 / 切勿……","28",0,3],["时刻","shíkè","shike","момент; ежеминутно","美好的时刻 / 时刻提醒自己","29",0,3],["翟峰","Zhái Fēng","ZhaiFeng","Чжай Фэн, имя героя","","",0,3],["澳大利亚","Àodàlìyà","Aodaliya","Австралия","","",0,3],["新西兰","Xīnxīlán","Xinxilan","Новая Зеландия","","",0,3],["从前","cóngqián","congqian","некогда, в прежние времена","从前有个人…… (зачин сказки)","2",0,4],["时期","shíqī","shiqi","период, эпоха","春秋时期","3",0,4],["农民","nóngmín","nongmin","крестьянин","","7",0,4],["战争","zhànzhēng","zhanzheng","война","连年的战争 / 阻止战争","8",0,4],["满足","mǎnzú","manzu","довольствоваться; удовлетворять","满足要求 / 需要 / 条件","9",0,4],["惭愧","cánkuì","cankui","стыдно, совестно","觉得十分惭愧","10",0,4],["决心","juéxīn","juexin","решимость; решиться","下决心 / 有决心 / 表决心","11",0,4],["委屈","wěiqu","weiqu","обижать; чувствовать себя обиженным","委屈地说 / 委屈了他们","12",0,4],["食物","shíwù","shiwu","пища, еда","较好的食物","40",0,4],["打听","dǎting","dating","разузнать, расспросить","暗中打听一下","13",0,4],["主人","zhǔrén","zhuren","хозяин","","14",0,4],["结实","jiēshi","jieshi","крепкий, прочный","身体结实 / 结实的桌子","15",0,4],["勤奋","qínfèn","qinfen","усердный, прилежный","勤奋（地）学习 / 工作 / 干活儿","16",0,4],["老实","lǎoshi","laoshi","честный, простодушный; смирно","老老实实地告诉 / 你老实点儿","18",0,4],["银（子）","yín(zi)","yin","серебро, серебряные деньги","","17",0,4],["镇","zhèn","zhen","посёлок, городок","路过镇上","19",1,4],["流传","liúchuán","liuchuan","передаваться, ходить (о преданиях)","流传至今 / 流传了一千年","4",0,4],["至今","zhìjīn","zhijin","до сих пор, по сей день","从古至今 / 流传至今","5",0,4],["背","bēi","bei","нести на спине","背起来 / 背在…… / 背不动","1",0,4],["后背","hòubèi","houbei","спина","背在后背上（背 здесь bèi!）","20",0,4],["滑","huá","hua","скользкий; поскользнуться","雪地很滑 / 滑了一下","21",0,4],["甩","shuǎi","shuai","отбросить, сбросить, махнуть","差点儿被甩出去","22",0,4],["顶","dǐng","ding","идти навстречу; макушка; сч. сл.","顶着大雪 / 山顶 / 一顶帽子","23",0,4],["扶","fú","fu","поддерживать рукой, придерживать","扶一下 / 扶一把 / 扶老人","24",0,4],["不行","bùxíng","buxing","ужасно, донельзя (после 得)","冻得不行 / 累得不行","25",0,4],["团圆","tuányuán","tuanyuan","воссоединяться (о семье)","团圆饭 / 一家团圆","26",1,4],["去世","qùshì","qushi","скончаться (вежливо)","","27",0,4],["国君","guójūn","guojun","государь, правитель","","28",1,4],["本领","běnlǐng","benling","способности, умение","很有本领 / 本领高强","29",0,4],["人才","réncái","rencai","талант, ценный работник","缺乏人才","30",0,4],["官","guān","guan","чиновник, должностное лицо","做了官 / 当官","31",0,4],["物质","wùzhì","wuzhi","материальный; вещество","物质条件 ↔ 精神","32",0,4],["反而","fǎn'ér","faner","наоборот, напротив","不但没有……，反而……","33",0,4],["诚恳","chéngkěn","chengken","искренний, сердечный","诚恳的态度","34",0,4],["成就","chéngjiù","chengjiu","достижение, успех","有了一点儿成就","35",0,4],["古代","gǔdài","gudai","древность","中国古代 ↔ 现代","36",0,4],["孝顺","xiàoshùn","xiaoshun","почтительный к родителям","孝顺父母","37",0,4],["孝敬","xiàojìng","xiaojing","почитать старших, заботиться о них","","6",1,4],["美德","měidé","meide","добродетель","","38",1,4],["占","zhàn","zhan","занимать, составлять","占第一位 / 占一半 / 占座位","39",0,4],["子路 / 孔子","Zǐlù / Kǒngzǐ","Zilu","Цзы Лу, ученик Конфуция; Конфуций","","",0,4],["春秋 / 楚国","Chūnqiū / Chǔguó","Chunqiu","эпоха Чуньцю (770–476 до н. э.); царство Чу","","",0,4],["悠久","yōujiǔ","youjiu","давний, многовековой","历史悠久 / 悠久的文化 / 传统","1",0,5],["文字","wénzì","wenzi","письменность, письменные знаки","文字记载","2",0,5],["记载","jìzǎi","jizai","записывать; запись, свидетельство","","3",1,5],["形状","xíngzhuàng","xingzhuang","форма, очертания","以形状命名","4",0,5],["描写","miáoxiě","miaoxie","описывать, изображать","生动地 / 正确地描写","5",0,5],["赞美","zànměi","zanmei","восхвалять, воспевать","赞美泉水的诗文","6",0,5],["诗","shī","shi","стихи, поэзия","一首诗 / 诗文","7",0,5],["老百姓","lǎobǎixìng","laobaixing","простой народ, обыватели","","8",0,5],["充满","chōngmǎn","chongman","быть полным чего-то","充满阳光 / 力量 / 希望 / 欢乐","9",0,5],["感激","gǎnjī","ganji","быть глубоко благодарным","充满感激之情","10",0,5],["传说","chuánshuō","chuanshuo","легенда, предание","美丽的传说 / 相传……","13",0,5],["产生","chǎnshēng","chansheng","возникать, порождать","产生影响 / 矛盾 / 兴趣","12",0,5],["善良","shànliáng","shanliang","добрый, добросердечный","善良的性格 / 青年","14",0,5],["救","jiù","jiu","спасать, выручать","救活 / 救起 / 救出 / 救过来","15",0,5],["晕","yūn","yun","терять сознание; кружиться (о голове)","晕倒 / 晕过去 / 打晕","16",0,5],["龙","lóng","long","дракон","龙王","17",0,5],["治（疗）","zhì(liáo)","zhi","лечить","治病救人 / 无法治疗","18",0,5],["玉","yù","yu","нефрит, яшма","白玉壶","19",1,5],["壶","hú","hu","чайник, кувшин","","20",0,5],["抢","qiǎng","qiang","отнимать, хватать; расхватывать","被坏人抢走 / 抢光","21",0,5],["埋","mái","mai","закапывать, хоронить","埋入地下","22",1,5],["（躲）藏","(duǒ) cáng","cang","прятать(ся)","藏起来 / 躲起来","23",0,5],["珍珠","zhēnzhū","zhenzhu","жемчуг","珍珠泉","30",1,5],["如今","rújīn","rujin","ныне, в наши дни","书меннее, чем 现在","24",0,5],["分布","fēnbù","fenbu","быть распределённым, располагаться","分布着七百多个泉","25",0,5],["天然","tiānrán","tianran","природный, естественный","天然泉 / 天然气","26",1,5],["优美","yōuměi","youmei","изящный, благозвучный","优美的歌声 / 动作","27",0,5],["独特","dútè","dute","своеобразный, неповторимый","独特的位置 / 看法 / 形状 / 建筑","28",0,5],["反映","fǎnyìng","fanying","отражать; доводить до сведения","反映生活 / 水平 / 情况 / 能力","29",0,5],["广大","guǎngdà","guangda","обширный; широкие (массы)","广大山区 / 广大读者","33",0,5],["地区","dìqū","diqu","район, регион","","37",0,5],["形成","xíngchéng","xingcheng","складываться, образовываться","自然 / 逐渐形成","31",0,5],["岩石","yánshí","yanshi","горная порода","","34",1,5],["石灰岩","shíhuīyán","shihuiyan","известняк","","36",1,5],["火成岩","huǒchéngyán","huochengyan","вулканическая порода","","42",1,5],["亿","yì","yi","сто миллионов","四亿年前","35",0,5],["表面","biǎomiàn","biaomian","поверхность; внешняя сторона","陆地表面 / 表面现象","38",0,5],["角度","jiǎodù","jiaodu","угол; точка зрения","三十度的角度 / 换个角度","39",0,5],["斜","xié","xie","наклонный; наклоняться","由南向北斜","40",0,5],["碰","pèng","peng","натолкнуться, столкнуться","碰见 / 碰到 / 碰上","43",0,5],["挡","dǎng","dang","преграждать, заслонять","挡住了路","44",0,5],["地势","dìshì","dishi","рельеф, высота местности","地势低","45",1,5],["冲","chōng","chong","вырываться, устремляться; промывать","冲出地表 / 冲进来","46",0,5],["从而","cóng'ér","conger","и тем самым, вследствие чего","","11",0,5],["于 / 为","yú / wéi","yu","предлог «в, из, чем» / глагол «стать»","来自于…… / 变为……","32",0,5],["除夕","chúxī","chuxi","канун лунного Нового года","除夕夜 / 年夜饭","1",0,6],["由来","yóulái","youlai","происхождение, истоки","","2",1,6],["农历","nónglì","nongli","лунный календарь","农历十二月三十日","3",1,6],["守岁","shǒusuì","shousui","встречать Новый год не ложась спать","","4",0,6],["鞭炮","biānpào","bianpao","хлопушки, петарды","放鞭炮","40",0,6],["风俗","fēngsú","fengsu","обычай, нравы","风俗习惯 / 形成风俗","41",0,6],["意义","yìyì","yiyi","значение, смысл","很有意义","39",0,6],["表达","biǎodá","biaoda","выражать (мысль, чувство)","表达思想 / 决心 / 感受 / 看法","38",0,6],["纷纷","fēnfēn","fenfen","один за другим; во множестве","纷纷表达谢意 / 落叶纷纷","37",0,6],["怪物","guàiwù","guaiwu","чудовище, монстр","","5",1,6],["伤害","shānghài","shanghai","вредить, наносить ущерб","伤害百姓 / 伤害身体","6",0,6],["恨","hèn","hen","ненавидеть","恨之入骨 / 恨得什么似的","7",0,6],["骨（头）","gǔ(tou)","gu","кость","恨之入骨","8",0,6],["无奈","wúnài","wunai","быть бессильным, ничего не поделать","十分无奈","9",0,6],["制造","zhìzào","zhizao","производить; создавать (проблемы)","制造飞机 / 机会 / 战争 / 难题","19",0,6],["灾害","zāihài","zaihai","бедствие, стихийное бедствие","","20",0,6],["逃","táo","tao","бежать, спасаться бегством","往外逃 / 逃得连影子都找不着","21",0,6],["影子","yǐngzi","yingzi","тень","","22",0,6],["吓","xià","xia","пугать, напугать","吓得什么似的 / 吓了一跳","32",0,6],["杀","shā","sha","убить","杀死 / 射死","16",0,6],["除","chú","chu","устранить, убрать","除掉 / 除去","18",0,6],["英雄","yīngxióng","yingxiong","герой","","10",0,6],["英俊","yīngjùn","yingjun","статный, красивый (о мужчине)","","11",0,6],["咬","yǎo","yao","кусать, вцепиться","咬住不松口","12",0,6],["外公","wàigōng","waigong","дедушка по матери","","13",0,6],["询问","xúnwèn","xunwen","осведомляться, расспрашивать (книжн.)","仔细地 / 关心地询问","14",0,6],["天真","tiānzhēn","tianzhen","наивный, простодушный","天真的孩子 / 性格 / 想法","15",0,6],["熬夜","áo yè","aoye","не спать всю ночь","经常熬夜对身体不好","25",0,6],["赶紧","gǎnjǐn","ganjin","поскорее, немедленно","赶紧敲打东西","26",0,6],["果然","guǒrán","guoran","действительно, как и ожидали","果然出来了","27",0,6],["姑娘","gūniang","guniang","девушка","","28",0,6],["锅","guō","guo","котёл, кастрюля","","29",0,6],["盆（子）","pén(zi)","pen","таз, чан","大盆养金鱼（урок 14）","30",0,6],["整个","zhěnggè","zhengge","весь, целиком","整个房间 / 社会 / 计划 / 过程","31",0,6],["追","zhuī","zhui","догонять, преследовать","追上了 / 追不上","34",0,6],["箭","jiàn","jian","стрела","一箭射死","35",1,6],["射（击）","shè(jī)","she","стрелять, поражать","射死 / 射击（урок 15）","36",0,6],["（代）替","(dài)tì","ti","заменять; за, вместо кого-то","替我向他问好","17",0,6],["说不定","shuōbudìng","shuobuding","пожалуй, чего доброго; трудно сказать","","24",0,6],["似的","shìde","shide","словно, как будто (частица)","像……似的 / 得什么似的","33",0,6],["此外","cǐwài","ciwai","кроме того, к тому же","","23",0,6],["夕 / 七郎","Xī / Qīláng","Xi","Си, имя чудовища; Ци Лан, имя героя","","",0,6],["成语","chéngyǔ","chengyu","чэнъюй, устойчивое выражение","成语故事两则","1",0,7],["则","zé","ze","сч. сл. для коротких текстов","两则故事（в уроке 14 — союз!）","2",0,7],["盲人","mángrén","mangren","слепой человек","","3",1,7],["摸","mō","mo","щупать, трогать, гладить","摸到…… / 摸出来","4",0,7],["（大）象","(dà)xiàng","xiang","слон","","5",0,7],["智慧","zhìhuì","zhihui","мудрость","很有智慧的国王","6",0,7],["士兵","shìbīng","shibing","солдат, рядовой","","7",0,7],["寻找","xúnzhǎo","xunzhao","искать, разыскивать","寻找机会 / 信息 / 亲人 / 人才","10",0,7],["牙齿","yáchǐ","yachi","зубы","","11",0,7],["胡说","húshuō","hushuo","говорить вздор; чепуха!","","12",0,7],["尾巴","wěiba","weiba","хвост","摇尾巴","13",0,7],["绳子","shéngzi","shengzi","верёвка","一根绳子 / 一条绳子","14",0,7],["平","píng","ping","ровный, плоский","又高又平的墙","15",0,7],["墙","qiáng","qiang","стена","一面墙","16",0,7],["扇子","shànzi","shanzi","веер","一把扇子","17",0,7],["片面","piànmiàn","pianmian","односторонний, однобокий","片面（地）看 / 认为","18",0,7],["结论","jiélùn","jielun","вывод, заключение","下结论 / 可靠的结论","19",0,7],["将军","jiāngjūn","jiangjun","генерал, полководец","","21",1,7],["善于","shànyú","shanyu","быть искусным в чём-то","善于学习 / 发现 / 总结 / 表达","22",0,7],["称","chēng","cheng","называть, именовать","被称为“飞将军”","23",0,7],["打猎","dǎ liè","dalie","охотиться","","24",1,7],["忽然","hūrán","huran","вдруг, внезапно","忽然发现","25",0,7],["蹲","dūn","dun","сидеть на корточках, припасть","","26",0,7],["摇","yáo","yao","качать, махать","摇摇头 / 摇尾巴","27",0,7],["不要紧","bú yàojǐn","buyaojin","ничего страшного, неважно","","28",0,7],["支","zhī","zhi","сч. сл. для длинных жёстких предметов","一支箭 / 笔 / 花 / 烟","29",0,7],["摆","bǎi","bai","ставить, раскладывать; принять (позу)","摆好姿势 / 摆在桌子上","30",0,7],["姿势","zīshì","zishi","поза, стойка","","31",0,7],["全神贯注","quánshén-guànzhù","quanshen-guanzhu","сосредоточиться целиком","","32",1,7],["尽（力）","jìn(lì)","jin","приложить все силы","用尽全力 / 尽力了","33",0,7],["精诚所至，金石为开","jīngchéng suǒzhì…","jingchengsuozhi","искренность пробьёт и камень","","20",1,7],["反应","fǎnyìng","fanying","реакция; реагировать","反应很快 / 做出反应","34",0,7],["确定","quèdìng","queding","установить, убедиться; определить","确定时间 / 地点 / 人选","35",0,7],["石头","shítou","shitou","камень","","36",0,7],["连续","liánxù","lianxu","подряд, непрерывно","连续工作 / 驾驶 / 发生 / 演出","37",0,7],["根","gēn","gen","корень; основа; сч. сл. для длинного тонкого","一根绳子 / 从根上解决","38",0,7],["碎","suì","sui","разбиться на куски","打碎 / 撞碎 / 撕碎","39",0,7],["杆","gǎn","gan","древко, стержень","箭杆（в 栏杆 — gān!）","40",1,7],["哎","āi","ai","эй! ай! (удивление, недовольство)","","41",0,7],["唉","ài","ai","эх… (вздох сожаления)","","42",0,7],["金属","jīnshǔ","jinshu","металл","","43",0,7],["硬","yìng","ying","твёрдый, жёсткий","↔ 软","44",0,7],["便","biàn","bian","тогда, и (книжн. = 就)","便由此流传下来","45",0,7],["瞎","xiā","xia","слепой; вслепую, зря","眼睛瞎了 / 瞎说 / 瞎担心","8",0,7],["分别","fēnbié","fenbie","порознь, соответственно; расставаться; различие","","9",0,7],["朝三暮四","zhāosān-mùsì","zhaosan-musi","три утром, четыре вечером; семь пятниц на неделе","","1",1,8],["词汇","cíhuì","cihui","лексика, словарный состав","汉语的词汇非常丰富","2",0,8],["固定","gùdìng","guding","устойчивый; закрепить","固定的结构 / 职业 / 收入","3",0,8],["结构","jiégòu","jiegou","структура, строение","固定的结构 / 调整结构","4",0,8],["整体","zhěngtǐ","zhengti","целое, целостность","整体上写得不错","5",0,8],["综合","zōnghé","zonghe","обобщать, сводить воедино; комплексный","综合起来表达","6",0,8],["完整","wánzhěng","wanzheng","полный, целостный","完整地叙述 / 完整的意思","7",0,8],["哲学家","zhéxuéjiā","zhexuejia","философ","","8",1,8],["寓言","yùyán","yuyan","басня, притча","","9",1,8],["喂养","wèiyǎng","weiyang","кормить, выкармливать","","10",1,8],["群","qún","qun","стая, группа; сч. сл.","一群猴子 / 鸟 / 牛 / 人 / 学生","11",0,8],["猴子","hóuzi","houzi","обезьяна","","12",0,8],["宠物","chǒngwù","chongwu","домашний питомец","","13",0,8],["蔬菜","shūcài","shucai","овощи","","19",0,8],["粮食","liángshi","liangshi","зерно, продовольствие","","20",0,8],["家庭","jiātíng","jiating","семья (как ячейка)","普通的家庭 / 家庭气氛","21",0,8],["财产","cáichǎn","caichan","имущество, состояние","","22",0,8],["消费","xiāofèi","xiaofei","потреблять; расходы","消费群体 / 水平 / 习惯","23",0,8],["节省","jiéshěng","jiesheng","экономить, беречь","节省一点儿 / 节省出来","24",0,8],["限制","xiànzhì","xianzhi","ограничивать","限制数量 / 年龄 / 发展","25",0,8],["猪","zhū","zhu","свинья","","26",0,8],["橡子","xiàngzi","xiangzi","жёлудь","","29",1,8],["果实","guǒshí","guoshi","плод, плоды","","30",0,8],["馒头","mántou","mantou","маньтоу, паровая булка","","33",0,8],["颗","kē","ke","сч. сл. для мелкого и круглого","一颗橡子 / 葡萄 / 牙齿 / 心","34",0,8],["不足","bùzú","buzu","недостаточный; менее чем","粮食不足 / 不足一百人","31",0,8],["相处","xiāngchǔ","xiangchu","уживаться, общаться","跟朋友 / 家人相处","14",0,8],["彼此","bǐcǐ","bici","друг друга, обе стороны","彼此了解 / 不分彼此","15",0,8],["表情","biǎoqíng","biaoqing","выражение лица","","16",0,8],["行为","xíngwéi","xingwei","поведение, поступки","行为举止","17",0,8],["对方","duìfāng","duifang","противоположная сторона, собеседник","","18",0,8],["调皮","tiáopí","tiaopi","озорной, шаловливый","","27",0,8],["淘气","táoqì","taoqi","проказничать; озорной","跟人淘气","28",0,8],["安慰","ānwèi","anwei","утешать, успокаивать","","38",0,8],["吃亏","chī kuī","chikui","остаться внакладе, проиграть","吃了亏（раздельное слово）","36",0,8],["情景","qíngjǐng","qingjing","картина, сцена","","42",0,8],["哈","hā","ha","ха! (смех, довольство)","哈哈地笑了","43",0,8],["倒","dào","dao","а вот…; напротив; всё-таки","倒是个办法 / 质量倒是挺好","32",0,8],["要不","yàobu","yaobu","иначе; или же, давай…","要不这样吧 / 要不然","39",0,8],["似乎","sìhū","sihu","кажется, как будто","似乎只弄懂了……","35",0,8],["显得","xiǎnde","xiande","выглядеть, казаться","显得格外开心 / 很健康","40",0,8],["格外","géwài","gewai","особенно, необычайно","格外高兴 / 格外多","41",0,8],["方式","fāngshì","fangshi","способ, манера","换了一种方式 / 生活方式","37",0,8],["表现","biǎoxiàn","biaoxian","проявлять(ся); показать себя","表现得很突出 / 表现很好","1",0,9],["突出","tūchū","tuchu","выдающийся, заметный","表现突出 / 突出的特点","2",0,9],["文学家","wénxuéjiā","wenxuejia","литератор, писатель","","3",0,9],["行家","hángjia","hangjia","знаток, специалист","地道的行家（行 — háng!）","6",1,9],["学问","xuéwen","xuewen","познания, учёность","大学问家 / 很有学问","14",0,9],["见解","jiànjiě","jianjie","суждение, точка зрения","独特的见解","8",1,9],["交际","jiāojì","jiaoji","общение, контакты","爱好交际 / 交际能力","22",0,9],["大方","dàfang","dafang","щедрый; непринуждённый","↔ 小气","23",0,9],["好客","hàokè","haoke","гостеприимный","好 читается hào, 4-й тон","24",0,9],["呼朋唤友","hūpéng huànyǒu","hupenghuanyou","созывать друзей","","25",0,9],["招待","zhāodài","zhaodai","принимать, угощать","在家招待朋友","26",0,9],["亲自","qīnzì","qinzi","лично, самолично","亲自动手做","7",0,9],["算","suàn","suan","считаться, сходить за","算得上 / 算不上 / 算了","4",0,9],["地道","dìdao","didao","настоящий, аутентичный","地道的普通话 / 北京小吃","5",0,9],["讲究","jiǎngjiu","jiangjiu","придавать значение, быть разборчивым; тонкость","讲究吃 / 穿 / 卫生 / 方法","15",0,9],["点心","diǎnxin","dianxin","выпечка, сладости","","12",0,9],["高档","gāodàng","gaodang","дорогой, высокого класса","高档（的）礼品 / 家具 / 服装","27",0,9],["豪华","háohuá","haohua","роскошный","算不上豪华","20",0,9],["胃口","wèikǒu","weikou","аппетит","让人有胃口 / 没胃口","28",0,9],["胃","wèi","wei","желудок","胃病 / 胃不舒服","30",0,9],["戒","jiè","jie","бросать (привычку)","戒烟 / 戒酒 / 很难戒掉","31",0,9],["时尚","shíshàng","shishang","мода, модное веяние","近代新时尚","10",0,9],["近代","jìndài","jindai","новое время (сер. XIX в. — 1919)","近代历史 ↔ 现代 / 古代","9",0,9],["胡同","hútòng","hutong","хутун, переулок","一条胡同 / 一个胡同","17",0,9],["位于","wèiyú","weiyu","располагаться, находиться в","位于……附近（книжн.）","18",0,9],["首","shǒu","shou","глава, первый; сч. сл. для песен и стихов","“八大居”之首 / 一首诗","19",0,9],["平均","píngjūn","pingjun","средний, в среднем","平均每周一次 / 平均数","16",0,9],["光临","guānglín","guanglin","посещать, пожаловать (вежл.)","欢迎光临","21",0,9],["写作","xiězuò","xiezuo","писать, заниматься литературой","","11",0,9],["保存","bǎocún","baocun","сохранять, хранить","保存几百年 / 完好 / 至今","32",0,9],["资料","zīliào","ziliao","материалы, данные","历史资料 / 参考资料","33",0,9],["作为","zuòwéi","zuowei","в качестве, как; считать чем-то","作为大作家，他……","13",0,9],["曾经","céngjīng","cengjing","некогда, когда-то","曾经作诗 / 曾经说过","34",0,9],["明明","míngmíng","mingming","ведь очевидно же, явно","明明知道……，却……","29",0,9],["形容","xíngróng","xingrong","описывать, характеризовать","用一个词形容他","35",0,9],["形象","xíngxiàng","xingxiang","образный, наглядный; образ","描写得十分形象 / 形象好","38",0,9],["蒙眬","ménglóng","menglong","осоловелый, полусонный","醉眼蒙眬","36",1,9],["悠悠","yōuyōu","youyou","неспешный, долгий","","37",1,9],["鲁迅 / 郁达夫","Lǔ Xùn / Yù Dáfū","LuXun","Лу Синь (1881–1936); Юй Дафу (1896–1945)","","",0,9],["争论","zhēnglùn","zhenglun","спорить, препираться","一场争论 / 激烈争论","1",0,10],["辩论","biànlùn","bianlun","вести дебаты, дискутировать","一场辩论 / 辩论赛","6",0,10],["围绕","wéirào","weirao","вращаться вокруг; сосредоточиться на","围绕（着）重点进行讨论","3",0,10],["说服","shuōfú","shuofu","убедить, уговорить","谁也说服不了谁","11",0,10],["始终","shǐzhōng","shizhong","с начала до конца, всё время","始终坚持 / 始终保持","9",0,10],["毕竟","bìjìng","bijing","всё-таки, в конце концов","毕竟是摄影师","13",0,10],["脖子","bózi","bozi","шея","争论得脸红脖子粗","10",0,10],["啦","la","la","частица (了 + 啊)","那不是成了青蛙啦？","8",0,10],["请求","qǐngqiú","qingqiu","просить; просьба","请求帮助 / 辞职请求","35",0,10],["奔跑","bēnpǎo","benpao","мчаться, нестись","","4",1,10],["蹄（子）","tí(zi)","ti","копыто","四蹄着地","5",1,10],["青蛙","qīngwā","qingwa","лягушка","","7",1,10],["摄影师","shèyǐngshī","sheyingshi","фотограф","","12",0,10],["操场","cāochǎng","caochang","спортивная площадка","","14",0,10],["洞","dòng","dong","яма, отверстие, нора","打24个洞","15",0,10],["插","chā","cha","втыкать, вставлять","插进（去）/ 插到…… / 插在……","16",0,10],["棍","gùn","gun","палка, шест","木棍","17",1,10],["系","jì","ji","завязывать, привязывать","系领带 / 系着细线（jì!）","18",0,10],["匹","pǐ","pi","сч. сл. для лошадей","一匹马","19",0,10],["拦","lán","lan","преграждать, задерживать","拦住 / 拦在…… / 拦路","20",0,10],["拍","pāi","pai","снимать (фото, кино); хлопать","拍照片 / 拍电影 / 拍手","21",0,10],["差距","chājù","chaju","разрыв, различие","差距很小 / 很大的差距","22",0,10],["显示","xiǎnshì","xianshi","показывать, свидетельствовать","相片显示…… / 调查显示……","23",0,10],["奇迹","qíjì","qiji","чудо, нечто небывалое","创造奇迹（урок 14）","2",0,10],["意识","yìshi","yishi","сознание; осознавать","无意识地 / 意识到","24",1,10],["艰苦","jiānkǔ","jianku","тяжёлый, суровый","艰苦（的）条件 / 生活","25",0,10],["试验","shìyàn","shiyan","испытание, опыт; испытывать","","26",1,10],["逐渐","zhújiàn","zhujian","постепенно, мало-помалу","逐渐改进 / 逐渐流行","27",0,10],["改进","gǎijìn","gaijin","улучшать, совершенствовать","改进工作 / 方法 / 态度","28",0,10],["成熟","chéngshú","chengshu","созревать; зрелый","成熟的经验 / 看法 / 条件","29",0,10],["兄弟","xiōngdì","xiongdi","братья","","30",0,10],["播放","bōfàng","bofang","транслировать, показывать","播放短片","31",0,10],["纪念","jìniàn","jinian","отмечать, чтить память; памятный","纪念日 / 留作纪念","32",0,10],["导演","dǎoyǎn","daoyan","режиссёр; ставить","","33",0,10],["瞬间","shùnjiān","shunjian","мгновение, миг","每一瞬间","34",1,10],["或许","huòxǔ","huoxu","быть может, возможно","或许会有变化","36",0,10],["重大","zhòngdà","zhongda","крупный, значительный","重大发现 / 影响 / 成果","37",0,10],["闹钟","nàozhōng","naozhong","будильник","定个闹钟","1",0,11],["危害","wēihài","weihai","вредить, наносить вред; вред","危害健康 / 危害社会安全","2",0,11],["人类","rénlèi","renlei","человечество, человек как вид","","3",0,11],["机制","jīzhì","jizhi","механизм (работы чего-либо)","特定的机制","4",1,11],["生物","shēngwù","shengwu","живые организмы; биологический","生物钟","5",1,11],["规律","guīlǜ","guilu","закономерность; размеренный","符合规律 / 有规律的运动","6",0,11],["光线","guāngxiàn","guangxian","свет, световой луч","光线昏暗 / 明亮","7",0,11],["必要","bìyào","biyao","необходимый; необходимость","必要条件 / 很有必要","8",0,11],["过渡","guòdù","guodu","переходить (из состояния в состояние)","从熟睡过渡到浅睡","9",1,11],["浅","qiǎn","qian","мелкий, неглубокий; светлый","浅睡 ↔ 熟睡 / 深","10",0,11],["清醒","qīngxǐng","qingxing","ясное сознание; прийти в себя","清醒过来 / 头脑清醒","18",1,11],["呼吸","hūxī","huxi","дышать; дыхание","","19",0,11],["失眠","shīmián","shimian","страдать бессонницей","","30",0,11],["铃","líng","ling","звонок, колокольчик","闹铃 / 铃声","15",0,11],["状态","zhuàngtài","zhuangtai","состояние, режим","正常状态 / 工作状态","17",0,11],["心理","xīnlǐ","xinli","психика, психология","在心理上 / 心理问题","20",0,11],["慌（张）","huāng(zhāng)","huang","растерянный, в панике","心慌 / 别慌","21",0,11],["情绪","qíngxù","qingxu","настроение, эмоции","稳定的 / 不满的 / 紧张的情绪","22",0,11],["低落","dīluò","diluo","подавленный, упавший","情绪低落","23",0,11],["记忆","jìyì","jiyi","помнить; память","童年的 / 难忘的记忆","24",0,11],["计算","jìsuàn","jisuan","вычислять, подсчитывать","计算出（来）","25",0,11],["精神","jīngshén / jīngshen","jingshen","дух, бодрость; бодрый","精神愉快 / 放松 / 饱满","31",0,11],["享受","xiǎngshòu","xiangshou","наслаждаться, пользоваться","享受自由 / 艺术 / 人生 / 幸福","12",0,11],["导致","dǎozhì","daozhi","приводить к (плохому)","导致错误 / 失败 / 失眠 / 危险","29",0,11],["持续","chíxù","chixu","длиться непрерывно","持续三天 / 持续的高温","27",0,11],["相当","xiāngdāng","xiangdang","быть равным; весьма","与……相当 / 相当满意","26",0,11],["现代","xiàndài","xiandai","современность; современный","现代生活（↔ 近代 — урок 9）","11",0,11],["用途","yòngtú","yongtu","назначение, применение","","13",0,11],["实验","shíyàn","shiyan","эксперимент; экспериментировать","实验研究（≠ 试验 — урок 10）","14",0,11],["专家","zhuānjiā","zhuanjia","специалист, эксперт","","32",0,11],["采用","cǎiyòng","caiyong","применять, использовать (способ)","采用柔和的声音","33",0,11],["柔和","róuhé","rouhe","мягкий, нежный (о звуке, свете)","","34",1,11],["愿望","yuànwàng","yuanwang","желание, чаяние","符合我们的愿望","35",0,11],["窗帘","chuānglián","chuanglian","штора, занавеска","拉开窗帘","36",0,11],["市场","shìchǎng","shichang","рынок","市场上出现了……","37",0,11],["产品","chǎnpǐn","chanpin","продукция, изделие","电子产品","38",0,11],["模仿","mófǎng","mofang","подражать, имитировать","准确地 / 成功地模仿","39",0,11],["避免","bìmiǎn","bimian","избегать, предотвращать","努力 / 尽量 / 完全避免","40",0,11],["传统","chuántǒng","chuantong","традиция; традиционный","传统闹钟 / 传统文化","41",0,11],["所","suǒ","suo","частица перед глаголом; сч. сл. для учреждений","所产生的反应 / 一所大学","16",0,11],["数","shù","shu","несколько (книжн.)","数天 / 数周 / 数月（shǔ — считать）","28",0,11],["生物钟","shēngwùzhōng","shengwuzhong","биологические часы","","",0,11],["新陈代谢","xīnchén-dàixiè","xinchen-daixie","обмен веществ","","",0,11],["肾上腺素","shènshàngxiànsù","shenshangxiansu","адреналин","","",0,11],["血压","xuèyā","xueya","кровяное давление","高血压（血 — xuè）","",0,11],["企业","qǐyè","qiye","предприятие, компания","一家企业 / 互联网企业","20",0,12],["总裁","zǒngcái","zongcai","президент компании","","14",0,12],["高级","gāojí","gaoji","высокого ранга; высший","高级副总裁 / 高级产品","23",0,12],["副","fù","fu","заместитель, вице-","副总裁 / 副经理","24",1,12],["领导","lǐngdǎo","lingdao","руководитель; руководить","领导地位 / 公司领导","35",0,12],["合作","hézuò","hezuo","сотрудничать","合作伙伴 / 公司 / 精神","12",0,12],["伙伴","huǒbàn","huoban","партнёр, напарник","","13",0,12],["召开","zhàokāi","zhaokai","созывать, проводить (собрание)","按时 / 顺利 / 成功地召开","11",0,12],["业务","yèwù","yewu","дело, профессиональная работа","一笔业务 / 一项业务","28",0,12],["中心","zhōngxīn","zhongxin","центр","研发 / 城市 / 经济中心","26",0,12],["开发","kāifā","kaifa","разрабатывать, осваивать","开发出（来）/ 开发成功","25",0,12],["创新","chuàngxīn","chuangxin","создавать новое; инновация","产品创新","34",1,12],["地位","dìwèi","diwei","положение, статус","领导地位 / 社会地位","36",0,12],["用户","yònghù","yonghu","пользователь, абонент","注册用户 / 海外用户","1",1,12],["注册","zhùcè","zhuce","регистрировать(ся)","注册公司 / 邮箱 / 会员","10",0,12],["宣传","xuānchuán","xuanchuan","пропагандировать, рекламировать","宣传片 / 做宣传","7",0,12],["推广","tuīguǎng","tuiguang","распространять, продвигать","推广汉语普通话 / 新技术 / 产品","9",0,12],["手笔","shǒubǐ","shoubi","размах, манера ведения дел","大手笔的推广","8",1,12],["经营","jīngyíng","jingying","вести дело, управлять","经营销售 / 经营公司","37",0,12],["销售","xiāoshòu","xiaoshou","продавать, сбывать","销售得…… / 销售到……","38",0,12],["针对","zhēnduì","zhendui","быть нацеленным на, применительно к","针对这个问题","39",0,12],["当地","dāngdì","dangdi","местный, на месте","当地明星 / 当地人","40",0,12],["代言","dàiyán","daiyan","быть лицом бренда, рекламировать","","41",1,12],["明星","míngxīng","mingxing","звезда, знаменитость","足球明星 / 电影明星","3",0,12],["直播","zhíbō","zhibo","вести прямую трансляцию","","4",1,12],["颠球","diān qiú","dianqiu","набивать мяч, чеканить","","2",1,12],["宝贝","bǎobèi","baobei","малыш; сокровище","","5",0,12],["逗","dòu","dou","забавлять, смешить, дразнить","逗笑 / 逗孩子","6",0,12],["实现","shíxiàn","shixian","осуществить, воплотить","实现愿望 / 实现目标","15",0,12],["覆盖","fùgài","fugai","покрывать, охватывать","覆盖200多个国家","16",1,12],["移动","yídòng","yidong","перемещать(ся); мобильный","移动互联网 / 移动通信","17",0,12],["通信","tōngxìn","tongxin","связь, коммуникация","","18",1,12],["应用","yìngyòng","yingyong","применять; приложение","普遍 / 大量地应用","19",0,12],["称霸","chēngbà","chengba","господствовать, доминировать","称霸全球","21",1,12],["背景","bèijǐng","beijing","фон, обстановка, контекст","在……的背景下","22",0,12],["相关","xiāngguān","xiangguan","относящийся к делу, связанный","相关业务 / 相关的报道","27",0,12],["现实","xiànshí","xianshi","действительность, реальность","认识到现实（≠ 实现!）","29",0,12],["个人","gèrén","geren","отдельный человек; личный","个人计算机 / 个人爱好","30",0,12],["发达","fādá","fada","развитый, процветающий","发达国家 / 交通发达","33",0,12],["华裔","huáyì","huayi","этнический китаец с иностранным гражданством","","42",0,12],["移民","yímín","yimin","мигрант; переселяться","新移民","43",0,12],["以及","yǐjí","yiji","а также, и ещё","A、B 以及 C","31",0,12],["程度","chéngdù","chengdu","степень, уровень","成熟程度 / 在很大程度上","32",0,12],["项目","xiàngmù","xiangmu","вид (спорта), пункт, проект","体育项目 / 比赛项目","5",0,13],["缺乏","quēfá","quefa","испытывать нехватку","缺乏经验 / 人才 / 信心","4",0,13],["训练","xùnliàn","xunlian","тренировать(ся)","严格地训练","3",0,13],["启发","qǐfā","qifa","натолкнуть на мысль, вдохновить","得到启发 / 很有启发","8",0,13],["筐","kuāng","kuang","корзина","桃子筐 / 篮筐","2",1,13],["桃","táo","tao","персик","","6",0,13],["装","zhuāng","zhuang","вмещать, грузить, класть внутрь","装桃子 / 箱子装不下","7",0,13],["安装","ānzhuāng","anzhuang","монтировать, устанавливать","安装机器 / 安装软件","9",0,13],["栏杆","lángān","langan","перила, ограждение","","10",1,13],["甲","jiǎ","jia","первый, «А» (сторона)","甲队 ↔ 乙队","11",0,13],["乙","yǐ","yi","второй, «Б» (сторона)","","12",0,13],["工具","gōngjù","gongju","инструмент, орудие","交通工具 / 学习工具","13",0,13],["投篮","tóu lán","toulan","бросать в корзину","","14",0,13],["踩","cǎi","cai","наступать, ступать на","踩着梯子 / 踩破 / 踩碎","15",0,13],["一再","yízài","yizai","раз за разом, неоднократно","一再重复 / 一再强调","16",0,13],["重复","chóngfù","chongfu","повторять","简单地重复（重 читается chóng!）","17",0,13],["断断续续","duànduàn-xùxù","duanduan-xuxu","с перерывами, урывками","","18",0,13],["激烈","jīliè","jilie","ожесточённый, острый","激烈的比赛 / 争论","19",0,13],["气氛","qìfēn","qifen","атмосфера, настроение","节日的气氛（氛 — 1-й тон）","20",0,13],["何况","hékuàng","hekuang","тем более, куда уж там","","21",0,13],["球迷","qiúmí","qiumi","болельщик","ср. 歌迷, 影迷","22",0,13],["顺畅","shùnchàng","shunchang","гладкий, без заминок","比赛顺畅起来","25",1,13],["工程师","gōngchéngshī","gongchengshi","инженер","","23",0,13],["机器","jīqì","jiqi","машина, механизм","制造机器 / 安装机器","24",0,13],["幼儿园","yòu'éryuán","youeryuan","детский сад","","26",0,13],["好奇","hàoqí","haoqi","любопытный","好奇地问（好 — 4-й тон）","27",0,13],["何必","hébì","hebi","зачем же, к чему","何必这么麻烦呢？","28",0,13],["锯（子）","jù(zi)","ju","пилить; пила","锯掉底 / 一把锯子","1",1,13],["多亏","duōkuī","duokui","благодаря, спасибо что","多亏了你，要不……","29",0,13],["连忙","liánmáng","lianmang","тут же, поспешно","","30",0,13],["瞧","qiáo","qiao","глядеть (разг.)","瞧见 / 瞧不起","31",0,13],["困扰","kùnrǎo","kunrao","донимать, мучить (о проблеме)","困扰人们很长时间","32",1,13],["思维","sīwéi","siwei","мышление","思维方式 / 改变思维","33",1,13],["呆","dāi","dai","оцепенело, тупо; тупой","呆呆地看着","34",0,13],["造成","zàochéng","zaocheng","вызывать, приводить к (плохому)","造成困难 / 影响 / 伤害","35",0,13],["仿佛","fǎngfú","fangfu","словно, как будто","生活仿佛篮筐（佛 — fú）","36",0,13],["阻碍","zǔ'ài","zuai","препятствовать; препятствие","阻碍我们的“筐底”","37",1,13],["马萨诸塞州","Mǎsàzhūsài Zhōu","MasazhusaiZhou","штат Массачусетс","","",0,13],["詹姆士·奈史密斯","Zhānmǔshì Nàishǐmìsī","ZhanmushiNaishimisi","Джеймс Найсмит","","",0,13],["四合院","sìhéyuàn","siheyuan","сыхэюань, дом-каре с двором","","1",1,14],["民居","mínjū","minju","народное жилище","","2",1,14],["建筑","jiànzhù","jianzhu","здание; архитектура","传统建筑 / 建筑形式","4",0,14],["形式","xíngshì","xingshi","форма, вид","组合建筑形式","5",0,14],["样式","yàngshì","yangshi","образец, фасон, стиль","固定的样式","9",0,14],["方","fāng","fang","квадратный","方形的院子","7",0,14],["空间","kōngjiān","kongjian","пространство","室外生活空间","22",0,14],["厢房","xiāngfáng","xiangfang","боковой флигель","","20",1,14],["走廊","zǒuláng","zoulang","галерея, коридор","","21",1,14],["组合","zǔhé","zuhe","соединять(ся); комбинация","组合起来 / 组合成一体","3",0,14],["组成","zǔchéng","zucheng","составлять, образовывать","由三部分组成","13",0,14],["并列","bìngliè","binglie","стоять в ряд, рядоположно","","12",1,14],["具备","jùbèi","jubei","обладать, иметь (условия, функции)","具备……的功能","15",0,14],["功能","gōngnéng","gongneng","функция","","19",0,14],["代表","dàibiǎo","daibiao","представитель; представлять","具有代表性 / 代表其特点","10",0,14],["广泛","guǎngfàn","guangfan","широкий, обширный","分布最广泛 / 兴趣广泛","8",0,14],["通常","tōngcháng","tongchang","обычно; обыкновенный","","11",0,14],["充分","chōngfèn","chongfen","достаточный, сполна","充分享受 / 准备充分","35",0,14],["长辈","zhǎngbèi","zhangbei","старшее поколение семьи","↔ 晚辈 wǎnbèi","14",0,14],["日常","rìcháng","richang","повседневный","日常生活/用品/用语","16",0,14],["起居","qǐjū","qiju","повседневный быт, житьё","","17",1,14],["接待","jiēdài","jiedai","принимать (гостей)","接待客人","18",0,14],["日子","rìzi","rizi","дни, житьё-бытьё","与世无争的日子","34",0,14],["打交道","dǎ jiāodào","dajiaodao","иметь дело, общаться","跟邻居打交道","33",0,14],["亲切","qīnqiè","qinqie","душевный, тёплый","亲切的气氛","37",0,14],["矛盾","máodùn","maodun","конфликт; противоречивый","闹矛盾 / 产生矛盾","40",0,14],["浓","nóng","nong","густой, крепкий, сильный","浓浓的情感 / 雾很浓","41",0,14],["情趣","qíngqù","qingqu","вкус к жизни, «изюминка»","生活情趣","28",1,14],["创造","chuàngzào","chuangzao","создавать, творить","创造条件/奇迹","27",0,14],["劳动","láodòng","laodong","труд; трудиться","劳动人民","38",0,14],["人民","rénmín","renmin","народ","","39",0,14],["种","zhòng","zhong","сажать, выращивать","种草、种花、种竹子","23",1,14],["竹子","zhúzi","zhuzi","бамбук","","24",0,14],["金鱼","jīnyú","jinyu","золотая рыбка","用大盆养金鱼","26",1,14],["关闭","guānbì","guanbi","закрыть (дверь, завод, программу)","关闭大门 / 工厂关闭了","31",0,14],["封闭","fēngbì","fengbi","запечатать; замкнутый, изолированный","封闭式的小环境","32",1,14],["所谓","suǒwèi","suowei","так называемый; то, что называют","","6",0,14],["则","zé","ze","а вот…; то (книжн.); сч. сл. для заметок","","25",0,14],["因而","yīn'ér","yiner","поэтому, вследствие чего","","29",0,14],["为","wéi","wei","в 为……所…… = быть кем-то …","","30",0,14],["令","lìng","ling","заставлять, вызывать (чувство)","令人感到亲切","36",0,14],["华北","Huáběi","Huabei","Северный Китай (имя собств.)","","",0,14],["军事","jūnshì","junshi","военное дело","谈论起军事来","2",0,15],["军队","jūnduì","jundui","армия, войска","","9",1,15],["敌（人）","dí (rén)","di","враг, противник","敌强我弱","3",0,15],["作战","zuòzhàn","zuozhan","вести бой","作战方案 / 独立作战","5",0,15],["阵地","zhèndì","zhendi","позиция, рубеж","坚守阵地","15",1,15],["守","shǒu","shou","оборонять, держать","坚守 / 守门","14",1,15],["进攻","jìngōng","jingong","наступать, атаковать","主动进攻","36",1,15],["派","pài","pai","послать, направить (человека)","派他去谈判","10",0,15],["调（动）","diào (dòng)","diao","перевести, перебросить","把廉颇调回去","22",1,15],["命令","mìnglìng","mingling","приказ; приказывать","下命令 / 命令士兵","13",0,15],["形势","xíngshì","xingshi","обстановка, положение дел","形势严重/紧张/好转","12",0,15],["弱","ruò","ruo","слабый","↔ 强","11",0,15],["挑战","tiǎozhàn","tiaozhan","бросать вызов; вызов","挑战性 / 迎接挑战","18",0,15],["胜利","shènglì","shengli","победа; побеждать","取得胜利","21",0,15],["方案","fāng'àn","fangan","план, проект, схема","改变方案","35",0,15],["散布","sànbù","sanbu","распространять (слухи)","四处散布谣言","23",1,15],["谣言","yáoyán","yaoyan","слух, ложные сведения","别相信谣言","24",1,15],["上当","shàng dàng","shangdang","попасться на удочку","果然上当了","25",0,15],["骂","mà","ma","ругать, обзывать","骂他是胆小鬼","19",0,15],["胆小鬼","dǎnxiǎoguǐ","danxiaogui","трус","","20",0,15],["糊涂","hútu","hutu","бестолковый, путающийся","糊涂的领导 / 我真糊涂","31",0,15],["任命","rènmìng","renming","назначать (на должность)","任命……为……","28",1,15],["阻止","zǔzhǐ","zuzhi","препятствовать, останавливать","阻止他做傻事","27",0,15],["再三","zàisān","zaisan","неоднократно, снова и снова","再三阻止 / 考虑再三","26",0,15],["纸上谈兵","zhǐshàng-tánbīng","zhishang-tanbing","рассуждать о войне на бумаге; пустая теория","","1",1,15],["理论","lǐlùn","lilun","теория","理论联系实际","4",0,15],["道理","dàolǐ","daoli","резон, истина, принцип","讲大道理 / 有道理","7",0,15],["毛病","máobìng","maobing","недостаток; поломка","毛病多 / 克服毛病","6",0,15],["盲目","mángmù","mangmu","слепой, безрассудный","盲目自信 / 盲目乐观","33",1,15],["轻视","qīngshì","qingshi","пренебрегать, недооценивать","轻视对方 ↔ 重视","34",0,15],["独立","dúlì","duli","самостоятельно; независимый","独立完成 / 独立生活","29",0,15],["资格","zīgé","zige","квалификация, право (на что-то)","具备资格 / 没有资格","30",0,15],["灵活","línghuó","linghuo","гибкий, подвижный","做事要灵活","39",0,15],["宝贵","bǎoguì","baogui","драгоценный","宝贵的时间/生命/意见","37",0,15],["讽刺","fěngcì","fengci","высмеивать; сатира","讽刺那些空谈的人","38",0,15],["绝对","juéduì","juedui","абсолютно; абсолютный","绝对不可 / 绝对不会同意","16",0,15],["主动","zhǔdòng","zhudong","по своей инициативе","主动提出 / 主动帮助","17",0,15],["公元","gōngyuán","gongyuan","наша эра","公元前260年 — 260 г. до н. э.","32",0,15],["迟早","chízǎo","chizao","рано или поздно","迟早会……","8",0,15],["战国","Zhànguó","Zhanguo","эпоха Сражающихся царств (475–221 до н. э.)","","",0,15],["秦国 / 赵国","Qínguó / Zhàoguó","Qinguo","царства Цинь и Чжао","","",0,15],["赵奢 / 赵括","Zhào Shē / Zhào Kuò","ZhaoShe","Чжао Шэ и его сын Чжао Ко","","",0,15],["廉颇","Lián Pō","LianPo","Лянь По, знаменитый полководец","","",0,15],["报道","bàodào","baodao","сообщать; репортаж","据报道 / 可靠的报道","2",0,16],["总共","zǒnggòng","zonggong","всего, в общей сложности","总共80名成年人","7",0,16],["参与","cānyù","canyu","принимать участие (в деле, проекте)","积极参与 / 参与管理","8",0,16],["人员","rényuán","renyuan","персонал, сотрудники","研究人员 / 工作人员","9",0,16],["志愿者","zhìyuànzhě","zhiyuanzhe","доброволец, волонтёр","","16",0,16],["类型","lèixíng","leixing","тип, категория","分为三种类型","11",0,16],["相对","xiāngduì","xiangdui","относительный, сравнительный","相对体重变化 / 相对来说","10",0,16],["称","chēng","cheng","взвешивать","称一下体重","12",0,16],["可靠","kěkào","kekao","надёжный, достоверный","保证可靠性 / 可靠的消息","13",0,16],["纳入","nàrù","naru","включать в, вносить в","被纳入分析","14",1,16],["跟踪","gēnzōng","genzong","отслеживать, вести наблюдение","跟踪调查","17",1,16],["分析","fēnxī","fenxi","анализировать","分析原因 / 情况 / 问题","15",0,16],["成果","chéngguǒ","chengguo","результат, достижение (труда)","研究成果 / 重大的成果","18",0,16],["表明","biǎomíng","biaoming","свидетельствовать, показывать","结果表明 / 清楚地表明","32",0,16],["联合","liánhé","lianhe","объединять(ся); совместный","联合多所院校","30",0,16],["波动","bōdòng","bodong","колебаться, флуктуировать","上下波动 / 价格波动","6",1,16],["模式","móshì","moshi","модель, паттерн, схема","饮食模式 / 补偿模式","5",1,16],["升","shēng","sheng","подниматься, расти","体重升高 ↔ 下降","21",0,16],["达到","dá dào","dadao","достигать","达到最低点 / 目的 / 要求","22",0,16],["趋势","qūshì","qushi","тенденция, тренд","上升的 / 下降的趋势","28",0,16],["差异","chāyì","chayi","различие, расхождение","存在差异（差 — chā）","29",0,16],["存在","cúnzài","cunzai","существовать, иметь место","存在着明显不同","24",0,16],["明显","míngxiǎn","mingxian","явный, заметный","明显提高 / 并无明显减轻","25",0,16],["清晰","qīngxī","qingxi","чёткий, отчётливый","清晰的模式 / 清晰的照片","19",1,16],["现象","xiànxiàng","xianxiang","явление","正常 / 表面的现象","34",0,16],["意外","yìwài","yiwai","неожиданный; несчастный случай","意外地发现 / 意外的消息","23",0,16],["立即","lìjí","liji","немедленно, сразу же","体重立即下降","27",0,16],["临时","línshí","linshi","временный; в последний момент","临时变化 / 临时工作","33",0,16],["补偿","bǔcháng","buchang","компенсировать, возмещать","补偿模式 / 补偿损失","26",1,16],["节食","jiéshí","jieshi","ограничивать себя в еде, соблюдать режим питания","节食者 / 节食减肥","1",0,16],["营养","yíngyǎng","yingyang","питание, питательные вещества","营养摄入 / 有营养","3",0,16],["摄入","shèrù","sheru","потреблять, поступление (в организм)","","4",1,16],["就餐","jiùcān","jiucan","принимать пищу, столоваться","外出就餐","36",1,16],["放纵","fàngzòng","fangzong","давать себе волю, не сдерживаться","稍微有些放纵","37",1,16],["苗条","miáotiao","miaotiao","стройный","变苗条（条 — нейтральный тон）","38",0,16],["借口","jièkǒu","jiekou","предлог, отговорка; отговариваться","找借口 / 他借口家里有事","39",0,16],["即","jí","ji","то есть, а именно; сразу же","……，即…… / 一学即会","20",0,16],["个别","gèbié","gebie","отдельный, индивидуальный; единичный","个别谈话 / 个别人","31",0,16],["非","fēi","fei","не-, вне-; не есть","而非 / 非专业 / 非……不可","35",0,16],["采取","cǎiqǔ","caiqu","принимать, применять (меры, способ)","采取措施 / 采取方式","40",0,16],["措施","cuòshī","cuoshi","мера, мероприятие","有效措施 / 采取措施","41",0,16],["事物","shìwù","shiwu","вещи и явления, предметы","对事物的记忆","1",0,17],["高峰","gāofēng","gaofeng","пик, вершина","高峰时间 / 事业的高峰","2",1,17],["终点","zhōngdiǎn","zhongdian","конечная точка, финиш","↔ 起点","3",1,17],["迅速","xùnsù","xunsu","быстрый, стремительный","迅速提高 / 迅速做出反应","4",0,17],["深刻","shēnkè","shenke","глубокий (о впечатлении, мысли)","深刻的印象 / 记忆 / 道理","5",0,17],["戏剧","xìjù","xiju","драма, спектакль","古典戏剧 / 一场戏剧演出","6",0,17],["投入","tóurù","touru","вкладывать (время, силы); поглощённый","投入很多时间 / 演得很投入","7",0,17],["服装","fúzhuāng","fuzhuang","одежда, костюм","一套服装 / 服装设计","8",0,17],["化妆","huà zhuāng","huazhuang","краситься, гримироваться","化妆品（妆, а не 装!）","9",1,17],["道具","dàojù","daoju","реквизит, бутафория","","10",1,17],["美术","měishù","meishu","изобразительное искусство","舞台美术","11",0,17],["良好","liánghǎo","lianghao","хороший, добротный","良好的效果 / 习惯 / 环境","13",0,17],["争取","zhēngqǔ","zhengqu","добиваться, стараться успеть","争取时间 / 机会 / 提前结束","14",0,17],["忽视","hūshì","hushi","упускать из виду, не придавать значения","忽视了结束时的准备","15",0,17],["魅力","mèilì","meili","обаяние, притягательность","很有魅力","16",0,17],["糟糕","zāogāo","zaogao","скверный; вот беда!","糟糕的结局","17",0,17],["以","yǐ","yi","посредством; чтобы (книжн.)","以……为…… / 以创造良好的效果","12",0,17],["婚礼","hūnlǐ","hunli","свадьба, свадебная церемония","参加婚礼 / 举行婚礼","18",0,17],["等于","děngyú","dengyu","равняться, быть равносильным","三加五等于八","19",0,17],["度过","dùguò","duguo","провести (время)","度过童年 / 度过了两个小时","20",0,17],["告别","gàobié","gaobie","прощаться, откланяться","早早地告别","21",0,17],["平常","píngcháng","pingchang","обычный, заурядный; обычно","平平常常 / 他平常来得很早","22",0,17],["依然","yīrán","yiran","по-прежнему, всё равно","依然会向别人推荐","23",0,17],["推荐","tuījiàn","tuijian","рекомендовать","向别人推荐 / 推荐信","24",0,17],["淋漓尽致","línlí-jìnzhì","linli-jinzhi","исчерпывающе, во всей полноте","表现得淋漓尽致","25",1,17],["评价","píngjià","pingjia","оценивать; оценка","评价不好 / 高度评价","26",0,17],["烂","làn","lan","гнилой; паршивый (разг.)","烂苹果 / 烂片","27",0,17],["主持","zhǔchí","zhuchi","вести (передачу), возглавлять","主持会议 / 主持人","28",0,17],["运用","yùnyòng","yunyong","применять на практике","灵活地运用 / 运用规律","29",0,17],["开幕式","kāimùshì","kaimushi","церемония открытия","↔ 闭幕式","30",0,17],["宁可","nìngkě","ningke","уж лучше, скорее (выбор)","宁可……也不…… （宁 — nìng）","31",0,17],["集中","jízhōng","jizhong","сосредоточить(ся)","集中注意力 / 集中在……上","32",0,17],["体会","tǐhuì","tihui","прочувствовать, понять на опыте; ощущение","体会到 / 最大的体会","33",0,17],["诺贝尔奖","Nuòbèi'ěr Jiǎng","NuobeierJiang","Нобелевская премия","","",0,17],["丹尼尔·卡内曼","Dānní'ěr Kǎnèimàn","DannierKaneiman","Даниэль Канеман, психолог","","",0,17],["峰终定律","Fēngzhōng Dìnglǜ","FengzhongDinglu","правило пика и конца","","",0,17],["抽象","chōuxiàng","chouxiang","абстрактный; абстрагировать","抽象艺术 / 抽象派","1",0,18],["古典","gǔdiǎn","gudian","классический","古典文学 / 小说 / 戏剧 / 音乐","2",0,18],["欣赏","xīnshǎng","xinshang","любоваться, ценить","欣赏音乐 / 我很欣赏他","3",0,18],["作品","zuòpǐn","zuopin","произведение","一幅作品 / 设计作品","7",0,18],["布","bù","bu","ткань, холст","画布 / 一块布","4",0,18],["规则","guīzé","guize","правило; регулярный","不规则的色块 / 交通规则","5",0,18],["派","pài","pai","школа, направление, течение","抽象派（в уроке 15 — «послать»!）","6",0,18],["洒","sǎ","sa","брызгать, разбрызгивать","洒上颜料 / 洒水","8",0,18],["设计","shèjì","sheji","проектировать; замысел","设计图 / 作品 / 方案","13",0,18],["组","zǔ","zu","группа; сч. сл. для комплектов","一组照片 / 两两一组","14",0,18],["幅","fú","fu","сч. сл. для картин и свитков","一幅画儿（не 副 и не 服!）","15",0,18],["布局","bùjú","buju","композиция, компоновка","原作的布局","36",1,18],["元素","yuánsù","yuansu","элемент","画面元素（ср. 因素 «фактор»）","30",1,18],["位置","wèizhì","weizhi","место, положение","位置变化","32",0,18],["出自","chūzì","chuzi","происходить из, принадлежать (кисти)","出自艺术家之手","16",0,18],["业余","yèyú","yeyu","любительский; внерабочий","业余爱好者 / 业余时间","17",0,18],["婴儿","yīng'ér","yinger","младенец","","18",1,18],["黑猩猩","hēixīngxing","heixingxing","шимпанзе","","19",1,18],["涂鸦","túyā","tuya","каракули, мазня; граффити","随手涂鸦","20",1,18],["签","qiān","qian","подписывать","签名 / 签字 / 签合同","21",0,18],["其余","qíyú","qiyu","остальные, прочие","其余的同学呢？","22",0,18],["身份","shēnfèn","shenfen","личность, статус","标明身份 / 身份证","23",0,18],["确认","quèrèn","queren","удостовериться, подтвердить","无法确认","24",0,18],["随手","suíshǒu","suishou","мимоходом, не задумываясь","随手涂鸦 / 随手关门","25",0,18],["分辨","fēnbiàn","fenbian","различать, отличать","分辨不出来（辨 с 刂 внутри）","26",1,18],["挥","huī","hui","взмахнуть, водить (кистью)","挥笔 / 挥手","27",0,18],["极其","jíqí","jiqi","крайне, чрезвычайно (книжн.)","极其神秘 / 极其少见","9",0,18],["神秘","shénmì","shenmi","загадочный, таинственный","","10",0,18],["丑（陋）","chǒu(lòu)","chou","уродливый, некрасивый","↔ 美","11",0,18],["自由","zìyóu","ziyou","свобода; свободный","对自由的赞美","12",0,18],["活跃","huóyuè","huoyue","активный; оживлять","活跃气氛 / 活跃性下降","35",0,18],["调整","tiáozhěng","tiaozheng","корректировать, перестраивать","调整价格 / 计划（调 — tiáo）","31",0,18],["含意","hányì","hanyi","подразумеваемый смысл","","33",1,18],["区域","qūyù","quyu","область, зона","大脑的区域","34",1,18],["可见","kějiàn","kejian","отсюда видно, что…","由此可见……","28",0,18],["哪怕","nǎpà","napa","даже если, пусть даже","哪怕……也……","29",0,18],["事实","shìshí","shishi","факт","事实上 / 忽略了一个事实","37",0,18],["目前","mùqián","muqian","на данный момент, сейчас","至少目前 / 到目前为止","38",0,18],["证据","zhèngjù","zhengju","доказательство, улика","可靠的证据 / 没有证据表明","39",0,18],["话题","huàtí","huati","тема (разговора)","有趣的话题 / 换个话题","40",0,18]];
+  var L = {"1":["爱的细节","Детали любви"],"2":["留串钥匙给父母","Оставить родителям связку ключей"],"3":["人生有选择，一切可改变","Есть выбор — всё можно изменить"],"4":["子路背米","Цзы Лу несёт рис"],"5":["济南的泉水","Источники Цзинаня"],"6":["除夕的由来","Откуда взялся канун Нового года"],"7":["成语故事两则","Две истории о чэнъюях"],"8":["“朝三暮四”的古今义","«Три утром, четыре вечером»"],"9":["别样鲁迅","Другой Лу Синь"],"10":["争论的奇迹","Чудо спора"],"11":["闹钟的危害","Чем вреден будильник"],"12":["海外用户玩儿微信","Зарубежные пользователи WeChat"],"13":["锯掉生活的“筐底”","Отпилить у жизни «дно корзины»"],"14":["北京的四合院","Пекинский сыхэюань"],"15":["纸上谈兵","Стратег на бумаге"],"16":["体重与节食","Вес и режим питания"],"17":["在最美好的时刻离开","Уйти в лучший момент"],"18":["抽象艺术美不美","Красиво ли абстрактное искусство"]};
+  var MAX = 60;
+
+  var q = document.getElementById('sq');
+  var res = document.getElementById('sres');
+  var st = document.getElementById('sst');
+  var miss = document.getElementById('smiss');
+
+  function esc(s){
+    return String(s).replace(/[&<>"]/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];
+    });
+  }
+  function mark(text, needle){
+    var t = esc(text);
+    if(!needle) return t;
+    var i = t.toLowerCase().indexOf(needle.toLowerCase());
+    if(i < 0) return t;
+    return t.slice(0,i) + '<mark>' + t.slice(i, i+needle.length) + '</mark>' + t.slice(i+needle.length);
+  }
+  function stripTones(s){
+    try{
+      return s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/ü/g,'u');
+    }catch(e){ return s; }
+  }
+
+  function search(raw){
+    var s = raw.trim().toLowerCase();
+    if(!s) return null;
+    var sNoSp = s.replace(/\s+/g,'');
+    var hits = [];
+    for(var i=0;i<W.length;i++){
+      var w = W[i];
+      var hz = w[0], py = w[1].toLowerCase(), pyn = w[2].toLowerCase(), ru = w[3].toLowerCase(), ex = w[4];
+      var pyNoSp = py.replace(/\s+/g,''), pyBare = stripTones(pyNoSp);
+      var rank = -1, field = '', hit = '';
+
+      if(hz === s){ rank = 0; field='hz'; hit=raw.trim(); }
+      else if(pyn === sNoSp || pyBare === sNoSp || pyNoSp === sNoSp){ rank = 1; field='py'; }
+      else if(ru === s){ rank = 2; field='ru'; hit=raw.trim(); }
+      else if(hz.indexOf(s) === 0){ rank = 3; field='hz'; hit=raw.trim(); }
+      else if(pyn.indexOf(sNoSp) === 0 || pyBare.indexOf(sNoSp) === 0){ rank = 4; field='py'; }
+      else if(ru.indexOf(s) === 0){ rank = 5; field='ru'; hit=raw.trim(); }
+      else if(hz.indexOf(s) > 0){ rank = 6; field='hz'; hit=raw.trim(); }
+      else if(pyn.indexOf(sNoSp) > 0 || pyBare.indexOf(sNoSp) > 0){ rank = 7; field='py'; }
+      else if(ru.indexOf(s) > 0){ rank = 8; field='ru'; hit=raw.trim(); }
+      else if(ex && ex.indexOf(s) >= 0){ rank = 9; field='ex'; hit=raw.trim(); }
+
+      if(rank >= 0) hits.push({w:w, r:rank, f:field, h:hit});
+    }
+    hits.sort(function(a,b){
+      if(a.r !== b.r) return a.r - b.r;
+      if(a.w[7] !== b.w[7]) return a.w[7] - b.w[7];
+      return (parseInt(a.w[5],10)||99) - (parseInt(b.w[5],10)||99);
+    });
+    return hits;
+  }
+
+  function render(raw){
+    var hits = search(raw);
+    res.innerHTML = '';
+    miss.innerHTML = '';
+    if(hits === null){ st.textContent = ''; st.className = 's-status'; return; }
+
+    if(!hits.length){
+      st.textContent = 'не найдено';
+      st.className = 's-status no';
+      miss.innerHTML = '<div class="s-miss">Слова <b>' + esc(raw.trim()) +
+        '</b> в учебнике 5A нет. Это не значит, что его нет в программе HSK 5: ' +
+        'здесь только первый том, вторая половина лексики — в 5B. ' +
+        'Проверьте также написание и тоны.</div>';
+      return;
+    }
+
+    st.textContent = 'найдено: ' + hits.length + (hits.length > MAX ? ' (показаны первые ' + MAX + ')' : '');
+    st.className = 's-status ok';
+
+    var frag = document.createDocumentFragment();
+    hits.slice(0, MAX).forEach(function(o){
+      var w = o.w, n = w[7];
+      var d = document.createElement('div');
+      d.className = 's-item';
+      var lesNo = (n < 10 ? '0' : '') + n;
+      var title = L[n] ? (L[n][0] + ' · ' + L[n][1]) : '';
+      d.innerHTML =
+        '<span class="hz">' + (o.f==='hz' ? mark(w[0], o.h) : esc(w[0])) + '</span>' +
+        '<span class="py">' + (o.f==='py' ? mark(w[1], raw.trim()) : esc(w[1])) + '</span>' +
+        (w[6] ? '<span class="st">★ сверх HSK5</span>' : '') +
+        '<span class="ru">' + (o.f==='ru' ? mark(w[3], o.h) : esc(w[3])) + '</span>' +
+        '<a class="lk" href="hsk5a-lesson-' + lesNo + '.html" title="' + esc(title) + '">' +
+          'урок ' + n + (w[5] ? ' · №' + w[5] : '') + '</a>' +
+        (w[4] ? '<span class="ex">' + (o.f==='ex' ? mark(w[4], o.h) : esc(w[4])) + '</span>' : '');
+      frag.appendChild(d);
+    });
+    if(hits.length > MAX){
+      var m = document.createElement('div');
+      m.className = 's-more';
+      m.textContent = 'ещё ' + (hits.length - MAX) + ' — уточните запрос';
+      frag.appendChild(m);
+    }
+    res.appendChild(frag);
+  }
+
+  var timer;
+  q.addEventListener('input', function(){
+    clearTimeout(timer);
+    timer = setTimeout(function(){ render(q.value); }, 90);
+  });
+  q.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ q.value = ''; render(''); }
+  });
+  document.getElementById('sclr').addEventListener('click', function(){
+    q.value = ''; render(''); q.focus();
+  });
+  document.querySelectorAll('.s-hint b[data-q]').forEach(function(b){
+    b.addEventListener('click', function(){
+      q.value = b.dataset.q; render(q.value); q.focus();
+    });
+  });
+})();
+</script>
+</body>
+</html>

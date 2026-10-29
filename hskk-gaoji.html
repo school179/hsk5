@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HSKK 高级 — формат и банк заданий</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1b181e; --paper:#e5e1e4; --card:#f7f4f3; --brick:#625c66;
+  --plum:#6b3f6e; --red:#a8333f; --green:#3f6b53; --gold:#a07a28; --blue:#3a5675;
+  --line:rgba(27,24,30,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:repeating-linear-gradient(0deg,transparent 0 31px,rgba(27,24,30,.035) 31px 32px)}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 150px}
+
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 0 0;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;flex-wrap:wrap}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--plum);border-bottom-color:var(--plum)}
+.topnav .home{font-weight:700}
+
+header{padding:40px 0 26px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+h1{margin:14px 0 0;font-family:var(--disp);font-weight:700;font-size:50px;line-height:1.02}
+h1 .cn{font-family:var(--han);font-weight:600;font-size:34px;color:var(--plum);display:block;margin-top:8px}
+.sub{margin-top:16px;font-size:17px;color:var(--brick);max-width:640px}
+
+section{margin-top:52px}
+h2{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+h2 .cn{font-family:var(--han);font-size:19px;color:var(--plum);font-weight:600;text-transform:none;letter-spacing:.05em}
+h2 .cnt{margin-left:auto;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--brick);text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:28px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:17px;line-height:1.65;margin-top:14px}
+
+table{width:100%;border-collapse:collapse;margin:14px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;
+  background:rgba(27,24,30,.05)}
+td .han{font-family:var(--han);font-size:16px}
+td.c{text-align:center;font-family:var(--mono);font-size:13.5px;white-space:nowrap}
+tr.sum td{background:rgba(107,63,110,.08);font-weight:600}
+
+.card{background:var(--card);border:1px solid var(--line);padding:18px 20px;margin:16px 0}
+.card.plum{border-left:4px solid var(--plum)}
+.card.red{border-left:4px solid var(--red)}
+.card.green{border-left:4px solid var(--green)}
+.card.gold{border-left:4px solid var(--gold)}
+.card h4{font-family:var(--disp);font-weight:700;font-size:16.5px;margin:0 0 8px;letter-spacing:.02em}
+ul,ol{margin:0 0 12px;padding-left:20px}
+li{margin-bottom:7px}
+.cn-ex{font-family:var(--han);font-size:16.5px;line-height:1.85}
+.cn-ex .hl{color:var(--plum);font-weight:600}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--paper);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.p{background:var(--plum)} .tag.g{background:var(--green)} .tag.r{background:var(--red)}
+
+/* ——— карточка задания ——— */
+.item{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--ic,var(--plum));
+  margin:14px 0;padding:0}
+.item .ih{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:11px 16px;
+  border-bottom:1px solid var(--line);background:rgba(27,24,30,.03)}
+.item .inum{font-family:var(--disp);font-weight:700;font-size:21px;color:var(--ic,var(--plum));line-height:1}
+.item .ittl{font-family:var(--han);font-size:18px;font-weight:600}
+.item .ilen{font-family:var(--mono);font-size:11px;color:var(--brick);letter-spacing:.06em}
+.item .iact{margin-left:auto;display:flex;gap:8px;align-items:center}
+.item .tbtn{font-family:var(--disp);font-weight:700;font-size:12.5px;letter-spacing:.04em;padding:6px 12px;
+  border:1px solid var(--ic,var(--plum));background:transparent;color:var(--ic,var(--plum));cursor:pointer}
+.item .tbtn:hover{background:var(--ic,var(--plum));color:#fff}
+.item .done{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;
+  letter-spacing:.06em;color:var(--brick);cursor:pointer;user-select:none;text-transform:uppercase}
+.item .done input{width:15px;height:15px;accent-color:var(--green);cursor:pointer}
+.item.ok{opacity:.72}
+.item.ok .ih{background:rgba(63,107,83,.1)}
+.item .ib{padding:15px 18px 17px}
+.item .ib p{font-family:var(--han);font-size:17px;line-height:2.05;text-indent:2em;margin:0 0 8px}
+.item .ib p.q{font-family:var(--han);font-size:19px;line-height:1.85;margin:0 0 8px;text-indent:0}
+.item .ib p.qru{font-family:var(--body);font-size:14.5px;line-height:1.6;color:var(--brick);margin:0;text-indent:0}
+.item .ittl.ru{font-family:var(--disp);font-size:17.5px;font-weight:700;letter-spacing:.02em}
+
+details{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+summary{cursor:pointer;font-family:var(--disp);font-weight:700;font-size:14.5px;color:var(--blue);list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▸ ";color:var(--plum)}
+details[open] summary::before{content:"▾ "}
+details .dd{margin-top:9px;font-size:15px}
+details .dd ol{padding-left:22px}
+details .dd .kw{font-family:var(--han);font-size:15.5px;color:var(--brick)}
+details .dd .ph{font-family:var(--han);font-size:16px;color:var(--plum)}
+
+/* ——— таймер ——— */
+.timer{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--ink);color:#f0ecef;
+  border-top:3px solid var(--plum);padding:10px 16px}
+.timer-in{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.timer .clock{font-family:var(--mono);font-weight:700;font-size:30px;letter-spacing:.04em;line-height:1;min-width:104px}
+.timer .clock.low{color:#e8a0a0}
+.timer .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#948c99}
+.timer button{font-family:var(--disp);font-weight:700;font-size:12.5px;letter-spacing:.05em;padding:7px 12px;
+  border:1px solid #4a444f;background:transparent;color:#cfc8d2;cursor:pointer}
+.timer button:hover{border-color:#b07fb4;color:#fff}
+.timer button.go{background:var(--plum);border-color:var(--plum);color:#fff}
+.timer button.go:hover{background:#874f8b}
+.timer .presets{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+.timer .what{font-family:var(--disp);font-size:14px;color:#cfc8d2}
+
+@media (max-width:700px){
+  h1{font-size:34px} h1 .cn{font-size:24px}
+  .wrap{padding:0 15px 190px}
+  .item .iact{margin-left:0;width:100%}
+  .timer .presets{margin-left:0;width:100%}
+  .timer .clock{font-size:26px;min-width:92px}
+  table{font-size:13.5px} th,td{padding:7px 8px}
+}
+@media print{.timer,.topnav,.item .iact{display:none} body{background:#fff} .item{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav">
+  <a class="home" href="index.html">← Вся подготовка к HSK 5</a>
+  <span><a href="pismo-hsk5.html">письмо 书写</a> &nbsp;·&nbsp;
+        <a href="index-5a.html">учебник 5A</a> &nbsp;·&nbsp;
+        <a href="#" onclick="window.print();return false">печать</a></span>
+</nav>
+
+<header>
+  <div class="eyebrow">口语考试 · устный экзамен · третий уровень HSKK</div>
+  <h1>HSKK 高级<span class="cn">汉语水平口语考试（高级）</span></h1>
+  <p class="sub">Разбор формата, критерии оценки, каркасы ответов и банк тренировки:
+  десять текстов на пересказ, десять на чтение вслух и десять вопросов с планом.
+  Внизу страницы — таймер под каждое задание.</p>
+</header>
+
+
+<section id="format">
+  <h2>Что это за экзамен <span class="cn">口语考试（高级）</span></h2>
+  <p class="lede">HSKK — устная часть, которая сдаётся отдельно от письменного HSK. Высший уровень, 高级,
+  рассчитан примерно на три тысячи слов, то есть на тех, кто закончил HSK 5 и идёт к шестому.
+  Весь экзамен — шесть заданий и около двадцати пяти минут, из которых десять уходит на подготовку.</p>
+
+  <table>
+    <tr><th>Раздел</th><th>Что делают</th><th class="c">Заданий</th><th class="c">Время</th></tr>
+    <tr><td><span class="han">第一部分 听后复述</span></td>
+        <td>Звучит короткий текст — его нужно пересказать</td><td class="c">3</td><td class="c">≈ 7–8 мин</td></tr>
+    <tr><td><span class="han">第二部分 朗读</span></td>
+        <td>На карточке текст — прочитать вслух</td><td class="c">1</td><td class="c">2 мин</td></tr>
+    <tr><td><span class="han">第三部分 回答问题</span></td>
+        <td>Два вопроса — развёрнутый ответ на каждый</td><td class="c">2</td><td class="c">5 мин</td></tr>
+    <tr class="sum"><td>Итого</td><td>плюс 10 минут на подготовку</td><td class="c">6</td><td class="c">≈ 25 мин</td></tr>
+  </table>
+
+  <div class="card plum">
+    <h4>Как это выглядит на месте</h4>
+    <ul>
+      <li>Экзамен идёт <b>в наушниках с микрофоном</b>, ответы записываются. Живого собеседника нет —
+      вы говорите в пустоту, и к этому стоит привыкнуть заранее.</li>
+      <li>Текст первого раздела звучит <b>один раз</b>. Второй попытки не будет, поэтому слушать нужно
+      не слова, а каркас: кто, что сделал, чем кончилось.</li>
+      <li>Десять минут подготовки относятся к тем заданиям, которые напечатаны на карточке, —
+      к тексту для чтения вслух и двум вопросам. К пересказу подготовиться нельзя по определению.</li>
+      <li>Каждое задание начинается и заканчивается сигналом. Пока сигнал не прозвучал, запись идёт:
+      паузы и «э-э-э» тоже попадают на плёнку.</li>
+      <li>Сто баллов за весь экзамен, <b>проходной балл — 60</b>. Результат приходит примерно через месяц.</li>
+    </ul>
+    <p style="margin:10px 0 0;font-size:14px;color:var(--brick)">Точный порядок и секунды объявляет
+    инструкция в начале записи — она же напечатана на карточке. Ниже даны ориентиры, по которым удобно
+    тренироваться.</p>
+  </div>
+
+  <h3>На что смотрит проверяющий</h3>
+  <p>Оценку ставит человек, который слушает запись. Формально баллы складываются из четырёх вещей,
+  и первые две весят больше, чем кажется.</p>
+  <table>
+    <tr><th>Критерий</th><th>Что это значит на практике</th></tr>
+    <tr><td><b>Полнота</b><br><span class="han">内容完整</span></td>
+        <td>В пересказе есть все ключевые повороты, в ответе — не одна мысль, а развёрнутая позиция.
+        Пропустили концовку истории — потеряли больше, чем на пяти ошибках в тонах.</td></tr>
+    <tr><td><b>Беглость</b><br><span class="han">流利程度</span></td>
+        <td>Говорить без длинных пауз и без возвратов «нет, не так». Лучше простая фраза вовремя,
+        чем сложная после трёхсекундной тишины.</td></tr>
+    <tr><td><b>Точность</b><br><span class="han">语言准确</span></td>
+        <td>Грамматика и выбор слова. На этом уровне ждут сложных связок: 不但……而且, 之所以……是因为,
+        与其……不如, 一旦……就.</td></tr>
+    <tr><td><b>Произношение</b><br><span class="han">语音语调</span></td>
+        <td>Тоны и интонация целой фразы. Отдельная ошибка в тоне почти не стоит баллов,
+        а монотонное чтение «по слогам» — стоит.</td></tr>
+  </table>
+  <div class="card red">
+    <p style="margin:0"><b>Главное правило экзамена:</b> молчание — худший ответ. Если забыли слово,
+    скажите соседнее; если потеряли мысль, перейдите к следующей. Пустая секунда записи не даёт ничего,
+    а неточное слово стоит долю балла.</p>
+  </div>
+</section>
+
+
+
+<section id="p1">
+  <h2>Раздел 1 · Пересказ <span class="cn">听后复述</span><span class="cnt" id="c1">0/10</span></h2>
+  <p class="lede">Три текста, каждый звучит один раз. После сигнала даётся около двух минут,
+  чтобы пересказать услышанное. Дословно никто не ждёт — ждут, что останется сюжет и вывод.</p>
+
+  <div class="card plum">
+    <h4>Пока текст звучит</h4>
+    <ul>
+      <li><b>Ловите скелет, а не слова.</b> Кто действует — что произошло — что из этого вышло —
+      какой вывод делает автор. Четыре позиции, которые дают больше половины баллов.</li>
+      <li><b>Держите имена и числа.</b> «两位推销员», «三年以后», «五块钱» — это то, что проверяющий
+      сверяет в первую очередь, и то, что проще всего потерять.</li>
+      <li><b>Не пытайтесь запомнить первую фразу дословно.</b> Она почти всегда вводная; настоящий сюжет
+      начинается со второго предложения.</li>
+      <li><b>Концовка важнее начала.</b> В этих текстах вывод всегда в последних двух предложениях —
+      именно его забывают чаще всего.</li>
+    </ul>
+  </div>
+
+  <div class="card green">
+    <h4>Каркас пересказа на пять предложений</h4>
+    <p class="cn-ex"><span class="hl">这段话讲的是</span>……（кто и что за ситуация）<br>
+    <span class="hl">有一次 / 后来</span>，……（главное событие）<br>
+    <span class="hl">结果</span>，……（чем кончилось）<br>
+    <span class="hl">他说 / 他发现</span>，……（ключевая реплика или открытие）<br>
+    <span class="hl">这个故事告诉我们</span>，……（вывод）</p>
+    <p style="margin:8px 0 0;font-size:14.5px;color:var(--brick)">Пять предложений — это примерно
+    сорок секунд. Оставшееся время уходит на детали: имена, числа, вторую реплику. Если забыли деталь,
+    говорите дальше по каркасу: он держит ответ даже на половине материала.</p>
+  </div>
+
+  <div class="card gold">
+    <h4>Как тренироваться по этим текстам</h4>
+    <p style="margin:0">Тексты даны специально без аудио — читать их себе должен кто-то другой либо вы сами
+    вслух один раз, после чего текст закрывается. Рабочий порядок: прочитать вслух
+    в обычном темпе (это и есть «одно прослушивание»), закрыть страницу, включить таймер на 2:00
+    и пересказать. Потом открыть «Опора» и проверить, сколько пунктов каркаса удержалось.
+    Полезнее всего записывать себя на телефон: на записи слышно то, чего не слышно изнутри.</p>
+  </div>
+
+<div class="item" style="--ic:var(--plum)" data-id="r1"><div class="ih"><span class="inum">1</span><span class="ittl">鞋子的市场</span><span class="ilen">≈263 字</span><span class="iact"><button class="tbtn" type="button" data-t="120" data-w="Пересказ · задание 1">▶ 2:00</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p>有家鞋厂想开拓海外市场，先后派了两位推销员去同一个海岛考察。第一位到了那儿，只待了半天就发回电报：“这里的人从来不穿鞋，根本没有市场，我明天就回去。”第二位在岛上住了整整一个星期，走遍了大大小小的村子，回来以后交上一份厚厚的报告，开头第一句话是：“这里的人还都没有鞋，市场大得难以想象。”厂长看完两份材料，最后采纳了第二位的意见。三年之后，这家工厂的产品在那个海岛上占了一多半的份额。后来有人问厂长，当初为什么作出那样的选择，他说：面对同样的情况，有人看见的是结论，有人看见的是机会，而机会常常就藏在别人不愿意多看一眼的地方。</p><details><summary>Опора: ключевые слова и каркас</summary><div class="dd"><p class="kw">鞋厂 · 推销员 · 海岛 · 电报 · 报告 · 份额 · 采纳 · 机会</p><ol><li>鞋厂派两位推销员去同一个海岛</li><li>第一位半天就回来，说没有市场</li><li>第二位住了一星期，说市场大得难以想象</li><li>厂长采纳第二位的意见，三年后占了一多半份额</li><li>结论：同样的情况，有人看见结论，有人看见机会</li></ol></div></details></div></div><div class="item" style="--ic:var(--plum)" data-id="r2"><div class="ih"><span class="inum">2</span><span class="ittl">修伞的老人</span><span class="ilen">≈252 字</span><span class="iact"><button class="tbtn" type="button" data-t="120" data-w="Пересказ · задание 2">▶ 2:00</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p>我们小区门口原来有一位修伞的老人，摊子很简单，一把小凳子，一个旧工具箱。下雨天他生意最好，可他从来不涨价，一把伞只收五块钱。有一回我拿去一把伞，骨架断了两根，他修了将近四十分钟，结果还是只收五块。我说这不值得，他摇摇头说：“伞是你的，时间是我的，你花的钱已经够买一把新伞的一半了，我要是再多收，你下次就该直接扔掉了。”后来小区改造，他的摊子没有了。前几天下大雨，我的伞又坏了，站在楼下忽然很想念那个老人。我这才明白，他修的其实不只是伞，还有一种现在越来越少见的习惯——东西坏了，先想到修，而不是先想到换。</p><details><summary>Опора: ключевые слова и каркас</summary><div class="dd"><p class="kw">小区 · 工具箱 · 骨架 · 涨价 · 值得 · 改造 · 想念 · 习惯</p><ol><li>小区门口有位修伞的老人，摊子简单，从不涨价</li><li>我的伞断了两根骨架，他修了四十分钟，仍只收五块</li><li>他说：多收钱，你下次就直接扔了</li><li>小区改造后摊子没有了</li><li>我明白他修的不只是伞，还有“先想到修”的习惯</li></ol></div></details></div></div><div class="item" style="--ic:var(--plum)" data-id="r3"><div class="ih"><span class="inum">3</span><span class="ittl">空着的座位</span><span class="ilen">≈261 字</span><span class="iact"><button class="tbtn" type="button" data-t="120" data-w="Пересказ · задание 3">▶ 2:00</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p>一个年轻人坐火车去外地出差，车厢里很挤，他好不容易找到自己的座位，发现旁边一直空着。快开车的时候，上来一位抱着孩子的妇女，手里还提着两个大包。她看了看票，正要坐下，对面一位老先生却说：“姑娘，这是我的位子，我刚才去打水了。”妇女一下子愣住了。年轻人站起来说：“您坐我这儿吧，我的位子也空着一半。”他把自己的座位让给了妇女，自己在过道里站了四个多小时。下车时，那位老先生悄悄对他说：“其实那个位子是空的，我是想看看，车厢里还有没有人愿意站起来。”年轻人后来常跟别人讲这件事，他说，那一天他其实只是站了四个小时，却记了很多年。</p><details><summary>Опора: ключевые слова и каркас</summary><div class="dd"><p class="kw">车厢 · 座位 · 妇女 · 愣住 · 让座 · 过道 · 悄悄 · 记了很多年</p><ol><li>年轻人坐火车出差，旁边的座位一直空着</li><li>一位抱孩子的妇女上车，老先生却说位子是他的</li><li>年轻人把自己的座位让给了妇女，站了四个多小时</li><li>下车时老先生说那位子本来是空的，他只是想看看有没有人让座</li><li>年轻人说：站了四个小时，却记了很多年</li></ol></div></details></div></div><div class="item" style="--ic:var(--plum)" data-id="r4"><div class="ih"><span class="inum">4</span><span class="ittl">会“说话”的树</span><span class="ilen">≈241 字</span><span class="iact"><button class="tbtn" type="button" data-t="120" data-w="Пересказ · задание 4">▶ 2:00</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p>科学家发现，树和树之间其实是能够“交流”的。当一棵树被虫子咬伤以后，它的叶子里会很快产生一种特殊的物质，使叶子变得难吃；同时，它还会向空气中释放一种气味。附近的树闻到这种气味，就会提前作好准备，在虫子还没有到的时候就开始改变叶子里的成分。这样一来，整片树林就像收到了一个共同的信号。更有意思的是，地下的情况也差不多：树根之间通过一种细细的菌，把养分和信息传给旁边的树，有的大树甚至会把养分送给长势不好的小树。过去我们以为森林只是许多棵树站在一起，现在看来，它更像一个互相照顾的整体。</p><details><summary>Опора: ключевые слова и каркас</summary><div class="dd"><p class="kw">科学家 · 交流 · 咬伤 · 物质 · 释放 · 气味 · 信号 · 养分 · 整体</p><ol><li>科学家发现树和树之间能“交流”</li><li>被虫子咬伤后，叶子变难吃，并向空气释放气味</li><li>附近的树闻到气味，提前改变叶子成分</li><li>地下的树根通过菌传递养分和信息，大树还会帮助小树</li><li>森林不只是许多棵树，而是一个互相照顾的整体</li></ol></div></details></div></div><div class="item" style="--ic:var(--plum)" data-id="r5"><div class="ih"><span class="inum">5</span><span class="ittl">面试的最后一个问题</span><span class="ilen">≈258 字</span><span class="iact"><button class="tbtn" type="button" data-t="120" data-w="Пересказ · задание 5">▶ 2:00</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p>一家公司招聘，经过几轮考试，最后只剩下三个人。面试那天，经理没有问专业问题，只说：“请你们各自说一件最近半年里，自己做得最失败的事。”第一个人想了想，说自己一直很顺利，实在想不起来；第二个人讲了一件小事，说那次只是运气不好；第三个人讲了一个真正的失败，一个他负责的项目因为准备不足推迟了两个月，他详细说了自己当时忽略了什么，后来又怎么补救。结果公司录取了第三个人。经理解释说：“前两位要么没有反省的习惯，要么不愿意承认，而第三位不但承认，还能说清楚问题出在哪儿。一个人能成长多快，往往取决于他敢不敢正视自己的失败。”</p><details><summary>Опора: ключевые слова и каркас</summary><div class="dd"><p class="kw">招聘 · 面试 · 失败 · 项目 · 推迟 · 忽略 · 补救 · 反省 · 承认 · 正视</p><ol><li>公司招聘到最后只剩三个人</li><li>经理只问：请说一件自己做得最失败的事</li><li>第一个说想不起来，第二个说只是运气不好</li><li>第三个讲了真正的失败，说清楚原因和补救办法，被录取</li><li>经理说：成长快慢取决于敢不敢正视自己的失败</li></ol></div></details></div></div><div class="item" style="--ic:var(--plum)" data-id="r6"><div class="ih"><span class="inum">6</span><span class="ittl">老张的菜园</span><span class="ilen">≈228 字</span><span class="iact"><button class="tbtn" type="button" data-t="120" data-w="Пересказ · задание 6">▶ 2:00</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p>老张退休以后，在楼后面开了一小块地种菜。邻居们都说他傻，超市里的菜又便宜又干净，何必受这个累。头一年他的菜确实长得不好，第二年才慢慢有了样子。奇怪的是，从那以后，楼后面热闹起来了：有人来问他怎么浇水，有人送来自己家的旧花盆，还有几位老人干脆也开出了一小块地。周末的傍晚，大家常常坐在地边上聊天，一聊就是一两个钟头。老张说，他种的其实不是菜。退休前他在单位里天天见人，退休以后一下子谁也见不着，心里特别空。那一小块地把人又聚到了一起，这才是他真正想要的收成。</p><details><summary>Опора: ключевые слова и каркас</summary><div class="dd"><p class="kw">退休 · 菜园 · 邻居 · 浇水 · 花盆 · 傍晚 · 聊天 · 收成</p><ol><li>老张退休后在楼后开了一块地种菜，邻居都说他傻</li><li>第一年长得不好，第二年才像样</li><li>从此楼后热闹起来，邻居来问、来送花盆，也跟着种</li><li>周末傍晚大家坐在地边聊天</li><li>老张说：他种的不是菜，这块地把人聚到了一起，这才是真正的收成</li></ol></div></details></div></div><div class="item" style="--ic:var(--plum)" data-id="r7"><div class="ih"><span class="inum">7</span><span class="ittl">一封迟到的信</span><span class="ilen">≈226 字</span><span class="iact"><button class="tbtn" type="button" data-t="120" data-w="Пересказ · задание 7">▶ 2:00</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p>整理旧书柜的时候，我翻出了一封没有寄出的信。那是高中毕业那年写给语文老师的，当时不好意思送，就一直夹在书里，一夹就是二十年。信里写的都是很普通的话：谢谢她在我作文得了最低分那次，把我叫到办公室，不是批评，而是把我前后几篇作文摆在桌上，让我自己看进步在哪儿。我拿着那封信找回学校，才知道老师已经退休好几年了。后来我还是按照地址把信寄了出去。一个多月以后，我收到了回信，只有短短几行字：“信我收到了。二十年前你没寄，现在寄了，正好。有些话晚说，比不说强。”</p><details><summary>Опора: ключевые слова и каркас</summary><div class="dd"><p class="kw">书柜 · 寄出 · 语文老师 · 作文 · 批评 · 进步 · 退休 · 回信</p><ol><li>整理书柜时翻出一封二十年前没寄出的信</li><li>那是写给高中语文老师的感谢信</li><li>老师曾在我作文得最低分时，让我自己看出进步在哪儿</li><li>我回学校才知道老师已退休，后来按地址把信寄了出去</li><li>老师回信说：有些话晚说，比不说强</li></ol></div></details></div></div><div class="item" style="--ic:var(--plum)" data-id="r8"><div class="ih"><span class="inum">8</span><span class="ittl">会议室里的沉默</span><span class="ilen">≈232 字</span><span class="iact"><button class="tbtn" type="button" data-t="120" data-w="Пересказ · задание 8">▶ 2:00</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p>一家公司开会讨论一个新方案，经理讲完以后问大家有没有意见，会议室里一片安静，没有一个人发言。经理说：“既然大家都同意，那就这么定了。”会后，一位年轻同事忍不住对老同事说，其实他觉得方案有问题，可是会上没人说话，他也就没敢开口。老同事笑了笑说：“我也一样。”方案执行了两个月，果然出现了当初谁都想到过的问题，公司损失了一大笔钱。后来这家公司改了规矩：讨论的时候，由职位最低的人先发言，经理最后说。据说从那以后，会议室里的安静少了，争论多了，可出大错的次数反而下降了。</p><details><summary>Опора: ключевые слова и каркас</summary><div class="dd"><p class="kw">方案 · 发言 · 安静 · 执行 · 损失 · 规矩 · 职位 · 争论</p><ol><li>开会讨论新方案时，没有人发言，经理就定了</li><li>会后年轻同事说自己其实觉得方案有问题，老同事说“我也一样”</li><li>方案执行两个月后出了问题，公司损失一大笔钱</li><li>公司改了规矩：职位最低的人先发言，经理最后说</li><li>从此会上争论多了，出大错反而少了</li></ol></div></details></div></div><div class="item" style="--ic:var(--plum)" data-id="r9"><div class="ih"><span class="inum">9</span><span class="ittl">搬家的鸟</span><span class="ilen">≈231 字</span><span class="iact"><button class="tbtn" type="button" data-t="120" data-w="Пересказ · задание 9">▶ 2:00</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p>小区里有一棵老树，每年春天都有一窝鸟住在上面。去年树下修了停车位，机器响了一个多月，那窝鸟不见了。大家都以为它们再也不会回来了。今年四月，有人发现它们又出现了，不过不在老树上，而是搬到了旁边一幢楼的空调外机后面。那个位置又窄又热，可是很安静。观察鸟类的专家说，这并不奇怪：城市里的鸟这些年一直在学习，有的把窝搭在路灯里，有的学会了在车声中照常叫，还有的把叫声提高了，好让同伴听得见。它们不是不怕打扰，而是在一点一点地适应。专家说，这件事让他既高兴，又有一点担心。</p><details><summary>Опора: ключевые слова и каркас</summary><div class="dd"><p class="kw">小区 · 老树 · 停车位 · 空调外机 · 窄 · 安静 · 专家 · 适应 · 打扰</p><ol><li>小区老树上每年都有一窝鸟，去年修停车位后它们不见了</li><li>今年四月它们又出现，搬到了空调外机后面</li><li>那里又窄又热，但很安静</li><li>专家说城市里的鸟一直在学习：在路灯里搭窝、在车声中照常叫、把叫声提高</li><li>它们是在一点点适应，专家说这件事让他既高兴又担心</li></ol></div></details></div></div><div class="item" style="--ic:var(--plum)" data-id="r10"><div class="ih"><span class="inum">10</span><span class="ittl">第二名的故事</span><span class="ilen">≈236 字</span><span class="iact"><button class="tbtn" type="button" data-t="120" data-w="Пересказ · задание 10">▶ 2:00</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p>有位长跑运动员，职业生涯里一共得过十一个第二名，只拿过一次冠军。退役以后他当了教练，很多人以为他会一直讲那次冠军，没想到他最常跟学生说的是那十一次第二名。他说，第一次得第二名，他哭了一个晚上；第五次的时候，他开始研究跑在自己前面的人；到了第十次，他已经能在比赛结束后马上说出自己哪一段慢了两秒。那一次冠军，正是在第十一次之后拿到的。他带的学生里，后来出了三个全国冠军。有记者问他成功的秘诀，他说：“我没有秘诀。我只是比别人更熟悉差一点点的感觉，也更清楚那一点点差在哪儿。”</p><details><summary>Опора: ключевые слова и каркас</summary><div class="dd"><p class="kw">长跑 · 运动员 · 职业生涯 · 冠军 · 退役 · 教练 · 研究 · 秘诀</p><ol><li>一位长跑运动员得过十一个第二名，只拿过一次冠军</li><li>退役后当教练，最常讲的不是冠军，而是那十一次第二名</li><li>第一次哭了一晚，第五次开始研究前面的人，第十次能说出自己哪段慢了两秒</li><li>第十一次之后他拿到了冠军，学生里出了三个全国冠军</li><li>他说：我只是更熟悉“差一点点”的感觉，也更清楚差在哪儿</li></ol></div></details></div></div>
+</section>
+
+
+<section id="p2">
+  <h2>Раздел 2 · Чтение вслух <span class="cn">朗读</span><span class="cnt" id="c2">0/10</span></h2>
+  <p class="lede">Один текст на карточке, две минуты. Самое предсказуемое задание экзамена:
+  здесь не нужно ничего придумывать, и именно поэтому за него обидно терять баллы.</p>
+
+  <div class="card plum">
+    <h4>Что оценивают именно здесь</h4>
+    <ul>
+      <li><b>Темп.</b> Триста знаков на две минуты — это спокойная речь, а не скороговорка.
+      Торопиться незачем: дочитать до конца важно, но ещё важнее не глотать концы фраз.</li>
+      <li><b>Паузы по смыслу, а не по запятым.</b> Длинное определение перед 的 читается одним куском;
+      пауза ставится там, где кончается мысль.</li>
+      <li><b>Интонация целой фразы.</b> Самая частая потеря баллов — ровное, механическое чтение,
+      в котором все предложения звучат одинаково.</li>
+      <li><b>多音字.</b> 长 cháng/zhǎng, 重 zhòng/chóng, 着 zhe/zháo/zhuó, 得 de/dé/děi, 便 biàn/pián,
+      模 mó/mú, 行 xíng/háng. В каждом тексте ниже они отмечены отдельно.</li>
+    </ul>
+  </div>
+
+  <div class="card red">
+    <h4>Три ошибки, которые слышно сразу</h4>
+    <ol style="margin:0">
+      <li><b>Чтение по слогам.</b> Каждое слово отдельно, с паузой — звучит как список, а не как текст.
+      Лечится просто: сначала глазами пробежать фразу целиком, потом произнести её на одном дыхании.</li>
+      <li><b>Возврат и исправление.</b> Оговорились — читайте дальше. Повтор слова стоит дороже,
+      чем сама оговорка.</li>
+      <li><b>Падение громкости к концу предложения.</b> Последние два-три знака часто пропадают;
+      проверяющий слышит обрыв, а не фразу.</li>
+    </ol>
+  </div>
+
+<div class="item" style="--ic:var(--blue)" data-id="d1"><div class="ih"><span class="inum">1</span><span class="ittl">阅读的习惯</span><span class="ilen">≈267 字</span><span class="iact"><button class="tbtn" type="button" data-t="120" data-w="Чтение вслух · текст 1">▶ 2:00</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p>一个人读书的习惯，往往不是在课堂上养成的，而是在某个很偶然的时刻形成的。也许是小时候生病在家，偶然翻开了书架上的一本旧书；也许是旅行途中无事可做，随手买了一本杂志。真正让人读下去的，从来不是“应该读”，而是“想知道后面怎么样”。</p><p>有人说，现在的人越来越不读书了。其实我们每天读的字比过去任何时候都多，只是读的方式变了：更短，更快，也更容易忘。读一本书和读一条消息的区别，就像走路和坐车的区别——坐车看到的是风景，走路才知道路有多长。</p><p>所以，不必要求自己每天读多少页。只要固定一个时间，哪怕只有二十分钟，让眼睛慢下来，这个习惯就已经开始了。</p><details><summary>На что обратить внимание при чтении</summary><div class="dd"><p style="margin:0">多音字: 翻开 fān / 几乎 jī. Паузы по абзацам: три смысловых куска — как появляется привычка, чем чтение книги отличается от ленты, что делать. Сравнение «走路和坐车» читается чуть медленнее, с паузой перед тире.</p></div></details></div></div><div class="item" style="--ic:var(--blue)" data-id="d2"><div class="ih"><span class="inum">2</span><span class="ittl">一座城市的早晨</span><span class="ilen">≈257 字</span><span class="iact"><button class="tbtn" type="button" data-t="120" data-w="Чтение вслух · текст 2">▶ 2:00</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p>城市真正的样子，要在早晨六点钟才看得清楚。那个时候，街上还没有堵车，环卫工人正在清扫人行道，早点铺子的蒸汽从门里涌出来，白白的一团。送奶的车停在路边，司机一路小跑，把牛奶放进一个个铁盒子里。</p><p>再过一个小时，城市就完全变了。公共汽车挤得满满的，地铁口排起长队，所有人都在往同一个方向走，脸上的表情也差不多。有人说这是城市冷漠的一面，可我总觉得，正是这些看上去一模一样的早晨，支撑着每一个普通家庭的生活。</p><p>如果你在一座城市住久了，不妨找一个周末，起得早一点，到街上走走。你会发现，你以为很熟悉的地方，其实还有另外一副面孔。</p><details><summary>На что обратить внимание при чтении</summary><div class="dd"><p style="margin:0">多音字: 一模一样 yī mú yīyàng (не mó), 涌出来 yǒng. Первый абзац — перечисление, читать ровно, с короткими паузами после каждой картинки. Второй — контраст, чуть быстрее. Третий — обращение к слушателю, теплее и медленнее.</p></div></details></div></div><div class="item" style="--ic:var(--blue)" data-id="d3"><div class="ih"><span class="inum">3</span><span class="ittl">茶与时间</span><span class="ilen">≈223 字</span><span class="iact"><button class="tbtn" type="button" data-t="120" data-w="Чтение вслух · текст 3">▶ 2:00</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p>中国人喝茶，讲究的常常不是茶本身，而是喝茶的那段时间。水烧开要等，茶叶泡开也要等，一杯茶端在手里，还得等它凉下来。整个过程里，“等”占了大半。正因为要等，人才不得不停下来，坐一会儿，说几句不着急的话。</p><p>有意思的是，越是生活节奏快的城市，茶馆反而越多。大概人在跑得太久以后，总需要一个地方，合情合理地什么也不做。茶在这里的作用，与其说是解渴，不如说是给“停下来”找一个理由。</p><p>所以，请人喝茶和请人吃饭不一样。吃饭是为了把事情谈完，喝茶是为了把时间留住。</p><details><summary>На что обратить внимание при чтении</summary><div class="dd"><p style="margin:0">多音字: 泡开 pào, 不着急 zháo, 解渴 jiě. Ключевая конструкция «与其说……不如说……» — читать как одну фразу, пауза только перед 不如说. Последнее предложение — вывод, замедлить.</p></div></details></div></div><div class="item" style="--ic:var(--blue)" data-id="d4"><div class="ih"><span class="inum">4</span><span class="ittl">关于失败</span><span class="ilen">≈221 字</span><span class="iact"><button class="tbtn" type="button" data-t="120" data-w="Чтение вслух · текст 4">▶ 2:00</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p>我们从小听到的多是关于成功的故事，很少有人认真讲一讲失败。可实际上，一个人一生中成功的次数有限，失败却几乎天天都有。</p><p>失败本身并不可怕，可怕的是两种态度：一种是立刻忘掉，装作什么也没发生；另一种是记得太牢，从此不敢再试。前一种让人重复犯同样的错误，后一种让人干脆不再向前走。真正有用的做法在中间——把失败当成一份材料，认真看一遍，找出哪一步出了问题，然后把它放下。</p><p>有经验的人和没经验的人，区别常常不在于谁失败得少，而在于谁从失败里带走的东西多。</p><details><summary>На что обратить внимание при чтении</summary><div class="dd"><p style="margin:0">多音字: 干脆 gāncuì, 重复 chóngfù (не zhòng). Второй абзац построен на «一种……另一种……» — держать параллель голосом. Тире перед 把失败当成 — заметная пауза.</p></div></details></div></div><div class="item" style="--ic:var(--blue)" data-id="d5"><div class="ih"><span class="inum">5</span><span class="ittl">旅行的意义</span><span class="ilen">≈212 字</span><span class="iact"><button class="tbtn" type="button" data-t="120" data-w="Чтение вслух · текст 5">▶ 2:00</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p>有人把旅行当成任务，出发前列好单子，到了地方一个一个地打勾，回来以后相册里全是照片，却想不起来当时在想什么。也有人恰恰相反，走到哪儿算哪儿，常常误了车，却记住了许多意外的细节。</p><p>旅行真正有意思的部分，往往不在计划之内：问路时遇到的人，临时改掉的路线，在小店里喝的那碗热汤。这些事无法提前安排，也很难向别人讲清楚，但过了很多年，留在记忆里的恰恰是它们。</p><p>所以出门之前，不妨在计划里留一点空白。那点空白，常常才是旅行真正发生的地方。</p><details><summary>На что обратить внимание при чтении</summary><div class="dd"><p style="margin:0">多音字: 相册 xiàngcè, 恰恰 qiàqià. Первый абзац — два типа путешественников, держать контраст. Перечисление «问路时……临时……在小店里……» читать на одном дыхании с короткими паузами.</p></div></details></div></div><div class="item" style="--ic:var(--blue)" data-id="d6"><div class="ih"><span class="inum">6</span><span class="ittl">手写的信</span><span class="ilen">≈221 字</span><span class="iact"><button class="tbtn" type="button" data-t="120" data-w="Чтение вслух · текст 6">▶ 2:00</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p>现在写信的人越来越少了。消息几秒钟就能发出去，谁还会花半个小时，坐下来一个字一个字地写呢？可是手写的信有一点是消息永远比不上的：它慢。</p><p>正因为慢，写的人会想清楚再落笔；正因为慢，寄的人要等上好几天，这几天里心里总装着一件事；也正因为慢，收到的人会把它留下来，放进抽屉，过几年再翻出来看。消息是用完就删的，信是会被保存的。</p><p>我并不是说要回到从前。只是偶尔，当你想对一个人说点重要的话时，可以试着写在纸上。你会发现，换了一种方式，想说的话也跟着变了。</p><details><summary>На что обратить внимание при чтении</summary><div class="dd"><p style="margin:0">多音字: 落笔 luò, 抽屉 chōuti (вторым слогом нейтральный тон), 几秒钟 jǐ. Второй абзац — три параллельных «正因为慢……», ритм важнее скорости: одинаковая интонация у всех трёх.</p></div></details></div></div><div class="item" style="--ic:var(--blue)" data-id="d7"><div class="ih"><span class="inum">7</span><span class="ittl">城市里的树</span><span class="ilen">≈216 字</span><span class="iact"><button class="tbtn" type="button" data-t="120" data-w="Чтение вслух · текст 7">▶ 2:00</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p>一棵长在街边的树，和一棵长在山上的树，活法完全不一样。山上的树只要对付风雨，街边的树还要对付汽车的尾气、冬天的盐、夏天路面反上来的热气，以及一次又一次的修剪。</p><p>可是城市还是需要树。研究显示，有树的街道，夏天的温度能低好几度；住在能看见树的房子里的人，情绪也更稳定一些。树在城市里的作用，不只是好看，它实实在在地改变着人的生活。</p><p>下一次路过一棵老树的时候，不妨停两秒钟抬头看看。它在那儿站了几十年，看见过的事情，比这条街上任何一个人都多。</p><details><summary>На что обратить внимание при чтении</summary><div class="dd"><p style="margin:0">多音字: 尾气 wěiqì, 修剪 jiǎn, 温度 wēndù. Первый абзац — противопоставление, перечисление трудностей читать с нарастанием. Последнее предложение — тихо и медленно, это концовка.</p></div></details></div></div><div class="item" style="--ic:var(--blue)" data-id="d8"><div class="ih"><span class="inum">8</span><span class="ittl">时间都去哪儿了</span><span class="ilen">≈220 字</span><span class="iact"><button class="tbtn" type="button" data-t="120" data-w="Чтение вслух · текст 8">▶ 2:00</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p>很多人觉得自己很忙，却说不清一天到底做了什么。如果认真记上一个星期，结果常常让人吃惊：真正用在重要事情上的时间，也许连三分之一都不到。</p><p>时间不是被大事占去的，而是被无数件小事一点一点磨掉的：随手打开的视频，开到一半又关掉的文件，来回切换的几个窗口。每一件单独看都不值一提，加在一起却是半天。</p><p>解决的办法未必是把日程排得更满。相反，先留出一段完整的、不被打断的时间，哪怕只有一个小时，把最重要的那件事放进去。剩下的时间再怎么乱，这一天也不算白过。</p><details><summary>На что обратить внимание при чтении</summary><div class="dd"><p style="margin:0">多音字: 三分之一 fēn, 切换 qiè, 不值一提 zhí. Второй абзац — перечисление мелочей, темп чуть быстрее, затем резко замедлить на 加在一起却是半天.</p></div></details></div></div><div class="item" style="--ic:var(--blue)" data-id="d9"><div class="ih"><span class="inum">9</span><span class="ittl">友谊的距离</span><span class="ilen">≈203 字</span><span class="iact"><button class="tbtn" type="button" data-t="120" data-w="Чтение вслух · текст 9">▶ 2:00</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p>年轻的时候，我们以为朋友就是天天在一起的人。后来才慢慢明白，很多重要的友谊，恰恰是不常见面的。</p><p>有些朋友，半年不联系，一通电话打过去，几句话就回到从前；也有些人天天见，话题却越来越少。决定关系远近的，从来不是见面的次数，而是在你最难的时候，脑子里第一个想到的是谁。</p><p>所以不必为联系少而不安。真正的友谊能经得起时间，也经得起距离。需要小心的只有一点：别让“反正他懂我”变成从不开口的理由。有些话，还是要说出来的。</p><details><summary>На что обратить внимание при чтении</summary><div class="dd"><p style="margin:0">多音字: 一通电话 tōng, 难的时候 nán, 恰恰 qià. Второй абзац — два противопоставленных случая, держать паузу перед 也有些人. Концовка — предостережение, читать чуть строже.</p></div></details></div></div><div class="item" style="--ic:var(--blue)" data-id="d10"><div class="ih"><span class="inum">10</span><span class="ittl">学习一门外语</span><span class="ilen">≈214 字</span><span class="iact"><button class="tbtn" type="button" data-t="120" data-w="Чтение вслух · текст 10">▶ 2:00</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p>学一门外语，最难的往往不是语法，也不是生词，而是坚持。开始的时候进步很快，每天都能感觉到变化；到了中间那一段，怎么学好像都没有长进，很多人就是在这里放弃的。</p><p>其实那并不是没有进步，而是进步藏起来了。听力在悄悄变好，只是还不够听懂整段话；词汇量在慢慢增加，只是还不足以脱口而出。这个阶段唯一要做的事，就是别停。</p><p>等到某一天，你忽然听懂了一段原来听不懂的对话，或者梦里出现了外语，你就会知道，那段看起来毫无变化的日子，其实一直在起作用。</p><details><summary>На что обратить внимание при чтении</summary><div class="dd"><p style="margin:0">多音字: 长进 zhǎng, 脱口而出 tuō, 毫无 háo. Три абзаца = проблема, объяснение, вывод. Конструкция «不是……也不是……而是……» в первом предложении — держать все три части одной интонацией.</p></div></details></div></div>
+</section>
+
+
+<section id="p3">
+  <h2>Раздел 3 · Ответ на вопрос <span class="cn">回答问题</span><span class="cnt" id="c3">0/10</span></h2>
+  <p class="lede">Два вопроса, примерно по две с половиной минуты на каждый. Это самая дорогая часть
+  экзамена и единственная, где видно, умеете ли вы рассуждать, а не только говорить.</p>
+
+  <div class="card plum">
+    <h4>Каркас ответа</h4>
+    <p class="cn-ex"><span class="hl">① 表态</span> — 在我看来 / 我认为 / 这个问题不能一概而论<br>
+    <span class="hl">② 理由一</span> — 首先，…… 比如说，……<br>
+    <span class="hl">③ 理由二</span> — 其次，…… 与此同时，……<br>
+    <span class="hl">④ 让步</span> — 当然，我也承认…… 不过……<br>
+    <span class="hl">⑤ 结论</span> — 总的来说，…… 因此我认为……</p>
+    <p style="margin:8px 0 0;font-size:14.5px;color:var(--brick)">Пять шагов — это ровно две с половиной
+    минуты при спокойном темпе. Четвёртый шаг, уступка, и отличает ответ на высокий балл:
+    он показывает, что вы видите вторую сторону.</p>
+  </div>
+
+  <div class="card green">
+    <h4>Три приёма, которые поднимают оценку</h4>
+    <ul>
+      <li><b>Сузьте вопрос в первой же фразе.</b> Не «努力很重要», а «关键在于……»: сразу видно,
+      что это рассуждение, а не общая фраза.</li>
+      <li><b>Один конкретный пример.</b> Короткий случай из жизни или из прочитанного стоит дороже,
+      чем три абстрактных довода. 比如说，我有一个朋友…… — и дальше тридцать секунд.</li>
+      <li><b>Не бойтесь личного.</b> На 高级 ждут позицию, а не правильный ответ. 就我自己而言……
+      — законный и сильный ход.</li>
+    </ul>
+  </div>
+
+  <div class="card red">
+    <p style="margin:0"><b>Чего делать не надо:</b> перечислять «第一、第二、第三、第四、第五»
+    без содержания; начинать с 这是一个很好的问题 (пустая секунда); заканчивать на середине мысли,
+    потому что время кончилось. Лучше сказать вывод на двадцать секунд раньше, чем оборваться.</p>
+  </div>
+
+<div class="item" style="--ic:var(--green)" data-id="a1"><div class="ih"><span class="inum">1</span><span class="ittl ru">Неудача и успех</span><span class="iact"><button class="tbtn" type="button" data-t="150" data-w="Ответ · вопрос 1">▶ 2:30</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p class="q">有人说“失败是成功之母”，也有人认为失败会让人失去信心。请谈谈你的看法。</p><p class="qru">Одни говорят, что поражение — мать успеха, другие считают, что неудачи лишают уверенности. Выскажите своё мнение.</p><details><summary>План ответа, связки и заготовки доводов</summary><div class="dd"><p style="margin:0 0 6px"><b>План:</b></p><ol><li>Занять позицию и сразу сузить её: не «поражение полезно», а «полезно при одном условии»</li><li>Два довода, каждый с коротким примером из жизни или из прочитанного</li><li>Вывод с оговоркой: что именно превращает неудачу в опыт</li></ol><p style="margin:10px 0 4px"><b>Связки:</b></p><p class="ph">在我看来…… / 这个问题不能一概而论 / 关键在于…… / 换句话说…… / 总的来说……</p><p style="margin:10px 0 6px"><b>Что можно сказать:</b></p><p class="kw" style="margin:0 0 7px">失败本身没有价值，有价值的是失败之后的反省：能说清楚哪一步错了，下次才不会重复。</p><p class="kw" style="margin:0 0 7px">但如果一个人长期得不到任何成功的经验，确实容易失去信心，所以关键是失败之后要有人、有机会让他重新试一次。</p></div></details></div></div><div class="item" style="--ic:var(--green)" data-id="a2"><div class="ih"><span class="inum">2</span><span class="ittl ru">Усилия или удача</span><span class="iact"><button class="tbtn" type="button" data-t="150" data-w="Ответ · вопрос 2">▶ 2:30</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p class="q">你认为一个人的成功主要靠努力还是靠机会？</p><p class="qru">Что важнее для успеха — усилия или удача?</p><details><summary>План ответа, связки и заготовки доводов</summary><div class="dd"><p style="margin:0 0 6px"><b>План:</b></p><ol><li>Не выбирать крайность: назвать роль каждого фактора</li><li>Главный тезис: усилия решают, сможешь ли воспользоваться моментом</li><li>Короткий пример и вывод</li></ol><p style="margin:10px 0 4px"><b>Связки:</b></p><p class="ph">我认为两者都重要，不过…… / 机会是给有准备的人的 / 如果没有……，就算……也…… / 由此可见……</p><p style="margin:10px 0 6px"><b>Что можно сказать:</b></p><p class="kw" style="margin:0 0 7px">机会对每个人都会出现，但只有准备好的人才抓得住：同样的岗位空出来，平时积累的人才敢去争取。</p><p class="kw" style="margin:0 0 7px">努力的作用还在于，它能把偶然的一次机会变成长期的结果；靠运气得到的位置，守不住。</p></div></details></div></div><div class="item" style="--ic:var(--green)" data-id="a3"><div class="ih"><span class="inum">3</span><span class="ittl ru">Отъезд в большой город</span><span class="iact"><button class="tbtn" type="button" data-t="150" data-w="Ответ · вопрос 3">▶ 2:30</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p class="q">现在很多年轻人离开家乡到大城市工作，请谈谈你对这种现象的看法。</p><p class="qru">Молодёжь уезжает из родных мест в большие города. Как вы к этому относитесь?</p><details><summary>План ответа, связки и заготовки доводов</summary><div class="dd"><p style="margin:0 0 6px"><b>План:</b></p><ol><li>Назвать причину явления — без оценки</li><li>Два следствия: для человека и для родного города</li><li>Вывод: что сделало бы выбор свободнее</li></ol><p style="margin:10px 0 4px"><b>Связки:</b></p><p class="ph">之所以……，是因为…… / 一方面……，另一方面…… / 不可否认…… / 与此同时…… / 我希望……</p><p style="margin:10px 0 6px"><b>Что можно сказать:</b></p><p class="kw" style="margin:0 0 7px">大城市提供的是机会的数量：同一个专业，在小城市可能只有两三个岗位，在大城市有几百个。</p><p class="kw" style="margin:0 0 7px">代价也很明显：房租高、节奏快、离父母远。近几年也有人回到家乡，因为网络让一部分工作不再挑地方。</p></div></details></div></div><div class="item" style="--ic:var(--green)" data-id="a4"><div class="ih"><span class="inum">4</span><span class="ittl ru">Интернет и одиночество</span><span class="iact"><button class="tbtn" type="button" data-t="150" data-w="Ответ · вопрос 4">▶ 2:30</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p class="q">有人认为网络拉近了人与人的距离，也有人认为网络让人更孤独。你怎么看？</p><p class="qru">Интернет сближает людей или делает их более одинокими?</p><details><summary>План ответа, связки и заготовки доводов</summary><div class="dd"><p style="margin:0 0 6px"><b>План:</b></p><ol><li>Разделить два разных типа общения — с дальними и с близкими</li><li>Тезис: интернет хорош для поддержания связи и плох как замена встрече</li><li>Вывод с практическим советом</li></ol><p style="margin:10px 0 4px"><b>Связки:</b></p><p class="ph">表面上看……，实际上…… / 对……来说 / 问题不在于……，而在于…… / 因此我认为……</p><p style="margin:10px 0 6px"><b>Что можно сказать:</b></p><p class="kw" style="margin:0 0 7px">对远方的朋友和家人，网络确实拉近了距离：以前一年通一次信，现在随时能看到对方的生活。</p><p class="kw" style="margin:0 0 7px">但对身边的人，网络常常起相反的作用：一家人坐在一起各看各的手机，说话反而比以前少了。</p></div></details></div></div><div class="item" style="--ic:var(--green)" data-id="a5"><div class="ih"><span class="inum">5</span><span class="ittl ru">Идеальная работа</span><span class="iact"><button class="tbtn" type="button" data-t="150" data-w="Ответ · вопрос 5">▶ 2:30</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p class="q">请谈谈你理想中的工作是什么样的，为什么。</p><p class="qru">Какой работы вы хотели бы и почему?</p><details><summary>План ответа, связки и заготовки доводов</summary><div class="dd"><p style="margin:0 0 6px"><b>План:</b></p><ol><li>Назвать три признака идеальной работы — не общие слова, а конкретика</li><li>Объяснить, откуда взялось каждое требование</li><li>Честно сказать, чем готовы пожертвовать</li></ol><p style="margin:10px 0 4px"><b>Связки:</b></p><p class="ph">首先……，其次……，最后…… / 对我个人而言 / 这主要是因为…… / 当然，我也清楚……</p><p style="margin:10px 0 6px"><b>Что можно сказать:</b></p><p class="kw" style="margin:0 0 7px">第一是能看见结果：我希望做完一件事以后，知道它对谁有用。</p><p class="kw" style="margin:0 0 7px">第二是能一直学到新东西；第三是同事之间可以坦率地提意见。收入当然重要，但如果前面三条都没有，再高的收入我也待不久。</p></div></details></div></div><div class="item" style="--ic:var(--green)" data-id="a6"><div class="ih"><span class="inum">6</span><span class="ittl ru">Книги или дорога</span><span class="iact"><button class="tbtn" type="button" data-t="150" data-w="Ответ · вопрос 6">▶ 2:30</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p class="q">有人说“读万卷书不如行万里路”，你同意这种说法吗？</p><p class="qru">«Лучше пройти тысячу ли, чем прочесть тысячу книг» — согласны?</p><details><summary>План ответа, связки и заготовки доводов</summary><div class="dd"><p style="margin:0 0 6px"><b>План:</b></p><ol><li>Объяснить, что именно даёт каждое из двух</li><li>Показать, что они работают только вместе</li><li>Вывод через конкретный пример</li></ol><p style="margin:10px 0 4px"><b>Связки:</b></p><p class="ph">这句话有一定道理，但…… / ……和……其实并不矛盾 / 没有……，就很难…… / 所以我更愿意说……</p><p style="margin:10px 0 6px"><b>Что можно сказать:</b></p><p class="kw" style="margin:0 0 7px">书给的是框架：没有读过历史，站在一座古城里也只能看见几堵墙。</p><p class="kw" style="margin:0 0 7px">路给的是检验：很多书上的结论，只有自己走过一趟才知道哪一部分是真的。两者的顺序通常是先读、再走、回来再读。</p></div></details></div></div><div class="item" style="--ic:var(--green)" data-id="a7"><div class="ih"><span class="inum">7</span><span class="ittl ru">Родители и выбор ребёнка</span><span class="iact"><button class="tbtn" type="button" data-t="150" data-w="Ответ · вопрос 7">▶ 2:30</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p class="q">你认为父母应该为孩子安排好未来吗？</p><p class="qru">Должны ли родители устраивать будущее ребёнка?</p><details><summary>План ответа, связки и заготовки доводов</summary><div class="dd"><p style="margin:0 0 6px"><b>План:</b></p><ol><li>Отделить «обеспечить возможности» от «решить за него»</li><li>Два довода против полного планирования</li><li>Что остаётся за родителями</li></ol><p style="margin:10px 0 4px"><b>Связки:</b></p><p class="ph">在我看来，这要分两种情况 / 与其……，不如…… / 一旦……，就…… / 父母能做的是……</p><p style="margin:10px 0 6px"><b>Что можно сказать:</b></p><p class="kw" style="margin:0 0 7px">父母的经验有时间限制：他们熟悉的是二十年前的行业，而孩子要工作的是三十年后的世界。</p><p class="kw" style="margin:0 0 7px">被安排好的人往往缺少选择的能力，一旦计划被打乱就不知道怎么办。父母真正能给的是眼界、底线和退路。</p></div></details></div></div><div class="item" style="--ic:var(--green)" data-id="a8"><div class="ih"><span class="inum">8</span><span class="ittl ru">Стресс и как его снимать</span><span class="iact"><button class="tbtn" type="button" data-t="150" data-w="Ответ · вопрос 8">▶ 2:30</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p class="q">随着生活节奏越来越快，很多人感到压力很大。请谈谈你缓解压力的方法。</p><p class="qru">Жизнь ускоряется, люди живут под давлением. Как вы снимаете напряжение?</p><details><summary>План ответа, связки и заготовки доводов</summary><div class="dd"><p style="margin:0 0 6px"><b>План:</b></p><ol><li>Сначала назвать источник давления, а не сразу способы</li><li>Два-три конкретных приёма, каждый с объяснением почему работает</li><li>Оговорка: когда своими силами не справиться</li></ol><p style="margin:10px 0 4px"><b>Связки:</b></p><p class="ph">就我自己而言 / 最有效的办法是…… / 这样做的好处在于…… / 另外…… / 必要的时候……</p><p style="margin:10px 0 6px"><b>Что можно сказать:</b></p><p class="kw" style="margin:0 0 7px">我的办法首先是把事情写下来：压力很大一部分来自“还有很多事没做”，写出来以后往往没有想象中多。</p><p class="kw" style="margin:0 0 7px">其次是固定的运动，哪怕每天只走半小时。如果情绪长时间低落，就不该硬扛，应该找专业的人谈一谈。</p></div></details></div></div><div class="item" style="--ic:var(--green)" data-id="a9"><div class="ih"><span class="inum">9</span><span class="ittl ru">Одна работа или смена работ</span><span class="iact"><button class="tbtn" type="button" data-t="150" data-w="Ответ · вопрос 9">▶ 2:30</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p class="q">有人喜欢长期做一份工作，也有人喜欢不断换工作。你更赞成哪一种？</p><p class="qru">Одни всю жизнь на одной работе, другие часто меняют. Что ближе вам?</p><details><summary>План ответа, связки и заготовки доводов</summary><div class="dd"><p style="margin:0 0 6px"><b>План:</b></p><ol><li>Назвать плюс каждой стратегии</li><li>Свой выбор и условие, при котором он меняется</li><li>Вывод о том, что на самом деле считается опытом</li></ol><p style="margin:10px 0 4px"><b>Связки:</b></p><p class="ph">各有各的好处 / 相比之下，我更赞成…… / 判断的标准不是……，而是…… / 简单地说……</p><p style="margin:10px 0 6px"><b>Что можно сказать:</b></p><p class="kw" style="margin:0 0 7px">长期做一份工作的优势是深度：很多问题只有做到第五年才看得见。</p><p class="kw" style="margin:0 0 7px">频繁换工作的优势是视野。我更赞成在一个方向上待够时间，但在这个方向里换位置——真正算经验的是解决过的问题，不是待过的公司数量。</p></div></details></div></div><div class="item" style="--ic:var(--green)" data-id="a10"><div class="ih"><span class="inum">10</span><span class="ittl ru">Человек, который повлиял</span><span class="iact"><button class="tbtn" type="button" data-t="150" data-w="Ответ · вопрос 10">▶ 2:30</button><label class="done"><input type="checkbox"> сделано</label></span></div><div class="ib"><p class="q">请介绍一位对你影响最大的人，并说说他对你的影响。</p><p class="qru">Расскажите о человеке, который на вас сильнее всего повлиял.</p><details><summary>План ответа, связки и заготовки доводов</summary><div class="dd"><p style="margin:0 0 6px"><b>План:</b></p><ol><li>Кто это и одна конкретная сцена, а не общие похвалы</li><li>Что именно изменилось в вас после этого</li><li>Как это проявляется сегодня</li></ol><p style="margin:10px 0 4px"><b>Связки:</b></p><p class="ph">要说影响最大的，应该是…… / 我至今记得…… / 从那以后…… / 直到现在……</p><p style="margin:10px 0 6px"><b>Что можно сказать:</b></p><p class="kw" style="margin:0 0 7px">选一个具体的瞬间：一句话、一次批评、一次她替你做的事，比列举优点有力得多。</p><p class="kw" style="margin:0 0 7px">结尾落在今天：说清楚这个影响现在还在怎么起作用，考官听到的就不是故事，而是一个人的变化。</p></div></details></div></div>
+</section>
+
+
+<section id="svyazki">
+  <h2>Связки на все три части <span class="cn">常用表达</span></h2>
+  <p class="lede">Их стоит довести до автоматизма: на экзамене они дают секунду на обдумывание и при этом
+  звучат как уровень, а не как заполнение паузы.</p>
+  <table>
+    <tr><th>Зачем</th><th>Выражения</th></tr>
+    <tr><td>Начать пересказ</td><td class="han">这段话讲的是…… / 这个故事说的是…… / 说的是这样一件事</td></tr>
+    <tr><td>Двигать сюжет</td><td class="han">有一次…… / 后来…… / 没想到…… / 结果…… / 从那以后……</td></tr>
+    <tr><td>Вывод в пересказе</td><td class="han">这个故事告诉我们…… / 由此可见…… / 作者想说的是……</td></tr>
+    <tr><td>Занять позицию</td><td class="han">在我看来…… / 我个人认为…… / 这个问题不能一概而论</td></tr>
+    <tr><td>Довод</td><td class="han">首先……，其次…… / 一方面……，另一方面…… / 之所以……，是因为……</td></tr>
+    <tr><td>Пример</td><td class="han">比如说…… / 拿……来说 / 以我自己为例</td></tr>
+    <tr><td>Уступка</td><td class="han">当然，我也承认…… / 不可否认…… / 话虽如此……</td></tr>
+    <tr><td>Противопоставление</td><td class="han">相比之下…… / 与其……不如…… / 表面上看……，实际上……</td></tr>
+    <tr><td>Условие</td><td class="han">一旦……，就…… / 如果没有……，就很难…… / 只有……，才……</td></tr>
+    <tr><td>Вывод</td><td class="han">总的来说…… / 因此我认为…… / 简单地说……</td></tr>
+    <tr><td>Выиграть секунду</td><td class="han">这让我想起…… / 说到这儿…… / 关于这一点……</td></tr>
+  </table>
+  <div class="card gold">
+    <p style="margin:0"><b>Про последнюю строку.</b> Три выражения вместо 嗯…… и 那个…… — единственный
+    законный способ думать вслух. Если вы научитесь вставлять их вместо пауз, беглость вырастет
+    без всякого роста словарного запаса.</p>
+  </div>
+</section>
+
+
+
+<section id="plan">
+  <h2>План на три недели <span class="cn">备考计划</span></h2>
+  <p class="lede">Банка на этой странице хватает ровно на такой цикл: по одному заданию каждого типа
+  в день плюс один полный прогон в конце недели.</p>
+  <div class="card plum">
+    <h4>Неделя 1 — поставить каркасы</h4>
+    <ul>
+      <li>Каждый день: один текст на пересказ (таймер 2:00) и один на чтение вслух (2:00).</li>
+      <li>Пересказ делайте строго по пяти предложениям каркаса, даже если помните больше.
+      Задача недели — чтобы каркас встал сам.</li>
+      <li>Чтение вслух записывайте на телефон и слушайте. Ищите одно: где падает громкость.</li>
+      <li>Вопросы пока не на время: разберите три штуки письменно, с планом и связками.</li>
+    </ul>
+  </div>
+  <div class="card green">
+    <h4>Неделя 2 — добавить объём</h4>
+    <ul>
+      <li>Пересказ: после каркаса добирайте детали — имена, числа, вторую реплику. Цель — заполнить две минуты.</li>
+      <li>Вопросы: по одному в день на таймере 2:30, вслух, без записей перед глазами.</li>
+      <li>Раз в неделю — полный прогон: три пересказа подряд, чтение, два вопроса, всё под запись.</li>
+      <li>После прогона выпишите слова, которых не хватило. Обычно их меньше десяти, и это
+      те же слова из урока учебника.</li>
+    </ul>
+  </div>
+  <div class="card gold">
+    <h4>Неделя 3 — довести до автоматизма</h4>
+    <ul>
+      <li>Оставшиеся задания — в режиме экзамена: один раз, без второй попытки, без пауз на подумать.</li>
+      <li>Отдельно отработайте десять связок из таблицы выше: произнесите каждую по десять раз,
+      пока она не перестанет требовать усилия.</li>
+      <li>За два дня до экзамена перестаньте учить новое. Прогоните каркасы и выспитесь:
+      беглость падает от усталости быстрее, чем от нехватки слов.</li>
+    </ul>
+  </div>
+</section>
+
+
+<footer style="margin-top:60px;padding-top:20px;border-top:3px solid var(--ink);font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em;line-height:1.8">
+  HSKK 高级 · 6 заданий · ≈25 минут · 100 баллов, проходной 60<br>
+  Тексты и вопросы на этой странице написаны для тренировки и повторяют формат экзамена, а не его материалы.<br>
+  Отметки «сделано» хранятся в браузере этого устройства.
+</footer>
+
+</div>
+
+<div class="timer">
+  <div class="timer-in">
+    <span class="clock" id="tclock">2:00</span>
+    <span class="lbl">таймер</span>
+    <button type="button" class="go" id="tgo">Старт</button>
+    <button type="button" id="treset">Сброс</button>
+    <span class="what" id="twhat"></span>
+    <span class="presets">
+      <button type="button" data-t="120" data-w="Пересказ · 2 минуты">复述 2:00</button>
+      <button type="button" data-t="120" data-w="Чтение вслух · 2 минуты">朗读 2:00</button>
+      <button type="button" data-t="150" data-w="Ответ на вопрос · 2:30">回答 2:30</button>
+      <button type="button" data-t="600" data-w="Подготовка · 10 минут">准备 10:00</button>
+    </span>
+  </div>
+</div>
+
+<script>
+(function(){
+  var LS = 'hskk-gaoji-v1';
+  var st = {};
+  try{ st = JSON.parse(localStorage.getItem(LS) || '{}') || {}; }catch(e){ st = {}; }
+  function save(){ try{ localStorage.setItem(LS, JSON.stringify(st)); }catch(e){} }
+
+  var items = document.querySelectorAll('.item');
+  function counts(){
+    var c = {r:0, d:0, a:0};
+    for(var k in st){ if(st[k] && c[k.charAt(0)] !== undefined) c[k.charAt(0)]++; }
+    document.getElementById('c1').textContent = c.r + '/10';
+    document.getElementById('c2').textContent = c.d + '/10';
+    document.getElementById('c3').textContent = c.a + '/10';
+  }
+  for(var i=0;i<items.length;i++){
+    (function(it){
+      var id = it.getAttribute('data-id');
+      var box = it.querySelector('.done input');
+      if(st[id]){ box.checked = true; it.classList.add('ok'); }
+      box.addEventListener('change', function(){
+        st[id] = box.checked;
+        it.classList.toggle('ok', box.checked);
+        save(); counts();
+      });
+    })(items[i]);
+  }
+  counts();
+
+  /* ——— таймер ——— */
+  var left = 0, total = 0, tid = null, ac = null;
+  var clock = document.getElementById('tclock');
+  var what  = document.getElementById('twhat');
+  var go    = document.getElementById('tgo');
+
+  function fmt(s){
+    var m = Math.floor(s/60), r = s % 60;
+    return m + ':' + (r < 10 ? '0' : '') + r;
+  }
+  function draw(){
+    clock.textContent = fmt(left);
+    clock.classList.toggle('low', left <= 15 && left > 0);
+  }
+  function beep(){
+    try{
+      ac = ac || new (window.AudioContext || window.webkitAudioContext)();
+      var t = ac.currentTime;
+      [0, .28, .56].forEach(function(d){
+        var o = ac.createOscillator(), g = ac.createGain();
+        o.type = 'sine'; o.frequency.value = 880;
+        g.gain.setValueAtTime(.0001, t + d);
+        g.gain.exponentialRampToValueAtTime(.22, t + d + .02);
+        g.gain.exponentialRampToValueAtTime(.0001, t + d + .2);
+        o.connect(g); g.connect(ac.destination);
+        o.start(t + d); o.stop(t + d + .22);
+      });
+    }catch(e){}
+  }
+  function stop(){
+    if(tid){ clearInterval(tid); tid = null; }
+    go.textContent = 'Старт';
+    go.classList.remove('on');
+  }
+  function tick(){
+    left--;
+    if(left <= 0){ left = 0; draw(); stop(); beep(); return; }
+    draw();
+  }
+  function start(){
+    if(left <= 0) return;
+    if(tid){ stop(); return; }
+    try{ ac = ac || new (window.AudioContext || window.webkitAudioContext)(); if(ac.state==='suspended') ac.resume(); }catch(e){}
+    go.textContent = 'Пауза';
+    go.classList.add('on');
+    tid = setInterval(tick, 1000);
+  }
+  function set(sec, label, auto){
+    stop();
+    total = left = sec;
+    what.textContent = label || '';
+    draw();
+    if(auto) start();
+  }
+
+  go.addEventListener('click', start);
+  document.getElementById('treset').addEventListener('click', function(){ set(total, what.textContent, false); });
+  var pre = document.querySelectorAll('.timer [data-t]');
+  for(var p=0;p<pre.length;p++){
+    (function(b){
+      b.addEventListener('click', function(){ set(+b.getAttribute('data-t'), b.getAttribute('data-w'), false); });
+    })(pre[p]);
+  }
+  var tb = document.querySelectorAll('.item [data-t]');
+  for(var q=0;q<tb.length;q++){
+    (function(b){
+      b.addEventListener('click', function(){
+        set(+b.getAttribute('data-t'), b.getAttribute('data-w'), true);
+        window.scrollBy(0, 0);
+      });
+    })(tb[q]);
+  }
+  set(120, 'Пересказ / чтение вслух', false);
+})();
+</script>
+</body>
+</html>

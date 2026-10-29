@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Подготовка к HSK 5 — конспекты, тетрадь, тесты, HSKK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16171b; --paper:#e3e1d8; --card:#f5f3ec; --brick:#625f58;
+  --red:#a8332a; --blue:#2f3f6b; --green:#3c6b4c; --gold:#a8813c; --violet:#6b4a7a;
+  --line:rgba(22,23,27,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px 100px}
+
+/* ——— шапка ——— */
+.hero{background:var(--ink);color:#f1efe8;margin:0 -20px;padding:46px 20px 38px}
+.hero-in{max-width:980px;margin:0 auto}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#908c84}
+h1{margin:16px 0 0;font-family:var(--disp);font-weight:700;font-size:58px;line-height:.98;letter-spacing:.01em}
+h1 .cn{font-family:var(--han);font-weight:600;font-size:38px;color:#d9a7a1;display:block;margin-top:10px;letter-spacing:.04em}
+.hero p{margin:20px 0 0;font-size:17px;color:#c8c4bb;max-width:620px}
+.hero .prog{display:flex;align-items:center;gap:16px;margin-top:26px;flex-wrap:wrap}
+.hero .prog .big{font-family:var(--disp);font-weight:700;font-size:34px;line-height:1;color:#e8b0a8}
+.hero .prog .txt{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#908c84}
+.hero .bar{flex:1 1 220px;min-width:160px;height:8px;background:rgba(255,255,255,.14)}
+.hero .bar i{display:block;height:100%;background:#c0574b}
+
+section{margin-top:54px}
+h2{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:12px}
+h2 .cn{font-family:var(--han);font-size:19px;color:var(--red);font-weight:600;text-transform:none;letter-spacing:.05em}
+.lede{color:var(--brick);font-size:14.5px;margin:10px 0 18px;max-width:700px}
+
+/* ——— тома ——— */
+.vols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.vol{background:var(--card);border:1px solid var(--line);border-top:5px solid var(--vc);padding:20px 22px 22px}
+.vol .vh{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.vol .vt{font-family:var(--han);font-size:25px;font-weight:600;line-height:1.1}
+.vol .vn{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)}
+.vol .vs{font-family:var(--mono);font-size:11.5px;color:var(--vc);letter-spacing:.06em;margin-top:6px}
+.chips{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;margin-top:15px}
+.chip{display:flex;align-items:center;justify-content:center;height:40px;background:#fff;
+  border:1px solid var(--line);font-family:var(--disp);font-weight:700;font-size:18px;
+  color:var(--ink);text-decoration:none;transition:background .12s ease,color .12s ease}
+a.chip:hover,a.chip:focus{background:var(--vc);color:#fff;border-color:var(--vc);outline:none}
+.chip.off{color:var(--brick);opacity:.4;background:transparent}
+.vol .rd{margin-top:13px;border-top:1px dashed var(--line);padding-top:11px;min-height:48px;font-size:14.5px}
+.vol .rd .zh{font-family:var(--han);font-size:19px;font-weight:600;margin-right:9px}
+.vol .rd .ru{color:var(--brick)}
+.vol .rd .hint{color:var(--brick);font-style:italic}
+.vol .go{display:inline-block;margin-top:12px;font-family:var(--disp);font-weight:700;font-size:13.5px;
+  letter-spacing:.05em;color:#fff;background:var(--vc);padding:9px 15px;text-decoration:none}
+.vol .go:hover{background:var(--ink)}
+
+details.all{margin-top:16px;background:var(--card);border:1px solid var(--line)}
+details.all summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:14.5px;
+  letter-spacing:.05em;list-style:none;color:var(--blue)}
+details.all summary::-webkit-details-marker{display:none}
+details.all summary::before{content:"▸ ";color:var(--red)}
+details.all[open] summary::before{content:"▾ "}
+.alllist{padding:0 16px 16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px 20px}
+.alllist .u{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--brick);margin:12px 0 5px;grid-column:1/-1}
+.alllist a,.alllist span.off{display:flex;gap:10px;align-items:baseline;padding:4px 0;
+  border-bottom:1px dotted rgba(22,23,27,.14);text-decoration:none;color:inherit;font-size:14.5px}
+.alllist a:hover{color:var(--red)}
+.alllist .n{font-family:var(--mono);font-size:12px;color:var(--brick);width:24px;flex:none;text-align:right}
+.alllist .z{font-family:var(--han);font-size:15.5px;font-weight:600}
+.alllist .r{color:var(--brick);font-size:13.5px}
+.alllist span.off{opacity:.45}
+
+/* ——— карточки материалов ——— */
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px;margin-top:16px}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--tc);
+  padding:18px 20px;text-decoration:none;color:inherit;transition:transform .14s ease,box-shadow .14s ease}
+a.tile:hover{transform:translateY(-2px);box-shadow:0 4px 0 rgba(22,23,27,.1)}
+.tile .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)}
+.tile .zh{font-family:var(--han);font-size:24px;font-weight:600;display:block;margin:7px 0 2px;color:var(--tc)}
+.tile .t{font-family:var(--disp);font-weight:700;font-size:19px;display:block;letter-spacing:.02em}
+.tile .d{display:block;font-size:14.5px;color:var(--brick);margin-top:7px;line-height:1.5}
+
+/* ——— с чего начать ——— */
+.start{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);padding:20px 22px;margin-top:16px}
+.start ol{counter-reset:s;list-style:none;padding:0;margin:0}
+.start li{counter-increment:s;position:relative;padding-left:40px;margin-bottom:13px}
+.start li:last-child{margin-bottom:0}
+.start li::before{content:counter(s);position:absolute;left:0;top:-1px;font-family:var(--disp);font-weight:700;
+  font-size:20px;color:var(--red);width:26px;text-align:right}
+.start b{font-family:var(--disp);font-size:16.5px;letter-spacing:.02em}
+
+footer{margin-top:66px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em;line-height:1.8}
+footer code{background:rgba(22,23,27,.06);padding:1px 5px}
+
+@media (max-width:760px){
+  h1{font-size:40px} h1 .cn{font-size:27px}
+  .vols{grid-template-columns:1fr}
+  .wrap{padding:0 15px 70px}
+  .hero{margin:0 -15px;padding:34px 15px 30px}
+  .chips{grid-template-columns:repeat(6,1fr)}
+  .chip{height:36px;font-size:16px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hero"><div class="hero-in">
+  <div class="eyebrow">标准教程 5 · письменный и устный экзамен</div>
+  <h1>Подготовка к HSK 5<span class="cn">五级 · 口语高级</span></h1>
+  <p>Всё в одном месте: конспекты обоих томов учебника, рабочая тетрадь с проверкой,
+     контрольный тест, разбор письменной части и отдельная страница для устного экзамена HSKK 高级.
+     Страницы статические — работают без интернета, с телефона и из распечатки.</p>
+  <div class="prog">
+    <span class="big">20/36</span>
+    <span class="txt">уроков разобрано</span>
+    <span class="bar"><i style="width:56%"></i></span>
+  </div>
+</div></div>
+
+<section>
+  <h2>Учебник <span class="cn">标准教程 5（上）（下）</span></h2>
+  <p class="lede">Два тома, 36 уроков, шесть и шесть юнитов. Номер — ссылка прямо на конспект;
+     названия показываются при наведении, а полный список с переводами открывается ниже.</p>
+  <div class="vols">
+    <div class="vol" style="--vc:var(--red)" data-vol="5A"><div class="vh"><span class="vt">HSK 标准教程 5（上）</span><span class="vn">5A</span></div><div class="vs">18 уроков · юниты 1–6 · 743 слова · разобран целиком</div><div class="chips"><a class="chip" href="hsk5a-lesson-01.html" data-zh="爱的细节" data-ru="Детали любви" title="爱的细节 — Детали любви">1</a><a class="chip" href="hsk5a-lesson-02.html" data-zh="留串钥匙给父母" data-ru="Оставить родителям связку ключей" title="留串钥匙给父母 — Оставить родителям связку ключей">2</a><a class="chip" href="hsk5a-lesson-03.html" data-zh="人生有选择，一切可改变" data-ru="В жизни есть выбор — изменить можно всё" title="人生有选择，一切可改变 — В жизни есть выбор — изменить можно всё">3</a><a class="chip" href="hsk5a-lesson-04.html" data-zh="子路背米" data-ru="Цзы Лу несёт рис" title="子路背米 — Цзы Лу несёт рис">4</a><a class="chip" href="hsk5a-lesson-05.html" data-zh="济南的泉水" data-ru="Родники Цзинаня" title="济南的泉水 — Родники Цзинаня">5</a><a class="chip" href="hsk5a-lesson-06.html" data-zh="除夕的由来" data-ru="Откуда взялся канун Нового года" title="除夕的由来 — Откуда взялся канун Нового года">6</a><a class="chip" href="hsk5a-lesson-07.html" data-zh="成语故事两则" data-ru="Две истории о чэнъюях" title="成语故事两则 — Две истории о чэнъюях">7</a><a class="chip" href="hsk5a-lesson-08.html" data-zh="“朝三暮四”的古今义" data-ru="«Утром три, вечером четыре»: тогда и теперь" title="“朝三暮四”的古今义 — «Утром три, вечером четыре»: тогда и теперь">8</a><a class="chip" href="hsk5a-lesson-09.html" data-zh="别样鲁迅" data-ru="Другой Лу Синь" title="别样鲁迅 — Другой Лу Синь">9</a><a class="chip" href="hsk5a-lesson-10.html" data-zh="争论的奇迹" data-ru="Чудо спора" title="争论的奇迹 — Чудо спора">10</a><a class="chip" href="hsk5a-lesson-11.html" data-zh="闹钟的危害" data-ru="Чем вреден будильник" title="闹钟的危害 — Чем вреден будильник">11</a><a class="chip" href="hsk5a-lesson-12.html" data-zh="海外用户玩儿微信" data-ru="Зарубежные пользователи WeChat" title="海外用户玩儿微信 — Зарубежные пользователи WeChat">12</a><a class="chip" href="hsk5a-lesson-13.html" data-zh="锯掉生活的“筐底”" data-ru="Отпилить у жизни «дно корзины»" title="锯掉生活的“筐底” — Отпилить у жизни «дно корзины»">13</a><a class="chip" href="hsk5a-lesson-14.html" data-zh="北京的四合院" data-ru="Пекинский сыхэюань" title="北京的四合院 — Пекинский сыхэюань">14</a><a class="chip" href="hsk5a-lesson-15.html" data-zh="纸上谈兵" data-ru="Воевать на бумаге" title="纸上谈兵 — Воевать на бумаге">15</a><a class="chip" href="hsk5a-lesson-16.html" data-zh="体重与节食" data-ru="Вес и диета" title="体重与节食 — Вес и диета">16</a><a class="chip" href="hsk5a-lesson-17.html" data-zh="在最美好的时刻离开" data-ru="Уйти в самый прекрасный миг" title="在最美好的时刻离开 — Уйти в самый прекрасный миг">17</a><a class="chip" href="hsk5a-lesson-18.html" data-zh="抽象艺术美不美" data-ru="Красиво ли абстрактное искусство" title="抽象艺术美不美 — Красиво ли абстрактное искусство">18</a></div><div class="rd"><span class="hint">Номер ведёт прямо в конспект. Наведите — покажу название; на телефоне названия в списке ниже.</span></div><a class="go" href="index-5a.html">Все уроки тома →</a></div>
+    <div class="vol" style="--vc:var(--blue)" data-vol="5B"><div class="vh"><span class="vt">HSK 标准教程 5（下）</span><span class="vn">5B</span></div><div class="vs">18 уроков · юниты 7–12 · разобрано 2 из 18</div><div class="chips"><a class="chip" href="hsk5b-lesson-19.html" data-zh="家乡的萝卜饼" data-ru="Лепёшки с редькой с моей родины" title="家乡的萝卜饼 — Лепёшки с редькой с моей родины">19</a><a class="chip" href="hsk5b-lesson-20.html" data-zh="小人书摊" data-ru="Лоток с книжками-картинками" title="小人书摊 — Лоток с книжками-картинками">20</a><span class="chip off" data-zh="汉字叔叔：一个美国人的汉字情缘" data-ru="Дядюшка Ханьцзы — конспект в работе" title="汉字叔叔：一个美国人的汉字情缘">21</span><span class="chip off" data-zh="阅读与思考" data-ru="Чтение и размышление — конспект в работе" title="阅读与思考">22</span><span class="chip off" data-zh="放手" data-ru="Отпустить — конспект в работе" title="放手">23</span><span class="chip off" data-zh="支教行动" data-ru="Поехать учить в глубинку — конспект в работе" title="支教行动">24</span><span class="chip off" data-zh="给自己加满水" data-ru="Налить себе полный бак — конспект в работе" title="给自己加满水">25</span><span class="chip off" data-zh="你属于哪一种“忙”" data-ru="Какая у вас занятость — конспект в работе" title="你属于哪一种“忙”">26</span><span class="chip off" data-zh="下棋" data-ru="Игра в шахматы — конспект в работе" title="下棋">27</span><span class="chip off" data-zh="最受欢迎的毕业生" data-ru="Самый желанный выпускник — конспект в работе" title="最受欢迎的毕业生">28</span><span class="chip off" data-zh="培养对手" data-ru="Растить себе соперника — конспект в работе" title="培养对手">29</span><span class="chip off" data-zh="竞争让市场更高效" data-ru="Конкуренция делает рынок эффективнее — конспект в работе" title="竞争让市场更高效">30</span><span class="chip off" data-zh="登门槛效应" data-ru="Эффект ноги в двери — конспект в работе" title="登门槛效应">31</span><span class="chip off" data-zh="身边的环保" data-ru="Экология рядом — конспект в работе" title="身边的环保">32</span><span class="chip off" data-zh="以堵治堵——缓解交通有妙招" data-ru="Лечить пробку пробкой — конспект в работе" title="以堵治堵——缓解交通有妙招">33</span><span class="chip off" data-zh="鸟儿的护肤术" data-ru="Как птицы ухаживают за перьями — конспект в работе" title="鸟儿的护肤术">34</span><span class="chip off" data-zh="植物会出汗" data-ru="Растения тоже потеют — конспект в работе" title="植物会出汗">35</span><span class="chip off" data-zh="老舍与养花" data-ru="Лао Шэ и его цветы — конспект в работе" title="老舍与养花">36</span></div><div class="rd"><span class="hint">Номер ведёт прямо в конспект. Наведите — покажу название; на телефоне названия в списке ниже.</span></div><a class="go" href="index-5b.html">Все уроки тома →</a></div>
+  </div>
+  <details class="all">
+    <summary>Все 36 уроков списком, с названиями</summary>
+    <div class="alllist"><div class="u">5A · Unit 1 · 了解生活 · Понять жизнь</div><a href="hsk5a-lesson-01.html"><span class="n">1</span><span><span class="z">爱的细节</span> <span class="r">Детали любви</span></span></a><a href="hsk5a-lesson-02.html"><span class="n">2</span><span><span class="z">留串钥匙给父母</span> <span class="r">Оставить родителям связку ключей</span></span></a><a href="hsk5a-lesson-03.html"><span class="n">3</span><span><span class="z">人生有选择，一切可改变</span> <span class="r">В жизни есть выбор — изменить можно всё</span></span></a><div class="u">5A · Unit 2 · 谈古说今 · О прошлом и настоящем</div><a href="hsk5a-lesson-04.html"><span class="n">4</span><span><span class="z">子路背米</span> <span class="r">Цзы Лу несёт рис</span></span></a><a href="hsk5a-lesson-05.html"><span class="n">5</span><span><span class="z">济南的泉水</span> <span class="r">Родники Цзинаня</span></span></a><a href="hsk5a-lesson-06.html"><span class="n">6</span><span><span class="z">除夕的由来</span> <span class="r">Откуда взялся канун Нового года</span></span></a><div class="u">5A · Unit 3 · 倾听故事 · Слушая истории</div><a href="hsk5a-lesson-07.html"><span class="n">7</span><span><span class="z">成语故事两则</span> <span class="r">Две истории о чэнъюях</span></span></a><a href="hsk5a-lesson-08.html"><span class="n">8</span><span><span class="z">“朝三暮四”的古今义</span> <span class="r">«Утром три, вечером четыре»: тогда и теперь</span></span></a><a href="hsk5a-lesson-09.html"><span class="n">9</span><span><span class="z">别样鲁迅</span> <span class="r">Другой Лу Синь</span></span></a><div class="u">5A · Unit 4 · 走近科学 · Ближе к науке</div><a href="hsk5a-lesson-10.html"><span class="n">10</span><span><span class="z">争论的奇迹</span> <span class="r">Чудо спора</span></span></a><a href="hsk5a-lesson-11.html"><span class="n">11</span><span><span class="z">闹钟的危害</span> <span class="r">Чем вреден будильник</span></span></a><a href="hsk5a-lesson-12.html"><span class="n">12</span><span><span class="z">海外用户玩儿微信</span> <span class="r">Зарубежные пользователи WeChat</span></span></a><div class="u">5A · Unit 5 · 放眼世界 · Взгляд на мир</div><a href="hsk5a-lesson-13.html"><span class="n">13</span><span><span class="z">锯掉生活的“筐底”</span> <span class="r">Отпилить у жизни «дно корзины»</span></span></a><a href="hsk5a-lesson-14.html"><span class="n">14</span><span><span class="z">北京的四合院</span> <span class="r">Пекинский сыхэюань</span></span></a><a href="hsk5a-lesson-15.html"><span class="n">15</span><span><span class="z">纸上谈兵</span> <span class="r">Воевать на бумаге</span></span></a><div class="u">5A · Unit 6 · 修养身心 · Тело и душа</div><a href="hsk5a-lesson-16.html"><span class="n">16</span><span><span class="z">体重与节食</span> <span class="r">Вес и диета</span></span></a><a href="hsk5a-lesson-17.html"><span class="n">17</span><span><span class="z">在最美好的时刻离开</span> <span class="r">Уйти в самый прекрасный миг</span></span></a><a href="hsk5a-lesson-18.html"><span class="n">18</span><span><span class="z">抽象艺术美不美</span> <span class="r">Красиво ли абстрактное искусство</span></span></a><div class="u">5B · Unit 7 · 交流文化 · Культурный обмен</div><a href="hsk5b-lesson-19.html"><span class="n">19</span><span><span class="z">家乡的萝卜饼</span> <span class="r">Лепёшки с редькой с моей родины</span></span></a><a href="hsk5b-lesson-20.html"><span class="n">20</span><span><span class="z">小人书摊</span> <span class="r">Лоток с книжками-картинками</span></span></a><span class="off"><span class="n">21</span><span><span class="z">汉字叔叔：一个美国人的汉字情缘</span> <span class="r">Дядюшка Ханьцзы · в работе</span></span></span><div class="u">5B · Unit 8 · 体会教育 · Про образование</div><span class="off"><span class="n">22</span><span><span class="z">阅读与思考</span> <span class="r">Чтение и размышление · в работе</span></span></span><span class="off"><span class="n">23</span><span><span class="z">放手</span> <span class="r">Отпустить · в работе</span></span></span><span class="off"><span class="n">24</span><span><span class="z">支教行动</span> <span class="r">Поехать учить в глубинку · в работе</span></span></span><div class="u">5B · Unit 9 · 感受人生 · Про жизнь</div><span class="off"><span class="n">25</span><span><span class="z">给自己加满水</span> <span class="r">Налить себе полный бак · в работе</span></span></span><span class="off"><span class="n">26</span><span><span class="z">你属于哪一种“忙”</span> <span class="r">Какая у вас занятость · в работе</span></span></span><span class="off"><span class="n">27</span><span><span class="z">下棋</span> <span class="r">Игра в шахматы · в работе</span></span></span><div class="u">5B · Unit 10 · 关注经济 · Про экономику</div><span class="off"><span class="n">28</span><span><span class="z">最受欢迎的毕业生</span> <span class="r">Самый желанный выпускник · в работе</span></span></span><span class="off"><span class="n">29</span><span><span class="z">培养对手</span> <span class="r">Растить себе соперника · в работе</span></span></span><span class="off"><span class="n">30</span><span><span class="z">竞争让市场更高效</span> <span class="r">Конкуренция делает рынок эффективнее · в работе</span></span></span><div class="u">5B · Unit 11 · 观察社会 · Про общество</div><span class="off"><span class="n">31</span><span><span class="z">登门槛效应</span> <span class="r">Эффект ноги в двери · в работе</span></span></span><span class="off"><span class="n">32</span><span><span class="z">身边的环保</span> <span class="r">Экология рядом · в работе</span></span></span><span class="off"><span class="n">33</span><span><span class="z">以堵治堵——缓解交通有妙招</span> <span class="r">Лечить пробку пробкой · в работе</span></span></span><div class="u">5B · Unit 12 · 亲近自然 · Про природу</div><span class="off"><span class="n">34</span><span><span class="z">鸟儿的护肤术</span> <span class="r">Как птицы ухаживают за перьями · в работе</span></span></span><span class="off"><span class="n">35</span><span><span class="z">植物会出汗</span> <span class="r">Растения тоже потеют · в работе</span></span></span><span class="off"><span class="n">36</span><span><span class="z">老舍与养花</span> <span class="r">Лао Шэ и его цветы · в работе</span></span></span></div>
+  </details>
+</section>
+
+<section>
+  <h2>Отработка <span class="cn">练习</span></h2>
+  <p class="lede">Три страницы, которые превращают прочитанный конспект в проверяемый результат.</p>
+  <div class="tiles">
+    <a class="tile" style="--tc:var(--blue)" href="tetrad-hsk5a.html">
+      <span class="k">18 уроков · 32 задания в каждом</span>
+      <span class="zh">练习册</span>
+      <span class="t">Рабочая тетрадь</span>
+      <span class="d">Аудио к 听力 прямо на странице, бланк ответов 1–28, сборка предложений 29–31 с эталоном
+      и место для сочинения. Итог по разделам и оценка за урок.</span>
+    </a>
+    <a class="tile" style="--tc:var(--green)" href="test-hsk5a.html">
+      <span class="k">192 вопроса · 7 блоков</span>
+      <span class="zh">总复习测试</span>
+      <span class="t">Контрольный тест 5A</span>
+      <span class="d">Пары 辨析, все 60 грамматических точек, счётные слова, чтения и порядок слов.
+      Проверка сразу, итог показывает, какие уроки повторить.</span>
+    </a>
+    <a class="tile" style="--tc:var(--gold)" href="progress-hsk5a.html">
+      <span class="k">оценки · график · пробники</span>
+      <span class="zh">成绩</span>
+      <span class="t">Дневник и динамика</span>
+      <span class="d">Пробник HSK считается по трём разделам из 300, уроки тетради попадают сюда сами.
+      Видно средний балл и растёт ли он от попытки к попытке.</span>
+    </a>
+  </div>
+</section>
+
+<section>
+  <h2>Экзамен <span class="cn">考试</span></h2>
+  <p class="lede">Две части, которые учебник отрабатывает меньше всего, — письмо и устная речь.</p>
+  <div class="tiles">
+    <a class="tile" style="--tc:var(--red)" href="pismo-hsk5.html">
+      <span class="k">раздел 3 · 10 заданий · 40 минут</span>
+      <span class="zh">书写</span>
+      <span class="t">Письмо</span>
+      <span class="d">Схема порядка слов для заданий 91–98, каркасы текстов на 80 знаков, клише по местам
+      и конструкции из учебника, которые поднимают балл.</span>
+    </a>
+    <a class="tile" style="--tc:var(--violet)" href="hskk-gaoji.html">
+      <span class="k">口语考试 · 6 заданий · 25 минут</span>
+      <span class="zh">口语高级</span>
+      <span class="t">HSKK 高级</span>
+      <span class="d">Разбор формата и критериев, таймеры под каждое задание и банк тренировки:
+      по десять текстов на пересказ и на чтение вслух и десять вопросов с планом ответа.</span>
+    </a>
+  </div>
+</section>
+
+<section>
+  <h2>С чего начать <span class="cn">怎么用</span></h2>
+  <div class="start">
+    <ol>
+      <li><b>Один урок — один заход.</b> Откройте конспект, прокликайте схему текста, прочитайте пересказ
+      по блокам и только потом идите в список слов: так лексика цепляется за сюжет, а не висит в воздухе.</li>
+      <li><b>Сразу закрепите на слух.</b> В каждом конспекте есть раздел «На слух» — пары, которые звучат
+      одинаково, и знаки, тяжёлые для руки. Это то, на чём диктант проваливают чаще всего.</li>
+      <li><b>Проверьте себя в тетради.</b> Тот же урок в 练习册: аудирование, чтение и письмо, проверка сразу,
+      оценка в конце.</li>
+      <li><b>Раз в неделю — пробник.</b> Результат в дневник, и через месяц видно, какой из разделов
+      действительно растёт, а какой стоит.</li>
+      <li><b>За месяц до экзамена</b> — контрольный тест по всему тому, страница письма и, если сдаёте
+      устный, HSKK: там таймеры и банк заданий на двадцать дней тренировки.</li>
+    </ol>
+  </div>
+</section>
+
+<footer>
+  HSK 标准教程 5 · 36 уроков · конспекты, тетрадь, тесты и устный экзамен<br>
+  Озвучка подключается папкой <code>audio</code> рядом с этими файлами: слова — <code>иероглиф.mp3</code>,
+  тетрадь — <code>HSK标准教程 5（上）练习册音频 01-1.mp3</code>.<br>
+  Прогресс тетради, теста и дневника хранится в браузере этого устройства.
+</footer>
+
+</div>
+<script>
+(function(){
+  var vols = document.querySelectorAll('.vol');
+  for(var i=0;i<vols.length;i++){
+    (function(v){
+      var rd = v.querySelector('.rd'), def = rd.innerHTML;
+      var chips = v.querySelectorAll('.chip');
+      function show(c){
+        rd.innerHTML = '<span class="zh">' + c.getAttribute('data-zh') + '</span>' +
+                       '<span class="ru">' + c.getAttribute('data-ru') + '</span>';
+      }
+      for(var j=0;j<chips.length;j++){
+        (function(c){
+          c.addEventListener('mouseenter', function(){ show(c); });
+          c.addEventListener('focus', function(){ show(c); });
+        })(chips[j]);
+      }
+      v.addEventListener('mouseleave', function(){ rd.innerHTML = def; });
+    })(vols[i]);
+  }
+})();
+</script>
+</body>
+</html>
