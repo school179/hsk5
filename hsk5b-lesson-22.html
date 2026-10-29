@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 22 · 阅读与思考 · HSK 标准教程 5下</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#23262a;
+  --brick:#6f6b63;
+  --paper:#e3e1da;
+  --card:#f2f1ec;
+  --red:#b4342a;
+  --brass:#a8813c;
+  --bamboo:#4a6b4e;
+  --sky:#54748a;
+  --line:rgba(35,38,42,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:
+    linear-gradient(rgba(255,255,255,.35) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.35) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+/* ——— шапка ——— */
+header{padding:56px 0 28px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{
+  font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;
+  color:var(--red);letter-spacing:-.03em;
+}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:44px;line-height:1.05;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brick);margin-top:9px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+/* ——— секции ——— */
+section{margin-top:58px}
+h2{
+  font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px;
+}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+a{color:var(--red)}
+
+/* ——— план двора ——— */
+.plan-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px;
+  box-shadow:0 1px 0 rgba(35,38,42,.06)}
+.plan-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone rect,.zone circle,.zone path{transition:fill .18s ease}
+.zone:hover .fillable,.zone.on .fillable{fill:#e7cfc9}
+.zone:focus{outline:none}
+.zone:focus-visible .fillable{stroke:var(--red);stroke-width:2.5}
+.zlab{font-family:var(--han);font-size:15px;font-weight:600;fill:var(--ink);pointer-events:none}
+.zpin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.04em}
+.faint{font-family:var(--han);font-size:12px;fill:var(--brick);pointer-events:none}
+.compass{font-family:var(--mono);font-size:10px;fill:var(--brick);letter-spacing:.15em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:62px}
+.readout .w{font-family:var(--han);font-size:22px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:13px;color:var(--sky)}
+.readout .d{display:block;margin-top:4px;font-size:15px}
+.readout .hint{color:var(--brick);font-style:italic}
+
+/* ——— карточки слов ——— */
+.cluster{margin-top:26px}
+.cluster h3{margin-bottom:4px}
+.cluster .why{font-size:14px;color:var(--brick);margin-bottom:14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--brass);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+/* ——— общие блоки ——— */
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.green{border-left:4px solid var(--bamboo)}
+.card.brass{border-left:4px solid var(--brass)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--paper);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.b{background:var(--brass)}
+.tag.g{background:var(--bamboo)}
+.tag.r{background:var(--red)}
+
+/* ——— таблицы ——— */
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(35,38,42,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+/* ——— на слух ——— */
+.trap{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+/* ——— ответы ——— */
+details{background:var(--card);border:1px solid var(--line);margin:10px 0;padding:0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+/* ——— финал ——— */
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;
+  font-family:var(--disp);font-weight:700;font-size:22px;color:var(--red);
+  width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .lesson-no{font-size:66px}
+  h1{font-size:32px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+
+
+:root{--red:#2f6578;--brass:#9a7a2c;--bamboo:#4e7046;--sky:#4f6a86;--paper:#e2e5e2;--card:#f3f5f2}
+.zone:hover .fillable,.zone.on .fillable{fill:#cfdfe2}
+.rowlab{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;fill:var(--brick)}
+.tiny{font-family:var(--han);font-size:11.5px;fill:var(--brick);pointer-events:none}
+.xout{stroke:#a8332a;stroke-width:2.6;stroke-linecap:round}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index-5b.html">&#8592; Все уроки 5B</a><a href="index.html">Учебник 5A</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（下） · Unit 8 体会教育 · Understanding education</div>
+  <div class="title-row">
+    <div class="lesson-no">22</div>
+    <h1>阅读与思考<span class="lat">Чтение и размышление · 578 字 · стр. 28–35</span></h1>
+  </div>
+  <div class="meta">
+    <span><b>34</b> новых слов</span>
+    <span><b>3</b> грамматические точки</span>
+    <span>ключ: <b>一旦 · 难免 · 自从</b></span>
+  </div>
+</header>
+
+
+<section>
+  <p class="lede">Первый в томе текст-рассуждение: ни истории, ни рецепта — только ход мысли.
+  Схема ниже повторяет его шаг за шагом: с чего спор начинается, что сделал американский учитель,
+  к чему это привело автора и чем он заканчивает. Если держать эти четыре ступени, пересказ
+  собирается сам, а заодно получается готовый каркас для сочинения-рассуждения на экзамене.</p>
+</section>
+
+<section id="plan">
+  <h2>Ход рассуждения <span class="cn">阅读与思考</span></h2>
+  <div class="plan-box">
+    <svg viewBox="0 0 660 580" role="img" aria-label="Схема рассуждения урока: от взгляда родителей к выводу автора"><text class="rowlab" x="18" y="28">1 · С ЧЕГО НАЧИНАЕТСЯ СПОР 家长的观念</text><g class="zone" tabindex="0" data-w="很多家长的观点" data-p="guāndiǎn" data-d="很多家长可能过分强调阅读的作用，觉得多读书就能够把作文写得特别好 — родители слишком напирают на чтение: мол, много читаешь — и сочинение само получится."><rect class="fillable" x="30" y="38" width="220" height="62" rx="3" fill="#e8e4dc" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="140" y="62" text-anchor="middle">多读书 → 作文好</text><text class="zpin" x="140" y="80" text-anchor="middle">过分强调阅读的作用</text></g><path d="M258 69 h44" stroke="#23262a" stroke-width="1.4" marker-end="url(#a22)"/><g class="zone" tabindex="0" data-w="不客观、不全面" data-p="kèguān · quánmiàn" data-d="这个观点是不客观、不全面的 — автор сразу отводит этот взгляд: он необъективен и однобок. 客观 и 全面 — два слова, которые дальше работают весь текст."><rect class="fillable" x="310" y="38" width="160" height="62" rx="3" fill="#e8dcdc" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="390" y="62" text-anchor="middle">不客观 · 不全面</text><text class="zpin" x="390" y="80" text-anchor="middle">作者的判断</text></g><path d="M478 69 h32" stroke="#23262a" stroke-width="1.4" marker-end="url(#a22)"/><g class="zone" tabindex="0" data-w="转变观念" data-p="zhuǎnbiàn · guānniàn" data-d="我们需要转变自己的观念 — нужно сменить установку. 转变观念 — устойчивая связка, которая пригодится и в сочинении."><rect class="fillable" x="518" y="38" width="112" height="62" rx="3" fill="#dfe6df" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="574" y="74" text-anchor="middle">转变观念</text></g><text class="rowlab" x="18" y="146">2 · УРОК АМЕРИКАНСКОГО УЧИТЕЛЯ 《灰姑娘》的讨论</text><g class="zone" tabindex="0" data-w="灰姑娘一旦进了王宫，应该怎样对待继母和两个姐姐？" data-p="yídàn · duìdài" data-d="Вопрос, который учитель задаёт после сказки: 灰姑娘一旦进了这个王宫，成为王子的心上人，她的梦想实现了，一切幸福都属于她之后，这时她应该怎样对待她的继母，应该怎样对待她的两个姐姐？ Здесь же первая грамматическая точка урока — 一旦."><rect class="fillable" x="30" y="156" width="600" height="56" rx="3" fill="#dfe9ec" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="330" y="180" text-anchor="middle">一旦进了王宫，应该怎样对待继母和姐姐？</text><text class="zpin" x="330" y="198" text-anchor="middle">一旦 · 对待 · 属于 · 王宫 · 王子</text></g><text class="tiny" x="330" y="230" text-anchor="middle">为什么要讨论这个问题呢？因为这是一种 <tspan font-weight="600">情感交换</tspan>。</text><path d="M200 238 L160 258 M460 238 L500 258" stroke="#23262a" stroke-width="1.4" marker-end="url(#a22)"/><g class="zone" tabindex="0" data-w="原谅和理解伤害过自己的人" data-p="yuánliàng" data-d="一个已经拥有巨大幸福的人，应该原谅和理解那些伤害过自己的人 — первый вывод класса: у кого уже есть огромное счастье, тот может простить."><rect class="fillable" x="30" y="262" width="290" height="64" rx="3" fill="#e2eae2" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="175" y="286" text-anchor="middle">拥有巨大幸福的人</text><text class="zpin" x="175" y="304" text-anchor="middle">应该原谅和理解伤害过自己的人</text></g><g class="zone" tabindex="0" data-w="承认人性先天的不完美" data-p="rénxìng · wánměi" data-d="还要承认人性中一些先天的不完美：作为一个母亲，在亲生女儿和灰姑娘之间，难免会更疼爱自己亲生的女儿，很难完全平等地对待她们 — второй вывод: несовершенство человеческой природы надо признать."><rect class="fillable" x="340" y="262" width="290" height="64" rx="3" fill="#e2eae2" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="485" y="286" text-anchor="middle">承认人性的不完美</text><text class="zpin" x="485" y="304" text-anchor="middle">难免 · 疼爱 · 平等 · 自私 · 倾向</text></g><text class="tiny" x="330" y="346" text-anchor="middle">这种行为有自然倾向的理由，与道德没有必然的关系。</text><text class="rowlab" x="18" y="386">3 · ВЫВОД АВТОРА 自从我听说了这件事</text><g class="zone" tabindex="0" data-w="单纯主张阅读而不强调思考" data-p="dānchún · zhǔzhāng" data-d="如果只是单纯地主张阅读而不强调思考，那是片面的 — просто призывать читать, не требуя думать, — однобоко."><rect class="fillable" x="30" y="396" width="290" height="60" rx="3" fill="#ece0dc" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="175" y="420" text-anchor="middle">只读，不想</text><text class="zpin" x="175" y="438" text-anchor="middle">单纯主张阅读 → 片面</text></g><path d="M48 402 L312 450" class="xout" opacity=".5"/><g class="zone" tabindex="0" data-w="阅读 + 思考" data-p="sīkǎo" data-d="自从我听说了这件事，就开始思考应该如何阅读，除了阅读还应该做什么 — автор начинает думать не о том, сколько читать, а что делать кроме чтения. 自从 — третья точка урока."><rect class="fillable" x="340" y="396" width="290" height="60" rx="3" fill="#dfe9ec" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="485" y="420" text-anchor="middle">阅读 + 思考</text><text class="zpin" x="485" y="438" text-anchor="middle">自从……，就…… · 价值判断</text></g><text class="rowlab" x="18" y="494">4 · ДВА ИЕРОГЛИФА СЛОВА «ЗНАНИЕ» 知识</text><g class="zone" tabindex="0" data-w="知 = 知感" data-p="zhīgǎn" data-d="“知”就是知感：别人告诉你、说给你听、要求你记住的那一部分 — то, что вам сообщили и велели запомнить."><rect class="fillable" x="30" y="504" width="290" height="62" rx="3" fill="#e8e4dc" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="175" y="528" text-anchor="middle">知 · 知感</text><text class="zpin" x="175" y="546" text-anchor="middle">别人告诉你、要求你记住</text></g><text class="zlab" x="330" y="542" text-anchor="middle">+</text><g class="zone" tabindex="0" data-w="识 = 认识" data-p="rènshi" data-d="“识”就是认识。但只有知感这一部分是不够的，还要有认识、思考 — своё понимание и собственная мысль. На этом текст и заканчивается."><rect class="fillable" x="340" y="504" width="290" height="62" rx="3" fill="#dfe9ec" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="485" y="528" text-anchor="middle">识 · 认识、思考</text><text class="zpin" x="485" y="546" text-anchor="middle">只有前一半是不够的</text></g><defs><marker id="a22" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" fill="#23262a"/></marker></defs></svg>
+    <div class="readout" id="readout">
+      <span class="hint">Наведите курсор или коснитесь любого блока — появится слово и его место в тексте.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Текст в трёх кадрах <span class="cn">课文 · 578 字</span></h2>
+
+  <div class="card red">
+    <p><span class="tag r">кадр 1</span><b>Чужая установка.</b> 很多家长可能过分强调阅读的作用，
+    觉得多读书就能够把作文写得特别好. Автор отводит это сразу: 这个观点是不客观、不全面的，
+    我们需要转变自己的观念. Весь дальнейший текст — объяснение, почему.</p>
+    <p style="margin:0"><b>Слова кадра:</b> <span class="cn-ex">过分 · 强调 · 作文 · 观点 · 客观 · 全面 · 转变 · 观念</span></p>
+  </div>
+
+  <div class="card green">
+    <p><span class="tag g">кадр 2</span><b>Урок про Золушку.</b> Американская учительница 十分重视
+    和学生一起讨论问题: обсуждали, кому написана «Девочка со спичками», обсуждали Золушку.
+    Вопрос после сказки: 灰姑娘一旦进了这个王宫，成为王子的心上人，她的梦想实现了，一切幸福都属于她之后，
+    她应该怎样对待继母和两个姐姐？ Зачем это обсуждать? 因为这是一种情感交换. Класс приходит к двум выводам:
+    一个已经拥有巨大幸福的人，应该原谅和理解那些伤害过自己的人; и ещё 要承认人性中一些先天的不完美 —
+    мать 难免会更疼爱自己亲生的女儿，很难完全平等地对待她们. Мачеха кажется 自私,
+    но у такого поведения 有自然倾向的理由，与道德没有必然的关系.</p>
+    <p style="margin:0"><b>Слова кадра:</b> <span class="cn-ex">火柴 · 灰 · 一旦 · 王宫 · 王子 · 属于 · 对待 · 交换 · 拥有 · 巨大 · 承认 · 人性 · 完美 · 难免 · 疼爱 · 平等 · 自私 · 倾向 · 理由 · 道德</span></p>
+  </div>
+
+  <div class="card brass">
+    <p><span class="tag b">кадр 3</span><b>Что из этого следует.</b> 自从我听说了这件事，就开始思考
+    应该如何阅读，除了阅读还应该做什么. Учитель, рассказывая сказку, 已经在有意识地 передаёт детям
+    эмоциональное влияние и даже 人性的价值判断. Вывод: 如果只是单纯地主张阅读而不强调思考，那是片面的.
+    И напоследок — разбор самого слова: «知» это 知感 (то, что вам сказали и велели запомнить),
+    «识» это 认识; одной первой половины недостаточно, 还要有认识、思考.</p>
+    <p style="margin:0"><b>Слова кадра:</b> <span class="cn-ex">自从 · 童话 · 价值 · 单纯 · 主张 · 知感</span></p>
+  </div>
+  <p style="font-size:14px;color:var(--brick)">改编自《北京青年报》，作者：梁晓声</p>
+</section>
+
+<section>
+  <h2>34 слова по гнёздам <span class="cn">生词 + 专有名词</span></h2>
+  <p style="font-size:14px;color:var(--brick)"><span class="star">★</span> — слово сверх программы HSK 5 (в учебнике помечено звёздочкой). Последние два — имена собственные.</p>
+
+  <div class="audiobar" id="audiobar">
+    <div class="ab-t">Озвучка слов</div>
+    <div class="ab-row">
+      <input id="ab-pat" type="text" spellcheck="false" value="audio/{hz}.mp3" aria-label="Шаблон пути к mp3">
+      <button type="button" id="ab-auto">Подобрать</button>
+      <button type="button" id="ab-test">Проверить</button>
+    </div>
+    <div class="ab-status" id="ab-status"></div>
+    <div class="ab-note">
+      Ищутся файлы вида <code>иероглиф.mp3</code> — сначала в папке <code>audio</code> рядом с этим документом,
+      потом прямо рядом с ним. Подстановки: <code>{hz}</code>, <code>{py}</code>, <code>{pyn}</code>,
+      <code>{num}</code>, <code>{L}</code>.
+    </div>
+  </div>
+<div class="cluster"><h3>I. Слова спора<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Ими описывают чужую позицию и собственную — половина из них попадёт в сочинение.</div><div class="words"><div class="w-item"><span class="hz">过分</span><span class="py">guòfèn</span><button class="pb" type="button" data-hz="过分" data-hz2="过分" data-py="guòfèn" data-pyn="guofen" data-num="1" aria-label="Прослушать 过分" title="Прослушать 过分">&#9654;</button><span class="ru">чрезмерно; чересчур</span><span class="ex">过分强调 / 太过分了</span></div><div class="w-item"><span class="hz">强调</span><span class="py">qiángdiào</span><button class="pb" type="button" data-hz="强调" data-hz2="强调" data-py="qiángdiào" data-pyn="qiangdiao" data-num="2" aria-label="Прослушать 强调" title="Прослушать 强调">&#9654;</button><span class="ru">подчёркивать, настаивать</span><span class="ex">强调阅读的作用 / 一再强调</span></div><div class="w-item"><span class="hz">作文</span><span class="py">zuòwén</span><button class="pb" type="button" data-hz="作文" data-hz2="作文" data-py="zuòwén" data-pyn="zuowen" data-num="3" aria-label="Прослушать 作文" title="Прослушать 作文">&#9654;</button><span class="ru">сочинение (школьное)</span><span class="ex">把作文写得特别好</span></div><div class="w-item"><span class="hz">观点</span><span class="py">guāndiǎn</span><button class="pb" type="button" data-hz="观点" data-hz2="观点" data-py="guāndiǎn" data-pyn="guandian" data-num="4" aria-label="Прослушать 观点" title="Прослушать 观点">&#9654;</button><span class="ru">точка зрения, позиция по вопросу</span><span class="ex">这个观点不客观 / 我不同意你的观点</span></div><div class="w-item"><span class="hz">观念</span><span class="py">guānniàn</span><button class="pb" type="button" data-hz="观念" data-hz2="观念" data-py="guānniàn" data-pyn="guannian" data-num="8" aria-label="Прослушать 观念" title="Прослушать 观念">&#9654;</button><span class="ru">представление, установка (общая)</span><span class="ex">转变观念 / 传统观念</span></div><div class="w-item"><span class="hz">客观</span><span class="py">kèguān</span><button class="pb" type="button" data-hz="客观" data-hz2="客观" data-py="kèguān" data-pyn="keguan" data-num="5" aria-label="Прослушать 客观" title="Прослушать 客观">&#9654;</button><span class="ru">объективный</span><span class="ex">不客观 / 客观地看问题</span></div><div class="w-item"><span class="hz">全面</span><span class="py">quánmiàn</span><button class="pb" type="button" data-hz="全面" data-hz2="全面" data-py="quánmiàn" data-pyn="quanmian" data-num="6" aria-label="Прослушать 全面" title="Прослушать 全面">&#9654;</button><span class="ru">всесторонний, полный</span><span class="ex">不全面 / 全面了解</span></div><div class="w-item"><span class="hz">转变</span><span class="py">zhuǎnbiàn</span><button class="pb" type="button" data-hz="转变" data-hz2="转变" data-py="zhuǎnbiàn" data-pyn="zhuanbian" data-num="7" aria-label="Прослушать 转变" title="Прослушать 转变">&#9654;</button><span class="ru">переменить, перестроить</span><span class="ex">转变观念 / 转变思路</span></div><div class="w-item"><span class="hz">主张</span><span class="py">zhǔzhāng</span><button class="pb" type="button" data-hz="主张" data-hz2="主张" data-py="zhǔzhāng" data-pyn="zhuzhang" data-num="33" aria-label="Прослушать 主张" title="Прослушать 主张">&#9654;</button><span class="ru">отстаивать; позиция</span><span class="ex">单纯主张阅读 / 有主张</span></div><div class="w-item"><span class="hz">单纯</span><span class="py">dānchún</span><button class="pb" type="button" data-hz="单纯" data-hz2="单纯" data-py="dānchún" data-pyn="danchun" data-num="32" aria-label="Прослушать 单纯" title="Прослушать 单纯">&#9654;</button><span class="ru">просто лишь; простодушный</span><span class="ex">单纯地主张 / 他太单纯了</span></div><div class="w-item"><span class="hz">理由</span><span class="py">lǐyóu</span><button class="pb" type="button" data-hz="理由" data-hz2="理由" data-py="lǐyóu" data-pyn="liyou" data-num="27" aria-label="Прослушать 理由" title="Прослушать 理由">&#9654;</button><span class="ru">основание, довод</span><span class="ex">有理由 / 给我一个理由</span></div><div class="w-item"><span class="hz">价值</span><span class="py">jiàzhí</span><button class="pb" type="button" data-hz="价值" data-hz2="价值" data-py="jiàzhí" data-pyn="jiazhi" data-num="31" aria-label="Прослушать 价值" title="Прослушать 价值">&#9654;</button><span class="ru">ценность</span><span class="ex">价值判断 / 很有价值</span></div></div></div><div class="cluster"><h3>II. Сказка и класс<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Предметный ряд второго абзаца — он же самый лёгкий для запоминания.</div><div class="words"><div class="w-item"><span class="hz">火柴</span><span class="py">huǒchái</span><button class="pb" type="button" data-hz="火柴" data-hz2="火柴" data-py="huǒchái" data-pyn="huochai" data-num="9" aria-label="Прослушать 火柴" title="Прослушать 火柴">&#9654;</button><span class="ru">спичка</span><span class="ex">《卖火柴的小女孩儿》</span></div><div class="w-item"><span class="hz">灰</span><span class="py">huī</span><button class="pb" type="button" data-hz="灰" data-hz2="灰" data-py="huī" data-pyn="hui" data-num="10" aria-label="Прослушать 灰" title="Прослушать 灰">&#9654;</button><span class="ru">пепел, пыль; серый</span><span class="ex">灰姑娘 / 灰色</span></div><div class="w-item"><span class="hz">王宫</span><span class="py">wánggōng</span><span class="star">★</span><button class="pb" type="button" data-hz="王宫" data-hz2="王宫" data-py="wánggōng" data-pyn="wanggong" data-num="12" aria-label="Прослушать 王宫" title="Прослушать 王宫">&#9654;</button><span class="ru">дворец</span><span class="ex">进了王宫</span></div><div class="w-item"><span class="hz">王子</span><span class="py">wángzǐ</span><button class="pb" type="button" data-hz="王子" data-hz2="王子" data-py="wángzǐ" data-pyn="wangzi" data-num="13" aria-label="Прослушать 王子" title="Прослушать 王子">&#9654;</button><span class="ru">принц</span><span class="ex">王子的心上人</span></div><div class="w-item"><span class="hz">童话</span><span class="py">tónghuà</span><span class="star">★</span><button class="pb" type="button" data-hz="童话" data-hz2="童话" data-py="tónghuà" data-pyn="tonghua" data-num="30" aria-label="Прослушать 童话" title="Прослушать 童话">&#9654;</button><span class="ru">сказка</span><span class="ex">讲童话 / 童话故事</span></div><div class="w-item"><span class="hz">属于</span><span class="py">shǔyú</span><button class="pb" type="button" data-hz="属于" data-hz2="属于" data-py="shǔyú" data-pyn="shuyu" data-num="14" aria-label="Прослушать 属于" title="Прослушать 属于">&#9654;</button><span class="ru">принадлежать, относиться к</span><span class="ex">幸福都属于她 / 属于我们</span></div><div class="w-item"><span class="hz">对待</span><span class="py">duìdài</span><button class="pb" type="button" data-hz="对待" data-hz2="对待" data-py="duìdài" data-pyn="duidai" data-num="15" aria-label="Прослушать 对待" title="Прослушать 对待">&#9654;</button><span class="ru">относиться к, обращаться с</span><span class="ex">怎样对待继母 / 平等地对待</span></div><div class="w-item"><span class="hz">交换</span><span class="py">jiāohuàn</span><button class="pb" type="button" data-hz="交换" data-hz2="交换" data-py="jiāohuàn" data-pyn="jiaohuan" data-num="16" aria-label="Прослушать 交换" title="Прослушать 交换">&#9654;</button><span class="ru">обмен; обмениваться</span><span class="ex">情感交换 / 交换意见</span></div><div class="w-item"><span class="hz">拥有</span><span class="py">yōngyǒu</span><span class="star">★</span><button class="pb" type="button" data-hz="拥有" data-hz2="拥有" data-py="yōngyǒu" data-pyn="yongyou" data-num="17" aria-label="Прослушать 拥有" title="Прослушать 拥有">&#9654;</button><span class="ru">обладать, иметь</span><span class="ex">拥有巨大幸福</span></div><div class="w-item"><span class="hz">巨大</span><span class="py">jùdà</span><button class="pb" type="button" data-hz="巨大" data-hz2="巨大" data-py="jùdà" data-pyn="juda" data-num="18" aria-label="Прослушать 巨大" title="Прослушать 巨大">&#9654;</button><span class="ru">огромный</span><span class="ex">巨大的幸福 / 巨大的变化</span></div></div></div><div class="cluster"><h3>III. Человеческая природа<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Самое сильное место текста — и самая «взрослая» лексика урока.</div><div class="words"><div class="w-item"><span class="hz">承认</span><span class="py">chéngrèn</span><button class="pb" type="button" data-hz="承认" data-hz2="承认" data-py="chéngrèn" data-pyn="chengren" data-num="19" aria-label="Прослушать 承认" title="Прослушать 承认">&#9654;</button><span class="ru">признать, согласиться с фактом</span><span class="ex">承认错误 / 承认事实</span></div><div class="w-item"><span class="hz">人性</span><span class="py">rénxìng</span><span class="star">★</span><button class="pb" type="button" data-hz="人性" data-hz2="人性" data-py="rénxìng" data-pyn="renxing" data-num="20" aria-label="Прослушать 人性" title="Прослушать 人性">&#9654;</button><span class="ru">человеческая природа</span><span class="ex">人性中的不完美</span></div><div class="w-item"><span class="hz">完美</span><span class="py">wánměi</span><button class="pb" type="button" data-hz="完美" data-hz2="完美" data-py="wánměi" data-pyn="wanmei" data-num="21" aria-label="Прослушать 完美" title="Прослушать 完美">&#9654;</button><span class="ru">совершенный, безупречный</span><span class="ex">先天的不完美 / 完美的计划</span></div><div class="w-item"><span class="hz">难免</span><span class="py">nánmiǎn</span><button class="pb" type="button" data-hz="难免" data-hz2="难免" data-py="nánmiǎn" data-pyn="nanmian" data-num="22" aria-label="Прослушать 难免" title="Прослушать 难免">&#9654;</button><span class="ru">неизбежно, трудно избежать</span><span class="ex">难免会更疼爱 / 难免的</span></div><div class="w-item"><span class="hz">疼爱</span><span class="py">téng’ài</span><button class="pb" type="button" data-hz="疼爱" data-hz2="疼爱" data-py="téng’ài" data-pyn="teng’ai" data-num="23" aria-label="Прослушать 疼爱" title="Прослушать 疼爱">&#9654;</button><span class="ru">нежно любить (о детях)</span><span class="ex">更疼爱自己的女儿</span></div><div class="w-item"><span class="hz">平等</span><span class="py">píngděng</span><button class="pb" type="button" data-hz="平等" data-hz2="平等" data-py="píngděng" data-pyn="pingdeng" data-num="24" aria-label="Прослушать 平等" title="Прослушать 平等">&#9654;</button><span class="ru">равный, равноправный</span><span class="ex">平等地对待 / 人人平等</span></div><div class="w-item"><span class="hz">自私</span><span class="py">zìsī</span><button class="pb" type="button" data-hz="自私" data-hz2="自私" data-py="zìsī" data-pyn="zisi" data-num="25" aria-label="Прослушать 自私" title="Прослушать 自私">&#9654;</button><span class="ru">эгоистичный</span><span class="ex">继母很自私 / 自私的行为</span></div><div class="w-item"><span class="hz">倾向</span><span class="py">qīngxiàng</span><span class="star">★</span><button class="pb" type="button" data-hz="倾向" data-hz2="倾向" data-py="qīngxiàng" data-pyn="qingxiang" data-num="26" aria-label="Прослушать 倾向" title="Прослушать 倾向">&#9654;</button><span class="ru">склонность; склоняться к</span><span class="ex">自然倾向 / 倾向于</span></div><div class="w-item"><span class="hz">道德</span><span class="py">dàodé</span><button class="pb" type="button" data-hz="道德" data-hz2="道德" data-py="dàodé" data-pyn="daode" data-num="28" aria-label="Прослушать 道德" title="Прослушать 道德">&#9654;</button><span class="ru">мораль, нравственность</span><span class="ex">与道德没有关系 / 道德标准</span></div><div class="w-item"><span class="hz">一旦</span><span class="py">yídàn</span><button class="pb" type="button" data-hz="一旦" data-hz2="一旦" data-py="yídàn" data-pyn="yidan" data-num="11" aria-label="Прослушать 一旦" title="Прослушать 一旦">&#9654;</button><span class="ru">как только, случись что</span><span class="ex">一旦进了王宫 / 一旦有人闯入</span></div><div class="w-item"><span class="hz">自从</span><span class="py">zìcóng</span><button class="pb" type="button" data-hz="自从" data-hz2="自从" data-py="zìcóng" data-pyn="zicong" data-num="29" aria-label="Прослушать 自从" title="Прослушать 自从">&#9654;</button><span class="ru">с тех пор как</span><span class="ex">自从我听说了这件事</span></div><div class="w-item"><span class="hz">知感</span><span class="py">zhīgǎn</span><span class="star">★</span><button class="pb" type="button" data-hz="知感" data-hz2="知感" data-py="zhīgǎn" data-pyn="zhigan" data-num="34" aria-label="Прослушать 知感" title="Прослушать 知感">&#9654;</button><span class="ru">воспринятое, услышанное от других</span><span class="ex">“知”就是知感</span></div><div class="w-item"><span class="hz">《卖火柴的小女孩儿》</span><span class="py">Mài Huǒchái de Xiǎo Nǚháir</span><button class="pb" type="button" data-hz="《卖火柴的小女孩儿》" data-hz2="《卖火柴的小女孩儿》" data-py="Mài Huǒchái de Xiǎo Nǚháir" data-pyn="maihuochaidexiaonuhair" data-num="" aria-label="Прослушать 《卖火柴的小女孩儿》" title="Прослушать 《卖火柴的小女孩儿》">&#9654;</button><span class="ru">«Девочка со спичками», Андерсен</span><span class="ex">是写给谁看的</span></div><div class="w-item"><span class="hz">灰姑娘</span><span class="py">Huīgūniang</span><button class="pb" type="button" data-hz="灰姑娘" data-hz2="灰姑娘" data-py="Huīgūniang" data-pyn="huiguniang" data-num="" aria-label="Прослушать 灰姑娘" title="Прослушать 灰姑娘">&#9654;</button><span class="ru">Золушка</span><span class="ex">灰姑娘的故事</span></div></div></div></section>
+<section>
+  <h2>На слух: где рука ошибётся <span class="cn">听写陷阱</span></h2>
+  <p>Урок абстрактный, и почти все ловушки здесь — это пары слов с одной общей морфемой.
+  На слух они различаются одним слогом, а на письме выбирать приходится по смыслу фразы.
+  Хорошая новость: ровно эти пары и спрашивают в 选择正确答案.</p>
+<div class="warn">Второй пункт упражнения 2</div><div class="trap"><div><span class="hz">观点</span><span class="py">guāndiǎn</span><span class="n">точка зрения по конкретному вопросу: 我不同意你的观点.</span></div><div><span class="hz">观念</span><span class="py">guānniàn</span><span class="n">установка, представление вообще: 转变观念, 传统观念.</span></div></div><div class="warn">Третий пункт упражнения 2</div><div class="trap"><div><span class="hz">理由</span><span class="py">lǐyóu</span><span class="n">основание, которое человек приводит: 给我一个理由.</span></div><div><span class="hz">原因</span><span class="py">yuányīn</span><span class="n">объективная причина события: 销售不好的原因.</span></div></div><div class="warn">Четвёртый пункт упражнения 2</div><div class="trap"><div><span class="hz">单纯</span><span class="py">dānchún</span><span class="n">просто лишь; простодушный, наивный: 他太单纯了.</span></div><div><span class="hz">单调</span><span class="py">dāndiào</span><span class="n">однообразный (урок 20): 生活很单调.</span></div></div><div class="warn">Первый пункт упражнения 2</div><div class="trap"><div><span class="hz">转变</span><span class="py">zhuǎnbiàn</span><span class="n">перестроить, сменить — об установке, подходе: 转变观念.</span></div><div><span class="hz">变化</span><span class="py">biànhuà</span><span class="n">измениться само — о состоянии: 天气变化.</span></div></div><div class="warn">Пара 辨析 этого урока</div><div class="trap"><div><span class="hz">平等</span><span class="py">píngděng</span><span class="n">равный в правах и положении: 人人平等.</span></div><div><span class="hz">公平</span><span class="py">gōngpíng</span><span class="n">справедливый в конкретном деле: 公平竞争.</span></div></div><div class="warn">Три слова на 承</div><div class="trap"><div><span class="hz">承认</span><span class="py">chéngrèn</span><span class="n">признать факт или ошибку.</span></div><div><span class="hz">承担 / 承受</span><span class="py">chéngdān / chéngshòu</span><span class="n">«взять на себя» и «выдержать». Все три на 承.</span></div></div><div class="warn">Один знак, два чтения</div><div class="trap"><div><span class="hz">属于</span><span class="py">shǔyú</span><span class="n">принадлежать к: 幸福都属于她. 属 здесь shǔ.</span></div><div><span class="hz">属</span><span class="py">zhǔ</span><span class="n">zhǔ — в 属意, 属望 (книжное). Обычное чтение shǔ.</span></div></div><div class="warn">Три «向»-слова</div><div class="trap"><div><span class="hz">倾向</span><span class="py">qīngxiàng</span><span class="n">склонность; склоняться. 倾 — первый тон.</span></div><div><span class="hz">方向 / 影响</span><span class="py">fāngxiàng / yǐngxiǎng</span><span class="n">«направление» и «влияние». Все три кончаются на xiàng/xiǎng.</span></div></div><div class="warn">Тяжёлый для руки знак</div><div class="trap"><div><span class="hz">道德</span><span class="py">dàodé</span><span class="n">мораль. 德 — четвёртый тон, пишется с 心 внизу.</span></div><div><span class="hz">品德 / 得</span><span class="py">pǐndé / dé</span><span class="n">«нравственные качества» и 得 dé «получать». Знак 德 руке даётся тяжело.</span></div></div><div class="warn">Три слова на 免</div><div class="trap"><div><span class="hz">难免</span><span class="py">nánmiǎn</span><span class="n">неизбежно: 难免会更疼爱. 免 без точки сверху.</span></div><div><span class="hz">避免 / 以免</span><span class="py">bìmiǎn / yǐmiǎn</span><span class="n">«избежать» и «чтобы не». Все три на 免.</span></div></div><div class="warn">Две болезни и одна любовь</div><div class="trap"><div><span class="hz">疼爱</span><span class="py">téng’ài</span><span class="n">нежно любить ребёнка.</span></div><div><span class="hz">疼 / 痛</span><span class="py">téng / tòng</span><span class="n">疼 — «болит», 痛苦 — «мучительно» (урок 21). Знаки похожи.</span></div></div><div class="warn">Ключ решает</div><div class="trap"><div><span class="hz">火柴</span><span class="py">huǒchái</span><span class="n">спичка. 柴 chái — хворост.</span></div><div><span class="hz">火车 / 财</span><span class="py">huǒchē / cái</span><span class="n">«поезд» и «богатство». 柴 и 财 отличаются ключом.</span></div></div>
+  <div class="card green">
+    <p style="margin:0"><b>Как тренировать.</b> Для абстрактных слов особенно полезно диктовать себе не слово,
+    а связку: <span class="cn-ex">转变观念 · 不客观、不全面 · 平等地对待 · 承认错误 · 难免会…… ·
+    与道德没有关系 · 价值判断</span>. Эти же связки потом выходят готовыми кусками в 书写 и в устном ответе.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Три точки урока <span class="cn">词语例释</span></h2>
+
+  <h3>1 · 一旦 — «случись так, что…»</h3>
+  <div class="card red">
+    <p>Наречие. Обозначает неопределённый момент в будущем: «если вдруг», «как только однажды».
+    Почти всегда тянет за собой 就 или 将.</p>
+    <p class="cn-ex">长大后，我终于明白了这个道理：女人<span class="hl">一旦</span>做了母亲，<span class="hl">就</span>变得矛盾了。</p>
+    <p class="cn-ex">灰姑娘<span class="hl">一旦</span>进了这个王宫，……应该怎样对待她的继母？</p>
+    <p class="cn-ex">所谓私人空间，是指我们身体周围的一定的空间，<span class="hl">一旦</span>有人闯入这个空间，
+    我们<span class="hl">就</span>会感觉不舒服、不自在。</p>
+    <p class="tr" style="margin:10px 0 0">Схема: <b>一旦 + условие，就／将 + следствие</b>. В отличие от 如果,
+    у 一旦 оттенок «а вот если это всё-таки случится» — поэтому оно часто про риск и про необратимое.</p>
+  </div>
+
+  <h3>2 · 难免 — «не обойдётся без»</h3>
+  <div class="card green">
+    <p>Прилагательное: то, чего трудно избежать. Может стоять сказуемым (…是难免的)
+    или перед глаголом вместе с 会.</p>
+    <p class="cn-ex">刚开始工作，这样的错误是<span class="hl">难免</span>的。</p>
+    <p class="cn-ex">朋友间<span class="hl">难免</span>会产生矛盾、误会甚至是伤害。</p>
+    <p class="cn-ex">……作为一个母亲，在自己的亲生女儿和不是亲生的灰姑娘之间，<span class="hl">难免</span>会更疼爱
+    自己亲生的女儿。</p>
+    <p class="tr" style="margin:10px 0 0">Два рабочих шаблона: <b>……是难免的</b> и <b>难免会……</b>.
+    В устном ответе это ещё и вежливый способ оправдать чужое поведение — ровно так его и использует автор.</p>
+  </div>
+
+  <h3>3 · 自从 — «с тех пор как»</h3>
+  <div class="card brass">
+    <p>Предлог. Отсчитывает от момента в прошлом; вторая часть предложения почти всегда про изменение.</p>
+    <p class="cn-ex"><span class="hl">自从</span>城市出现后，它就成为人类生活的中心。</p>
+    <p class="cn-ex"><span class="hl">自从</span>有了长大后成为作家这个理想之后，他每天都坚持写作。</p>
+    <p class="cn-ex"><span class="hl">自从</span>我听说了这件事，就开始思考应该如何阅读。</p>
+    <p class="tr" style="margin:10px 0 0">После 自从 часто ставят 以后／之后／后 — это не обязательно,
+    но звучит ровнее. Важное ограничение: 自从 только о прошлом; «с завтрашнего дня» будет 从明天起, а не 自从.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Сочетаемость <span class="cn">词语搭配</span></h2>
+  <table>
+    <tr><th>动词 + 宾语</th><th>примеры</th></tr>
+    <tr><td class="han">承认</td><td class="han">事实 / 错误</td></tr>
+    <tr><td class="han">转变</td><td class="han">方法 / 方式 / 观念 / 思路 / 态度</td></tr>
+    <tr><td class="han">交换</td><td class="han">物品 / 位置 / 意见</td></tr>
+    <tr><td class="han">有 / 坚持</td><td class="han">主张</td></tr>
+    <tr><th>定语 + 中心语</th><th></th></tr>
+    <tr><td class="han">完美的</td><td class="han">人 / 世界 / 生活 / 婚姻 / 计划</td></tr>
+    <tr><td class="han">平等的</td><td class="han">地位 / 待遇 / 权利</td></tr>
+    <tr><td class="han">自私的</td><td class="han">人 / 想法 / 行为</td></tr>
+    <tr><th>状语 + 中心语</th><th></th></tr>
+    <tr><td class="han">过分（地）</td><td class="han">强调 / 追求</td></tr>
+    <tr><td class="han">全面（地）</td><td class="han">看 / 了解 / 思考 / 发展</td></tr>
+    <tr><td class="han">认真 / 正确 / 冷静 / 客观 / 公平（地）</td><td class="han">对待</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>平等 и 公平 <span class="cn">词语辨析</span></h2>
+  <p>Оба прилагательные, смысл близкий, иногда взаимозаменяемы:
+  <span class="cn-ex">很难完全平等／公平地对待她们。</span> Разводятся по тому, о чём идёт речь.</p>
+  <table class="pair-tbl">
+    <tr><th></th><th>平等 píngděng</th><th>公平 gōngpíng</th></tr>
+    <tr><td>о чём</td><td>о правах и положении людей: одинаковые ли они</td><td>о том, как поступили в конкретном деле: по совести ли</td></tr>
+    <tr><td>пример</td><td class="han">法律面前人人平等。</td><td class="han">我们应当公平竞争。</td></tr>
+    <tr><td>охват</td><td>об общем, о том, как устроено вообще<br><span class="han">现实社会中，女人与男人有时并不平等。</span></td><td>о конкретном человеке или случае<br><span class="han">我认为公司对这次事情的处理不够公平。</span></td></tr>
+  </table>
+  <p class="tr">Подсказка: 平 — «ровно», 等 — «одинаково» → равенство положений.
+  公 — «общий, без личного» → беспристрастность решения.</p>
+</section>
+
+<section>
+  <h2>Ответы к упражнениям <span class="cn">练习 · 做一做 · 练一练</span></h2>
+<details><summary>练习 1 — 选择合适的词语填空（承认 过分 价值 客观 理由 主张）</summary><div class="in">
+<p>① 虽然这次的错误有点儿严重，你也应该勇敢地<span class="k">承认</span>。<br>
+② 人都是有感情甚至自私的，很难做到任何时候都很<span class="k">客观</span>。<br>
+③ 你的这个建议很有<span class="k">价值</span>，我马上告诉总裁。<br>
+④ 他<span class="k">主张</span>将会议地点改在上海，因为这次的合作伙伴对我们来说非常重要。<br>
+⑤ 你这种做法太<span class="k">过分</span>了，我不能接受！<br>
+⑥ 希望你能给我一个好的<span class="k">理由</span>，解释清楚你为什么这么做。</p></div></details><details><summary>练习 2 — 选择正确答案</summary><div class="in">
+<p>① 你可以试着<span class="k">转变</span>（B）一下思路，可能会快一点解决问题。<br>
+② 我不同意你的<span class="k">观点</span>（A），我觉得这部电影很不错。<br>
+③ 这次新产品销售得不好的<span class="k">原因</span>（A）是宣传推广做得不够。<br>
+④ 他太<span class="k">单纯</span>（B）了，这样很容易被人骗。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+① 变化 происходит само, 转变 делают сознательно. ② 观点 по конкретному фильму, 观念 — общая установка.
+③ 原因 объективная причина, 理由 — довод, который приводит человек. ④ 单调 «однообразный», 单纯 «наивный».</p></div></details><details><summary>练习 3 — 画线连接可以搭配的词语</summary><div class="in">
+<p>(1) 交换 — 意见 ／ 转变 — 观念 ／ 属于 — 我们 ／ 承认 — 错误<br>
+(2) 完美的 — 计划 ／ 自私的 — 行为 ／ 全面地 — 了解 ／ 平等地 — 对待</p></div></details><details><summary>做一做 — 平等 или 公平</summary><div class="in">
+<p>(1) 机会对每个人来说都是<span class="k">平等</span>的。<br>
+(2) 这次比赛很<span class="k">公平</span>，没有什么问题。<br>
+(3) 作为法官，你做事应该<span class="k">公平</span>。<br>
+(4) 人生来是<span class="k">平等</span>的，人人都有权追求自由和幸福。</p></div></details><details><summary>练一练 1 — 一旦（образцы）</summary><div class="in">
+<p>(1) 这件事<span class="k">一旦让他知道了</span>，那可就麻烦了。<br>
+(2) <span class="k">一旦有了消息</span>，我就立刻通知你。<br>
+(3) 这项技术<span class="k">一旦投入使用</span>，将会大大提高产品的竞争力。</p></div></details><details><summary>练一练 2 — 难免（образцы）</summary><div class="in">
+<p>(1) A: 这孩子真是太淘气了！<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">这个年纪的孩子难免这样，大一点儿就好了</span>。<br>
+(2) 刚刚退休的老人<span class="k">难免会有些不适应</span>。<br>
+(3) A: 马上就要考试了，我觉得很紧张。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">考试前紧张是难免的，放轻松点儿</span>。</p></div></details><details><summary>练一练 3 — 自从（образцы）</summary><div class="in">
+<p>(1) 自从我来中国以后，<span class="k">口语进步得特别快</span>。<br>
+(2) <span class="k">自从听了那位老师的课</span>，我的观念就转变了。<br>
+(3) A: 你跟你同屋现在的关系怎么样？<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">自从上次好好谈过以后，我们相处得好多了</span>。</p></div></details><details><summary>扩展 做一做 — 写作表达</summary><div class="in">
+<p>(1) 买书的时候我一般会先看看前面的<span class="k">目录</span>，这样可以了解书的大概内容。<br>
+(2) 这不是一篇研究型的文章，算不上是一篇<span class="k">论文</span>。<br>
+(3) 这个地方的<span class="k">标点</span>用错了，这是书的名字，应该用书名号。<br>
+(4) 你现在完全是在说<span class="k">废话</span>，解决不了问题！</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+写作表达: 作文、论文、主题、题目、话题、目录、提纲、标点、废话、胡说.</p></div></details></section>
+<section>
+  <h2>Сочинение <span class="cn">命题写作：假如我是灰姑娘</span></h2>
+  <p>Задание учебника — не меньше 100 знаков. Тема удобная: в ней сам собой получается каркас
+  «я бы сделала так — потому что — но при этом признаю, что…», то есть ровно та структура,
+  которую требуют и в письменной части, и в устном ответе на HSKK.</p>
+  <div class="card green">
+    <p class="cn-ex" style="line-height:2"><span class="hl">假如</span>我是灰姑娘，
+    <span class="hl">一旦</span>进了王宫，我不会去报复继母和两个姐姐。
+    并不是因为我忘了她们怎样<span class="hl">对待</span>我，而是因为我已经<span class="hl">拥有</span>了
+    自己想要的生活。一个人真正幸福以后，才有力气去<span class="hl">原谅</span>。
+    当然，我也要<span class="hl">承认</span>，让我像从前一样跟她们住在一起是不可能的——
+    <span class="hl">人性</span>本来就不<span class="hl">完美</span>，做母亲的更<span class="hl">疼爱</span>
+    自己亲生的女儿，这<span class="hl">难免</span>，和<span class="hl">道德</span>没有必然关系。
+    我会给她们应有的尊重，但不会再把自己放回那个位置。<span class="hl">自从</span>读了这个故事，
+    我更相信：原谅别人，其实是放过自己。</p>
+  </div>
+  <h3>Связки, которые стоит взять с собой</h3>
+  <ul>
+    <li><span class="cn-ex">假如我是……，一旦……，我会……</span> — вход в тему через условие;</li>
+    <li><span class="cn-ex">并不是因为……，而是因为……</span> — самая сильная связка этого урока;</li>
+    <li><span class="cn-ex">当然，我也要承认……</span> — уступка, без которой рассуждение выглядит плоским;</li>
+    <li><span class="cn-ex">这难免，和……没有必然关系</span> — прямо из текста, звучит очень по-взрослому;</li>
+    <li><span class="cn-ex">自从……，我更相信……</span> — концовка с личным выводом.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>План на урок <span class="cn">复习计划</span></h2>
+  <ol class="route">
+    <li><b>Пройдите схему сверху вниз.</b> Установка родителей → вопрос про Золушку → два вывода класса →
+    вывод автора → разбор слова 知识. Это весь текст, и это же готовый план рассуждения.</li>
+    <li><b>Соберите пересказ по таблице учебника.</b> Три блока: 一些家长的观念 (过分、作文、客观、转变),
+    关于《灰姑娘》的讨论 (一旦、对待、交换、承认、难免、平等、理由), 作者的思考 (自从、价值、单纯).</li>
+    <li><b>Разведите четыре пары.</b> 观点／观念, 理由／原因, 单纯／单调, 转变／变化 — ровно те, что
+    в упражнении 2, плюс 平等／公平 из 辨析. По одному своему примеру на каждое слово.</li>
+    <li><b>Отработайте три конструкции в речи.</b> 一旦……就……, ……是难免的 / 难免会……, 自从……以后.
+    Эти три дают рассуждению взрослый звук быстрее, чем любое новое слово.</li>
+    <li><b>Напишите сочинение.</b> 100 знаков с 假如, одним 一旦, одним 难免 и обязательной уступкой
+    через 当然，我也要承认.</li>
+  </ol>
+</section>
+
+
+<nav class="botnav"><a href="hsk5b-lesson-21.html"><span>← Урок 21</span>汉字叔叔：一个美国人的汉字情缘</a><a href="index-5b.html"><span>Урок 23 — в работе</span>放手</a></nav>
+
+<footer>HSK 标准教程 5（下） · урок 22 «阅读与思考» · конспект для подготовки к экзамену</footer>
+
+</div>
+<script>
+
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML =
+      '<span class="w">' + z.dataset.w + '</span>' +
+      '<span class="p">' + z.dataset.p + '</span>' +
+      '<span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    out.innerHTML = def;
+  }
+
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+
+  var box = document.querySelector('.plan-box svg');
+  box.addEventListener('mouseleave', clear);
+})();
+
+</script>
+<script>
+
+(function(){
+  var LESSON = "22";
+  var DIRS = ["audio/", "", "mp3/", "media/", "аудио/", "audio/22/", "22/"];
+  var CAND = [];
+  DIRS.forEach(function(d){ CAND.push(d + "{hz}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{hz2}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{pyn}.mp3"); });
+
+  var patIn  = document.getElementById('ab-pat');
+  var status = document.getElementById('ab-status');
+  var btns   = Array.prototype.slice.call(document.querySelectorAll('.pb[data-hz]'));
+  var cur = null, curBtn = null, queue = null;
+
+  function pad(n){ n = String(n||''); return n.length === 1 ? '0'+n : n; }
+
+  function resolve(pat, b){
+    return pat
+      .replace(/\{hz2\}/g, b.dataset.hz2 || b.dataset.hz)
+      .replace(/\{hz\}/g,  b.dataset.hz)
+      .replace(/\{pyn\}/g, b.dataset.pyn)
+      .replace(/\{py\}/g,  b.dataset.py)
+      .replace(/\{num\}/g, pad(b.dataset.num))
+      .replace(/\{n\}/g,   b.dataset.num || '')
+      .replace(/\{L\}/g,   LESSON);
+  }
+
+  function setStatus(t, cls){
+    status.textContent = t || '';
+    status.className = 'ab-status' + (cls ? ' ' + cls : '');
+  }
+
+  function test(pat, b){
+    return new Promise(function(res){
+      var a = new Audio(), done = false;
+      function ok(){ if(!done){ done = true; res(true); } }
+      function no(){ if(!done){ done = true; res(false); } }
+      a.addEventListener('loadedmetadata', ok);
+      a.addEventListener('canplay', ok);
+      a.addEventListener('error', no);
+      a.preload = 'metadata';
+      a.src = encodeURI(resolve(pat, b));
+      setTimeout(no, 2500);
+    });
+  }
+
+  function stop(){
+    if(cur){ cur.pause(); cur = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn = null; }
+    queue = null;
+    document.querySelectorAll('.pball.playing').forEach(function(x){ x.classList.remove('playing'); });
+  }
+
+  /* проигрывание с запасными вариантами имени для этого слова */
+  function play(b, onEnd){
+    stop();
+    var tries = [patIn.value.trim()];
+    var alt = (b.dataset.hz2 && b.dataset.hz2 !== b.dataset.hz)
+      ? patIn.value.trim().replace('{hz}', '{hz2}') : null;
+    if(alt && tries.indexOf(alt) < 0) tries.push(alt);
+    CAND.forEach(function(p){ if(tries.indexOf(p) < 0) tries.push(p); });
+
+    b.classList.add('playing');
+    var i = 0;
+    (function attempt(){
+      if(i >= tries.length){
+        b.classList.remove('playing');
+        b.classList.add('missing');
+        b.title = 'Не найден файл для ' + b.dataset.hz;
+        setStatus('Не найден файл для ' + b.dataset.hz + ' — проверьте папку или шаблон.', 'bad');
+        if(onEnd) onEnd();
+        return;
+      }
+      var src = resolve(tries[i++], b);
+      var a = new Audio(encodeURI(src));
+      var started = false;
+      a.addEventListener('canplay', function(){ started = true; });
+      a.addEventListener('ended', function(){
+        b.classList.remove('playing');
+        if(cur === a){ cur = null; curBtn = null; }
+        if(onEnd) onEnd();
+      });
+      a.addEventListener('error', function(){
+        if(!started){ attempt(); }
+        else { b.classList.remove('playing'); if(onEnd) onEnd(); }
+      });
+      cur = a; curBtn = b;
+      b.classList.remove('missing');
+      a.play().catch(function(){});
+    })();
+  }
+
+  /* автопоиск папки при открытии */
+  function autodetect(quiet){
+    if(!btns.length) return;
+    if(!quiet) setStatus('Перебираю варианты…');
+    var i = 0;
+    (function next(){
+      if(i >= CAND.length){
+        setStatus(quiet
+          ? 'Папка с mp3 не найдена. Положите файлы в audio рядом с этим документом.'
+          : 'Ни один из типовых вариантов не подошёл. Впишите путь вручную.',
+          quiet ? '' : 'bad');
+        return;
+      }
+      var p = CAND[i++];
+      test(p, btns[0]).then(function(ok){
+        if(ok){
+          patIn.value = p;
+          document.querySelectorAll('.pb.missing').forEach(function(x){
+            x.classList.remove('missing'); x.title = '';
+          });
+          setStatus('Озвучка подключена: ' + p, 'ok');
+        } else next();
+      });
+    })();
+  }
+
+  document.getElementById('ab-auto').addEventListener('click', function(){ autodetect(false); });
+  document.getElementById('ab-test').addEventListener('click', function(){
+    if(!btns.length) return;
+    setStatus('Проверяю…');
+    test(patIn.value.trim(), btns[0]).then(function(ok){
+      setStatus((ok ? 'Файл найден: ' : 'Не найден: ') + resolve(patIn.value.trim(), btns[0]),
+                ok ? 'ok' : 'bad');
+    });
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(curBtn === b && cur){ stop(); return; }
+      play(b);
+    });
+  });
+
+  document.querySelectorAll('.pball').forEach(function(pb){
+    pb.addEventListener('click', function(){
+      if(pb.classList.contains('playing')){ stop(); return; }
+      var list = Array.prototype.slice.call(
+        pb.closest('.cluster').querySelectorAll('.pb[data-hz]'));
+      stop();
+      pb.classList.add('playing');
+      var i = 0;
+      queue = list;
+      (function step(){
+        if(queue !== list || i >= list.length){ pb.classList.remove('playing'); return; }
+        play(list[i++], function(){ setTimeout(step, 350); });
+      })();
+    });
+  });
+
+  autodetect(true);
+})();
+
+</script>
+</body>
+</html>

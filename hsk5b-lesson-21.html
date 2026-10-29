@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 21 · 汉字叔叔：一个美国人的汉字情缘 · HSK 标准教程 5下</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#23262a;
+  --brick:#6f6b63;
+  --paper:#e3e1da;
+  --card:#f2f1ec;
+  --red:#b4342a;
+  --brass:#a8813c;
+  --bamboo:#4a6b4e;
+  --sky:#54748a;
+  --line:rgba(35,38,42,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:
+    linear-gradient(rgba(255,255,255,.35) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.35) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+/* ——— шапка ——— */
+header{padding:56px 0 28px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{
+  font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;
+  color:var(--red);letter-spacing:-.03em;
+}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:44px;line-height:1.05;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brick);margin-top:9px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+/* ——— секции ——— */
+section{margin-top:58px}
+h2{
+  font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px;
+}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+a{color:var(--red)}
+
+/* ——— план двора ——— */
+.plan-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px;
+  box-shadow:0 1px 0 rgba(35,38,42,.06)}
+.plan-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone rect,.zone circle,.zone path{transition:fill .18s ease}
+.zone:hover .fillable,.zone.on .fillable{fill:#e7cfc9}
+.zone:focus{outline:none}
+.zone:focus-visible .fillable{stroke:var(--red);stroke-width:2.5}
+.zlab{font-family:var(--han);font-size:15px;font-weight:600;fill:var(--ink);pointer-events:none}
+.zpin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.04em}
+.faint{font-family:var(--han);font-size:12px;fill:var(--brick);pointer-events:none}
+.compass{font-family:var(--mono);font-size:10px;fill:var(--brick);letter-spacing:.15em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:62px}
+.readout .w{font-family:var(--han);font-size:22px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:13px;color:var(--sky)}
+.readout .d{display:block;margin-top:4px;font-size:15px}
+.readout .hint{color:var(--brick);font-style:italic}
+
+/* ——— карточки слов ——— */
+.cluster{margin-top:26px}
+.cluster h3{margin-bottom:4px}
+.cluster .why{font-size:14px;color:var(--brick);margin-bottom:14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--brass);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+/* ——— общие блоки ——— */
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.green{border-left:4px solid var(--bamboo)}
+.card.brass{border-left:4px solid var(--brass)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--paper);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.b{background:var(--brass)}
+.tag.g{background:var(--bamboo)}
+.tag.r{background:var(--red)}
+
+/* ——— таблицы ——— */
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(35,38,42,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+/* ——— на слух ——— */
+.trap{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+/* ——— ответы ——— */
+details{background:var(--card);border:1px solid var(--line);margin:10px 0;padding:0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+/* ——— финал ——— */
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;
+  font-family:var(--disp);font-weight:700;font-size:22px;color:var(--red);
+  width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .lesson-no{font-size:66px}
+  h1{font-size:32px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+
+
+:root{--red:#9c3b2e;--brass:#9a7a2c;--bamboo:#4e6b50;--sky:#4f6a86;--paper:#e7e2d6;--card:#f6f3ea}
+.zone:hover .fillable,.zone.on .fillable{fill:#ecd6c8}
+.rowlab{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;fill:var(--brick)}
+.yr{font-family:var(--disp);font-weight:700;font-size:21px;fill:var(--red)}
+.tiny{font-family:var(--han);font-size:11.5px;fill:var(--brick);pointer-events:none}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index-5b.html">&#8592; Все уроки 5B</a><a href="index.html">Учебник 5A</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（下） · Unit 7 交流文化 · Cultural exchange</div>
+  <div class="title-row">
+    <div class="lesson-no">21</div>
+    <h1>汉字叔叔：一个美国人的汉字情缘<span class="lat">Дядюшка Ханьцзы · 657 字 · стр. 18–25</span></h1>
+  </div>
+  <div class="meta">
+    <span><b>41</b> новых слов</span>
+    <span><b>3</b> грамматические точки</span>
+    <span>ключ: <b>硬 · 偶然 · 尽快</b></span>
+  </div>
+</header>
+
+
+<section>
+  <p class="lede">Текст — биография, и держится он на четырёх датах. Это редкий случай, когда можно вообще
+  не придумывать схему: достаточно выложить годы в строку, и лексика распределится по ним сама.
+  Запомните четыре точки — 1972, 1994, 2002, 2011 — и пересказ уже наполовину готов.</p>
+</section>
+
+<section id="plan">
+  <h2>Четыре даты <span class="cn">一个美国人的汉字情缘</span></h2>
+  <div class="plan-box">
+    <svg viewBox="0 0 660 470" role="img" aria-label="Хронология Дядюшки Ханьцзы и устройство его сайта"><text class="rowlab" x="18" y="28">1 · ЧЕТЫРЕ ДАТЫ 理查德的汉字人生</text><path d="M30 118 h600" stroke="#23262a" stroke-width="2.4" marker-end="url(#a21)"/><g class="zone" tabindex="0" data-w="1972 · 爱上中文" data-p="逻辑 · 死记硬背 · 偶然" data-d="22岁的理查德·希尔斯爱上了中文，却觉得汉字的一笔一画没有任何逻辑，只能死记硬背。一个偶然的机会他发现：了解汉字的来源和演变过程以后，学起来就轻松了。可惜几乎没有一本英文书能充分解释字源。"><circle class="fillable" cx="82" cy="118" r="11" fill="#e0d8c6" stroke="#23262a" stroke-width="2"/><text class="yr" x="82" y="62" text-anchor="middle">1972</text><text class="zlab" x="82" y="86" text-anchor="middle">爱上中文</text><text class="zpin" x="82" y="146" text-anchor="middle">逻辑</text></g><g class="zone" tabindex="0" data-w="1994 · 心脏病" data-p="遗憾 · 思考 · 抓紧 · 尽快" data-d="理查德得了心脏病，医生说他剩下的时间可能不多了。他开始思考人生：如果只能活24小时，就跟朋友告别；如果还能活一年，就抓紧时间尽快把《说文解字》电脑化。复印、整理、输入——仅这一步就用了8年。"><circle class="fillable" cx="218" cy="118" r="11" fill="#e0d8c6" stroke="#23262a" stroke-width="2"/><text class="yr" x="218" y="62" text-anchor="middle">1994</text><text class="zlab" x="218" y="86" text-anchor="middle">心脏病</text><text class="zpin" x="218" y="146" text-anchor="middle">遗憾</text></g><g class="zone" tabindex="0" data-w="2002 · 网站公开" data-p="元旦 · 疾病 · 创办 · 公开 · 最初 · 痛苦" data-d="元旦这天，战胜疾病的他把自己创办的网站公开，为的是让喜欢中文的人学汉字时，不再像他最初那样学得痛苦。"><circle class="fillable" cx="354" cy="118" r="11" fill="#e0d8c6" stroke="#23262a" stroke-width="2"/><text class="yr" x="354" y="62" text-anchor="middle">2002</text><text class="zlab" x="354" y="86" text-anchor="middle">网站公开</text><text class="zpin" x="354" y="146" text-anchor="middle">元旦</text></g><g class="zone" tabindex="0" data-w="2011 · 汉字叔叔" data-p="微博 · 称呼" data-d="有人把他的故事放到微博上，引起广泛关注，网友亲切地称呼他为“汉字叔叔”。"><circle class="fillable" cx="490" cy="118" r="11" fill="#e0d8c6" stroke="#23262a" stroke-width="2"/><text class="yr" x="490" y="62" text-anchor="middle">2011</text><text class="zlab" x="490" y="86" text-anchor="middle">汉字叔叔</text><text class="zpin" x="490" y="146" text-anchor="middle">微博</text></g><g class="zone" tabindex="0" data-w="现在 · 北师大" data-p="单位 · 查询 · 物理 · 完善 · 退休 · 日程 · 追求 · 梦想" data-d="很多单位发来工作邀请，他选择了北京师范大学——那里也在做汉字识别查询的研究。他教物理，同时继续完善网站。60多岁在中国已是退休的年纪，但他的日程排得很满：“我不会退休，我要‘活到老，学到老’。”"><circle class="fillable" cx="610" cy="118" r="11" fill="#e0d8c6" stroke="#23262a" stroke-width="2"/><text class="yr" x="610" y="62" text-anchor="middle">现在</text><text class="zlab" x="610" y="86" text-anchor="middle">北师大</text><text class="zpin" x="610" y="146" text-anchor="middle">单位</text></g><text class="tiny" x="330" y="172" text-anchor="middle">一笔一画没有逻辑 → 了解来源和演变 → 把经典电脑化 → 网站公开 → 活到老，学到老</text><text class="rowlab" x="18" y="212">2 · ЧТО НА САЙТЕ 汉字叔叔的资料库</text><rect x="30" y="222" width="600" height="118" rx="4" fill="#efeadd" stroke="#23262a" stroke-width="1.6"/><g class="zone" tabindex="0" data-w="近10万个汉字" data-p="收集 · 包含" data-d="网站上有他收集整理的近10万个汉字，包含了它们演变的全部字形。"><rect class="fillable" x="44" y="238" width="126" height="62" rx="3" fill="#fff" stroke="#23262a" stroke-width="1.2"/><text class="zlab" x="107" y="266" text-anchor="middle">近10万个汉字</text><text class="zpin" x="107" y="286" text-anchor="middle">收集 · 包含</text></g><g class="zone" tabindex="0" data-w="繁体 / 简体" data-p="繁体字 · 简体字" data-d="每个字都给出繁体字形和简体字形——那самый пара, которую проверяют в 热身 этого урока."><rect class="fillable" x="194" y="238" width="126" height="62" rx="3" fill="#fff" stroke="#23262a" stroke-width="1.2"/><text class="zlab" x="257" y="266" text-anchor="middle">繁体 / 简体</text><text class="zpin" x="257" y="286" text-anchor="middle">繁体字 · 简体字</text></g><g class="zone" tabindex="0" data-w="读音与释义" data-p="方言 · 称赞" data-d="普通话和部分方言读音、英文释义——за это сайт и назвали «有图有真相»."><rect class="fillable" x="344" y="238" width="126" height="62" rx="3" fill="#fff" stroke="#23262a" stroke-width="1.2"/><text class="zlab" x="407" y="266" text-anchor="middle">读音与释义</text><text class="zpin" x="407" y="286" text-anchor="middle">方言 · 称赞</text></g><g class="zone" tabindex="0" data-w="免费下载" data-p="开放 · 下载 · 佩服" data-d="更让人佩服的是：всё содержимое открыто для бесплатной загрузки（全部开放给网友免费下载）。"><rect class="fillable" x="494" y="238" width="126" height="62" rx="3" fill="#fff" stroke="#23262a" stroke-width="1.2"/><text class="zlab" x="557" y="266" text-anchor="middle">免费下载</text><text class="zpin" x="557" y="286" text-anchor="middle">开放 · 下载 · 佩服</text></g><text class="tiny" x="330" y="326" text-anchor="middle">克服种种困难、花光全部积蓄创办 · 被网友称赞为“有图有真相”</text><text class="rowlab" x="18" y="376">3 · ТРИ ТОЧКИ УРОКА 词语例释</text><g class="zone" tabindex="0" data-w="硬" data-p="yìng — наперекор / через силу" data-d="Наречие. Первое значение — «упрямо, наперекор»: 赵高把鹿硬说成马. Второе — «через силу, хотя не получается»: 我是怎么硬挺过来的. В тексте — 死记硬背: зубрить напролом."><rect class="fillable" x="30" y="386" width="192" height="58" rx="3" fill="#e4e2d4" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="126" y="412" text-anchor="middle">硬</text><text class="zpin" x="126" y="430" text-anchor="middle">наперекор / через силу</text></g><g class="zone" tabindex="0" data-w="偶然" data-p="ǒurán — случайный / изредка" data-d="Прилагательное: 一个偶然的机会 — случайная возможность, противопоставлено 必然. Наречие: 偶然也会抬眼看一下 — «нет-нет да и». Разбор пары 偶然—偶尔 ниже."><rect class="fillable" x="234" y="386" width="192" height="58" rx="3" fill="#e4e2d4" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="330" y="412" text-anchor="middle">偶然</text><text class="zpin" x="330" y="430" text-anchor="middle">случайный / изредка</text></g><g class="zone" tabindex="0" data-w="尽快" data-p="jǐnkuài — как можно скорее" data-d="Наречие: 抓紧时间尽快把《说文解字》电脑化. Отличать от 赶快: 尽快 — «в кратчайший срок, насколько получится», 赶快 — «быстро, прямо сейчас». В упражнении 2 ловят именно на этом."><rect class="fillable" x="438" y="386" width="192" height="58" rx="3" fill="#e4e2d4" stroke="#23262a" stroke-width="1.4"/><text class="zlab" x="534" y="412" text-anchor="middle">尽快</text><text class="zpin" x="534" y="430" text-anchor="middle">как можно скорее</text></g><defs><marker id="a21" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#23262a"/></marker></defs></svg>
+    <div class="readout" id="readout">
+      <span class="hint">Наведите курсор или коснитесь даты — появится, что в этот год произошло.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Текст в четырёх кадрах <span class="cn">课文 · 657 字</span></h2>
+
+  <div class="card red">
+    <p><span class="tag r">1972</span><b>Как всё началось.</b> 22-летний Ричард Сирс влюбился в китайский,
+    но иероглифы показались ему 很复杂: 一笔一画没有任何逻辑，只能死记硬背. 一个偶然的机会 он обнаружил,
+    что если понять 来源和演变过程, учить становится 轻松、容易. Беда в том, что 他遗憾地发现 —
+    почти нет английской книги, которая 充分解释汉字的字源.</p>
+    <p style="margin:0"><b>Слова кадра:</b> <span class="cn-ex">情缘 · 逻辑 · 硬 · 死记硬背 · 偶然 · 演变 · 遗憾</span></p>
+  </div>
+
+  <div class="card green">
+    <p><span class="tag g">1994</span><b>Болезнь и решение.</b> 理查德得了心脏病, врачи сказали, что времени
+    осталось немного. Он начал 思考自己的人生: «если жить сутки — попрощаюсь с друзьями; если год —
+    要抓紧时间尽快把《说文解字》电脑化». Так один за другим древние 经典 вошли в его 资料库;
+    только на копирование, разбор и 输入电脑 ушло восемь лет.</p>
+    <p style="margin:0"><b>Слова кадра:</b> <span class="cn-ex">心脏 · 思考 · 抓紧 · 尽快 · 经典 · 库 · 输入</span></p>
+  </div>
+
+  <div class="card brass">
+    <p><span class="tag b">2002 · 2011</span><b>Сайт и прозвище.</b> В 元旦 2002-го победивший 疾病 решил
+    把自己创办的网站公开 — чтобы другие не учили иероглифы так же 痛苦, как он 最初.
+    В 2011-м кто-то выложил его историю в 微博, она вызвала 广泛关注, и сеть 亲切地称呼 его 汉字叔叔.
+    На сайте — 近10万个汉字 со всеми 字形: 繁体 и 简体, путунхуа и 方言 чтения, английские толкования;
+    网友称赞为 «有图有真相». Самое удивительное: всё 开放给网友免费下载.</p>
+    <p style="margin:0"><b>Слова кадра:</b> <span class="cn-ex">元旦 · 疾病 · 创办 · 公开 · 最初 · 痛苦 · 微博 · 称呼 · 克服 · 收集 · 包含 · 繁体 · 简体 · 方言 · 称赞 · 真相 · 佩服 · 开放 · 下载</span></p>
+  </div>
+
+  <div class="card">
+    <p><span class="tag">现在</span><b>Шестьдесят с лишним.</b> Много 单位 зовут его на работу, но он выбрал
+    北京师范大学: там тоже занимаются 汉字识别查询. Преподаёт 物理 и продолжает 完善 свой сайт.
+    В Китае 60多岁 — это уже 退休的年纪, но 日程 у него плотное: «我不会退休，我还要继续追求我的梦想，
+    我要‘活到老，学到老’».</p>
+    <p style="margin:0"><b>Слова кадра:</b> <span class="cn-ex">单位 · 识别 · 查询 · 物理 · 完善 · 退休 · 日程 · 追求 · 梦想</span></p>
+  </div>
+  <p style="font-size:14px;color:var(--brick)">改编自《中国电视报》，作者：孙莲莲</p>
+</section>
+
+<section>
+  <h2>41 слово по гнёздам <span class="cn">生词 + 专有名词</span></h2>
+  <p style="font-size:14px;color:var(--brick)"><span class="star">★</span> — слово сверх программы HSK 5 (в учебнике помечено звёздочкой). Последние три — имена собственные.</p>
+
+  <div class="audiobar" id="audiobar">
+    <div class="ab-t">Озвучка слов</div>
+    <div class="ab-row">
+      <input id="ab-pat" type="text" spellcheck="false" value="audio/{hz}.mp3" aria-label="Шаблон пути к mp3">
+      <button type="button" id="ab-auto">Подобрать</button>
+      <button type="button" id="ab-test">Проверить</button>
+    </div>
+    <div class="ab-status" id="ab-status"></div>
+    <div class="ab-note">
+      Ищутся файлы вида <code>иероглиф.mp3</code> — сначала в папке <code>audio</code> рядом с этим документом,
+      потом прямо рядом с ним. Подстановки: <code>{hz}</code>, <code>{py}</code>, <code>{pyn}</code>,
+      <code>{num}</code>, <code>{L}</code>.
+    </div>
+  </div>
+<div class="cluster"><h3>I. Как учат иероглифы<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Первый абзац — и заодно вся «метаучебная» лексика, полезная на экзамене.</div><div class="words"><div class="w-item"><span class="hz">情缘</span><span class="py">qíngyuán</span><span class="star">★</span><button class="pb" type="button" data-hz="情缘" data-hz2="情缘" data-py="qíngyuán" data-pyn="qingyuan" data-num="1" aria-label="Прослушать 情缘" title="Прослушать 情缘">&#9654;</button><span class="ru">связанность судьбой, тяга к чему-то</span><span class="ex">汉字情缘</span></div><div class="w-item"><span class="hz">逻辑</span><span class="py">luójí</span><button class="pb" type="button" data-hz="逻辑" data-hz2="逻辑" data-py="luójí" data-pyn="luoji" data-num="2" aria-label="Прослушать 逻辑" title="Прослушать 逻辑">&#9654;</button><span class="ru">логика</span><span class="ex">没有任何逻辑 / 符合逻辑</span></div><div class="w-item"><span class="hz">硬</span><span class="py">yìng</span><button class="pb" type="button" data-hz="硬" data-hz2="硬" data-py="yìng" data-pyn="ying" data-num="3" aria-label="Прослушать 硬" title="Прослушать 硬">&#9654;</button><span class="ru">наперекор; через силу (наречие)</span><span class="ex">死记硬背 / 硬说 / 硬挺过来</span></div><div class="w-item"><span class="hz">死记硬背</span><span class="py">sǐjì-yìngbèi</span><button class="pb" type="button" data-hz="死记硬背" data-hz2="死记硬背" data-py="sǐjì-yìngbèi" data-pyn="siji-yingbei" data-num="3" aria-label="Прослушать 死记硬背" title="Прослушать 死记硬背">&#9654;</button><span class="ru">зубрить, не понимая</span><span class="ex">只能死记硬背</span></div><div class="w-item"><span class="hz">偶然</span><span class="py">ǒurán</span><button class="pb" type="button" data-hz="偶然" data-hz2="偶然" data-py="ǒurán" data-pyn="ouran" data-num="4" aria-label="Прослушать 偶然" title="Прослушать 偶然">&#9654;</button><span class="ru">случайный; изредка</span><span class="ex">一个偶然的机会 / 偶然也会</span></div><div class="w-item"><span class="hz">演变</span><span class="py">yǎnbiàn</span><span class="star">★</span><button class="pb" type="button" data-hz="演变" data-hz2="演变" data-py="yǎnbiàn" data-pyn="yanbian" data-num="5" aria-label="Прослушать 演变" title="Прослушать 演变">&#9654;</button><span class="ru">эволюционировать, изменяться со временем</span><span class="ex">来源和演变过程 / 字形演变</span></div><div class="w-item"><span class="hz">遗憾</span><span class="py">yíhàn</span><button class="pb" type="button" data-hz="遗憾" data-hz2="遗憾" data-py="yíhàn" data-pyn="yihan" data-num="6" aria-label="Прослушать 遗憾" title="Прослушать 遗憾">&#9654;</button><span class="ru">жаль; сожаление</span><span class="ex">遗憾地发现 / 令人遗憾</span></div><div class="w-item"><span class="hz">最初</span><span class="py">zuìchū</span><button class="pb" type="button" data-hz="最初" data-hz2="最初" data-py="zuìchū" data-pyn="zuichu" data-num="18" aria-label="Прослушать 最初" title="Прослушать 最初">&#9654;</button><span class="ru">самый первый, изначальный</span><span class="ex">像他最初那样 / 最初的文字</span></div><div class="w-item"><span class="hz">痛苦</span><span class="py">tòngkǔ</span><button class="pb" type="button" data-hz="痛苦" data-hz2="痛苦" data-py="tòngkǔ" data-pyn="tongku" data-num="19" aria-label="Прослушать 痛苦" title="Прослушать 痛苦">&#9654;</button><span class="ru">мучительный; страдание</span><span class="ex">学得那么痛苦</span></div></div></div><div class="cluster"><h3>II. Болезнь, решение, восемь лет<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Самый сильный абзац текста — и самый удобный для пересказа.</div><div class="words"><div class="w-item"><span class="hz">心脏</span><span class="py">xīnzàng</span><button class="pb" type="button" data-hz="心脏" data-hz2="心脏" data-py="xīnzàng" data-pyn="xinzang" data-num="7" aria-label="Прослушать 心脏" title="Прослушать 心脏">&#9654;</button><span class="ru">сердце (орган)</span><span class="ex">得了心脏病</span></div><div class="w-item"><span class="hz">思考</span><span class="py">sīkǎo</span><button class="pb" type="button" data-hz="思考" data-hz2="思考" data-py="sīkǎo" data-pyn="sikao" data-num="8" aria-label="Прослушать 思考" title="Прослушать 思考">&#9654;</button><span class="ru">размышлять, обдумывать</span><span class="ex">思考自己的人生 / 认真思考</span></div><div class="w-item"><span class="hz">抓紧</span><span class="py">zhuā jǐn</span><button class="pb" type="button" data-hz="抓紧" data-hz2="抓紧" data-py="zhuā jǐn" data-pyn="zhuajin" data-num="9" aria-label="Прослушать 抓紧" title="Прослушать 抓紧">&#9654;</button><span class="ru">не упускать, браться вплотную</span><span class="ex">抓紧时间</span></div><div class="w-item"><span class="hz">尽快</span><span class="py">jǐnkuài</span><button class="pb" type="button" data-hz="尽快" data-hz2="尽快" data-py="jǐnkuài" data-pyn="jinkuai" data-num="10" aria-label="Прослушать 尽快" title="Прослушать 尽快">&#9654;</button><span class="ru">как можно скорее</span><span class="ex">尽快把……电脑化</span></div><div class="w-item"><span class="hz">经典</span><span class="py">jīngdiǎn</span><button class="pb" type="button" data-hz="经典" data-hz2="经典" data-py="jīngdiǎn" data-pyn="jingdian" data-num="11" aria-label="Прослушать 经典" title="Прослушать 经典">&#9654;</button><span class="ru">классика; классический</span><span class="ex">古汉字经典 / 经典作品</span></div><div class="w-item"><span class="hz">库</span><span class="py">kù</span><button class="pb" type="button" data-hz="库" data-hz2="库" data-py="kù" data-pyn="ku" data-num="12" aria-label="Прослушать 库" title="Прослушать 库">&#9654;</button><span class="ru">хранилище, база</span><span class="ex">资料库 / 数据库</span></div><div class="w-item"><span class="hz">输入</span><span class="py">shūrù</span><button class="pb" type="button" data-hz="输入" data-hz2="输入" data-py="shūrù" data-pyn="shuru" data-num="13" aria-label="Прослушать 输入" title="Прослушать 输入">&#9654;</button><span class="ru">вводить (в компьютер)</span><span class="ex">输入电脑 / 输入法</span></div><div class="w-item"><span class="hz">元旦</span><span class="py">yuándàn</span><button class="pb" type="button" data-hz="元旦" data-hz2="元旦" data-py="yuándàn" data-pyn="yuandan" data-num="14" aria-label="Прослушать 元旦" title="Прослушать 元旦">&#9654;</button><span class="ru">Новый год (1 января)</span><span class="ex">2002年元旦</span></div><div class="w-item"><span class="hz">疾病</span><span class="py">jíbìng</span><span class="star">★</span><button class="pb" type="button" data-hz="疾病" data-hz2="疾病" data-py="jíbìng" data-pyn="jibing" data-num="15" aria-label="Прослушать 疾病" title="Прослушать 疾病">&#9654;</button><span class="ru">болезнь</span><span class="ex">战胜疾病 / 预防疾病</span></div><div class="w-item"><span class="hz">创办</span><span class="py">chuàngbàn</span><span class="star">★</span><button class="pb" type="button" data-hz="创办" data-hz2="创办" data-py="chuàngbàn" data-pyn="chuangban" data-num="16" aria-label="Прослушать 创办" title="Прослушать 创办">&#9654;</button><span class="ru">основать, учредить</span><span class="ex">创办网站 / 创办公司</span></div><div class="w-item"><span class="hz">克服</span><span class="py">kèfú</span><button class="pb" type="button" data-hz="克服" data-hz2="克服" data-py="kèfú" data-pyn="kefu" data-num="22" aria-label="Прослушать 克服" title="Прослушать 克服">&#9654;</button><span class="ru">преодолеть</span><span class="ex">克服种种困难 / 克服缺点</span></div></div></div><div class="cluster"><h3>III. Сайт и сеть<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Компьютерный ряд урока: половина слов пригодится в теме 软件操作 из 扩展.</div><div class="words"><div class="w-item"><span class="hz">公开</span><span class="py">gōngkāi</span><button class="pb" type="button" data-hz="公开" data-hz2="公开" data-py="gōngkāi" data-pyn="gongkai" data-num="17" aria-label="Прослушать 公开" title="Прослушать 公开">&#9654;</button><span class="ru">открыть для всех; открытый, гласный</span><span class="ex">公开的秘密 / 把网站公开</span></div><div class="w-item"><span class="hz">微博</span><span class="py">wēibó</span><span class="star">★</span><button class="pb" type="button" data-hz="微博" data-hz2="微博" data-py="wēibó" data-pyn="weibo" data-num="20" aria-label="Прослушать 微博" title="Прослушать 微博">&#9654;</button><span class="ru">микроблог, Вэйбо</span><span class="ex">放到微博上</span></div><div class="w-item"><span class="hz">称呼</span><span class="py">chēnghu</span><button class="pb" type="button" data-hz="称呼" data-hz2="称呼" data-py="chēnghu" data-pyn="chenghu" data-num="21" aria-label="Прослушать 称呼" title="Прослушать 称呼">&#9654;</button><span class="ru">называть, обращаться; обращение</span><span class="ex">被称呼为“汉字叔叔”</span></div><div class="w-item"><span class="hz">收集</span><span class="py">shōují</span><span class="star">★</span><button class="pb" type="button" data-hz="收集" data-hz2="收集" data-py="shōují" data-pyn="shouji" data-num="23" aria-label="Прослушать 收集" title="Прослушать 收集">&#9654;</button><span class="ru">собирать, коллекционировать</span><span class="ex">收集整理 / 收集资料</span></div><div class="w-item"><span class="hz">包含</span><span class="py">bāohán</span><button class="pb" type="button" data-hz="包含" data-hz2="包含" data-py="bāohán" data-pyn="baohan" data-num="24" aria-label="Прослушать 包含" title="Прослушать 包含">&#9654;</button><span class="ru">содержать, включать в себя</span><span class="ex">包含了全部字形</span></div><div class="w-item"><span class="hz">繁体（字）</span><span class="py">fántǐ(zì)</span><span class="star">★</span><button class="pb" type="button" data-hz="繁体（字）" data-hz2="繁体" data-py="fántǐ(zì)" data-pyn="fanti(zi)" data-num="25" aria-label="Прослушать 繁体（字）" title="Прослушать 繁体（字）">&#9654;</button><span class="ru">полные иероглифы</span><span class="ex">繁体字形</span></div><div class="w-item"><span class="hz">简体（字）</span><span class="py">jiǎntǐ(zì)</span><span class="star">★</span><button class="pb" type="button" data-hz="简体（字）" data-hz2="简体" data-py="jiǎntǐ(zì)" data-pyn="jianti(zi)" data-num="26" aria-label="Прослушать 简体（字）" title="Прослушать 简体（字）">&#9654;</button><span class="ru">упрощённые иероглифы</span><span class="ex">简体字形</span></div><div class="w-item"><span class="hz">方言</span><span class="py">fāngyán</span><span class="star">★</span><button class="pb" type="button" data-hz="方言" data-hz2="方言" data-py="fāngyán" data-pyn="fangyan" data-num="27" aria-label="Прослушать 方言" title="Прослушать 方言">&#9654;</button><span class="ru">диалект</span><span class="ex">部分方言读音</span></div><div class="w-item"><span class="hz">称赞</span><span class="py">chēngzàn</span><button class="pb" type="button" data-hz="称赞" data-hz2="称赞" data-py="chēngzàn" data-pyn="chengzan" data-num="28" aria-label="Прослушать 称赞" title="Прослушать 称赞">&#9654;</button><span class="ru">хвалить, одобрять</span><span class="ex">被称赞为 / 受到称赞</span></div><div class="w-item"><span class="hz">真相</span><span class="py">zhēnxiàng</span><span class="star">★</span><button class="pb" type="button" data-hz="真相" data-hz2="真相" data-py="zhēnxiàng" data-pyn="zhenxiang" data-num="29" aria-label="Прослушать 真相" title="Прослушать 真相">&#9654;</button><span class="ru">истинное положение дел</span><span class="ex">有图有真相</span></div><div class="w-item"><span class="hz">佩服</span><span class="py">pèifú</span><button class="pb" type="button" data-hz="佩服" data-hz2="佩服" data-py="pèifú" data-pyn="peifu" data-num="30" aria-label="Прослушать 佩服" title="Прослушать 佩服">&#9654;</button><span class="ru">восхищаться, уважать</span><span class="ex">让人佩服 / 深深地佩服</span></div><div class="w-item"><span class="hz">开放</span><span class="py">kāifàng</span><button class="pb" type="button" data-hz="开放" data-hz2="开放" data-py="kāifàng" data-pyn="kaifang" data-num="31" aria-label="Прослушать 开放" title="Прослушать 开放">&#9654;</button><span class="ru">открыть доступ; открытый</span><span class="ex">全部开放给网友</span></div><div class="w-item"><span class="hz">下载</span><span class="py">xiàzài</span><button class="pb" type="button" data-hz="下载" data-hz2="下载" data-py="xiàzài" data-pyn="xiazai" data-num="32" aria-label="Прослушать 下载" title="Прослушать 下载">&#9654;</button><span class="ru">скачивать</span><span class="ex">免费下载 / 下载资料</span></div><div class="w-item"><span class="hz">识别</span><span class="py">shíbié</span><span class="star">★</span><button class="pb" type="button" data-hz="识别" data-hz2="识别" data-py="shíbié" data-pyn="shibie" data-num="34" aria-label="Прослушать 识别" title="Прослушать 识别">&#9654;</button><span class="ru">распознавать</span><span class="ex">汉字识别 / 识别真假</span></div><div class="w-item"><span class="hz">查询</span><span class="py">cháxún</span><span class="star">★</span><button class="pb" type="button" data-hz="查询" data-hz2="查询" data-py="cháxún" data-pyn="chaxun" data-num="35" aria-label="Прослушать 查询" title="Прослушать 查询">&#9654;</button><span class="ru">запрашивать, искать (в базе)</span><span class="ex">识别查询 / 查询信息</span></div></div></div><div class="cluster"><h3>IV. Работа и планы<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Короткий ряд из финала — и сразу четыре слова, которые любят в 书写.</div><div class="words"><div class="w-item"><span class="hz">单位</span><span class="py">dānwèi</span><button class="pb" type="button" data-hz="单位" data-hz2="单位" data-py="dānwèi" data-pyn="danwei" data-num="33" aria-label="Прослушать 单位" title="Прослушать 单位">&#9654;</button><span class="ru">организация, место работы</span><span class="ex">很多单位 / 工作单位</span></div><div class="w-item"><span class="hz">物理</span><span class="py">wùlǐ</span><button class="pb" type="button" data-hz="物理" data-hz2="物理" data-py="wùlǐ" data-pyn="wuli" data-num="36" aria-label="Прослушать 物理" title="Прослушать 物理">&#9654;</button><span class="ru">физика</span><span class="ex">教物理</span></div><div class="w-item"><span class="hz">完善</span><span class="py">wánshàn</span><button class="pb" type="button" data-hz="完善" data-hz2="完善" data-py="wánshàn" data-pyn="wanshan" data-num="37" aria-label="Прослушать 完善" title="Прослушать 完善">&#9654;</button><span class="ru">совершенствовать; совершенный</span><span class="ex">完善网站 / 完善的制度</span></div><div class="w-item"><span class="hz">退休</span><span class="py">tuìxiū</span><button class="pb" type="button" data-hz="退休" data-hz2="退休" data-py="tuìxiū" data-pyn="tuixiu" data-num="38" aria-label="Прослушать 退休" title="Прослушать 退休">&#9654;</button><span class="ru">выходить на пенсию</span><span class="ex">退休的年纪 / 我不会退休</span></div><div class="w-item"><span class="hz">日程</span><span class="py">rìchéng</span><button class="pb" type="button" data-hz="日程" data-hz2="日程" data-py="rìchéng" data-pyn="richeng" data-num="39" aria-label="Прослушать 日程" title="Прослушать 日程">&#9654;</button><span class="ru">расписание, повестка</span><span class="ex">日程安排得很满 / 提上日程</span></div><div class="w-item"><span class="hz">追求</span><span class="py">zhuīqiú</span><button class="pb" type="button" data-hz="追求" data-hz2="追求" data-py="zhuīqiú" data-pyn="zhuiqiu" data-num="40" aria-label="Прослушать 追求" title="Прослушать 追求">&#9654;</button><span class="ru">стремиться к, добиваться</span><span class="ex">追求梦想 / 过于追求享受</span></div><div class="w-item"><span class="hz">梦想</span><span class="py">mèngxiǎng</span><button class="pb" type="button" data-hz="梦想" data-hz2="梦想" data-py="mèngxiǎng" data-pyn="mengxiang" data-num="41" aria-label="Прослушать 梦想" title="Прослушать 梦想">&#9654;</button><span class="ru">мечта; мечтать</span><span class="ex">实现梦想 / 追求梦想</span></div><div class="w-item"><span class="hz">理查德·希尔斯</span><span class="py">Lǐchádé Xī’ěrsī</span><button class="pb" type="button" data-hz="理查德·希尔斯" data-hz2="理查德·希尔斯" data-py="Lǐchádé Xī’ěrsī" data-pyn="lichadexi’ersi" data-num="" aria-label="Прослушать 理查德·希尔斯" title="Прослушать 理查德·希尔斯">&#9654;</button><span class="ru">Ричард Сирс, «дядюшка Ханьцзы»</span><span class="ex">汉字叔叔</span></div><div class="w-item"><span class="hz">《说文解字》</span><span class="py">Shuōwén Jiězì</span><button class="pb" type="button" data-hz="《说文解字》" data-hz2="《说文解字》" data-py="Shuōwén Jiězì" data-pyn="shuowenjiezi" data-num="" aria-label="Прослушать 《说文解字》" title="Прослушать 《说文解字》">&#9654;</button><span class="ru">«Шовэнь цзецзы», словарь II века</span><span class="ex">把《说文解字》电脑化</span></div><div class="w-item"><span class="hz">北京师范大学</span><span class="py">Běijīng Shīfàn Dàxué</span><button class="pb" type="button" data-hz="北京师范大学" data-hz2="北京师范大学" data-py="Běijīng Shīfàn Dàxué" data-pyn="beijingshifandaxue" data-num="" aria-label="Прослушать 北京师范大学" title="Прослушать 北京师范大学">&#9654;</button><span class="ru">Пекинский педагогический университет</span><span class="ex">去北师大教书</span></div></div></div></section>
+<section>
+  <h2>На слух: где рука ошибётся <span class="cn">听写陷阱</span></h2>
+  <p>Урок компьютерно-книжный, и ловушки в нём почти все двусложные: слова звучат близко,
+  а различаются одним знаком и одним оттенком смысла. Для диктанта это хуже, чем редкие иероглифы.</p>
+<div class="warn">Разбор урока — и постоянная пара экзамена</div><div class="trap"><div><span class="hz">偶然</span><span class="py">ǒurán</span><span class="n">случайный, неожиданный. Противопоставлено 必然.</span></div><div><span class="hz">偶尔</span><span class="py">ǒu’ěr</span><span class="n">изредка, время от времени. Противопоставлено 经常.</span></div></div><div class="warn">Оба «быстро», но не взаимозаменяемы</div><div class="trap"><div><span class="hz">尽快</span><span class="py">jǐnkuài</span><span class="n">как можно скорее, в кратчайший срок. 尽 здесь jǐn.</span></div><div><span class="hz">赶快</span><span class="py">gǎnkuài</span><span class="n">быстро, немедленно. В упражнении 2 нужен именно 赶快.</span></div></div><div class="warn">Четвёртый пункт упражнения 2</div><div class="trap"><div><span class="hz">最初</span><span class="py">zuìchū</span><span class="n">самый первый, изначальный. 最初的文字.</span></div><div><span class="hz">当初</span><span class="py">dāngchū</span><span class="n">тогда, в то время (о прошлом). 当初为什么那样选择.</span></div></div><div class="warn">Первый пункт упражнения 2</div><div class="trap"><div><span class="hz">思考</span><span class="py">sīkǎo</span><span class="n">размышлять над чем-то большим: 思考人生.</span></div><div><span class="hz">考虑</span><span class="py">kǎolǜ</span><span class="n">обдумывать конкретное решение: 让我再考虑几天.</span></div></div><div class="warn">Второй пункт упражнения 2</div><div class="trap"><div><span class="hz">遗憾</span><span class="py">yíhàn</span><span class="n">жаль, досадно — о том, что не вышло.</span></div><div><span class="hz">后悔</span><span class="py">hòuhuǐ</span><span class="n">раскаиваться — о том, что сам сделал.</span></div></div><div class="warn">Две системы письма</div><div class="trap"><div><span class="hz">繁体</span><span class="py">fántǐ</span><span class="n">полные формы иероглифов.</span></div><div><span class="hz">简体</span><span class="py">jiǎntǐ</span><span class="n">упрощённые. Пара из 热身 этого урока.</span></div></div><div class="warn">Одна морфема, два слова</div><div class="trap"><div><span class="hz">称呼</span><span class="py">chēnghu</span><span class="n">называть, обращаться. Второй слог нейтральный.</span></div><div><span class="hz">称赞</span><span class="py">chēngzàn</span><span class="n">хвалить. Оба на 称, оба в этом уроке.</span></div></div><div class="warn">Три близких глагола</div><div class="trap"><div><span class="hz">收集</span><span class="py">shōují</span><span class="n">собирать по крупице: 收集资料.</span></div><div><span class="hz">搜集 / 收藏</span><span class="py">sōují / shōucáng</span><span class="n">«разыскивать и собирать» и «коллекционировать, хранить» (урок 20).</span></div></div><div class="warn">Канцелярский ряд</div><div class="trap"><div><span class="hz">查询</span><span class="py">cháxún</span><span class="n">искать в базе, делать запрос.</span></div><div><span class="hz">查找 / 识别</span><span class="py">cházhǎo / shíbié</span><span class="n">«искать» и «распознавать». В тексте стоят рядом: 汉字识别查询.</span></div></div><div class="warn">Один знак, два чтения</div><div class="trap"><div><span class="hz">下载</span><span class="py">xiàzài</span><span class="n">скачивать — 载 здесь zài.</span></div><div><span class="hz">载</span><span class="py">zǎi</span><span class="n">zǎi — «записывать, год»: 记载, 一年半载.</span></div></div><div class="warn">Ключ слева решает</div><div class="trap"><div><span class="hz">库</span><span class="py">kù</span><span class="n">хранилище: 资料库, 数据库, 车库.</span></div><div><span class="hz">裤 / 酷</span><span class="py">kù</span><span class="n">«брюки» и «крутой». Разница только в ключе.</span></div></div><div class="warn">Три слова на 程</div><div class="trap"><div><span class="hz">日程</span><span class="py">rìchéng</span><span class="n">расписание, повестка: 提上日程.</span></div><div><span class="hz">行程 / 过程</span><span class="py">xíngchéng / guòchéng</span><span class="n">«маршрут» и «процесс». Все три на 程.</span></div></div>
+  <div class="card green">
+    <p style="margin:0"><b>Как тренировать.</b> Здесь особенно хорошо работают связки целиком:
+    <span class="cn-ex">一个偶然的机会 · 抓紧时间尽快 · 遗憾地发现 · 被称呼为 · 受到称赞 · 免费下载 ·
+    提上日程 · 追求梦想</span>. Слово в связке рука пишет правильно почти всегда, отдельное слово — нет.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Три точки урока <span class="cn">词语例释</span></h2>
+
+  <h3>1 · 硬 — «наперекор» и «через силу»</h3>
+  <div class="card red">
+    <p>Наречие с двумя значениями. Первое — <b>упрямо, вопреки очевидному</b>:</p>
+    <p class="cn-ex">在中国历史故事“指鹿为马”中，赵高把鹿<span class="hl">硬</span>说成马。</p>
+    <p class="cn-ex">……汉字的一笔一画没有任何逻辑，只能<span class="hl">死记硬背</span>。</p>
+    <p>Второе — <b>через силу, хотя не хватает сил или условий</b>:</p>
+    <p class="cn-ex">你不知道这一年我是怎么<span class="hl">硬</span>挺过来的。</p>
+    <p class="cn-ex">虽然中药汤有点儿苦，但为了治病，他还是<span class="hl">硬</span>把它喝下去了。</p>
+    <p class="tr" style="margin:10px 0 0">Проверка: если рядом есть «вопреки фактам» — первое значение;
+    если «несмотря на трудность» — второе. Частые связки: 硬说, 硬要, 硬撑, 硬挺, 硬是.</p>
+  </div>
+
+  <h3>2 · 偶然 — «случайный» и «изредка»</h3>
+  <div class="card green">
+    <p><b>Прилагательное:</b> то, что произошло вопреки ожиданию или общему правилу.</p>
+    <p class="cn-ex">一个<span class="hl">偶然</span>的机会，他发现如果了解汉字的来源和演变过程，再学习它就变得轻松、容易。</p>
+    <p class="cn-ex">虽然桂花<span class="hl">偶然</span>也能长成18米高的大树，但是绝大多数情况下它们都很矮。</p>
+    <p><b>Наречие</b> в значении «нет-нет да и, иногда»:</p>
+    <p class="cn-ex">她专心地织着毛衣，<span class="hl">偶然</span>也会抬眼看一下墙上的挂钟。</p>
+    <p class="cn-ex">那些我生活过的地方，<span class="hl">偶然</span>也会在我梦中出现，但都不是我的“家”！</p>
+    <p class="tr" style="margin:10px 0 0">Как прилагательное 偶然 противопоставлено 必然,
+    как наречие — 经常. Разбор пары с 偶尔 — ниже.</p>
+  </div>
+
+  <h3>3 · 尽快 — «как можно скорее»</h3>
+  <div class="card brass">
+    <p>Наречие: сделать настолько быстро, насколько получится.</p>
+    <p class="cn-ex">……我要抓紧时间<span class="hl">尽快</span>把《说文解字》电脑化。</p>
+    <p class="cn-ex">新产品出了点儿问题，你和严经理<span class="hl">尽快</span>商量一下这事。</p>
+    <p class="cn-ex">趁这两天天气好，你<span class="hl">尽快</span>把过季的衣服洗一洗，收起来。</p>
+    <p class="tr" style="margin:10px 0 0">Отличие от 赶快: 尽快 — срок («в ближайшее время, насколько сможете»),
+    и годится для планов и поручений; 赶快 — немедленный толчок («быстрее!»), и уместно в срочной ситуации:
+    那赶快送医院呀！</p>
+  </div>
+</section>
+
+<section>
+  <h2>Сочетаемость <span class="cn">词语搭配</span></h2>
+  <table>
+    <tr><th>动词 + 宾语</th><th>примеры</th></tr>
+    <tr><td class="han">收集</td><td class="han">资料 / 例子 / 情况 / 意见 / 证据 / 零件 / 邮票</td></tr>
+    <tr><td class="han">克服</td><td class="han">缺点 / 弱点 /（消极）思想 /（不利）条件</td></tr>
+    <tr><td class="han">追求</td><td class="han">理想 / 爱情 / 科学 / 知识 / 健康 / 外表 / 权力 / 速度 / 质量 / 享受 / 时髦 / 独立 / 进步</td></tr>
+    <tr><th>定语 + 中心语</th><th></th></tr>
+    <tr><td class="han">完善的</td><td class="han">制度 / 办法 / 设计 / 方案 / 法律</td></tr>
+    <tr><td class="han">公开的</td><td class="han">文件 / 身份 / 秘密 / 活动 / 行动</td></tr>
+    <tr><th>状语 + 中心语</th><th></th></tr>
+    <tr><td class="han">暗暗地 / 深深地 / 打心里</td><td class="han">佩服</td></tr>
+    <tr><td class="han">认真 / 反复 / 紧张地 / 耐心地 / 专心地 / 慢慢地 / 仔细地</td><td class="han">思考</td></tr>
+    <tr><th>主语 + 谓语</th><th></th></tr>
+    <tr><td class="han">日程</td><td class="han">确定 / 紧 / 满 / 松</td></tr>
+    <tr><td class="han">梦想</td><td class="han">实现 /（被）打破</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>偶然 и 偶尔 <span class="cn">词语辨析</span></h2>
+  <p>Оба могут быть наречиями, оба про «нечасто», иногда взаимозаменяемы:
+  <span class="cn-ex">在校园里，我偶然／偶尔也会碰到李艳。</span> Но акцент у них разный.</p>
+  <table class="pair-tbl">
+    <tr><th></th><th>偶然 ǒurán</th><th>偶尔 ǒu’ěr</th></tr>
+    <tr><td>что подчёркивает</td><td>неожиданность, «вдруг», противопоставлено 必然</td><td>малое число раз, противопоставлено 经常</td></tr>
+    <tr><td>пример</td><td class="han">这本书是她一次逛书市时偶然发现的。</td><td class="han">我平时加班不多，月底偶尔有一两天。</td></tr>
+    <tr><td>вторая функция</td><td>прилагательное: может быть определением и сказуемым, перед ним можно поставить наречие степени<br><span class="han">李阳喜欢画画儿并非偶然。</span></td><td>только определение; наречие степени перед ним не ставится, сказуемым не бывает<br><span class="han">偶尔的聚会还是在村里的老房子里举行。</span></td></tr>
+  </table>
+  <p class="tr">Практическое правило: если фразу можно перевести «вовсе не случайность» или «по чистой случайности» —
+  это 偶然. Если «изредка, раз в месяц» — 偶尔.</p>
+</section>
+
+<section>
+  <h2>Ответы к упражнениям <span class="cn">练习 · 做一做 · 练一练</span></h2>
+<details><summary>练习 1 — 选择合适的词语填空（收集 克服 追求 公开 佩服 抓紧）</summary><div class="in">
+<p>① 这点儿困难不算什么，我一定可以<span class="k">克服</span>的。<br>
+② 其实，林峰与刘医生的恋情，在医院里已经是<span class="k">公开</span>的秘密了。<br>
+③ 我们是大学同学，那时候他就有了这个<span class="k">收集</span>老报纸的爱好。<br>
+④ 你<span class="k">抓紧</span>准备一下，争取下周把这个项目谈下来。<br>
+⑤ 她对工作认真负责的态度很让人<span class="k">佩服</span>。<br>
+⑥ 爸爸平时常提醒我，生活上不要过于<span class="k">追求</span>享受。</p></div></details><details><summary>练习 2 — 选择正确答案</summary><div class="in">
+<p>① 买车的事我还没想好，你让我再<span class="k">考虑</span>（B）几天。<br>
+② 令人<span class="k">遗憾</span>（A）的是，我回国前没能和他见上一面。<br>
+③ 什么？小明受伤了，那<span class="k">赶快</span>（B）送医院呀！<br>
+④ 有文字学家指出，<span class="k">最初</span>（A）的文字就是可以读出来的图画。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+① 思考 — о большом и отвлечённом, 考虑 — о конкретном решении. ③ срочность → 赶快,
+а не «в ближайшее время» 尽快. ④ 最初 «самый первый», 当初 «тогда, в своё время».</p></div></details><details><summary>练习 3 — 画线连接可以搭配的词语</summary><div class="in">
+<p>(1) 追求 — 梦想 ／ 公开 — 秘密 ／ 收集 — 雨水 ／ 完善 — 制度<br>
+(2) 提上 — 日程 ／ 符合 — 逻辑 ／ 受到 — 称赞 ／ 下载 — 资料</p></div></details><details><summary>做一做 — 偶然 или 偶尔</summary><div class="in">
+<p>(1) 和刘峰在上海的那次碰面非常<span class="k">偶然</span>。<br>
+(2) 在昨天的训练中，他很<span class="k">偶然</span>地和队友撞在了一起，受了伤。<br>
+(3) 她们多半会到丽丽家玩儿，<span class="k">偶尔</span>也会去吃饭看电影。<br>
+(4) 大家都安静地吃着，只听到筷子碰到碗边儿的声音和<span class="k">偶尔</span>的几声咳嗽。</p></div></details><details><summary>练一练 1 — 硬（образцы）</summary><div class="in">
+<p>(1) 明明是他忘了，他却<span class="k">硬说是我没提醒他</span>。<br>
+(2) 快递员的工作很辛苦，<span class="k">可他硬是坚持了五年</span>。<br>
+(3) B: 既然你还有事，<span class="k">我就不硬留你了</span>。</p></div></details><details><summary>练一练 2 — 偶然（образцы）</summary><div class="in">
+<p>(1) <span class="k">一次偶然的谈话</span>彻底改变了他的命运。（形）<br>
+(2) B: <span class="k">完全是偶然的，我路过的时候看见门口贴着招聘启事</span>。（形）<br>
+(3) B: <span class="k">平时不吃，加班太晚的时候偶然也吃一次</span>。（副）</p></div></details><details><summary>练一练 3 — 尽快（образцы）</summary><div class="in">
+<p>(1) 下个月就开会讨论计划了，我<span class="k">得尽快把方案做出来</span>。<br>
+(2) 病人的情况很危险，<span class="k">必须尽快安排手术</span>。<br>
+(3) B: <span class="k">好的，我尽快把酒店定下来</span>。</p></div></details><details><summary>扩展 做一做 — 学科 и 软件操作</summary><div class="in">
+<p>(1) 昨天我把电脑好好整理了一下，把没用的文件、照片都<span class="k">删除</span>了。<br>
+(2) 据调查，有70%的网民经常在网上<span class="k">搜索</span>信息、找资料。<br>
+(3) 老年人喜欢读报，而年轻人现在大都是在网上<span class="k">浏览</span>新闻了。<br>
+(4) 你把他们送来的广告设计方案<span class="k">复制</span>一份到移动硬盘里。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+学科: 哲学、化学、物理、政治.<br>
+软件操作: 粘贴、复制、浏览、删除、搜索、文件.</p></div></details></section>
+<section>
+  <h2>Сочинение <span class="cn">命题写作：我为什么学汉语</span></h2>
+  <p>Задание учебника — не меньше 100 знаков о своих мотивах и опыте. Текст урока даёт готовую логику:
+  сначала трудность, потом поворот, потом то, ради чего всё это.</p>
+  <div class="card green">
+    <p class="cn-ex" style="line-height:2">我开始学汉语是一个<span class="hl">偶然</span>。几年前我在书店里随手翻开一本介绍汉字的书，
+    看到“水”字从古到今的<span class="hl">演变</span>，一下子就被吸引住了。<span class="hl">最初</span>我也觉得汉字很复杂，
+    没有<span class="hl">逻辑</span>，只能<span class="hl">死记硬背</span>，学得很<span class="hl">痛苦</span>。
+    后来我学着先弄清一个字的来源，再去记它，困难就慢慢被<span class="hl">克服</span>了。
+    现在我每天的<span class="hl">日程</span>里都留出一个小时给汉语。我很<span class="hl">佩服</span>那些几十年
+    坚持做一件事的人，也希望自己能<span class="hl">追求</span>这个<span class="hl">梦想</span>，
+    真正做到“活到老，学到老”。</p>
+  </div>
+  <h3>Связки, которые стоит взять с собой</h3>
+  <ul>
+    <li><span class="cn-ex">我开始……是一个偶然</span> — сильное начало вместо скучного 我学汉语已经三年了;</li>
+    <li><span class="cn-ex">最初……，后来……，现在……</span> — три шага, на которых держится весь текст урока;</li>
+    <li><span class="cn-ex">如果……，我会……；如果……，我要……</span> — конструкция Ричарда из второго абзаца,
+    отлично работает в сочинении о планах;</li>
+    <li><span class="cn-ex">更让人佩服的是……</span> — вводит самый сильный довод;</li>
+    <li><span class="cn-ex">活到老，学到老</span> — готовая концовка, которую проверяющий узнаёт.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>План на урок <span class="cn">复习计划</span></h2>
+  <ol class="route">
+    <li><b>Выучите четыре даты.</b> 1972 — влюбился и упёрся в зубрёжку; 1994 — болезнь и решение;
+    2002 — сайт открыт; 2011 — прозвище. Пятая точка — «сейчас». На этих пяти опорах пересказ держится целиком.</li>
+    <li><b>Соберите пересказ по таблице учебника.</b> Три блока: 学汉字的经验 (笔画、逻辑、死记硬背、偶然),
+    汉字网站 (抓紧、尽快、资料、输入、公开、收集、克服、包含、开放、下载), 现在的工作情况
+    (单位、查询、物理、完善、追求、梦想、日程).</li>
+    <li><b>Разведите четыре пары.</b> 偶然／偶尔, 尽快／赶快, 最初／当初, 思考／考虑 — ровно те,
+    что стоят в упражнении 2 и в 辨析. Напишите по своему примеру на каждое из восьми слов.</li>
+    <li><b>Отработайте 硬.</b> Два значения, по два примера на каждое. Это слово редко учат,
+    и именно поэтому оно заметно поднимает уровень речи.</li>
+    <li><b>Напишите сочинение.</b> 100 знаков по схеме «最初 — 后来 — 现在», обязательно с 偶然
+    и одним 追求.</li>
+  </ol>
+</section>
+
+
+<nav class="botnav"><a href="hsk5b-lesson-20.html"><span>← Урок 20</span>小人书摊</a><a href="hsk5b-lesson-22.html"><span>Урок 22 →</span>阅读与思考</a></nav>
+
+<footer>HSK 标准教程 5（下） · урок 21 «汉字叔叔：一个美国人的汉字情缘» · конспект для подготовки к экзамену</footer>
+
+</div>
+<script>
+
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML =
+      '<span class="w">' + z.dataset.w + '</span>' +
+      '<span class="p">' + z.dataset.p + '</span>' +
+      '<span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    out.innerHTML = def;
+  }
+
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+
+  var box = document.querySelector('.plan-box svg');
+  box.addEventListener('mouseleave', clear);
+})();
+
+</script>
+<script>
+
+(function(){
+  var LESSON = "21";
+  var DIRS = ["audio/", "", "mp3/", "media/", "аудио/", "audio/21/", "21/"];
+  var CAND = [];
+  DIRS.forEach(function(d){ CAND.push(d + "{hz}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{hz2}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{pyn}.mp3"); });
+
+  var patIn  = document.getElementById('ab-pat');
+  var status = document.getElementById('ab-status');
+  var btns   = Array.prototype.slice.call(document.querySelectorAll('.pb[data-hz]'));
+  var cur = null, curBtn = null, queue = null;
+
+  function pad(n){ n = String(n||''); return n.length === 1 ? '0'+n : n; }
+
+  function resolve(pat, b){
+    return pat
+      .replace(/\{hz2\}/g, b.dataset.hz2 || b.dataset.hz)
+      .replace(/\{hz\}/g,  b.dataset.hz)
+      .replace(/\{pyn\}/g, b.dataset.pyn)
+      .replace(/\{py\}/g,  b.dataset.py)
+      .replace(/\{num\}/g, pad(b.dataset.num))
+      .replace(/\{n\}/g,   b.dataset.num || '')
+      .replace(/\{L\}/g,   LESSON);
+  }
+
+  function setStatus(t, cls){
+    status.textContent = t || '';
+    status.className = 'ab-status' + (cls ? ' ' + cls : '');
+  }
+
+  function test(pat, b){
+    return new Promise(function(res){
+      var a = new Audio(), done = false;
+      function ok(){ if(!done){ done = true; res(true); } }
+      function no(){ if(!done){ done = true; res(false); } }
+      a.addEventListener('loadedmetadata', ok);
+      a.addEventListener('canplay', ok);
+      a.addEventListener('error', no);
+      a.preload = 'metadata';
+      a.src = encodeURI(resolve(pat, b));
+      setTimeout(no, 2500);
+    });
+  }
+
+  function stop(){
+    if(cur){ cur.pause(); cur = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn = null; }
+    queue = null;
+    document.querySelectorAll('.pball.playing').forEach(function(x){ x.classList.remove('playing'); });
+  }
+
+  /* проигрывание с запасными вариантами имени для этого слова */
+  function play(b, onEnd){
+    stop();
+    var tries = [patIn.value.trim()];
+    var alt = (b.dataset.hz2 && b.dataset.hz2 !== b.dataset.hz)
+      ? patIn.value.trim().replace('{hz}', '{hz2}') : null;
+    if(alt && tries.indexOf(alt) < 0) tries.push(alt);
+    CAND.forEach(function(p){ if(tries.indexOf(p) < 0) tries.push(p); });
+
+    b.classList.add('playing');
+    var i = 0;
+    (function attempt(){
+      if(i >= tries.length){
+        b.classList.remove('playing');
+        b.classList.add('missing');
+        b.title = 'Не найден файл для ' + b.dataset.hz;
+        setStatus('Не найден файл для ' + b.dataset.hz + ' — проверьте папку или шаблон.', 'bad');
+        if(onEnd) onEnd();
+        return;
+      }
+      var src = resolve(tries[i++], b);
+      var a = new Audio(encodeURI(src));
+      var started = false;
+      a.addEventListener('canplay', function(){ started = true; });
+      a.addEventListener('ended', function(){
+        b.classList.remove('playing');
+        if(cur === a){ cur = null; curBtn = null; }
+        if(onEnd) onEnd();
+      });
+      a.addEventListener('error', function(){
+        if(!started){ attempt(); }
+        else { b.classList.remove('playing'); if(onEnd) onEnd(); }
+      });
+      cur = a; curBtn = b;
+      b.classList.remove('missing');
+      a.play().catch(function(){});
+    })();
+  }
+
+  /* автопоиск папки при открытии */
+  function autodetect(quiet){
+    if(!btns.length) return;
+    if(!quiet) setStatus('Перебираю варианты…');
+    var i = 0;
+    (function next(){
+      if(i >= CAND.length){
+        setStatus(quiet
+          ? 'Папка с mp3 не найдена. Положите файлы в audio рядом с этим документом.'
+          : 'Ни один из типовых вариантов не подошёл. Впишите путь вручную.',
+          quiet ? '' : 'bad');
+        return;
+      }
+      var p = CAND[i++];
+      test(p, btns[0]).then(function(ok){
+        if(ok){
+          patIn.value = p;
+          document.querySelectorAll('.pb.missing').forEach(function(x){
+            x.classList.remove('missing'); x.title = '';
+          });
+          setStatus('Озвучка подключена: ' + p, 'ok');
+        } else next();
+      });
+    })();
+  }
+
+  document.getElementById('ab-auto').addEventListener('click', function(){ autodetect(false); });
+  document.getElementById('ab-test').addEventListener('click', function(){
+    if(!btns.length) return;
+    setStatus('Проверяю…');
+    test(patIn.value.trim(), btns[0]).then(function(ok){
+      setStatus((ok ? 'Файл найден: ' : 'Не найден: ') + resolve(patIn.value.trim(), btns[0]),
+                ok ? 'ok' : 'bad');
+    });
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(curBtn === b && cur){ stop(); return; }
+      play(b);
+    });
+  });
+
+  document.querySelectorAll('.pball').forEach(function(pb){
+    pb.addEventListener('click', function(){
+      if(pb.classList.contains('playing')){ stop(); return; }
+      var list = Array.prototype.slice.call(
+        pb.closest('.cluster').querySelectorAll('.pb[data-hz]'));
+      stop();
+      pb.classList.add('playing');
+      var i = 0;
+      queue = list;
+      (function step(){
+        if(queue !== list || i >= list.length){ pb.classList.remove('playing'); return; }
+        play(list[i++], function(){ setTimeout(step, 350); });
+      })();
+    });
+  });
+
+  autodetect(true);
+})();
+
+</script>
+</body>
+</html>

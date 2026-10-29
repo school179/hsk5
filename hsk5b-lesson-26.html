@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 26 · 你属于哪一种“忙” · HSK 标准教程 5下</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#23262a;
+  --brick:#6f6b63;
+  --paper:#e3e1da;
+  --card:#f2f1ec;
+  --red:#b4342a;
+  --brass:#a8813c;
+  --bamboo:#4a6b4e;
+  --sky:#54748a;
+  --line:rgba(35,38,42,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:
+    linear-gradient(rgba(255,255,255,.35) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.35) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+/* ——— шапка ——— */
+header{padding:56px 0 28px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{
+  font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;
+  color:var(--red);letter-spacing:-.03em;
+}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:44px;line-height:1.05;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brick);margin-top:9px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+/* ——— секции ——— */
+section{margin-top:58px}
+h2{
+  font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px;
+}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+a{color:var(--red)}
+
+/* ——— план двора ——— */
+.plan-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px;
+  box-shadow:0 1px 0 rgba(35,38,42,.06)}
+.plan-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone rect,.zone circle,.zone path{transition:fill .18s ease}
+.zone:hover .fillable,.zone.on .fillable{fill:#e7cfc9}
+.zone:focus{outline:none}
+.zone:focus-visible .fillable{stroke:var(--red);stroke-width:2.5}
+.zlab{font-family:var(--han);font-size:15px;font-weight:600;fill:var(--ink);pointer-events:none}
+.zpin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.04em}
+.faint{font-family:var(--han);font-size:12px;fill:var(--brick);pointer-events:none}
+.compass{font-family:var(--mono);font-size:10px;fill:var(--brick);letter-spacing:.15em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:62px}
+.readout .w{font-family:var(--han);font-size:22px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:13px;color:var(--sky)}
+.readout .d{display:block;margin-top:4px;font-size:15px}
+.readout .hint{color:var(--brick);font-style:italic}
+
+/* ——— карточки слов ——— */
+.cluster{margin-top:26px}
+.cluster h3{margin-bottom:4px}
+.cluster .why{font-size:14px;color:var(--brick);margin-bottom:14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--brass);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+/* ——— общие блоки ——— */
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.green{border-left:4px solid var(--bamboo)}
+.card.brass{border-left:4px solid var(--brass)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--paper);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.b{background:var(--brass)}
+.tag.g{background:var(--bamboo)}
+.tag.r{background:var(--red)}
+
+/* ——— таблицы ——— */
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(35,38,42,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+/* ——— на слух ——— */
+.trap{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+/* ——— ответы ——— */
+details{background:var(--card);border:1px solid var(--line);margin:10px 0;padding:0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+/* ——— финал ——— */
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;
+  font-family:var(--disp);font-weight:700;font-size:22px;color:var(--red);
+  width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .lesson-no{font-size:66px}
+  h1{font-size:32px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+
+
+:root{--red:#6a4a72;--brass:#9a7a2c;--bamboo:#4e7046;--sky:#55708c;--paper:#e4e1e5;--card:#f5f3f5}
+.zone:hover .fillable,.zone.on .fillable{fill:#e0d2e4}
+.rowlab{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;fill:var(--brick)}
+.zsub{font-family:var(--han);font-size:8.5px;fill:var(--brick);pointer-events:none;letter-spacing:0}
+.tiny{font-family:var(--han);font-size:11.5px;fill:var(--brick);pointer-events:none}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index-5b.html">&#8592; Все уроки 5B</a><a href="index.html">Учебник 5A</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（下） · Unit 9 感受人生 · Feelings about life</div>
+  <div class="title-row">
+    <div class="lesson-no">26</div>
+    <h1>你属于哪一种“忙”<span class="lat">Какая у вас занятость · 731 字 · стр. 59–66</span></h1>
+  </div>
+  <div class="meta">
+    <span><b>35</b> новых слов</span>
+    <span><b>3</b> грамматические точки</span>
+    <span>ключ: <b>来 · 至于 · 总算</b></span>
+  </div>
+</header>
+
+
+<section>
+  <p class="lede">Текст складывается из трёх частей, которые на первый взгляд не связаны: классификация
+  занятости, история про съёмки в джунглях и неделя затвора Билла Гейтса. Связывает их одна мысль —
+  между бегом и бегом нужна остановка. Схема ниже держит все три части в том порядке,
+  в каком их требует пересказ.</p>
+</section>
+
+<section id="plan">
+  <h2>Три части одной мысли <span class="cn">你属于哪一种“忙”</span></h2>
+  <div class="plan-box">
+    <svg viewBox="0 0 660 470" role="img" aria-label="Схема урока: три вида занятости, история в джунглях и затвор Гейтса"><text class="rowlab" x="18" y="22">1 · ТРИ ВИДА ЗАНЯТОСТИ 工作中的忙碌大概可以分为三种</text><g class="zone" tabindex="0" data-w="第一种：被动" data-p="被动 · 奴隶" data-d="第一种忙，忙得很被动，总是被事情追着、赶着，人几乎成了工作的奴隶。"><rect class="fillable" x="30" y="32" width="192" height="58" rx="3" fill="#ece0e0" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="126" y="56" text-anchor="middle" style="font-size:15px">第一种：被动</text><text class="zsub" x="126" y="76" text-anchor="middle">被动 · 奴隶</text></g><g class="zone" tabindex="0" data-w="第二种：主动" data-p="主动 · 主人" data-d="第二种忙，忙得很主动，忙而不乱，人是工作的主人。"><rect class="fillable" x="234" y="32" width="192" height="58" rx="3" fill="#dfe9e2" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="56" text-anchor="middle" style="font-size:15px">第二种：主动</text><text class="zsub" x="330" y="76" text-anchor="middle">主动 · 主人</text></g><g class="zone" tabindex="0" data-w="第三种：虚伪" data-p="虚伪 · 思想" data-d="第三种忙，忙得有些虚伪，因为在他们的思想中，已经把忙与成功、闲与失败联系到一起，所以，这样的人总是想办法让自己忙。"><rect class="fillable" x="438" y="32" width="192" height="58" rx="3" fill="#e8e3d6" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="534" y="56" text-anchor="middle" style="font-size:15px">第三种：虚伪</text><text class="zsub" x="534" y="76" text-anchor="middle">虚伪 · 思想</text></g><text class="tiny" x="330" y="110" text-anchor="middle">你属于哪种忙呢？</text><text class="rowlab" x="18" y="142">2 · ИСТОРИЯ В ДЖУНГЛЯХ 大导演的拍摄经历</text><g class="zone" tabindex="0" data-w="雇了20来个当地人 · 据说" data-p="据说 · 冒险 · 丛林 · 纪录 · 雇 · 来 · 批" data-d="据说，曾经有一位很有个性、极爱冒险的大导演到南美丛林拍有关古代印加文明的纪录片。他雇了20来个当地人为他带路和搬运行李。"><rect class="fillable" x="30" y="152" width="600" height="38" rx="3" fill="#e4e2ea" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="169" text-anchor="middle" style="font-size:14px">雇了20来个当地人</text><text class="zsub" x="330" y="183" text-anchor="middle">据说 · 冒险 · 丛林 · 纪录 · 雇 · 来 · 批</text></g><path d="M330 190 v6" stroke="#23262a" stroke-width="1.1" marker-end="url(#a26)"/><g class="zone" tabindex="0" data-w="一连三天都很顺利 · 出色" data-p="出色 · 健步如飞 · 一连" data-d="这批当地人个个都表现出色，尽管他们背着重重的行李，但他们的脚力过人，健步如飞。一连三天，他们都很顺利地实现了原定的计划。"><rect class="fillable" x="30" y="198" width="600" height="38" rx="3" fill="#eceaef" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="215" text-anchor="middle" style="font-size:14px">一连三天都很顺利</text><text class="zsub" x="330" y="229" text-anchor="middle">出色 · 健步如飞 · 一连</text></g><path d="M330 236 v6" stroke="#23262a" stroke-width="1.1" marker-end="url(#a26)"/><g class="zone" tabindex="0" data-w="第四天，拒绝行动 · 耽误" data-p="耽误 · 至于 · 投资 · 人物 · 得罪" data-d="到了第四天，大导演一早醒来就催着大家上路。然而，当地人却拒绝行动。大导演非常着急，一来，耽误了时间，日程就得重新安排；二来，会因为费用增加而让投资人不高兴，至于这部影片的投资人，可是一位大人物，他可不敢得罪。"><rect class="fillable" x="30" y="244" width="600" height="38" rx="3" fill="#e4e2ea" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="261" text-anchor="middle" style="font-size:14px">第四天，拒绝行动</text><text class="zsub" x="330" y="275" text-anchor="middle">耽误 · 至于 · 投资 · 人物 · 得罪</text></g><path d="M330 282 v6" stroke="#23262a" stroke-width="1.1" marker-end="url(#a26)"/><g class="zone" tabindex="0" data-w="自古就有的习俗 · 总算" data-p="总算 · 搞 · 习俗" data-d="经过沟通，大导演总算搞明白了，当地人自古就有一种习俗：在赶路时，用尽全力地向前冲，但每走上三天，便要休息一天。"><rect class="fillable" x="30" y="290" width="600" height="38" rx="3" fill="#eceaef" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="307" text-anchor="middle" style="font-size:14px">自古就有的习俗</text><text class="zsub" x="330" y="321" text-anchor="middle">总算 · 搞 · 习俗</text></g><path d="M330 328 v6" stroke="#23262a" stroke-width="1.1" marker-end="url(#a26)"/><g class="zone" tabindex="0" data-w="让灵魂追上身体 · 灵魂" data-p="灵魂 · 疲劳 · 哲理" data-d="当大导演进一步询问原因时，当地人的回答令他受益终生：“那是为了让我们的灵魂，能够追得上我们赶了三天路的疲劳的身体。”多么富有哲理的话！"><rect class="fillable" x="30" y="336" width="600" height="38" rx="3" fill="#e4e2ea" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="353" text-anchor="middle" style="font-size:14px">让灵魂追上身体</text><text class="zsub" x="330" y="367" text-anchor="middle">灵魂 · 疲劳 · 哲理</text></g><text class="rowlab" x="18" y="400">3 · ЗАТВОР ГЕЙТСА 比尔·盖茨的“闭关”</text><g class="zone" tabindex="0" data-w="每年两次，为期一周的“闭关”" data-p="bìguān · yílǜ · jìmò · xiàolǜ" data-d="从20世纪80年代起，比尔·盖茨每年都要进行两次为期一周的“闭关”。在这一周的时间里，他会把自己关在一所房子里，包括家人在内的任何人他都一律不见，使自己完全不受日常工作的打扰。盖茨的这种令人寂寞难耐的“闭关”不只是一种休息方式，更是一种高效率的工作方式。"><rect class="fillable" x="30" y="408" width="600" height="50" rx="3" fill="#e0d8e6" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="432" text-anchor="middle" style="font-size:14.5px">一律不见任何人 → 不只是休息，更是高效率的工作方式</text><text class="zsub" x="330" y="450" text-anchor="middle">闭关 · 一律 · 寂寞 · 效率 · 提倡 · 步骤</text></g><defs><marker id="a26" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" fill="#23262a"/></marker></defs></svg>
+    <div class="readout" id="readout">
+      <span class="hint">Наведите курсор или коснитесь любого блока — появится соответствующее место текста.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Текст в трёх кадрах <span class="cn">课文 · 731 字</span></h2>
+
+  <div class="card red">
+    <p><span class="tag r">кадр 1</span><b>Три вида занятости.</b> 工作中的忙碌大概可以分为三种:
+    первый — 忙得很被动，总是被事情追着、赶着，人几乎成了工作的奴隶; второй — 忙得很主动，忙而不乱，
+    人是工作的主人; третий — 忙得有些虚伪，因为在他们的思想中，已经把忙与成功、闲与失败联系到一起，
+    所以，这样的人总是想办法让自己忙. 你属于哪种忙呢？ Собственный вывод автора:
+    现实中，我们不一定知道正确的道路是什么，但时时反省、总结，却可以使我们不会在错误的道路上走得太远。</p>
+    <p style="margin:0"><b>Слова кадра:</b> <span class="cn-ex">忙碌 · 被动 · 奴隶 · 虚伪 · 思想 · 反省</span></p>
+  </div>
+
+  <div class="card green">
+    <p><span class="tag g">кадр 2</span><b>Съёмки в джунглях.</b> 据说，曾经有一位很有个性、极爱冒险的大导演
+    到南美丛林拍有关古代印加文明的纪录片。他雇了20来个当地人为他带路和搬运行李. Носильщики
+    个个都表现出色，脚力过人，健步如飞; 一连三天 всё шло по плану. На четвёртый день
+    当地人却拒绝行动. Режиссёр в панике: 一来，耽误了时间，日程就得重新安排；二来，
+    会因为费用增加而让投资人不高兴，至于这部影片的投资人，可是一位大人物，他可不敢得罪.
+    经过沟通，大导演总算搞明白了: у местных есть 习俗 — 在赶路时，用尽全力地向前冲，
+    但每走上三天，便要休息一天. Причина оказалась такой, что 令他受益终生:
+    «那是为了让我们的灵魂，能够追得上我们赶了三天路的疲劳的身体。»</p>
+    <p style="margin:0"><b>Слова кадра:</b> <span class="cn-ex">据说 · 个性 · 冒险 · 丛林 · 文明 · 纪录 · 雇 · 来 · 批 · 出色 · 健步如飞 · 一连 · 耽误 · 至于 · 投资 · 人物 · 得罪 · 总算 · 搞 · 习俗 · 灵魂 · 疲劳</span></p>
+  </div>
+
+  <div class="card brass">
+    <p><span class="tag b">кадр 3</span><b>Неделя затвора.</b> 多么富有哲理的话！
+    在这个提倡和鼓励竞争的时代，我们常常只顾低头拉车，却少了抬头看路，少了思考、总结这一重要的步骤.
+    Пример для подражания: 从20世纪80年代起，比尔·盖茨每年都要进行两次为期一周的“闭关”.
+    Всю неделю 他会把自己关在一所房子里，包括家人在内的任何人他都一律不见，使自己完全不受日常工作的打扰.
+    И вывод: 盖茨的这种令人寂寞难耐的“闭关”不只是一种休息方式，更是一种高效率的工作方式。
+    忙碌的人们，请多给自己一点思考的时间吧。</p>
+    <p style="margin:0"><b>Слова кадра:</b> <span class="cn-ex">哲理 · 提倡 · 步骤 · 闭关 · 一律 · 寂寞 · 效率</span></p>
+  </div>
+  <p style="font-size:14px;color:var(--brick)">改编自《青年参考》，作者：毛尧飞、杨立军</p>
+</section>
+
+<section>
+  <h2>35 слов по гнёздам <span class="cn">生词 + 专有名词</span></h2>
+  <p style="font-size:14px;color:var(--brick)"><span class="star">★</span> — слово сверх программы HSK 5 (в учебнике помечено звёздочкой). Последние два — имена собственные.</p>
+
+  <div class="audiobar" id="audiobar">
+    <div class="ab-t">Озвучка слов</div>
+    <div class="ab-row">
+      <input id="ab-pat" type="text" spellcheck="false" value="audio/{hz}.mp3" aria-label="Шаблон пути к mp3">
+      <button type="button" id="ab-auto">Подобрать</button>
+      <button type="button" id="ab-test">Проверить</button>
+    </div>
+    <div class="ab-status" id="ab-status"></div>
+    <div class="ab-note">
+      Ищутся файлы вида <code>иероглиф.mp3</code> — сначала в папке <code>audio</code> рядом с этим документом,
+      потом прямо рядом с ним. Подстановки: <code>{hz}</code>, <code>{py}</code>, <code>{pyn}</code>,
+      <code>{num}</code>, <code>{L}</code>.
+    </div>
+  </div>
+<div class="cluster"><h3>I. Три вида «忙»<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Первый абзац даёт готовую рамку для любого рассуждения о работе.</div><div class="words"><div class="w-item"><span class="hz">忙碌</span><span class="py">mánglù</span><span class="star">★</span><button class="pb" type="button" data-hz="忙碌" data-hz2="忙碌" data-py="mánglù" data-pyn="manglu" data-num="1" aria-label="Прослушать 忙碌" title="Прослушать 忙碌">&#9654;</button><span class="ru">занятость; захлопотавшийся</span><span class="ex">工作中的忙碌 / 忙碌的人们</span></div><div class="w-item"><span class="hz">被动</span><span class="py">bèidòng</span><span class="star">★</span><button class="pb" type="button" data-hz="被动" data-hz2="被动" data-py="bèidòng" data-pyn="beidong" data-num="2" aria-label="Прослушать 被动" title="Прослушать 被动">&#9654;</button><span class="ru">пассивный, ведомый</span><span class="ex">忙得很被动 / 处于被动</span></div><div class="w-item"><span class="hz">奴隶</span><span class="py">núlì</span><span class="star">★</span><button class="pb" type="button" data-hz="奴隶" data-hz2="奴隶" data-py="núlì" data-pyn="nuli" data-num="3" aria-label="Прослушать 奴隶" title="Прослушать 奴隶">&#9654;</button><span class="ru">раб</span><span class="ex">成了工作的奴隶</span></div><div class="w-item"><span class="hz">虚伪</span><span class="py">xūwěi</span><span class="star">★</span><button class="pb" type="button" data-hz="虚伪" data-hz2="虚伪" data-py="xūwěi" data-pyn="xuwei" data-num="4" aria-label="Прослушать 虚伪" title="Прослушать 虚伪">&#9654;</button><span class="ru">лицемерный, показной</span><span class="ex">忙得有些虚伪 / 虚伪的人</span></div><div class="w-item"><span class="hz">思想</span><span class="py">sīxiǎng</span><button class="pb" type="button" data-hz="思想" data-hz2="思想" data-py="sīxiǎng" data-pyn="sixiang" data-num="5" aria-label="Прослушать 思想" title="Прослушать 思想">&#9654;</button><span class="ru">мышление, взгляды</span><span class="ex">在他们的思想中 / 思想观念</span></div><div class="w-item"><span class="hz">反省</span><span class="py">fǎnxǐng</span><span class="star">★</span><button class="pb" type="button" data-hz="反省" data-hz2="反省" data-py="fǎnxǐng" data-pyn="fanxing" data-num="6" aria-label="Прослушать 反省" title="Прослушать 反省">&#9654;</button><span class="ru">заниматься самоанализом</span><span class="ex">时时反省、总结</span></div></div></div><div class="cluster"><h3>II. Режиссёр и носильщики<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Самый длинный абзац и самый богатый словарь урока.</div><div class="words"><div class="w-item"><span class="hz">据说</span><span class="py">jùshuō</span><button class="pb" type="button" data-hz="据说" data-hz2="据说" data-py="jùshuō" data-pyn="jushuo" data-num="7" aria-label="Прослушать 据说" title="Прослушать 据说">&#9654;</button><span class="ru">говорят, что</span><span class="ex">据说，曾经有一位……</span></div><div class="w-item"><span class="hz">个性</span><span class="py">gèxìng</span><button class="pb" type="button" data-hz="个性" data-hz2="个性" data-py="gèxìng" data-pyn="gexing" data-num="8" aria-label="Прослушать 个性" title="Прослушать 个性">&#9654;</button><span class="ru">индивидуальность, характер</span><span class="ex">很有个性 / 个性强</span></div><div class="w-item"><span class="hz">冒险</span><span class="py">mào xiǎn</span><button class="pb" type="button" data-hz="冒险" data-hz2="冒险" data-py="mào xiǎn" data-pyn="maoxian" data-num="9" aria-label="Прослушать 冒险" title="Прослушать 冒险">&#9654;</button><span class="ru">рисковать, пускаться в авантюру</span><span class="ex">极爱冒险 / 冒险精神</span></div><div class="w-item"><span class="hz">丛林</span><span class="py">cónglín</span><span class="star">★</span><button class="pb" type="button" data-hz="丛林" data-hz2="丛林" data-py="cónglín" data-pyn="conglin" data-num="10" aria-label="Прослушать 丛林" title="Прослушать 丛林">&#9654;</button><span class="ru">джунгли, чаща</span><span class="ex">南美丛林</span></div><div class="w-item"><span class="hz">文明</span><span class="py">wénmíng</span><button class="pb" type="button" data-hz="文明" data-hz2="文明" data-py="wénmíng" data-pyn="wenming" data-num="11" aria-label="Прослушать 文明" title="Прослушать 文明">&#9654;</button><span class="ru">цивилизация; культурный</span><span class="ex">古代印加文明 / 文明行为</span></div><div class="w-item"><span class="hz">纪录</span><span class="py">jìlù</span><button class="pb" type="button" data-hz="纪录" data-hz2="纪录" data-py="jìlù" data-pyn="jilu" data-num="12" aria-label="Прослушать 纪录" title="Прослушать 纪录">&#9654;</button><span class="ru">рекорд; документальный</span><span class="ex">纪录片 / 打破世界纪录</span></div><div class="w-item"><span class="hz">雇</span><span class="py">gù</span><span class="star">★</span><button class="pb" type="button" data-hz="雇" data-hz2="雇" data-py="gù" data-pyn="gu" data-num="13" aria-label="Прослушать 雇" title="Прослушать 雇">&#9654;</button><span class="ru">нанимать</span><span class="ex">雇了20来个当地人 / 雇人</span></div><div class="w-item"><span class="hz">来</span><span class="py">lái</span><span class="star">★</span><button class="pb" type="button" data-hz="来" data-hz2="来" data-py="lái" data-pyn="lai" data-num="14" aria-label="Прослушать 来" title="Прослушать 来">&#9654;</button><span class="ru">с лишним (после круглых чисел)</span><span class="ex">20来个 / 五斤来重</span></div><div class="w-item"><span class="hz">批</span><span class="py">pī</span><button class="pb" type="button" data-hz="批" data-hz2="批" data-py="pī" data-pyn="pi" data-num="15" aria-label="Прослушать 批" title="Прослушать 批">&#9654;</button><span class="ru">партия, группа (счётное)</span><span class="ex">这批当地人 / 一批货</span></div><div class="w-item"><span class="hz">出色</span><span class="py">chūsè</span><button class="pb" type="button" data-hz="出色" data-hz2="出色" data-py="chūsè" data-pyn="chuse" data-num="16" aria-label="Прослушать 出色" title="Прослушать 出色">&#9654;</button><span class="ru">выдающийся, блестящий</span><span class="ex">表现出色 / 出色地完成</span></div><div class="w-item"><span class="hz">健步如飞</span><span class="py">jiànbù-rúfēi</span><span class="star">★</span><button class="pb" type="button" data-hz="健步如飞" data-hz2="健步如飞" data-py="jiànbù-rúfēi" data-pyn="jianbu-rufei" data-num="17" aria-label="Прослушать 健步如飞" title="Прослушать 健步如飞">&#9654;</button><span class="ru">идти так, будто летит</span><span class="ex">脚力过人，健步如飞</span></div><div class="w-item"><span class="hz">一连</span><span class="py">yīlián</span><span class="star">★</span><button class="pb" type="button" data-hz="一连" data-hz2="一连" data-py="yīlián" data-pyn="yilian" data-num="18" aria-label="Прослушать 一连" title="Прослушать 一连">&#9654;</button><span class="ru">подряд, кряду</span><span class="ex">一连三天 / 一连下了三天雨</span></div></div></div><div class="cluster"><h3>III. Отказ и причина<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Середина истории — и три грамматические точки урока сразу.</div><div class="words"><div class="w-item"><span class="hz">耽误</span><span class="py">dānwù</span><button class="pb" type="button" data-hz="耽误" data-hz2="耽误" data-py="dānwù" data-pyn="danwu" data-num="19" aria-label="Прослушать 耽误" title="Прослушать 耽误">&#9654;</button><span class="ru">задержать, упустить время</span><span class="ex">耽误了时间 / 耽误工作</span></div><div class="w-item"><span class="hz">至于</span><span class="py">zhìyú</span><button class="pb" type="button" data-hz="至于" data-hz2="至于" data-py="zhìyú" data-pyn="zhiyu" data-num="20" aria-label="Прослушать 至于" title="Прослушать 至于">&#9654;</button><span class="ru">что до…; доходить до того, что</span><span class="ex">至于投资人…… / 不至于吧</span></div><div class="w-item"><span class="hz">投资</span><span class="py">tóu zī</span><button class="pb" type="button" data-hz="投资" data-hz2="投资" data-py="tóu zī" data-pyn="touzi" data-num="21" aria-label="Прослушать 投资" title="Прослушать 投资">&#9654;</button><span class="ru">вкладывать средства; инвестиции</span><span class="ex">投资人 / 在海外投资</span></div><div class="w-item"><span class="hz">人物</span><span class="py">rénwù</span><button class="pb" type="button" data-hz="人物" data-hz2="人物" data-py="rénwù" data-pyn="renwu" data-num="22" aria-label="Прослушать 人物" title="Прослушать 人物">&#9654;</button><span class="ru">фигура, персона; персонаж</span><span class="ex">一位大人物 / 历史人物</span></div><div class="w-item"><span class="hz">得罪</span><span class="py">dézuì</span><span class="star">★</span><button class="pb" type="button" data-hz="得罪" data-hz2="得罪" data-py="dézuì" data-pyn="dezui" data-num="23" aria-label="Прослушать 得罪" title="Прослушать 得罪">&#9654;</button><span class="ru">обидеть, настроить против себя</span><span class="ex">不敢得罪 / 得罪人</span></div><div class="w-item"><span class="hz">总算</span><span class="py">zǒngsuàn</span><button class="pb" type="button" data-hz="总算" data-hz2="总算" data-py="zǒngsuàn" data-pyn="zongsuan" data-num="24" aria-label="Прослушать 总算" title="Прослушать 总算">&#9654;</button><span class="ru">наконец-то; в общем-то</span><span class="ex">总算搞明白了 / 总算不错</span></div><div class="w-item"><span class="hz">搞</span><span class="py">gǎo</span><button class="pb" type="button" data-hz="搞" data-hz2="搞" data-py="gǎo" data-pyn="gao" data-num="25" aria-label="Прослушать 搞" title="Прослушать 搞">&#9654;</button><span class="ru">делать, устраивать (с результатом)</span><span class="ex">搞明白 / 搞错 / 搞成</span></div><div class="w-item"><span class="hz">习俗</span><span class="py">xísú</span><span class="star">★</span><button class="pb" type="button" data-hz="习俗" data-hz2="习俗" data-py="xísú" data-pyn="xisu" data-num="26" aria-label="Прослушать 习俗" title="Прослушать 习俗">&#9654;</button><span class="ru">обычай, обыкновение</span><span class="ex">自古就有的习俗 / 民间习俗</span></div><div class="w-item"><span class="hz">灵魂</span><span class="py">línghún</span><span class="star">★</span><button class="pb" type="button" data-hz="灵魂" data-hz2="灵魂" data-py="línghún" data-pyn="linghun" data-num="27" aria-label="Прослушать 灵魂" title="Прослушать 灵魂">&#9654;</button><span class="ru">душа</span><span class="ex">让灵魂追上身体</span></div><div class="w-item"><span class="hz">疲劳</span><span class="py">píláo</span><button class="pb" type="button" data-hz="疲劳" data-hz2="疲劳" data-py="píláo" data-pyn="pilao" data-num="28" aria-label="Прослушать 疲劳" title="Прослушать 疲劳">&#9654;</button><span class="ru">усталый; утомление</span><span class="ex">疲劳的身体 / 消除疲劳</span></div></div></div><div class="cluster"><h3>IV. Вывод и затвор<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Финальные слова — и готовый набор для темы «работа и отдых».</div><div class="words"><div class="w-item"><span class="hz">哲理</span><span class="py">zhélǐ</span><span class="star">★</span><button class="pb" type="button" data-hz="哲理" data-hz2="哲理" data-py="zhélǐ" data-pyn="zheli" data-num="29" aria-label="Прослушать 哲理" title="Прослушать 哲理">&#9654;</button><span class="ru">философская мысль</span><span class="ex">富有哲理的话</span></div><div class="w-item"><span class="hz">提倡</span><span class="py">tíchàng</span><button class="pb" type="button" data-hz="提倡" data-hz2="提倡" data-py="tíchàng" data-pyn="tichang" data-num="30" aria-label="Прослушать 提倡" title="Прослушать 提倡">&#9654;</button><span class="ru">ратовать за, поощрять</span><span class="ex">提倡节约 / 提倡竞争</span></div><div class="w-item"><span class="hz">步骤</span><span class="py">bùzhòu</span><button class="pb" type="button" data-hz="步骤" data-hz2="步骤" data-py="bùzhòu" data-pyn="buzhou" data-num="31" aria-label="Прослушать 步骤" title="Прослушать 步骤">&#9654;</button><span class="ru">шаг, этап (процедуры)</span><span class="ex">重要的步骤 / 按步骤进行</span></div><div class="w-item"><span class="hz">闭关</span><span class="py">bìguān</span><span class="star">★</span><button class="pb" type="button" data-hz="闭关" data-hz2="闭关" data-py="bìguān" data-pyn="biguan" data-num="32" aria-label="Прослушать 闭关" title="Прослушать 闭关">&#9654;</button><span class="ru">уйти в затвор</span><span class="ex">为期一周的“闭关”</span></div><div class="w-item"><span class="hz">一律</span><span class="py">yílǜ</span><button class="pb" type="button" data-hz="一律" data-hz2="一律" data-py="yílǜ" data-pyn="yilu" data-num="33" aria-label="Прослушать 一律" title="Прослушать 一律">&#9654;</button><span class="ru">все без исключения, поголовно</span><span class="ex">一律不见 / 一律不准</span></div><div class="w-item"><span class="hz">寂寞</span><span class="py">jìmò</span><button class="pb" type="button" data-hz="寂寞" data-hz2="寂寞" data-py="jìmò" data-pyn="jimo" data-num="34" aria-label="Прослушать 寂寞" title="Прослушать 寂寞">&#9654;</button><span class="ru">одинокий, тоскливый</span><span class="ex">寂寞难耐 / 感到寂寞</span></div><div class="w-item"><span class="hz">效率</span><span class="py">xiàolǜ</span><button class="pb" type="button" data-hz="效率" data-hz2="效率" data-py="xiàolǜ" data-pyn="xiaolu" data-num="35" aria-label="Прослушать 效率" title="Прослушать 效率">&#9654;</button><span class="ru">эффективность, КПД</span><span class="ex">高效率的工作方式 / 提高效率</span></div><div class="w-item"><span class="hz">印加</span><span class="py">Yìnjiā</span><button class="pb" type="button" data-hz="印加" data-hz2="印加" data-py="Yìnjiā" data-pyn="yinjia" data-num="" aria-label="Прослушать 印加" title="Прослушать 印加">&#9654;</button><span class="ru">Инки, империя инков</span><span class="ex">古代印加文明</span></div><div class="w-item"><span class="hz">比尔·盖茨</span><span class="py">Bǐ’ěr Gàicí</span><button class="pb" type="button" data-hz="比尔·盖茨" data-hz2="比尔·盖茨" data-py="Bǐ’ěr Gàicí" data-pyn="bi’ergaici" data-num="" aria-label="Прослушать 比尔·盖茨" title="Прослушать 比尔·盖茨">&#9654;</button><span class="ru">Билл Гейтс</span><span class="ex">盖茨的“闭关”</span></div></div></div></section>
+<section>
+  <h2>На слух: где рука ошибётся <span class="cn">听写陷阱</span></h2>
+  <p>Здесь снова встречается 纪录 — ровно то слово, которое разбиралось в двадцатом уроке
+  в паре с 记录. Хороший повод проверить, встало ли оно твёрдо: на этот раз оно приходит
+  в составе 纪录片, и выбор знака определяется только значением.</p>
+<div class="warn">Пара разбора этого урока</div><div class="trap"><div><span class="hz">总算</span><span class="py">zǒngsuàn</span><span class="n">наконец-то — о том, чего ждали и хотели; плюс «в общем-то неплохо».</span></div><div><span class="hz">终于</span><span class="py">zhōngyú</span><span class="n">в конце концов — результат может быть и нежеланным. Пара 辨析 урока.</span></div></div><div class="warn">Снова та же пара, что в уроке 20</div><div class="trap"><div><span class="hz">纪录</span><span class="py">jìlù</span><span class="n">рекорд; документальный: 纪录片, 世界纪录.</span></div><div><span class="hz">记录</span><span class="py">jìlù</span><span class="n">запись, протокол; записывать. Полные омофоны — разбор урока 20.</span></div></div><div class="warn">Первый пункт упражнения 2</div><div class="trap"><div><span class="hz">一律</span><span class="py">yílǜ</span><span class="n">все без исключения — о правиле, которое не знает изъятий.</span></div><div><span class="hz">都 / 一概</span><span class="py">dōu / yígài</span><span class="n">都 просто «все», без оттенка строгости. В упражнении 2 нужен 一律.</span></div></div><div class="warn">Третий пункт упражнения 2</div><div class="trap"><div><span class="hz">耽误</span><span class="py">dānwù</span><span class="n">задержать, упустить время — с ущербом для дела.</span></div><div><span class="hz">影响</span><span class="py">yǐngxiǎng</span><span class="n">повлиять — нейтрально. Третий пункт упражнения 2.</span></div></div><div class="warn">Четвёртый пункт упражнения 2</div><div class="trap"><div><span class="hz">出色</span><span class="py">chūsè</span><span class="n">блестяще — о том, как сделано дело.</span></div><div><span class="hz">优秀</span><span class="py">yōuxiù</span><span class="n">отличный — о человеке и его качествах. Четвёртый пункт упражнения 2.</span></div></div><div class="warn">Второй пункт упражнения 2</div><div class="trap"><div><span class="hz">搞</span><span class="py">gǎo</span><span class="n">сделать так, что получился результат: 搞明白, 搞错, 搞成.</span></div><div><span class="hz">做 / 办</span><span class="py">zuò / bàn</span><span class="n">做 «делать», 办 «устраивать». Во втором пункте упражнения 2 нужен 搞.</span></div></div><div class="warn">Многочтимый знак</div><div class="trap"><div><span class="hz">效率</span><span class="py">xiàolǜ</span><span class="n">эффективность. 率 здесь lǜ.</span></div><div><span class="hz">率</span><span class="py">shuài</span><span class="n">shuài — «вести за собой»: 率领, 率先. Один знак, два чтения.</span></div></div><div class="warn">Три способа сказать «подряд»</div><div class="trap"><div><span class="hz">一连</span><span class="py">yīlián</span><span class="n">подряд: 一连三天.</span></div><div><span class="hz">一直 / 连续</span><span class="py">yìzhí / liánxù</span><span class="n">«всё время» и «непрерывно». Все три про продолжительность.</span></div></div><div class="warn">Перекличка с уроком 23</div><div class="trap"><div><span class="hz">寂寞</span><span class="py">jìmò</span><span class="n">одиноко, тоскливо. Оба знака с ключом 宀.</span></div><div><span class="hz">沉默 / 寂静</span><span class="py">chénmò / jìjìng</span><span class="n">«молчать» (урок 23) и «тишина». 寞 и 默 легко спутать.</span></div></div><div class="warn">Три чтения одного знака</div><div class="trap"><div><span class="hz">得罪</span><span class="py">dézuì</span><span class="n">обидеть. 得 здесь dé, четвёртый... то есть второй тон.</span></div><div><span class="hz">得 / 的</span><span class="py">děi / de</span><span class="n">得 děi «надо», 得 de — служебное. Один знак, три чтения.</span></div></div><div class="warn">Одна морфема, разная оценка</div><div class="trap"><div><span class="hz">虚伪</span><span class="py">xūwěi</span><span class="n">лицемерный. 虚 «пустой» + 伪 «поддельный».</span></div><div><span class="hz">虚心 / 谦虚</span><span class="py">xūxīn / qiānxū</span><span class="n">«скромный, непредвзятый». 虚 в них с противоположной окраской.</span></div></div><div class="warn">Три слова на 步</div><div class="trap"><div><span class="hz">步骤</span><span class="py">bùzhòu</span><span class="n">этап процедуры. 骤 — редкий знак.</span></div><div><span class="hz">步伐 / 脚步</span><span class="py">bùfá / jiǎobù</span><span class="n">«поступь» и «шаги». 步骤 — только о порядке действий.</span></div></div>
+  <div class="card green">
+    <p style="margin:0"><b>Как тренировать.</b> Связки урока:
+    <span class="cn-ex">忙而不乱 · 表现出色 · 一连三天 · 耽误时间 · 不敢得罪 · 总算搞明白了 ·
+    富有哲理 · 一律不见 · 提高效率</span>. Три из них — 一来……二来……, 至于……, 总算…… —
+    это уже не слова, а готовые куски предложения; их стоит проговорить вслух десяток раз.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Три точки урока <span class="cn">词语例释</span></h2>
+
+  <h3>1 · 来 — «с лишним» и «во-первых…»</h3>
+  <div class="card red">
+    <p><b>После круглых чисел</b> (十、百、千) и счётных слов — приблизительность, «с лишним».</p>
+    <p class="cn-ex">他雇了<span class="hl">20来</span>个当地人为他带路和搬运行李。</p>
+    <p class="cn-ex">按照老人教的方法，他几乎每天都能钓到<span class="hl">5斤来</span>重的大鱼。</p>
+    <p><b>После 一、二、三</b> — перечисление причин: «во-первых…, во-вторых…».</p>
+    <p class="cn-ex">今天是大年三十，我们来看看大家，<span class="hl">一来</span>是给大家送水果，
+    <span class="hl">二来</span>是看看大家过节还有什么难处。</p>
+    <p class="cn-ex">我对上海很有感情，<span class="hl">一来</span>上大学时在那里住过几年，
+    <span class="hl">二来</span>我太太也是上海人。</p>
+    <p class="tr" style="margin:10px 0 0">一来……二来…… звучит мягче и разговорнее, чем 第一……第二……;
+    в устном ответе на HSKK это отличная замена сухому перечислению.</p>
+  </div>
+
+  <h3>2 · 至于 — «дойти до того, что» и «что до…»</h3>
+  <div class="card green">
+    <p><b>Глагол:</b> дойти до такой степени. Почти всегда в риторическом вопросе или с отрицанием.</p>
+    <p class="cn-ex">我只是和你开个玩笑，你<span class="hl">至于</span>生那么大的气吗？</p>
+    <p class="cn-ex">什么？一件衬衫要一千来块钱。哪<span class="hl">至于</span>那么贵呢？</p>
+    <p><b>Предлог</b> в схеме «(A)……，至于(B)……»: переход к другой теме.</p>
+    <p class="cn-ex">……<span class="hl">至于</span>这部影片的投资人，可是一位大人物，他可不敢得罪。</p>
+    <p class="cn-ex">我只知道他是六班的学生，<span class="hl">至于</span>住在哪儿，我就不清楚了。</p>
+    <p class="tr" style="margin:10px 0 0">Разговорное 不至于吧 — «ну не настолько же» — стоит запомнить целиком.
+    А предложная конструкция 至于…… очень удобна в сочинении: ею легко вводится вторая часть темы.</p>
+  </div>
+
+  <h3>3 · 总算 — «наконец-то»</h3>
+  <div class="card brass">
+    <p><b>Первое значение:</b> после долгого ожидания желаемое всё-таки случилось.</p>
+    <p class="cn-ex">经过沟通，大导演<span class="hl">总算</span>搞明白了，……</p>
+    <p class="cn-ex"><span class="hl">总算</span>把活儿干完了，可把我累坏了。</p>
+    <p><b>Второе значение:</b> «в общем-то сойдёт», оценка по минимуму.</p>
+    <p class="cn-ex">虽然我对这家宾馆不太满意，但<span class="hl">总算</span>有个睡觉的地方了。</p>
+    <p class="cn-ex">临走前能和你见上一面，这趟<span class="hl">总算</span>没有白来！</p>
+    <p class="tr" style="margin:10px 0 0">Второе значение — то, чего нет у 终于, и именно по нему
+    пару и разводят. Разбор ниже.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Сочетаемость <span class="cn">词语搭配</span></h2>
+  <table>
+    <tr><th>动词 + 宾语</th><th>примеры</th></tr>
+    <tr><td class="han">提倡</td><td class="han">科学 / 戒烟 / 对话 / 节约 / 诚实 / 平等</td></tr>
+    <tr><td class="han">耽误</td><td class="han">工作 / 时间 / 孩子 / 生产 / 休息 / 约会 / 看病</td></tr>
+    <tr><th>定语 + 中心语</th><th></th></tr>
+    <tr><td class="han">寂寞的</td><td class="han">朋友 / 年代 / 感觉 / 心情</td></tr>
+    <tr><td class="han">出色的</td><td class="han">人物 / 医生 / 成绩 / 表现</td></tr>
+    <tr><th>状语 + 中心语</th><th></th></tr>
+    <tr><td class="han">大力 / 积极（地）</td><td class="han">提倡</td></tr>
+    <tr><td class="han">长期（地）/ 纷纷 / 大胆（地）</td><td class="han">投资</td></tr>
+    <tr><th>中心语 + 补语</th><th></th></tr>
+    <tr><td class="han">算</td><td class="han">不清 / 不出 / 得上 / 不了</td></tr>
+    <tr><td class="han">搞</td><td class="han">错 / 成 / 出来 / 得准确</td></tr>
+    <tr><th>数量词 + 名词</th><th></th></tr>
+    <tr><td class="han">一部</td><td class="han">纪录片</td></tr>
+    <tr><td class="han">一批</td><td class="han">货 / 学生</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>总算 и 终于 <span class="cn">词语辨析</span></h2>
+  <p>Оба наречия, оба про результат после долгого ожидания:
+  <span class="cn-ex">这青年后来努力学艺，总算／终于有了一点儿小名气。</span> Расходятся по двум пунктам.</p>
+  <table class="pair-tbl">
+    <tr><th></th><th>总算 zǒngsuàn</th><th>终于 zhōngyú</th></tr>
+    <tr><td>какой результат</td><td>как правило желанный<br><span class="han">到北京的第二年，我总算找到了一份比较满意的工作。</span></td><td>может быть и нежеланным<br><span class="han">尽管他也很想去，但他终于还是放弃了留学的打算。</span></td></tr>
+    <tr><td>вторая функция</td><td>«в общем-то сойдёт», оценка по минимуму<br><span class="han">他才学了半年外语，能说成这样，总算不错了。</span></td><td>такого значения нет</td></tr>
+  </table>
+  <p class="tr">Практическое правило: если во фразе чувствуется облегчение — 总算; если просто
+  констатируется итог, в том числе печальный, — 终于.</p>
+</section>
+
+<section>
+  <h2>Ответы к упражнениям <span class="cn">练习 · 做一做 · 练一练</span></h2>
+<details><summary>练习 1 — 选择合适的词语填空（寂寞 至于 耽误 提倡 一律 出色）</summary><div class="in">
+<p>① 现在饭馆都<span class="k">提倡</span>节约，不浪费食物，“光盘”的意思就是把点的菜吃光。<br>
+② 上次约刘经理见面，路上堵车，<span class="k">耽误</span>了很长时间，这次可别再出问题了。<br>
+③ 按规定，小动物<span class="k">一律</span>不准带上飞机。<br>
+④ 她有些<span class="k">寂寞</span>，想让我到她那儿陪她聊聊天。<br>
+⑤ 他顶住了压力，<span class="k">出色</span>地发挥了自己的水平，打败了强敌。<br>
+⑥ 你们两口子吵架归吵架，不<span class="k">至于</span>要闹离婚吧？</p></div></details><details><summary>练习 2 — 选择正确答案</summary><div class="in">
+<p>① 为了保证病人的休息，午饭后<span class="k">一律</span>（A）不准探视。<br>
+② 你怎么<span class="k">搞</span>（A）的？不是说好了周末和小丽见面的吗？怎么又不去了？<br>
+③ 因为有大雾，飞机不能起飞。<span class="k">耽误</span>（A）了您的宝贵时间，非常抱歉！<br>
+④ 马向阳在那儿当县长时，<span class="k">出色</span>（A）地完成了任务。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+① 一律 подчёркивает, что исключений нет — это правило; 都 просто «все».
+② 你怎么搞的？ — устойчивый упрёк. ③ 耽误 несёт ущерб, 影响 нейтрально.
+④ 出色地完成 о том, как сделано; 优秀 о человеке.</p></div></details><details><summary>练习 3 — 给括号里的词选择适当的位置</summary><div class="in">
+<p>① 他发起A了B愁，刚C坐了十<span class="k">D</span>个小时火车……（来）→ 坐了十<span class="k">来</span>个小时火车<br>
+② 我A找刘明天来B当导演，其实是C有点儿<span class="k">D</span>的。（冒险）→ 其实是有点儿<span class="k">冒险</span>的<br>
+③ A按学校B规定，缺课60节以上的学生<span class="k">C</span>不允许D参加考试。（一律）→ 学生<span class="k">一律</span>不允许参加考试<br>
+④ 小丽<span class="k">A</span>地完成了B比赛的各项动作，C取得了第一名D的好成绩。（出色）→ 小丽<span class="k">出色</span>地完成了……</p></div></details><details><summary>做一做 — 总算 или 终于</summary><div class="in">
+<p>(1) 他多次想告诉她，但<span class="k">终于</span>没说出口。<br>
+(2) 可让我担心的事<span class="k">终于</span>还是发生了。<br>
+(3) 整整一个星期没出门，我<span class="k">总算</span>把这几本厚厚的书读完了。<br>
+(4) 听了李阳这些话后，妈妈<span class="k">总算</span>有点放心了。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+(1) и (2) — результат нежеланный, поэтому только 终于; (3) и (4) — облегчение, поэтому 总算.</p></div></details><details><summary>练一练 1 — 来（образцы）</summary><div class="in">
+<p>(1) 这所学校是小班上课，每个班<span class="k">只有二十来个学生</span>。<br>
+(2) 四川好玩儿的地方可多了，去旅游 <span class="k">十来天根本不够</span>。<br>
+(3) B: <span class="k">一来可以锻炼身体，二来还能省点儿车费</span>。</p></div></details><details><summary>练一练 2 — 至于（образцы）</summary><div class="in">
+<p>(1) 我只记得他说过要去买礼物，<span class="k">至于买了什么，我就不知道了</span>。<br>
+(2) 我刚毕业，现在最重要的是找到工作，<span class="k">至于工资多少，我暂时不太在意</span>。<br>
+(3) B: <span class="k">不至于吧？他昨天还好好儿的呢</span>。</p></div></details><details><summary>练一练 3 — 总算（образцы）</summary><div class="in">
+<p>(1) <span class="k">这件事我总算弄清楚了</span>，其实他没回老家，一直在这里打工。<br>
+(2) B: 是啊！<span class="k">不过现在总算开业了</span>。<br>
+(3) B: 化学是她最头疼的科目了，<span class="k">这次总算有了进步</span>。</p></div></details><details><summary>扩展 做一做 — 社会关系 и 婚恋</summary><div class="in">
+<p>(1) 这是我的<span class="k">名片</span>，我们保持联系，希望将来有机会一起合作。<br>
+(2) 明天，希望公司的总裁刘明先生来学校<span class="k">演讲</span>，你想去听听吗？<br>
+(3) 老师，请问我报名时，都需要带什么<span class="k">证件</span>啊？<br>
+(4) 出席开幕式的<span class="k">嘉宾</span>都联系好了。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+社会关系: 演讲、发言、宴会、嘉宾、证件、名片.<br>
+婚恋: 嫁、娶、分手、怀孕、吻.</p></div></details></section>
+<section>
+  <h2>Сочинение <span class="cn">命题写作：认真思考，轻松生活</span></h2>
+  <p>Тема просит не рассказа, а рассуждения, и текст даёт для него готовую рамку:
+  три вида занятости — пример — вывод. Самый сильный ход — взять из урока фразу про душу
+  и тело: она запоминается и проверяющему.</p>
+  <div class="card green">
+    <p class="cn-ex" style="line-height:2">我以前属于第一种“忙”：<span class="hl">被动</span>地被事情追着跑，
+    几乎成了工作的<span class="hl">奴隶</span>。每天都很<span class="hl">忙碌</span>，可到了周末回头一看，
+    真正重要的事一件也没做完。后来我读到一句话：赶了三天路以后要休息一天，
+    那是为了让<span class="hl">灵魂</span>追得上<span class="hl">疲劳</span>的身体。
+    这句话富有<span class="hl">哲理</span>，也改变了我的习惯。现在我每周六上午什么安排都没有，
+    手机<span class="hl">一律</span>不看，只用来<span class="hl">反省</span>和总结这一周。
+    有人说这是浪费时间，我却觉得这一步是最重要的<span class="hl">步骤</span>——
+    少了它，<span class="hl">效率</span>反而更低。认真思考，才能轻松生活。</p>
+  </div>
+  <h3>Связки, которые стоит взять с собой</h3>
+  <ul>
+    <li><span class="cn-ex">我以前属于第一种……，后来……</span> — вход через собственный тип;</li>
+    <li><span class="cn-ex">一来……，二来……</span> — мягкое перечисление причин;</li>
+    <li><span class="cn-ex">至于……，我就……</span> — переход ко второй части темы;</li>
+    <li><span class="cn-ex">有人说……，我却觉得……</span> — обязательная вторая точка зрения;</li>
+    <li><span class="cn-ex">少了它，……反而更低</span> — вывод через контраст, звучит сильнее простого 所以.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>План на урок <span class="cn">复习计划</span></h2>
+  <ol class="route">
+    <li><b>Запомните три вида «忙».</b> 被动 — раб работы; 主动 — хозяин; 虚伪 — тот,
+    кто сам себе придумывает занятость. Это рамка, которая пригодится и в сочинении, и на HSKK.</li>
+    <li><b>Соберите пересказ по таблице учебника.</b> Три блока: 三种“忙” (被动、奴隶、主动、虚伪),
+    大导演的拍摄经历 (纪录片、雇、出色、一连、耽误、投资、沟通、灵魂), 比尔·盖茨的“闭关”
+    (为期、一律、寂寞、效率、思考).</li>
+    <li><b>Отработайте три конструкции вслух.</b> 一来……二来……, 至于……, 总算…… —
+    по три своих примера на каждую. Это самые «разговорные» точки тома.</li>
+    <li><b>Разведите пары.</b> 总算／终于 из разбора плюс 一律／都, 耽误／影响, 出色／优秀 из упражнения 2.
+    И проверьте 纪录／记录 — та же пара, что в двадцатом уроке.</li>
+    <li><b>Напишите сочинение.</b> 100 знаков по схеме «какой я был — пример — что изменил»,
+    обязательно с 一来……二来…… и с одним 总算.</li>
+  </ol>
+</section>
+
+
+<nav class="botnav"><a href="hsk5b-lesson-25.html"><span>← Урок 25</span>给自己加满水</a><a href="index-5b.html"><span>Урок 27 — в работе</span>下棋</a></nav>
+
+<footer>HSK 标准教程 5（下） · урок 26 «你属于哪一种“忙”» · конспект для подготовки к экзамену</footer>
+
+</div>
+<script>
+
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML =
+      '<span class="w">' + z.dataset.w + '</span>' +
+      '<span class="p">' + z.dataset.p + '</span>' +
+      '<span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    out.innerHTML = def;
+  }
+
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+
+  var box = document.querySelector('.plan-box svg');
+  box.addEventListener('mouseleave', clear);
+})();
+
+</script>
+<script>
+
+(function(){
+  var LESSON = "26";
+  var DIRS = ["audio/", "", "mp3/", "media/", "аудио/", "audio/26/", "26/"];
+  var CAND = [];
+  DIRS.forEach(function(d){ CAND.push(d + "{hz}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{hz2}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{pyn}.mp3"); });
+
+  var patIn  = document.getElementById('ab-pat');
+  var status = document.getElementById('ab-status');
+  var btns   = Array.prototype.slice.call(document.querySelectorAll('.pb[data-hz]'));
+  var cur = null, curBtn = null, queue = null;
+
+  function pad(n){ n = String(n||''); return n.length === 1 ? '0'+n : n; }
+
+  function resolve(pat, b){
+    return pat
+      .replace(/\{hz2\}/g, b.dataset.hz2 || b.dataset.hz)
+      .replace(/\{hz\}/g,  b.dataset.hz)
+      .replace(/\{pyn\}/g, b.dataset.pyn)
+      .replace(/\{py\}/g,  b.dataset.py)
+      .replace(/\{num\}/g, pad(b.dataset.num))
+      .replace(/\{n\}/g,   b.dataset.num || '')
+      .replace(/\{L\}/g,   LESSON);
+  }
+
+  function setStatus(t, cls){
+    status.textContent = t || '';
+    status.className = 'ab-status' + (cls ? ' ' + cls : '');
+  }
+
+  function test(pat, b){
+    return new Promise(function(res){
+      var a = new Audio(), done = false;
+      function ok(){ if(!done){ done = true; res(true); } }
+      function no(){ if(!done){ done = true; res(false); } }
+      a.addEventListener('loadedmetadata', ok);
+      a.addEventListener('canplay', ok);
+      a.addEventListener('error', no);
+      a.preload = 'metadata';
+      a.src = encodeURI(resolve(pat, b));
+      setTimeout(no, 2500);
+    });
+  }
+
+  function stop(){
+    if(cur){ cur.pause(); cur = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn = null; }
+    queue = null;
+    document.querySelectorAll('.pball.playing').forEach(function(x){ x.classList.remove('playing'); });
+  }
+
+  /* проигрывание с запасными вариантами имени для этого слова */
+  function play(b, onEnd){
+    stop();
+    var tries = [patIn.value.trim()];
+    var alt = (b.dataset.hz2 && b.dataset.hz2 !== b.dataset.hz)
+      ? patIn.value.trim().replace('{hz}', '{hz2}') : null;
+    if(alt && tries.indexOf(alt) < 0) tries.push(alt);
+    CAND.forEach(function(p){ if(tries.indexOf(p) < 0) tries.push(p); });
+
+    b.classList.add('playing');
+    var i = 0;
+    (function attempt(){
+      if(i >= tries.length){
+        b.classList.remove('playing');
+        b.classList.add('missing');
+        b.title = 'Не найден файл для ' + b.dataset.hz;
+        setStatus('Не найден файл для ' + b.dataset.hz + ' — проверьте папку или шаблон.', 'bad');
+        if(onEnd) onEnd();
+        return;
+      }
+      var src = resolve(tries[i++], b);
+      var a = new Audio(encodeURI(src));
+      var started = false;
+      a.addEventListener('canplay', function(){ started = true; });
+      a.addEventListener('ended', function(){
+        b.classList.remove('playing');
+        if(cur === a){ cur = null; curBtn = null; }
+        if(onEnd) onEnd();
+      });
+      a.addEventListener('error', function(){
+        if(!started){ attempt(); }
+        else { b.classList.remove('playing'); if(onEnd) onEnd(); }
+      });
+      cur = a; curBtn = b;
+      b.classList.remove('missing');
+      a.play().catch(function(){});
+    })();
+  }
+
+  /* автопоиск папки при открытии */
+  function autodetect(quiet){
+    if(!btns.length) return;
+    if(!quiet) setStatus('Перебираю варианты…');
+    var i = 0;
+    (function next(){
+      if(i >= CAND.length){
+        setStatus(quiet
+          ? 'Папка с mp3 не найдена. Положите файлы в audio рядом с этим документом.'
+          : 'Ни один из типовых вариантов не подошёл. Впишите путь вручную.',
+          quiet ? '' : 'bad');
+        return;
+      }
+      var p = CAND[i++];
+      test(p, btns[0]).then(function(ok){
+        if(ok){
+          patIn.value = p;
+          document.querySelectorAll('.pb.missing').forEach(function(x){
+            x.classList.remove('missing'); x.title = '';
+          });
+          setStatus('Озвучка подключена: ' + p, 'ok');
+        } else next();
+      });
+    })();
+  }
+
+  document.getElementById('ab-auto').addEventListener('click', function(){ autodetect(false); });
+  document.getElementById('ab-test').addEventListener('click', function(){
+    if(!btns.length) return;
+    setStatus('Проверяю…');
+    test(patIn.value.trim(), btns[0]).then(function(ok){
+      setStatus((ok ? 'Файл найден: ' : 'Не найден: ') + resolve(patIn.value.trim(), btns[0]),
+                ok ? 'ok' : 'bad');
+    });
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(curBtn === b && cur){ stop(); return; }
+      play(b);
+    });
+  });
+
+  document.querySelectorAll('.pball').forEach(function(pb){
+    pb.addEventListener('click', function(){
+      if(pb.classList.contains('playing')){ stop(); return; }
+      var list = Array.prototype.slice.call(
+        pb.closest('.cluster').querySelectorAll('.pb[data-hz]'));
+      stop();
+      pb.classList.add('playing');
+      var i = 0;
+      queue = list;
+      (function step(){
+        if(queue !== list || i >= list.length){ pb.classList.remove('playing'); return; }
+        play(list[i++], function(){ setTimeout(step, 350); });
+      })();
+    });
+  });
+
+  autodetect(true);
+})();
+
+</script>
+</body>
+</html>
