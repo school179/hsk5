@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Проверка озвучки · HSK 标准教程 5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#23262a;
+  --brick:#6f6b63;
+  --paper:#e3e1da;
+  --card:#f2f1ec;
+  --red:#b4342a;
+  --brass:#a8813c;
+  --bamboo:#4a6b4e;
+  --sky:#54748a;
+  --line:rgba(35,38,42,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:
+    linear-gradient(rgba(255,255,255,.35) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.35) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+/* ——— шапка ——— */
+header{padding:56px 0 28px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{
+  font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;
+  color:var(--red);letter-spacing:-.03em;
+}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:44px;line-height:1.05;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brick);margin-top:9px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+/* ——— секции ——— */
+section{margin-top:58px}
+h2{
+  font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px;
+}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+a{color:var(--red)}
+
+/* ——— план двора ——— */
+.plan-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px;
+  box-shadow:0 1px 0 rgba(35,38,42,.06)}
+.plan-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone rect,.zone circle,.zone path{transition:fill .18s ease}
+.zone:hover .fillable,.zone.on .fillable{fill:#e7cfc9}
+.zone:focus{outline:none}
+.zone:focus-visible .fillable{stroke:var(--red);stroke-width:2.5}
+.zlab{font-family:var(--han);font-size:15px;font-weight:600;fill:var(--ink);pointer-events:none}
+.zpin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.04em}
+.faint{font-family:var(--han);font-size:12px;fill:var(--brick);pointer-events:none}
+.compass{font-family:var(--mono);font-size:10px;fill:var(--brick);letter-spacing:.15em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:62px}
+.readout .w{font-family:var(--han);font-size:22px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:13px;color:var(--sky)}
+.readout .d{display:block;margin-top:4px;font-size:15px}
+.readout .hint{color:var(--brick);font-style:italic}
+
+/* ——— карточки слов ——— */
+.cluster{margin-top:26px}
+.cluster h3{margin-bottom:4px}
+.cluster .why{font-size:14px;color:var(--brick);margin-bottom:14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--brass);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+/* ——— общие блоки ——— */
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.green{border-left:4px solid var(--bamboo)}
+.card.brass{border-left:4px solid var(--brass)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--paper);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.b{background:var(--brass)}
+.tag.g{background:var(--bamboo)}
+.tag.r{background:var(--red)}
+
+/* ——— таблицы ——— */
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(35,38,42,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+/* ——— на слух ——— */
+.trap{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+/* ——— ответы ——— */
+details{background:var(--card);border:1px solid var(--line);margin:10px 0;padding:0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+/* ——— финал ——— */
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;
+  font-family:var(--disp);font-weight:700;font-size:22px;color:var(--red);
+  width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .lesson-no{font-size:66px}
+  h1{font-size:32px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+
+/* многопунктная шапка новых страниц переносится на узком экране */
+.topnav{flex-wrap:wrap;row-gap:8px;column-gap:16px;justify-content:flex-start}
+.topnav .home{flex:1 1 100%}
+@media (min-width:760px){
+  .topnav{flex-wrap:nowrap;justify-content:space-between}
+  .topnav .home{flex:0 0 auto}
+}
+
+:root{--red:#8a5a2a;--brass:#9a7a2c;--bamboo:#4e7046;--sky:#4f6a86;--paper:#e9e3da;--card:#f8f4ee}
+.panel{border:1.5px solid var(--line);border-radius:4px;background:var(--card);padding:16px 18px;margin:0 0 20px}
+.panel label{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--brick);display:block;margin-bottom:5px}
+.panel input[type=text]{width:100%;box-sizing:border-box;font-family:var(--mono);font-size:15px;
+  padding:9px 11px;border:1.5px solid var(--line);border-radius:3px;background:#fff;color:var(--ink)}
+.panel input[type=text]:focus{outline:none;border-color:var(--red)}
+.prow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+.btn{font-family:var(--mono);font-size:12px;letter-spacing:.07em;text-transform:uppercase;
+  padding:10px 16px;border:1.5px solid var(--ink);border-radius:3px;background:#fff;color:var(--ink);cursor:pointer}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.pri{background:var(--red);border-color:var(--red);color:#fff}
+.btn.pri:hover{background:#000;border-color:#000}
+.btn[disabled]{opacity:.45;cursor:default}
+.btn[disabled]:hover{background:#fff;color:var(--ink)}
+.hint2{font-size:14px;color:var(--brick);margin-top:11px;line-height:1.55}
+.hint2 code{font-family:var(--mono);font-size:13px;background:#fff;padding:1px 4px;border-radius:2px}
+.bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin:16px 0 8px}
+.bar i{display:block;height:100%;width:0;background:var(--red);transition:width .15s}
+.nums{display:flex;flex-wrap:wrap;gap:22px;margin:10px 0 0}
+.nums div{min-width:90px}
+.nums .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--brick);display:block}
+.nums .v{font-family:var(--display);font-size:28px;font-weight:700;line-height:1.1}
+.nums .v.ok{color:var(--bamboo)}
+.nums .v.no{color:var(--red)}
+.lrow{display:grid;grid-template-columns:118px 1fr auto;gap:10px;align-items:center;
+  padding:8px 2px;border-bottom:1px solid var(--line)}
+.lrow .lt{font-family:var(--mono);font-size:11px;letter-spacing:.07em;color:var(--brick);text-transform:uppercase}
+.lrow .lb{height:9px;background:var(--line);border-radius:2px;overflow:hidden}
+.lrow .lb i{display:block;height:100%;background:var(--bamboo)}
+.lrow .lb i.part{background:var(--brass)}
+.lrow .lb i.none{background:var(--red)}
+.lrow .ln{font-family:var(--mono);font-size:11.5px;color:var(--brick);white-space:nowrap}
+.lrow a{font-family:var(--mono);font-size:11px;color:var(--red);text-decoration:none}
+.misslist{font-family:var(--han);font-size:15px;line-height:2;margin-top:10px}
+.misslist span{display:inline-block;border:1px solid var(--line);border-radius:3px;
+  padding:1px 7px;margin:0 5px 5px 0;background:#fff}
+.out{width:100%;box-sizing:border-box;font-family:var(--mono);font-size:12px;min-height:120px;
+  padding:10px;border:1.3px solid var(--line);border-radius:3px;background:#fff;color:var(--ink);margin-top:10px}
+.note{border-left:3px solid var(--brass);padding:10px 14px;background:#fff;margin:14px 0 0;font-size:14.5px}
+@media (max-width:620px){ .lrow{grid-template-columns:92px 1fr} .lrow .ln{grid-column:1/-1} }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index.html">&#8592; Главная</a><a href="slovar.html">Словарь</a><a href="naslukh.html">На слух</a><a href="temy.html">Темы 扩展</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（上）（下） · 录音检查</div>
+  <div class="title-row">
+    <h1>Проверка озвучки<span class="lat">录音检查 · 1434 слов курса</span></h1>
+  </div>
+  <div class="meta"><span><b>1434</b> файлов ожидается</span><span>уроков: <b>36</b></span><span>проверка идёт в браузере</span></div>
+</header>
+
+
+<section>
+  <p class="lede">Страница проверяет, для скольких слов курса реально лежат mp3-файлы: она по очереди
+  пытается загрузить каждый файл и считает, сколько нашлось. Ничего не скачивает и никуда не отправляет —
+  просто смотрит, отвечает ли файл рядом со страницей. Всего в курсе <b>1434</b> слов,
+  включая имена собственные.</p>
+
+  <div class="panel">
+    <label for="pat">Шаблон имени файла</label>
+    <input id="pat" type="text" spellcheck="false" value="audio/{hz}.mp3">
+    <div class="prow">
+      <button class="btn pri" type="button" id="run">Проверить всё</button>
+      <button class="btn" type="button" id="stop" disabled>Остановить</button>
+      <button class="btn" type="button" id="pat1">audio/{hz}.mp3</button>
+      <button class="btn" type="button" id="pat2">{hz}.mp3</button>
+      <button class="btn" type="button" id="pat3">audio/{L}/{hz}.mp3</button>
+    </div>
+    <div class="hint2">
+      Подстановки: <code>{hz}</code> — иероглиф, <code>{L}</code> — номер урока,
+      <code>{LL}</code> — номер урока с ведущим нулём, <code>{py}</code> — пиньинь с тонами,
+      <code>{pyn}</code> — пиньинь без тонов. Проверка идёт пачками, страницу можно закрыть
+      в любой момент — ничего не сломается.
+    </div>
+    <div class="bar"><i id="bar"></i></div>
+    <div class="nums">
+      <div><span class="k">проверено</span><span class="v" id="nDone">0</span></div>
+      <div><span class="k">нашлось</span><span class="v ok" id="nOk">0</span></div>
+      <div><span class="k">нет файла</span><span class="v no" id="nNo">0</span></div>
+      <div><span class="k">готово</span><span class="v" id="nPct">—</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>По урокам <span class="cn">按课</span></h2>
+  <p class="lede">Полоса показывает долю найденных файлов. Зелёная — всё на месте,
+  жёлтая — часть, красная — нет ни одного.</p>
+  <div id="byles"></div>
+</section>
+
+<section>
+  <h2>Чего не хватает <span class="cn">缺少的文件</span></h2>
+  <div id="miss"><p class="lede faint">Пока проверка не запущена, списка нет.</p></div>
+  <div id="exp"></div>
+</section>
+
+<section>
+  <div class="note">
+    <b>Если не нашлось вообще ничего</b>, дело почти наверняка в месте файлов, а не в именах:
+    браузер ищет их относительно этой страницы. Положите папку <code>audio</code> рядом
+    с html-файлами или укажите другой шаблон. Проверить руками можно так: нажмите
+    <span class="pb" style="position:static;display:inline-flex">&#9654;</span> у любого слова
+    в <a href="slovar.html">словаре курса</a> — если звук есть, путь верный.
+  </div>
+</section>
+
+
+<footer>Проверка работает офлайн и ничего никуда не отправляет · <a href="index.html">главная</a></footer>
+
+</div>
+
+<script>
+var A = [["细节", "细节", "xìjié", 1], ["电台", "电台", "diàntái", 1], ["恩爱", "恩爱", "ēn'ài", 1], ["对比", "对比", "duìbǐ", 1], ["入围", "入围", "rùwéi", 1], ["评委", "评委", "píngwěi", 1], ["项", "项", "xiàng", 1], ["瘫痪", "瘫痪", "tānhuàn", 1], ["离婚", "离婚", "lí hūn", 1], ["自杀", "自杀", "zìshā", 1], ["抱怨", "抱怨", "bàoyuàn", 1], ["爱护", "爱护", "àihù", 1], ["患难与共", "患难与共", "huànnàn-yǔgòng", 1], ["婚姻", "婚姻", "hūnyīn", 1], ["吵架", "吵架", "chǎo jià", 1], ["相敬如宾", "相敬如宾", "xiāngjìng-rúbīn", 1], ["暗暗", "暗暗", "àn'àn", 1], ["轮", "轮", "lún", 1], ["不耐烦", "不耐烦", "bú nàifán", 1], ["靠", "靠", "kào", 1], ["肩膀", "肩膀", "jiānbǎng", 1], ["喊", "喊", "hǎn", 1], ["伸", "伸", "shēn", 1], ["手指", "手指", "shǒuzhǐ", 1], ["歪歪扭扭", "歪歪扭扭", "wāiwāiniǔniǔ", 1], ["递", "递", "dì", 1], ["脑袋", "脑袋", "nǎodai", 1], ["女士", "女士", "nǚshì", 1], ["叙述", "叙述", "xùshù", 1], ["催", "催", "cuī", 1], ["等待", "等待", "děngdài", 1], ["半夜", "半夜", "bànyè", 1], ["蚊子", "蚊子", "wénzi", 1], ["叮", "叮", "dīng", 1], ["老婆", "老婆", "lǎopo", 1], ["吵", "吵", "chǎo", 1], ["如何", "如何", "rúhé", 1], ["居然", "居然", "jūrán", 1], ["一辈子", "一辈子", "yíbèizi", 2], ["农村", "农村", "nóngcūn", 2], ["屋子", "屋（子）", "wū(zi)", 2], ["县", "县", "xiàn", 2], ["卧室", "卧室", "wòshì", 2], ["姥姥", "姥姥", "lǎolao", 2], ["舅舅", "舅舅", "jiùjiu", 2], ["姑姑", "姑姑", "gūgu", 2], ["套", "套", "tào", 2], ["串", "串", "chuàn", 2], ["阵", "阵", "zhèn", 2], ["打工", "打工", "dǎ gōng", 2], ["挣", "挣", "zhèng", 2], ["装修", "装修", "zhuāngxiū", 2], ["锁", "锁", "suǒ", 2], ["晒", "晒", "shài", 2], ["被子", "被子", "bèizi", 2], ["铺", "铺", "pū", 2], ["灰尘", "灰尘", "huīchén", 2], ["长途", "长途", "chángtú", 2], ["坚决", "坚决", "jiānjué", 2], ["不得了", "不得了", "bùdéliǎo", 2], ["醉", "醉", "zuì", 2], ["强烈", "强烈", "qiángliè", 2], ["悄悄", "悄悄", "qiāoqiāo", 2], ["冻", "冻", "dòng", 2], ["想象", "想象", "xiǎngxiàng", 2], ["亮", "亮", "liàng", 2], ["微笑", "微笑", "wēixiào", 2], ["温暖", "温暖", "wēnnuǎn", 2], ["扑", "扑", "pū", 2], ["飘", "飘", "piāo", 2], ["感受", "感受", "gǎnshòu", 2], ["流泪", "流泪", "liú lèi", 2], ["夜", "夜", "yè", 2], ["断", "断", "duàn", 2], ["以来", "以来", "yǐlái", 2], ["临", "临", "lín", 2], ["立刻", "立刻", "lìkè", 2], ["人生", "人生", "rénshēng", 3], ["工人", "工人", "gōngrén", 3], ["稳定", "稳定", "wěndìng", 3], ["待遇", "待遇", "dàiyù", 3], ["发愁", "发愁", "fā chóu", 3], ["平静", "平静", "píngjìng", 3], ["辞职", "辞职", "cí zhí", 3], ["陆地", "陆地", "lùdì", 3], ["未来", "未来", "wèilái", 3], ["时代", "时代", "shídài", 3], ["台阶", "台阶", "táijiē", 3], ["太太", "太太", "tàitai", 3], ["帆船", "帆船", "fānchuán", 3], ["艘", "艘", "sōu", 3], ["航行", "航行", "hángxíng", 3], ["驾驶", "驾驶", "jiàshǐ", 3], ["海里", "海里", "hǎilǐ", 3], ["钓", "钓", "diào", 3], ["海鲜", "海鲜", "hǎixiān", 3], ["顿", "顿", "dùn", 3], ["二手", "二手", "èrshǒu", 3], ["积蓄", "积蓄", "jīxù", 3], ["撞", "撞", "zhuàng", 3], ["轮流", "轮流", "lúnliú", 3], ["干活儿", "干活儿", "gàn huór", 3], ["彩虹", "彩虹", "cǎihóng", 3], ["雷", "雷", "léi", 3], ["闪电", "闪电", "shǎndiàn", 3], ["击", "击", "jī", 3], ["着火", "着火", "zháo huǒ", 3], ["漏", "漏", "lòu", 3], ["随时", "随时", "suíshí", 3], ["拥抱", "拥抱", "yōngbào", 3], ["疯", "疯", "fēng", 3], ["傍晚", "傍晚", "bàngwǎn", 3], ["舒适", "舒适", "shūshì", 3], ["盼望", "盼望", "pànwàng", 3], ["包括", "包括", "bāokuò", 3], ["各自", "各自", "gèzì", 3], ["勿", "勿", "wù", 3], ["时刻", "时刻", "shíkè", 3], ["翟峰", "翟峰", "Zhái Fēng", 3], ["澳大利亚", "澳大利亚", "Àodàlìyà", 3], ["新西兰", "新西兰", "Xīnxīlán", 3], ["从前", "从前", "cóngqián", 4], ["时期", "时期", "shíqī", 4], ["农民", "农民", "nóngmín", 4], ["战争", "战争", "zhànzhēng", 4], ["满足", "满足", "mǎnzú", 4], ["惭愧", "惭愧", "cánkuì", 4], ["决心", "决心", "juéxīn", 4], ["委屈", "委屈", "wěiqu", 4], ["食物", "食物", "shíwù", 4], ["打听", "打听", "dǎting", 4], ["主人", "主人", "zhǔrén", 4], ["结实", "结实", "jiēshi", 4], ["勤奋", "勤奋", "qínfèn", 4], ["老实", "老实", "lǎoshi", 4], ["银子", "银（子）", "yín(zi)", 4], ["镇", "镇", "zhèn", 4], ["流传", "流传", "liúchuán", 4], ["至今", "至今", "zhìjīn", 4], ["背", "背", "bēi", 4], ["后背", "后背", "hòubèi", 4], ["滑", "滑", "huá", 4], ["甩", "甩", "shuǎi", 4], ["顶", "顶", "dǐng", 4], ["扶", "扶", "fú", 4], ["不行", "不行", "bùxíng", 4], ["团圆", "团圆", "tuányuán", 4], ["去世", "去世", "qùshì", 4], ["国君", "国君", "guójūn", 4], ["本领", "本领", "běnlǐng", 4], ["人才", "人才", "réncái", 4], ["官", "官", "guān", 4], ["物质", "物质", "wùzhì", 4], ["反而", "反而", "fǎn'ér", 4], ["诚恳", "诚恳", "chéngkěn", 4], ["成就", "成就", "chéngjiù", 4], ["古代", "古代", "gǔdài", 4], ["孝顺", "孝顺", "xiàoshùn", 4], ["孝敬", "孝敬", "xiàojìng", 4], ["美德", "美德", "měidé", 4], ["占", "占", "zhàn", 4], ["子路", "子路 / 孔子", "Zǐlù / Kǒngzǐ", 4], ["春秋", "春秋 / 楚国", "Chūnqiū / Chǔguó", 4], ["悠久", "悠久", "yōujiǔ", 5], ["文字", "文字", "wénzì", 5], ["记载", "记载", "jìzǎi", 5], ["形状", "形状", "xíngzhuàng", 5], ["描写", "描写", "miáoxiě", 5], ["赞美", "赞美", "zànměi", 5], ["诗", "诗", "shī", 5], ["老百姓", "老百姓", "lǎobǎixìng", 5], ["充满", "充满", "chōngmǎn", 5], ["感激", "感激", "gǎnjī", 5], ["传说", "传说", "chuánshuō", 5], ["产生", "产生", "chǎnshēng", 5], ["善良", "善良", "shànliáng", 5], ["救", "救", "jiù", 5], ["晕", "晕", "yūn", 5], ["龙", "龙", "lóng", 5], ["治疗", "治（疗）", "zhì(liáo)", 5], ["玉", "玉", "yù", 5], ["壶", "壶", "hú", 5], ["抢", "抢", "qiǎng", 5], ["埋", "埋", "mái", 5], ["藏", "（躲）藏", "(duǒ) cáng", 5], ["珍珠", "珍珠", "zhēnzhū", 5], ["如今", "如今", "rújīn", 5], ["分布", "分布", "fēnbù", 5], ["天然", "天然", "tiānrán", 5], ["优美", "优美", "yōuměi", 5], ["独特", "独特", "dútè", 5], ["反映", "反映", "fǎnyìng", 5], ["广大", "广大", "guǎngdà", 5], ["地区", "地区", "dìqū", 5], ["形成", "形成", "xíngchéng", 5], ["岩石", "岩石", "yánshí", 5], ["石灰岩", "石灰岩", "shíhuīyán", 5], ["火成岩", "火成岩", "huǒchéngyán", 5], ["亿", "亿", "yì", 5], ["表面", "表面", "biǎomiàn", 5], ["角度", "角度", "jiǎodù", 5], ["斜", "斜", "xié", 5], ["碰", "碰", "pèng", 5], ["挡", "挡", "dǎng", 5], ["地势", "地势", "dìshì", 5], ["冲", "冲", "chōng", 5], ["从而", "从而", "cóng'ér", 5], ["于", "于 / 为", "yú / wéi", 5], ["除夕", "除夕", "chúxī", 6], ["由来", "由来", "yóulái", 6], ["农历", "农历", "nónglì", 6], ["守岁", "守岁", "shǒusuì", 6], ["鞭炮", "鞭炮", "biānpào", 6], ["风俗", "风俗", "fēngsú", 6], ["意义", "意义", "yìyì", 6], ["表达", "表达", "biǎodá", 6], ["纷纷", "纷纷", "fēnfēn", 6], ["怪物", "怪物", "guàiwù", 6], ["伤害", "伤害", "shānghài", 6], ["恨", "恨", "hèn", 6], ["骨头", "骨（头）", "gǔ(tou)", 6], ["无奈", "无奈", "wúnài", 6], ["制造", "制造", "zhìzào", 6], ["灾害", "灾害", "zāihài", 6], ["逃", "逃", "táo", 6], ["影子", "影子", "yǐngzi", 6], ["吓", "吓", "xià", 6], ["杀", "杀", "shā", 6], ["除", "除", "chú", 6], ["英雄", "英雄", "yīngxióng", 6], ["英俊", "英俊", "yīngjùn", 6], ["咬", "咬", "yǎo", 6], ["外公", "外公", "wàigōng", 6], ["询问", "询问", "xúnwèn", 6], ["天真", "天真", "tiānzhēn", 6], ["熬夜", "熬夜", "áo yè", 6], ["赶紧", "赶紧", "gǎnjǐn", 6], ["果然", "果然", "guǒrán", 6], ["姑娘", "姑娘", "gūniang", 6], ["锅", "锅", "guō", 6], ["盆子", "盆（子）", "pén(zi)", 6], ["整个", "整个", "zhěnggè", 6], ["追", "追", "zhuī", 6], ["箭", "箭", "jiàn", 6], ["射击", "射（击）", "shè(jī)", 6], ["替", "（代）替", "(dài)tì", 6], ["说不定", "说不定", "shuōbudìng", 6], ["似的", "似的", "shìde", 6], ["此外", "此外", "cǐwài", 6], ["夕", "夕 / 七郎", "Xī / Qīláng", 6], ["成语", "成语", "chéngyǔ", 7], ["则", "则", "zé", 7], ["盲人", "盲人", "mángrén", 7], ["摸", "摸", "mō", 7], ["大象", "（大）象", "(dà)xiàng", 7], ["智慧", "智慧", "zhìhuì", 7], ["士兵", "士兵", "shìbīng", 7], ["寻找", "寻找", "xúnzhǎo", 7], ["牙齿", "牙齿", "yáchǐ", 7], ["胡说", "胡说", "húshuō", 7], ["尾巴", "尾巴", "wěiba", 7], ["绳子", "绳子", "shéngzi", 7], ["平", "平", "píng", 7], ["墙", "墙", "qiáng", 7], ["扇子", "扇子", "shànzi", 7], ["片面", "片面", "piànmiàn", 7], ["结论", "结论", "jiélùn", 7], ["将军", "将军", "jiāngjūn", 7], ["善于", "善于", "shànyú", 7], ["称", "称", "chēng", 7], ["打猎", "打猎", "dǎ liè", 7], ["忽然", "忽然", "hūrán", 7], ["蹲", "蹲", "dūn", 7], ["摇", "摇", "yáo", 7], ["不要紧", "不要紧", "bú yàojǐn", 7], ["支", "支", "zhī", 7], ["摆", "摆", "bǎi", 7], ["姿势", "姿势", "zīshì", 7], ["全神贯注", "全神贯注", "quánshén-guànzhù", 7], ["尽力", "尽（力）", "jìn(lì)", 7], ["精诚所至金石为开", "精诚所至，金石为开", "jīngchéng suǒzhì…", 7], ["反应", "反应", "fǎnyìng", 7], ["确定", "确定", "quèdìng", 7], ["石头", "石头", "shítou", 7], ["连续", "连续", "liánxù", 7], ["根", "根", "gēn", 7], ["碎", "碎", "suì", 7], ["杆", "杆", "gǎn", 7], ["哎", "哎", "āi", 7], ["唉", "唉", "ài", 7], ["金属", "金属", "jīnshǔ", 7], ["硬", "硬", "yìng", 7], ["便", "便", "biàn", 7], ["瞎", "瞎", "xiā", 7], ["分别", "分别", "fēnbié", 7], ["朝三暮四", "朝三暮四", "zhāosān-mùsì", 8], ["词汇", "词汇", "cíhuì", 8], ["固定", "固定", "gùdìng", 8], ["结构", "结构", "jiégòu", 8], ["整体", "整体", "zhěngtǐ", 8], ["综合", "综合", "zōnghé", 8], ["完整", "完整", "wánzhěng", 8], ["哲学家", "哲学家", "zhéxuéjiā", 8], ["寓言", "寓言", "yùyán", 8], ["喂养", "喂养", "wèiyǎng", 8], ["群", "群", "qún", 8], ["猴子", "猴子", "hóuzi", 8], ["宠物", "宠物", "chǒngwù", 8], ["蔬菜", "蔬菜", "shūcài", 8], ["粮食", "粮食", "liángshi", 8], ["家庭", "家庭", "jiātíng", 8], ["财产", "财产", "cáichǎn", 8], ["消费", "消费", "xiāofèi", 8], ["节省", "节省", "jiéshěng", 8], ["限制", "限制", "xiànzhì", 8], ["猪", "猪", "zhū", 8], ["橡子", "橡子", "xiàngzi", 8], ["果实", "果实", "guǒshí", 8], ["馒头", "馒头", "mántou", 8], ["颗", "颗", "kē", 8], ["不足", "不足", "bùzú", 8], ["相处", "相处", "xiāngchǔ", 8], ["彼此", "彼此", "bǐcǐ", 8], ["表情", "表情", "biǎoqíng", 8], ["行为", "行为", "xíngwéi", 8], ["对方", "对方", "duìfāng", 8], ["调皮", "调皮", "tiáopí", 8], ["淘气", "淘气", "táoqì", 8], ["安慰", "安慰", "ānwèi", 8], ["吃亏", "吃亏", "chī kuī", 8], ["情景", "情景", "qíngjǐng", 8], ["哈", "哈", "hā", 8], ["倒", "倒", "dào", 8], ["要不", "要不", "yàobu", 8], ["似乎", "似乎", "sìhū", 8], ["显得", "显得", "xiǎnde", 8], ["格外", "格外", "géwài", 8], ["方式", "方式", "fāngshì", 8], ["表现", "表现", "biǎoxiàn", 9], ["突出", "突出", "tūchū", 9], ["文学家", "文学家", "wénxuéjiā", 9], ["行家", "行家", "hángjia", 9], ["学问", "学问", "xuéwen", 9], ["见解", "见解", "jiànjiě", 9], ["交际", "交际", "jiāojì", 9], ["大方", "大方", "dàfang", 9], ["好客", "好客", "hàokè", 9], ["呼朋唤友", "呼朋唤友", "hūpéng huànyǒu", 9], ["招待", "招待", "zhāodài", 9], ["亲自", "亲自", "qīnzì", 9], ["算", "算", "suàn", 9], ["地道", "地道", "dìdao", 9], ["讲究", "讲究", "jiǎngjiu", 9], ["点心", "点心", "diǎnxin", 9], ["高档", "高档", "gāodàng", 9], ["豪华", "豪华", "háohuá", 9], ["胃口", "胃口", "wèikǒu", 9], ["胃", "胃", "wèi", 9], ["戒", "戒", "jiè", 9], ["时尚", "时尚", "shíshàng", 9], ["近代", "近代", "jìndài", 9], ["胡同", "胡同", "hútòng", 9], ["位于", "位于", "wèiyú", 9], ["首", "首", "shǒu", 9], ["平均", "平均", "píngjūn", 9], ["光临", "光临", "guānglín", 9], ["写作", "写作", "xiězuò", 9], ["保存", "保存", "bǎocún", 9], ["资料", "资料", "zīliào", 9], ["作为", "作为", "zuòwéi", 9], ["曾经", "曾经", "céngjīng", 9], ["明明", "明明", "míngmíng", 9], ["形容", "形容", "xíngróng", 9], ["形象", "形象", "xíngxiàng", 9], ["蒙眬", "蒙眬", "ménglóng", 9], ["悠悠", "悠悠", "yōuyōu", 9], ["鲁迅", "鲁迅 / 郁达夫", "Lǔ Xùn / Yù Dáfū", 9], ["争论", "争论", "zhēnglùn", 10], ["辩论", "辩论", "biànlùn", 10], ["围绕", "围绕", "wéirào", 10], ["说服", "说服", "shuōfú", 10], ["始终", "始终", "shǐzhōng", 10], ["毕竟", "毕竟", "bìjìng", 10], ["脖子", "脖子", "bózi", 10], ["啦", "啦", "la", 10], ["请求", "请求", "qǐngqiú", 10], ["奔跑", "奔跑", "bēnpǎo", 10], ["蹄子", "蹄（子）", "tí(zi)", 10], ["青蛙", "青蛙", "qīngwā", 10], ["摄影师", "摄影师", "shèyǐngshī", 10], ["操场", "操场", "cāochǎng", 10], ["洞", "洞", "dòng", 10], ["插", "插", "chā", 10], ["棍", "棍", "gùn", 10], ["系", "系", "jì", 10], ["匹", "匹", "pǐ", 10], ["拦", "拦", "lán", 10], ["拍", "拍", "pāi", 10], ["差距", "差距", "chājù", 10], ["显示", "显示", "xiǎnshì", 10], ["奇迹", "奇迹", "qíjì", 10], ["意识", "意识", "yìshi", 10], ["艰苦", "艰苦", "jiānkǔ", 10], ["试验", "试验", "shìyàn", 10], ["逐渐", "逐渐", "zhújiàn", 10], ["改进", "改进", "gǎijìn", 10], ["成熟", "成熟", "chéngshú", 10], ["兄弟", "兄弟", "xiōngdì", 10], ["播放", "播放", "bōfàng", 10], ["纪念", "纪念", "jìniàn", 10], ["导演", "导演", "dǎoyǎn", 10], ["瞬间", "瞬间", "shùnjiān", 10], ["或许", "或许", "huòxǔ", 10], ["重大", "重大", "zhòngdà", 10], ["闹钟", "闹钟", "nàozhōng", 11], ["危害", "危害", "wēihài", 11], ["人类", "人类", "rénlèi", 11], ["机制", "机制", "jīzhì", 11], ["生物", "生物", "shēngwù", 11], ["规律", "规律", "guīlǜ", 11], ["光线", "光线", "guāngxiàn", 11], ["必要", "必要", "bìyào", 11], ["过渡", "过渡", "guòdù", 11], ["浅", "浅", "qiǎn", 11], ["清醒", "清醒", "qīngxǐng", 11], ["呼吸", "呼吸", "hūxī", 11], ["失眠", "失眠", "shīmián", 11], ["铃", "铃", "líng", 11], ["状态", "状态", "zhuàngtài", 11], ["心理", "心理", "xīnlǐ", 11], ["慌张", "慌（张）", "huāng(zhāng)", 11], ["情绪", "情绪", "qíngxù", 11], ["低落", "低落", "dīluò", 11], ["记忆", "记忆", "jìyì", 11], ["计算", "计算", "jìsuàn", 11], ["精神", "精神", "jīngshén / jīngshen", 11], ["享受", "享受", "xiǎngshòu", 11], ["导致", "导致", "dǎozhì", 11], ["持续", "持续", "chíxù", 11], ["相当", "相当", "xiāngdāng", 11], ["现代", "现代", "xiàndài", 11], ["用途", "用途", "yòngtú", 11], ["实验", "实验", "shíyàn", 11], ["专家", "专家", "zhuānjiā", 11], ["采用", "采用", "cǎiyòng", 11], ["柔和", "柔和", "róuhé", 11], ["愿望", "愿望", "yuànwàng", 11], ["窗帘", "窗帘", "chuānglián", 11], ["市场", "市场", "shìchǎng", 11], ["产品", "产品", "chǎnpǐn", 11], ["模仿", "模仿", "mófǎng", 11], ["避免", "避免", "bìmiǎn", 11], ["传统", "传统", "chuántǒng", 11], ["所", "所", "suǒ", 11], ["数", "数", "shù", 11], ["生物钟", "生物钟", "shēngwùzhōng", 11], ["新陈代谢", "新陈代谢", "xīnchén-dàixiè", 11], ["肾上腺素", "肾上腺素", "shènshàngxiànsù", 11], ["血压", "血压", "xuèyā", 11], ["企业", "企业", "qǐyè", 12], ["总裁", "总裁", "zǒngcái", 12], ["高级", "高级", "gāojí", 12], ["副", "副", "fù", 12], ["领导", "领导", "lǐngdǎo", 12], ["合作", "合作", "hézuò", 12], ["伙伴", "伙伴", "huǒbàn", 12], ["召开", "召开", "zhàokāi", 12], ["业务", "业务", "yèwù", 12], ["中心", "中心", "zhōngxīn", 12], ["开发", "开发", "kāifā", 12], ["创新", "创新", "chuàngxīn", 12], ["地位", "地位", "dìwèi", 12], ["用户", "用户", "yònghù", 12], ["注册", "注册", "zhùcè", 12], ["宣传", "宣传", "xuānchuán", 12], ["推广", "推广", "tuīguǎng", 12], ["手笔", "手笔", "shǒubǐ", 12], ["经营", "经营", "jīngyíng", 12], ["销售", "销售", "xiāoshòu", 12], ["针对", "针对", "zhēnduì", 12], ["当地", "当地", "dāngdì", 12], ["代言", "代言", "dàiyán", 12], ["明星", "明星", "míngxīng", 12], ["直播", "直播", "zhíbō", 12], ["颠球", "颠球", "diān qiú", 12], ["宝贝", "宝贝", "bǎobèi", 12], ["逗", "逗", "dòu", 12], ["实现", "实现", "shíxiàn", 12], ["覆盖", "覆盖", "fùgài", 12], ["移动", "移动", "yídòng", 12], ["通信", "通信", "tōngxìn", 12], ["应用", "应用", "yìngyòng", 12], ["称霸", "称霸", "chēngbà", 12], ["背景", "背景", "bèijǐng", 12], ["相关", "相关", "xiāngguān", 12], ["现实", "现实", "xiànshí", 12], ["个人", "个人", "gèrén", 12], ["发达", "发达", "fādá", 12], ["华裔", "华裔", "huáyì", 12], ["移民", "移民", "yímín", 12], ["以及", "以及", "yǐjí", 12], ["程度", "程度", "chéngdù", 12], ["项目", "项目", "xiàngmù", 13], ["缺乏", "缺乏", "quēfá", 13], ["训练", "训练", "xùnliàn", 13], ["启发", "启发", "qǐfā", 13], ["筐", "筐", "kuāng", 13], ["桃", "桃", "táo", 13], ["装", "装", "zhuāng", 13], ["安装", "安装", "ānzhuāng", 13], ["栏杆", "栏杆", "lángān", 13], ["甲", "甲", "jiǎ", 13], ["乙", "乙", "yǐ", 13], ["工具", "工具", "gōngjù", 13], ["投篮", "投篮", "tóu lán", 13], ["踩", "踩", "cǎi", 13], ["一再", "一再", "yízài", 13], ["重复", "重复", "chóngfù", 13], ["断断续续", "断断续续", "duànduàn-xùxù", 13], ["激烈", "激烈", "jīliè", 13], ["气氛", "气氛", "qìfēn", 13], ["何况", "何况", "hékuàng", 13], ["球迷", "球迷", "qiúmí", 13], ["顺畅", "顺畅", "shùnchàng", 13], ["工程师", "工程师", "gōngchéngshī", 13], ["机器", "机器", "jīqì", 13], ["幼儿园", "幼儿园", "yòu'éryuán", 13], ["好奇", "好奇", "hàoqí", 13], ["何必", "何必", "hébì", 13], ["锯子", "锯（子）", "jù(zi)", 13], ["多亏", "多亏", "duōkuī", 13], ["连忙", "连忙", "liánmáng", 13], ["瞧", "瞧", "qiáo", 13], ["困扰", "困扰", "kùnrǎo", 13], ["思维", "思维", "sīwéi", 13], ["呆", "呆", "dāi", 13], ["造成", "造成", "zàochéng", 13], ["仿佛", "仿佛", "fǎngfú", 13], ["阻碍", "阻碍", "zǔ'ài", 13], ["马萨诸塞州", "马萨诸塞州", "Mǎsàzhūsài Zhōu", 13], ["詹姆士·奈史密斯", "詹姆士·奈史密斯", "Zhānmǔshì Nàishǐmìsī", 13], ["四合院", "四合院", "sìhéyuàn", 14], ["民居", "民居", "mínjū", 14], ["建筑", "建筑", "jiànzhù", 14], ["形式", "形式", "xíngshì", 14], ["样式", "样式", "yàngshì", 14], ["方", "方", "fāng", 14], ["空间", "空间", "kōngjiān", 14], ["厢房", "厢房", "xiāngfáng", 14], ["走廊", "走廊", "zǒuláng", 14], ["组合", "组合", "zǔhé", 14], ["组成", "组成", "zǔchéng", 14], ["并列", "并列", "bìngliè", 14], ["具备", "具备", "jùbèi", 14], ["功能", "功能", "gōngnéng", 14], ["代表", "代表", "dàibiǎo", 14], ["广泛", "广泛", "guǎngfàn", 14], ["通常", "通常", "tōngcháng", 14], ["充分", "充分", "chōngfèn", 14], ["长辈", "长辈", "zhǎngbèi", 14], ["日常", "日常", "rìcháng", 14], ["起居", "起居", "qǐjū", 14], ["接待", "接待", "jiēdài", 14], ["日子", "日子", "rìzi", 14], ["打交道", "打交道", "dǎ jiāodào", 14], ["亲切", "亲切", "qīnqiè", 14], ["矛盾", "矛盾", "máodùn", 14], ["浓", "浓", "nóng", 14], ["情趣", "情趣", "qíngqù", 14], ["创造", "创造", "chuàngzào", 14], ["劳动", "劳动", "láodòng", 14], ["人民", "人民", "rénmín", 14], ["种", "种", "zhòng", 14], ["竹子", "竹子", "zhúzi", 14], ["金鱼", "金鱼", "jīnyú", 14], ["关闭", "关闭", "guānbì", 14], ["封闭", "封闭", "fēngbì", 14], ["所谓", "所谓", "suǒwèi", 14], ["则", "则", "zé", 14], ["因而", "因而", "yīn'ér", 14], ["为", "为", "wéi", 14], ["令", "令", "lìng", 14], ["华北", "华北", "Huáběi", 14], ["军事", "军事", "jūnshì", 15], ["军队", "军队", "jūnduì", 15], ["敌人", "敌（人）", "dí (rén)", 15], ["作战", "作战", "zuòzhàn", 15], ["阵地", "阵地", "zhèndì", 15], ["守", "守", "shǒu", 15], ["进攻", "进攻", "jìngōng", 15], ["派", "派", "pài", 15], ["调动", "调（动）", "diào (dòng)", 15], ["命令", "命令", "mìnglìng", 15], ["形势", "形势", "xíngshì", 15], ["弱", "弱", "ruò", 15], ["挑战", "挑战", "tiǎozhàn", 15], ["胜利", "胜利", "shènglì", 15], ["方案", "方案", "fāng'àn", 15], ["散布", "散布", "sànbù", 15], ["谣言", "谣言", "yáoyán", 15], ["上当", "上当", "shàng dàng", 15], ["骂", "骂", "mà", 15], ["胆小鬼", "胆小鬼", "dǎnxiǎoguǐ", 15], ["糊涂", "糊涂", "hútu", 15], ["任命", "任命", "rènmìng", 15], ["阻止", "阻止", "zǔzhǐ", 15], ["再三", "再三", "zàisān", 15], ["纸上谈兵", "纸上谈兵", "zhǐshàng-tánbīng", 15], ["理论", "理论", "lǐlùn", 15], ["道理", "道理", "dàolǐ", 15], ["毛病", "毛病", "máobìng", 15], ["盲目", "盲目", "mángmù", 15], ["轻视", "轻视", "qīngshì", 15], ["独立", "独立", "dúlì", 15], ["资格", "资格", "zīgé", 15], ["灵活", "灵活", "línghuó", 15], ["宝贵", "宝贵", "bǎoguì", 15], ["讽刺", "讽刺", "fěngcì", 15], ["绝对", "绝对", "juéduì", 15], ["主动", "主动", "zhǔdòng", 15], ["公元", "公元", "gōngyuán", 15], ["迟早", "迟早", "chízǎo", 15], ["战国", "战国", "Zhànguó", 15], ["秦国", "秦国 / 赵国", "Qínguó / Zhàoguó", 15], ["赵奢", "赵奢 / 赵括", "Zhào Shē / Zhào Kuò", 15], ["廉颇", "廉颇", "Lián Pō", 15], ["报道", "报道", "bàodào", 16], ["总共", "总共", "zǒnggòng", 16], ["参与", "参与", "cānyù", 16], ["人员", "人员", "rényuán", 16], ["志愿者", "志愿者", "zhìyuànzhě", 16], ["类型", "类型", "lèixíng", 16], ["相对", "相对", "xiāngduì", 16], ["称", "称", "chēng", 16], ["可靠", "可靠", "kěkào", 16], ["纳入", "纳入", "nàrù", 16], ["跟踪", "跟踪", "gēnzōng", 16], ["分析", "分析", "fēnxī", 16], ["成果", "成果", "chéngguǒ", 16], ["表明", "表明", "biǎomíng", 16], ["联合", "联合", "liánhé", 16], ["波动", "波动", "bōdòng", 16], ["模式", "模式", "móshì", 16], ["升", "升", "shēng", 16], ["达到", "达到", "dá dào", 16], ["趋势", "趋势", "qūshì", 16], ["差异", "差异", "chāyì", 16], ["存在", "存在", "cúnzài", 16], ["明显", "明显", "míngxiǎn", 16], ["清晰", "清晰", "qīngxī", 16], ["现象", "现象", "xiànxiàng", 16], ["意外", "意外", "yìwài", 16], ["立即", "立即", "lìjí", 16], ["临时", "临时", "línshí", 16], ["补偿", "补偿", "bǔcháng", 16], ["节食", "节食", "jiéshí", 16], ["营养", "营养", "yíngyǎng", 16], ["摄入", "摄入", "shèrù", 16], ["就餐", "就餐", "jiùcān", 16], ["放纵", "放纵", "fàngzòng", 16], ["苗条", "苗条", "miáotiao", 16], ["借口", "借口", "jièkǒu", 16], ["即", "即", "jí", 16], ["个别", "个别", "gèbié", 16], ["非", "非", "fēi", 16], ["采取", "采取", "cǎiqǔ", 16], ["措施", "措施", "cuòshī", 16], ["事物", "事物", "shìwù", 17], ["高峰", "高峰", "gāofēng", 17], ["终点", "终点", "zhōngdiǎn", 17], ["迅速", "迅速", "xùnsù", 17], ["深刻", "深刻", "shēnkè", 17], ["戏剧", "戏剧", "xìjù", 17], ["投入", "投入", "tóurù", 17], ["服装", "服装", "fúzhuāng", 17], ["化妆", "化妆", "huà zhuāng", 17], ["道具", "道具", "dàojù", 17], ["美术", "美术", "měishù", 17], ["良好", "良好", "liánghǎo", 17], ["争取", "争取", "zhēngqǔ", 17], ["忽视", "忽视", "hūshì", 17], ["魅力", "魅力", "mèilì", 17], ["糟糕", "糟糕", "zāogāo", 17], ["以", "以", "yǐ", 17], ["婚礼", "婚礼", "hūnlǐ", 17], ["等于", "等于", "děngyú", 17], ["度过", "度过", "dùguò", 17], ["告别", "告别", "gàobié", 17], ["平常", "平常", "píngcháng", 17], ["依然", "依然", "yīrán", 17], ["推荐", "推荐", "tuījiàn", 17], ["淋漓尽致", "淋漓尽致", "línlí-jìnzhì", 17], ["评价", "评价", "píngjià", 17], ["烂", "烂", "làn", 17], ["主持", "主持", "zhǔchí", 17], ["运用", "运用", "yùnyòng", 17], ["开幕式", "开幕式", "kāimùshì", 17], ["宁可", "宁可", "nìngkě", 17], ["集中", "集中", "jízhōng", 17], ["体会", "体会", "tǐhuì", 17], ["诺贝尔奖", "诺贝尔奖", "Nuòbèi'ěr Jiǎng", 17], ["丹尼尔·卡内曼", "丹尼尔·卡内曼", "Dānní'ěr Kǎnèimàn", 17], ["峰终定律", "峰终定律", "Fēngzhōng Dìnglǜ", 17], ["抽象", "抽象", "chōuxiàng", 18], ["古典", "古典", "gǔdiǎn", 18], ["欣赏", "欣赏", "xīnshǎng", 18], ["作品", "作品", "zuòpǐn", 18], ["布", "布", "bù", 18], ["规则", "规则", "guīzé", 18], ["派", "派", "pài", 18], ["洒", "洒", "sǎ", 18], ["设计", "设计", "shèjì", 18], ["组", "组", "zǔ", 18], ["幅", "幅", "fú", 18], ["布局", "布局", "bùjú", 18], ["元素", "元素", "yuánsù", 18], ["位置", "位置", "wèizhì", 18], ["出自", "出自", "chūzì", 18], ["业余", "业余", "yèyú", 18], ["婴儿", "婴儿", "yīng'ér", 18], ["黑猩猩", "黑猩猩", "hēixīngxing", 18], ["涂鸦", "涂鸦", "túyā", 18], ["签", "签", "qiān", 18], ["其余", "其余", "qíyú", 18], ["身份", "身份", "shēnfèn", 18], ["确认", "确认", "quèrèn", 18], ["随手", "随手", "suíshǒu", 18], ["分辨", "分辨", "fēnbiàn", 18], ["挥", "挥", "huī", 18], ["极其", "极其", "jíqí", 18], ["神秘", "神秘", "shénmì", 18], ["丑陋", "丑（陋）", "chǒu(lòu)", 18], ["自由", "自由", "zìyóu", 18], ["活跃", "活跃", "huóyuè", 18], ["调整", "调整", "tiáozhěng", 18], ["含意", "含意", "hányì", 18], ["区域", "区域", "qūyù", 18], ["可见", "可见", "kějiàn", 18], ["哪怕", "哪怕", "nǎpà", 18], ["事实", "事实", "shìshí", 18], ["目前", "目前", "mùqián", 18], ["证据", "证据", "zhèngjù", 18], ["话题", "话题", "huàtí", 18], ["家乡", "家乡", "jiāxiāng", 19], ["萝卜", "萝卜", "luóbo", 19], ["怀念", "怀念", "huáiniàn", 19], ["想念", "想念", "xiǎngniàn", 19], ["色彩", "色彩", "sècǎi", 19], ["青", "青", "qīng", 19], ["紫", "紫", "zǐ", 19], ["赏心悦目", "赏心悦目", "shǎngxīn-yuèmù", 19], ["清淡", "清淡", "qīngdàn", 19], ["可口", "可口", "kěkǒu", 19], ["口味", "口味", "kǒuwèi", 19], ["夸", "夸", "kuā", 19], ["橘子", "橘子", "júzi", 19], ["梨", "梨", "lí", 19], ["炒", "炒", "chǎo", 19], ["煮", "煮", "zhǔ", 19], ["油炸", "油炸", "yóuzhá", 19], ["切", "切", "qiē", 19], ["丝", "丝", "sī", 19], ["搅拌", "搅拌", "jiǎobàn", 19], ["均匀", "均匀", "jūnyún", 19], ["原料", "原料", "yuánliào", 19], ["擀", "擀", "gǎn", 19], ["薄", "薄", "báo", 19], ["折叠", "折叠", "zhédié", 19], ["透明", "透明", "tòumíng", 19], ["淋", "淋", "lín", 19], ["圈", "圈", "quān", 19], ["烫", "烫", "tàng", 19], ["盖", "盖", "gài", 19], ["预防", "预防", "yùfáng", 19], ["糊", "糊", "hú", 19], ["文火", "文火", "wénhuǒ", 19], ["闻", "闻", "wén", 19], ["趁", "趁", "chèn", 19], ["少许", "少许", "shǎoxǔ", 19], ["酱油", "酱油", "jiàngyóu", 19], ["醋", "醋", "cù", 19], ["焦", "焦", "jiāo", 19], ["嫩", "嫩", "nèn", 19], ["般", "般", "bān", 19], ["特色", "特色", "tèsè", 19], ["痰", "痰", "tán", 19], ["平安", "平安", "píng’ān", 19], ["连环画", "连环画", "liánhuánhuà", 20], ["出版", "出版", "chūbǎn", 20], ["年代", "年代", "niándài", 20], ["单调", "单调", "dāndiào", 20], ["网络", "网络", "wǎngluò", 20], ["动画片", "动画片", "dònghuàpiàn", 20], ["娱乐", "娱乐", "yúlè", 20], ["无数", "无数", "wúshù", 20], ["青少年", "青少年", "qīng-shàonián", 20], ["成人", "成人", "chéngrén", 20], ["摊", "摊", "tān", 20], ["棚子", "棚子", "péngzi", 20], ["砖头", "砖头", "zhuāntóu", 20], ["支", "支", "zhī", 20], ["粗糙", "粗糙", "cūcāo", 20], ["木头", "木头", "mùtou", 20], ["题材", "题材", "tícái", 20], ["翻", "翻", "fān", 20], ["搭", "搭", "dā", 20], ["整齐", "整齐", "zhěngqí", 20], ["年纪", "年纪", "niánjì", 20], ["身材", "身材", "shēncái", 20], ["从事", "从事", "cóngshì", 20], ["册", "册", "cè", 20], ["假如", "假如", "jiǎrú", 20], ["登记", "登记", "dēngjì", 20], ["记录", "记录", "jìlù", 20], ["手续", "手续", "shǒuxù", 20], ["办理", "办理", "bànlǐ", 20], ["押金", "押金", "yājīn", 20], ["凭", "凭", "píng", 20], ["毫无", "毫无", "háowú", 20], ["疑问", "疑问", "yíwèn", 20], ["印刷", "印刷", "yìnshuā", 20], ["涨", "涨", "zhǎng", 20], ["收藏", "收藏", "shōucáng", 20], ["潘家园", "潘家园", "Pānjiāyuán", 20], ["护国寺", "护国寺", "Hùguósì", 20], ["情缘", "情缘", "qíngyuán", 21], ["逻辑", "逻辑", "luójí", 21], ["硬", "硬", "yìng", 21], ["死记硬背", "死记硬背", "sǐjì-yìngbèi", 21], ["偶然", "偶然", "ǒurán", 21], ["演变", "演变", "yǎnbiàn", 21], ["遗憾", "遗憾", "yíhàn", 21], ["最初", "最初", "zuìchū", 21], ["痛苦", "痛苦", "tòngkǔ", 21], ["心脏", "心脏", "xīnzàng", 21], ["思考", "思考", "sīkǎo", 21], ["抓紧", "抓紧", "zhuā jǐn", 21], ["尽快", "尽快", "jǐnkuài", 21], ["经典", "经典", "jīngdiǎn", 21], ["库", "库", "kù", 21], ["输入", "输入", "shūrù", 21], ["元旦", "元旦", "yuándàn", 21], ["疾病", "疾病", "jíbìng", 21], ["创办", "创办", "chuàngbàn", 21], ["克服", "克服", "kèfú", 21], ["公开", "公开", "gōngkāi", 21], ["微博", "微博", "wēibó", 21], ["称呼", "称呼", "chēnghu", 21], ["收集", "收集", "shōují", 21], ["包含", "包含", "bāohán", 21], ["繁体", "繁体（字）", "fántǐ(zì)", 21], ["简体", "简体（字）", "jiǎntǐ(zì)", 21], ["方言", "方言", "fāngyán", 21], ["称赞", "称赞", "chēngzàn", 21], ["真相", "真相", "zhēnxiàng", 21], ["佩服", "佩服", "pèifú", 21], ["开放", "开放", "kāifàng", 21], ["下载", "下载", "xiàzài", 21], ["识别", "识别", "shíbié", 21], ["查询", "查询", "cháxún", 21], ["单位", "单位", "dānwèi", 21], ["物理", "物理", "wùlǐ", 21], ["完善", "完善", "wánshàn", 21], ["退休", "退休", "tuìxiū", 21], ["日程", "日程", "rìchéng", 21], ["追求", "追求", "zhuīqiú", 21], ["梦想", "梦想", "mèngxiǎng", 21], ["理查德·希尔斯", "理查德·希尔斯", "Lǐchádé Xī’ěrsī", 21], ["《说文解字》", "《说文解字》", "Shuōwén Jiězì", 21], ["北京师范大学", "北京师范大学", "Běijīng Shīfàn Dàxué", 21], ["过分", "过分", "guòfèn", 22], ["强调", "强调", "qiángdiào", 22], ["作文", "作文", "zuòwén", 22], ["观点", "观点", "guāndiǎn", 22], ["观念", "观念", "guānniàn", 22], ["客观", "客观", "kèguān", 22], ["全面", "全面", "quánmiàn", 22], ["转变", "转变", "zhuǎnbiàn", 22], ["主张", "主张", "zhǔzhāng", 22], ["单纯", "单纯", "dānchún", 22], ["理由", "理由", "lǐyóu", 22], ["价值", "价值", "jiàzhí", 22], ["火柴", "火柴", "huǒchái", 22], ["灰", "灰", "huī", 22], ["王宫", "王宫", "wánggōng", 22], ["王子", "王子", "wángzǐ", 22], ["童话", "童话", "tónghuà", 22], ["属于", "属于", "shǔyú", 22], ["对待", "对待", "duìdài", 22], ["交换", "交换", "jiāohuàn", 22], ["拥有", "拥有", "yōngyǒu", 22], ["巨大", "巨大", "jùdà", 22], ["承认", "承认", "chéngrèn", 22], ["人性", "人性", "rénxìng", 22], ["完美", "完美", "wánměi", 22], ["难免", "难免", "nánmiǎn", 22], ["疼爱", "疼爱", "téng’ài", 22], ["平等", "平等", "píngděng", 22], ["自私", "自私", "zìsī", 22], ["倾向", "倾向", "qīngxiàng", 22], ["道德", "道德", "dàodé", 22], ["一旦", "一旦", "yídàn", 22], ["自从", "自从", "zìcóng", 22], ["知感", "知感", "zhīgǎn", 22], ["《卖火柴的小女孩儿》", "《卖火柴的小女孩儿》", "Mài Huǒchái de Xiǎo Nǚháir", 22], ["灰姑娘", "灰姑娘", "Huīgūniang", 22], ["乖", "乖", "guāi", 23], ["刻苦", "刻苦", "kèkǔ", 23], ["遵守", "遵守", "zūnshǒu", 23], ["纪律", "纪律", "jìlǜ", 23], ["征求", "征求", "zhēngqiú", 23], ["念", "念", "niàn", 23], ["基本", "基本", "jīběn", 23], ["阶段", "阶段", "jiēduàn", 23], ["亲爱", "亲爱", "qīn’ài", 23], ["违反", "违反", "wéifǎn", 23], ["规矩", "规矩", "guīju", 23], ["能干", "能干", "nénggàn", 23], ["讲座", "讲座", "jiǎngzuò", 23], ["出席", "出席", "chūxí", 23], ["酒吧", "酒吧", "jiǔbā", 23], ["担任", "担任", "dānrèn", 23], ["主席", "主席", "zhǔxí", 23], ["组织", "组织", "zǔzhī", 23], ["外交", "外交", "wàijiāo", 23], ["经商", "经商", "jīng shāng", 23], ["目标", "目标", "mùbiāo", 23], ["系", "系", "xì", 23], ["名牌", "名牌", "míngpái", 23], ["录取", "录取", "lùqǔ", 23], ["面临", "面临", "miànlín", 23], ["一致", "一致", "yízhì", 23], ["让步", "让步", "ràng bù", 23], ["隐约", "隐约", "yǐnyuē", 23], ["陌生", "陌生", "mòshēng", 23], ["某", "某", "mǒu", 23], ["建立", "建立", "jiànlì", 23], ["单独", "单独", "dāndú", 23], ["沟通", "沟通", "gōutōng", 23], ["横", "横", "héng", 23], ["沙滩", "沙滩", "shātān", 23], ["沉默", "沉默", "chénmò", 23], ["吻", "吻", "wěn", 23], ["忍不住", "忍不住", "rěnbuzhù", 23], ["幸亏", "幸亏", "xìngkuī", 23], ["暗", "暗", "àn", 23], ["文文", "文文", "Wénwen", 23], ["欧盟", "欧盟", "Ōu Méng", 23], ["牛津大学", "牛津大学", "Niújīn Dàxué", 23], ["洛杉矶", "洛杉矶", "Luòshānjī", 23], ["夏威夷", "夏威夷", "Xiàwēiyí", 23], ["支教", "支教", "zhī jiào", 24], ["行动", "行动", "xíngdòng", 24], ["家访", "家访", "jiāfǎng", 24], ["发言", "发言", "fā yán", 24], ["及格", "及格", "jí gé", 24], ["交往", "交往", "jiāowǎng", 24], ["家务", "家务", "jiāwù", 24], ["体贴", "体贴", "tǐtiē", 24], ["排练", "排练", "páiliàn", 24], ["蝴蝶", "蝴蝶", "húdié", 24], ["舞蹈", "舞蹈", "wǔdǎo", 24], ["冠军", "冠军", "guànjūn", 24], ["鼓掌", "鼓掌", "gǔ zhǎng", 24], ["用功", "用功", "yònggōng", 24], ["进步", "进步", "jìnbù", 24], ["题目", "题目", "tímù", 24], ["朗读", "朗读", "lǎngdú", 24], ["温柔", "温柔", "wēnróu", 24], ["热烈", "热烈", "rèliè", 24], ["勇气", "勇气", "yǒngqì", 24], ["青壮年", "青壮年", "qīng-zhuàngnián", 24], ["闯", "闯", "chuǎng", 24], ["留守", "留守", "liúshǒu", 24], ["主题", "主题", "zhǔtí", 24], ["地理", "地理", "dìlǐ", 24], ["采访", "采访", "cǎifǎng", 24], ["利用", "利用", "lìyòng", 24], ["空闲", "空闲", "kòngxián", 24], ["指导", "指导", "zhǐdǎo", 24], ["培训", "培训", "péixùn", 24], ["建设", "建设", "jiànshè", 24], ["操心", "操心", "cāo xīn", 24], ["承担", "承担", "chéngdān", 24], ["义务", "义务", "yìwù", 24], ["艰巨", "艰巨", "jiānjù", 24], ["力量", "力量", "lìliàng", 24], ["收获", "收获", "shōuhuò", 24], ["云南", "云南", "Yúnnán", 24], ["郝琳硕", "郝琳硕", "Hǎo Línshuò", 24], ["赵福根", "赵福根", "Zhào Fúgēn", 24], ["返航", "返航", "fǎnháng", 25], ["恶劣", "恶劣", "èliè", 25], ["可怕", "可怕", "kěpà", 25], ["风浪", "风浪", "fēnglàng", 25], ["慌张", "慌张", "huāngzhāng", 25], ["舱", "舱", "cāng", 25], ["使劲", "使劲（儿）", "shǐ jìn(r)", 25], ["朝", "朝", "cháo", 25], ["简直", "简直", "jiǎnzhí", 25], ["沉", "沉", "chén", 25], ["严肃", "严肃", "yánsù", 25], ["猛烈", "猛烈", "měngliè", 25], ["狂", "狂", "kuáng", 25], ["威胁", "威胁", "wēixié", 25], ["平衡", "平衡", "pínghéng", 25], ["吨", "吨", "dūn", 25], ["钢铁", "钢铁", "gāngtiě", 25], ["根基", "根基", "gēnjī", 25], ["重量", "重量", "zhòngliàng", 25], ["相似", "相似", "xiāngsì", 25], ["风景", "风景", "fēngjǐng", 25], ["窄", "窄", "zhǎi", 25], ["万丈", "万丈", "wànzhàng", 25], ["深渊", "深渊", "shēnyuān", 25], ["游览", "游览", "yóulǎn", 25], ["发抖", "发抖", "fādǒu", 25], ["负重", "负重", "fùzhòng", 25], ["摔倒", "摔倒", "shuāidǎo", 25], ["妇女", "妇女", "fùnǚ", 25], ["起", "起", "qǐ", 25], ["丝毫", "丝毫", "sīháo", 25], ["滚", "滚", "gǔn", 25], ["风险", "风险", "fēngxiǎn", 25], ["谨慎", "谨慎", "jǐnshèn", 25], ["效应", "效应", "xiàoyìng", 25], ["胸", "胸", "xiōng", 25], ["承受", "承受", "chéngshòu", 25], ["和尚", "和尚", "héshang", 25], ["钟", "钟", "zhōng", 25], ["彻底", "彻底", "chèdǐ", 25], ["忙碌", "忙碌", "mánglù", 26], ["被动", "被动", "bèidòng", 26], ["奴隶", "奴隶", "núlì", 26], ["虚伪", "虚伪", "xūwěi", 26], ["思想", "思想", "sīxiǎng", 26], ["反省", "反省", "fǎnxǐng", 26], ["据说", "据说", "jùshuō", 26], ["个性", "个性", "gèxìng", 26], ["冒险", "冒险", "mào xiǎn", 26], ["丛林", "丛林", "cónglín", 26], ["文明", "文明", "wénmíng", 26], ["纪录", "纪录", "jìlù", 26], ["雇", "雇", "gù", 26], ["来", "来", "lái", 26], ["批", "批", "pī", 26], ["出色", "出色", "chūsè", 26], ["健步如飞", "健步如飞", "jiànbù-rúfēi", 26], ["一连", "一连", "yīlián", 26], ["耽误", "耽误", "dānwù", 26], ["至于", "至于", "zhìyú", 26], ["投资", "投资", "tóu zī", 26], ["人物", "人物", "rénwù", 26], ["得罪", "得罪", "dézuì", 26], ["总算", "总算", "zǒngsuàn", 26], ["搞", "搞", "gǎo", 26], ["习俗", "习俗", "xísú", 26], ["灵魂", "灵魂", "línghún", 26], ["疲劳", "疲劳", "píláo", 26], ["哲理", "哲理", "zhélǐ", 26], ["提倡", "提倡", "tíchàng", 26], ["步骤", "步骤", "bùzhòu", 26], ["闭关", "闭关", "bìguān", 26], ["一律", "一律", "yílǜ", 26], ["寂寞", "寂寞", "jìmò", 26], ["效率", "效率", "xiàolǜ", 26], ["印加", "印加", "Yìnjiā", 26], ["比尔·盖茨", "比尔·盖茨", "Bǐ’ěr Gàicí", 26], ["象棋", "（象）棋", "(xiàng)qí", 27], ["教练", "教练", "jiàoliàn", 27], ["答应", "答应", "dāying", 27], ["损失", "损失", "sǔnshī", 27], ["睁", "睁", "zhēng", 27], ["眼睁睁", "眼睁睁", "yǎnzhēngzhēng", 27], ["将军", "将军", "jiāngjūn", 27], ["服气", "服气", "fúqì", 27], ["运气", "运气", "yùnqi", 27], ["局", "局", "jú", 27], ["发挥", "发挥", "fāhuī", 27], ["灰心", "灰心", "huīxīn", 27], ["吸取", "吸取", "xīqǔ", 27], ["教训", "教训", "jiàoxùn", 27], ["未必", "未必", "wèibì", 27], ["次要", "次要", "cìyào", 27], ["因素", "因素", "yīnsù", 27], ["在于", "在于", "zàiyú", 27], ["心态", "心态", "xīntài", 27], ["珍惜", "珍惜", "zhēnxī", 27], ["否认", "否认", "fǒurèn", 27], ["观察", "观察", "guānchá", 27], ["失去", "失去", "shīqù", 27], ["期间", "期间", "qījiān", 27], ["把握", "把握", "bǎwò", 27], ["不假思索", "不假思索", "bùjiǎ-sīsuǒ", 27], ["犯", "犯", "fàn", 27], ["过于", "过于", "guòyú", 27], ["舍不得", "舍不得", "shěbude", 27], ["屡", "屡", "lǚ", 27], ["原则", "原则", "yuánzé", 27], ["责备", "责备", "zébèi", 27], ["必然", "必然", "bìrán", 27], ["事先", "事先", "shìxiān", 27], ["后果", "后果", "hòuguǒ", 27], ["届", "届", "jiè", 28], ["本科", "本科", "běnkē", 28], ["面对", "面对", "miànduì", 28], ["乐观", "乐观", "lèguān", 28], ["就业", "就业", "jiù yè", 28], ["实话", "实话", "shíhuà", 28], ["优势", "优势", "yōushì", 28], ["简历", "简历", "jiǎnlì", 28], ["现场", "现场", "xiànchǎng", 28], ["职位", "职位", "zhíwèi", 28], ["体验", "体验", "tǐyàn", 28], ["从此", "从此", "cóngcǐ", 28], ["范围", "范围", "fànwéi", 28], ["初中", "初（级）中（学）", "chū(jí)zhōng(xué)", 28], ["顾问", "顾问", "gùwèn", 28], ["参考", "参考", "cānkǎo", 28], ["成长", "成长", "chéngzhǎng", 28], ["制作", "制作", "zhìzuò", 28], ["才艺", "才艺", "cáiyì", 28], ["假设", "假设", "jiǎshè", 28], ["乘", "乘", "chéng", 28], ["反应", "反应", "fǎnyìng", 28], ["到达", "到达", "dàodá", 28], ["老板", "老板", "lǎobǎn", 28], ["陆续", "陆续", "lùxù", 28], ["提问", "提问", "tíwèn", 28], ["堆", "堆", "duī", 28], ["情侣", "情侣", "qínglǚ", 28], ["制订", "制订", "zhìdìng", 28], ["休闲", "休闲", "xiūxián", 28], ["具体", "具体", "jùtǐ", 28], ["专注", "专注", "zhuānzhù", 28], ["显然", "显然", "xiǎnrán", 28], ["成立", "成立", "chénglì", 28], ["部门", "部门", "bùmén", 28], ["执着", "执着", "zhízhuó", 28], ["光明", "光明", "guāngmíng", 28], ["前途", "前途", "qiántú", 28], ["行业", "行业", "hángyè", 28], ["缺乏", "缺乏", "quēfá", 28], ["刘辰", "刘辰", "Liú Chén", 28], ["天津卫视", "天津卫视", "Tiānjīn Wèishì", 28], ["《非你莫属》", "《非你莫属》", "Fēi Nǐ Mòshǔ", 28], ["培养", "培养", "péiyǎng", 29], ["对手", "对手", "duìshǒu", 29], ["公寓", "公寓", "gōngyù", 29], ["文具", "文具", "wénjù", 29], ["电池", "电池", "diànchí", 29], ["日用品", "日用品", "rìyòngpǐn", 29], ["利润", "利润", "lìrùn", 29], ["诚信", "诚信", "chéngxìn", 29], ["媒体", "媒体", "méitǐ", 29], ["对象", "对象", "duìxiàng", 29], ["营业", "营业", "yíngyè", 29], ["额", "额", "é", 29], ["不如", "不如", "bùrú", 29], ["干脆", "干脆", "gāncuì", 29], ["挤", "挤", "jǐ", 29], ["垮", "垮", "kuǎ", 29], ["垄断", "垄断", "lǒngduàn", 29], ["倒闭", "倒闭", "dǎobì", 29], ["热心", "热心", "rèxīn", 29], ["资金", "资金", "zījīn", 29], ["傻", "傻", "shǎ", 29], ["倒霉", "倒霉", "dǎo méi", 29], ["生态", "生态", "shēngtài", 29], ["商业", "商业", "shāngyè", 29], ["领域", "领域", "lǐngyù", 29], ["适当", "适当", "shìdàng", 29], ["促使", "促使", "cùshǐ", 29], ["生长", "生长", "shēngzhǎng", 29], ["妨碍", "妨碍", "fáng’ài", 29], ["促进", "促进", "cùjìn", 29], ["利益", "利益", "lìyì", 29], ["合理", "合理", "hélǐ", 29], ["万一", "万一", "wànyī", 29], ["维持", "维持", "wéichí", 29], ["饱和", "饱和", "bǎohé", 29], ["不见得", "不见得", "bújiànde", 29], ["建伟", "建伟", "Jiànwěi", 29], ["沙丁鱼", "沙丁鱼", "shādīngyú", 30], ["运输", "运输", "yùnshū", 30], ["岸", "岸", "àn", 30], ["商品", "商品", "shāngpǐn", 30], ["延长", "延长", "yáncháng", 30], ["存活", "存活", "cúnhuó", 30], ["改善", "改善", "gǎishàn", 30], ["无意", "无意", "wúyì", 30], ["巧妙", "巧妙", "qiǎomiào", 30], ["实用", "实用", "shíyòng", 30], ["天敌", "天敌", "tiāndí", 30], ["鲇鱼", "鲇鱼", "niányú", 30], ["设备", "设备", "shèbèi", 30], ["和平", "和平", "hépíng", 30], ["构成", "构成", "gòuchéng", 30], ["逃避", "逃避", "táobì", 30], ["不断", "不断", "búduàn", 30], ["旺盛", "旺盛", "wàngshèng", 30], ["比例", "比例", "bǐlì", 30], ["感想", "感想", "gǎnxiǎng", 30], ["体会", "体会", "tǐhuì", 30], ["概念", "概念", "gàiniàn", 30], ["核心", "核心", "héxīn", 30], ["刺激", "刺激", "cìjī", 30], ["活力", "活力", "huólì", 30], ["落后", "落后", "luòhòu", 30], ["本质", "本质", "běnzhì", 30], ["员工", "员工", "yuángōng", 30], ["危机", "危机", "wēijī", 30], ["有利", "有利", "yǒulì", 30], ["挖掘", "挖掘", "wājué", 30], ["潜力", "潜力", "qiánlì", 30], ["决赛", "决赛", "juésài", 30], ["接近", "接近", "jiējìn", 30], ["佳", "佳", "jiā", 30], ["的确", "的确", "díquè", 30], ["门槛", "门槛", "ménkǎn", 31], ["报社", "报社", "bàoshè", 31], ["编辑", "编辑", "biānjí", 31], ["嗯", "嗯", "ǹg", 31], ["轻易", "轻易", "qīngyì", 31], ["处理", "处理", "chǔlǐ", 31], ["社区", "社区", "shèqū", 31], ["劝", "劝", "quàn", 31], ["圆", "圆", "yuán", 31], ["标志", "标志", "biāozhì", 31], ["出示", "出示", "chūshì", 31], ["赞成", "赞成", "zànchéng", 31], ["请愿书", "请愿书", "qǐngyuànshū", 31], ["恋爱", "恋爱", "liàn’ài", 31], ["迫切", "迫切", "pòqiè", 31], ["犹豫", "犹豫", "yóuyù", 31], ["冷淡", "冷淡", "lěngdàn", 31], ["无所谓", "无所谓", "wúsuǒwèi", 31], ["值班", "值班", "zhí bān", 31], ["报告", "报告", "bàogào", 31], ["八成（儿）", "八成（儿）", "bāchéng(r)", 31], ["模糊", "模糊", "móhu", 31], ["狡猾", "狡猾", "jiǎohuá", 31], ["了不起", "了不起", "liǎobuqǐ", 31], ["身段", "身段", "shēnduàn", 31], ["缩短", "缩短", "suōduǎn", 31], ["看不起", "看不起", "kànbuqǐ", 31], ["谦虚", "谦虚", "qiānxū", 31], ["实践", "实践", "shíjiàn", 31], ["消失", "消失", "xiāoshī", 32], ["洪水", "洪水", "hóngshuǐ", 32], ["地震", "地震", "dìzhèn", 32], ["破坏", "破坏", "pòhuài", 32], ["砍", "砍", "kǎn", 32], ["生存", "生存", "shēngcún", 32], ["沙漠", "沙漠", "shāmò", 32], ["公布", "公布", "gōngbù", 32], ["数据", "数据", "shùjù", 32], ["真实", "真实", "zhēnshí", 32], ["夸张", "夸张", "kuāzhāng", 32], ["资源", "资源", "zīyuán", 32], ["车祸", "车祸", "chēhuò", 32], ["不安", "不安", "bù’ān", 32], ["工业", "工业", "gōngyè", 32], ["农业", "农业", "nóngyè", 32], ["生产", "生产", "shēngchǎn", 32], ["大型", "大型", "dàxíng", 32], ["工厂", "工厂", "gōngchǎng", 32], ["废", "废", "fèi", 32], ["燃烧", "燃烧", "ránshāo", 32], ["煤炭", "煤炭", "méitàn", 32], ["密切", "密切", "mìqiè", 32], ["尾气", "尾气", "wěiqì", 32], ["幸运", "幸运", "xìngyùn", 32], ["敏感", "敏感", "mǐngǎn", 32], ["自觉", "自觉", "zìjué", 32], ["设施", "设施", "shèshī", 32], ["能源", "能源", "néngyuán", 32], ["逐步", "逐步", "zhúbù", 32], ["尽量", "尽量", "jǐnliàng", 32], ["私人", "私（人）", "sī(rén)", 32], ["尊敬", "尊敬", "zūnjìng", 32], ["鼓舞", "鼓舞", "gǔwǔ", 32], ["消极", "消极", "xiāojí", 32], ["幻想", "幻想", "huànxiǎng", 32], ["贡献", "贡献", "gòngxiàn", 32], ["命运", "命运", "mìngyùn", 32], ["掌握", "掌握", "zhǎngwò", 32], ["缓解", "缓解", "huǎnjiě", 33], ["招", "招（儿）", "zhāo(r)", 33], ["繁荣", "繁荣", "fánróng", 33], ["体现", "体现", "tǐxiàn", 33], ["拥挤", "拥挤", "yōngjǐ", 33], ["家常", "家常", "jiācháng", 33], ["面积", "面积", "miànjī", 33], ["宽", "宽", "kuān", 33], ["主观", "主观", "zhǔguān", 33], ["扩大", "扩（大）", "kuò(dà)", 33], ["根治", "根治", "gēnzhì", 33], ["不妨", "不妨", "bùfáng", 33], ["展开", "展开", "zhǎnkāi", 33], ["归纳", "归纳", "guīnà", 33], ["虚心", "虚心", "xūxīn", 33], ["咨询", "咨询", "zīxún", 33], ["中旬", "中旬", "zhōngxún", 33], ["照常", "照常", "zhàocháng", 33], ["健身", "健身", "jiàn shēn", 33], ["图", "图", "tú", 33], ["受伤", "受（伤）", "shòu (shāng)", 33], ["保险", "保险", "bǎoxiǎn", 33], ["赔偿", "赔偿", "péicháng", 33], ["政府", "政府", "zhèngfǔ", 33], ["批准", "批准", "pīzhǔn", 33], ["改革", "改革", "gǎigé", 33], ["取消", "取消", "qǔxiāo", 33], ["行人", "行人", "xíngrén", 33], ["广场", "广场", "guǎngchǎng", 33], ["商务", "商务", "shāngwù", 33], ["大厦", "大厦", "dàshà", 33], ["自愿", "自愿", "zìyuàn", 33], ["难怪", "难怪", "nánguài", 33], ["与其", "与其", "yǔqí", 33], ["汽油", "汽油", "qìyóu", 33], ["明确", "明确", "míngquè", 33], ["期待", "期待", "qīdài", 33], ["解放", "解放", "jiěfàng", 33], ["佩·詹森", "佩·詹森", "Pèi Zhānsēn", 33], ["欧洲环境保护署", "欧洲环境保护署", "Ōuzhōu Huánjìng Bǎohù Shǔ", 33], ["接触", "接触", "jiēchù", 34], ["特征", "特征", "tèzhēng", 34], ["翅膀", "翅膀", "chìbǎng", 34], ["昆虫", "昆虫", "kūnchóng", 34], ["天空", "天空", "tiānkōng", 34], ["区分", "区分", "qūfēn", 34], ["唯一", "唯一", "wéiyī", 34], ["斑", "斑", "bān", 34], ["充当", "充当", "chōngdāng", 34], ["总之", "总之", "zǒngzhī", 34], ["角色", "角色", "juésè", 34], ["爱惜", "爱惜", "àixī", 34], ["保养", "保养", "bǎoyǎng", 34], ["反复", "反复", "fǎnfù", 34], ["啄", "啄", "zhuó", 34], ["随身", "随身", "suíshēn", 34], ["梳子", "梳子", "shūzi", 34], ["光滑", "光滑", "guānghuá", 34], ["抓", "抓", "zhuā", 34], ["寄生", "寄生", "jìshēng", 34], ["肥皂", "肥皂", "féizào", 34], ["种类", "种类", "zhǒnglèi", 34], ["概括", "概括", "gàikuò", 34], ["岛屿", "岛屿", "dǎoyǔ", 34], ["知更鸟", "知更鸟", "zhīgēngniǎo", 34], ["坑", "坑", "kēng", 34], ["池塘", "池塘", "chítáng", 34], ["老鹰", "老鹰", "lǎoyīng", 34], ["痛快", "痛快", "tòngkuài", 34], ["迎接", "迎接", "yíngjiē", 34], ["洗礼", "洗礼", "xǐlǐ", 34], ["沙子", "沙子", "shāzi", 34], ["干燥", "干燥", "gānzào", 34], ["秘密", "秘密", "mìmì", 34], ["炎热", "炎热", "yánrè", 35], ["歇", "歇", "xiē", 35], ["开水", "开水", "kāishuǐ", 35], ["冰激凌", "冰激凌", "bīngjīlíng", 35], ["肌肉", "肌肉", "jīròu", 35], ["恢复", "恢复", "huīfù", 35], ["湿润", "湿润", "shīrùn", 35], ["荫凉", "荫凉", "yìnliáng", 35], ["指挥", "指挥", "zhǐhuī", 35], ["赶快", "赶快", "gǎnkuài", 35], ["汗腺", "汗腺", "hànxiàn", 35], ["毛孔", "毛孔", "máokǒng", 35], ["冒", "冒", "mào", 35], ["片", "片", "piàn", 35], ["常识", "常识", "chángshí", 35], ["根", "根", "gēn", 35], ["吸收", "吸收", "xīshōu", 35], ["控制", "控制", "kòngzhì", 35], ["成分", "成分", "chéngfèn", 35], ["梢", "梢", "shāo", 35], ["管子", "管子", "guǎnzi", 35], ["玻璃", "玻璃", "bōli", 35], ["测验", "测验", "cèyàn", 35], ["根本", "根本", "gēnběn", 35], ["枝干", "枝干", "zhīgàn", 35], ["释放", "释放", "shìfàng", 35], ["自动", "自动", "zìdòng", 35], ["补充", "补充", "bǔchōng", 35], ["抽", "抽", "chōu", 35], ["蒸腾", "蒸腾", "zhēngténg", 35], ["特殊", "特殊", "tèshū", 35], ["内部", "内部", "nèibù", 35], ["系统", "系统", "xìtǒng", 35], ["状况", "状况", "zhuàngkuàng", 35], ["秩序", "秩序", "zhìxù", 35], ["养", "养", "yǎng", 36], ["除非", "除非", "chúfēi", 36], ["奋斗", "奋斗", "fèndòu", 36], ["乐趣", "乐趣", "lèqù", 36], ["在乎", "在乎", "zàihu", 36], ["朵", "朵", "duǒ", 36], ["剪刀", "剪刀", "jiǎndāo", 36], ["捡", "捡", "jiǎn", 36], ["装饰", "装饰", "zhuāngshì", 36], ["结合", "结合", "jiéhé", 36], ["暴雨", "暴雨", "bàoyǔ", 36], ["紧急", "紧急", "jǐnjí", 36], ["劳驾", "劳驾", "láo jià", 36], ["抢救", "抢救", "qiǎngjiù", 36], ["腰", "腰", "yāo", 36], ["直", "直", "zhí", 36], ["不然", "不然", "bùrán", 36], ["回报", "回报", "huíbào", 36], ["真理", "真理", "zhēnlǐ", 36], ["浇", "浇", "jiāo", 36], ["潮湿", "潮湿", "cháoshī", 36], ["施肥", "施肥", "shī féi", 36], ["熟练", "熟练", "shúliàn", 36], ["应付", "应付", "yìngfu", 36], ["鲜艳", "鲜艳", "xiānyàn", 36], ["自豪", "自豪", "zìháo", 36], ["吹", "吹", "chuī", 36], ["爱心", "爱心", "àixīn", 36], ["分享", "分享", "fēnxiǎng", 36], ["昙花", "昙花", "tánhuā", 36], ["庆祝", "庆祝", "qìngzhù", 36], ["保留", "保留", "bǎoliú", 36], ["菊花", "菊花", "júhuā", 36], ["砸", "砸", "zá", 36], ["悲伤", "悲（伤）", "bēi (shāng)", 36], ["反正", "反正", "fǎnzhèng", 36], ["热爱", "热爱", "rè’ài", 36], ["老舍", "老舍", "Lǎo Shě", 36]], L = {"1": ["爱的细节", "Детали любви", "5A"], "2": ["留串钥匙给父母", "Оставить родителям связку ключей", "5A"], "3": ["人生有选择，一切可改变", "Есть выбор — всё можно изменить", "5A"], "4": ["子路背米", "Цзы Лу несёт рис", "5A"], "5": ["济南的泉水", "Источники Цзинаня", "5A"], "6": ["除夕的由来", "Откуда взялся канун Нового года", "5A"], "7": ["成语故事两则", "Две истории о чэнъюях", "5A"], "8": ["“朝三暮四”的古今义", "«Три утром, четыре вечером»: тогда и сейчас", "5A"], "9": ["别样鲁迅", "Другой Лу Синь", "5A"], "10": ["争论的奇迹", "Чудо спора", "5A"], "11": ["闹钟的危害", "Чем вреден будильник", "5A"], "12": ["海外用户玩儿微信", "Зарубежные пользователи WeChat", "5A"], "13": ["锯掉生活的“筐底”", "Отпилить у жизни «дно корзины»", "5A"], "14": ["北京的四合院", "Пекинский сыхэюань", "5A"], "15": ["纸上谈兵", "Стратег на бумаге", "5A"], "16": ["体重与节食", "Вес и режим питания", "5A"], "17": ["在最美好的时刻离开", "Уйти в лучший момент", "5A"], "18": ["抽象艺术美不美", "Красиво ли абстрактное искусство", "5A"], "19": ["家乡的萝卜饼", "Лепёшки с редькой с моей родины", "5B"], "20": ["小人书摊", "Лоток с книжками-картинками", "5B"], "21": ["汉字叔叔：一个美国人的汉字情缘", "Дядюшка Ханьцзы", "5B"], "22": ["阅读与思考", "Чтение и размышление", "5B"], "23": ["放手", "Отпустить", "5B"], "24": ["支教行动", "Поехать учить в глубинку", "5B"], "25": ["给自己加满水", "Налить себе полный бак", "5B"], "26": ["你属于哪一种“忙”", "Какая у вас занятость", "5B"], "27": ["下棋", "Игра в шахматы", "5B"], "28": ["最受欢迎的毕业生", "Самый желанный выпускник", "5B"], "29": ["培养对手", "Растить себе соперника", "5B"], "30": ["竞争让市场更高效", "Конкуренция делает рынок эффективнее", "5B"], "31": ["登门槛效应", "Эффект ноги в двери", "5B"], "32": ["身边的环保", "Экология рядом", "5B"], "33": ["以堵治堵——缓解交通有妙招", "Лечить пробку пробкой", "5B"], "34": ["鸟儿的护肤术", "Как птицы ухаживают за перьями", "5B"], "35": ["植物会出汗", "Растения тоже потеют", "5B"], "36": ["老舍与养花", "Лао Шэ и его цветы", "5B"]};
+var pat = document.getElementById('pat'), bar = document.getElementById('bar'),
+    nDone = document.getElementById('nDone'), nOk = document.getElementById('nOk'),
+    nNo = document.getElementById('nNo'), nPct = document.getElementById('nPct'),
+    byles = document.getElementById('byles'), miss = document.getElementById('miss'),
+    exp = document.getElementById('exp'),
+    runB = document.getElementById('run'), stopB = document.getElementById('stop');
+var KEY = 'hsk5-audio-check-v1';
+
+function esc(s){ return String(s).replace(/[&<>"]/g, function(c){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+function stripTones(s){
+  try { return s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/ü/g,'u'); }
+  catch(e){ return s; }
+}
+function href(n){ return n <= 18 ? 'hsk5a-lesson-' + (n<10?'0':'') + n + '.html'
+                                 : 'hsk5b-lesson-' + n + '.html'; }
+function fileOf(w){
+  var les = w[3];
+  return pat.value
+    .replace(/\{hz\}/g, w[0])
+    .replace(/\{LL\}/g, (les < 10 ? '0' : '') + les)
+    .replace(/\{L\}/g, String(les))
+    .replace(/\{py\}/g, w[2])
+    .replace(/\{pyn\}/g, stripTones(w[2]).replace(/[\s'’]/g, ''));
+}
+
+var state = { ok: 0, no: 0, done: 0, running: false, res: [] };
+
+function probe(url){
+  return new Promise(function(res){
+    var a = new Audio();
+    var t = setTimeout(function(){ cleanup(); res(false); }, 4000);
+    function cleanup(){
+      clearTimeout(t);
+      a.removeEventListener('canplaythrough', good);
+      a.removeEventListener('loadedmetadata', good);
+      a.removeEventListener('error', bad);
+      try { a.src = ''; } catch(e){}
+    }
+    function good(){ cleanup(); res(true); }
+    function bad(){ cleanup(); res(false); }
+    a.addEventListener('loadedmetadata', good, { once: true });
+    a.addEventListener('canplaythrough', good, { once: true });
+    a.addEventListener('error', bad, { once: true });
+    a.preload = 'metadata';
+    a.src = url;
+    a.load();
+  });
+}
+
+function paint(){
+  nDone.textContent = state.done;
+  nOk.textContent = state.ok;
+  nNo.textContent = state.no;
+  var p = Math.round(state.done / A.length * 100);
+  nPct.textContent = p + '%';
+  bar.style.width = p + '%';
+}
+
+function report(){
+  var by = {};
+  state.res.forEach(function(r){
+    var n = r.w[3];
+    by[n] = by[n] || { ok: 0, no: 0, miss: [] };
+    if(r.ok) by[n].ok++; else { by[n].no++; by[n].miss.push(r); }
+  });
+  var ns = Object.keys(by).map(Number).sort(function(a,b){ return a-b; });
+  byles.innerHTML = ns.map(function(n){
+    var o = by[n], tot = o.ok + o.no, pct = Math.round(o.ok / tot * 100);
+    var cls = pct === 100 ? '' : (pct === 0 ? 'none' : 'part');
+    var t = L[n] || ['',''];
+    return '<div class="lrow"><span class="lt">' + (n<=18?'5A':'5B') + ' · урок ' + n + '</span>' +
+      '<span class="lb"><i class="' + cls + '" style="width:' + pct + '%"></i></span>' +
+      '<span class="ln">' + o.ok + '/' + tot + ' · <a href="' + href(n) + '" title="' +
+      esc(t[0]) + '">урок →</a></span></div>';
+  }).join('');
+
+  var bad = state.res.filter(function(r){ return !r.ok; });
+  if(!bad.length){
+    miss.innerHTML = '<p class="lede" style="color:var(--bamboo)"><b>Все файлы на месте.</b> ' +
+      'Для всех ' + state.ok + ' слов озвучка нашлась.</p>';
+    exp.innerHTML = '';
+    return;
+  }
+  miss.innerHTML = '<p class="lede">Не нашлось файлов: <b>' + bad.length + '</b>. ' +
+    'Ниже — сами слова, а под ними готовый список имён, который можно скопировать.</p>' +
+    '<div class="misslist">' + bad.map(function(r){
+      return '<span title="' + esc(r.w[2]) + ' · урок ' + r.w[3] + '">' + esc(r.w[1]) + '</span>';
+    }).join('') + '</div>';
+  exp.innerHTML = '<textarea class="out" id="outta" readonly rows="8"></textarea>' +
+    '<div class="prow"><button class="btn" type="button" id="copy">Скопировать список</button></div>';
+  document.getElementById('outta').value = bad.map(function(r){ return fileOf(r.w); }).join('\n');
+  document.getElementById('copy').onclick = function(){
+    var ta = document.getElementById('outta');
+    ta.select();
+    try { document.execCommand('copy'); this.textContent = 'скопировано'; }
+    catch(e){ this.textContent = 'выделено — Ctrl+C'; }
+  };
+}
+
+async function run(){
+  if(state.running) return;
+  state.running = true;
+  state.ok = 0; state.no = 0; state.done = 0; state.res = [];
+  runB.disabled = true; stopB.disabled = false;
+  paint();
+  var i = 0, BATCH = 12;
+  while(i < A.length && state.running){
+    var slice = A.slice(i, i + BATCH);
+    var got = await Promise.all(slice.map(function(w){ return probe(fileOf(w)); }));
+    got.forEach(function(ok, k){
+      state.res.push({ w: slice[k], ok: ok });
+      if(ok) state.ok++; else state.no++;
+      state.done++;
+    });
+    i += BATCH;
+    paint();
+    if(state.done % 120 === 0) report();
+  }
+  state.running = false;
+  runB.disabled = false; stopB.disabled = true;
+  report();
+  try { localStorage.setItem(KEY, JSON.stringify({
+    pat: pat.value, ok: state.ok, no: state.no, at: new Date().toISOString().slice(0,16)
+  })); } catch(e){}
+}
+
+runB.onclick = run;
+stopB.onclick = function(){ state.running = false; };
+document.getElementById('pat1').onclick = function(){ pat.value = 'audio/{hz}.mp3'; };
+document.getElementById('pat2').onclick = function(){ pat.value = '{hz}.mp3'; };
+document.getElementById('pat3').onclick = function(){ pat.value = 'audio/{L}/{hz}.mp3'; };
+
+(function(){
+  try {
+    var p = JSON.parse(localStorage.getItem(KEY) || 'null');
+    if(p){
+      pat.value = p.pat || pat.value;
+      var d = document.createElement('p');
+      d.className = 'hint2';
+      d.innerHTML = 'Прошлая проверка (' + esc(p.at) + '): нашлось <b>' + p.ok +
+        '</b>, не хватало <b>' + p.no + '</b>.';
+      document.querySelector('.panel').appendChild(d);
+    }
+  } catch(e){}
+})();
+</script>
+<script>
+
+(function(){
+  var cache = {};
+  var PREFIX = (function(){
+    try { return localStorage.getItem('hsk5-audio-prefix') || 'audio/'; }
+    catch(e){ return 'audio/'; }
+  })();
+  window.hskAudioPrefix = function(p){
+    PREFIX = p;
+    try { localStorage.setItem('hsk5-audio-prefix', p); } catch(e){}
+    cache = {};
+  };
+  function paths(hz, les){
+    var P = PREFIX;
+    return [P + hz + '.mp3', P + les + '/' + hz + '.mp3', hz + '.mp3',
+            'audio/' + hz + '.mp3', 'audio/' + les + '/' + hz + '.mp3'];
+  }
+  var cur = null;
+  function play(hz, les, btn){
+    if (cur) { try { cur.pause(); } catch(e){} }
+    var list = cache[hz] ? [cache[hz]] : paths(hz, les);
+    var i = 0;
+    btn.classList.add('pb-wait');
+    (function next(){
+      if (i >= list.length) {
+        btn.classList.remove('pb-wait');
+        btn.classList.add('pb-no');
+        btn.title = 'Файл не найден: ' + list[0];
+        setTimeout(function(){ btn.classList.remove('pb-no'); }, 1600);
+        return;
+      }
+      var a = new Audio(list[i]);
+      cur = a;
+      a.addEventListener('canplaythrough', function(){
+        cache[hz] = list[i];
+        btn.classList.remove('pb-wait');
+        a.play().catch(function(){});
+      }, { once: true });
+      a.addEventListener('error', function(){ i++; next(); }, { once: true });
+      a.load();
+    })();
+  }
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('.pb') : null;
+    if (!b || !b.dataset.hz) return;
+    e.preventDefault();
+    play(b.dataset.hz, b.dataset.l || '', b);
+  });
+})();
+
+</script>
+
+</body>
+</html>

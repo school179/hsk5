@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>На слух · все ловушки курса · HSK 5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#23262a;
+  --brick:#6f6b63;
+  --paper:#e3e1da;
+  --card:#f2f1ec;
+  --red:#b4342a;
+  --brass:#a8813c;
+  --bamboo:#4a6b4e;
+  --sky:#54748a;
+  --line:rgba(35,38,42,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:
+    linear-gradient(rgba(255,255,255,.35) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.35) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+/* ——— шапка ——— */
+header{padding:56px 0 28px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{
+  font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;
+  color:var(--red);letter-spacing:-.03em;
+}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:44px;line-height:1.05;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brick);margin-top:9px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+/* ——— секции ——— */
+section{margin-top:58px}
+h2{
+  font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px;
+}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+a{color:var(--red)}
+
+/* ——— план двора ——— */
+.plan-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px;
+  box-shadow:0 1px 0 rgba(35,38,42,.06)}
+.plan-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone rect,.zone circle,.zone path{transition:fill .18s ease}
+.zone:hover .fillable,.zone.on .fillable{fill:#e7cfc9}
+.zone:focus{outline:none}
+.zone:focus-visible .fillable{stroke:var(--red);stroke-width:2.5}
+.zlab{font-family:var(--han);font-size:15px;font-weight:600;fill:var(--ink);pointer-events:none}
+.zpin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.04em}
+.faint{font-family:var(--han);font-size:12px;fill:var(--brick);pointer-events:none}
+.compass{font-family:var(--mono);font-size:10px;fill:var(--brick);letter-spacing:.15em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:62px}
+.readout .w{font-family:var(--han);font-size:22px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:13px;color:var(--sky)}
+.readout .d{display:block;margin-top:4px;font-size:15px}
+.readout .hint{color:var(--brick);font-style:italic}
+
+/* ——— карточки слов ——— */
+.cluster{margin-top:26px}
+.cluster h3{margin-bottom:4px}
+.cluster .why{font-size:14px;color:var(--brick);margin-bottom:14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--brass);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+/* ——— общие блоки ——— */
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.green{border-left:4px solid var(--bamboo)}
+.card.brass{border-left:4px solid var(--brass)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--paper);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.b{background:var(--brass)}
+.tag.g{background:var(--bamboo)}
+.tag.r{background:var(--red)}
+
+/* ——— таблицы ——— */
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(35,38,42,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+/* ——— на слух ——— */
+.trap{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+/* ——— ответы ——— */
+details{background:var(--card);border:1px solid var(--line);margin:10px 0;padding:0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+/* ——— финал ——— */
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;
+  font-family:var(--disp);font-weight:700;font-size:22px;color:var(--red);
+  width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .lesson-no{font-size:66px}
+  h1{font-size:32px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+
+
+:root{--red:#6a3a6a;--brass:#9a7a2c;--bamboo:#4e7046;--sky:#4f6a86;--paper:#e6e1e6;--card:#f6f2f6}
+.fbar{border:1.5px solid var(--line);border-radius:4px;background:var(--card);padding:14px 16px;margin:0 0 20px}
+.fbar input[type=text]{width:100%;box-sizing:border-box;font-family:var(--han);font-size:19px;
+  padding:9px 12px;border:1.5px solid var(--line);border-radius:3px;background:#fff;color:var(--ink)}
+.fbar input[type=text]:focus{outline:none;border-color:var(--red)}
+.frow{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-top:10px}
+.chipf{font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;
+  padding:6px 10px;border:1.3px solid var(--line);border-radius:3px;background:#fff;color:var(--brick);
+  cursor:pointer}
+.chipf:hover{border-color:var(--red)}
+.chipf.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chipf .n{opacity:.6;margin-left:5px}
+.go{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+  padding:9px 15px;border:1.5px solid var(--red);border-radius:3px;background:var(--red);color:#fff;cursor:pointer}
+.go:hover{background:#000;border-color:#000}
+.kgroup{margin:26px 0 0}
+.kgroup > h3{margin:0 0 3px;font-size:19px}
+.kgroup .kd{font-size:15px;color:var(--brick);margin:0 0 12px;max-width:62em}
+.kcount{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--brick)}
+.pair2{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1.3px solid var(--line);
+  border-radius:3px;overflow:hidden;margin:0 0 10px;background:#fff}
+.pair2 > div{padding:11px 13px}
+.pair2 > div:first-child{border-right:1px solid var(--line);background:#fcfafc}
+.pair2 .hz{font-family:var(--han);font-size:25px;font-weight:600;display:block}
+.pair2 .py{font-family:var(--mono);font-size:12.5px;color:var(--brick);display:block;margin-top:1px}
+.pair2 .n{font-size:14.5px;display:block;margin-top:5px;line-height:1.5}
+.pair2 .pb{position:static;margin:3px 0 0}
+.phead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:0 0 3px}
+.phead .w{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--brick)}
+.phead a{font-family:var(--mono);font-size:11px;color:var(--red);text-decoration:none;
+  border-bottom:1px dotted var(--red);white-space:nowrap}
+.pwrap{margin:0 0 16px}
+mark{background:#eedcf0;color:inherit;padding:0 1px}
+.empty{font-family:var(--mono);font-size:12px;color:var(--brick);padding:14px 0}
+
+/* ——— тренировка ——— */
+.drill{position:fixed;inset:0;background:rgba(28,26,30,.93);z-index:50;display:none;
+  align-items:center;justify-content:center;padding:18px}
+.drill.on{display:flex}
+.dcard{background:var(--paper);border-radius:5px;max-width:620px;width:100%;padding:24px 26px;
+  max-height:92vh;overflow:auto}
+.dtop{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}
+.dtop .c{font-family:var(--mono);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--brick)}
+.dx{font-family:var(--mono);font-size:12px;border:1.3px solid var(--line);background:#fff;
+  border-radius:3px;padding:5px 10px;cursor:pointer;color:var(--brick)}
+.dbar{height:4px;background:var(--line);border-radius:2px;overflow:hidden;margin-bottom:16px}
+.dbar i{display:block;height:100%;background:var(--red);transition:width .2s}
+.dq{text-align:center;padding:10px 0 4px}
+.dq .pys{font-family:var(--mono);font-size:30px;font-weight:700;letter-spacing:.02em}
+.dq .hint{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--brick);margin-top:8px}
+.dq .ask{font-size:15.5px;color:var(--brick);margin-top:12px}
+.dans{display:none;margin-top:16px}
+.dans.on{display:block}
+.drow{display:flex;gap:9px;margin-top:16px;flex-wrap:wrap}
+.drow button{flex:1 1 130px;font-family:var(--mono);font-size:12px;letter-spacing:.07em;
+  text-transform:uppercase;padding:11px 10px;border:1.4px solid var(--ink);border-radius:3px;
+  background:#fff;cursor:pointer;color:var(--ink)}
+.drow button.pri{background:var(--ink);color:var(--paper)}
+.drow button.bad{border-color:var(--red);color:var(--red)}
+.drow button.bad:hover{background:var(--red);color:#fff}
+.dend{text-align:center;padding:18px 0}
+.dend .big{font-family:var(--display);font-size:42px;font-weight:700;display:block}
+@media (max-width:620px){
+  .pair2{grid-template-columns:1fr}
+  .pair2 > div:first-child{border-right:0;border-bottom:1px solid var(--line)}
+  .dq .pys{font-size:24px}
+  .dcard{padding:18px 16px}
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index.html">&#8592; Главная</a><a href="slovar.html">Словарь</a><a href="temy.html">Темы 扩展</a><a href="index-5a.html">5A</a><a href="index-5b.html">5B</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（上）（下） · 听写陷阱</div>
+  <div class="title-row">
+    <h1>На слух<span class="lat">听写陷阱 · 283 пар из 36 уроков</span></h1>
+  </div>
+  <div class="meta"><span><b>283</b> пар</span><span>омофонов: <b>42</b></span><span>тональных: <b>16</b></span><span>многочтимых: <b>8</b></span></div>
+</header>
+
+
+<section>
+  <p class="lede">Все пары-ловушки из конспектов всех 36 уроков, собранные по типу: сначала те,
+  что на слух вообще не различаются, потом тональные пары, многочтимые знаки и гнёзда на общий
+  иероглиф. Фильтры сверху сужают список, а кнопка «Тренировка» прогоняет выбранное карточками:
+  сначала вы видите только пиньинь и подсказку, потом — оба слова с разбором.</p>
+
+  <div class="fbar">
+    <input id="q" type="text" autocomplete="off" spellcheck="false"
+           placeholder="иероглиф, пиньинь или слово из разбора" aria-label="Поиск по ловушкам">
+    <div class="frow" id="kinds"></div>
+    <div class="frow">
+      <button class="chipf on" type="button" data-f="vol" data-v="">Оба тома</button>
+      <button class="chipf" type="button" data-f="vol" data-v="5A">5A</button>
+      <button class="chipf" type="button" data-f="vol" data-v="5B">5B</button>
+      <span style="flex:1"></span>
+      <button class="go" type="button" id="start">Тренировка →</button>
+    </div>
+    <div class="frow" style="margin-top:9px">
+      <span class="kcount" id="st"></span>
+    </div>
+  </div>
+</section>
+
+<section id="list"></section>
+
+<div class="drill" id="drill">
+  <div class="dcard">
+    <div class="dtop">
+      <span class="c" id="dc"></span>
+      <button class="dx" type="button" id="dclose">закрыть</button>
+    </div>
+    <div class="dbar"><i id="dbar" style="width:0"></i></div>
+    <div id="dbody"></div>
+  </div>
+</div>
+
+
+<footer>Собрано из разделов «На слух» всех 36 уроков · <a href="index.html">главная</a> · <a href="slovar.html">словарь курса</a></footer>
+
+</div>
+
+<script>
+var D = [{"i": 0, "k": "homo", "l": 1, "v": "5A", "w": "Пары и омофоны", "a": "吵", "ap": "chǎo", "an": "шумный, будить шумом — 吵醒, 太吵了", "b": "炒", "bp": "chǎo", "bn": "жарить (炒菜). Полный омофон, различаются ключами: 口 против 火", "s": "chao chao"}, {"i": 1, "k": "tone", "l": 1, "v": "5A", "w": "Пары и омофоны", "a": "靠", "ap": "kào", "an": "опираться, полагаться告 сверху, 非 снизу", "b": "考", "bp": "kǎo", "bn": "экзаменовать. Тон и иероглиф разные, но слоги близкие", "s": "kao kao"}, {"i": 2, "k": "homo", "l": 1, "v": "5A", "w": "Пары и омофоны", "a": "递", "ap": "dì", "an": "передавать — 递给我", "b": "第 / 弟", "bp": "dì", "bn": "порядковый префикс / младший брат. Все три dì, четвёртый тон", "s": "di di"}, {"i": 3, "k": "homo", "l": 2, "v": "5A", "w": "Пары с одинаковым слогом", "a": "挣", "ap": "zhèng", "an": "зарабатывать — 挣钱. В другом чтении zhēng «вырываться»", "b": "正 / 政", "bp": "zhèng", "bn": "Все на zhèng. 挣 пишется с ключом 扌 — деньги «делают руками»", "s": "zheng zheng"}, {"i": 4, "k": "homo", "l": 2, "v": "5A", "w": "Пары с одинаковым слогом", "a": "锁", "ap": "suǒ", "an": "замок, запирать — 钅 + 小 + 贝", "b": "所", "bp": "suǒ", "bn": "служебное (所谓 — урок 14, 为……所…… — там же). Полные омофоны", "s": "suo suo"}, {"i": 5, "k": "homo", "l": 2, "v": "5A", "w": "Пары с одинаковым слогом", "a": "铺", "ap": "pū", "an": "стелить (постель) — 铺被子", "b": "扑", "bp": "pū", "bn": "броситься, обдать — 扑面而来. Оба в этом уроке и оба pū!", "s": "pu pu"}, {"i": 6, "k": "sense", "l": 2, "v": "5A", "w": "Пары с одинаковым слогом", "a": "晒", "ap": "shài", "an": "сушить на солнце — 日 + 西", "b": "洒", "bp": "sǎ", "bn": "брызгать (урок 18) — 氵 + 西. Похожи графически, разные слоги", "s": "shai sa"}, {"i": 7, "k": "share", "l": 3, "v": "5A", "w": "Похожие слоги", "a": "稳定", "ap": "wěndìng", "an": "стабильный — 工作稳定", "b": "决定", "bp": "juédìng", "bn": "решать. Общий второй слог 定; ещё рядом 绝对 juéduì из урока 16", "s": "wending jueding"}, {"i": 8, "k": "homo", "l": 3, "v": "5A", "w": "Похожие слоги", "a": "钓", "ap": "diào", "an": "удить — 钓鱼. Ключ 钅, потому что крючок металлический", "b": "调", "bp": "diào / tiáo", "bn": "перевести (15) / настроить (18). Тот же слог diào, совсем другой знак", "s": "diao diao/tiao"}, {"i": 9, "k": "sense", "l": 3, "v": "5A", "w": "Похожие слоги", "a": "漏", "ap": "lòu", "an": "протекать — 漏水. 氵 + 屚", "b": "露", "bp": "lù / lòu", "bn": "露出 «показаться». В разговорном 露 тоже бывает lòu — различать только по смыслу", "s": "lou lu/lou"}, {"i": 10, "k": "share", "l": 4, "v": "5A", "w": "Один иероглиф, два чтения — в одной фразе", "a": "背", "ap": "bēi", "an": "нести на спине — 背米, 背起来. Первый тон", "b": "后背", "bp": "hòubèi", "bn": "спина — существительное, четвёртый тон. В тексте: 背在后背上", "s": "bei houbei"}, {"i": 11, "k": "near", "l": 5, "v": "5A", "w": "Одинаковые слоги, разные знаки", "a": "充满", "ap": "chōngmǎn", "an": "быть полным — 充满希望", "b": "冲", "bp": "chōng", "bn": "вырываться — 冲出地表. Оба в этом уроке и оба chōng; 充 без ключа, 冲 с 冫", "s": "chongman chong"}, {"i": 12, "k": "share", "l": 5, "v": "5A", "w": "Одинаковые слоги, разные знаки", "a": "感激", "ap": "gǎnjī", "an": "глубокая благодарность — сильнее, чем 感谢", "b": "激烈", "bp": "jīliè", "bn": "ожесточённый (урок 13). Общий 激, разные вторые слоги", "s": "ganji jilie"}, {"i": 13, "k": "share", "l": 5, "v": "5A", "w": "Одинаковые слоги, разные знаки", "a": "形状", "ap": "xíngzhuàng", "an": "форма предмета — урок 5", "b": "形式 / 形势", "bp": "xíngshì", "bn": "форма (14) и обстановка (15). Три слова на 形, и все разные", "s": "xingzhuang xingshi"}, {"i": 14, "k": "share", "l": 6, "v": "5A", "w": "Пары, которые путаются", "a": "制造", "ap": "zhìzào", "an": "производить; создавать проблемы — 制造灾害", "b": "造成", "bp": "zàochéng", "bn": "приводить к плохому (урок 13). Те же два знака в обратном порядке!", "s": "zhizao zaocheng"}, {"i": 15, "k": "share", "l": 6, "v": "5A", "w": "Пары, которые путаются", "a": "表达", "ap": "biǎodá", "an": "выразить словами мысль или чувство — 表达看法", "b": "表示", "bp": "biǎoshì", "bn": "выразить отношение, обозначить. Упражнение 2 требует 表达", "s": "biaoda biaoshi"}, {"i": 16, "k": "share", "l": 6, "v": "5A", "w": "Пары, которые путаются", "a": "此外", "ap": "cǐwài", "an": "кроме того (добавляет новое) — 此外，它还害怕声响", "b": "另外", "bp": "lìngwài", "bn": "другой, иной (выбирает из имеющегося). Упражнение 2 требует 另外", "s": "ciwai lingwai"}, {"i": 17, "k": "tone", "l": 7, "v": "5A", "w": "Два междометия, один слог", "a": "哎", "ap": "āi", "an": "Первый тон. Удивление, оклик, лёгкое недовольство: 哎，怎么会这样？／ 哎，我想到了一个办法！", "b": "唉", "bp": "ài", "bn": "Четвёртый тон. Вздох, сожаление, усталость: 唉！大概是我不够用心了吧！", "s": "ai ai"}, {"i": 18, "k": "homo", "l": 7, "v": "5A", "w": "Пары, которые путаются", "a": "反应", "ap": "fǎnyìng", "an": "реакция, отклик — 做出反应", "b": "反映", "bp": "fǎnyìng", "bn": "отражать; доводить до сведения (урок 5). Полные омофоны, упражнение 2 проверяет именно их", "s": "fanying fanying"}, {"i": 19, "k": "share", "l": 7, "v": "5A", "w": "Пары, которые путаются", "a": "连续", "ap": "liánxù", "an": "подряд, без перерыва — 连续工作20个小时", "b": "继续", "bp": "jìxù", "bn": "продолжать (после паузы). Общий 续, упражнение 2 требует 连续", "s": "lianxu jixu"}, {"i": 20, "k": "sense", "l": 8, "v": "5A", "w": "Пары, которые путаются", "a": "调皮", "ap": "tiáopí", "an": "озорной. 调 читается tiáo — как в 调整 (урок 18), а не diào (урок 15)", "b": "淘气", "bp": "táoqì", "bn": "проказничать. Синоним, но 淘 — другой иероглиф с ключом 氵", "s": "tiaopi taoqi"}, {"i": 21, "k": "share", "l": 8, "v": "5A", "w": "Пары, которые путаются", "a": "似乎", "ap": "sìhū", "an": "кажется. Здесь 似 читается sì", "b": "似的", "bp": "shìde", "bn": "словно (урок 6). Тот же иероглиф, но чтение shì. Оба слова из Unit 2–3!", "s": "sihu shide"}, {"i": 22, "k": "share", "l": 9, "v": "5A", "w": "Семейство 形-", "a": "形容", "ap": "xíngróng", "an": "описывать словами — 用一个词形容", "b": "形象", "bp": "xíngxiàng", "bn": "образный или образ — 描写得很形象, 形象好", "s": "xingrong xingxiang"}, {"i": 23, "k": "poly", "l": 10, "v": "5A", "w": "Один иероглиф, два чтения", "a": "系", "ap": "jì", "an": "завязывать — 系着细线, 系领带, 系安全带. Урок 10", "b": "系", "bp": "xì", "bn": "система, факультет — 关系, 中文系, 系统. То же написание", "s": "ji xi"}, {"i": 24, "k": "share", "l": 10, "v": "5A", "w": "Пары, которые путаются", "a": "争论", "ap": "zhēnglùn", "an": "спорить, не соглашаться — бытовое и эмоциональное", "b": "辩论", "bp": "biànlùn", "bn": "дебатировать — организованно, по правилам: 辩论赛. Упражнение 2 проверяет их", "s": "zhenglun bianlun"}, {"i": 25, "k": "share", "l": 10, "v": "5A", "w": "Пары, которые путаются", "a": "显示", "ap": "xiǎnshì", "an": "показывать факт или данные, идёт с существительным: 调查显示……", "b": "显得", "bp": "xiǎnde", "bn": "выглядеть каким-то, идёт с прилагательным: 显得格外明亮 (урок 8)", "s": "xianshi xiande"}, {"i": 26, "k": "tone", "l": 11, "v": "5A", "w": "Пара из двух соседних уроков", "a": "实验", "ap": "shíyàn", "an": "научный эксперимент — урок 11: 实验研究证明", "b": "试验", "bp": "shìyàn", "bn": "проба, испытание на практике — урок 10: 经过艰苦的试验. Различие только в тоне первого слога", "s": "shiyan shiyan"}, {"i": 27, "k": "poly", "l": 11, "v": "5A", "w": "Многочтимые иероглифы", "a": "数", "ap": "shù", "an": "несколько; число — 数天, 数月, 字数. Урок 11", "b": "数", "bp": "shǔ", "bn": "считать, пересчитывать — 数一数, 数得过来. Третья точка урока разбирает оба", "s": "shu shu"}, {"i": 28, "k": "share", "l": 11, "v": "5A", "w": "Многочтимые иероглифы", "a": "血压", "ap": "xuèyā", "an": "письменное чтение血 — xuè", "b": "流血", "bp": "xiě", "bn": "разговорное чтение — xiě. В учебнике встречается оба раза", "s": "xueya xie"}, {"i": 29, "k": "swap", "l": 12, "v": "5A", "w": "Переставленные слоги: одни и те же знаки в обратном порядке", "a": "实现", "ap": "shíxiàn", "an": "осуществить, воплотить (глагол) — 实现愿望", "b": "现实", "bp": "xiànshí", "bn": "реальность (существительное) — 认识到现实. Оба слова в одном уроке, упражнение 2 их проверяет", "s": "shixian xianshi"}, {"i": 30, "k": "share", "l": 13, "v": "5A", "w": "Перекличка с соседними уроками", "a": "一再", "ap": "yízài", "an": "урок 13 — «раз за разом»", "b": "再三", "bp": "zàisān", "bn": "урок 15 — то же значение, знаки переставлены местами. 再三 книжнее и может стоять после глагола (考虑再三), 一再 — только перед", "s": "yizai zaisan"}, {"i": 31, "k": "share", "l": 13, "v": "5A", "w": "Перекличка с соседними уроками", "a": "阻碍", "ap": "zǔ'ài", "an": "урок 13 — мешать, тормозить (о препятствии)", "b": "阻止", "bp": "zǔzhǐ", "bn": "урок 15 — не дать сделать (о действии человека)", "s": "zuai zuzhi"}, {"i": 32, "k": "share", "l": 13, "v": "5A", "w": "Перекличка с соседними уроками", "a": "造成", "ap": "zàochéng", "an": "урок 13 — привести к (плохому)", "b": "组成 / 形成", "bp": "zǔchéng / xíngchéng", "bn": "урок 14 и общая лексика: 组成 — состоять из, 形成 — складываться (нейтрально). Все три оканчиваются на -chéng", "s": "zaocheng zucheng/xingcheng"}, {"i": 33, "k": "poly", "l": 14, "v": "5A", "w": "Тон меняет слово", "a": "种", "ap": "zhòng", "an": "сажать — глагол, 4-й тон (этот урок)", "b": "种", "bp": "zhǒng", "bn": "вид, сорт — счётное слово, 3-й тон", "s": "zhong zhong"}, {"i": 34, "k": "tone", "l": 14, "v": "5A", "w": "Тон меняет слово", "a": "方", "ap": "fāng", "an": "квадратный · 1-й тон", "b": "房", "bp": "fáng", "bn": "дом, комната · 2-й тон — в уроке рядом: 方形的院子 / 四面房屋", "s": "fang fang"}, {"i": 35, "k": "poly", "l": 14, "v": "5A", "w": "Тон меняет слово", "a": "为", "ap": "wéi", "an": "2-й тон в 为……所…… и в 最为", "b": "为", "bp": "wèi", "bn": "4-й тон = «для, ради» (为了, 为你)", "s": "wei wei"}, {"i": 36, "k": "homo", "l": 14, "v": "5A", "w": "Один пиньинь — разные иероглифы", "a": "形式", "ap": "xíngshì", "an": "форма, вид (этот урок)", "b": "形势", "bp": "xíngshì", "bn": "обстановка, ситуация — звучит идентично", "s": "xingshi xingshi"}, {"i": 37, "k": "homo", "l": 14, "v": "5A", "w": "Один пиньинь — разные иероглифы", "a": "浓", "ap": "nóng", "an": "густой (氵 + 农)", "b": "农", "bp": "nóng", "bn": "сельский (农业, 农民) — на слух не отличить, только по контексту", "s": "nong nong"}, {"i": 38, "k": "homo", "l": 14, "v": "5A", "w": "Один пиньинь — разные иероглифы", "a": "令", "ap": "lìng", "an": "заставлять, вызывать", "b": "另", "bp": "lìng", "bn": "другой (另外) — похожи и на слух, и графически", "s": "ling ling"}, {"i": 39, "k": "homo", "l": 15, "v": "5A", "w": "Прямой омофон с уроком 14", "a": "形势", "ap": "xíngshì", "an": "обстановка, положение дел — урок 15: 敌强我弱的形势", "b": "形式", "bp": "xíngshì", "bn": "форма, вид — урок 14: 组合建筑形式. На слух не отличаются вообще", "s": "xingshi xingshi"}, {"i": 40, "k": "sense", "l": 15, "v": "5A", "w": "Три gōng в одном уроке", "a": "进攻", "ap": "jìngōng", "an": "攻 = 工 + 攵 (наступать)", "b": "公元", "bp": "gōngyuán", "bn": "公 (наша эра) — и рядом 成功 gōng 功 из 词语辨析", "s": "jingong gongyuan"}, {"i": 41, "k": "poly", "l": 15, "v": "5A", "w": "Многочтимый иероглиф", "a": "调", "ap": "diào", "an": "перевести, перебросить: 调回, 调动, 调查(!) — тоже diào", "b": "调", "bp": "tiáo", "bn": "настраивать, регулировать: 调整, 空调, 调节", "s": "diao tiao"}, {"i": 42, "k": "share", "l": 16, "v": "5A", "w": "Пары, где переставлены слоги или тон", "a": "现象", "ap": "xiànxiàng", "an": "явление — этот урок", "b": "想象", "bp": "xiǎngxiàng", "bn": "воображать. Различие только в первом слоге: xiàn vs xiǎng", "s": "xianxiang xiangxiang"}, {"i": 43, "k": "tone", "l": 16, "v": "5A", "w": "Пары, где переставлены слоги или тон", "a": "意外", "ap": "yìwài", "an": "неожиданный — 意外地发现", "b": "以外", "bp": "yǐwài", "bn": "кроме, за пределами — 除了个别人以外. Оба стоят в этом уроке, в соседних абзацах!", "s": "yiwai yiwai"}, {"i": 44, "k": "share", "l": 16, "v": "5A", "w": "Пары, где переставлены слоги или тон", "a": "趋势", "ap": "qūshì", "an": "тенденция — урок 16", "b": "形势", "bp": "xíngshì", "bn": "обстановка — урок 15. Плюс 姿势 zīshì «поза». Все три на -shì", "s": "qushi xingshi"}, {"i": 45, "k": "share", "l": 16, "v": "5A", "w": "Пары, где переставлены слоги или тон", "a": "参与", "ap": "cānyù", "an": "участвовать в деле, проекте, управлении — книжнее", "b": "参加", "bp": "cānjiā", "bn": "участвовать в мероприятии: 参加考试/婚礼. Упражнение 2 проверяет именно эту разницу", "s": "canyu canjia"}, {"i": 46, "k": "near", "l": 17, "v": "5A", "w": "Ловушка внутри одного предложения", "a": "服装", "ap": "fúzhuāng", "an": "одежда — 装 «облачать»", "b": "化妆", "bp": "huà zhuāng", "bn": "гримироваться — 妆 (丬 + 女), другой иероглиф! Оба стоят подряд: 准备服装、化妆、道具", "s": "fuzhuang huazhuang"}, {"i": 47, "k": "tone", "l": 17, "v": "5A", "w": "Ловушка внутри одного предложения", "a": "魅力", "ap": "mèilì", "an": "обаяние — 魅 = 鬼 + 未", "b": "美丽", "bp": "měilì", "bn": "красивый. Различие только в первом тоне: mèi (4-й) против měi (3-й)", "s": "meili meili"}, {"i": 48, "k": "homo", "l": 17, "v": "5A", "w": "Ловушка внутри одного предложения", "a": "度过", "ap": "dùguò", "an": "провести время — 度过童年, 度过两个小时", "b": "渡过", "bp": "dùguò", "bn": "переправиться, преодолеть трудность — 渡过难关, 渡河. Полные омофоны", "s": "duguo duguo"}, {"i": 49, "k": "share", "l": 17, "v": "5A", "w": "Ловушка внутри одного предложения", "a": "主持", "ap": "zhǔchí", "an": "вести, возглавлять — 主持会议", "b": "支持", "bp": "zhīchí", "bn": "поддерживать. Одна из самых частых ошибок HSK", "s": "zhuchi zhichi"}, {"i": 50, "k": "sense", "l": 18, "v": "5A", "w": "Тройка, которую путают чаще всего", "a": "分辨", "ap": "fēnbiàn", "an": "различать. 辨 = 辛 + 刂 + 辛 — в середине нож", "b": "辩论 / 辫子", "bp": "biànlùn / biànzi", "bn": "спорить (в середине 讠) / коса (в середине 纟). Звучат одинаково, различить можно только глазами", "s": "fenbian bianlun/bianzi"}, {"i": 51, "k": "tone", "l": 18, "v": "5A", "w": "Счётные слова fú / fù", "a": "一幅", "ap": "yì fú", "an": "для картин и свитков: 一幅画儿, 一幅作品", "b": "一副", "bp": "yí fù", "bn": "для парных предметов: 一副眼镜, 一副手套. Плюс 衣服 fú — тот же слог", "s": "yifu yifu"}, {"i": 52, "k": "share", "l": 18, "v": "5A", "w": "Один иероглиф — два урока", "a": "派", "ap": "pài", "an": "урок 18: школа, направление — 抽象派", "b": "派", "bp": "pài", "bn": "урок 15: послать, направить кого-то — 赵国派廉颇迎战", "s": "pai pai"}, {"i": 53, "k": "share", "l": 18, "v": "5A", "w": "Один иероглиф — два урока", "a": "调整", "ap": "tiáozhěng", "an": "урок 18: корректировать — 调 читается tiáo", "b": "调动 / 调回", "bp": "diàodòng", "bn": "урок 15: перевести, перебросить — то же 调, но diào", "s": "tiaozheng diaodong"}, {"i": 54, "k": "homo", "l": 19, "v": "5B", "w": "Один слог, два разных мира", "a": "炒", "ap": "chǎo", "an": "жарить. Кухня.", "b": "吵", "bp": "chǎo", "bn": "шуметь, ссориться (吵架 из 1-го урока 5A).", "s": "chao chao"}, {"i": 55, "k": "homo", "l": 19, "v": "5B", "w": "Третий тон, три знака", "a": "煮", "ap": "zhǔ", "an": "варить. Снизу — четыре точки огня 灬.", "b": "主 / 住", "bp": "zhǔ / zhù", "bn": "«главный» и «жить». 煮 отличается только нижним элементом.", "s": "zhu zhu/zhu"}, {"i": 56, "k": "homo", "l": 19, "v": "5B", "w": "Три иероглифа на один слог", "a": "般", "ap": "bān", "an": "словно, как. Грамматическая точка урока.", "b": "搬 / 班", "bp": "bān", "bn": "«переносить» и «класс, смена». Все три — чистое bān.", "s": "ban ban"}, {"i": 57, "k": "homo", "l": 19, "v": "5B", "w": "Рука дрогнет здесь", "a": "擀", "ap": "gǎn", "an": "раскатывать. Рука 扌 + 干.", "b": "赶 / 敢", "bp": "gǎn", "bn": "«гнать, успеть» и «сметь». В диктанте спасает только контекст 擀面.", "s": "gan gan"}, {"i": 58, "k": "homo", "l": 19, "v": "5B", "w": "Ключ решает всё", "a": "淋", "ap": "lín", "an": "полить сверху. Вода 氵 + 林.", "b": "林 / 临", "bp": "lín", "bn": "«лес» и «подходить вплотную». 淋 без ключа воды — уже другое слово.", "s": "lin lin"}, {"i": 59, "k": "homo", "l": 19, "v": "5B", "w": "Огонь внизу", "a": "烫", "ap": "tàng", "an": "обжигать. Внизу — огонь 火.", "b": "趟 / 躺", "bp": "tàng / tǎng", "bn": "«раз (счётное)» и «лежать». 躺 — третий тон, это подсказка.", "s": "tang tang/tang"}, {"i": 60, "k": "homo", "l": 19, "v": "5B", "w": "Четыре на один слог", "a": "糊", "ap": "hú", "an": "пригореть. Рис 米 + 胡.", "b": "湖 / 壶 / 胡", "bp": "hú", "bn": "«озеро», «чайник», «безрассудно». Четыре hú — рекорд урока.", "s": "hu hu"}, {"i": 61, "k": "homo", "l": 19, "v": "5B", "w": "Снова огонь", "a": "焦", "ap": "jiāo", "an": "подгоревший, румяный.", "b": "交 / 教 / 骄", "bp": "jiāo", "bn": "«сдавать», «учить», «гордиться». 焦 узнаётся по четырём точкам огня внизу.", "s": "jiao jiao"}, {"i": 62, "k": "homo", "l": 19, "v": "5B", "w": "Сосуд слева", "a": "醋", "ap": "cù", "an": "уксус. Слева — 酉, «сосуд для вина».", "b": "促 / 错", "bp": "cù / cuò", "bn": "«подгонять» и «ошибка». 错 — другой финаль, но на скорости слышится похоже.", "s": "cu cu/cuo"}, {"i": 63, "k": "homo", "l": 19, "v": "5B", "w": "Третья грамматическая точка", "a": "趁", "ap": "chèn", "an": "пользуясь случаем. Бежать 走 + 㐱.", "b": "称 / 衬", "bp": "chèn", "bn": "«называть; взвешивать» и «подкладка, 衬衫». Все три chèn.", "s": "chen chen"}, {"i": 64, "k": "homo", "l": 19, "v": "5B", "w": "Ухо в воротах", "a": "闻", "ap": "wén", "an": "нюхать; весть. Ухо 耳 в воротах 门.", "b": "文 / 问", "bp": "wén / wèn", "bn": "«текст» и «спрашивать». 问 отличается тоном, 文 — ничем.", "s": "wen wen/wen"}, {"i": 65, "k": "poly", "l": 19, "v": "5B", "w": "Один знак, три чтения", "a": "薄", "ap": "báo", "an": "тонкий — так читается в 薄如白纸.", "b": "薄", "bp": "bó / bò", "bn": "bó — в книжных сочетаниях (薄弱, 单薄); bò — только в 薄荷 «мята».", "s": "bao bo/bo"}, {"i": 66, "k": "homo", "l": 20, "v": "5B", "w": "Полные омофоны — и это 辨析 урока", "a": "记录", "ap": "jìlù", "an": "запись, протокол; записывать. Глагол и существительное.", "b": "纪录", "bp": "jìlù", "bn": "рекорд; документальное. Только существительное.", "s": "jilu jilu"}, {"i": 67, "k": "tone", "l": 20, "v": "5B", "w": "Разница — один тон в конце", "a": "登记", "ap": "dēngjì", "an": "зарегистрировать, внести в список. 登记结婚, 登记在本子上.", "b": "登机", "bp": "dēngjī", "bn": "посадка в самолёт. 登机牌, 登机口.", "s": "dengji dengji"}, {"i": 68, "k": "tone", "l": 20, "v": "5B", "w": "Классическая пара экзамена", "a": "题材", "ap": "tícái", "an": "тема, сюжет: о чём произведение. 各种题材.", "b": "体裁", "bp": "tǐcái", "bn": "жанр, форма: роман, стихи, пьеса.", "s": "ticai ticai"}, {"i": 69, "k": "homo", "l": 20, "v": "5B", "w": "Четыре знака на один слог", "a": "支", "ap": "zhī", "an": "подпирать; счётное для палочек, ручек, песен.", "b": "只 / 知 / 织", "bp": "zhī", "bn": "«только; счётное для животных», «знать», «ткать».", "s": "zhi zhi"}, {"i": 70, "k": "homo", "l": 20, "v": "5B", "w": "Книжное счётное слово", "a": "册", "ap": "cè", "an": "том, экземпляр. 一册书.", "b": "侧 / 测 / 策", "bp": "cè", "bn": "«бок», «измерять», «план, стратегия».", "s": "ce ce"}, {"i": 71, "k": "homo", "l": 20, "v": "5B", "w": "Третья грамматическая точка", "a": "凭", "ap": "píng", "an": "опираться на, по предъявлении. 全凭信用.", "b": "平 / 评 / 瓶", "bp": "píng", "bn": "«ровный», «оценивать», «бутылка».", "s": "ping ping"}, {"i": 72, "k": "poly", "l": 20, "v": "5B", "w": "Один знак, два чтения", "a": "涨", "ap": "zhǎng", "an": "расти о цене и воде — так читается в 身价大涨.", "b": "涨", "bp": "zhàng", "bn": "zhàng — «вздуться, распирать»: 头昏脑涨.", "s": "zhang zhang"}, {"i": 73, "k": "homo", "l": 20, "v": "5B", "w": "Легко написать не тот", "a": "翻", "ap": "fān", "an": "перевернуть, листать. 书翻开 / 打翻.", "b": "番 / 帆", "bp": "fān", "bn": "«раз, подход» (一番话) и «парус».", "s": "fan fan"}, {"i": 74, "k": "homo", "l": 20, "v": "5B", "w": "Рука уйдёт к 答", "a": "搭", "ap": "dā", "an": "перекинуть, повесить; 搭车, 搭配.", "b": "答", "bp": "dā / dá", "bn": "dā в 答应, dá в 回答. Рука сама тянется к 答.", "s": "da da/da"}, {"i": 75, "k": "homo", "l": 20, "v": "5B", "w": "Ключ слева решает", "a": "摊", "ap": "tān", "an": "лоток, прилавок. 书摊, 摊主.", "b": "滩 / 贪", "bp": "tān", "bn": "«отмель, пляж» (海滩) и «жадничать» (贪心).", "s": "tan tan"}, {"i": 76, "k": "share", "l": 20, "v": "5B", "w": "Три «年»-слова рядом", "a": "年代", "ap": "niándài", "an": "десятилетие века: 20世纪80年代.", "b": "年纪 / 时代", "bp": "niánjì / shídài", "bn": "«возраст человека» и «эпоха». В упражнении 2 ловят именно на этом.", "s": "niandai nianji/shidai"}, {"i": 77, "k": "share", "l": 20, "v": "5B", "w": "Разные вещи, похожий звук", "a": "身材", "ap": "shēncái", "an": "фигура, телосложение. 身材高大.", "b": "身体", "bp": "shēntǐ", "bn": "«организм, здоровье». 身体好 ≠ 身材好.", "s": "shencai shenti"}, {"i": 78, "k": "share", "l": 21, "v": "5B", "w": "Разбор урока — и постоянная пара экзамена", "a": "偶然", "ap": "ǒurán", "an": "случайный, неожиданный. Противопоставлено 必然.", "b": "偶尔", "bp": "ǒu’ěr", "bn": "изредка, время от времени. Противопоставлено 经常.", "s": "ouran ouer"}, {"i": 79, "k": "share", "l": 21, "v": "5B", "w": "Оба «быстро», но не взаимозаменяемы", "a": "尽快", "ap": "jǐnkuài", "an": "как можно скорее, в кратчайший срок. 尽 здесь jǐn.", "b": "赶快", "bp": "gǎnkuài", "bn": "быстро, немедленно. В упражнении 2 нужен именно 赶快.", "s": "jinkuai gankuai"}, {"i": 80, "k": "share", "l": 21, "v": "5B", "w": "Четвёртый пункт упражнения 2", "a": "最初", "ap": "zuìchū", "an": "самый первый, изначальный. 最初的文字.", "b": "当初", "bp": "dāngchū", "bn": "тогда, в то время (о прошлом). 当初为什么那样选择.", "s": "zuichu dangchu"}, {"i": 81, "k": "share", "l": 21, "v": "5B", "w": "Первый пункт упражнения 2", "a": "思考", "ap": "sīkǎo", "an": "размышлять над чем-то большим: 思考人生.", "b": "考虑", "bp": "kǎolǜ", "bn": "обдумывать конкретное решение: 让我再考虑几天.", "s": "sikao kaolu"}, {"i": 82, "k": "sense", "l": 21, "v": "5B", "w": "Второй пункт упражнения 2", "a": "遗憾", "ap": "yíhàn", "an": "жаль, досадно — о том, что не вышло.", "b": "后悔", "bp": "hòuhuǐ", "bn": "раскаиваться — о том, что сам сделал.", "s": "yihan houhui"}, {"i": 83, "k": "share", "l": 21, "v": "5B", "w": "Две системы письма", "a": "繁体", "ap": "fántǐ", "an": "полные формы иероглифов.", "b": "简体", "bp": "jiǎntǐ", "bn": "упрощённые. Пара из 热身 этого урока.", "s": "fanti jianti"}, {"i": 84, "k": "share", "l": 21, "v": "5B", "w": "Одна морфема, два слова", "a": "称呼", "ap": "chēnghu", "an": "называть, обращаться. Второй слог нейтральный.", "b": "称赞", "bp": "chēngzàn", "bn": "хвалить. Оба на 称, оба в этом уроке.", "s": "chenghu chengzan"}, {"i": 85, "k": "share", "l": 21, "v": "5B", "w": "Три близких глагола", "a": "收集", "ap": "shōují", "an": "собирать по крупице: 收集资料.", "b": "搜集 / 收藏", "bp": "sōují / shōucáng", "bn": "«разыскивать и собирать» и «коллекционировать, хранить» (урок 20).", "s": "shouji souji/shoucang"}, {"i": 86, "k": "share", "l": 21, "v": "5B", "w": "Канцелярский ряд", "a": "查询", "ap": "cháxún", "an": "искать в базе, делать запрос.", "b": "查找 / 识别", "bp": "cházhǎo / shíbié", "bn": "«искать» и «распознавать». В тексте стоят рядом: 汉字识别查询.", "s": "chaxun chazhao/shibie"}, {"i": 87, "k": "share", "l": 21, "v": "5B", "w": "Один знак, два чтения", "a": "下载", "ap": "xiàzài", "an": "скачивать — 载 здесь zài.", "b": "载", "bp": "zǎi", "bn": "zǎi — «записывать, год»: 记载, 一年半载.", "s": "xiazai zai"}, {"i": 88, "k": "homo", "l": 21, "v": "5B", "w": "Ключ слева решает", "a": "库", "ap": "kù", "an": "хранилище: 资料库, 数据库, 车库.", "b": "裤 / 酷", "bp": "kù", "bn": "«брюки» и «крутой». Разница только в ключе.", "s": "ku ku"}, {"i": 89, "k": "share", "l": 21, "v": "5B", "w": "Три слова на 程", "a": "日程", "ap": "rìchéng", "an": "расписание, повестка: 提上日程.", "b": "行程 / 过程", "bp": "xíngchéng / guòchéng", "bn": "«маршрут» и «процесс». Все три на 程.", "s": "richeng xingcheng/guocheng"}, {"i": 90, "k": "share", "l": 22, "v": "5B", "w": "Второй пункт упражнения 2", "a": "观点", "ap": "guāndiǎn", "an": "точка зрения по конкретному вопросу: 我不同意你的观点.", "b": "观念", "bp": "guānniàn", "bn": "установка, представление вообще: 转变观念, 传统观念.", "s": "guandian guannian"}, {"i": 91, "k": "sense", "l": 22, "v": "5B", "w": "Третий пункт упражнения 2", "a": "理由", "ap": "lǐyóu", "an": "основание, которое человек приводит: 给我一个理由.", "b": "原因", "bp": "yuányīn", "bn": "объективная причина события: 销售不好的原因.", "s": "liyou yuanyin"}, {"i": 92, "k": "share", "l": 22, "v": "5B", "w": "Четвёртый пункт упражнения 2", "a": "单纯", "ap": "dānchún", "an": "просто лишь; простодушный, наивный: 他太单纯了.", "b": "单调", "bp": "dāndiào", "bn": "однообразный (урок 20): 生活很单调.", "s": "danchun dandiao"}, {"i": 93, "k": "share", "l": 22, "v": "5B", "w": "Первый пункт упражнения 2", "a": "转变", "ap": "zhuǎnbiàn", "an": "перестроить, сменить — об установке, подходе: 转变观念.", "b": "变化", "bp": "biànhuà", "bn": "измениться само — о состоянии: 天气变化.", "s": "zhuanbian bianhua"}, {"i": 94, "k": "share", "l": 22, "v": "5B", "w": "Пара 辨析 этого урока", "a": "平等", "ap": "píngděng", "an": "равный в правах и положении: 人人平等.", "b": "公平", "bp": "gōngpíng", "bn": "справедливый в конкретном деле: 公平竞争.", "s": "pingdeng gongping"}, {"i": 95, "k": "share", "l": 22, "v": "5B", "w": "Три слова на 承", "a": "承认", "ap": "chéngrèn", "an": "признать факт или ошибку.", "b": "承担 / 承受", "bp": "chéngdān / chéngshòu", "bn": "«взять на себя» и «выдержать». Все три на 承.", "s": "chengren chengdan/chengshou"}, {"i": 96, "k": "share", "l": 22, "v": "5B", "w": "Один знак, два чтения", "a": "属于", "ap": "shǔyú", "an": "принадлежать к: 幸福都属于她. 属 здесь shǔ.", "b": "属", "bp": "zhǔ", "bn": "zhǔ — в 属意, 属望 (книжное). Обычное чтение shǔ.", "s": "shuyu zhu"}, {"i": 97, "k": "share", "l": 22, "v": "5B", "w": "Три «向»-слова", "a": "倾向", "ap": "qīngxiàng", "an": "склонность; склоняться. 倾 — первый тон.", "b": "方向 / 影响", "bp": "fāngxiàng / yǐngxiǎng", "bn": "«направление» и «влияние». Все три кончаются на xiàng/xiǎng.", "s": "qingxiang fangxiang/yingxiang"}, {"i": 98, "k": "share", "l": 22, "v": "5B", "w": "Тяжёлый для руки знак", "a": "道德", "ap": "dàodé", "an": "мораль. 德 — четвёртый тон, пишется с 心 внизу.", "b": "品德 / 得", "bp": "pǐndé / dé", "bn": "«нравственные качества» и 得 dé «получать». Знак 德 руке даётся тяжело.", "s": "daode pinde/de"}, {"i": 99, "k": "share", "l": 22, "v": "5B", "w": "Три слова на 免", "a": "难免", "ap": "nánmiǎn", "an": "неизбежно: 难免会更疼爱. 免 без точки сверху.", "b": "避免 / 以免", "bp": "bìmiǎn / yǐmiǎn", "bn": "«избежать» и «чтобы не». Все три на 免.", "s": "nanmian bimian/yimian"}, {"i": 100, "k": "share", "l": 22, "v": "5B", "w": "Две болезни и одна любовь", "a": "疼爱", "ap": "téng’ài", "an": "нежно любить ребёнка.", "b": "疼 / 痛", "bp": "téng / tòng", "bn": "疼 — «болит», 痛苦 — «мучительно» (урок 21). Знаки похожи.", "s": "tengai teng/tong"}, {"i": 101, "k": "share", "l": 22, "v": "5B", "w": "Ключ решает", "a": "火柴", "ap": "huǒchái", "an": "спичка. 柴 chái — хворост.", "b": "火车 / 财", "bp": "huǒchē / cái", "bn": "«поезд» и «богатство». 柴 и 财 отличаются ключом.", "s": "huochai huoche/cai"}, {"i": 102, "k": "tone", "l": 23, "v": "5B", "w": "Самая частая пара этого уровня", "a": "一致", "ap": "yízhì", "an": "единодушный: 意见不一致, 一致认为.", "b": "一直", "bp": "yìzhí", "bn": "всё время, постоянно. Разница — только тон второго слога.", "s": "yizhi yizhi"}, {"i": 103, "k": "tone", "l": 23, "v": "5B", "w": "Перекличка с уроком 20", "a": "纪律", "ap": "jìlǜ", "an": "дисциплина. 律 lǜ — с ü.", "b": "记录 / 规律", "bp": "jìlù / guīlǜ", "bn": "«запись» (урок 20) и «закономерность». Три слова, два ключа.", "s": "jilu jilu/guilu"}, {"i": 104, "k": "homo", "l": 23, "v": "5B", "w": "Полные омофоны", "a": "沉默", "ap": "chénmò", "an": "молчать. 默 — с 黑 слева.", "b": "沉没", "bp": "chénmò", "bn": "«затонуть». Полные омофоны, различаются только знаком.", "s": "chenmo chenmo"}, {"i": 105, "k": "share", "l": 23, "v": "5B", "w": "Второй пункт упражнения 2", "a": "幸亏", "ap": "xìngkuī", "an": "к счастью — о том, чего удалось избежать.", "b": "多亏", "bp": "duōkuī", "bn": "благодаря кому-то — о том, кому обязан. В упражнении 2 нужен 多亏.", "s": "xingkui duokui"}, {"i": 106, "k": "share", "l": 23, "v": "5B", "w": "Два «目»-слова", "a": "目标", "ap": "mùbiāo", "an": "цель, к которой стремятся: 实现目标.", "b": "目的", "bp": "mùdì", "bn": "цель-намерение: 我打电话的目的是…. Третий пункт упражнения 2.", "s": "mubiao mudi"}, {"i": 107, "k": "share", "l": 23, "v": "5B", "w": "Три слова на 规", "a": "规矩", "ap": "guīju", "an": "заведённый порядок, приличия. Второй слог нейтральный.", "b": "规定 / 规律", "bp": "guīdìng / guīlǜ", "bn": "«установленное правило» и «закономерность». В упражнении 2 нужен 规矩.", "s": "guiju guiding/guilu"}, {"i": 108, "k": "share", "l": 23, "v": "5B", "w": "Одна морфема, два слова", "a": "出席", "ap": "chūxí", "an": "присутствовать на мероприятии.", "b": "主席 / 席", "bp": "zhǔxí / xí", "bn": "«председатель» — оба в этом уроке и оба на 席.", "s": "chuxi zhuxi/xi"}, {"i": 109, "k": "near", "l": 23, "v": "5B", "w": "Перекличка с уроком 19", "a": "面临", "ap": "miànlín", "an": "оказаться перед выбором. 临 lín.", "b": "淋 / 面对", "bp": "lín / miànduì", "bn": "淋 «полить» (урок 19) и 面对 «столкнуться лицом к лицу».", "s": "mianlin lin/miandui"}, {"i": 110, "k": "tone", "l": 23, "v": "5B", "w": "Третий раз 口 решает", "a": "吻", "ap": "wěn", "an": "целовать. 口 + 勿.", "b": "闻 / 问", "bp": "wén / wèn", "bn": "«нюхать» (урок 19) и «спрашивать». Три близких слога.", "s": "wen wen/wen"}, {"i": 111, "k": "poly", "l": 23, "v": "5B", "w": "Один знак, два чтения", "a": "横", "ap": "héng", "an": "поперёк, горизонтально — так читается в 横穿.", "b": "横", "bp": "hèng", "bn": "hèng — «грубый, своевольный»: 蛮横, 横财.", "s": "heng heng"}, {"i": 112, "k": "share", "l": 23, "v": "5B", "w": "Канцелярский ряд", "a": "录取", "ap": "lùqǔ", "an": "зачислить в вуз.", "b": "争取 / 录音", "bp": "zhēngqǔ / lùyīn", "bn": "«добиваться» и «записывать звук». Не путать 取 и 娶.", "s": "luqu zhengqu/luyin"}, {"i": 113, "k": "share", "l": 23, "v": "5B", "w": "Пара разбора", "a": "单独", "ap": "dāndú", "an": "отдельно, сам по себе — может быть и о вещах.", "b": "独自", "bp": "dúzì", "bn": "в одиночку — только о человеке. Пара 辨析 этого урока.", "s": "dandu duzi"}, {"i": 114, "k": "share", "l": 24, "v": "5B", "w": "Пара разбора этого урока", "a": "发言", "ap": "fā yán", "an": "взять слово на собрании или на уроке. Разделяемое: 发过言.", "b": "发表", "bp": "fābiǎo", "bn": "публично заявить или напечатать: 发表文章. Пара 辨析 урока.", "s": "fayan fabiao"}, {"i": 115, "k": "share", "l": 24, "v": "5B", "w": "Один знак, два чтения", "a": "冠军", "ap": "guànjūn", "an": "冠 здесь guàn, четвёртый тон.", "b": "冠", "bp": "guān", "bn": "guān — «головной убор»: 衣冠, 冠心病.", "s": "guanjun guan"}, {"i": 116, "k": "share", "l": 24, "v": "5B", "w": "Второй многочтимый знак урока", "a": "空闲", "ap": "kòngxián", "an": "空 здесь kòng — «свободное место, время».", "b": "空", "bp": "kōng", "bn": "kōng — «пустой»: 空气, 天空, 空间.", "s": "kongxian kong"}, {"i": 117, "k": "near", "l": 24, "v": "5B", "w": "Перекличка с уроком 20", "a": "鼓掌", "ap": "gǔ zhǎng", "an": "аплодировать. 掌 — ладонь.", "b": "涨 / 长", "bp": "zhǎng", "bn": "«расти в цене» (урок 20) и «расти, старший». Три знака на zhǎng.", "s": "guzhang zhang"}, {"i": 118, "k": "share", "l": 24, "v": "5B", "w": "Три урока в одном гнезде", "a": "承担", "ap": "chéngdān", "an": "взять на себя ответственность или расходы.", "b": "承认 / 担任", "bp": "chéngrèn / dānrèn", "bn": "«признать» (урок 22) и «занимать должность» (урок 23).", "s": "chengdan chengren/danren"}, {"i": 119, "k": "share", "l": 24, "v": "5B", "w": "Третий пункт упражнения 2", "a": "热烈", "ap": "rèliè", "an": "бурный — об аплодисментах, приёме, обсуждении.", "b": "热情", "bp": "rèqíng", "bn": "радушный — о человеке. В упражнении 2 нужен 热情.", "s": "relie reqing"}, {"i": 120, "k": "share", "l": 24, "v": "5B", "w": "Два «силовых» слова", "a": "力量", "ap": "lìliàng", "an": "сила, возможности — в том числе внутренняя.", "b": "精力", "bp": "jīnglì", "bn": "энергия, силы на работу. Второй пункт упражнения 2.", "s": "liliang jingli"}, {"i": 121, "k": "share", "l": 24, "v": "5B", "w": "Четвёртый пункт упражнения 2", "a": "利用", "ap": "lìyòng", "an": "использовать — и нейтрально (利用时间), и негативно (利用别人).", "b": "用 / 运用", "bp": "yòng / yùnyòng", "bn": "простое «пользоваться» и «применять». В упражнении 2 нужен 利用.", "s": "liyong yong/yunyong"}, {"i": 122, "k": "share", "l": 24, "v": "5B", "w": "Три слова на 访", "a": "采访", "ap": "cǎifǎng", "an": "брать интервью, собирать материал.", "b": "访问 / 家访", "bp": "fǎngwèn / jiāfǎng", "bn": "«нанести визит» и «прийти к семье ученика» — оба в уроке.", "s": "caifang fangwen/jiafang"}, {"i": 123, "k": "share", "l": 24, "v": "5B", "w": "Три близких глагола", "a": "培训", "ap": "péixùn", "an": "обучать, готовить (курсы).", "b": "培养 / 训练", "bp": "péiyǎng / xùnliàn", "bn": "«взращивать» и «тренировать». Все три про обучение.", "s": "peixun peiyang/xunlian"}, {"i": 124, "k": "tone", "l": 24, "v": "5B", "w": "Редкий знак, который любят в заданиях", "a": "闯", "ap": "chuǎng", "an": "пробиваться: 闯世界, 闯红灯. 门 + 马 — конь в воротах.", "b": "创 / 窗", "bp": "chuàng / chuāng", "bn": "«создавать» (创办, урок 21) и «окно». Знаки похожи на слух.", "s": "chuang chuang/chuang"}, {"i": 125, "k": "share", "l": 24, "v": "5B", "w": "Три слова, одна морфема на двоих", "a": "艰巨", "ap": "jiānjù", "an": "трудный — только о задаче.", "b": "艰难 / 巨大", "bp": "jiānnán / jùdà", "bn": "«тяжёлый, трудный» (о жизни, пути) и «огромный» (урок 22).", "s": "jianju jiannan/juda"}, {"i": 126, "k": "share", "l": 25, "v": "5B", "w": "Пара разбора этого урока", "a": "严肃", "ap": "yánsù", "an": "строгий — о выражении лица, тоне, атмосфере.", "b": "严格", "bp": "yángé", "bn": "строгий — о требованиях и соблюдении правил. Пара 辨析 урока.", "s": "yansu yange"}, {"i": 127, "k": "share", "l": 25, "v": "5B", "w": "Первый пункт упражнения 2", "a": "可怕", "ap": "kěpà", "an": "страшный — о том, что пугает.", "b": "恐怕", "bp": "kǒngpà", "bn": "«боюсь, что…» — вводное. В упражнении 2 нужен 恐怕.", "s": "kepa kongpa"}, {"i": 128, "k": "share", "l": 25, "v": "5B", "w": "Два вида волнения", "a": "慌张", "ap": "huāngzhāng", "an": "растерянный, суетливый — не владеет собой.", "b": "紧张", "bp": "jǐnzhāng", "bn": "напряжённый, нервничает. Второй пункт упражнения 2.", "s": "huangzhang jinzhang"}, {"i": 129, "k": "sense", "l": 25, "v": "5B", "w": "Третий пункт упражнения 2", "a": "彻底", "ap": "chèdǐ", "an": "до конца, полностью — о решении, изменении, выздоровлении.", "b": "完全", "bp": "wánquán", "bn": "целиком, абсолютно. Третий пункт упражнения 2.", "s": "chedi wanquan"}, {"i": 130, "k": "share", "l": 25, "v": "5B", "w": "Четвёртый пункт упражнения 2", "a": "承受", "ap": "chéngshòu", "an": "выдерживать давление, тяжесть, боль.", "b": "接受", "bp": "jiēshòu", "bn": "принимать подарок, предложение, критику. Четвёртый пункт упражнения 2.", "s": "chengshou jieshou"}, {"i": 131, "k": "homo", "l": 25, "v": "5B", "w": "Ключ слева решает", "a": "舱", "ap": "cāng", "an": "трюм, каюта. Ключ 舟 — лодка.", "b": "仓 / 苍", "bp": "cāng", "bn": "«склад» (仓库) и «седой, лазурный». Три знака на cāng.", "s": "cang cang"}, {"i": 132, "k": "homo", "l": 25, "v": "5B", "w": "Перекличка с уроком 23", "a": "沉", "ap": "chén", "an": "тонуть. Ключ 氵.", "b": "陈 / 沉默", "bp": "chén", "bn": "«старый, изложить» и 沉默 «молчать» (урок 23) — тот же знак.", "s": "chen chen"}, {"i": 133, "k": "share", "l": 25, "v": "5B", "w": "Три слова на 烈", "a": "猛烈", "ap": "měngliè", "an": "яростный — о ветре, атаке, огне.", "b": "热烈 / 强烈", "bp": "rèliè / qiángliè", "bn": "«бурный» (урок 24) и «сильный, резкий». Все три на 烈.", "s": "menglie relie/qianglie"}, {"i": 134, "k": "share", "l": 25, "v": "5B", "w": "Знак, который пишут один раз", "a": "威胁", "ap": "wēixié", "an": "угрожать. 胁 — редкий знак с ключом 月.", "b": "威信 / 胁", "bp": "wēixìn / xié", "bn": "«авторитет». 胁 почти не встречается вне 威胁.", "s": "weixie weixin/xie"}, {"i": 135, "k": "share", "l": 25, "v": "5B", "w": "Перекличка с уроками 22 и 23", "a": "平衡", "ap": "pínghéng", "an": "равновесие. 衡 — сложный знак, 16 черт.", "b": "平等 / 横", "bp": "píngděng / héng", "bn": "«равный» (урок 22) и 横 «поперёк» (урок 23) — звучит близко.", "s": "pingheng pingdeng/heng"}, {"i": 136, "k": "share", "l": 25, "v": "5B", "w": "Перекличка с уроками 19 и 20", "a": "丝毫", "ap": "sīháo", "an": "ни на йоту. 丝 «нить» уже было в уроке 19.", "b": "毫无 / 毫米", "bp": "háowú / háomǐ", "bn": "«ни малейшего» (урок 20) и «миллиметр».", "s": "sihao haowu/haomi"}, {"i": 137, "k": "near", "l": 25, "v": "5B", "w": "Третье гнездо на jǐn", "a": "谨慎", "ap": "jǐnshèn", "an": "осторожный. Оба знака с ключом 讠 и 忄.", "b": "紧 / 尽快", "bp": "jǐn / jǐnkuài", "bn": "«тугой» и «как можно скорее» (урок 21). Все на jǐn.", "s": "jinshen jin/jinkuai"}, {"i": 138, "k": "sense", "l": 26, "v": "5B", "w": "Пара разбора этого урока", "a": "总算", "ap": "zǒngsuàn", "an": "наконец-то — о том, чего ждали и хотели; плюс «в общем-то неплохо».", "b": "终于", "bp": "zhōngyú", "bn": "в конце концов — результат может быть и нежеланным. Пара 辨析 урока.", "s": "zongsuan zhongyu"}, {"i": 139, "k": "homo", "l": 26, "v": "5B", "w": "Снова та же пара, что в уроке 20", "a": "纪录", "ap": "jìlù", "an": "рекорд; документальный: 纪录片, 世界纪录.", "b": "记录", "bp": "jìlù", "bn": "запись, протокол; записывать. Полные омофоны — разбор урока 20.", "s": "jilu jilu"}, {"i": 140, "k": "sense", "l": 26, "v": "5B", "w": "Первый пункт упражнения 2", "a": "一律", "ap": "yílǜ", "an": "все без исключения — о правиле, которое не знает изъятий.", "b": "都 / 一概", "bp": "dōu / yígài", "bn": "都 просто «все», без оттенка строгости. В упражнении 2 нужен 一律.", "s": "yilu dou/yigai"}, {"i": 141, "k": "sense", "l": 26, "v": "5B", "w": "Третий пункт упражнения 2", "a": "耽误", "ap": "dānwù", "an": "задержать, упустить время — с ущербом для дела.", "b": "影响", "bp": "yǐngxiǎng", "bn": "повлиять — нейтрально. Третий пункт упражнения 2.", "s": "danwu yingxiang"}, {"i": 142, "k": "sense", "l": 26, "v": "5B", "w": "Четвёртый пункт упражнения 2", "a": "出色", "ap": "chūsè", "an": "блестяще — о том, как сделано дело.", "b": "优秀", "bp": "yōuxiù", "bn": "отличный — о человеке и его качествах. Четвёртый пункт упражнения 2.", "s": "chuse youxiu"}, {"i": 143, "k": "sense", "l": 26, "v": "5B", "w": "Второй пункт упражнения 2", "a": "搞", "ap": "gǎo", "an": "сделать так, что получился результат: 搞明白, 搞错, 搞成.", "b": "做 / 办", "bp": "zuò / bàn", "bn": "做 «делать», 办 «устраивать». Во втором пункте упражнения 2 нужен 搞.", "s": "gao zuo/ban"}, {"i": 144, "k": "share", "l": 26, "v": "5B", "w": "Многочтимый знак", "a": "效率", "ap": "xiàolǜ", "an": "эффективность. 率 здесь lǜ.", "b": "率", "bp": "shuài", "bn": "shuài — «вести за собой»: 率领, 率先. Один знак, два чтения.", "s": "xiaolu shuai"}, {"i": 145, "k": "share", "l": 26, "v": "5B", "w": "Три способа сказать «подряд»", "a": "一连", "ap": "yīlián", "an": "подряд: 一连三天.", "b": "一直 / 连续", "bp": "yìzhí / liánxù", "bn": "«всё время» и «непрерывно». Все три про продолжительность.", "s": "yilian yizhi/lianxu"}, {"i": 146, "k": "near", "l": 26, "v": "5B", "w": "Перекличка с уроком 23", "a": "寂寞", "ap": "jìmò", "an": "одиноко, тоскливо. Оба знака с ключом 宀.", "b": "沉默 / 寂静", "bp": "chénmò / jìjìng", "bn": "«молчать» (урок 23) и «тишина». 寞 и 默 легко спутать.", "s": "jimo chenmo/jijing"}, {"i": 147, "k": "share", "l": 26, "v": "5B", "w": "Три чтения одного знака", "a": "得罪", "ap": "dézuì", "an": "обидеть. 得 здесь dé, четвёртый... то есть второй тон.", "b": "得 / 的", "bp": "děi / de", "bn": "得 děi «надо», 得 de — служебное. Один знак, три чтения.", "s": "dezui dei/de"}, {"i": 148, "k": "share", "l": 26, "v": "5B", "w": "Одна морфема, разная оценка", "a": "虚伪", "ap": "xūwěi", "an": "лицемерный. 虚 «пустой» + 伪 «поддельный».", "b": "虚心 / 谦虚", "bp": "xūxīn / qiānxū", "bn": "«скромный, непредвзятый». 虚 в них с противоположной окраской.", "s": "xuwei xuxin/qianxu"}, {"i": 149, "k": "share", "l": 26, "v": "5B", "w": "Три слова на 步", "a": "步骤", "ap": "bùzhòu", "an": "этап процедуры. 骤 — редкий знак.", "b": "步伐 / 脚步", "bp": "bùfá / jiǎobù", "bn": "«поступь» и «шаги». 步骤 — только о порядке действий.", "s": "buzhou bufa/jiaobu"}, {"i": 150, "k": "share", "l": 27, "v": "5B", "w": "Пара разбора этого урока", "a": "损失", "ap": "sǔnshī", "an": "потерять часть — об уменьшении; бывает и существительным.", "b": "失去", "bp": "shīqù", "bn": "лишиться совсем; существительным не бывает. Пара 辨析 урока.", "s": "sunshi shiqu"}, {"i": 151, "k": "share", "l": 27, "v": "5B", "w": "Перекличка с уроком 26", "a": "在于", "ap": "zàiyú", "an": "заключаться в: 问题在于……, 关键在于…….", "b": "至于", "bp": "zhìyú", "bn": "«что до…» — урок 26. Оба на 于, оба абстрактные.", "s": "zaiyu zhiyu"}, {"i": 152, "k": "share", "l": 27, "v": "5B", "w": "Перекличка с уроком 22", "a": "过于", "ap": "guòyú", "an": "чрезмерно — наречие перед прилагательным: 过于谨慎.", "b": "过分", "bp": "guòfèn", "bn": "«переходить меру» (урок 22) — и наречие, и сказуемое: 太过分了.", "s": "guoyu guofen"}, {"i": 153, "k": "share", "l": 27, "v": "5B", "w": "Антоним из урока 22", "a": "否认", "ap": "fǒurèn", "an": "отрицать — говорить, что этого не было.", "b": "承认", "bp": "chéngrèn", "bn": "признавать (урок 22). Точный антоним, и оба на 认.", "s": "fouren chengren"}, {"i": 154, "k": "share", "l": 27, "v": "5B", "w": "Первый пункт упражнения 2", "a": "灰心", "ap": "huīxīn", "an": "пасть духом — ещё можно вернуться.", "b": "死心", "bp": "sǐxīn", "bn": "поставить крест, отказаться совсем. В упражнении 2 нужен 灰心.", "s": "huixin sixin"}, {"i": 155, "k": "share", "l": 27, "v": "5B", "w": "Второй пункт упражнения 2", "a": "期间", "ap": "qījiān", "an": "в течение какого-то отрезка: 工作期间, 这期间.", "b": "时期", "bp": "shíqī", "bn": "эпоха, период как целое: 西汉时期. Второй пункт упражнения 2.", "s": "qijian shiqi"}, {"i": 156, "k": "near", "l": 27, "v": "5B", "w": "Третий пункт упражнения 2", "a": "事先", "ap": "shìxiān", "an": "заранее — до события вообще.", "b": "提前", "bp": "tíqián", "bn": "заблаговременно, за столько-то времени: 提前24小时. Третий пункт упражнения 2.", "s": "shixian tiqian"}, {"i": 157, "k": "share", "l": 27, "v": "5B", "w": "Четвёртый пункт упражнения 2", "a": "后果", "ap": "hòuguǒ", "an": "последствия — всегда дурные: 后果很严重.", "b": "结果", "bp": "jiéguǒ", "bn": "результат — нейтрально. Четвёртый пункт упражнения 2.", "s": "houguo jieguo"}, {"i": 158, "k": "share", "l": 27, "v": "5B", "w": "Три слова в одном гнезде", "a": "教练", "ap": "jiàoliàn", "an": "тренер.", "b": "教训 / 训练", "bp": "jiàoxùn / xùnliàn", "bn": "«урок из неудачи» и «тренировать». Все три на 教 или 练.", "s": "jiaolian jiaoxun/xunlian"}, {"i": 159, "k": "share", "l": 27, "v": "5B", "w": "Перекличка с уроком 24", "a": "运气", "ap": "yùnqi", "an": "везение. Второй слог нейтральный.", "b": "勇气 / 力气", "bp": "yǒngqì / lìqi", "bn": "«смелость» (урок 24) и «силы». Три слова на 气.", "s": "yunqi yongqi/liqi"}, {"i": 160, "k": "share", "l": 27, "v": "5B", "w": "Перекличка с уроком 21", "a": "服气", "ap": "fúqì", "an": "признать правоту. 服 — «подчиниться».", "b": "佩服 / 福气", "bp": "pèifú / fúqi", "bn": "«восхищаться» (урок 21) и «везение, счастливая доля».", "s": "fuqi peifu/fuqi"}, {"i": 161, "k": "homo", "l": 27, "v": "5B", "w": "Три знака на один слог", "a": "犯", "ap": "fàn", "an": "совершить ошибку или преступление. 犭 слева.", "b": "饭 / 范", "bp": "fàn", "bn": "«еда» и «образец, рамки». Все три чистое fàn.", "s": "fan fan"}, {"i": 162, "k": "homo", "l": 28, "v": "5B", "w": "Полные омофоны — разбор урока", "a": "反应", "ap": "fǎnyìng", "an": "реагировать на внешнее; реакция. Дополнение не берёт.", "b": "反映", "bp": "fǎnyìng", "bn": "доложить наверх; отражать суть. Дополнение берёт. Пара 辨析 урока.", "s": "fanying fanying"}, {"i": 163, "k": "share", "l": 28, "v": "5B", "w": "Первый пункт упражнения 2", "a": "制作", "ap": "zhìzuò", "an": "изготовить вещь или передачу: 制作玩具, 节目制作.", "b": "制造", "bp": "zhìzào", "bn": "производить промышленно: 制造汽车. В упражнении 2 нужен 制作.", "s": "zhizuo zhizao"}, {"i": 164, "k": "homo", "l": 28, "v": "5B", "w": "Вторая пара на 制-", "a": "制订", "ap": "zhìdìng", "an": "составить, разработать — процесс ещё идёт: 制订方案.", "b": "制定", "bp": "zhìdìng", "bn": "установить окончательно: 制定法律. Полные омофоны.", "s": "zhiding zhiding"}, {"i": 165, "k": "swap", "l": 28, "v": "5B", "w": "Третий пункт упражнения 2", "a": "到达", "ap": "dàodá", "an": "прибыть куда-то: 到达目的地.", "b": "达到", "bp": "dádào", "bn": "достичь уровня или цели: 达到标准. Перестановка морфем.", "s": "daoda dadao"}, {"i": 166, "k": "share", "l": 28, "v": "5B", "w": "Перекличка с уроком 22", "a": "假设", "ap": "jiǎshè", "an": "«предположим, что» — вводит допущение, бывает существительным.", "b": "假如", "bp": "jiǎrú", "bn": "«если» — обычное условие (урок 22). Второй пункт упражнения 2.", "s": "jiashe jiaru"}, {"i": 167, "k": "share", "l": 28, "v": "5B", "w": "Четвёртый пункт упражнения 2", "a": "光明", "ap": "guāngmíng", "an": "светлый — только в переносном смысле: 光明的前途.", "b": "明亮", "bp": "míngliàng", "bn": "светлый физически: 房间很明亮. Четвёртый пункт упражнения 2.", "s": "guangming mingliang"}, {"i": 168, "k": "share", "l": 28, "v": "5B", "w": "Один знак, два чтения", "a": "行业", "ap": "hángyè", "an": "行 здесь háng — отрасль, ряд.", "b": "行动 / 行李", "bp": "xíngdòng / xíngli", "bn": "行 как xíng: «действие» (урок 24), «багаж».", "s": "hangye xingdong/xingli"}, {"i": 169, "k": "near", "l": 28, "v": "5B", "w": "Три слова одного вывода", "a": "专注", "ap": "zhuānzhù", "an": "сосредоточенный на деле.", "b": "执着 / 专业", "bp": "zhízhuó / zhuānyè", "bn": "«упорный» и «профессиональный» — все три в финале текста.", "s": "zhuanzhu zhizhuo/zhuanye"}, {"i": 170, "k": "share", "l": 28, "v": "5B", "w": "Перекличка с уроком 20", "a": "陆续", "ap": "lùxù", "an": "один за другим, с промежутками.", "b": "连续 / 手续", "bp": "liánxù / shǒuxù", "bn": "«непрерывно» и «формальности» (урок 20). Все три на 续.", "s": "luxu lianxu/shouxu"}, {"i": 171, "k": "share", "l": 28, "v": "5B", "w": "Перекличка с уроком 24", "a": "休闲", "ap": "xiūxián", "an": "досуг, отдых: 休闲一日游.", "b": "空闲", "bp": "kòngxián", "bn": "свободное время (урок 24). Оба на 闲.", "s": "xiuxian kongxian"}, {"i": 172, "k": "near", "l": 28, "v": "5B", "w": "Три знака на jù", "a": "具体", "ap": "jùtǐ", "an": "конкретный. 具 с восемью чертами внутри.", "b": "巨大 / 俱乐部", "bp": "jùdà / jùlèbù", "bn": "«огромный» (урок 22) и «клуб» (урок 20). Три разных 巨/具/俱.", "s": "juti juda/julebu"}, {"i": 173, "k": "share", "l": 28, "v": "5B", "w": "Три слова на 缺", "a": "缺乏", "ap": "quēfá", "an": "не хватать чего-то нужного: 缺乏锻炼.", "b": "缺少 / 缺点", "bp": "quēshǎo / quēdiǎn", "bn": "«недоставать» и «недостаток». Все три на 缺.", "s": "quefa queshao/quedian"}, {"i": 174, "k": "share", "l": 29, "v": "5B", "w": "Главная пара урока", "a": "促使", "ap": "cùshǐ", "an": "побудить кого-то: после него стоит ЛИЦО + действие — 促使他改变主意.", "b": "促进", "bp": "cùjìn", "bn": "способствовать чему-то: после него стоит ПРОЦЕСС — 促进经济发展. Третий пункт упражнения 2.", "s": "cushi cujin"}, {"i": 175, "k": "share", "l": 29, "v": "5B", "w": "Три слова на 碍", "a": "妨碍", "ap": "fáng’ài", "an": "мешать, стоять поперёк: 妨碍交通, 妨碍休息.", "b": "阻碍 / 障碍", "bp": "zǔ’ài / zhàng’ài", "bn": "«тормозить развитие» и «препятствие». Все три на 碍 — 13 черт, глаз + 得 без 彳.", "s": "fangai zuai/zhangai"}, {"i": 176, "k": "share", "l": 29, "v": "5B", "w": "Три слова на 利-", "a": "利润", "ap": "lìrùn", "an": "прибыль предприятия: 没有多少利润.", "b": "利益 / 利息", "bp": "lìyì / lìxī", "bn": "«выгода, интересы» и «проценты по вкладу». Три разных 利-.", "s": "lirun liyi/lixi"}, {"i": 177, "k": "share", "l": 29, "v": "5B", "w": "倒 — dǎo или dào", "a": "倒闭", "ap": "dǎobì", "an": "dǎo третьим тоном: предприятие закрылось.", "b": "倒霉 / 倒是", "bp": "dǎo méi / dào shì", "bn": "«не повезло» (тоже dǎo) и 倒 как dào — «наоборот». Один знак, два чтения.", "s": "daobi daomei/daoshi"}, {"i": 178, "k": "share", "l": 29, "v": "5B", "w": "Три слова на 持", "a": "维持", "ap": "wéichí", "an": "сохранять как есть: 维持生态, 维持秩序.", "b": "保持 / 坚持", "bp": "bǎochí / jiānchí", "bn": "«поддерживать уровень» и «не бросать». Все три на 持.", "s": "weichi baochi/jianchi"}, {"i": 179, "k": "share", "l": 29, "v": "5B", "w": "Гнездо 适-/合-", "a": "适当", "ap": "shìdàng", "an": "в меру, надлежащий — шкала «сколько».", "b": "适合 / 合适", "bp": "shìhé / héshì", "bn": "«подходить кому-то» (глагол) и «подходящий» (прилагательное).", "s": "shidang shihe/heshi"}, {"i": 180, "k": "share", "l": 29, "v": "5B", "w": "Четвёртый пункт упражнения 2", "a": "合理", "ap": "hélǐ", "an": "«обоснованный»: 价格合理, 合理的建议.", "b": "有理 / 道理", "bp": "yǒulǐ / dàolǐ", "bn": "«быть правым в споре» и «резон». Четвёртый пункт упражнения 2.", "s": "heli youli/daoli"}, {"i": 181, "k": "sense", "l": 29, "v": "5B", "w": "Синонимы, которыми его объясняют", "a": "干脆", "ap": "gāncuì", "an": "gāncuì — оба первого и четвёртого тона, 脆 с 月 слева.", "b": "痛快 / 果断", "bp": "tòngkuài / guǒduàn", "bn": "Синонимы из объяснения учебника: 说话痛快, 做事果断.", "s": "gancui tongkuai/guoduan"}, {"i": 182, "k": "share", "l": 29, "v": "5B", "w": "Первый пункт упражнения 2", "a": "不如", "ap": "bùrú", "an": "«уступать»: 我的发音不如她.", "b": "不比 / 没有", "bp": "bùbǐ / méiyǒu", "bn": "不比 — отрицание сравнения вообще; 没有 — «не настолько». Первый пункт упражнения 2.", "s": "buru bubi/meiyou"}, {"i": 183, "k": "share", "l": 29, "v": "5B", "w": "Перекличка с уроком 22", "a": "万一", "ap": "wànyī", "an": "«вдруг, на случай если» — союз маловероятного и плохого.", "b": "一旦", "bp": "yídàn", "bn": "«как только, однажды» (урок 22) — событие считается возможным или уже данным.", "s": "wanyi yidan"}, {"i": 184, "k": "share", "l": 29, "v": "5B", "w": "Три способа усомниться", "a": "不见得", "ap": "bújiànde", "an": "«не обязательно» — смягчённое возражение.", "b": "不一定 / 说不定", "bp": "bùyídìng / shuōbudìng", "bn": "«необязательно» (нейтрально) и «может быть, даже». Все три — в одно гнездо.", "s": "bujiande buyiding/shuobuding"}, {"i": 185, "k": "share", "l": 29, "v": "5B", "w": "Разбор урока", "a": "挤", "ap": "jǐ", "an": "пять значений: втиснуться, выдавить, набить, вытеснить, «впихнуть дела».", "b": "拥挤", "bp": "yōngjǐ", "bn": "«теснота, давка» — только про скопление. Пара 辨析 урока.", "s": "ji yongji"}, {"i": 186, "k": "sense", "l": 29, "v": "5B", "w": "Три трудных знака", "a": "垄断", "ap": "lǒngduàn", "an": "垄 — 龙 над 土, «межа»; 断 — «обрубить».", "b": "垮 / 饱和", "bp": "kuǎ / bǎohé", "bn": "Ещё два коротких знака урока: 垮 = 土 + 夸, 饱 = 饣 + 包.", "s": "longduan kua/baohe"}, {"i": 187, "k": "share", "l": 30, "v": "5B", "w": "Первый пункт упражнения 2", "a": "的确", "ap": "díquè", "an": "的 читается dí. Наречие «действительно», можно удвоить: 的的确确.", "b": "确实 / 实在", "bp": "quèshí / shízài", "bn": "确实 бывает и прилагательным (消息确实吗？), 的确 — никогда. Первый пункт упражнения 2.", "s": "dique queshi/shizai"}, {"i": 188, "k": "tone", "l": 30, "v": "5B", "w": "Гнездо на wēi-/-jī", "a": "危机", "ap": "wēijī", "an": "«кризис»: 危机感, 经济危机.", "b": "危急 / 时机", "bp": "wēijí / shíjī", "bn": "«критический, опасный» и «удачный момент». Три слова, два разных 机/急.", "s": "weiji weiji/shiji"}, {"i": 189, "k": "sense", "l": 30, "v": "5B", "w": "Второй пункт упражнения 2", "a": "延长", "ap": "yáncháng", "an": "сделать длиннее по времени или в пространстве: 延长时间, 延长公路.", "b": "推迟", "bp": "tuīchí", "bn": "перенести на более поздний срок — длина не меняется. Второй пункт упражнения 2.", "s": "yanchang tuichi"}, {"i": 190, "k": "sense", "l": 30, "v": "5B", "w": "Третий пункт упражнения 2", "a": "体会", "ap": "tǐhuì", "an": "ГЛАГОЛ и существительное: прочувствовать на себе. 体会到 возможно.", "b": "感想", "bp": "gǎnxiǎng", "bn": "только СУЩЕСТВИТЕЛЬНОЕ: мысли по поводу. 感想到 невозможно. Третий пункт упражнения 2.", "s": "tihui ganxiang"}, {"i": 191, "k": "share", "l": 30, "v": "5B", "w": "Четвёртый пункт упражнения 2", "a": "本质", "ap": "běnzhì", "an": "существительное: сущность. 从本质上说 — вводный оборот.", "b": "根本", "bp": "gēnběn", "bn": "наречие «совершенно, вовсе» при отрицании: 根本就看不见. Четвёртый пункт упражнения 2.", "s": "benzhi genben"}, {"i": 192, "k": "share", "l": 30, "v": "5B", "w": "Разбор урока", "a": "接近", "ap": "jiējìn", "an": "приблизиться — в том числе к абстрактному, ко времени и к числу.", "b": "靠近", "bp": "kàojìn", "bn": "придвинуться физически; ни время, ни количество, ни абстракция. Пара 辨析 урока.", "s": "jiejin kaojin"}, {"i": 193, "k": "homo", "l": 30, "v": "5B", "w": "Три слова yǒulì/yǒulǐ", "a": "有利", "ap": "yǒulì", "an": "«полезный»: 有利于…, 有利条件. Отрицание — 不利.", "b": "有力 / 有理", "bp": "yǒulì / yǒulǐ", "bn": "有力 — «сильный, веский» (有力的证据), 有理 — «быть правым». Полные омофоны 有利／有力.", "s": "youli youli/youli"}, {"i": 194, "k": "tone", "l": 30, "v": "5B", "w": "Три слова на 用", "a": "实用", "ap": "shíyòng", "an": "«практичный»: 实用的方法.", "b": "适用 / 使用", "bp": "shìyòng / shǐyòng", "bn": "«применимый к» и «пользоваться». Все три звучат похоже.", "s": "shiyong shiyong/shiyong"}, {"i": 195, "k": "share", "l": 30, "v": "5B", "w": "Три слова на 成", "a": "构成", "ap": "gòuchéng", "an": "«образовать, создать»: 构成威胁, 由三部分构成.", "b": "组成 / 形成", "bp": "zǔchéng / xíngchéng", "bn": "«составить из частей» и «сложиться само». Разводятся только по сочетаемости.", "s": "goucheng zucheng/xingcheng"}, {"i": 196, "k": "share", "l": 30, "v": "5B", "w": "Три слова на 避", "a": "逃避", "ap": "táobì", "an": "«уклоняться»: 逃避责任, 逃避天敌.", "b": "避免 / 躲避", "bp": "bìmiǎn / duǒbì", "bn": "«избежать (чтобы не случилось)» и «прятаться от». Все три — на 避.", "s": "taobi bimian/duobi"}, {"i": 197, "k": "share", "l": 30, "v": "5B", "w": "Три слова на 激", "a": "刺激", "ap": "cìjī", "an": "«стимулировать» и «раздражать»: 刺激经济, 受了刺激.", "b": "激动 / 激烈", "bp": "jīdòng / jīliè", "bn": "«волноваться» и «ожесточённый». Все три — на 激.", "s": "ciji jidong/jilie"}, {"i": 198, "k": "sense", "l": 30, "v": "5B", "w": "Финальное гнездо урока", "a": "挖掘", "ap": "wājué", "an": "«раскапывать, раскрывать»: 挖掘潜力. 掘 — не самый частый знак, стоит прописать.", "b": "潜力 / 活力", "bp": "qiánlì / huólì", "bn": "Два «-力» этого урока: скрытая сила и живая энергия.", "s": "wajue qianli/huoli"}, {"i": 199, "k": "share", "l": 30, "v": "5B", "w": "落 — luò или là", "a": "落后", "ap": "luòhòu", "an": "落 здесь luò — «отставать».", "b": "落 / 丢三落四", "bp": "là / diūsān-làsì", "bn": "落 как là — «забыть вещь»: 我把钱包落在家里了. Один знак, два чтения.", "s": "luohou la/diusan-lasi"}, {"i": 200, "k": "share", "l": 30, "v": "5B", "w": "Порядок знаков", "a": "比例", "ap": "bǐlì", "an": "«доля, пропорция»: 存活的比例, 男女比例.", "b": "比较 / 例如", "bp": "bǐjiào / lìrú", "bn": "Два знака этого слова по отдельности очень частотны — не перепутайте порядок.", "s": "bili bijiao/liru"}, {"i": 201, "k": "share", "l": 31, "v": "5B", "w": "Второй пункт упражнения 2", "a": "了不起", "ap": "liǎobuqǐ", "an": "«замечательный»: 了不起的人物. В вопросе 有什么了不起的 — «подумаешь».", "b": "不得了", "bp": "bùdéliǎo", "bn": "«ужас, крайняя степень»: 热得不得了. Второй пункт упражнения 2.", "s": "liaobuqi budeliao"}, {"i": 202, "k": "share", "l": 31, "v": "5B", "w": "Три «看不…»", "a": "看不起", "ap": "kànbuqǐ", "an": "«презирать»: 看不起人.", "b": "看不上 / 看不出", "bp": "kànbushàng / kànbuchū", "bn": "«не нравится, не годится» и «не разглядеть». Все три — 看 + 不 + морфема.", "s": "kanbuqi kanbushang/kanbuchu"}, {"i": 203, "k": "near", "l": 31, "v": "5B", "w": "Три ключа на qīng", "a": "轻易", "ap": "qīngyì", "an": "qīngyì — «легко; легкомысленно». Пара 辨析 урока.", "b": "请求 / 清楚", "bp": "qǐngqiú / qīngchu", "bn": "Три разных знака qīng/qǐng: 轻（车）、请（讠）、清（氵）. В диктанте рука выбирает ключ.", "s": "qingyi qingqiu/qingchu"}, {"i": 204, "k": "sense", "l": 31, "v": "5B", "w": "Третий пункт упражнения 2", "a": "赞成", "ap": "zànchéng", "an": "«одобрять мнение, быть за»: 大家都赞成.", "b": "同意 / 答应", "bp": "tóngyì / dāying", "bn": "同意 — «согласиться, разрешить», 答应 — «пообещать, откликнуться». Третий пункт упражнения 2.", "s": "zancheng tongyi/daying"}, {"i": 205, "k": "share", "l": 31, "v": "5B", "w": "Четвёртый пункт упражнения 2", "a": "模糊", "ap": "móhu", "an": "模 здесь mó, 糊 — лёгкий тон: «расплывчатый».", "b": "糊涂", "bp": "hútu", "bn": "«бестолковый, в голове каша» — про человека. Четвёртый пункт упражнения 2.", "s": "mohu hutu"}, {"i": 206, "k": "share", "l": 31, "v": "5B", "w": "Первый пункт упражнения 2", "a": "冷淡", "ap": "lěngdàn", "an": "«холодный, безразличный» — про отношение, выражение лица, дела.", "b": "清淡", "bp": "qīngdàn", "bn": "«неострый, лёгкий» — про еду, и «вялый» — про торговлю. Первый пункт упражнения 2.", "s": "lengdan qingdan"}, {"i": 207, "k": "share", "l": 31, "v": "5B", "w": "Три слова на 切", "a": "迫切", "ap": "pòqiè", "an": "«настоятельный»: 迫切需要, 迫切地要求.", "b": "急切 / 亲切", "bp": "jíqiè / qīnqiè", "bn": "«нетерпеливый» и «сердечный». Все три — на 切.", "s": "poqie jiqie/qinqie"}, {"i": 208, "k": "sense", "l": 31, "v": "5B", "w": "Трудное написание", "a": "犹豫", "ap": "yóuyù", "an": "Оба знака редкие; устойчивое 毫不犹豫.", "b": "迟疑 / 优秀", "bp": "chíyí / yōuxiù", "bn": "«мешкать» и — на слух — похожее начало yóu/yōu.", "s": "youyu chiyi/youxiu"}, {"i": 209, "k": "sense", "l": 31, "v": "5B", "w": "Что именно сокращается", "a": "缩短", "ap": "suōduǎn", "an": "«сократить длину или срок»: 缩短距离, 缩短时间.", "b": "减少 / 推迟", "bp": "jiǎnshǎo / tuīchí", "bn": "«уменьшить количество» и «отложить». Разводятся по тому, что именно меняется.", "s": "suoduan jianshao/tuichi"}, {"i": 210, "k": "share", "l": 31, "v": "5B", "w": "处 — chǔ или chù", "a": "处理", "ap": "chǔlǐ", "an": "处 здесь chǔ — «улаживать».", "b": "处（chù）", "bp": "chù", "bn": "处 как chù — «место»: 到处, 好处, 住处. Один знак, два чтения.", "s": "chuli chu"}, {"i": 211, "k": "share", "l": 31, "v": "5B", "w": "Три слова на 值", "a": "值班", "ap": "zhí bān", "an": "值 — «дежурить»; раздельно-слитное слово: 值了一夜班.", "b": "值得 / 价值", "bp": "zhíde / jiàzhí", "bn": "«стоить того» и «ценность». Все три — на 值.", "s": "zhiban zhide/jiazhi"}, {"i": 212, "k": "share", "l": 31, "v": "5B", "w": "Гнездо 标-/-志", "a": "标志", "ap": "biāozhì", "an": "«знак, указатель»: 交通标志.", "b": "标准 / 志愿", "bp": "biāozhǔn / zhìyuàn", "bn": "«стандарт» и «желание, воля». Знаки 标 и 志 ходят парами с другими.", "s": "biaozhi biaozhun/zhiyuan"}, {"i": 213, "k": "share", "l": 31, "v": "5B", "w": "Три слова на 区", "a": "社区", "ap": "shèqū", "an": "社 — «община» (как в 报社), 区 — «район».", "b": "地区 / 郊区", "bp": "dìqū / jiāoqū", "bn": "Ещё два «-区». Проверка: 社区 — это люди, 地区／郊区 — это территория.", "s": "shequ diqu/jiaoqu"}, {"i": 214, "k": "share", "l": 32, "v": "5B", "w": "Третий пункт упражнения 2", "a": "设施", "ap": "shèshī", "an": "сооружения и инфраструктура: 基础设施, 环保设施, 服务设施.", "b": "设备", "bp": "shèbèi", "bn": "оборудование, аппаратура: 生产设备, 设备齐全. Третий пункт упражнения 2.", "s": "sheshi shebei"}, {"i": 215, "k": "share", "l": 32, "v": "5B", "w": "Первый пункт упражнения 2", "a": "尊重", "ap": "zūnzhòng", "an": "«уважать выбор, мнение, права» — то, с чем можно не соглашаться.", "b": "尊敬", "bp": "zūnjìng", "bn": "«почитать человека» — старших, учителя. Первый пункт упражнения 2.", "s": "zunzhong zunjing"}, {"i": 216, "k": "share", "l": 32, "v": "5B", "w": "Второй пункт упражнения 2", "a": "真实", "ap": "zhēnshí", "an": "прилагательное-определение: 真实的情况／故事／情感.", "b": "确实", "bp": "quèshí", "bn": "«действительно» (наречие) и «достоверный». Второй пункт упражнения 2.", "s": "zhenshi queshi"}, {"i": 217, "k": "share", "l": 32, "v": "5B", "w": "Четвёртый пункт упражнения 2", "a": "把握", "ap": "bǎwò", "an": "существительное «уверенность»: 没什么把握. И глагол «ухватить момент».", "b": "掌握", "bp": "zhǎngwò", "bn": "только глагол: овладеть знаниями, держать в руках. Четвёртый пункт упражнения 2.", "s": "bawo zhangwo"}, {"i": 218, "k": "share", "l": 32, "v": "5B", "w": "尽 — jǐn или jìn", "a": "尽量", "ap": "jǐnliàng", "an": "jǐn третьим тоном: «по возможности больше/меньше».", "b": "尽力 / 尽快", "bp": "jìnlì / jǐnkuài", "bn": "尽 как jìn — «исчерпать силы»; 尽快 снова jǐn. Один знак, два чтения.", "s": "jinliang jinli/jinkuai"}, {"i": 219, "k": "share", "l": 32, "v": "5B", "w": "Три слова на 消-", "a": "消极", "ap": "xiāojí", "an": "«пассивный, негативный»: 态度消极.", "b": "消失 / 消费", "bp": "xiāoshī / xiāofèi", "bn": "«исчезнуть» и «потреблять» — оба тоже в этом уроке.", "s": "xiaoji xiaoshi/xiaofei"}, {"i": 220, "k": "sense", "l": 32, "v": "5B", "w": "Гнездо 资／质／值", "a": "资源", "ap": "zīyuán", "an": "资 — «средства»: 资源, 资金 (урок 29), 投资.", "b": "质量 / 价值", "bp": "zhìliàng / jiàzhí", "bn": "Знаки 资／质／值 похожи и на слух (zī/zhì/zhí), и по виду.", "s": "ziyuan zhiliang/jiazhi"}, {"i": 221, "k": "share", "l": 32, "v": "5B", "w": "Разбор урока", "a": "鼓舞", "ap": "gǔwǔ", "an": "«воодушевлять» — подлежащее обычно вещь или событие; бывает прилагательным.", "b": "鼓励", "bp": "gǔlì", "bn": "«подбадривать, поощрять кого-то делать» — подлежащее человек. Пара 辨析 урока.", "s": "guwu guli"}, {"i": 222, "k": "near", "l": 32, "v": "5B", "w": "Три слова про вред", "a": "破坏", "ap": "pòhuài", "an": "«разрушать»: 破坏环境／关系／计划.", "b": "损害 / 伤害", "bp": "sǔnhài / shānghài", "bn": "«вредить (интересам, здоровью)» и «ранить». Все три есть в тексте.", "s": "pohuai sunhai/shanghai"}, {"i": 223, "k": "near", "l": 32, "v": "5B", "w": "Ключ 火 на месте?", "a": "燃烧", "ap": "ránshāo", "an": "«гореть, сжигать»: 燃烧煤炭.", "b": "然而 / 燃料", "bp": "rán’ér / ránliào", "bn": "然 без 火 — союз «однако». В диктанте рука теряет ключ 火.", "s": "ranshao raner/ranliao"}, {"i": 224, "k": "share", "l": 32, "v": "5B", "w": "Три слова на 敏", "a": "敏感", "ap": "mǐngǎn", "an": "«чуткий; щекотливый»: 敏感话题, 敏感地认识到.", "b": "灵敏 / 敏捷", "bp": "língmǐn / mǐnjié", "bn": "«чувствительный (о приборе)» и «проворный». Все три — на 敏.", "s": "mingan lingmin/minjie"}, {"i": 225, "k": "share", "l": 32, "v": "5B", "w": "Три слова про мечты", "a": "幻想", "ap": "huànxiǎng", "an": "«иллюзия, мечта оторванная от реальности».", "b": "理想 / 想象", "bp": "lǐxiǎng / xiǎngxiàng", "bn": "«идеал, мечта» (нейтрально-положительно) и «воображать». Разные оттенки.", "s": "huanxiang lixiang/xiangxiang"}, {"i": 226, "k": "share", "l": 32, "v": "5B", "w": "Разбор по знакам", "a": "夸张", "ap": "kuāzhāng", "an": "«преувеличенный»: 一点儿也不夸张.", "b": "夸 / 紧张", "bp": "kuā / jǐnzhāng", "bn": "夸 само — «хвалить»: 夸孩子. Второй знак тот же, что в 紧张.", "s": "kuazhang kua/jinzhang"}, {"i": 227, "k": "share", "l": 33, "v": "5B", "w": "Второй пункт упражнения 2", "a": "难怪", "ap": "nánguài", "an": "«неудивительно» — объясняет уже известный факт: 难怪他没来，原来病了.", "b": "难道", "bp": "nándào", "bn": "«неужели» — риторический вопрос, часто с 吗. Второй пункт упражнения 2.", "s": "nanguai nandao"}, {"i": 228, "k": "share", "l": 33, "v": "5B", "w": "Третий пункт упражнения 2", "a": "虚心", "ap": "xūxīn", "an": "«непредвзято слушать других» — всегда про готовность учиться: 虚心请教／咨询／接受批评.", "b": "谦虚", "bp": "qiānxū", "bn": "«скромный» — о характере в целом (урок 31). Третий пункт упражнения 2.", "s": "xuxin qianxu"}, {"i": 229, "k": "share", "l": 33, "v": "5B", "w": "Первый пункт упражнения 2", "a": "取消", "ap": "qǔxiāo", "an": "«отменить» — решением: 取消资格／比赛／约会.", "b": "消失", "bp": "xiāoshī", "bn": "«исчезнуть» — само по себе (урок 32). Первый пункт упражнения 2.", "s": "quxiao xiaoshi"}, {"i": 230, "k": "sense", "l": 33, "v": "5B", "w": "Четвёртый пункт упражнения 2", "a": "明确", "ap": "míngquè", "an": "«чёткий, недвусмысленный» — о цели, позиции, заявлении: 明确表示.", "b": "清楚", "bp": "qīngchu", "bn": "«понятный, разборчивый» — о том, что видно и слышно. Четвёртый пункт упражнения 2.", "s": "mingque qingchu"}, {"i": 231, "k": "near", "l": 33, "v": "5B", "w": "Три знака xún", "a": "中旬", "ap": "zhōngxún", "an": "旬 — декада: 上旬 (1–10), 中旬 (11–20), 下旬 (21–конец).", "b": "咨询 / 寻找", "bp": "zīxún / xúnzhǎo", "bn": "Три разных xún: 旬（日）、询（讠）、寻. В диктанте решает ключ.", "s": "zhongxun zixun/xunzhao"}, {"i": 232, "k": "near", "l": 33, "v": "5B", "w": "Три знака péi", "a": "赔偿", "ap": "péicháng", "an": "赔 — «возместить»: 赔偿损失.", "b": "陪 / 培养", "bp": "péi / péiyǎng", "bn": "陪 — «сопровождать» (陪我练车), 培养 — «растить» (урок 29). Три 贝/阝/土.", "s": "peichang pei/peiyang"}, {"i": 233, "k": "share", "l": 33, "v": "5B", "w": "Три степени решения", "a": "缓解", "ap": "huǎnjiě", "an": "«смягчить»: 缓解拥堵／压力／疼痛. Проблема остаётся, но слабее.", "b": "解决 / 根治", "bp": "jiějué / gēnzhì", "bn": "«решить окончательно» и «устранить корень». Разная степень.", "s": "huanjie jiejue/genzhi"}, {"i": 234, "k": "share", "l": 33, "v": "5B", "w": "Разбор урока", "a": "体现", "ap": "tǐxiàn", "an": "«проявиться в чём-то конкретном» — подчёркивает, через что видно.", "b": "表现", "bp": "biǎoxiàn", "bn": "«проявлять, вести себя»; бывает существительным. Пара 辨析 урока.", "s": "tixian biaoxian"}, {"i": 235, "k": "share", "l": 33, "v": "5B", "w": "Три слова на 拥", "a": "拥挤", "ap": "yōngjǐ", "an": "«теснота» — про скопление (урок 29, пара с 挤).", "b": "拥抱 / 拥有", "bp": "yōngbào / yōngyǒu", "bn": "«обнять» и «обладать». Все три — на 拥.", "s": "yongji yongbao/yongyou"}, {"i": 236, "k": "share", "l": 33, "v": "5B", "w": "Три слова на 险", "a": "保险", "ap": "bǎoxiǎn", "an": "«страховка» и «надёжный»: 买保险, 不太保险.", "b": "危险 / 冒险", "bp": "wēixiǎn / màoxiǎn", "bn": "«опасность» и «рисковать». Все три — на 险.", "s": "baoxian weixian/maoxian"}, {"i": 237, "k": "sense", "l": 33, "v": "5B", "w": "Гнездо 府／付／附", "a": "政府", "ap": "zhèngfǔ", "an": "府 — «управа», не 付 и не 附.", "b": "付出 / 附近", "bp": "fùchū / fùjìn", "bn": "«отдавать» и «поблизости». Три похожих знака fù/fǔ.", "s": "zhengfu fuchu/fujin"}, {"i": 238, "k": "share", "l": 33, "v": "5B", "w": "Три слова на 改", "a": "改革", "ap": "gǎigé", "an": "«реформа» — крупное переустройство системы.", "b": "改变 / 改善", "bp": "gǎibiàn / gǎishàn", "bn": "«изменить» и «улучшить» (урок 30). Все три — на 改.", "s": "gaige gaibian/gaishan"}, {"i": 239, "k": "share", "l": 33, "v": "5B", "w": "Три слова на 愿", "a": "自愿", "ap": "zìyuàn", "an": "«добровольно»: 自愿放弃, 自愿参加.", "b": "愿望 / 志愿", "bp": "yuànwàng / zhìyuàn", "bn": "«желание» и «воля, доброволец». Все три — на 愿.", "s": "ziyuan yuanwang/zhiyuan"}, {"i": 240, "k": "share", "l": 33, "v": "5B", "w": "厦 — shà или xià", "a": "大厦", "ap": "dàshà", "an": "厦 здесь shà — «высотное здание».", "b": "厦门", "bp": "Xiàmén", "bn": "厦 как xià — город Сямэнь. Один знак, два чтения.", "s": "dasha xiamen"}, {"i": 241, "k": "share", "l": 34, "v": "5B", "w": "Первый пункт упражнения 2", "a": "爱惜", "ap": "àixī", "an": "«беречь, не тратить зря»: 爱惜粮食／时间／羽毛／生命.", "b": "爱护", "bp": "àihù", "bn": "«оберегать, заботиться»: 爱护儿童／动物／公物. Первый пункт упражнения 2.", "s": "aixi aihu"}, {"i": 242, "k": "share", "l": 34, "v": "5B", "w": "Второй пункт упражнения 2", "a": "随身", "ap": "suíshēn", "an": "«при себе»: 随身带着伞, 随身行李 — вещь всё время с тобой.", "b": "随手", "bp": "suíshǒu", "bn": "«попутно, не задумываясь»: 随手关门, 随手一放. Второй пункт упражнения 2.", "s": "suishen suishou"}, {"i": 243, "k": "share", "l": 34, "v": "5B", "w": "Четвёртый пункт упражнения 2", "a": "种类", "ap": "zhǒnglèi", "an": "«виды» — о множестве разновидностей: 种类多, 种类齐全.", "b": "类型", "bp": "lèixíng", "bn": "«тип» — об одном типе из классификации: 这种类型的人. Четвёртый пункт упражнения 2.", "s": "zhonglei leixing"}, {"i": 244, "k": "sense", "l": 34, "v": "5B", "w": "Третий пункт упражнения 2", "a": "抓", "ap": "zhuā", "an": "«схватить рукой, поймать»: 抓住小偷, 抓住机会, 抓出寄生虫.", "b": "拿 / 抱", "bp": "ná / bào", "bn": "拿 — просто взять, 抱 — обнять. Третий пункт упражнения 2: вора «берут» только 抓.", "s": "zhua na/bao"}, {"i": 245, "k": "share", "l": 34, "v": "5B", "w": "Разбор урока", "a": "反复", "ap": "fǎnfù", "an": "наречие «снова и снова» и существительное «рецидив». Дополнения не берёт.", "b": "重复", "bp": "chóngfù", "bn": "глагол «повторить то же самое»: 请你再重复一遍. Пара 辨析 урока.", "s": "fanfu chongfu"}, {"i": 246, "k": "sense", "l": 34, "v": "5B", "w": "Перекличка с уроком 33", "a": "概括", "ap": "gàikuò", "an": "«обобщить»: 概括为三点, 概括来说.", "b": "归纳 / 总之", "bp": "guīnà / zǒngzhī", "bn": "«свести воедино» (урок 33) и «словом». Все три — про подведение итога.", "s": "gaikuo guina/zongzhi"}, {"i": 247, "k": "sense", "l": 34, "v": "5B", "w": "Три «брать роль»", "a": "充当", "ap": "chōngdāng", "an": "«выступать в роли»: 充当保护色, 充当角色.", "b": "担任 / 承担", "bp": "dānrèn / chéngdān", "bn": "«занимать должность» (урок 23) и «взять на себя» (урок 22).", "s": "chongdang danren/chengdan"}, {"i": 248, "k": "share", "l": 34, "v": "5B", "w": "Разные «гладко»", "a": "光滑", "ap": "guānghuá", "an": "«гладкий на ощупь»: 皮肤光滑, 表面光滑.", "b": "滑 / 顺利", "bp": "huá / shùnlì", "bn": "滑 само — «скользить, скользкий»: 路很滑. 顺利 — «гладко идёт» о деле.", "s": "guanghua hua/shunli"}, {"i": 249, "k": "near", "l": 34, "v": "5B", "w": "Три знака zào/zǎo", "a": "干燥", "ap": "gānzào", "an": "燥 с ключом 火 — «сухой»: 空气干燥.", "b": "急躁 / 洗澡", "bp": "jízào / xǐzǎo", "bn": "躁 с 足 — «вспыльчивый», 澡 с 氵 — «мыться». Три одинаковых фонетика.", "s": "ganzao jizao/xizao"}, {"i": 250, "k": "share", "l": 34, "v": "5B", "w": "Три слова на 密", "a": "秘密", "ap": "mìmì", "an": "«тайна»: 保守秘密, 秘密的地方.", "b": "密切 / 密码", "bp": "mìqiè / mìmǎ", "bn": "«тесный» (урок 32) и «пароль». Все три — на 密.", "s": "mimi miqie/mima"}, {"i": 251, "k": "share", "l": 34, "v": "5B", "w": "Два значения 寄", "a": "寄生", "ap": "jìshēng", "an": "寄 — «поселиться у кого-то», отсюда и 寄生虫.", "b": "寄 / 寄信", "bp": "jì / jì xìn", "bn": "寄 как «отправить письмом» — то же слово в бытовом значении.", "s": "jisheng ji/jixin"}, {"i": 252, "k": "near", "l": 34, "v": "5B", "w": "Трудное написание", "a": "池塘", "ap": "chítáng", "an": "塘 — «пруд, запруда»; 池 — «водоём».", "b": "糖 / 厅", "bp": "táng / tīng", "bn": "糖 «сахар» и 大厅 «зал» — похожие слоги, разные знаки.", "s": "chitang tang/ting"}, {"i": 253, "k": "near", "l": 34, "v": "5B", "w": "Три слова на wéi", "a": "唯一", "ap": "wéiyī", "an": "«единственный»: 唯一的特征／选择／办法.", "b": "惟独 / 维持", "bp": "wéidú / wéichí", "bn": "«только лишь» и «поддерживать» (урок 29). Все три — на wéi.", "s": "weiyi weidu/weichi"}, {"i": 254, "k": "sense", "l": 34, "v": "5B", "w": "Перекличка с уроком 29", "a": "痛快", "ap": "tòngkuài", "an": "«от души; прямодушный»: 喝个痛快, 答应得很痛快.", "b": "干脆", "bp": "gāncuì", "bn": "«решительно» (урок 29) — почти синоним во втором значении. Разводятся по сочетаемости.", "s": "tongkuai gancui"}, {"i": 255, "k": "share", "l": 35, "v": "5B", "w": "Первый пункт упражнения 2", "a": "吸收", "ap": "xīshōu", "an": "«впитать, усвоить» — о веществе и знаниях: 吸收养分, 吸收新知识.", "b": "吸取", "bp": "xīqǔ", "bn": "«извлечь» — только об уроке и опыте: 吸取教训／经验. Первый пункт упражнения 2.", "s": "xishou xiqu"}, {"i": 256, "k": "share", "l": 35, "v": "5B", "w": "Третий пункт упражнения 2", "a": "自动", "ap": "zìdòng", "an": "«само собой, автоматически» — без участия воли: 自动补充, 自动售货机.", "b": "主动", "bp": "zhǔdòng", "bn": "«по собственной инициативе» — про человека: 主动提出. Третий пункт упражнения 2.", "s": "zidong zhudong"}, {"i": 257, "k": "sense", "l": 35, "v": "5B", "w": "Четвёртый пункт упражнения 2", "a": "秩序", "ap": "zhìxù", "an": "«порядок» — как всё идёт: 秩序良好, 遵守秩序.", "b": "规则", "bp": "guīzé", "bn": "«правила» — чему следуют. Четвёртый пункт упражнения 2.", "s": "zhixu guize"}, {"i": 258, "k": "share", "l": 35, "v": "5B", "w": "Второй пункт упражнения 2", "a": "控制", "ap": "kòngzhì", "an": "«управлять, держать в руках»: 控制情绪, 控制成分.", "b": "限制", "bp": "xiànzhì", "bn": "«ограничивать» — ставить рамки. Второй пункт упражнения 2.", "s": "kongzhi xianzhi"}, {"i": 259, "k": "share", "l": 35, "v": "5B", "w": "Перекличка с уроком 36", "a": "湿润", "ap": "shīrùn", "an": "«влажный» в приятном смысле: 空气湿润, 眼圈湿润.", "b": "潮湿", "bp": "cháoshī", "bn": "«сырой» — скорее неприятно: 房间潮湿. Пара пригодится и в уроке 36.", "s": "shirun chaoshi"}, {"i": 260, "k": "share", "l": 35, "v": "5B", "w": "Разбор урока", "a": "特殊", "ap": "tèshū", "an": "книжное «особый»; только прилагательное: 情况特殊.", "b": "特别", "bp": "tèbié", "bn": "и разговорное «особенный», и наречие «особенно». Пара 辨析 урока.", "s": "teshu tebie"}, {"i": 261, "k": "tone", "l": 35, "v": "5B", "w": "Три слова huī/huí/fǎn-fù", "a": "恢复", "ap": "huīfù", "an": "«восстановиться»: 恢复活力, 恢复正常.", "b": "回复 / 反复", "bp": "huífù / fǎnfù", "bn": "«ответить» и «снова и снова» (урок 34). Все три — похожие слоги.", "s": "huifu huifu/fanfu"}, {"i": 262, "k": "share", "l": 35, "v": "5B", "w": "Три слова на 指", "a": "指挥", "ap": "zhǐhuī", "an": "«командовать, дирижировать»: 大脑指挥身体.", "b": "指导 / 指出", "bp": "zhǐdǎo / zhǐchū", "bn": "«руководить, наставлять» и «указать». Все три — на 指.", "s": "zhihui zhidao/zhichu"}, {"i": 263, "k": "share", "l": 35, "v": "5B", "w": "Гнездо на -分", "a": "成分", "ap": "chéngfèn", "an": "«компонент»: 主要成分, 控制成分.", "b": "部分 / 身份", "bp": "bùfen / shēnfèn", "bn": "«часть» и «статус». Все три — на 分 в лёгком или четвёртом тоне.", "s": "chengfen bufen/shenfen"}, {"i": 264, "k": "share", "l": 35, "v": "5B", "w": "Три слова на 充", "a": "补充", "ap": "bǔchōng", "an": "«восполнить»: 补充水分, 补充说明.", "b": "充当 / 充分", "bp": "chōngdāng / chōngfèn", "bn": "«выступать в роли» (урок 34) и «в полной мере». Все три — на 充.", "s": "buchong chongdang/chongfen"}, {"i": 265, "k": "sense", "l": 35, "v": "5B", "w": "Три вида проверки", "a": "测验", "ap": "cèyàn", "an": "«тест, проверка» — обычно короткая: 心理测验.", "b": "考试 / 实验", "bp": "kǎoshì / shíyàn", "bn": "«экзамен» и «эксперимент». Три разных формата проверки.", "s": "ceyan kaoshi/shiyan"}, {"i": 266, "k": "share", "l": 35, "v": "5B", "w": "Три слова на 本", "a": "根本", "ap": "gēnběn", "an": "根 здесь — «корень»: 根本的问题, 根本无法.", "b": "本质 / 基本", "bp": "běnzhì / jīběn", "bn": "«сущность» (урок 30) и «основной». Все три — на 本.", "s": "genben benzhi/jiben"}, {"i": 267, "k": "near", "l": 35, "v": "5B", "w": "Три слова на 冒", "a": "冒", "ap": "mào", "an": "«валить, бить ключом»: 冒汗, 冒烟, 冒出来.", "b": "帽子 / 冒险", "bp": "màozi / màoxiǎn", "bn": "«шапка» и «рисковать». Один фонетик, три слова.", "s": "mao maozi/maoxian"}, {"i": 268, "k": "near", "l": 35, "v": "5B", "w": "Ключ 扌 на месте?", "a": "抽", "ap": "chōu", "an": "«вытягивать, выкачивать»: 把水抽上来, 抽时间, 抽烟.", "b": "油 / 柚", "bp": "yóu / yòu", "bn": "Знак 抽 легко спутать по правой части; слева обязательно 扌.", "s": "chou you/you"}, {"i": 269, "k": "near", "l": 36, "v": "5B", "w": "Первый пункт упражнения 2", "a": "自豪", "ap": "zìháo", "an": "«гордиться своим делом» — всегда хорошо: 感到自豪, 自豪地说.", "b": "骄傲", "bp": "jiāo’ào", "bn": "«гордость» и «зазнайство»: 骄傲得不得了. Первый пункт упражнения 2.", "s": "zihao jiaoao"}, {"i": 270, "k": "share", "l": 36, "v": "5B", "w": "Второй пункт упражнения 2", "a": "保留", "ap": "bǎoliú", "an": "«придержать при себе, оставить за собой»: 保留意见, 毫无保留.", "b": "保存", "bp": "bǎocún", "bn": "«сохранить в целости»: 保存文物, 保存食品. Второй пункт упражнения 2.", "s": "baoliu baocun"}, {"i": 271, "k": "share", "l": 36, "v": "5B", "w": "Третий пункт упражнения 2", "a": "湿润", "ap": "shīrùn", "an": "«увлажнённый» — приятно или трогательно: 眼圈湿润了.", "b": "潮湿", "bp": "cháoshī", "bn": "«сырой» — чаще неудобно: 房间潮湿. Третий пункт упражнения 2.", "s": "shirun chaoshi"}, {"i": 272, "k": "share", "l": 36, "v": "5B", "w": "Четвёртый пункт упражнения 2", "a": "除非", "ap": "chúfēi", "an": "союз «только если»: 除非……否则／不然……；предлог «кроме как»: 除非李阳.", "b": "除了", "bp": "chúle", "bn": "«кроме» — исключает или добавляет: 除了工作还是工作. Четвёртый пункт упражнения 2.", "s": "chufei chule"}, {"i": 273, "k": "share", "l": 36, "v": "5B", "w": "Три слова на 付", "a": "应付", "ap": "yìngfu", "an": "付 в лёгком тоне: «справляться, отделываться». Пара 辨析 урока.", "b": "对付 / 付出", "bp": "duìfu / fùchū", "bn": "«иметь дело с, справиться» и «отдавать». Все три — на 付.", "s": "yingfu duifu/fuchu"}, {"i": 274, "k": "share", "l": 36, "v": "5B", "w": "Перекличка с уроком 26", "a": "在乎", "ap": "zàihu", "an": "«придавать значение»: 不在乎, 满不在乎.", "b": "在于 / 关于", "bp": "zàiyú / guānyú", "bn": "«заключаться в» (урок 26) и «о, относительно». Все три — на 在／于.", "s": "zaihu zaiyu/guanyu"}, {"i": 275, "k": "share", "l": 36, "v": "5B", "w": "Три слова про «делиться»", "a": "分享", "ap": "fēnxiǎng", "an": "«делиться хорошим»: 分享快乐／经验.", "b": "分担 / 享受", "bp": "fēndān / xiǎngshòu", "bn": "«разделить бремя» и «наслаждаться». 享 — общий знак.", "s": "fenxiang fendan/xiangshou"}, {"i": 276, "k": "homo", "l": 36, "v": "5B", "w": "Два значения 吹", "a": "吹", "ap": "chuī", "an": "два значения: «дуть» (吹风) и «хвастаться» (吹牛, 不是乱吹).", "b": "炊 / 欢呼", "bp": "chuī / huānhū", "bn": "炊 — «готовить на огне». А 吹 с 口 — именно «дуть» и «трепаться».", "s": "chui chui/huanhu"}, {"i": 277, "k": "share", "l": 36, "v": "5B", "w": "Три слова про правду", "a": "真理", "ap": "zhēnlǐ", "an": "«истина» — большая, жизненная: 生活的真理.", "b": "道理 / 真实", "bp": "dàolǐ / zhēnshí", "bn": "«резон» и «подлинный» (урок 32). Все три — про правду.", "s": "zhenli daoli/zhenshi"}, {"i": 278, "k": "share", "l": 36, "v": "5B", "w": "Два знака по отдельности", "a": "抢救", "ap": "qiǎngjiù", "an": "«срочно спасать»: 抢救病人／花草.", "b": "抢 / 救", "bp": "qiǎng / jiù", "bn": "抢 само — «отнять, расхватать» (抢到屋里去 — «быстро затащить»).", "s": "qiangjiu qiang/jiu"}, {"i": 279, "k": "share", "l": 36, "v": "5B", "w": "Три слова про спешку", "a": "紧急", "ap": "jǐnjí", "an": "«экстренный»: 情况紧急, 紧急通知.", "b": "紧张 / 着急", "bp": "jǐnzhāng / zháojí", "bn": "«нервничать, напряжённый» и «торопиться». Все три — похожи на слух.", "s": "jinji jinzhang/zhaoji"}, {"i": 280, "k": "homo", "l": 36, "v": "5B", "w": "Ключ 石 на месте?", "a": "砸", "ap": "zá", "an": "«разбить, придавить» — удар сверху: 被砸死, 砸碎.", "b": "杂 / 咋", "bp": "zá / ză", "bn": "砸 = 石 + 匝. Без ключа 石 знак превращается в другой.", "s": "za za/za"}, {"i": 281, "k": "near", "l": 36, "v": "5B", "w": "Три знака на 尧", "a": "浇", "ap": "jiāo", "an": "«поливать»: 浇水, 浇花. Слева 氵, справа 尧.", "b": "烧 / 绕", "bp": "shāo / rào", "bn": "«жечь» и «обходить». Один фонетик 尧, три разных ключа.", "s": "jiao shao/rao"}, {"i": 282, "k": "homo", "l": 36, "v": "5B", "w": "Три слова на duǒ/duō", "a": "朵", "ap": "duǒ", "an": "счётное для цветов и облаков: 一朵花, 一朵云.", "b": "躲 / 多", "bp": "duǒ / duō", "bn": "«прятаться» и «много». 朵 — это 几 над 木.", "s": "duo duo/duo"}], L = {"1": ["爱的细节", "Детали любви", "5A"], "2": ["留串钥匙给父母", "Оставить родителям связку ключей", "5A"], "3": ["人生有选择，一切可改变", "Есть выбор — всё можно изменить", "5A"], "4": ["子路背米", "Цзы Лу несёт рис", "5A"], "5": ["济南的泉水", "Источники Цзинаня", "5A"], "6": ["除夕的由来", "Откуда взялся канун Нового года", "5A"], "7": ["成语故事两则", "Две истории о чэнъюях", "5A"], "8": ["“朝三暮四”的古今义", "«Три утром, четыре вечером»: тогда и сейчас", "5A"], "9": ["别样鲁迅", "Другой Лу Синь", "5A"], "10": ["争论的奇迹", "Чудо спора", "5A"], "11": ["闹钟的危害", "Чем вреден будильник", "5A"], "12": ["海外用户玩儿微信", "Зарубежные пользователи WeChat", "5A"], "13": ["锯掉生活的“筐底”", "Отпилить у жизни «дно корзины»", "5A"], "14": ["北京的四合院", "Пекинский сыхэюань", "5A"], "15": ["纸上谈兵", "Стратег на бумаге", "5A"], "16": ["体重与节食", "Вес и режим питания", "5A"], "17": ["在最美好的时刻离开", "Уйти в лучший момент", "5A"], "18": ["抽象艺术美不美", "Красиво ли абстрактное искусство", "5A"], "19": ["家乡的萝卜饼", "Лепёшки с редькой с моей родины", "5B"], "20": ["小人书摊", "Лоток с книжками-картинками", "5B"], "21": ["汉字叔叔：一个美国人的汉字情缘", "Дядюшка Ханьцзы", "5B"], "22": ["阅读与思考", "Чтение и размышление", "5B"], "23": ["放手", "Отпустить", "5B"], "24": ["支教行动", "Поехать учить в глубинку", "5B"], "25": ["给自己加满水", "Налить себе полный бак", "5B"], "26": ["你属于哪一种“忙”", "Какая у вас занятость", "5B"], "27": ["下棋", "Игра в шахматы", "5B"], "28": ["最受欢迎的毕业生", "Самый желанный выпускник", "5B"], "29": ["培养对手", "Растить себе соперника", "5B"], "30": ["竞争让市场更高效", "Конкуренция делает рынок эффективнее", "5B"], "31": ["登门槛效应", "Эффект ноги в двери", "5B"], "32": ["身边的环保", "Экология рядом", "5B"], "33": ["以堵治堵——缓解交通有妙招", "Лечить пробку пробкой", "5B"], "34": ["鸟儿的护肤术", "Как птицы ухаживают за перьями", "5B"], "35": ["植物会出汗", "Растения тоже потеют", "5B"], "36": ["老舍与养花", "Лао Шэ и его цветы", "5B"]}, KINDS = [["homo", "Не различить на слух", "同音词", "Пиньинь совпадает полностью, включая тон. Единственная опора — смысл фразы.", 42], ["tone", "Разница только в тоне", "声调", "Слоги те же, тон другой. Самое уязвимое место диктанта: ухо тон слышит, а рука забывает.", 16], ["poly", "Один знак — два чтения", "多音字", "Один и тот же иероглиф читается по-разному в зависимости от слова.", 8], ["swap", "Переставленные знаки", "倒序词", "Те же два иероглифа в обратном порядке — и другое значение.", 2], ["near", "Похоже звучит", "近音词", "Слоги не совпадают, но на слух сливаются: отличие в одном звуке или в начале слога.", 21], ["share", "Общий иероглиф", "同字族", "Слова из одного гнезда: общий знак, разные значения. Путаются при письме, а не на слух.", 164], ["sense", "Близнецы по смыслу", "近义词", "Звучат по-разному, но значат почти одно — выбор решается сочетаемостью.", 30]];
+
+var q = document.getElementById('q'), list = document.getElementById('list'),
+    st = document.getElementById('st'), kinds = document.getElementById('kinds');
+var F = { k: '', vol: '', q: '' };
+
+function esc(s){ return String(s).replace(/[&<>"]/g, function(c){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+function mk(t, n){
+  var e = esc(t); if(!n) return e;
+  var i = e.toLowerCase().indexOf(n.toLowerCase());
+  return i < 0 ? e : e.slice(0,i) + '<mark>' + e.slice(i,i+n.length) + '</mark>' + e.slice(i+n.length);
+}
+function href(n){ return n <= 18 ? 'hsk5a-lesson-' + (n<10?'0':'') + n + '.html'
+                                 : 'hsk5b-lesson-' + n + '.html'; }
+function firstPart(s){ return String(s).split('/')[0].trim(); }
+
+function pass(d){
+  if(F.k && d.k !== F.k) return false;
+  if(F.vol && d.v !== F.vol) return false;
+  if(F.q){
+    var s = F.q.toLowerCase();
+    var hay = (d.a + ' ' + d.b + ' ' + d.ap + ' ' + d.bp + ' ' + d.s + ' ' +
+               d.an + ' ' + d.bn + ' ' + d.w).toLowerCase();
+    if(hay.indexOf(s) < 0) return false;
+  }
+  return true;
+}
+function sel(){ return D.filter(pass); }
+
+function card(d){
+  var t = L[d.l] || ['',''];
+  return '<div class="pwrap">' +
+    '<div class="phead"><span class="w">' + esc(d.w) + '</span>' +
+    '<a href="' + href(d.l) + '" title="' + esc(t[0] + ' · ' + t[1]) + '">' +
+      d.v + ' · урок ' + d.l + ' →</a></div>' +
+    '<div class="pair2">' +
+      '<div><span class="hz">' + mk(d.a, F.q) + '</span>' +
+        '<span class="py">' + mk(d.ap, F.q) + '</span>' +
+        '<button class="pb" type="button" data-hz="' + esc(firstPart(d.a)) + '" data-l="' + d.l +
+          '" title="Прослушать">&#9654;</button>' +
+        '<span class="n">' + mk(d.an, F.q) + '</span></div>' +
+      '<div><span class="hz">' + mk(d.b, F.q) + '</span>' +
+        '<span class="py">' + mk(d.bp, F.q) + '</span>' +
+        '<button class="pb" type="button" data-hz="' + esc(firstPart(d.b)) + '" data-l="' + d.l +
+          '" title="Прослушать">&#9654;</button>' +
+        '<span class="n">' + mk(d.bn, F.q) + '</span></div>' +
+    '</div></div>';
+}
+
+function draw(){
+  var sl = sel();
+  st.textContent = 'показано пар: ' + sl.length + ' из ' + D.length;
+  if(!sl.length){
+    list.innerHTML = '<div class="empty">Под эти условия ничего не попало — снимите фильтр или измените запрос.</div>';
+    return;
+  }
+  var html = '';
+  KINDS.forEach(function(k){
+    var own = sl.filter(function(d){ return d.k === k[0]; });
+    if(!own.length) return;
+    html += '<div class="kgroup"><div class="kcount">' + own.length + ' пар</div>' +
+      '<h3>' + k[1] + ' <span class="cn">' + k[2] + '</span></h3>' +
+      '<p class="kd">' + k[3] + '</p>' +
+      own.map(card).join('') + '</div>';
+  });
+  list.innerHTML = html;
+}
+
+KINDS.forEach(function(k){
+  var b = document.createElement('button');
+  b.className = 'chipf'; b.type = 'button';
+  b.dataset.f = 'k'; b.dataset.v = k[0];
+  b.innerHTML = k[1] + '<span class="n">' + k[4] + '</span>';
+  kinds.appendChild(b);
+});
+var all = document.createElement('button');
+all.className = 'chipf on'; all.type = 'button'; all.dataset.f = 'k'; all.dataset.v = '';
+all.innerHTML = 'Все типы<span class="n">' + D.length + '</span>';
+kinds.insertBefore(all, kinds.firstChild);
+
+document.addEventListener('click', function(e){
+  var b = e.target.closest ? e.target.closest('.chipf') : null;
+  if(!b) return;
+  var f = b.dataset.f, v = b.dataset.v;
+  F[f] = v;
+  document.querySelectorAll('[data-f="' + f + '"]').forEach(function(x){
+    x.classList.toggle('on', x.dataset.v === v);
+  });
+  draw();
+});
+var timer;
+q.addEventListener('input', function(){
+  clearTimeout(timer);
+  timer = setTimeout(function(){ F.q = q.value.trim(); draw(); }, 100);
+});
+
+/* ——— тренировка ——— */
+var KEY = 'hsk5-naslukh-v1';
+var weak = (function(){ try { return JSON.parse(localStorage.getItem(KEY) || '{}'); }
+                        catch(e){ return {}; } })();
+function saveWeak(){ try { localStorage.setItem(KEY, JSON.stringify(weak)); } catch(e){} }
+
+var drill = document.getElementById('drill'), dbody = document.getElementById('dbody'),
+    dc = document.getElementById('dc'), dbar = document.getElementById('dbar');
+var Q = [], pos = 0, good = 0, again = [];
+
+function shuffle(a){
+  for(var i=a.length-1;i>0;i--){ var j = Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t; }
+  return a;
+}
+function openDrill(){
+  Q = shuffle(sel().slice());
+  if(!Q.length) return;
+  pos = 0; good = 0; again = [];
+  drill.classList.add('on');
+  document.body.style.overflow = 'hidden';
+  step();
+}
+function closeDrill(){
+  drill.classList.remove('on');
+  document.body.style.overflow = '';
+  draw();
+}
+function step(){
+  if(pos >= Q.length){
+    if(again.length){
+      Q = shuffle(again); again = []; pos = 0;
+      dbody.innerHTML = '<div class="dend"><span class="big">' + Q.length + '</span>' +
+        '<p>пар отмечено «повторить» — прогоняем их ещё раз</p>' +
+        '<div class="drow"><button class="pri" type="button" id="dnext">Дальше →</button></div></div>';
+      document.getElementById('dnext').onclick = step;
+      return;
+    }
+    var pct = Math.round(good / Math.max(1, good + Object.keys(weak).length) * 100);
+    dbody.innerHTML = '<div class="dend"><span class="big">' + good + '</span>' +
+      '<p>пар пройдено. Отмеченные «повторить» сохранены — в следующий раз их можно ' +
+      'отобрать кнопкой «только трудные».</p>' +
+      '<div class="drow"><button class="pri" type="button" id="dagain">Ещё раз</button>' +
+      '<button type="button" id="ddone">Закрыть</button></div></div>';
+    document.getElementById('dagain').onclick = openDrill;
+    document.getElementById('ddone').onclick = closeDrill;
+    dc.textContent = 'готово';
+    dbar.style.width = '100%';
+    return;
+  }
+  var d = Q[pos];
+  dc.textContent = (pos + 1) + ' / ' + Q.length;
+  dbar.style.width = Math.round(pos / Q.length * 100) + '%';
+  var same = d.ap === d.bp;
+  dbody.innerHTML =
+    '<div class="dq"><span class="pys">' + esc(d.ap) + (same ? '' : '  ·  ' + esc(d.bp)) + '</span>' +
+      '<div class="hint">' + esc(d.w) + ' · урок ' + d.l + '</div>' +
+      '<div class="ask">' + (same
+        ? 'Два слова звучат одинаково. Какие это слова и чем различаются?'
+        : 'Какие это два слова и чем они различаются?') + '</div>' +
+      '<div style="margin-top:12px">' +
+        '<button class="pb" type="button" data-hz="' + esc(firstPart(d.a)) + '" data-l="' + d.l +
+          '" title="Прослушать первое">&#9654;</button>' +
+        (same ? '' : ' <button class="pb" type="button" data-hz="' + esc(firstPart(d.b)) +
+          '" data-l="' + d.l + '" title="Прослушать второе">&#9654;</button>') +
+        '<div class="hint" style="margin-top:6px">прослушать и записать от руки</div>' +
+      '</div></div>' +
+    '<div class="dans" id="dans">' +
+      '<div class="pair2"><div><span class="hz">' + esc(d.a) + '</span>' +
+        '<span class="py">' + esc(d.ap) + '</span>' +
+        '<button class="pb" type="button" data-hz="' + esc(firstPart(d.a)) + '" data-l="' + d.l +
+          '" title="Прослушать">&#9654;</button>' +
+        '<span class="n">' + esc(d.an) + '</span></div>' +
+        '<div><span class="hz">' + esc(d.b) + '</span>' +
+        '<span class="py">' + esc(d.bp) + '</span>' +
+        '<button class="pb" type="button" data-hz="' + esc(firstPart(d.b)) + '" data-l="' + d.l +
+          '" title="Прослушать">&#9654;</button>' +
+        '<span class="n">' + esc(d.bn) + '</span></div></div>' +
+      '<p style="margin:10px 0 0"><a class="lk" style="font-family:var(--mono);font-size:11.5px;color:var(--red)" href="' +
+        href(d.l) + '">открыть урок ' + d.l + ' →</a></p>' +
+    '</div>' +
+    '<div class="drow" id="drow1"><button class="pri" type="button" id="dshow">Показать →</button></div>';
+  document.getElementById('dshow').onclick = function(){
+    document.getElementById('dans').classList.add('on');
+    document.getElementById('drow1').innerHTML =
+      '<button class="pri" type="button" id="dok">Знаю</button>' +
+      '<button class="bad" type="button" id="dno">Повторить</button>';
+    document.getElementById('dok').onclick = function(){
+      good++; delete weak[d.i]; saveWeak(); pos++; step();
+    };
+    document.getElementById('dno').onclick = function(){
+      weak[d.i] = 1; saveWeak(); again.push(d); pos++; step();
+    };
+  };
+}
+document.getElementById('start').onclick = openDrill;
+document.getElementById('dclose').onclick = closeDrill;
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape' && drill.classList.contains('on')) closeDrill();
+});
+
+/* кнопка «только трудные» появляется, если что-то отмечено */
+(function(){
+  var n = Object.keys(weak).length;
+  if(!n) return;
+  var b = document.createElement('button');
+  b.className = 'chipf'; b.type = 'button';
+  b.innerHTML = 'только трудные<span class="n">' + n + '</span>';
+  b.onclick = function(){
+    var on = b.classList.toggle('on');
+    F.weak = on;
+    if(on){
+      var keep = {};
+      Object.keys(weak).forEach(function(k){ keep[k] = 1; });
+      D.forEach(function(d){ d._hid = !keep[d.i]; });
+      var old = pass;
+      pass = function(d){ return !d._hid && old(d); };
+      pass._old = old;
+    } else if(pass._old){
+      pass = pass._old;
+    }
+    draw();
+  };
+  kinds.appendChild(b);
+})();
+
+draw();
+</script>
+<script>
+
+(function(){
+  var cache = {};
+  var PREFIX = (function(){
+    try { return localStorage.getItem('hsk5-audio-prefix') || 'audio/'; }
+    catch(e){ return 'audio/'; }
+  })();
+  window.hskAudioPrefix = function(p){
+    PREFIX = p;
+    try { localStorage.setItem('hsk5-audio-prefix', p); } catch(e){}
+    cache = {};
+  };
+  function paths(hz, les){
+    var P = PREFIX;
+    return [P + hz + '.mp3', P + les + '/' + hz + '.mp3', hz + '.mp3',
+            'audio/' + hz + '.mp3', 'audio/' + les + '/' + hz + '.mp3'];
+  }
+  var cur = null;
+  function play(hz, les, btn){
+    if (cur) { try { cur.pause(); } catch(e){} }
+    var list = cache[hz] ? [cache[hz]] : paths(hz, les);
+    var i = 0;
+    btn.classList.add('pb-wait');
+    (function next(){
+      if (i >= list.length) {
+        btn.classList.remove('pb-wait');
+        btn.classList.add('pb-no');
+        btn.title = 'Файл не найден: ' + list[0];
+        setTimeout(function(){ btn.classList.remove('pb-no'); }, 1600);
+        return;
+      }
+      var a = new Audio(list[i]);
+      cur = a;
+      a.addEventListener('canplaythrough', function(){
+        cache[hz] = list[i];
+        btn.classList.remove('pb-wait');
+        a.play().catch(function(){});
+      }, { once: true });
+      a.addEventListener('error', function(){ i++; next(); }, { once: true });
+      a.load();
+    })();
+  }
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('.pb') : null;
+    if (!b || !b.dataset.hz) return;
+    e.preventDefault();
+    play(b.dataset.hz, b.dataset.l || '', b);
+  });
+})();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Аудирование 听力 · разбор раздела · HSK 5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#23262a;
+  --brick:#6f6b63;
+  --paper:#e3e1da;
+  --card:#f2f1ec;
+  --red:#b4342a;
+  --brass:#a8813c;
+  --bamboo:#4a6b4e;
+  --sky:#54748a;
+  --line:rgba(35,38,42,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:
+    linear-gradient(rgba(255,255,255,.35) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.35) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+/* ——— шапка ——— */
+header{padding:56px 0 28px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{
+  font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;
+  color:var(--red);letter-spacing:-.03em;
+}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:44px;line-height:1.05;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brick);margin-top:9px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+/* ——— секции ——— */
+section{margin-top:58px}
+h2{
+  font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px;
+}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+a{color:var(--red)}
+
+/* ——— план двора ——— */
+.plan-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px;
+  box-shadow:0 1px 0 rgba(35,38,42,.06)}
+.plan-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone rect,.zone circle,.zone path{transition:fill .18s ease}
+.zone:hover .fillable,.zone.on .fillable{fill:#e7cfc9}
+.zone:focus{outline:none}
+.zone:focus-visible .fillable{stroke:var(--red);stroke-width:2.5}
+.zlab{font-family:var(--han);font-size:15px;font-weight:600;fill:var(--ink);pointer-events:none}
+.zpin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.04em}
+.faint{font-family:var(--han);font-size:12px;fill:var(--brick);pointer-events:none}
+.compass{font-family:var(--mono);font-size:10px;fill:var(--brick);letter-spacing:.15em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:62px}
+.readout .w{font-family:var(--han);font-size:22px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:13px;color:var(--sky)}
+.readout .d{display:block;margin-top:4px;font-size:15px}
+.readout .hint{color:var(--brick);font-style:italic}
+
+/* ——— карточки слов ——— */
+.cluster{margin-top:26px}
+.cluster h3{margin-bottom:4px}
+.cluster .why{font-size:14px;color:var(--brick);margin-bottom:14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--brass);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+/* ——— общие блоки ——— */
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.green{border-left:4px solid var(--bamboo)}
+.card.brass{border-left:4px solid var(--brass)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--paper);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.b{background:var(--brass)}
+.tag.g{background:var(--bamboo)}
+.tag.r{background:var(--red)}
+
+/* ——— таблицы ——— */
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(35,38,42,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+/* ——— на слух ——— */
+.trap{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+/* ——— ответы ——— */
+details{background:var(--card);border:1px solid var(--line);margin:10px 0;padding:0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+/* ——— финал ——— */
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;
+  font-family:var(--disp);font-weight:700;font-size:22px;color:var(--red);
+  width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .lesson-no{font-size:66px}
+  h1{font-size:32px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+
+/* многопунктная шапка новых страниц переносится на узком экране */
+.topnav{flex-wrap:wrap;row-gap:8px;column-gap:16px;justify-content:flex-start}
+.topnav .home{flex:1 1 100%}
+@media (min-width:760px){
+  .topnav{flex-wrap:nowrap;justify-content:space-between}
+  .topnav .home{flex:0 0 auto}
+}
+
+:root{--red:#36596e;--brass:#9a7a2c;--bamboo:#4e7046;--sky:#4f6a86;--paper:#dfe4e8;--card:#f1f5f7}
+.ftbl{width:100%;border-collapse:collapse;margin:0 0 6px}
+.ftbl th,.ftbl td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top;font-size:15px}
+.ftbl th{background:var(--card);font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.ftbl td.n{font-family:var(--mono);font-size:13px;white-space:nowrap;color:var(--brick)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;position:relative;padding:0 0 15px 44px;margin:0}
+.steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:29px;height:29px;
+  border:1.5px solid var(--ink);border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:13px;font-weight:700}
+.cue{display:grid;grid-template-columns:minmax(150px,auto) 1fr;gap:0;border:1.3px solid var(--line);
+  border-radius:3px;overflow:hidden;margin:0 0 9px;background:#fff}
+.cue > div{padding:9px 12px}
+.cue > div:first-child{background:#f3f7f9;border-right:1px solid var(--line);font-family:var(--han);font-size:17px}
+.cue .t{font-size:14.5px}
+.cue .t b{font-family:var(--han);font-size:16px;font-weight:600}
+.kv{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--brick)}
+.gr{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.note{border-left:3px solid var(--brass);padding:11px 15px;background:#fff;margin:16px 0 0;font-size:15px}
+.timer{position:sticky;bottom:0;background:var(--paper);border-top:1.5px solid var(--ink);
+  padding:11px 0;margin-top:26px;display:flex;gap:9px;align-items:center;flex-wrap:wrap;z-index:5}
+.timer .tv{font-family:var(--mono);font-size:26px;font-weight:700;min-width:92px}
+.timer button{font-family:var(--mono);font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;
+  padding:8px 12px;border:1.4px solid var(--ink);border-radius:3px;background:#fff;cursor:pointer}
+.timer button:hover{background:var(--ink);color:var(--paper)}
+.timer .lb{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--brick)}
+@media (max-width:620px){ .gr{grid-template-columns:1fr} .cue{grid-template-columns:1fr}
+  .cue > div:first-child{border-right:0;border-bottom:1px solid var(--line)}
+  .ftbl{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .timer{gap:6px} .timer button{font-size:10.5px;padding:7px 9px} }
+@media print{ .timer,.topnav{display:none} }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index.html">&#8592; Главная</a><a href="chtenie.html">Чтение 阅读</a><a href="pismo-hsk5.html">Письмо 书写</a><a href="hskk-gaoji.html">HSKK</a><a href="tetrad-hsk5a.html">Тетрадь</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 5 · раздел 1 · 听力</div>
+  <div class="title-row">
+    <h1>Аудирование<span class="lat">听力 · 45 вопросов · около 30 минут</span></h1>
+  </div>
+  <div class="meta"><span><b>45</b> вопросов</span><span><b>2</b> части</span><span>запись играет <b>один раз</b></span></div>
+</header>
+
+
+<section>
+  <p class="lede">Аудирование — первый раздел и единственный, где нельзя вернуться назад: запись
+  играет <b>один раз</b>, а темп близок к обычной речи носителей. Половина потерянных баллов здесь
+  приходится не на незнакомые слова, а на то, что человек не успел прочитать варианты до начала
+  фрагмента. Эта страница — про механику и про то, что именно слушать.</p>
+</section>
+
+<section>
+  <h2>Формат и тайминг <span class="cn">听力 · 45 вопросов</span></h2>
+  <table class="ftbl">
+    <tr><th>Часть</th><th>Вопросы</th><th>Что звучит</th><th>Что спрашивают</th></tr>
+    <tr><td class="n">第一部分</td><td class="n">1–20</td>
+      <td>Короткий диалог: две реплики, мужчина и женщина. К каждому диалогу — один вопрос.</td>
+      <td>Смысл реплики, отношение говорящего, место, действие. Варианты напечатаны в бланке.</td></tr>
+    <tr><td class="n">第二部分</td><td class="n">21–45</td>
+      <td>21–30: диалог подлиннее, 4–5 реплик. 31–45: монолог или текст на 150–250 знаков —
+      интервью, новость, рассказ, объяснение.</td>
+      <td>К длинным фрагментам по 2–3 вопроса подряд: деталь, причина, вывод, отношение автора.</td></tr>
+  </table>
+  <p class="kv" style="margin-top:4px">всего 45 вопросов · около 30 минут звучания ·
+  плюс 5 минут в конце на перенос ответов в бланк</p>
+
+  <div class="note">
+    <b>Про формат экзамена.</b> Здесь описан действующий шестиуровневый HSK — тот, под который
+    написан учебник 《HSK 标准教程 5》. Параллельно вводится новый стандарт (HSK 3.0), пока
+    на отдельных сессиях. Перед экзаменом стоит посмотреть на странице регистрации, по какой
+    версии идёт именно ваша сессия: в новой структура разделов другая.
+  </div>
+</section>
+
+<section>
+  <h2>Что происходит в первые минуты <span class="cn">开考前</span></h2>
+  <p>Между объявлением и первым вопросом есть пауза, и это единственный запас времени за весь
+  раздел. Его нужно потратить не на волнение, а на чтение вариантов вперёд.</p>
+  <ol class="steps">
+    <li><b>Пока читают инструкцию — читайте варианты к 1–5.</b> Инструкцию вы и так знаете;
+    она длинная и её можно пропустить мимо ушей.</li>
+    <li><b>Смотрите, чем варианты отличаются друг от друга.</b> Если все четыре про время —
+    слушайте время. Если три про людей, а один про место — ждёте, о ком речь. Это почти всегда
+    подсказывает, какой вопрос зададут.</li>
+    <li><b>Отмечайте ответ сразу карандашом в тестовой тетради.</b> В бланк переносите потом:
+    на это специально дают 5 минут. Если переносить по ходу, вы пропустите начало следующего фрагмента.</li>
+    <li><b>Пропустили — ставьте любой вариант и идите дальше.</b> Самая дорогая ошибка аудирования —
+    думать над прошлым вопросом, пока звучит следующий. Один потерянный вопрос стоит дешевле,
+    чем два.</li>
+    <li><b>Перед 31-м вопросом посмотрите вперёд на все 2–3 вопроса к тексту.</b> Их задают подряд,
+    и, зная их, вы слушаете текст прицельно, а не пересказываете его про себя целиком.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Сигналы, по которым слышен ответ <span class="cn">听力信号词</span></h2>
+  <p>В HSK 5 правильный ответ почти никогда не звучит теми же словами, что в варианте: его
+  перефразируют. Зато место, где он прозвучит, размечено служебными словами. Их полезно
+  слышать как «сейчас будет важное».</p>
+
+  <div class="cue"><div>但是 · 不过 · 然而</div>
+    <div class="t">Поворот. До него — то, с чем говорящий <b>не</b> согласен, после — его настоящее
+    мнение. В девяти случаях из десяти ответ стоит <b>после</b> 但是, а вариант-ловушка повторяет
+    то, что было до.</div></div>
+  <div class="cue"><div>其实 · 实际上 · 事实上</div>
+    <div class="t">«На самом деле». Маркер того, что сейчас опровергнут общее мнение. Классическая
+    ловушка: в вариантах стоит именно это общее мнение.</div></div>
+  <div class="cue"><div>所以 · 因此 · 可见 · 总之</div>
+    <div class="t">Вывод. Если вопрос начинается с 这段话主要想告诉我们 или 说话人认为, ответ
+    почти всегда в этом предложении.</div></div>
+  <div class="cue"><div>首先 · 其次 · 另外 · 最后</div>
+    <div class="t">Перечисление. Значит, будет вопрос «сколько» или «что из перечисленного
+    <b>не</b> упомянуто». Отмечайте пункты галочками прямо в тетради.</div></div>
+  <div class="cue"><div>对我来说 · 在我看来 · 我觉得</div>
+    <div class="t">Личное мнение. Вопрос про отношение говорящего (态度) опирается именно сюда,
+    а не на фактическую часть.</div></div>
+  <div class="cue"><div>没想到 · 居然 · 竟然</div>
+    <div class="t">Неожиданность. Часто вопрос: 说话人是什么态度 — удивление, а не радость
+    и не недовольство.</div></div>
+  <div class="cue"><div>只好 · 不得不 · 只能</div>
+    <div class="t">Вынужденность. Если в вариантах есть «сделал охотно» и «пришлось сделать»,
+    выбирайте второе.</div></div>
+  <div class="cue"><div>本来 · 原来 · 原先</div>
+    <div class="t">«Сначала было так». Дальше почти наверняка будет изменение — и вопрос
+    про то, что стало <b>сейчас</b>, а не про то, что было.</div></div>
+</section>
+
+<section>
+  <h2>Четыре ловушки, на которых теряют баллы <span class="cn">常见陷阱</span></h2>
+  <div class="gr">
+    <div class="card red">
+      <p><b>1. Ответ-эхо.</b> Вариант слово в слово повторяет то, что прозвучало в записи.
+      Это почти всегда неверный вариант: в HSK 5 правильный перефразирован. Исключение — часть 1,
+      где эхо иногда и есть ответ.</p>
+    </div>
+    <div class="card red">
+      <p><b>2. Отрицание мимо ушей.</b> 不是…… / 没有…… / 并不…… произносится быстро и без ударения.
+      Полезный приём: услышав 不 или 没 перед глаголом, сразу ставьте в тетради минус рядом с тем,
+      о чём речь.</p>
+    </div>
+    <div class="card brass">
+      <p><b>3. Вопрос с 不/没 в формулировке.</b> 下列哪项<b>不</b>是…… — ищется то, чего
+      <b>не</b> было. Обводите 不 в вопросе карандашом: на скорости глаз его проскакивает.</p>
+    </div>
+    <div class="card brass">
+      <p><b>4. Числа и время.</b> 两 против 二, 半 против 不到, 十五 против 五十, 两点半 против
+      两个半小时. Если в вариантах цифры — выписывайте услышанное число прямо на полях,
+      не держите в голове.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Что слушать по темам <span class="cn">高频话题</span></h2>
+  <p>Тексты второй части берут из узкого круга тем, и он почти совпадает со списками 扩展
+  в учебнике. Если тематическая лексика на месте, фрагмент понимается даже при двух незнакомых словах.</p>
+  <ul>
+    <li><b>Работа и собеседование</b> — 应聘、简历、待遇、加班、同事、辞职.
+      Урок 28 и темы <a href="temy.html">职业 · 求职</a>.</li>
+    <li><b>Учёба и наука</b> — 研究、调查、数据、实验、教授、论文. Уроки 21–24, темы 教学 · 学术.</li>
+    <li><b>Здоровье и привычки</b> — 失眠、锻炼、营养、压力、体检. Уроки 16–17, тема 医务.</li>
+    <li><b>Бизнес и деньги</b> — 市场、客户、利润、合同、谈判. Уроки 29–30, темы 经济1 · 经济2.</li>
+    <li><b>Природа и экология</b> — 污染、资源、能源、垃圾分类. Уроки 32, 34–35.</li>
+    <li><b>Отношения и быт</b> — родители и дети, соседи, подарки, поездки. Уроки 1–4, 26.</li>
+  </ul>
+  <p class="tr">Удобная проверка: откройте <a href="temy.html">темы 扩展</a>, включите нужный
+  раздел и прослушайте слова подряд кнопкой озвучки. То, что не узнаётся на слух за секунду,
+  в аудировании тоже не узнается.</p>
+</section>
+
+<section>
+  <h2>Как тренировать <span class="cn">练习方法</span></h2>
+  <ol class="steps">
+    <li><b>Аудио из рабочей тетради — основной материал.</b> В <a href="tetrad-hsk5a.html">тетради</a>
+    записи встроены прямо в страницу. Слушайте <b>один раз</b>, как на экзамене, и только потом
+    проверяйте — иначе тренируется не аудирование, а припоминание.</li>
+    <li><b>Второй проход — со стопами.</b> Тот же фрагмент, но с паузой после каждой фразы:
+    повторите вслух то, что услышали. Это ловит места, где ухо проскакивает служебные слова.</li>
+    <li><b>Третий проход — диктант.</b> Запишите фрагмент от руки. Для вас это тот же формат,
+    что и карточки Anki, только длиннее: на письме сразу видно, где спутаны омофоны.
+    Пары для отработки — на странице <a href="naslukh.html">«На слух»</a>.</li>
+    <li><b>Слушайте тексты уроков, а не только упражнения.</b> У каждого урока есть запись
+    课文 (файл вида 10-1): это тот же жанр и темп, что в части 2 экзамена.</li>
+    <li><b>Раз в неделю — полный блок из 45 вопросов подряд.</b> Важна не только точность,
+    но и выносливость: к 35-му вопросу внимание падает, и это тренируется только объёмом.</li>
+  </ol>
+  <div class="note">
+    <b>Про скорость.</b> Замедлять запись до 0,8× имеет смысл только на третьем проходе, когда
+    разбираете непонятое. Готовиться на замедленной скорости бесполезно: на экзамене её не будет,
+    а ухо привыкает к неправильному темпу.
+  </div>
+</section>
+
+<section>
+  <h2>Последние пять минут <span class="cn">涂卡</span></h2>
+  <p>После 45-го вопроса дают 5 минут на перенос ответов в бланк. Этого достаточно, если
+  ответы отмечены в тетради, и катастрофически мало, если нет.</p>
+  <ul class="checklist">
+    <li>Перенесите всё подряд, не перепроверяя: сомнения съедают время.</li>
+    <li>Проверьте <b>сдвиг строки</b> — самая частая и самая обидная ошибка. Сверьте номера 1, 20, 45.</li>
+    <li>Пустых клеток остаться не должно: за неверный ответ не штрафуют.</li>
+    <li>Не возвращайтесь к аудированию во время чтения — на это времени уже нет.</li>
+  </ul>
+</section>
+
+<div class="timer">
+  <span class="tv" id="tv">30:00</span>
+  <button type="button" data-t="1800">听力 30:00</button>
+  <button type="button" data-t="300">перенос 5:00</button>
+  <button type="button" data-t="600">блок 10:00</button>
+  <button type="button" id="tgo">старт</button>
+  <button type="button" id="trs">сброс</button>
+  <span class="lb" id="tlb">таймер для тренировки</span>
+</div>
+
+
+<footer>Разбор раздела 听力 · <a href="index.html">главная</a> · <a href="chtenie.html">чтение</a> · <a href="pismo-hsk5.html">письмо</a></footer>
+
+</div>
+
+<script>
+(function(){
+  var tv = document.getElementById('tv'), lb = document.getElementById('tlb');
+  var total = 1800, left = 1800, timer = null;
+  function fmt(s){
+    var m = Math.floor(s/60), r = s % 60;
+    return m + ':' + (r < 10 ? '0' : '') + r;
+  }
+  function paint(){ tv.textContent = fmt(left); }
+  function beep(){
+    try {
+      var C = window.AudioContext || window.webkitAudioContext;
+      if(!C) return;
+      var c = new C(), o = c.createOscillator(), g = c.createGain();
+      o.connect(g); g.connect(c.destination);
+      o.frequency.value = 660; o.type = 'sine';
+      g.gain.setValueAtTime(0.0001, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.25, c.currentTime + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + 0.7);
+      o.start(); o.stop(c.currentTime + 0.72);
+    } catch(e){}
+  }
+  function stop(){ clearInterval(timer); timer = null; document.getElementById('tgo').textContent = 'старт'; }
+  document.getElementById('tgo').onclick = function(){
+    if(timer){ stop(); lb.textContent = 'пауза'; return; }
+    this.textContent = 'пауза';
+    lb.textContent = 'идёт';
+    timer = setInterval(function(){
+      left--; paint();
+      if(left <= 0){ stop(); beep(); lb.textContent = 'время вышло'; left = 0; paint(); }
+    }, 1000);
+  };
+  document.getElementById('trs').onclick = function(){ stop(); left = total; paint(); lb.textContent = 'сброшено'; };
+  document.querySelectorAll('.timer button[data-t]').forEach(function(b){
+    b.onclick = function(){
+      stop(); total = +b.dataset.t; left = total; paint();
+      lb.textContent = b.textContent.trim();
+    };
+  });
+  paint();
+})();
+</script>
+
+</body>
+</html>

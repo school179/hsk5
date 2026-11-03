@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Темы 扩展 · все тематические словари курса · HSK 5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#23262a;
+  --brick:#6f6b63;
+  --paper:#e3e1da;
+  --card:#f2f1ec;
+  --red:#b4342a;
+  --brass:#a8813c;
+  --bamboo:#4a6b4e;
+  --sky:#54748a;
+  --line:rgba(35,38,42,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:
+    linear-gradient(rgba(255,255,255,.35) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.35) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+/* ——— шапка ——— */
+header{padding:56px 0 28px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{
+  font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;
+  color:var(--red);letter-spacing:-.03em;
+}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:44px;line-height:1.05;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brick);margin-top:9px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+/* ——— секции ——— */
+section{margin-top:58px}
+h2{
+  font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px;
+}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+a{color:var(--red)}
+
+/* ——— план двора ——— */
+.plan-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px;
+  box-shadow:0 1px 0 rgba(35,38,42,.06)}
+.plan-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone rect,.zone circle,.zone path{transition:fill .18s ease}
+.zone:hover .fillable,.zone.on .fillable{fill:#e7cfc9}
+.zone:focus{outline:none}
+.zone:focus-visible .fillable{stroke:var(--red);stroke-width:2.5}
+.zlab{font-family:var(--han);font-size:15px;font-weight:600;fill:var(--ink);pointer-events:none}
+.zpin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.04em}
+.faint{font-family:var(--han);font-size:12px;fill:var(--brick);pointer-events:none}
+.compass{font-family:var(--mono);font-size:10px;fill:var(--brick);letter-spacing:.15em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:62px}
+.readout .w{font-family:var(--han);font-size:22px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:13px;color:var(--sky)}
+.readout .d{display:block;margin-top:4px;font-size:15px}
+.readout .hint{color:var(--brick);font-style:italic}
+
+/* ——— карточки слов ——— */
+.cluster{margin-top:26px}
+.cluster h3{margin-bottom:4px}
+.cluster .why{font-size:14px;color:var(--brick);margin-bottom:14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--brass);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+/* ——— общие блоки ——— */
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.green{border-left:4px solid var(--bamboo)}
+.card.brass{border-left:4px solid var(--brass)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--paper);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.b{background:var(--brass)}
+.tag.g{background:var(--bamboo)}
+.tag.r{background:var(--red)}
+
+/* ——— таблицы ——— */
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(35,38,42,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+/* ——— на слух ——— */
+.trap{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+/* ——— ответы ——— */
+details{background:var(--card);border:1px solid var(--line);margin:10px 0;padding:0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+/* ——— финал ——— */
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;
+  font-family:var(--disp);font-weight:700;font-size:22px;color:var(--red);
+  width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .lesson-no{font-size:66px}
+  h1{font-size:32px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+
+/* многопунктная шапка новых страниц переносится на узком экране */
+.topnav{flex-wrap:wrap;row-gap:8px;column-gap:16px;justify-content:flex-start}
+.topnav .home{flex:1 1 100%}
+@media (min-width:760px){
+  .topnav{flex-wrap:nowrap;justify-content:space-between}
+  .topnav .home{flex:0 0 auto}
+}
+
+:root{--red:#2f6a52;--brass:#9a7a2c;--bamboo:#4e7046;--sky:#4f6a86;--paper:#e0e6e0;--card:#f2f6f2}
+.fbar{border:1.5px solid var(--line);border-radius:4px;background:var(--card);padding:14px 16px;margin:0 0 20px}
+.fbar input[type=text]{width:100%;box-sizing:border-box;font-family:var(--han);font-size:19px;
+  padding:9px 12px;border:1.5px solid var(--line);border-radius:3px;background:#fff;color:var(--ink)}
+.fbar input[type=text]:focus{outline:none;border-color:var(--red)}
+.frow{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-top:10px}
+.chipf{font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;
+  padding:6px 10px;border:1.3px solid var(--line);border-radius:3px;background:#fff;color:var(--brick);cursor:pointer}
+.chipf:hover{border-color:var(--red)}
+.chipf.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chipf .n{opacity:.6;margin-left:5px}
+.stat{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--brick)}
+.sec{margin:30px 0 0}
+.sec > h2{margin-bottom:10px}
+.grp{border:1.3px solid var(--line);border-radius:3px;background:#fff;margin:0 0 12px;overflow:hidden}
+.ghead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;
+  padding:10px 13px;background:#f6faf6;border-bottom:1px solid var(--line)}
+.ghead .th{font-family:var(--han);font-size:19px;font-weight:600}
+.ghead .meta2{font-family:var(--mono);font-size:11px;letter-spacing:.07em;color:var(--brick);text-transform:uppercase}
+.ghead a{font-family:var(--mono);font-size:11px;color:var(--red);text-decoration:none;
+  border-bottom:1px dotted var(--red);white-space:nowrap}
+.wl{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:0}
+.wc{padding:8px 13px;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+.wc .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.wc .py{font-family:var(--mono);font-size:11.5px;color:var(--brick);margin-left:6px}
+.wc .ru{display:block;font-size:14px;color:var(--brick);margin-top:1px}
+.wc .pb{position:static;margin-left:5px}
+.empty{font-family:var(--mono);font-size:12px;color:var(--brick);padding:14px 0}
+mark{background:#d7ecd7;color:inherit;padding:0 1px}
+@media (max-width:620px){ .wl{grid-template-columns:1fr} .fbar input[type=text]{font-size:17px} }
+@media print{ .fbar,.topnav{display:none} .grp{break-inside:avoid} }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index.html">&#8592; Главная</a><a href="slovar.html">Словарь</a><a href="naslukh.html">На слух</a><a href="index-5a.html">5A</a><a href="index-5b.html">5B</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（上）（下） · 扩展</div>
+  <div class="title-row">
+    <h1>Темы 扩展<span class="lat">话题分类词语 · 46 групп · 404 слов</span></h1>
+  </div>
+  <div class="meta"><span><b>46</b> групп</span><span><b>404</b> слов</span><span>с переводом: <b>404</b></span></div>
+</header>
+
+
+<section>
+  <p class="lede">Раздел 扩展 есть в каждом уроке: учебник добавляет к тексту 4–15 слов одной темы,
+  которых в самом тексте нет. За два тома таких групп набралось 46, а слов в них — 404.
+  Именно эта лексика чаще всего попадается в 阅读 и в аудировании, потому что экзамен любит
+  тематические подборки. Здесь они собраны вместе: по смысловым разделам, с поиском и озвучкой.</p>
+
+  <div class="fbar">
+    <input id="q" type="text" autocomplete="off" spellcheck="false"
+           placeholder="иероглиф, пиньинь, перевод или название темы" aria-label="Поиск по темам">
+    <div class="frow" id="secs"></div>
+    <div class="frow">
+      <button class="chipf on" type="button" data-f="vol" data-v="">Оба тома</button>
+      <button class="chipf" type="button" data-f="vol" data-v="5A">5A</button>
+      <button class="chipf" type="button" data-f="vol" data-v="5B">5B</button>
+      <span style="flex:1"></span>
+      <span class="stat" id="st"></span>
+    </div>
+  </div>
+</section>
+
+<section id="list"></section>
+
+
+<footer>Собрано из разделов 扩展 всех 36 уроков · <a href="index.html">главная</a> · <a href="slovar.html">словарь курса</a></footer>
+
+</div>
+
+<script>
+var G = [{"l": 1, "v": "5A", "th": "人体", "ws": [{"hz": "脑袋", "py": "nǎodai", "ru": "голова (разг.)"}, {"hz": "脖子", "py": "bózi", "ru": "шея"}, {"hz": "肩膀", "py": "jiānbǎng", "ru": "плечо"}, {"hz": "胸", "py": "xiōng", "ru": "грудь"}, {"hz": "腰", "py": "yāo", "ru": "поясница, талия"}, {"hz": "后背", "py": "hòubèi", "ru": "спина"}, {"hz": "手指", "py": "shǒuzhǐ", "ru": "палец руки"}, {"hz": "眉毛", "py": "méimao", "ru": "брови"}, {"hz": "嗓子", "py": "sǎngzi", "ru": "горло, голос"}, {"hz": "牙齿", "py": "yáchǐ", "ru": "зубы"}]}, {"l": 2, "v": "5A", "th": "亲属称谓", "ws": [{"hz": "外公", "py": "wàigōng", "ru": "дедушка по матери"}, {"hz": "姥姥", "py": "lǎolao", "ru": "бабушка по матери"}, {"hz": "姑姑", "py": "gūgu", "ru": "тётя, сестра отца"}, {"hz": "舅舅", "py": "jiùjiu", "ru": "дядя, брат матери"}, {"hz": "老婆", "py": "lǎopo", "ru": "жена (разг.)"}, {"hz": "太太", "py": "tàitai", "ru": "жена, супруга"}, {"hz": "兄弟", "py": "xiōngdì", "ru": "братья"}]}, {"l": 2, "v": "5A", "th": "交往1", "ws": [{"hz": "小气", "py": "xiǎoqì", "ru": "мелочный, скупой"}, {"hz": "周到", "py": "zhōudào", "ru": "внимательный, продуманный"}, {"hz": "坦率", "py": "tǎnshuài", "ru": "откровенный, прямой"}]}, {"l": 3, "v": "5A", "th": "天气", "ws": [{"hz": "预报", "py": "yùbào", "ru": "прогноз; прогнозировать"}, {"hz": "彩虹", "py": "cǎihóng", "ru": "радуга"}, {"hz": "雷", "py": "léi", "ru": "гром"}, {"hz": "闪电", "py": "shǎndiàn", "ru": "молния"}, {"hz": "雾", "py": "wù", "ru": "туман"}]}, {"l": 3, "v": "5A", "th": "生产", "ws": [{"hz": "零件", "py": "língjiàn", "ru": "деталь, запчасть"}, {"hz": "手工", "py": "shǒugōng", "ru": "ручная работа; вручную"}, {"hz": "维修", "py": "wéixiū", "ru": "ремонтировать, обслуживать"}, {"hz": "机器", "py": "jīqì", "ru": "машина, механизм"}, {"hz": "产品", "py": "chǎnpǐn", "ru": "продукция, изделие"}, {"hz": "设备", "py": "shèbèi", "ru": "оборудование, устройство (здесь — ёмкость для рыбы)"}, {"hz": "设施", "py": "shèshī", "ru": "сооружения, инфраструктура"}, {"hz": "工具", "py": "gōngjù", "ru": "инструмент, орудие"}]}, {"l": 4, "v": "5A", "th": "社交称谓", "ws": [{"hz": "国王", "py": "guówáng", "ru": "король"}, {"hz": "王子", "py": "wángzǐ", "ru": "принц"}, {"hz": "公主", "py": "gōngzhǔ", "ru": "принцесса"}, {"hz": "总理", "py": "zǒnglǐ", "ru": "премьер-министр"}, {"hz": "总统", "py": "zǒngtǒng", "ru": "президент"}, {"hz": "主席", "py": "zhǔxí", "ru": "председатель"}, {"hz": "总裁", "py": "zǒngcái", "ru": "президент компании"}, {"hz": "主任", "py": "zhǔrèn", "ru": "заведующий, начальник отдела"}, {"hz": "老板", "py": "lǎobǎn", "ru": "хозяин, начальник"}, {"hz": "领导", "py": "lǐngdǎo", "ru": "руководитель; руководить"}]}, {"l": 5, "v": "5A", "th": "文学", "ws": [{"hz": "作品", "py": "zuòpǐn", "ru": "произведение"}, {"hz": "诗", "py": "shī", "ru": "стихи, поэзия"}, {"hz": "传说", "py": "chuánshuō", "ru": "легенда, предание"}, {"hz": "神话", "py": "shénhuà", "ru": "миф, мифология"}, {"hz": "戏剧", "py": "xìjù", "ru": "драма, спектакль"}, {"hz": "风格", "py": "fēnggé", "ru": "стиль, манера"}, {"hz": "形象", "py": "xíngxiàng", "ru": "образный, наглядный; образ"}, {"hz": "魅力", "py": "mèilì", "ru": "обаяние, притягательность"}, {"hz": "生动", "py": "shēngdòng", "ru": "живой, образный (о рассказе)"}]}, {"l": 6, "v": "5A", "th": "旅游", "ws": [{"hz": "名胜古迹", "py": "míngshènggǔjì", "ru": "достопримечательности и памятники старины"}, {"hz": "风景", "py": "fēngjǐng", "ru": "пейзаж, виды"}, {"hz": "展览", "py": "zhǎnlǎn", "ru": "выставка; выставлять"}, {"hz": "合影", "py": "héyǐng", "ru": "сняться вместе; общее фото"}, {"hz": "预订", "py": "yùdìng", "ru": "бронировать, заказывать заранее"}, {"hz": "结账", "py": "jiézhàng", "ru": "рассчитаться, оплатить счёт"}, {"hz": "团", "py": "tuán", "ru": "группа, труппа; счётное для клубков"}, {"hz": "时差", "py": "shíchà", "ru": "разница во времени; джетлаг"}]}, {"l": 6, "v": "5A", "th": "节日", "ws": [{"hz": "国庆节", "py": "guóqìngjié", "ru": "День образования КНР (1 октября)"}, {"hz": "元旦", "py": "yuándàn", "ru": "Новый год (1 января)"}, {"hz": "除夕", "py": "chúxī", "ru": "канун лунного Нового года"}]}, {"l": 7, "v": "5A", "th": "语言文字", "ws": [{"hz": "文字", "py": "wénzì", "ru": "письменность, письменные знаки"}, {"hz": "词汇", "py": "cíhuì", "ru": "лексика, словарный состав"}, {"hz": "成语", "py": "chéngyǔ", "ru": "чэнъюй, устойчивое выражение"}, {"hz": "字母", "py": "zìmǔ", "ru": "буква, алфавит"}, {"hz": "声调", "py": "shēngdiào", "ru": "тон (в слоге)"}, {"hz": "拼音", "py": "pīnyīn", "ru": "пиньинь, транскрипция"}, {"hz": "语气", "py": "yǔqì", "ru": "тон речи, интонация; модальность"}, {"hz": "疑问", "py": "yíwèn", "ru": "сомнение, вопрос"}, {"hz": "否定", "py": "fǒudìng", "ru": "отрицать; отрицательный"}, {"hz": "省略", "py": "shěnglüè", "ru": "опускать, сокращать"}]}, {"l": 8, "v": "5A", "th": "饮食1", "ws": [{"hz": "食物", "py": "shíwù", "ru": "пища, еда"}, {"hz": "粮食", "py": "liángshi", "ru": "зерно, продовольствие"}, {"hz": "蔬菜", "py": "shūcài", "ru": "овощи"}, {"hz": "豆腐", "py": "dòufu", "ru": "тофу, соевый творог"}, {"hz": "辣椒", "py": "làjiāo", "ru": "острый перец"}, {"hz": "花生", "py": "huāshēng", "ru": "арахис"}, {"hz": "土豆", "py": "tǔdòu", "ru": "картофель"}, {"hz": "玉米", "py": "yùmǐ", "ru": "кукуруза"}, {"hz": "馒头", "py": "mántou", "ru": "маньтоу, паровая булка"}, {"hz": "海鲜", "py": "hǎixiān", "ru": "морепродукты"}, {"hz": "香肠", "py": "xiāngcháng", "ru": "колбаса, сосиска"}]}, {"l": 9, "v": "5A", "th": "社会", "ws": [{"hz": "道德", "py": "dàodé", "ru": "мораль, нравственность"}, {"hz": "传统", "py": "chuántǒng", "ru": "традиция; традиционный"}, {"hz": "风俗", "py": "fēngsú", "ru": "обычай, нравы"}, {"hz": "制度", "py": "zhìdù", "ru": "строй, система, устав"}, {"hz": "秩序", "py": "zhìxù", "ru": "порядок, упорядоченность"}, {"hz": "权力", "py": "quánlì", "ru": "власть, полномочия"}, {"hz": "权利", "py": "quánlì", "ru": "право (юридическое)"}, {"hz": "义务", "py": "yìwù", "ru": "обязанность, долг; безвозмездный"}, {"hz": "文明", "py": "wénmíng", "ru": "цивилизация; культурный"}, {"hz": "人口", "py": "rénkǒu", "ru": "население"}, {"hz": "集体", "py": "jítǐ", "ru": "коллектив; коллективный"}]}, {"l": 10, "v": "5A", "th": "服饰", "ws": [{"hz": "围巾", "py": "wéijīn", "ru": "шарф, платок"}, {"hz": "领带", "py": "lǐngdài", "ru": "галстук"}, {"hz": "手套", "py": "shǒutào", "ru": "перчатки"}, {"hz": "牛仔裤", "py": "niúzǎikù", "ru": "джинсы"}, {"hz": "丝绸", "py": "sīchóu", "ru": "шёлк"}, {"hz": "布", "py": "bù", "ru": "ткань, холст"}, {"hz": "耳环", "py": "ěrhuán", "ru": "серьги"}, {"hz": "戒指", "py": "jièzhi", "ru": "кольцо, перстень"}]}, {"l": 11, "v": "5A", "th": "家居", "ws": [{"hz": "抽屉", "py": "chōuti", "ru": "выдвижной ящик"}, {"hz": "书架", "py": "shūjià", "ru": "книжная полка, стеллаж"}, {"hz": "窗帘", "py": "chuānglián", "ru": "штора, занавеска"}, {"hz": "地毯", "py": "dìtǎn", "ru": "ковёр"}, {"hz": "被子", "py": "bèizi", "ru": "одеяло"}, {"hz": "玩具", "py": "wánjù", "ru": "игрушка"}, {"hz": "日历", "py": "rìlì", "ru": "календарь"}, {"hz": "日期", "py": "rìqī", "ru": "дата"}, {"hz": "包裹", "py": "bāoguǒ", "ru": "посылка; свёрток"}]}, {"l": 12, "v": "5A", "th": "电脑网络", "ws": [{"hz": "键盘", "py": "jiànpán", "ru": "клавиатура"}, {"hz": "鼠标", "py": "shǔbiāo", "ru": "компьютерная мышь"}, {"hz": "光盘", "py": "guāngpán", "ru": "компакт-диск"}, {"hz": "信息", "py": "xìnxī", "ru": "информация, сообщение"}, {"hz": "硬件", "py": "yìngjiàn", "ru": "аппаратная часть, «железо»"}, {"hz": "软件", "py": "ruǎnjiàn", "ru": "программное обеспечение"}, {"hz": "数码", "py": "shùmǎ", "ru": "цифровой"}, {"hz": "数据", "py": "shùjù", "ru": "данные, цифры"}, {"hz": "程序", "py": "chéngxù", "ru": "программа; порядок действий"}, {"hz": "系统", "py": "xìtǒng", "ru": "система"}, {"hz": "网络", "py": "wǎngluò", "ru": "сеть, интернет"}, {"hz": "信号", "py": "xìnhào", "ru": "сигнал"}, {"hz": "充电器", "py": "chōngdiànqì", "ru": "зарядное устройство"}]}, {"l": 13, "v": "5A", "th": "体育", "ws": [{"hz": "太极拳", "py": "tàijíquán", "ru": "тайцзицюань"}, {"hz": "球迷", "py": "qiúmí", "ru": "болельщик"}, {"hz": "武术", "py": "wǔshù", "ru": "ушу, боевые искусства"}, {"hz": "纪录", "py": "jìlù", "ru": "рекорд; документальный"}, {"hz": "象棋", "py": "(xiàng)qí", "ru": "шахматы, настольная игра"}, {"hz": "教练", "py": "jiàoliàn", "ru": "тренер"}, {"hz": "对手", "py": "duìshǒu", "ru": "соперник, противник"}, {"hz": "冠军", "py": "guànjūn", "ru": "чемпион, первое место"}, {"hz": "决赛", "py": "juésài", "ru": "финал (соревнований)"}]}, {"l": 14, "v": "5A", "th": "建筑", "ws": [{"hz": "屋子", "py": "wū(zi)", "ru": "дом, комната"}, {"hz": "卧室", "py": "wòshì", "ru": "спальня"}, {"hz": "阳台", "py": "yángtái", "ru": "балкон"}, {"hz": "台阶", "py": "táijiē", "ru": "ступень, лестница"}, {"hz": "墙", "py": "qiáng", "ru": "стена"}, {"hz": "玻璃", "py": "bōli", "ru": "стекло"}, {"hz": "宿舍", "py": "sùshè", "ru": "общежитие"}, {"hz": "公寓", "py": "gōngyù", "ru": "многоквартирный дом, квартира"}, {"hz": "单元", "py": "dānyuán", "ru": "подъезд; раздел, юнит"}, {"hz": "隔壁", "py": "gébì", "ru": "соседняя квартира, по соседству"}, {"hz": "大厦", "py": "dàshà", "ru": "высотное здание, бизнес-центр"}, {"hz": "广场", "py": "guǎngchǎng", "ru": "площадь; торговый центр"}]}, {"l": 15, "v": "5A", "th": "军事", "ws": [{"hz": "枪", "py": "qiāng", "ru": "огнестрельное оружие, ружьё"}, {"hz": "射击", "py": "shè(jī)", "ru": "стрелять, поражать"}, {"hz": "英雄", "py": "yīngxióng", "ru": "герой"}, {"hz": "士兵", "py": "shìbīng", "ru": "солдат, рядовой"}, {"hz": "敌人", "py": "dí (rén)", "ru": "враг, противник"}, {"hz": "战争", "py": "zhànzhēng", "ru": "война"}, {"hz": "胜利", "py": "shènglì", "ru": "победа; побеждать"}]}, {"l": 16, "v": "5A", "th": "医务1", "ws": [{"hz": "挂号", "py": "guàhào", "ru": "записаться к врачу; заказное (письмо)"}, {"hz": "急诊", "py": "jízhěn", "ru": "приём по неотложной помощи"}, {"hz": "救护车", "py": "jiùhùchē", "ru": "скорая помощь (машина)"}, {"hz": "内科", "py": "nèikē", "ru": "терапия, терапевтическое отделение"}, {"hz": "过敏", "py": "guòmǐn", "ru": "аллергия; иметь аллергию"}, {"hz": "打喷嚏", "py": "dǎpēntì", "ru": "чихать"}, {"hz": "着凉", "py": "zháoliáng", "ru": "простудиться"}, {"hz": "吐", "py": "tù", "ru": "рвать, тошнить (tù); выплёвывать (tǔ)"}, {"hz": "痒", "py": "yǎng", "ru": "чесаться, зудеть"}, {"hz": "消化", "py": "xiāohuà", "ru": "переваривать; усваивать"}]}, {"l": 17, "v": "5A", "th": "医务2", "ws": [{"hz": "诊断", "py": "zhěnduàn", "ru": "ставить диагноз; диагноз"}, {"hz": "手术", "py": "shǒushù", "ru": "операция"}, {"hz": "血", "py": "xuè", "ru": "кровь"}, {"hz": "肌肉", "py": "jīròu", "ru": "мышцы"}, {"hz": "骨头", "py": "gǔ(tou)", "ru": "кость"}, {"hz": "胃", "py": "wèi", "ru": "желудок"}, {"hz": "心脏", "py": "xīnzàng", "ru": "сердце (орган)"}, {"hz": "病毒", "py": "bìngdú", "ru": "вирус"}, {"hz": "传染", "py": "chuánrǎn", "ru": "заражать, передаваться"}, {"hz": "寿命", "py": "shòumìng", "ru": "продолжительность жизни, срок службы"}]}, {"l": 18, "v": "5A", "th": "影视艺术", "ws": [{"hz": "导演", "py": "dǎoyǎn", "ru": "режиссёр; ставить"}, {"hz": "角色", "py": "juésè", "ru": "роль, персонаж"}, {"hz": "明星", "py": "míngxīng", "ru": "звезда, знаменитость"}, {"hz": "动画片", "py": "dònghuàpiàn", "ru": "мультфильм"}, {"hz": "娱乐", "py": "yúlè", "ru": "развлечение; развлекать"}, {"hz": "录音", "py": "lùyīn", "ru": "запись звука; записывать"}, {"hz": "麦克风", "py": "màikèfēng", "ru": "микрофон"}, {"hz": "频道", "py": "píndào", "ru": "телеканал"}, {"hz": "字幕", "py": "zìmù", "ru": "субтитры"}, {"hz": "乐器", "py": "yuèqì", "ru": "музыкальный инструмент"}, {"hz": "美术", "py": "měishù", "ru": "изобразительное искусство"}]}, {"l": 19, "v": "5B", "th": "饮食2", "ws": [{"hz": "零食", "py": "língshí", "ru": "снеки, перекус"}, {"hz": "冰激凌", "py": "bīngjīlíng", "ru": "мороженое"}, {"hz": "酱油", "py": "jiàngyóu", "ru": "соевый соус"}, {"hz": "醋", "py": "cù", "ru": "уксус"}, {"hz": "开水", "py": "kāishuǐ", "ru": "кипячёная вода"}, {"hz": "点心", "py": "diǎnxin", "ru": "выпечка, сладости"}, {"hz": "营养", "py": "yíngyǎng", "ru": "питание, питательные вещества"}, {"hz": "口味", "py": "kǒuwèi", "ru": "вкус (чей-то), предпочтение"}, {"hz": "胃口", "py": "wèikǒu", "ru": "аппетит"}, {"hz": "淡", "py": "dàn", "ru": "пресный, неяркий, слабый"}, {"hz": "臭", "py": "chòu", "ru": "вонючий, дурно пахнущий"}, {"hz": "软", "py": "ruǎn", "ru": "мягкий"}, {"hz": "嫩", "py": "nèn", "ru": "нежный, мягкий"}, {"hz": "过期", "py": "guòqī", "ru": "просрочиться, истечь (о сроке)"}]}, {"l": 20, "v": "5B", "th": "场所", "ws": [{"hz": "俱乐部", "py": "jùlèbù", "ru": "клуб"}, {"hz": "幼儿园", "py": "yòu'éryuán", "ru": "детский сад"}, {"hz": "博物馆", "py": "bówùguǎn", "ru": "музей"}, {"hz": "酒吧", "py": "jiǔbā", "ru": "бар"}, {"hz": "法院", "py": "fǎyuàn", "ru": "суд"}, {"hz": "海关", "py": "hǎiguān", "ru": "таможня"}]}, {"l": 20, "v": "5B", "th": "生产2", "ws": [{"hz": "生产", "py": "shēngchǎn", "ru": "производить; производство"}, {"hz": "发明", "py": "fāmíng", "ru": "изобретать; изобретение"}, {"hz": "设计", "py": "shèjì", "ru": "проектировать; замысел"}, {"hz": "业务", "py": "yèwù", "ru": "дело, профессиональная работа"}, {"hz": "项目", "py": "xiàngmù", "ru": "вид (спорта), пункт, проект"}, {"hz": "效率", "py": "xiàolǜ", "ru": "эффективность, КПД"}, {"hz": "合法", "py": "héfǎ", "ru": "законный, легальный"}, {"hz": "公平", "py": "gōngpíng", "ru": "справедливый"}]}, {"l": 21, "v": "5B", "th": "学科", "ws": [{"hz": "哲学", "py": "zhéxué", "ru": "философия"}, {"hz": "化学", "py": "huàxué", "ru": "химия"}, {"hz": "物理", "py": "wùlǐ", "ru": "физика"}, {"hz": "政治", "py": "zhèngzhì", "ru": "политика"}]}, {"l": 21, "v": "5B", "th": "软件操作", "ws": [{"hz": "粘贴", "py": "zhāntiē", "ru": "вставить (скопированное)"}, {"hz": "复制", "py": "fùzhì", "ru": "копировать"}, {"hz": "浏览", "py": "liúlǎn", "ru": "просматривать, листать"}, {"hz": "删除", "py": "shānchú", "ru": "удалять"}, {"hz": "搜索", "py": "sōusuǒ", "ru": "искать, поиск"}, {"hz": "文件", "py": "wénjiàn", "ru": "файл; документ"}]}, {"l": 22, "v": "5B", "th": "写作表达", "ws": [{"hz": "作文", "py": "zuòwén", "ru": "сочинение (школьное)"}, {"hz": "论文", "py": "lùnwén", "ru": "научная статья, диплом"}, {"hz": "主题", "py": "zhǔtí", "ru": "тема, лейтмотив"}, {"hz": "题目", "py": "tímù", "ru": "заглавие; тема (работы)"}, {"hz": "话题", "py": "huàtí", "ru": "тема (разговора)"}, {"hz": "目录", "py": "mùlù", "ru": "оглавление, каталог"}, {"hz": "提纲", "py": "tígāng", "ru": "план, тезисы"}, {"hz": "标点", "py": "biāodiǎn", "ru": "знаки препинания"}, {"hz": "废话", "py": "fèihuà", "ru": "пустые слова, болтовня"}, {"hz": "胡说", "py": "húshuō", "ru": "говорить вздор; чепуха!"}]}, {"l": 23, "v": "5B", "th": "教学1", "ws": [{"hz": "教材", "py": "jiàocái", "ru": "учебные материалы, учебник"}, {"hz": "课程", "py": "kèchéng", "ru": "учебный курс, программа"}, {"hz": "实习", "py": "shíxí", "ru": "практика, стажировка"}, {"hz": "学历", "py": "xuélì", "ru": "образовательный ценз, диплом"}, {"hz": "本科", "py": "běnkē", "ru": "бакалавриат, высшее первой ступени"}, {"hz": "系", "py": "jì", "ru": "завязывать, привязывать"}, {"hz": "讲座", "py": "jiǎngzuò", "ru": "лекция (публичная)"}]}, {"l": 23, "v": "5B", "th": "学术", "ws": [{"hz": "学术", "py": "xuéshù", "ru": "научный, академический"}, {"hz": "学问", "py": "xuéwen", "ru": "познания, учёность"}, {"hz": "理论", "py": "lǐlùn", "ru": "теория"}, {"hz": "资料", "py": "zīliào", "ru": "материалы, данные"}, {"hz": "修改", "py": "xiūgǎi", "ru": "править, вносить исправления"}, {"hz": "发表", "py": "fābiǎo", "ru": "публиковать; выступать с заявлением"}]}, {"l": 24, "v": "5B", "th": "教学2", "ws": [{"hz": "测验", "py": "cèyàn", "ru": "испытывать, проверять; тест"}, {"hz": "实验", "py": "shíyàn", "ru": "эксперимент; экспериментировать"}, {"hz": "抄", "py": "chāo", "ru": "переписывать; списывать"}, {"hz": "试卷", "py": "shìjuàn", "ru": "экзаменационная работа, билет"}, {"hz": "夏令营", "py": "xiàlìngyíng", "ru": "летний лагерь"}, {"hz": "操场", "py": "cāochǎng", "ru": "спортивная площадка"}, {"hz": "用功", "py": "yònggōng", "ru": "прилежный, усердно заниматься"}, {"hz": "辅导", "py": "fǔdǎo", "ru": "заниматься дополнительно, репетиторство"}, {"hz": "收获", "py": "shōuhuò", "ru": "то, что приобрёл; урожай"}, {"hz": "铃", "py": "líng", "ru": "звонок, колокольчик"}, {"hz": "退步", "py": "tuìbù", "ru": "сдать, ухудшиться (об успехах)"}, {"hz": "改正", "py": "gǎizhèng", "ru": "исправлять (ошибку)"}]}, {"l": 25, "v": "5B", "th": "度量单位", "ws": [{"hz": "厘米", "py": "límǐ", "ru": "сантиметр"}, {"hz": "克", "py": "kè", "ru": "грамм"}, {"hz": "平方", "py": "píngfāng", "ru": "квадратный метр; квадрат"}, {"hz": "吨", "py": "dūn", "ru": "тонна"}]}, {"l": 25, "v": "5B", "th": "学习用具", "ws": [{"hz": "尺子", "py": "chǐzi", "ru": "линейка"}, {"hz": "胶水", "py": "jiāoshuǐ", "ru": "клей"}, {"hz": "文具", "py": "wénjù", "ru": "канцелярские принадлежности"}]}, {"l": 26, "v": "5B", "th": "社会关系", "ws": [{"hz": "演讲", "py": "yǎnjiǎng", "ru": "выступать с речью; доклад"}, {"hz": "发言", "py": "fā yán", "ru": "выступать, брать слово; выступление"}, {"hz": "宴会", "py": "yànhuì", "ru": "банкет, приём"}, {"hz": "嘉宾", "py": "jiābīn", "ru": "почётный гость"}, {"hz": "证件", "py": "zhèngjiàn", "ru": "удостоверение, документы"}, {"hz": "名片", "py": "míngpiàn", "ru": "визитная карточка"}]}, {"l": 26, "v": "5B", "th": "婚恋", "ws": [{"hz": "嫁", "py": "jià", "ru": "выходить замуж (за кого-то)"}, {"hz": "娶", "py": "qǔ", "ru": "жениться (взять в жёны)"}, {"hz": "分手", "py": "fēnshǒu", "ru": "расстаться, разойтись"}, {"hz": "怀孕", "py": "huáiyùn", "ru": "быть беременной"}, {"hz": "吻", "py": "wěn", "ru": "целовать; поцелуй"}]}, {"l": 27, "v": "5B", "th": "家居2", "ws": [{"hz": "夹子", "py": "jiāzi", "ru": "зажим, прищепка, папка"}, {"hz": "梳子", "py": "shūzi", "ru": "расчёска, гребень"}, {"hz": "肥皂", "py": "féizào", "ru": "мыло"}, {"hz": "扇子", "py": "shànzi", "ru": "веер"}, {"hz": "剪刀", "py": "jiǎndāo", "ru": "ножницы"}, {"hz": "绳子", "py": "shéngzi", "ru": "верёвка"}, {"hz": "锁", "py": "suǒ", "ru": "замок; запирать"}, {"hz": "叉子", "py": "chāzi", "ru": "вилка"}, {"hz": "锅", "py": "guō", "ru": "котёл, кастрюля"}, {"hz": "壶", "py": "hú", "ru": "чайник, кувшин"}, {"hz": "盆", "py": "pén", "ru": "таз, горшок"}, {"hz": "火柴", "py": "huǒchái", "ru": "спичка"}]}, {"l": 28, "v": "5B", "th": "职业", "ws": [{"hz": "模特", "py": "mótè", "ru": "модель, манекенщица"}, {"hz": "会计", "py": "kuàijì", "ru": "бухгалтер; бухучёт"}, {"hz": "秘书", "py": "mìshū", "ru": "секретарь"}, {"hz": "农民", "py": "nóngmín", "ru": "крестьянин"}, {"hz": "工程师", "py": "gōngchéngshī", "ru": "инженер"}, {"hz": "工人", "py": "gōngrén", "ru": "рабочий"}, {"hz": "员工", "py": "yuángōng", "ru": "сотрудники, персонал"}]}, {"l": 28, "v": "5B", "th": "求职", "ws": [{"hz": "人事", "py": "rénshì", "ru": "кадры, отдел кадров"}, {"hz": "报到", "py": "bàodào", "ru": "явиться, зарегистрироваться (на работе)"}, {"hz": "失业", "py": "shīyè", "ru": "потерять работу, безработица"}, {"hz": "手续", "py": "shǒuxù", "ru": "формальности, процедура"}, {"hz": "待遇", "py": "dàiyù", "ru": "условия, оплата и льготы"}, {"hz": "兼职", "py": "jiānzhí", "ru": "подработка, совместительство"}, {"hz": "简历", "py": "jiǎnlì", "ru": "резюме"}]}, {"l": 29, "v": "5B", "th": "经济1", "ws": [{"hz": "发票", "py": "fāpiào", "ru": "фискальный чек, фапяо"}, {"hz": "收据", "py": "shōujù", "ru": "расписка, квитанция"}, {"hz": "支票", "py": "zhīpiào", "ru": "чек (банковский)"}, {"hz": "欠", "py": "qiàn", "ru": "быть должным, задолжать"}, {"hz": "税", "py": "shuì", "ru": "налог"}, {"hz": "市场", "py": "shìchǎng", "ru": "рынок"}, {"hz": "执照", "py": "zhízhào", "ru": "лицензия, разрешение"}, {"hz": "柜台", "py": "guìtái", "ru": "прилавок, стойка"}, {"hz": "商品", "py": "shāngpǐn", "ru": "товар"}, {"hz": "优惠", "py": "yōuhuì", "ru": "льгота, скидка; льготный"}, {"hz": "讨价还价", "py": "tǎojià-huánjià", "ru": "торговаться"}, {"hz": "兑换", "py": "duìhuàn", "ru": "обменивать (валюту)"}, {"hz": "投资", "py": "tóuzī", "ru": "вкладывать средства; инвестиции"}, {"hz": "分配", "py": "fēnpèi", "ru": "распределять"}]}, {"l": 30, "v": "5B", "th": "经济2", "ws": [{"hz": "出口", "py": "chūkǒu", "ru": "экспорт; выход"}, {"hz": "进口", "py": "jìnkǒu", "ru": "импорт; вход"}, {"hz": "贸易", "py": "màoyì", "ru": "торговля (внешняя)"}, {"hz": "谈判", "py": "tánpàn", "ru": "переговоры; вести переговоры"}, {"hz": "合同", "py": "hétong", "ru": "договор, контракт"}, {"hz": "中介", "py": "zhōngjiè", "ru": "посредник, агентство"}, {"hz": "破产", "py": "pòchǎn", "ru": "обанкротиться"}, {"hz": "资金", "py": "zījīn", "ru": "средства, капитал"}, {"hz": "利润", "py": "lìrùn", "ru": "прибыль"}, {"hz": "股票", "py": "gǔpiào", "ru": "акции"}, {"hz": "账户", "py": "zhànghù", "ru": "счёт (банковский)"}, {"hz": "利息", "py": "lìxī", "ru": "проценты по вкладу или кредиту"}, {"hz": "贷款", "py": "dàikuǎn", "ru": "кредит, ссуда"}, {"hz": "汇率", "py": "huìlǜ", "ru": "обменный курс"}, {"hz": "押金", "py": "yājīn", "ru": "залог, депозит"}]}, {"l": 31, "v": "5B", "th": "行为1", "ws": [{"hz": "推辞", "py": "tuīcí", "ru": "отказываться (от приглашения, поста)"}, {"hz": "议论", "py": "yìlùn", "ru": "обсуждать, судачить"}, {"hz": "转告", "py": "zhuǎngào", "ru": "передать (на словах)"}, {"hz": "祝福", "py": "zhùfú", "ru": "желать благополучия; напутствие"}, {"hz": "握手", "py": "wòshǒu", "ru": "пожать руку"}, {"hz": "看望", "py": "kànwàng", "ru": "навещать, проведать"}, {"hz": "问候", "py": "wènhòu", "ru": "передавать привет, справляться о здоровье"}, {"hz": "处理", "py": "chǔlǐ", "ru": "решать, улаживать, обрабатывать"}, {"hz": "恭喜", "py": "gōngxǐ", "ru": "поздравлять"}, {"hz": "宣布", "py": "xuānbù", "ru": "объявлять, оглашать"}, {"hz": "信任", "py": "xìnrèn", "ru": "доверять; доверие"}, {"hz": "配合", "py": "pèihé", "ru": "взаимодействовать, подстраиваться"}, {"hz": "当心", "py": "dāngxīn", "ru": "остерегаться, быть внимательным"}]}, {"l": 32, "v": "5B", "th": "资源", "ws": [{"hz": "金属", "py": "jīnshǔ", "ru": "металл"}, {"hz": "黄金", "py": "huángjīn", "ru": "золото"}, {"hz": "银", "py": "yín", "ru": "серебро"}, {"hz": "钢铁", "py": "gāngtiě", "ru": "сталь, металл"}, {"hz": "煤炭", "py": "méitàn", "ru": "каменный уголь"}, {"hz": "能源", "py": "néngyuán", "ru": "энергоресурсы"}, {"hz": "原料", "py": "yuánliào", "ru": "сырьё, исходный материал"}, {"hz": "资源", "py": "zīyuán", "ru": "ресурсы"}]}, {"l": 33, "v": "5B", "th": "交通", "ws": [{"hz": "卡车", "py": "kǎchē", "ru": "грузовик"}, {"hz": "列车", "py": "lièchē", "ru": "поезд, состав"}, {"hz": "摩托车", "py": "mótuōchē", "ru": "мотоцикл"}, {"hz": "行人", "py": "xíngrén", "ru": "пешеход"}, {"hz": "车厢", "py": "chēxiāng", "ru": "вагон"}, {"hz": "车库", "py": "chēkù", "ru": "гараж"}, {"hz": "拐弯", "py": "guǎiwān", "ru": "поворачивать, сворачивать"}, {"hz": "绕", "py": "rào", "ru": "обходить, огибать; наматывать"}, {"hz": "长途", "py": "chángtú", "ru": "дальний, междугородный"}, {"hz": "运输", "py": "yùnshū", "ru": "перевозить, транспортировать"}, {"hz": "汽油", "py": "qìyóu", "ru": "бензин"}, {"hz": "罚款", "py": "fákuǎn", "ru": "штраф; штрафовать"}]}, {"l": 34, "v": "5B", "th": "地理环境", "ws": [{"hz": "天空", "py": "tiānkōng", "ru": "небо"}, {"hz": "陆地", "py": "lùdì", "ru": "суша"}, {"hz": "土地", "py": "tǔdì", "ru": "земля, земельные угодья"}, {"hz": "池塘", "py": "chítáng", "ru": "пруд"}, {"hz": "沙漠", "py": "shāmò", "ru": "пустыня"}, {"hz": "沙滩", "py": "shātān", "ru": "песчаный пляж"}, {"hz": "岛屿", "py": "dǎoyǔ", "ru": "острова"}, {"hz": "岸", "py": "àn", "ru": "берег"}, {"hz": "洞", "py": "dòng", "ru": "яма, отверстие, нора"}, {"hz": "木头", "py": "mùtou", "ru": "дерево, древесина"}, {"hz": "石头", "py": "shítou", "ru": "камень"}, {"hz": "灰尘", "py": "huīchén", "ru": "пыль"}]}, {"l": 35, "v": "5B", "th": "动物", "ws": [{"hz": "老鼠", "py": "lǎoshǔ", "ru": "мышь, крыса"}, {"hz": "蜜蜂", "py": "mìfēng", "ru": "пчела"}, {"hz": "蛇", "py": "shé", "ru": "змея"}, {"hz": "狮子", "py": "shīzi", "ru": "лев"}, {"hz": "兔子", "py": "tùzi", "ru": "заяц, кролик"}, {"hz": "大象", "py": "dàxiàng", "ru": "слон"}, {"hz": "猴子", "py": "hóuzi", "ru": "обезьяна"}, {"hz": "猪", "py": "zhū", "ru": "свинья"}, {"hz": "蝴蝶", "py": "húdié", "ru": "бабочка"}, {"hz": "昆虫", "py": "kūnchóng", "ru": "насекомое"}]}, {"l": 35, "v": "5B", "th": "植物", "ws": [{"hz": "小麦", "py": "xiǎomài", "ru": "пшеница"}, {"hz": "竹子", "py": "zhúzi", "ru": "бамбук"}, {"hz": "根", "py": "gēn", "ru": "корень; основа; сч. сл. для длинного тонкого"}, {"hz": "果实", "py": "guǒshí", "ru": "плод, плоды"}]}, {"l": 36, "v": "5B", "th": "行为2", "ws": [{"hz": "拆", "py": "chāi", "ru": "разбирать, сносить; вскрывать"}, {"hz": "撕", "py": "sī", "ru": "рвать, разрывать"}, {"hz": "摸", "py": "mō", "ru": "щупать, трогать, гладить"}, {"hz": "拍", "py": "pāi", "ru": "снимать (фото, кино); хлопать"}, {"hz": "抓", "py": "zhuā", "ru": "хватать, ловить; чесать"}, {"hz": "捡", "py": "jiǎn", "ru": "подбирать, поднимать с земли"}, {"hz": "摘", "py": "zhāi", "ru": "срывать, снимать (очки, плоды)"}, {"hz": "披", "py": "pī", "ru": "накинуть на плечи"}, {"hz": "偷", "py": "tōu", "ru": "красть; тайком"}, {"hz": "抢", "py": "qiǎng", "ru": "отнимать, хватать; расхватывать"}, {"hz": "捐", "py": "juān", "ru": "жертвовать, вносить (деньги)"}, {"hz": "扶", "py": "fú", "ru": "поддерживать рукой, придерживать"}, {"hz": "挡", "py": "dǎng", "ru": "преграждать, заслонять"}, {"hz": "拦", "py": "lán", "ru": "преграждать, задерживать"}, {"hz": "退", "py": "tuì", "ru": "возвращать, отступать; вернуть товар"}]}], L = {"1": ["爱的细节", "Детали любви", "5A"], "2": ["留串钥匙给父母", "Оставить родителям связку ключей", "5A"], "3": ["人生有选择，一切可改变", "Есть выбор — всё можно изменить", "5A"], "4": ["子路背米", "Цзы Лу несёт рис", "5A"], "5": ["济南的泉水", "Источники Цзинаня", "5A"], "6": ["除夕的由来", "Откуда взялся канун Нового года", "5A"], "7": ["成语故事两则", "Две истории о чэнъюях", "5A"], "8": ["“朝三暮四”的古今义", "«Три утром, четыре вечером»: тогда и сейчас", "5A"], "9": ["别样鲁迅", "Другой Лу Синь", "5A"], "10": ["争论的奇迹", "Чудо спора", "5A"], "11": ["闹钟的危害", "Чем вреден будильник", "5A"], "12": ["海外用户玩儿微信", "Зарубежные пользователи WeChat", "5A"], "13": ["锯掉生活的“筐底”", "Отпилить у жизни «дно корзины»", "5A"], "14": ["北京的四合院", "Пекинский сыхэюань", "5A"], "15": ["纸上谈兵", "Стратег на бумаге", "5A"], "16": ["体重与节食", "Вес и режим питания", "5A"], "17": ["在最美好的时刻离开", "Уйти в лучший момент", "5A"], "18": ["抽象艺术美不美", "Красиво ли абстрактное искусство", "5A"], "19": ["家乡的萝卜饼", "Лепёшки с редькой с моей родины", "5B"], "20": ["小人书摊", "Лоток с книжками-картинками", "5B"], "21": ["汉字叔叔：一个美国人的汉字情缘", "Дядюшка Ханьцзы", "5B"], "22": ["阅读与思考", "Чтение и размышление", "5B"], "23": ["放手", "Отпустить", "5B"], "24": ["支教行动", "Поехать учить в глубинку", "5B"], "25": ["给自己加满水", "Налить себе полный бак", "5B"], "26": ["你属于哪一种“忙”", "Какая у вас занятость", "5B"], "27": ["下棋", "Игра в шахматы", "5B"], "28": ["最受欢迎的毕业生", "Самый желанный выпускник", "5B"], "29": ["培养对手", "Растить себе соперника", "5B"], "30": ["竞争让市场更高效", "Конкуренция делает рынок эффективнее", "5B"], "31": ["登门槛效应", "Эффект ноги в двери", "5B"], "32": ["身边的环保", "Экология рядом", "5B"], "33": ["以堵治堵——缓解交通有妙招", "Лечить пробку пробкой", "5B"], "34": ["鸟儿的护肤术", "Как птицы ухаживают за перьями", "5B"], "35": ["植物会出汗", "Растения тоже потеют", "5B"], "36": ["老舍与养花", "Лао Шэ и его цветы", "5B"]}, SEC = [["Человек и семья", ["人体", "亲属称谓", "社交称谓", "交往1", "社会关系", "婚恋"]], ["Быт и вещи", ["家居", "家居2", "服饰", "饮食1", "饮食2", "建筑", "学习用具", "度量单位"]], ["Природа и погода", ["天气", "地理环境", "动物", "植物", "资源"]], ["Учёба и язык", ["语言文字", "学科", "教学1", "教学2", "学术", "写作表达", "软件操作", "电脑网络"]], ["Работа и деньги", ["职业", "求职", "经济1", "经济2", "生产", "生产2", "场所", "交通"]], ["Общество и культура", ["社会", "文学", "影视艺术", "旅游", "节日", "体育", "军事"]], ["Здоровье", ["医务1", "医务2"]], ["Действия и поведение", ["行为1", "行为2"]]];
+var q = document.getElementById('q'), list = document.getElementById('list'),
+    st = document.getElementById('st'), secs = document.getElementById('secs');
+var F = { s: '', vol: '', q: '' };
+
+function esc(s){ return String(s).replace(/[&<>"]/g, function(c){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+function mk(t, n){
+  var e = esc(t); if(!n) return e;
+  var i = e.toLowerCase().indexOf(n.toLowerCase());
+  return i < 0 ? e : e.slice(0,i) + '<mark>' + e.slice(i,i+n.length) + '</mark>' + e.slice(i+n.length);
+}
+function href(n){ return n <= 18 ? 'hsk5a-lesson-' + (n<10?'0':'') + n + '.html'
+                                 : 'hsk5b-lesson-' + n + '.html'; }
+function secOf(th){
+  for(var i=0;i<SEC.length;i++){ if(SEC[i][1].indexOf(th) >= 0) return i; }
+  return SEC.length - 1;
+}
+function hitWord(w, s){
+  return w.hz.toLowerCase().indexOf(s) >= 0 || w.py.toLowerCase().indexOf(s) >= 0
+      || (w.ru || '').toLowerCase().indexOf(s) >= 0;
+}
+function visible(g){
+  if(F.vol && g.v !== F.vol) return null;
+  if(F.s !== '' && secOf(g.th) !== +F.s) return null;
+  if(!F.q) return g.ws;
+  var s = F.q.toLowerCase();
+  if(g.th.toLowerCase().indexOf(s) >= 0) return g.ws;
+  var ws = g.ws.filter(function(w){ return hitWord(w, s); });
+  return ws.length ? ws : null;
+}
+
+function draw(){
+  var html = '', nG = 0, nW = 0;
+  SEC.forEach(function(sc, si){
+    var inner = '';
+    G.forEach(function(g){
+      if(secOf(g.th) !== si) return;
+      var ws = visible(g);
+      if(!ws) return;
+      nG++; nW += ws.length;
+      var t = L[g.l] || ['',''];
+      inner += '<div class="grp"><div class="ghead">' +
+        '<span><span class="th">' + mk(g.th, F.q) + '</span> ' +
+        '<span class="meta2">' + ws.length + (ws.length === g.ws.length ? '' : ' из ' + g.ws.length) +
+        ' слов</span></span>' +
+        '<a href="' + href(g.l) + '" title="' + esc(t[0] + ' · ' + t[1]) + '">' +
+        g.v + ' · урок ' + g.l + ' →</a></div><div class="wl">' +
+        ws.map(function(w){
+          return '<div class="wc"><span class="hz">' + mk(w.hz, F.q) + '</span>' +
+            '<span class="py">' + mk(w.py, F.q) + '</span>' +
+            '<button class="pb" type="button" data-hz="' + esc(w.hz) + '" data-l="' + g.l +
+            '" title="Прослушать ' + esc(w.hz) + '">&#9654;</button>' +
+            (w.ru ? '<span class="ru">' + mk(w.ru, F.q) + '</span>' : '') + '</div>';
+        }).join('') + '</div></div>';
+    });
+    if(inner){
+      html += '<div class="sec"><h2>' + esc(sc[0]) + '</h2>' + inner + '</div>';
+    }
+  });
+  st.textContent = 'групп: ' + nG + ' · слов: ' + nW;
+  list.innerHTML = html || '<div class="empty">Ничего не нашлось — снимите фильтр или измените запрос.</div>';
+}
+
+SEC.forEach(function(sc, i){
+  var n = G.reduce(function(a, g){ return a + (secOf(g.th) === i ? g.ws.length : 0); }, 0);
+  if(!n) return;
+  var b = document.createElement('button');
+  b.className = 'chipf'; b.type = 'button'; b.dataset.f = 's'; b.dataset.v = String(i);
+  b.innerHTML = esc(sc[0]) + '<span class="n">' + n + '</span>';
+  secs.appendChild(b);
+});
+var all = document.createElement('button');
+all.className = 'chipf on'; all.type = 'button'; all.dataset.f = 's'; all.dataset.v = '';
+all.innerHTML = 'Все темы<span class="n">404</span>';
+secs.insertBefore(all, secs.firstChild);
+
+document.addEventListener('click', function(e){
+  var b = e.target.closest ? e.target.closest('.chipf') : null;
+  if(!b || !b.dataset.f) return;
+  F[b.dataset.f] = b.dataset.v;
+  document.querySelectorAll('[data-f="' + b.dataset.f + '"]').forEach(function(x){
+    x.classList.toggle('on', x.dataset.v === b.dataset.v);
+  });
+  draw();
+});
+var timer;
+q.addEventListener('input', function(){
+  clearTimeout(timer);
+  timer = setTimeout(function(){ F.q = q.value.trim(); draw(); }, 100);
+});
+draw();
+</script>
+<script>
+
+(function(){
+  var cache = {};
+  var PREFIX = (function(){
+    try { return localStorage.getItem('hsk5-audio-prefix') || 'audio/'; }
+    catch(e){ return 'audio/'; }
+  })();
+  window.hskAudioPrefix = function(p){
+    PREFIX = p;
+    try { localStorage.setItem('hsk5-audio-prefix', p); } catch(e){}
+    cache = {};
+  };
+  function paths(hz, les){
+    var P = PREFIX;
+    return [P + hz + '.mp3', P + les + '/' + hz + '.mp3', hz + '.mp3',
+            'audio/' + hz + '.mp3', 'audio/' + les + '/' + hz + '.mp3'];
+  }
+  var cur = null;
+  function play(hz, les, btn){
+    if (cur) { try { cur.pause(); } catch(e){} }
+    var list = cache[hz] ? [cache[hz]] : paths(hz, les);
+    var i = 0;
+    btn.classList.add('pb-wait');
+    (function next(){
+      if (i >= list.length) {
+        btn.classList.remove('pb-wait');
+        btn.classList.add('pb-no');
+        btn.title = 'Файл не найден: ' + list[0];
+        setTimeout(function(){ btn.classList.remove('pb-no'); }, 1600);
+        return;
+      }
+      var a = new Audio(list[i]);
+      cur = a;
+      a.addEventListener('canplaythrough', function(){
+        cache[hz] = list[i];
+        btn.classList.remove('pb-wait');
+        a.play().catch(function(){});
+      }, { once: true });
+      a.addEventListener('error', function(){ i++; next(); }, { once: true });
+      a.load();
+    })();
+  }
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('.pb') : null;
+    if (!b || !b.dataset.hz) return;
+    e.preventDefault();
+    play(b.dataset.hz, b.dataset.l || '', b);
+  });
+})();
+
+</script>
+
+</body>
+</html>

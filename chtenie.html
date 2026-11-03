@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Чтение 阅读 · разбор раздела · HSK 5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#23262a;
+  --brick:#6f6b63;
+  --paper:#e3e1da;
+  --card:#f2f1ec;
+  --red:#b4342a;
+  --brass:#a8813c;
+  --bamboo:#4a6b4e;
+  --sky:#54748a;
+  --line:rgba(35,38,42,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:
+    linear-gradient(rgba(255,255,255,.35) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.35) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+/* ——— шапка ——— */
+header{padding:56px 0 28px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{
+  font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;
+  color:var(--red);letter-spacing:-.03em;
+}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:44px;line-height:1.05;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brick);margin-top:9px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+/* ——— секции ——— */
+section{margin-top:58px}
+h2{
+  font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px;
+}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+a{color:var(--red)}
+
+/* ——— план двора ——— */
+.plan-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px;
+  box-shadow:0 1px 0 rgba(35,38,42,.06)}
+.plan-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone rect,.zone circle,.zone path{transition:fill .18s ease}
+.zone:hover .fillable,.zone.on .fillable{fill:#e7cfc9}
+.zone:focus{outline:none}
+.zone:focus-visible .fillable{stroke:var(--red);stroke-width:2.5}
+.zlab{font-family:var(--han);font-size:15px;font-weight:600;fill:var(--ink);pointer-events:none}
+.zpin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.04em}
+.faint{font-family:var(--han);font-size:12px;fill:var(--brick);pointer-events:none}
+.compass{font-family:var(--mono);font-size:10px;fill:var(--brick);letter-spacing:.15em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:62px}
+.readout .w{font-family:var(--han);font-size:22px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:13px;color:var(--sky)}
+.readout .d{display:block;margin-top:4px;font-size:15px}
+.readout .hint{color:var(--brick);font-style:italic}
+
+/* ——— карточки слов ——— */
+.cluster{margin-top:26px}
+.cluster h3{margin-bottom:4px}
+.cluster .why{font-size:14px;color:var(--brick);margin-bottom:14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--brass);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+/* ——— общие блоки ——— */
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.green{border-left:4px solid var(--bamboo)}
+.card.brass{border-left:4px solid var(--brass)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--paper);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.b{background:var(--brass)}
+.tag.g{background:var(--bamboo)}
+.tag.r{background:var(--red)}
+
+/* ——— таблицы ——— */
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(35,38,42,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+/* ——— на слух ——— */
+.trap{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+/* ——— ответы ——— */
+details{background:var(--card);border:1px solid var(--line);margin:10px 0;padding:0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+/* ——— финал ——— */
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;
+  font-family:var(--disp);font-weight:700;font-size:22px;color:var(--red);
+  width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .lesson-no{font-size:66px}
+  h1{font-size:32px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+
+/* многопунктная шапка новых страниц переносится на узком экране */
+.topnav{flex-wrap:wrap;row-gap:8px;column-gap:16px;justify-content:flex-start}
+.topnav .home{flex:1 1 100%}
+@media (min-width:760px){
+  .topnav{flex-wrap:nowrap;justify-content:space-between}
+  .topnav .home{flex:0 0 auto}
+}
+
+:root{--red:#7a4a2e;--brass:#9a7a2c;--bamboo:#4e7046;--sky:#4f6a86;--paper:#e8e2d9;--card:#f7f3ec}
+.ftbl{width:100%;border-collapse:collapse;margin:0 0 6px}
+.ftbl th,.ftbl td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top;font-size:15px}
+.ftbl th{background:var(--card);font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.ftbl td.n{font-family:var(--mono);font-size:13px;white-space:nowrap;color:var(--brick)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;position:relative;padding:0 0 15px 44px;margin:0}
+.steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:29px;height:29px;
+  border:1.5px solid var(--ink);border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:13px;font-weight:700}
+.cue{display:grid;grid-template-columns:minmax(160px,auto) 1fr;gap:0;border:1.3px solid var(--line);
+  border-radius:3px;overflow:hidden;margin:0 0 9px;background:#fff}
+.cue > div{padding:9px 12px}
+.cue > div:first-child{background:#faf6f0;border-right:1px solid var(--line);font-family:var(--han);font-size:17px}
+.cue .t{font-size:14.5px}
+.cue .t b{font-family:var(--han);font-size:16px;font-weight:600}
+.kv{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--brick)}
+.gr{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.note{border-left:3px solid var(--brass);padding:11px 15px;background:#fff;margin:16px 0 0;font-size:15px}
+.budget{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 4px}
+.budget > div{border:1.3px solid var(--line);border-radius:3px;background:#fff;padding:13px 14px;text-align:center}
+.budget .p{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--brick)}
+.budget .big{font-family:var(--display);font-size:32px;font-weight:700;display:block;line-height:1.1;margin:3px 0}
+.budget .s{font-size:13.5px;color:var(--brick)}
+.ex{font-family:var(--han);font-size:16.5px;line-height:1.95;background:#fff;border:1.3px solid var(--line);
+  border-radius:3px;padding:13px 15px;margin:0 0 10px}
+.ex .hl{background:#f3e2b8;padding:0 2px}
+.timer{position:sticky;bottom:0;background:var(--paper);border-top:1.5px solid var(--ink);
+  padding:11px 0;margin-top:26px;display:flex;gap:9px;align-items:center;flex-wrap:wrap;z-index:5}
+.timer .tv{font-family:var(--mono);font-size:26px;font-weight:700;min-width:92px}
+.timer button{font-family:var(--mono);font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;
+  padding:8px 12px;border:1.4px solid var(--ink);border-radius:3px;background:#fff;cursor:pointer}
+.timer button:hover{background:var(--ink);color:var(--paper)}
+.timer .lb{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--brick)}
+@media (max-width:620px){ .gr,.budget{grid-template-columns:1fr} .cue{grid-template-columns:1fr}
+  .cue > div:first-child{border-right:0;border-bottom:1px solid var(--line)}
+  .ftbl{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .timer{gap:6px} .timer button{font-size:10.5px;padding:7px 9px} }
+@media print{ .timer,.topnav{display:none} }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index.html">&#8592; Главная</a><a href="audirovanie.html">Аудирование 听力</a><a href="pismo-hsk5.html">Письмо 书写</a><a href="hskk-gaoji.html">HSKK</a><a href="slovar.html">Словарь</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 5 · раздел 2 · 阅读</div>
+  <div class="title-row">
+    <h1>Чтение<span class="lat">阅读 · 45 вопросов · 45 минут</span></h1>
+  </div>
+  <div class="meta"><span><b>45</b> вопросов</span><span><b>3</b> части</span><span>по <b>минуте</b> на вопрос</span></div>
+</header>
+
+
+<section>
+  <p class="lede">Чтение — раздел, где проигрывают не по знанию языка, а по часам: 45 вопросов
+  на 45 минут, то есть по минуте на вопрос вместе с чтением текстов. Почти у всех, кто готовился
+  по учебнику, знаний хватает — не хватает скорости и дисциплины «не дочитывать до конца».
+  Эта страница про то, как распределить время и что в каждой части решает ответ.</p>
+</section>
+
+<section>
+  <h2>Формат и тайминг <span class="cn">阅读 · 45 вопросов · 45 минут</span></h2>
+  <table class="ftbl">
+    <tr><th>Часть</th><th>Вопросы</th><th>Что дано</th><th>Что делать</th></tr>
+    <tr><td class="n">第一部分</td><td class="n">46–60</td>
+      <td>Несколько коротких текстов с пропусками, к каждому — свой набор из четырёх вариантов
+      на каждый пропуск.</td>
+      <td>选词填空: вставить подходящее слово. Проверяется сочетаемость и часть речи,
+      а не общий смысл.</td></tr>
+    <tr><td class="n">第二部分</td><td class="n">61–70</td>
+      <td>Десять отдельных абзацев по 80–120 знаков, к каждому четыре утверждения.</td>
+      <td>Выбрать то утверждение, которое <b>соответствует</b> тексту
+      (与短文内容相符的一项).</td></tr>
+    <tr><td class="n">第三部分</td><td class="n">71–90</td>
+      <td>Несколько длинных текстов по 400–600 знаков, к каждому 4–5 вопросов подряд.</td>
+      <td>Деталь, причина, значение слова в контексте, главная мысль, подходящий заголовок.</td></tr>
+  </table>
+  <p class="kv" style="margin-top:4px">всего 45 вопросов · 45 минут · отдельного времени
+  на перенос ответов в бланк здесь <b>не дают</b> — заполняйте сразу</p>
+
+  <div class="note">
+    <b>Про формат экзамена.</b> Описан действующий шестиуровневый HSK — тот, под который написан
+    учебник 《HSK 标准教程 5》. Параллельно вводится новый стандарт (HSK 3.0), пока на отдельных
+    сессиях, и структура разделов в нём другая. Перед экзаменом проверьте на странице регистрации,
+    по какой версии идёт ваша сессия.
+  </div>
+</section>
+
+<section>
+  <h2>Бюджет времени <span class="cn">时间分配</span></h2>
+  <p>Главная ошибка — пройти первую часть «спокойно и внимательно» и остаться с двадцатью
+  вопросами на пятнадцать минут. Разумное распределение такое:</p>
+  <div class="budget">
+    <div><span class="p">46–60 · 15 вопросов</span><span class="big">10</span>
+      <span class="s">минут<br>по 40 секунд на пропуск</span></div>
+    <div><span class="p">61–70 · 10 вопросов</span><span class="big">12</span>
+      <span class="s">минут<br>чуть больше минуты на абзац</span></div>
+    <div><span class="p">71–90 · 20 вопросов</span><span class="big">23</span>
+      <span class="s">минуты<br>около 5 минут на текст</span></div>
+  </div>
+  <p class="tr">Проверочные точки: на 15-й минуте вы должны быть на 61-м вопросе,
+  на 25-й — на 71-м. Если отстали — в третьей части сначала отвечайте на вопросы «про деталь»
+  (их видно по конкретному слову в вопросе) и пропускайте «главную мысль»: она дороже по времени.</p>
+</section>
+
+<section>
+  <h2>Часть 1: 选词填空 <span class="cn">46–60</span></h2>
+  <p>Здесь почти не нужно понимать текст целиком. Нужно понять, <b>какое место</b> в предложении
+  занимает пропуск. Алгоритм на сорок секунд:</p>
+  <ol class="steps">
+    <li><b>Посмотрите, что стоит справа и слева от пропуска.</b> После пропуска существительное —
+    нужен глагол или прилагательное-определение. Перед пропуском 很/非常/比较 — только прилагательное.
+    После пропуска 了/着/过 — только глагол.</li>
+    <li><b>Отбросьте варианты не той части речи.</b> Обычно так отсеиваются сразу два из четырёх.
+    В учебнике эта работа сделана в таблицах 词语搭配 — именно они здесь и проверяются.</li>
+    <li><b>Проверьте сочетаемость по памяти.</b> 提高<b>水平</b>, 改善<b>条件</b>, 缓解<b>压力</b>,
+    构成<b>威胁</b>, 吸取<b>教训</b> — эти пары либо выучены, либо нет; угадать их нельзя.</li>
+    <li><b>Если остались два — подставьте оба вслух.</b> Ухо ловит неестественное сочетание быстрее,
+    чем голова вспоминает правило.</li>
+  </ol>
+  <div class="ex">
+    这种病容易<span class="hl">反复</span>，所以即使症状消失，也要<span class="hl">按时</span>吃药。
+  </div>
+  <p class="tr">Первый пропуск стоит после 容易 — значит нужен глагол или то, что ведёт себя
+  как глагол: 反复 в значении «возвращаться». Второй стоит перед 吃药 — обстоятельство образа
+  действия. Задание решается без понимания того, о какой болезни речь.</p>
+  <p><b>Где тренировать:</b> <a href="slovar.html">словарь курса</a> — колонка с примерами
+  у каждого слова как раз и есть его сочетаемость; <a href="temy.html">темы 扩展</a> —
+  тематические пласты, которые эта часть любит.</p>
+</section>
+
+<section>
+  <h2>Часть 2: найти соответствие <span class="cn">61–70</span></h2>
+  <p>Четыре утверждения, одно верное. Текст короткий, но ловушки стоят плотно, поэтому
+  порядок работы обратный привычному.</p>
+  <ol class="steps">
+    <li><b>Сначала читайте варианты, потом текст.</b> Так вы знаете, что искать, и не перечитываете
+    абзац дважды.</li>
+    <li><b>Проверяйте каждое утверждение по частям.</b> Ловушка почти всегда в одном слове:
+    верно сказано про предмет, но неверно про количество, время или причину.</li>
+    <li><b>Вычёркивайте неверные прямо в тетради.</b> Три вычеркнутых надёжнее, чем одно
+    «кажется, подходит».</li>
+    <li><b>Если два варианта кажутся верными</b> — один из них говорит больше, чем текст.
+    Формулировки вроде 所有、一定、必须、全部 почти всегда лишние: в тексте стояло
+    「有些」или「可能」.</li>
+  </ol>
+  <div class="gr">
+    <div class="card red">
+      <p><b>Усиление.</b> В тексте 很多人 → в варианте 所有人. В тексте 可能 → в варианте 肯定.
+      Это неверный вариант, даже если всё остальное совпадает.</p>
+    </div>
+    <div class="card red">
+      <p><b>Подмена причины.</b> Оба факта из текста, но связаны союзом, которого там не было:
+      «потому что», хотя в тексте они просто стояли рядом.</p>
+    </div>
+    <div class="card brass">
+      <p><b>Своё знание.</b> Утверждение верно по жизни, но в тексте этого нет. Проверка одна:
+      можете показать пальцем строку — засчитывается; не можете — нет.</p>
+    </div>
+    <div class="card brass">
+      <p><b>Перепутанные лица.</b> В тексте мнение принадлежит одному, а в варианте приписано
+      другому — автору, учёным, «людям». Следите за 他认为 / 研究发现 / 作者觉得.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Часть 3: длинные тексты <span class="cn">71–90</span></h2>
+  <p>Четыре-пять вопросов к одному тексту. Тексты — ровно того же жанра, что в учебнике:
+  короткая история с выводом, научно-популярное объяснение, рассуждение о привычках
+  или об обществе. Если вы прошли оба тома, жанр вам знаком.</p>
+  <ol class="steps">
+    <li><b>Сначала прочитайте вопросы, но не варианты.</b> Вопросы дают карту текста;
+    варианты на этом этапе только путают.</li>
+    <li><b>Читайте текст целиком и в нормальном темпе.</b> Не ищите ответы по ключевым словам:
+    в HSK 5 вопросы идут по порядку текста, и сплошное чтение быстрее, чем метания.</li>
+    <li><b>Отвечайте по ходу.</b> Дочитали абзац, в котором был ответ на первый вопрос, — отметьте и дальше.</li>
+    <li><b>«Главную мысль» и «заголовок» оставляйте напоследок.</b> Их почти всегда решает
+    последний абзац: 总之、因此、可见、其实.</li>
+    <li><b>Вопрос «что значит подчёркнутое слово»</b> решается соседним предложением, а не словарём.
+    Прямо после незнакомого слова обычно стоит его объяснение: 所谓……就是……, 也就是说, 即.</li>
+  </ol>
+  <div class="cue"><div>这段话主要谈的是</div>
+    <div class="t">Главная мысль. Ответ — в последнем абзаце или в первом предложении.
+    Варианты-ловушки берут частные детали из середины.</div></div>
+  <div class="cue"><div>最适合做上文标题的是</div>
+    <div class="t">Заголовок. Нужен самый общий из вариантов, который при этом покрывает
+    весь текст, а не только начало.</div></div>
+  <div class="cue"><div>根据上文，可以知道</div>
+    <div class="t">Факт. Ищется прямое подтверждение в тексте; «логично следует» не засчитывается.</div></div>
+  <div class="cue"><div>第 N 段中的「……」指的是</div>
+    <div class="t">Значение в контексте. Смотрите предложение до и предложение после —
+    почти всегда там есть пояснение.</div></div>
+  <div class="cue"><div>作者认为 · 作者的态度是</div>
+    <div class="t">Позиция автора. Опора — оценочные слова: 的确、难怪、不见得、可惜、值得.</div></div>
+</section>
+
+<section>
+  <h2>Чего в этом разделе нет <span class="cn">容易混淆</span></h2>
+  <p>Полезно знать и обратное — чтобы не тратить подготовку впустую.</p>
+  <ul>
+    <li><b>Сборки предложений из кусков (排序)</b> в чтении HSK 5 нет: это формат шестого уровня.
+    В пятом порядок слов проверяется в <a href="pismo-hsk5.html">письменной части</a>, задания 91–98.</li>
+    <li><b>Поиска грамматической ошибки (病句)</b> тоже нет — это тоже шестой уровень.</li>
+    <li><b>Отдельного времени на бланк нет.</b> В отличие от аудирования, ответы в чтении
+    переносятся по ходу, и это нужно заложить в бюджет времени.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Как тренировать <span class="cn">练习方法</span></h2>
+  <ol class="steps">
+    <li><b>Читайте тексты уроков на время.</b> Текст на 600–700 знаков из второго тома —
+    это ровно формат третьей части. Норма: прочитать и понять за 2,5–3 минуты.</li>
+    <li><b>Отрабатывайте сочетаемость, а не слова.</b> Для первой части важнее пары
+    «глагол + дополнение», чем значения. Таблицы 词语搭配 есть в каждом конспекте.</li>
+    <li><b>Проверяйте себя контрольными тестами.</b>
+    <a href="test-hsk5a.html">Тест 5A</a> и <a href="test-hsk5b.html">тест 5B</a> — блоки
+    «Лексика» и «Сочетаемость» сделаны ровно в формате 选词填空.</li>
+    <li><b>Заведите привычку вычёркивать.</b> Во второй части отмечайте, какое именно слово
+    делает вариант неверным. Через два десятка абзацев ловушки начинают узнаваться с первого взгляда.</li>
+    <li><b>Раз в неделю — полный блок 45 вопросов за 45 минут.</b> С таймером и без пауз:
+    этот раздел тренируется именно целиком.</li>
+  </ol>
+</section>
+
+<div class="timer">
+  <span class="tv" id="tv">45:00</span>
+  <button type="button" data-t="2700">阅读 45:00</button>
+  <button type="button" data-t="600">часть 1 · 10:00</button>
+  <button type="button" data-t="720">часть 2 · 12:00</button>
+  <button type="button" data-t="1380">часть 3 · 23:00</button>
+  <button type="button" data-t="180">текст · 3:00</button>
+  <button type="button" id="tgo">старт</button>
+  <button type="button" id="trs">сброс</button>
+  <span class="lb" id="tlb">таймер для тренировки</span>
+</div>
+
+
+<footer>Разбор раздела 阅读 · <a href="index.html">главная</a> · <a href="audirovanie.html">аудирование</a> · <a href="pismo-hsk5.html">письмо</a></footer>
+
+</div>
+
+<script>
+(function(){
+  var tv = document.getElementById('tv'), lb = document.getElementById('tlb');
+  var total = 2700, left = 2700, timer = null;
+  function fmt(s){
+    var m = Math.floor(s/60), r = s % 60;
+    return m + ':' + (r < 10 ? '0' : '') + r;
+  }
+  function paint(){ tv.textContent = fmt(left); }
+  function beep(){
+    try {
+      var C = window.AudioContext || window.webkitAudioContext;
+      if(!C) return;
+      var c = new C(), o = c.createOscillator(), g = c.createGain();
+      o.connect(g); g.connect(c.destination);
+      o.frequency.value = 660; o.type = 'sine';
+      g.gain.setValueAtTime(0.0001, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.25, c.currentTime + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + 0.7);
+      o.start(); o.stop(c.currentTime + 0.72);
+    } catch(e){}
+  }
+  function stop(){ clearInterval(timer); timer = null; document.getElementById('tgo').textContent = 'старт'; }
+  document.getElementById('tgo').onclick = function(){
+    if(timer){ stop(); lb.textContent = 'пауза'; return; }
+    this.textContent = 'пауза'; lb.textContent = 'идёт';
+    timer = setInterval(function(){
+      left--; paint();
+      if(left <= 0){ stop(); beep(); lb.textContent = 'время вышло'; left = 0; paint(); }
+    }, 1000);
+  };
+  document.getElementById('trs').onclick = function(){ stop(); left = total; paint(); lb.textContent = 'сброшено'; };
+  document.querySelectorAll('.timer button[data-t]').forEach(function(b){
+    b.onclick = function(){ stop(); total = +b.dataset.t; left = total; paint(); lb.textContent = b.textContent.trim(); };
+  });
+  paint();
+})();
+</script>
+
+</body>
+</html>
