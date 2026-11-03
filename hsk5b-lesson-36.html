@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 36 · 老舍与养花 · HSK 标准教程 5下</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#23262a;
+  --brick:#6f6b63;
+  --paper:#e3e1da;
+  --card:#f2f1ec;
+  --red:#b4342a;
+  --brass:#a8813c;
+  --bamboo:#4a6b4e;
+  --sky:#54748a;
+  --line:rgba(35,38,42,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:
+    linear-gradient(rgba(255,255,255,.35) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.35) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+/* ——— шапка ——— */
+header{padding:56px 0 28px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{
+  font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;
+  color:var(--red);letter-spacing:-.03em;
+}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:44px;line-height:1.05;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brick);margin-top:9px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+/* ——— секции ——— */
+section{margin-top:58px}
+h2{
+  font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px;
+}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+a{color:var(--red)}
+
+/* ——— план двора ——— */
+.plan-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px;
+  box-shadow:0 1px 0 rgba(35,38,42,.06)}
+.plan-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone rect,.zone circle,.zone path{transition:fill .18s ease}
+.zone:hover .fillable,.zone.on .fillable{fill:#e7cfc9}
+.zone:focus{outline:none}
+.zone:focus-visible .fillable{stroke:var(--red);stroke-width:2.5}
+.zlab{font-family:var(--han);font-size:15px;font-weight:600;fill:var(--ink);pointer-events:none}
+.zpin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.04em}
+.faint{font-family:var(--han);font-size:12px;fill:var(--brick);pointer-events:none}
+.compass{font-family:var(--mono);font-size:10px;fill:var(--brick);letter-spacing:.15em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:62px}
+.readout .w{font-family:var(--han);font-size:22px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:13px;color:var(--sky)}
+.readout .d{display:block;margin-top:4px;font-size:15px}
+.readout .hint{color:var(--brick);font-style:italic}
+
+/* ——— карточки слов ——— */
+.cluster{margin-top:26px}
+.cluster h3{margin-bottom:4px}
+.cluster .why{font-size:14px;color:var(--brick);margin-bottom:14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--brass);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+/* ——— общие блоки ——— */
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.green{border-left:4px solid var(--bamboo)}
+.card.brass{border-left:4px solid var(--brass)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--paper);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.b{background:var(--brass)}
+.tag.g{background:var(--bamboo)}
+.tag.r{background:var(--red)}
+
+/* ——— таблицы ——— */
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(35,38,42,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+/* ——— на слух ——— */
+.trap{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+/* ——— ответы ——— */
+details{background:var(--card);border:1px solid var(--line);margin:10px 0;padding:0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+/* ——— финал ——— */
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;
+  font-family:var(--disp);font-weight:700;font-size:22px;color:var(--red);
+  width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .lesson-no{font-size:66px}
+  h1{font-size:32px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+
+
+:root{--red:#b05a3a;--brass:#9a7a2c;--bamboo:#4e7046;--sky:#55708c;--paper:#ece3dd;--card:#faf4f0}
+.zone:hover .fillable,.zone.on .fillable{fill:#f0d9c8}
+.rowlab{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;fill:var(--brick)}
+.zsub{font-family:var(--han);font-size:8.5px;fill:var(--brick);pointer-events:none;letter-spacing:0}
+.tiny{font-family:var(--han);font-size:11.5px;fill:var(--brick);pointer-events:none}
+.final{border:1.5px solid var(--red);border-radius:4px;padding:18px 20px;margin:26px 0 0;background:#fff}
+.final h3{margin-top:0}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index-5b.html">&#8592; Все уроки 5B</a><a href="index.html">Учебник 5A</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（下） · Unit 12 亲近自然 · Getting close to the nature</div>
+  <div class="title-row">
+    <div class="lesson-no">36</div>
+    <h1>老舍与养花<span class="lat">Лао Шэ и его цветы · 799 字 · стр. 144–151</span></h1>
+  </div>
+  <div class="meta">
+    <span><b>37</b> новых слов</span>
+    <span><b>3</b> грамматические точки</span>
+    <span>ключ: <b>除非 · 直 · 反正</b></span>
+  </div>
+</header>
+
+
+<section>
+  <p class="lede">Последний урок учебника — и, пожалуй, самый тёплый. Лао Шэ (1899–1966),
+  один из главных китайских прозаиков XX века, рассказывает, как выращивал цветы во дворе
+  пекинского дома: какие сажал, что в этом находил, как всей семьёй спасал горшки от ливня
+  и что осталось, когда соседская стена рухнула на хризантемы. Текст почти без терминов,
+  зато с большим количеством бытовых глаголов — 浇、剪、捡、搬、施肥 — и с двумя сильными
+  формулами, которые стоит запомнить целиком: <span class="cn-ex">任何事都要有付出，不然怎么会有回报</span>
+  и <span class="cn-ex">有喜有悲，有笑有泪</span>.</p>
+</section>
+
+<section id="plan">
+  <h2>Двор, полный горшков <span class="cn">老舍与养花</span></h2>
+  <div class="plan-box">
+    <svg viewBox="0 0 660 565" role="img" aria-label="Схема урока: Лао Шэ и его цветы"><text class="rowlab" x="18" y="16">1 · КАКИЕ ЦВЕТЫ 老舍养什么样的花</text><g class="zone" tabindex="0" data-w="除非好种易活、自己会奋斗的花草，否则他是不养的" data-p="yǎng · chúfēi · fèndòu" data-d="作家老舍先生爱养花，他养的花很多，满满摆了一院子。可除非是那些好种易活、自己会奋斗的花草，否则他是不养的。因为他知道北京的气候对养花来说，不算很好，想把南方的名花养活并非易事。"><rect class="fillable" x="30" y="26" width="600" height="46" rx="3" fill="#f0ddd0" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="48" text-anchor="middle" style="font-size:14px">北京气候不算好，南方名花养活并非易事</text><text class="zsub" x="330" y="64" text-anchor="middle">养 · 除非 · 奋斗 · 好种易活 · 并非易事</text></g><text class="rowlab" x="18" y="96">2 · РАДОСТЬ 养花是一种生活乐趣</text><g class="zone" tabindex="0" data-w="不在乎开得大小好坏" data-p="乐趣 · 在乎 · 朵" data-d="老舍把养花当作一种生活乐趣。他不在乎花开得大小好坏，只要开花，他就高兴。"><rect class="fillable" x="30" y="106" width="190" height="54" rx="3" fill="#eee2d8" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="125" y="130" text-anchor="middle" style="font-size:12.5px">不在乎开得大小好坏</text><text class="zsub" x="125" y="148" text-anchor="middle">乐趣 · 在乎 · 朵</text></g><path d="M220 133 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a36)"/><g class="zone" tabindex="0" data-w="写几十个字就去院中转转" data-p="剪刀 · 捡 · 装饰" data-d="每天老舍像好朋友似的照管着花草。工作的时候，经常写几十个字，就到院中去转转，瞧瞧这棵，看看那朵，有时拿起剪刀给它们剪剪枝，有时蹲下捡几块小石头放在花盆里做点儿装饰，"><rect class="fillable" x="235" y="106" width="190" height="54" rx="3" fill="#eee2d8" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="130" text-anchor="middle" style="font-size:12.5px">写几十个字就去院中转转</text><text class="zsub" x="330" y="148" text-anchor="middle">剪刀 · 捡 · 装饰</text></g><path d="M425 133 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a36)"/><g class="zone" tabindex="0" data-w="脑力和体力很好地结合" data-p="结合 · 身心放松" data-d="然后回到屋中再写一会儿，然后再出去，就这样脑力和体力很好地结合，身心也得到了放松。"><rect class="fillable" x="440" y="106" width="190" height="54" rx="3" fill="#eee2d8" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="535" y="130" text-anchor="middle" style="font-size:12.5px">脑力和体力很好地结合</text><text class="zsub" x="535" y="148" text-anchor="middle">结合 · 身心放松</text></g><text class="rowlab" x="18" y="184">3 · ТРУД И ПРИНЦИП 写作是件艰苦的工作，养花也是如此</text><g class="zone" tabindex="0" data-w="狂风暴雨，劳驾全家抢救花草" data-p="bàoyǔ · jǐnjí · láo jià · qiǎngjiù · yāo · zhí" data-d="写作是件艰苦的工作，养花也是如此。有时赶上狂风暴雨，情况紧急，他就得劳驾全家人抢救花草。几百盆花，要很快地抢到屋里去，累得腰酸腿疼，热汗直流。第二天，天气好了，又得一盆盆地搬出去。"><rect class="fillable" x="30" y="194" width="290" height="58" rx="3" fill="#e9e4d8" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="175" y="220" text-anchor="middle" style="font-size:13px">几百盆花，累得腰酸腿疼，热汗直流</text><text class="zsub" x="175" y="240" text-anchor="middle">暴雨 · 紧急 · 劳驾 · 抢救 · 腰 · 直</text></g><path d="M324 223 h10" stroke="#23262a" stroke-width="1.2" marker-end="url(#a36)"/><g class="zone" tabindex="0" data-w="任何事都要有付出，不然怎么会有回报" data-p="bùrán · huíbào · zhēnlǐ" data-d="可是，他并不抱怨，在他看来，任何事都要有付出，不然怎么会有回报？这是生活的真理。"><rect class="fillable" x="340" y="194" width="290" height="58" rx="3" fill="#dfe6dc" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="485" y="220" text-anchor="middle" style="font-size:13px">任何事都要有付出 —— 这是生活的真理</text><text class="zsub" x="485" y="240" text-anchor="middle">不然 · 回报 · 真理 · 并不抱怨</text></g><text class="rowlab" x="18" y="272">4 · ОПЫТ 总结出一些养花的经验</text><g class="zone" tabindex="0" data-w="喜干的别多浇水" data-p="浇 · 潮湿" data-d="一来二去，他慢慢地总结出一些养花的经验：有的花喜干，就别多浇水；有的花喜欢潮湿的环境，就别放在太阳地里。"><rect class="fillable" x="30" y="282" width="190" height="54" rx="3" fill="#dfe6dc" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="125" y="306" text-anchor="middle" style="font-size:12.5px">喜干的别多浇水</text><text class="zsub" x="125" y="324" text-anchor="middle">浇 · 潮湿</text></g><path d="M220 309 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a36)"/><g class="zone" tabindex="0" data-w="换盆剪枝施肥越做越熟练" data-p="施肥 · 熟练" data-d="给花换盆剪枝施肥的活儿他越做越熟练，"><rect class="fillable" x="235" y="282" width="190" height="54" rx="3" fill="#dfe6dc" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="306" text-anchor="middle" style="font-size:12.5px">换盆剪枝施肥越做越熟练</text><text class="zsub" x="330" y="324" text-anchor="middle">施肥 · 熟练</text></g><path d="M425 309 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a36)"/><g class="zone" tabindex="0" data-w="花生病长虫也知道如何应付" data-p="应付 · 鲜艳 · 自豪 · 吹" data-d="花生病长虫他也知道如何应付了。看着院子里那些鲜艳的花朵，老舍自豪地说，“不是乱吹，这就是知识啊！多得些知识，一定不是坏事。”"><rect class="fillable" x="440" y="282" width="190" height="54" rx="3" fill="#dfe6dc" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="535" y="306" text-anchor="middle" style="font-size:12.5px">花生病长虫也知道如何应付</text><text class="zsub" x="535" y="324" text-anchor="middle">应付 · 鲜艳 · 自豪 · 吹</text></g><text class="rowlab" x="18" y="360">5 · РАДОСТЬ НА ДВОИХ 快乐要分享</text><g class="zone" tabindex="0" data-w="约朋友来家里赏花庆祝" data-p="爱心 · 分享 · 昙花 · 庆祝" data-d="老舍很有爱心，更懂得快乐要分享。每到昙花开放的时候，他就约上几位朋友来家里赏花庆祝。"><rect class="fillable" x="30" y="370" width="190" height="54" rx="3" fill="#f0ddd0" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="125" y="394" text-anchor="middle" style="font-size:12.5px">约朋友来家里赏花庆祝</text><text class="zsub" x="125" y="412" text-anchor="middle">爱心 · 分享 · 昙花 · 庆祝</text></g><path d="M220 397 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a36)"/><g class="zone" tabindex="0" data-w="花分根了，毫无保留地送人" data-p="保留 · 劳动果实" data-d="花分根了，一棵分为几棵，他会毫无保留地送给朋友们。看着友人高兴地拿走自己的劳动果实，老舍心里十分欢喜。"><rect class="fillable" x="235" y="370" width="190" height="54" rx="3" fill="#f0ddd0" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="394" text-anchor="middle" style="font-size:12.5px">花分根了，毫无保留地送人</text><text class="zsub" x="330" y="412" text-anchor="middle">保留 · 劳动果实</text></g><path d="M425 397 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a36)"/><g class="zone" tabindex="0" data-w="小伙子夸“好香”，格外高兴" data-p="夸 · 格外" data-d="有一次，送牛奶的小伙子进门就夸“好香”，这让老舍先生感到格外高兴。"><rect class="fillable" x="440" y="370" width="190" height="54" rx="3" fill="#f0ddd0" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="535" y="394" text-anchor="middle" style="font-size:12.5px">小伙子夸“好香”，格外高兴</text><text class="zsub" x="535" y="412" text-anchor="middle">夸 · 格外</text></g><text class="rowlab" x="18" y="448">6 · ГОРЕ И ВЫВОД “有喜有悲，有笑有泪”</text><g class="zone" tabindex="0" data-w="暴雨，墙倒了，菊花被砸死了一百多棵" data-p="júhuā · zá · bēi(shāng)" data-d="当然，也有伤心的时候。一年夏天，下了暴雨，邻居家的墙倒了，菊花被砸死了一百多棵，这下可把老舍难受坏了，一连几天人们都看不到他脸上的笑容。"><rect class="fillable" x="30" y="458" width="290" height="60" rx="3" fill="#ecdcdc" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="175" y="484" text-anchor="middle" style="font-size:13px">一连几天看不到他脸上的笑容</text><text class="zsub" x="175" y="504" text-anchor="middle">菊花 · 砸 · 悲（伤）· 难受坏了</text></g><path d="M324 487 h10" stroke="#23262a" stroke-width="1.2" marker-end="url(#a36)"/><g class="zone" tabindex="0" data-w="“反正我要感谢它们” —— 对生活的热爱" data-p="fǎnzhèng · rè’ài" data-d="“有喜有悲，有笑有泪”，这是老舍对养花、对生活的体验。“我不知道花草们受我的照顾，感谢我不感谢，反正我要感谢它们。”老舍在自己的文章中这样写道。从中我们不难看出老舍先生对大自然的热爱，对生活的热爱。"><rect class="fillable" x="340" y="458" width="290" height="60" rx="3" fill="#dfe6dc" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="485" y="484" text-anchor="middle" style="font-size:13px">“感谢我不感谢，反正我要感谢它们”</text><text class="zsub" x="485" y="504" text-anchor="middle">反正 · 热爱 · 不难看出</text></g><text class="tiny" x="330" y="552" text-anchor="middle">“有喜有悲，有笑有泪” —— 这是老舍对养花、对生活的体验。</text><defs><marker id="a36" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" fill="#23262a"/></marker></defs></svg>
+    <div class="readout" id="readout">
+      <span class="hint">Наведите курсор или коснитесь любого блока — появится соответствующее место текста.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Текст в шести блоках <span class="cn">课文 · 799 字</span></h2>
+
+  <div class="card red">
+    <p><span class="tag r">блок 1</span><b>Какие цветы.</b> 作家老舍先生爱养花，他养的花很多，满满摆了一院子。
+    可除非是那些好种易活、自己会奋斗的花草，否则他是不养的。因为他知道北京的气候对养花来说，不算很好，
+    想把南方的名花养活并非易事。</p>
+    <p style="margin:0"><b>Слова блока:</b> <span class="cn-ex">养 · 除非 · 奋斗</span></p>
+  </div>
+
+  <div class="card">
+    <p><span class="tag">блок 2</span><b>Радость.</b> 老舍把养花当作一种生活乐趣。他不在乎花开得大小好坏，
+    只要开花，他就高兴。每天老舍像好朋友似的照管着花草。工作的时候，经常写几十个字，就到院中去转转，
+    瞧瞧这棵，看看那朵，有时拿起剪刀给它们剪剪枝，有时蹲下捡几块小石头放在花盆里做点儿装饰，
+    然后回到屋中再写一会儿，然后再出去，就这样脑力和体力很好地结合，身心也得到了放松。</p>
+    <p style="margin:0"><b>Слова блока:</b> <span class="cn-ex">乐趣 · 在乎 · 朵 · 剪刀 · 捡 · 装饰 · 结合</span></p>
+  </div>
+
+  <div class="card brass">
+    <p><span class="tag b">блок 3</span><b>Труд и принцип.</b> 写作是件艰苦的工作，养花也是如此。
+    有时赶上狂风暴雨，情况紧急，他就得劳驾全家人抢救花草。几百盆花，要很快地抢到屋里去，
+    累得腰酸腿疼，热汗直流。第二天，天气好了，又得一盆盆地搬出去。可是，他并不抱怨，在他看来，
+    任何事都要有付出，不然怎么会有回报？这是生活的真理。</p>
+    <p style="margin:0"><b>Слова блока:</b> <span class="cn-ex">暴雨 · 紧急 · 劳驾 · 抢救 · 腰 · 直 · 不然 · 回报 · 真理</span></p>
+  </div>
+
+  <div class="card green">
+    <p><span class="tag g">блок 4</span><b>Опыт.</b> 一来二去，他慢慢地总结出一些养花的经验：有的花喜干，
+    就别多浇水；有的花喜欢潮湿的环境，就别放在太阳地里。给花换盆剪枝施肥的活儿他越做越熟练，
+    花生病长虫他也知道如何应付了。看着院子里那些鲜艳的花朵，老舍自豪地说，“不是乱吹，这就是知识啊！
+    多得些知识，一定不是坏事。”</p>
+    <p style="margin:0"><b>Слова блока:</b> <span class="cn-ex">浇 · 潮湿 · 施肥 · 熟练 · 应付 · 鲜艳 · 自豪 · 吹</span></p>
+  </div>
+
+  <div class="card">
+    <p><span class="tag">блок 5</span><b>Радость на двоих.</b> 老舍很有爱心，更懂得快乐要分享。
+    每到昙花开放的时候，他就约上几位朋友来家里赏花庆祝。花分根了，一棵分为几棵，
+    他会毫无保留地送给朋友们。看着友人高兴地拿走自己的劳动果实，老舍心里十分欢喜。有一次，
+    送牛奶的小伙子进门就夸“好香”，这让老舍先生感到格外高兴。</p>
+    <p style="margin:0"><b>Слова блока:</b> <span class="cn-ex">爱心 · 分享 · 昙花 · 庆祝 · 保留</span></p>
+  </div>
+
+  <div class="card red">
+    <p><span class="tag r">блок 6</span><b>Горе и вывод.</b> 当然，也有伤心的时候。一年夏天，下了暴雨，
+    邻居家的墙倒了，菊花被砸死了一百多棵，这下可把老舍难受坏了，一连几天人们都看不到他脸上的笑容。
+    “有喜有悲，有笑有泪”，这是老舍对养花、对生活的体验。“我不知道花草们受我的照顾，感谢我不感谢，
+    反正我要感谢它们。”老舍在自己的文章中这样写道。从中我们不难看出老舍先生对大自然的热爱，
+    对生活的热爱。</p>
+    <p style="margin:0"><b>Слова блока:</b> <span class="cn-ex">菊花 · 砸 · 悲（伤） · 反正 · 热爱</span></p>
+  </div>
+</section>
+
+<section>
+  <h2>37 слов по гнёздам <span class="cn">生词 + 专有名词</span></h2>
+  <p style="font-size:14px;color:var(--brick)"><span class="star">★</span> — слово сверх программы HSK 5 (в учебнике помечено звёздочкой). Последнее — имя собственное. Из текста стоит выписать обороты: <span class="cn-ex">好种易活 · 并非易事 · 把……当作 · 像……似的 · 一来二去 · 腰酸腿疼 · 热汗直流 · 在他看来 · 毫无保留 · 劳动果实 · 有喜有悲，有笑有泪 · 不难看出</span>.</p>
+
+  <div class="audiobar" id="audiobar">
+    <div class="ab-t">Озвучка слов</div>
+    <div class="ab-row">
+      <input id="ab-pat" type="text" spellcheck="false" value="audio/{hz}.mp3" aria-label="Шаблон пути к mp3">
+      <button type="button" id="ab-auto">Подобрать</button>
+      <button type="button" id="ab-test">Проверить</button>
+    </div>
+    <div class="ab-status" id="ab-status"></div>
+    <div class="ab-note">
+      Ищутся файлы вида <code>иероглиф.mp3</code> — сначала в папке <code>audio</code> рядом с этим документом,
+      потом прямо рядом с ним. Подстановки: <code>{hz}</code>, <code>{py}</code>, <code>{pyn}</code>,
+      <code>{num}</code>, <code>{L}</code>.
+    </div>
+  </div>
+<div class="cluster"><h3>I. Какие цветы он сажал<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Три слова — и сразу первая грамматическая точка урока.</div><div class="words"><div class="w-item"><span class="hz">养</span><span class="py">yǎng</span><button class="pb" type="button" data-hz="养" data-hz2="养" data-py="yǎng" data-pyn="yang" data-num="1" aria-label="Прослушать 养" title="Прослушать 养">&#9654;</button><span class="ru">растить, разводить, содержать</span><span class="ex">养花 / 养宠物 / 养活</span></div><div class="w-item"><span class="hz">除非</span><span class="py">chúfēi</span><button class="pb" type="button" data-hz="除非" data-hz2="除非" data-py="chúfēi" data-pyn="chufei" data-num="2" aria-label="Прослушать 除非" title="Прослушать 除非">&#9654;</button><span class="ru">только если; кроме как</span><span class="ex">除非……否则…… / 除非李阳</span></div><div class="w-item"><span class="hz">奋斗</span><span class="py">fèndòu</span><button class="pb" type="button" data-hz="奋斗" data-hz2="奋斗" data-py="fèndòu" data-pyn="fendou" data-num="3" aria-label="Прослушать 奋斗" title="Прослушать 奋斗">&#9654;</button><span class="ru">бороться, упорно добиваться</span><span class="ex">自己会奋斗的花草 / 为理想奋斗</span></div></div></div><div class="cluster"><h3>II. Радость садовода<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Второй абзац — бытовые глаголы, которые нужны в описаниях.</div><div class="words"><div class="w-item"><span class="hz">乐趣</span><span class="py">lèqù</span><span class="star">★</span><button class="pb" type="button" data-hz="乐趣" data-hz2="乐趣" data-py="lèqù" data-pyn="lequ" data-num="4" aria-label="Прослушать 乐趣" title="Прослушать 乐趣">&#9654;</button><span class="ru">удовольствие, радость от занятия</span><span class="ex">生活乐趣 / 其中的乐趣</span></div><div class="w-item"><span class="hz">在乎</span><span class="py">zàihu</span><button class="pb" type="button" data-hz="在乎" data-hz2="在乎" data-py="zàihu" data-pyn="zaihu" data-num="5" aria-label="Прослушать 在乎" title="Прослушать 在乎">&#9654;</button><span class="ru">придавать значение, беспокоиться</span><span class="ex">不在乎 / 满不在乎</span></div><div class="w-item"><span class="hz">朵</span><span class="py">duǒ</span><button class="pb" type="button" data-hz="朵" data-hz2="朵" data-py="duǒ" data-pyn="duo" data-num="6" aria-label="Прослушать 朵" title="Прослушать 朵">&#9654;</button><span class="ru">счётное для цветов и облаков</span><span class="ex">一朵花 / 看看那朵</span></div><div class="w-item"><span class="hz">剪刀</span><span class="py">jiǎndāo</span><button class="pb" type="button" data-hz="剪刀" data-hz2="剪刀" data-py="jiǎndāo" data-pyn="jiandao" data-num="7" aria-label="Прослушать 剪刀" title="Прослушать 剪刀">&#9654;</button><span class="ru">ножницы</span><span class="ex">一把剪刀 / 拿起剪刀</span></div><div class="w-item"><span class="hz">捡</span><span class="py">jiǎn</span><button class="pb" type="button" data-hz="捡" data-hz2="捡" data-py="jiǎn" data-pyn="jian" data-num="8" aria-label="Прослушать 捡" title="Прослушать 捡">&#9654;</button><span class="ru">подбирать, поднимать с земли</span><span class="ex">捡几块小石头 / 捡起来</span></div><div class="w-item"><span class="hz">装饰</span><span class="py">zhuāngshì</span><button class="pb" type="button" data-hz="装饰" data-hz2="装饰" data-py="zhuāngshì" data-pyn="zhuangshi" data-num="9" aria-label="Прослушать 装饰" title="Прослушать 装饰">&#9654;</button><span class="ru">украшение; украшать</span><span class="ex">做点儿装饰 / 装饰房间</span></div><div class="w-item"><span class="hz">结合</span><span class="py">jiéhé</span><button class="pb" type="button" data-hz="结合" data-hz2="结合" data-py="jiéhé" data-pyn="jiehe" data-num="10" aria-label="Прослушать 结合" title="Прослушать 结合">&#9654;</button><span class="ru">соединять, сочетать</span><span class="ex">脑力和体力结合 / 结合实际</span></div></div></div><div class="cluster"><h3>III. Тяжёлый труд<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Третье гнездо — аварийное; обратите внимание на 劳驾 как глагол, а не как вежливое «простите».</div><div class="words"><div class="w-item"><span class="hz">暴雨</span><span class="py">bàoyǔ</span><span class="star">★</span><button class="pb" type="button" data-hz="暴雨" data-hz2="暴雨" data-py="bàoyǔ" data-pyn="baoyu" data-num="11" aria-label="Прослушать 暴雨" title="Прослушать 暴雨">&#9654;</button><span class="ru">ливень</span><span class="ex">狂风暴雨 / 下了暴雨</span></div><div class="w-item"><span class="hz">紧急</span><span class="py">jǐnjí</span><button class="pb" type="button" data-hz="紧急" data-hz2="紧急" data-py="jǐnjí" data-pyn="jinji" data-num="12" aria-label="Прослушать 紧急" title="Прослушать 紧急">&#9654;</button><span class="ru">срочный, экстренный</span><span class="ex">情况紧急 / 紧急通知</span></div><div class="w-item"><span class="hz">劳驾</span><span class="py">láo jià</span><button class="pb" type="button" data-hz="劳驾" data-hz2="劳驾" data-py="láo jià" data-pyn="laojia" data-num="13" aria-label="Прослушать 劳驾" title="Прослушать 劳驾">&#9654;</button><span class="ru">побеспокоить кого-то просьбой</span><span class="ex">劳驾全家人 / 劳驾，让一下</span></div><div class="w-item"><span class="hz">抢救</span><span class="py">qiǎngjiù</span><span class="star">★</span><button class="pb" type="button" data-hz="抢救" data-hz2="抢救" data-py="qiǎngjiù" data-pyn="qiangjiu" data-num="14" aria-label="Прослушать 抢救" title="Прослушать 抢救">&#9654;</button><span class="ru">спасать (срочно)</span><span class="ex">抢救花草 / 抢救病人</span></div><div class="w-item"><span class="hz">腰</span><span class="py">yāo</span><button class="pb" type="button" data-hz="腰" data-hz2="腰" data-py="yāo" data-pyn="yao" data-num="15" aria-label="Прослушать 腰" title="Прослушать 腰">&#9654;</button><span class="ru">поясница, талия</span><span class="ex">腰酸腿疼 / 弯腰</span></div><div class="w-item"><span class="hz">直</span><span class="py">zhí</span><button class="pb" type="button" data-hz="直" data-hz2="直" data-py="zhí" data-pyn="zhi" data-num="16" aria-label="Прослушать 直" title="Прослушать 直">&#9654;</button><span class="ru">прямо; непрерывно</span><span class="ex">热汗直流 / 直走 / 直摇头</span></div><div class="w-item"><span class="hz">不然</span><span class="py">bùrán</span><button class="pb" type="button" data-hz="不然" data-hz2="不然" data-py="bùrán" data-pyn="buran" data-num="17" aria-label="Прослушать 不然" title="Прослушать 不然">&#9654;</button><span class="ru">иначе, в противном случае</span><span class="ex">不然怎么会有回报 / 快走吧，不然晚了</span></div><div class="w-item"><span class="hz">回报</span><span class="py">huíbào</span><span class="star">★</span><button class="pb" type="button" data-hz="回报" data-hz2="回报" data-py="huíbào" data-pyn="huibao" data-num="18" aria-label="Прослушать 回报" title="Прослушать 回报">&#9654;</button><span class="ru">отдача, вознаграждение; отплатить</span><span class="ex">有付出才有回报 / 回报社会</span></div><div class="w-item"><span class="hz">真理</span><span class="py">zhēnlǐ</span><span class="star">★</span><button class="pb" type="button" data-hz="真理" data-hz2="真理" data-py="zhēnlǐ" data-pyn="zhenli" data-num="19" aria-label="Прослушать 真理" title="Прослушать 真理">&#9654;</button><span class="ru">истина</span><span class="ex">生活的真理 / 追求真理</span></div></div></div><div class="cluster"><h3>IV. Накопленный опыт<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Четвёртое гнездо — садовое, и здесь же вторая пара 辨析 урока.</div><div class="words"><div class="w-item"><span class="hz">浇</span><span class="py">jiāo</span><button class="pb" type="button" data-hz="浇" data-hz2="浇" data-py="jiāo" data-pyn="jiao" data-num="20" aria-label="Прослушать 浇" title="Прослушать 浇">&#9654;</button><span class="ru">поливать</span><span class="ex">浇水 / 浇花</span></div><div class="w-item"><span class="hz">潮湿</span><span class="py">cháoshī</span><button class="pb" type="button" data-hz="潮湿" data-hz2="潮湿" data-py="cháoshī" data-pyn="chaoshi" data-num="21" aria-label="Прослушать 潮湿" title="Прослушать 潮湿">&#9654;</button><span class="ru">сырой, влажный</span><span class="ex">潮湿的环境 / 房间潮湿</span></div><div class="w-item"><span class="hz">施肥</span><span class="py">shī féi</span><span class="star">★</span><button class="pb" type="button" data-hz="施肥" data-hz2="施肥" data-py="shī féi" data-pyn="shifei" data-num="22" aria-label="Прослушать 施肥" title="Прослушать 施肥">&#9654;</button><span class="ru">вносить удобрение</span><span class="ex">换盆剪枝施肥 / 给花施肥</span></div><div class="w-item"><span class="hz">熟练</span><span class="py">shúliàn</span><button class="pb" type="button" data-hz="熟练" data-hz2="熟练" data-py="shúliàn" data-pyn="shulian" data-num="23" aria-label="Прослушать 熟练" title="Прослушать 熟练">&#9654;</button><span class="ru">умелый, натренированный</span><span class="ex">越做越熟练 / 熟练地使用</span></div><div class="w-item"><span class="hz">应付</span><span class="py">yìngfu</span><button class="pb" type="button" data-hz="应付" data-hz2="应付" data-py="yìngfu" data-pyn="yingfu" data-num="24" aria-label="Прослушать 应付" title="Прослушать 应付">&#9654;</button><span class="ru">справляться; отделываться</span><span class="ex">知道如何应付 / 应付考试</span></div><div class="w-item"><span class="hz">鲜艳</span><span class="py">xiānyàn</span><button class="pb" type="button" data-hz="鲜艳" data-hz2="鲜艳" data-py="xiānyàn" data-pyn="xianyan" data-num="25" aria-label="Прослушать 鲜艳" title="Прослушать 鲜艳">&#9654;</button><span class="ru">яркий (о цвете, цветке)</span><span class="ex">鲜艳的花朵 / 颜色鲜艳</span></div><div class="w-item"><span class="hz">自豪</span><span class="py">zìháo</span><button class="pb" type="button" data-hz="自豪" data-hz2="自豪" data-py="zìháo" data-pyn="zihao" data-num="26" aria-label="Прослушать 自豪" title="Прослушать 自豪">&#9654;</button><span class="ru">гордый (за своё дело)</span><span class="ex">自豪地说 / 感到自豪</span></div><div class="w-item"><span class="hz">吹</span><span class="py">chuī</span><button class="pb" type="button" data-hz="吹" data-hz2="吹" data-py="chuī" data-pyn="chui" data-num="27" aria-label="Прослушать 吹" title="Прослушать 吹">&#9654;</button><span class="ru">дуть; хвастаться</span><span class="ex">不是乱吹 / 吹牛 / 吹风</span></div></div></div><div class="cluster"><h3>V. Радость, которой делятся<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Пятое гнездо — самое «человеческое» в уроке.</div><div class="words"><div class="w-item"><span class="hz">爱心</span><span class="py">àixīn</span><button class="pb" type="button" data-hz="爱心" data-hz2="爱心" data-py="àixīn" data-pyn="aixin" data-num="28" aria-label="Прослушать 爱心" title="Прослушать 爱心">&#9654;</button><span class="ru">доброта, сердечность</span><span class="ex">很有爱心 / 献爱心</span></div><div class="w-item"><span class="hz">分享</span><span class="py">fēnxiǎng</span><span class="star">★</span><button class="pb" type="button" data-hz="分享" data-hz2="分享" data-py="fēnxiǎng" data-pyn="fenxiang" data-num="29" aria-label="Прослушать 分享" title="Прослушать 分享">&#9654;</button><span class="ru">делиться (радостью, правами)</span><span class="ex">快乐要分享 / 分享经验</span></div><div class="w-item"><span class="hz">昙花</span><span class="py">tánhuā</span><span class="star">★</span><button class="pb" type="button" data-hz="昙花" data-hz2="昙花" data-py="tánhuā" data-pyn="tanhua" data-num="30" aria-label="Прослушать 昙花" title="Прослушать 昙花">&#9654;</button><span class="ru">эпифиллум, «царица ночи»</span><span class="ex">昙花开放 / 昙花一现</span></div><div class="w-item"><span class="hz">庆祝</span><span class="py">qìngzhù</span><button class="pb" type="button" data-hz="庆祝" data-hz2="庆祝" data-py="qìngzhù" data-pyn="qingzhu" data-num="31" aria-label="Прослушать 庆祝" title="Прослушать 庆祝">&#9654;</button><span class="ru">праздновать, отмечать</span><span class="ex">赏花庆祝 / 庆祝活动</span></div><div class="w-item"><span class="hz">保留</span><span class="py">bǎoliú</span><button class="pb" type="button" data-hz="保留" data-hz2="保留" data-py="bǎoliú" data-pyn="baoliu" data-num="32" aria-label="Прослушать 保留" title="Прослушать 保留">&#9654;</button><span class="ru">сохранять; придерживать при себе</span><span class="ex">毫无保留 / 保留意见</span></div></div></div><div class="cluster"><h3>VI. Печаль и вывод<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Последнее гнездо учебника — и третья грамматическая точка.</div><div class="words"><div class="w-item"><span class="hz">菊花</span><span class="py">júhuā</span><span class="star">★</span><button class="pb" type="button" data-hz="菊花" data-hz2="菊花" data-py="júhuā" data-pyn="juhua" data-num="33" aria-label="Прослушать 菊花" title="Прослушать 菊花">&#9654;</button><span class="ru">хризантема</span><span class="ex">菊花被砸死了 / 一盆菊花</span></div><div class="w-item"><span class="hz">砸</span><span class="py">zá</span><span class="star">★</span><button class="pb" type="button" data-hz="砸" data-hz2="砸" data-py="zá" data-pyn="za" data-num="34" aria-label="Прослушать 砸" title="Прослушать 砸">&#9654;</button><span class="ru">разбить (ударом сверху), придавить</span><span class="ex">被砸死 / 砸碎</span></div><div class="w-item"><span class="hz">悲（伤）</span><span class="py">bēi (shāng)</span><button class="pb" type="button" data-hz="悲（伤）" data-hz2="悲伤" data-py="bēi (shāng)" data-pyn="bei(shang)" data-num="35" aria-label="Прослушать 悲（伤）" title="Прослушать 悲（伤）">&#9654;</button><span class="ru">скорбный, печальный</span><span class="ex">有喜有悲 / 十分悲伤</span></div><div class="w-item"><span class="hz">反正</span><span class="py">fǎnzhèng</span><button class="pb" type="button" data-hz="反正" data-hz2="反正" data-py="fǎnzhèng" data-pyn="fanzheng" data-num="36" aria-label="Прослушать 反正" title="Прослушать 反正">&#9654;</button><span class="ru">всё равно, так или иначе</span><span class="ex">反正我要感谢它们 / 反正我不去</span></div><div class="w-item"><span class="hz">热爱</span><span class="py">rè’ài</span><button class="pb" type="button" data-hz="热爱" data-hz2="热爱" data-py="rè’ài" data-pyn="re’ai" data-num="37" aria-label="Прослушать 热爱" title="Прослушать 热爱">&#9654;</button><span class="ru">горячо любить</span><span class="ex">对生活的热爱 / 热爱大自然</span></div><div class="w-item"><span class="hz">老舍</span><span class="py">Lǎo Shě</span><button class="pb" type="button" data-hz="老舍" data-hz2="老舍" data-py="Lǎo Shě" data-pyn="laoshe" data-num="" aria-label="Прослушать 老舍" title="Прослушать 老舍">&#9654;</button><span class="ru">Лао Шэ (1899–1966), псевдоним писателя Шу Цинчуня</span><span class="ex">作家老舍先生爱养花</span></div></div></div></section>
+<section>
+  <h2>На слух: где рука ошибётся <span class="cn">听写陷阱</span></h2>
+  <p>Главное место урока — пара <b>自豪 и 骄傲</b>: оба «гордый», но 自豪 всегда положительно,
+  а 骄傲 часто значит «зазнался». Рядом — <b>保留 против 保存</b> и <b>潮湿 против 湿润</b>,
+  где решает не звук, а оттенок. И отдельно — четыре коротких знака урока: 砸、浇、捡、朵.</p>
+<div class="warn">Первый пункт упражнения 2</div><div class="trap"><div><span class="hz">自豪</span><span class="py">zìháo</span><span class="n">«гордиться своим делом» — всегда хорошо: 感到自豪, 自豪地说.</span></div><div><span class="hz">骄傲</span><span class="py">jiāo’ào</span><span class="n">«гордость» и «зазнайство»: 骄傲得不得了. Первый пункт упражнения 2.</span></div></div><div class="warn">Второй пункт упражнения 2</div><div class="trap"><div><span class="hz">保留</span><span class="py">bǎoliú</span><span class="n">«придержать при себе, оставить за собой»: 保留意见, 毫无保留.</span></div><div><span class="hz">保存</span><span class="py">bǎocún</span><span class="n">«сохранить в целости»: 保存文物, 保存食品. Второй пункт упражнения 2.</span></div></div><div class="warn">Третий пункт упражнения 2</div><div class="trap"><div><span class="hz">湿润</span><span class="py">shīrùn</span><span class="n">«увлажнённый» — приятно или трогательно: 眼圈湿润了.</span></div><div><span class="hz">潮湿</span><span class="py">cháoshī</span><span class="n">«сырой» — чаще неудобно: 房间潮湿. Третий пункт упражнения 2.</span></div></div><div class="warn">Четвёртый пункт упражнения 2</div><div class="trap"><div><span class="hz">除非</span><span class="py">chúfēi</span><span class="n">союз «только если»: 除非……否则／不然……；предлог «кроме как»: 除非李阳.</span></div><div><span class="hz">除了</span><span class="py">chúle</span><span class="n">«кроме» — исключает или добавляет: 除了工作还是工作. Четвёртый пункт упражнения 2.</span></div></div><div class="warn">Три слова на 付</div><div class="trap"><div><span class="hz">应付</span><span class="py">yìngfu</span><span class="n">付 в лёгком тоне: «справляться, отделываться». Пара 辨析 урока.</span></div><div><span class="hz">对付 / 付出</span><span class="py">duìfu / fùchū</span><span class="n">«иметь дело с, справиться» и «отдавать». Все три — на 付.</span></div></div><div class="warn">Перекличка с уроком 26</div><div class="trap"><div><span class="hz">在乎</span><span class="py">zàihu</span><span class="n">«придавать значение»: 不在乎, 满不在乎.</span></div><div><span class="hz">在于 / 关于</span><span class="py">zàiyú / guānyú</span><span class="n">«заключаться в» (урок 26) и «о, относительно». Все три — на 在／于.</span></div></div><div class="warn">Три слова про «делиться»</div><div class="trap"><div><span class="hz">分享</span><span class="py">fēnxiǎng</span><span class="n">«делиться хорошим»: 分享快乐／经验.</span></div><div><span class="hz">分担 / 享受</span><span class="py">fēndān / xiǎngshòu</span><span class="n">«разделить бремя» и «наслаждаться». 享 — общий знак.</span></div></div><div class="warn">Два значения 吹</div><div class="trap"><div><span class="hz">吹</span><span class="py">chuī</span><span class="n">два значения: «дуть» (吹风) и «хвастаться» (吹牛, 不是乱吹).</span></div><div><span class="hz">炊 / 欢呼</span><span class="py">chuī / huānhū</span><span class="n">炊 — «готовить на огне». А 吹 с 口 — именно «дуть» и «трепаться».</span></div></div><div class="warn">Три слова про правду</div><div class="trap"><div><span class="hz">真理</span><span class="py">zhēnlǐ</span><span class="n">«истина» — большая, жизненная: 生活的真理.</span></div><div><span class="hz">道理 / 真实</span><span class="py">dàolǐ / zhēnshí</span><span class="n">«резон» и «подлинный» (урок 32). Все три — про правду.</span></div></div><div class="warn">Два знака по отдельности</div><div class="trap"><div><span class="hz">抢救</span><span class="py">qiǎngjiù</span><span class="n">«срочно спасать»: 抢救病人／花草.</span></div><div><span class="hz">抢 / 救</span><span class="py">qiǎng / jiù</span><span class="n">抢 само — «отнять, расхватать» (抢到屋里去 — «быстро затащить»).</span></div></div><div class="warn">Три слова про спешку</div><div class="trap"><div><span class="hz">紧急</span><span class="py">jǐnjí</span><span class="n">«экстренный»: 情况紧急, 紧急通知.</span></div><div><span class="hz">紧张 / 着急</span><span class="py">jǐnzhāng / zháojí</span><span class="n">«нервничать, напряжённый» и «торопиться». Все три — похожи на слух.</span></div></div><div class="warn">Ключ 石 на месте?</div><div class="trap"><div><span class="hz">砸</span><span class="py">zá</span><span class="n">«разбить, придавить» — удар сверху: 被砸死, 砸碎.</span></div><div><span class="hz">杂 / 咋</span><span class="py">zá / ză</span><span class="n">砸 = 石 + 匝. Без ключа 石 знак превращается в другой.</span></div></div><div class="warn">Три знака на 尧</div><div class="trap"><div><span class="hz">浇</span><span class="py">jiāo</span><span class="n">«поливать»: 浇水, 浇花. Слева 氵, справа 尧.</span></div><div><span class="hz">烧 / 绕</span><span class="py">shāo / rào</span><span class="n">«жечь» и «обходить». Один фонетик 尧, три разных ключа.</span></div></div><div class="warn">Три слова на duǒ/duō</div><div class="trap"><div><span class="hz">朵</span><span class="py">duǒ</span><span class="n">счётное для цветов и облаков: 一朵花, 一朵云.</span></div><div><span class="hz">躲 / 多</span><span class="py">duǒ / duō</span><span class="n">«прятаться» и «много». 朵 — это 几 над 木.</span></div></div>
+  <div class="card green">
+    <p style="margin:0"><b>Как тренировать.</b> Связки урока:
+    <span class="cn-ex">养花 · 除非……否则…… · 为理想奋斗 · 生活乐趣 · 满不在乎 · 一朵花 ·
+    一把剪刀 · 装饰房间 · 结合实际 · 狂风暴雨 · 情况紧急 · 抢救病人 · 腰酸腿疼 ·
+    热汗直流 · 有付出才有回报 · 浇水 · 房间潮湿 · 越做越熟练 · 应付考试 · 颜色鲜艳 ·
+    感到自豪 · 吹牛 · 毫无保留 · 分享快乐 · 热爱生活</span>.
+    Две формулы стоит выучить целиком: <b>任何事都要有付出，不然怎么会有回报</b>
+    и <b>有喜有悲，有笑有泪</b>.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Три точки урока <span class="cn">词语例释</span></h2>
+
+  <h3>1 · 除非 — «только если»</h3>
+  <div class="card red">
+    <p><b>Союз:</b> единственное условие, равно 只有. Во второй части почти всегда
+    стоит 才, 否则 или 不然.</p>
+    <p class="cn-ex">可<span class="hl">除非</span>是那些好种易活、自己会奋斗的花草，<span class="hl">否则</span>他是不养的。</p>
+    <p class="cn-ex"><span class="hl">除非</span>急需一大笔钱，我<span class="hl">才</span>会考虑卖了这房子。</p>
+    <p><b>Предлог:</b> «кроме как», равно 除了 — выводит кого-то или что-то за скобки.</p>
+    <p class="cn-ex">这种机器，<span class="hl">除非</span>李阳，没人修得好。</p>
+    <p class="cn-ex">日常工作他从来不过问，<span class="hl">除非</span>极特殊的问题。</p>
+    <p class="tr" style="margin:10px 0 0">Две рамки, которые надо различать:
+    <b>除非A，否则／不然B</b> — «если не A, то B» (B — нежелательный исход) и
+    <b>除非A，才B</b> — «только при A будет B». А вот 除了 в значении «кроме» даёт
+    совсем другое: 除了工作还是工作 — «кроме работы одна работа».</p>
+  </div>
+
+  <h3>2 · 直 — «прямо» и «без остановки»</h3>
+  <div class="card brass">
+    <p><b>Значение A — «прямо, напрямую»</b> (一直／径直／直接), дальше обычно
+    односложный глагол.</p>
+    <p class="cn-ex">这趟车可以<span class="hl">直</span>达北京，非常方便。</p>
+    <p class="cn-ex"><span class="hl">直</span>到今天，我也不明白他当时为什么发那么大脾气。</p>
+    <p><b>Значение B — «непрерывно, без передышки»</b> о действии.</p>
+    <p class="cn-ex">父亲听说儿子卖了房子，气得<span class="hl">直</span>发抖。</p>
+    <p class="cn-ex">几百盆花，要很快地抢到屋里去，累得腰酸腿疼，热汗<span class="hl">直</span>流。</p>
+    <p class="tr" style="margin:10px 0 0">Как различить в задании: если перед 直 стоит 得
+    (气得直发抖, 累得直流汗, 疼得直叫) — это всегда значение B. Если 直 стоит в начале
+    глагольной группы и можно подставить 直接／一直 — значение A.</p>
+  </div>
+
+  <h3>3 · 反正 — «всё равно»</h3>
+  <div class="card green">
+    <p><b>Значение 1:</b> обстоятельства разные, а результат один.</p>
+    <p class="cn-ex">不管你们谁去，<span class="hl">反正</span>我不会去。</p>
+    <p class="cn-ex">我不知道花草们受我的照顾，感谢我不感谢，<span class="hl">反正</span>我要感谢它们。</p>
+    <p><b>Значение 2:</b> твёрдое утверждение — «так или иначе, это точно».</p>
+    <p class="cn-ex">你别再说了，<span class="hl">反正</span>我是不会考虑的。</p>
+    <p class="cn-ex">算了，<span class="hl">反正</span>不是什么要紧事，还是别打扰他们了。</p>
+    <p class="tr" style="margin:10px 0 0">Частые спутники 反正: 不管……反正……、……也好……也好，反正……、
+    反正我……. В разговоре это слово звучит слегка упрямо — именно поэтому финальная фраза
+    Лао Шэ («не знаю, благодарны ли мне цветы, но я-то им благодарен») получается такой тёплой.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Сочетаемость <span class="cn">词语搭配</span></h2>
+  <table>
+    <tr><th>动词 + 宾语</th><th>примеры</th></tr>
+    <tr><td class="han">保留</td><td class="han">资格 / 意见 / 权利 / 传统 / 身份 / 文件 / 风俗</td></tr>
+    <tr><td class="han">应付</td><td class="han">情况 / 领导 / 工作 / 敌人 / 考试 / 检查 / 比赛</td></tr>
+    <tr><th>定语 + 中心语</th><th></th></tr>
+    <tr><td class="han">鲜艳的</td><td class="han">花朵 / 颜色 / 色彩 / 图案</td></tr>
+    <tr><td class="han">潮湿的</td><td class="han">空气 / 气候 / 环境 / 海风 / 路面 / 台阶 / 屋子 / 衣服</td></tr>
+    <tr><th>状语 + 中心语</th><th></th></tr>
+    <tr><td class="han">紧急</td><td class="han">集合 / 行动 / 出发 / 通知 / 处理 / 降落 / 宣布</td></tr>
+    <tr><td class="han">熟练地</td><td class="han">读 / 模仿 / 使用 / 计算 / 控制</td></tr>
+    <tr><th>中心语 + 补语</th><th></th></tr>
+    <tr><td class="han">应付</td><td class="han">得了 / 不了 / 过去</td></tr>
+    <tr><td class="han">保留</td><td class="han">下去 / 下来</td></tr>
+    <tr><th>数量 + 中心语</th><th></th></tr>
+    <tr><td class="han">一朵</td><td class="han">花</td></tr>
+    <tr><td class="han">一把</td><td class="han">伞 / 剪刀</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>应付 и 处理 <span class="cn">词语辨析</span></h2>
+  <p>Общее: оба — глаголы «принимать меры по отношению к человеку или делу»:
+  <span class="han">依我看，以他现有的经验应付／处理不了目前的工作。</span>
+  Но дальше расходятся сильно: у 应付 своё значение «отделаться», у 处理 — целых два лишних.</p>
+  <table class="pair-tbl">
+    <tr><th></th><th>应付 yìngfu</th><th>处理 chǔlǐ</th></tr>
+    <tr><td>1</td><td>упор на то, чтобы <b>подобрать подходящий способ</b> обойтись с человеком или делом<br><span class="han">他们会想方设法说服你，你准备好怎么应付他们了吗？</span></td><td>упор на то, чтобы <b>решить проблему</b><br><span class="han">严重的环境污染使人们深思该如何处理好人与自然的关系。</span></td></tr>
+    <tr><td>2</td><td>«делать спустя рукава, лишь бы отвязаться»<br><span class="han">小林学习不认真，完全是在应付父母和老师。</span></td><td>нет такого значения</td></tr>
+    <tr><td>3</td><td>нет такого значения</td><td>«распорядиться, пристроить вещь»<br><span class="han">洗衣机的包装纸箱，既占地方又没什么用，快处理了吧。</span></td></tr>
+    <tr><td>4</td><td>нет такого значения</td><td>«распродать со скидкой»<br><span class="han">这批过季的衣服尽快减价处理吧。</span></td></tr>
+  </table>
+  <p class="tr">Практическая проверка: если в фразе есть оттенок «кое-как, для вида» — только 应付.
+  Если речь о том, чтобы избавиться от вещи или распродать товар — только 处理.
+  В середине (справиться с работой, с ситуацией) подходят оба, и выбор зависит от того,
+  что вы подчёркиваете: «выкрутиться» или «решить».</p>
+</section>
+
+<section>
+  <h2>Ответы к упражнениям <span class="cn">练习 · 做一做 · 练一练</span></h2>
+<details><summary>练习 1 — 选择合适的词语填空（熟练 结合 不然 自豪 庆祝 在乎）</summary><div class="in">
+<p>① 我们的产品改善了许多人的生活，这是我们非常<span class="k">自豪</span>的事情。<br>
+② 这项规定是<span class="k">结合</span>了我校的实际情况而制定的。<br>
+③ 老李对儿子面试没被录取的事显得满不<span class="k">在乎</span>。<br>
+④ 国庆节期间，本市会举行大规模的<span class="k">庆祝</span>活动。<br>
+⑤ 多亏了这条铁路，<span class="k">不然</span>这么多煤炭怎么运出去？<br>
+⑥ 我觉得你们的动作好像还不太<span class="k">熟练</span>，还得多练习练习。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+③ 满不在乎 — устойчивое «и в ус не дует». ⑤ рамка «多亏了……，不然……» —
+«хорошо, что…, иначе…».</p></div></details><details><summary>练习 2 — 选择正确答案</summary><div class="in">
+<p>① 一连取得两场胜利，李岩<span class="k">骄傲</span>（B）得不得了，以为冠军非他莫属了。<br>
+② 对于他们这种做法，我<span class="k">保留</span>（A）自己的意见。<br>
+③ 看到五星红旗在赛场上升起，我的眼圈<span class="k">湿润</span>（B）了。<br>
+④ 他是个工作狂，生活中<span class="k">除了</span>（B）工作还是工作。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+① «возомнил, что чемпионство уже его» — это зазнайство, значит 骄傲; 自豪 бывает только
+в хорошем смысле. ② 保留意见 — «оставить мнение при себе». ③ про глаза говорят 湿润;
+潮湿 — про сырое помещение. ④ рамка «除了A还是A» существует только с 除了.</p></div></details><details><summary>练习 3 — 画线连接可以搭配的词语</summary><div class="in">
+<p>(1) 结合 — 实际 ／ 应付 — 挑战 ／ 装饰 — 街道 ／ 保留 — 观点<br>
+(2) 气候 — 潮湿 ／ 服装 — 鲜艳 ／ 情况 — 紧急 ／ 动作 — 熟练</p></div></details><details><summary>做一做 — 应付 или 处理</summary><div class="in">
+<p>(1) 一个星期的迎来送往，她已经有点儿<span class="k">应付</span>不了了。（应付 ✓ 处理 ✗）<br>
+(2) 他实在说不出什么，只好随口说：“不怎么习惯。”总算<span class="k">应付</span>过去了。<br>
+(3) 放心吧，海关手续的事我一个人能<span class="k">应付／处理</span>。<br>
+(4) 我非常尊敬他，但同时也觉得他是个不好<span class="k">应付</span>的人。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+(2) 应付过去 — «кое-как отделался», это чистое второе значение 应付.
+(4) 不好应付 — «с ним непросто иметь дело», про человека говорят только так.
+(3) допустимы оба: 应付 подчеркнёт «справлюсь, выкручусь», 处理 — «улажу, доведу до конца».
+Это как раз та середина, где слова накладываются, — смотрите, что вы хотите сказать.</p></div></details><details><summary>练一练 1 — 除非（образцы）</summary><div class="in">
+<p>(1) 他工作时不喜欢别人打扰，<span class="k">除非是特别着急的事，否则</span>别人的电话他都不接。（除非）<br>
+(2) <span class="k">除非有特别喜欢的节目，否则</span>我平时一般都不看电视。（除非）<br>
+(3) A: 这个周末你陪我去看场电影，行吗？<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: 想让我答应你，<span class="k">除非你先把上次借我的书还回来</span>。（除非）</p></div></details><details><summary>练一练 2 — 指出“直”是哪种用法（A. 直接 B. 连续不停地）</summary><div class="in">
+<p>(1) 他朝我<span class="k">直</span>摇头，我故意装作没看见。　（<span class="k">B</span>）<br>
+(2) 参观者乘电梯可以<span class="k">直</span>达大楼顶层的观光餐厅。　（<span class="k">A</span>）<br>
+(3) 早晨6点，闹钟在我头上<span class="k">直</span>响，我真不想起床。　（<span class="k">B</span>）<br>
+(4) 司机师傅，前边路口<span class="k">直</span>走，别拐弯。　（<span class="k">A</span>）</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+В (1) и (3) можно подставить 不停地 (不停地摇头, 不停地响) — значит B.
+В (2) и (4) подставляется 直接／径直 — значит A.</p></div></details><details><summary>练一练 3 — 反正（образцы）</summary><div class="in">
+<p>(1) 你别问那么多了，反正你也<span class="k">帮不上什么忙</span>。<br>
+(2) <span class="k">我说的句句都是实话</span>，信不信，你随便吧。（反正）
+——或：<span class="k">反正我已经把话说清楚了</span>，信不信，你随便吧。<br>
+(3) A: 这是今年最流行的颜色，你真没眼力。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">流行不流行我不管，反正我不喜欢这个颜色</span>。（反正）</p></div></details><details><summary>扩展 做一做 — 行为 2</summary><div class="in">
+<p>(1) 知道李阳的困难后，同事们都为他<span class="k">捐</span>款。<br>
+(2) 产品自售出之日起七日内，发生问题，消费者可以选择<span class="k">退</span>货。<br>
+(3) 这个袋子很结实，用手<span class="k">撕</span>不开，去拿把剪刀。<br>
+(4) 经过四年的植树造林，种草固沙，退化的草原又<span class="k">披</span>上了绿装。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+行为2: 拆（chāi）、撕（sī）、摸（mō）、拍（pāi）、抓（zhuā）、捡（jiǎn）、摘（zhāi）、
+披（pī）、偷（tōu）、抢（qiǎng）、捐（juān）、扶（fú）、挡（dǎng）、拦（lán）、退（tuì）.<br>
+(4) 披上绿装 — «одеться в зелень», красивый образ: 披 значит «накинуть на плечи».</p></div></details></section>
+<section>
+  <h2>Сочинение <span class="cn">命题写作：人与自然</span></h2>
+  <p>Последняя тема учебника — самая широкая, и именно поэтому её легко провалить общими словами.
+  Надёжный ход — сделать как Лао Шэ: взять одну маленькую конкретную вещь из собственной жизни,
+  а вывод про человека и природу оставить на последние две фразы.</p>
+  <div class="card green">
+    <p class="cn-ex" style="line-height:2">说到“人与自然”，我总会想起老舍先生<span class="hl">养</span>花的故事。
+    他不<span class="hl">在乎</span>花开得大小好坏，只要开花就高兴；
+    赶上狂风<span class="hl">暴雨</span>，情况<span class="hl">紧急</span>，
+    他就<span class="hl">劳驾</span>全家人一起<span class="hl">抢救</span>花草，
+    累得<span class="hl">腰</span>酸腿疼也不抱怨。
+    在他看来，任何事都要有付出，<span class="hl">不然</span>怎么会有<span class="hl">回报</span>？
+    我自己也有一点儿小体会。去年我在阳台上种了几盆花，
+    一开始不知道有的花喜干、有的喜欢<span class="hl">潮湿</span>，
+    <span class="hl">浇</span>水总是浇错，死了两盆。
+    后来换盆、剪枝、<span class="hl">施肥</span>慢慢<span class="hl">熟练</span>了，
+    看着那些<span class="hl">鲜艳</span>的花朵，我也有点儿<span class="hl">自豪</span>。
+    我这才明白：人跟自然的关系，不是谁征服谁，而是你付出多少，它就回报你多少。
+    <span class="hl">反正</span>在我看来，懂得照顾一棵植物的人，
+    一定也更懂得<span class="hl">热爱</span>生活。</p>
+  </div>
+  <h3>Связки, которые стоит взять с собой</h3>
+  <ul>
+    <li><span class="cn-ex">说到“……”，我总会想起……的故事</span> — зачин через чужой пример;</li>
+    <li><span class="cn-ex">在他看来，任何事都要有付出，不然怎么会有回报</span> — формула из текста, годится дословно;</li>
+    <li><span class="cn-ex">我自己也有一点儿小体会</span> — переход к себе;</li>
+    <li><span class="cn-ex">一开始不知道……，后来慢慢熟练了</span> — история в двух предложениях;</li>
+    <li><span class="cn-ex">不是谁征服谁，而是……</span> и <span class="cn-ex">反正在我看来，……</span> — двойная концовка.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>План на урок <span class="cn">复习计划</span></h2>
+  <ol class="route">
+    <li><b>Пройдите шесть полос схемы.</b> Какие цветы → радость → труд и принцип → опыт →
+    радость на двоих → горе и вывод. Заметьте симметрию: третья полоса даёт формулу про付出，
+    а шестая — про 有喜有悲. На них и держится весь текст.</li>
+    <li><b>Соберите пересказ по таблице учебника.</b> Пять блоков: 养什么样的花 (除非、种、奋斗),
+    乐趣与辛苦 (在乎、剪枝、捡、装饰、结合、紧急、抢救), 养花的经验 (喜干、浇水、潮湿、换盆、熟练、长虫、应付),
+    分享快乐 (赏花、庆祝、保留、劳动果实、夸), 为什么感谢花草 (有喜有悲、反正、感谢、热爱).</li>
+    <li><b>Закройте пару 应付／处理.</b> Проверка: есть ли оттенок «кое-как» (тогда 应付)
+    или речь о том, чтобы избавиться от вещи (тогда 处理).</li>
+    <li><b>Отработайте 除非.</b> Две рамки: 除非A，否则B и 除非A，才B.
+    Обязательно по одному примеру на каждую — в заданиях встречаются обе.</li>
+    <li><b>Разведите 自豪 и 骄傲.</b> 自豪 — всегда хорошо, 骄傲 — часто «зазнался».
+    Это первый пункт упражнения 2 и очень частый вопрос в 阅读.</li>
+    <li><b>Напишите сочинение.</b> 100 знаков по схеме «чужой пример — свой маленький опыт —
+    вывод», обязательно с 不然怎么会有回报 и одним 反正.</li>
+  </ol>
+</section>
+
+<section>
+  <div class="final">
+    <h3>Учебник пройден <span class="cn">全书完</span></h3>
+    <p style="margin-bottom:10px">Это последний, тридцать шестой урок 《HSK 标准教程 5》.
+    Оба тома разобраны целиком: 36 конспектов, 1408 новых слов, больше сотни
+    грамматических точек и 36 разборов 辨析.</p>
+    <p style="margin-bottom:10px"><b>Что имеет смысл делать дальше:</b></p>
+    <ul style="margin-top:0">
+      <li>пройти <a href="tetrad-hsk5a.html">рабочую тетрадь</a> и <a href="test-hsk5a.html">контрольный тест</a>
+      по первому тому, отмечая результаты в <a href="progress-hsk5a.html">дневнике</a>;</li>
+      <li>перечитать разделы «На слух» подряд — в них собраны все ловушки, которые
+      повторяются из урока в урок: 反应／反映, 促使／促进, 轻易／容易, 爱惜／爱护, 自豪／骄傲;</li>
+      <li>повторить <a href="pismo-hsk5.html">письменную часть</a> и прогнать
+      <a href="hskk-gaoji.html">банк заданий HSKK</a> — устный экзамен обычно оставляют
+      на последний момент, и зря;</li>
+      <li>собрать тематические словари 扩展 из всех 36 уроков в один список:
+      там вся лексика по темам, которая и встречается в 阅读.</li>
+    </ul>
+    <p style="margin-bottom:0"><a href="index.html">← Вернуться на главную страницу проекта</a></p>
+  </div>
+</section>
+
+
+<nav class="botnav"><a href="hsk5b-lesson-35.html"><span>← Урок 35</span>植物会出汗</a></nav>
+
+<footer>HSK 标准教程 5（下） · урок 36 «老舍与养花» · конспект для подготовки к экзамену</footer>
+
+</div>
+<script>
+
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML =
+      '<span class="w">' + z.dataset.w + '</span>' +
+      '<span class="p">' + z.dataset.p + '</span>' +
+      '<span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    out.innerHTML = def;
+  }
+
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+
+  var box = document.querySelector('.plan-box svg');
+  box.addEventListener('mouseleave', clear);
+})();
+
+</script>
+<script>
+
+(function(){
+  var LESSON = "36";
+  var DIRS = ["audio/", "", "mp3/", "media/", "аудио/", "audio/36/", "36/"];
+  var CAND = [];
+  DIRS.forEach(function(d){ CAND.push(d + "{hz}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{hz2}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{pyn}.mp3"); });
+
+  var patIn  = document.getElementById('ab-pat');
+  var status = document.getElementById('ab-status');
+  var btns   = Array.prototype.slice.call(document.querySelectorAll('.pb[data-hz]'));
+  var cur = null, curBtn = null, queue = null;
+
+  function pad(n){ n = String(n||''); return n.length === 1 ? '0'+n : n; }
+
+  function resolve(pat, b){
+    return pat
+      .replace(/\{hz2\}/g, b.dataset.hz2 || b.dataset.hz)
+      .replace(/\{hz\}/g,  b.dataset.hz)
+      .replace(/\{pyn\}/g, b.dataset.pyn)
+      .replace(/\{py\}/g,  b.dataset.py)
+      .replace(/\{num\}/g, pad(b.dataset.num))
+      .replace(/\{n\}/g,   b.dataset.num || '')
+      .replace(/\{L\}/g,   LESSON);
+  }
+
+  function setStatus(t, cls){
+    status.textContent = t || '';
+    status.className = 'ab-status' + (cls ? ' ' + cls : '');
+  }
+
+  function test(pat, b){
+    return new Promise(function(res){
+      var a = new Audio(), done = false;
+      function ok(){ if(!done){ done = true; res(true); } }
+      function no(){ if(!done){ done = true; res(false); } }
+      a.addEventListener('loadedmetadata', ok);
+      a.addEventListener('canplay', ok);
+      a.addEventListener('error', no);
+      a.preload = 'metadata';
+      a.src = encodeURI(resolve(pat, b));
+      setTimeout(no, 2500);
+    });
+  }
+
+  function stop(){
+    if(cur){ cur.pause(); cur = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn = null; }
+    queue = null;
+    document.querySelectorAll('.pball.playing').forEach(function(x){ x.classList.remove('playing'); });
+  }
+
+  /* проигрывание с запасными вариантами имени для этого слова */
+  function play(b, onEnd){
+    stop();
+    var tries = [patIn.value.trim()];
+    var alt = (b.dataset.hz2 && b.dataset.hz2 !== b.dataset.hz)
+      ? patIn.value.trim().replace('{hz}', '{hz2}') : null;
+    if(alt && tries.indexOf(alt) < 0) tries.push(alt);
+    CAND.forEach(function(p){ if(tries.indexOf(p) < 0) tries.push(p); });
+
+    b.classList.add('playing');
+    var i = 0;
+    (function attempt(){
+      if(i >= tries.length){
+        b.classList.remove('playing');
+        b.classList.add('missing');
+        b.title = 'Не найден файл для ' + b.dataset.hz;
+        setStatus('Не найден файл для ' + b.dataset.hz + ' — проверьте папку или шаблон.', 'bad');
+        if(onEnd) onEnd();
+        return;
+      }
+      var src = resolve(tries[i++], b);
+      var a = new Audio(encodeURI(src));
+      var started = false;
+      a.addEventListener('canplay', function(){ started = true; });
+      a.addEventListener('ended', function(){
+        b.classList.remove('playing');
+        if(cur === a){ cur = null; curBtn = null; }
+        if(onEnd) onEnd();
+      });
+      a.addEventListener('error', function(){
+        if(!started){ attempt(); }
+        else { b.classList.remove('playing'); if(onEnd) onEnd(); }
+      });
+      cur = a; curBtn = b;
+      b.classList.remove('missing');
+      a.play().catch(function(){});
+    })();
+  }
+
+  /* автопоиск папки при открытии */
+  function autodetect(quiet){
+    if(!btns.length) return;
+    if(!quiet) setStatus('Перебираю варианты…');
+    var i = 0;
+    (function next(){
+      if(i >= CAND.length){
+        setStatus(quiet
+          ? 'Папка с mp3 не найдена. Положите файлы в audio рядом с этим документом.'
+          : 'Ни один из типовых вариантов не подошёл. Впишите путь вручную.',
+          quiet ? '' : 'bad');
+        return;
+      }
+      var p = CAND[i++];
+      test(p, btns[0]).then(function(ok){
+        if(ok){
+          patIn.value = p;
+          document.querySelectorAll('.pb.missing').forEach(function(x){
+            x.classList.remove('missing'); x.title = '';
+          });
+          setStatus('Озвучка подключена: ' + p, 'ok');
+        } else next();
+      });
+    })();
+  }
+
+  document.getElementById('ab-auto').addEventListener('click', function(){ autodetect(false); });
+  document.getElementById('ab-test').addEventListener('click', function(){
+    if(!btns.length) return;
+    setStatus('Проверяю…');
+    test(patIn.value.trim(), btns[0]).then(function(ok){
+      setStatus((ok ? 'Файл найден: ' : 'Не найден: ') + resolve(patIn.value.trim(), btns[0]),
+                ok ? 'ok' : 'bad');
+    });
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(curBtn === b && cur){ stop(); return; }
+      play(b);
+    });
+  });
+
+  document.querySelectorAll('.pball').forEach(function(pb){
+    pb.addEventListener('click', function(){
+      if(pb.classList.contains('playing')){ stop(); return; }
+      var list = Array.prototype.slice.call(
+        pb.closest('.cluster').querySelectorAll('.pb[data-hz]'));
+      stop();
+      pb.classList.add('playing');
+      var i = 0;
+      queue = list;
+      (function step(){
+        if(queue !== list || i >= list.length){ pb.classList.remove('playing'); return; }
+        play(list[i++], function(){ setTimeout(step, 350); });
+      })();
+    });
+  });
+
+  autodetect(true);
+})();
+
+</script>
+</body>
+</html>

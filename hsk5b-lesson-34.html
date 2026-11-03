@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 34 · 鸟儿的护肤术 · HSK 标准教程 5下</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#23262a;
+  --brick:#6f6b63;
+  --paper:#e3e1da;
+  --card:#f2f1ec;
+  --red:#b4342a;
+  --brass:#a8813c;
+  --bamboo:#4a6b4e;
+  --sky:#54748a;
+  --line:rgba(35,38,42,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:
+    linear-gradient(rgba(255,255,255,.35) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.35) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+/* ——— шапка ——— */
+header{padding:56px 0 28px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{
+  font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;
+  color:var(--red);letter-spacing:-.03em;
+}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:44px;line-height:1.05;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brick);margin-top:9px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+/* ——— секции ——— */
+section{margin-top:58px}
+h2{
+  font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px;
+}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+a{color:var(--red)}
+
+/* ——— план двора ——— */
+.plan-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px;
+  box-shadow:0 1px 0 rgba(35,38,42,.06)}
+.plan-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone rect,.zone circle,.zone path{transition:fill .18s ease}
+.zone:hover .fillable,.zone.on .fillable{fill:#e7cfc9}
+.zone:focus{outline:none}
+.zone:focus-visible .fillable{stroke:var(--red);stroke-width:2.5}
+.zlab{font-family:var(--han);font-size:15px;font-weight:600;fill:var(--ink);pointer-events:none}
+.zpin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.04em}
+.faint{font-family:var(--han);font-size:12px;fill:var(--brick);pointer-events:none}
+.compass{font-family:var(--mono);font-size:10px;fill:var(--brick);letter-spacing:.15em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:62px}
+.readout .w{font-family:var(--han);font-size:22px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:13px;color:var(--sky)}
+.readout .d{display:block;margin-top:4px;font-size:15px}
+.readout .hint{color:var(--brick);font-style:italic}
+
+/* ——— карточки слов ——— */
+.cluster{margin-top:26px}
+.cluster h3{margin-bottom:4px}
+.cluster .why{font-size:14px;color:var(--brick);margin-bottom:14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--brass);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+/* ——— общие блоки ——— */
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.green{border-left:4px solid var(--bamboo)}
+.card.brass{border-left:4px solid var(--brass)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--paper);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.b{background:var(--brass)}
+.tag.g{background:var(--bamboo)}
+.tag.r{background:var(--red)}
+
+/* ——— таблицы ——— */
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(35,38,42,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+/* ——— на слух ——— */
+.trap{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+/* ——— ответы ——— */
+details{background:var(--card);border:1px solid var(--line);margin:10px 0;padding:0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+/* ——— финал ——— */
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;
+  font-family:var(--disp);font-weight:700;font-size:22px;color:var(--red);
+  width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .lesson-no{font-size:66px}
+  h1{font-size:32px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+
+
+:root{--red:#2e6a60;--brass:#9a7a2c;--bamboo:#4e7046;--sky:#4f6a86;--paper:#dfe8e5;--card:#f0f7f4}
+.zone:hover .fillable,.zone.on .fillable{fill:#cfe6de}
+.rowlab{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;fill:var(--brick)}
+.zsub{font-family:var(--han);font-size:8.5px;fill:var(--brick);pointer-events:none;letter-spacing:0}
+.tiny{font-family:var(--han);font-size:11.5px;fill:var(--brick);pointer-events:none}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index-5b.html">&#8592; Все уроки 5B</a><a href="index.html">Учебник 5A</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（下） · Unit 12 亲近自然 · Getting close to the nature</div>
+  <div class="title-row">
+    <div class="lesson-no">34</div>
+    <h1>鸟儿的护肤术<span class="lat">Как птицы ухаживают за перьями · 661 字 · стр. 128–135</span></h1>
+  </div>
+  <div class="meta">
+    <span><b>34</b> новых слов</span>
+    <span><b>3</b> грамматические точки</span>
+    <span>ключ: <b>总之 · 动词+过 · 动词+开</b></span>
+  </div>
+</header>
+
+
+<section>
+  <p class="lede">Двенадцатый юнит — про природу, и открывается он научно-популярным текстом,
+  который держится на одном неожиданном тезисе: птицу делает птицей не крыло, а перо.
+  Дальше идёт чистое перечисление — для чего нужны перья и четыре способа за ними ухаживать, —
+  поэтому текст удобно разбирать по схеме и легко пересказывать. Грамматика здесь тоже
+  «перечислительная»: 总之 собирает список, а 动词+过 и 动词+开 описывают движения тела.</p>
+</section>
+
+<section id="plan">
+  <h2>Перо, а не крыло <span class="cn">鸟儿的护肤术</span></h2>
+  <div class="plan-box">
+    <svg viewBox="0 0 660 490" role="img" aria-label="Схема урока: как птицы ухаживают за перьями"><text class="rowlab" x="18" y="16">1 · ВОПРОС 鸟儿最重要的特征是什么</text><g class="zone" tabindex="0" data-w="区分鸟儿和其他动物的唯一特征就是羽毛" data-p="tèzhēng · chìbǎng · kūnchóng · qūfēn · wéiyī" data-d="大家都接触过鸟儿吧？那你知道鸟儿最重要的特征是什么吗？是有翅膀会飞？还是吃昆虫？作为一只鸟儿，不管是天空中飞的，陆地上走的，或者能入水的，都必须拥有羽毛。没错儿，区分鸟儿和其他动物的唯一特征就是羽毛，而不是会不会飞！"><rect class="fillable" x="30" y="26" width="600" height="46" rx="3" fill="#d6e6de" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="48" text-anchor="middle" style="font-size:14px">不是翅膀，不是昆虫 —— 唯一特征是羽毛</text><text class="zsub" x="330" y="64" text-anchor="middle">接触 · 特征 · 翅膀 · 昆虫 · 天空 · 区分 · 唯一</text></g><text class="rowlab" x="18" y="96">2 · ЧТО УМЕЕТ ПЕРО 羽毛的作用</text><g class="zone" tabindex="0" data-w="保暖、保护皮肤" data-p="羽毛 · 皮肤" data-d="羽毛的作用很多，既可以保暖，又可以保护皮肤；"><rect class="fillable" x="30" y="106" width="145" height="54" rx="3" fill="#dfe8d2" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="102" y="130" text-anchor="middle" style="font-size:12.5px">保暖、保护皮肤</text><text class="zsub" x="102" y="148" text-anchor="middle">羽毛 · 皮肤</text></g><path d="M175 133 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a34)"/><g class="zone" tabindex="0" data-w="颜色和斑充当保护色" data-p="斑 · 充当" data-d="羽毛上的颜色和斑还能充当保护色；"><rect class="fillable" x="185" y="106" width="145" height="54" rx="3" fill="#dfe8d2" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="257" y="130" text-anchor="middle" style="font-size:12.5px">颜色和斑充当保护色</text><text class="zsub" x="257" y="148" text-anchor="middle">斑 · 充当</text></g><path d="M330 133 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a34)"/><g class="zone" tabindex="0" data-w="有助于飞行" data-p="关键 · 飞行" data-d="当然，更关键的是，羽毛有助于飞行；"><rect class="fillable" x="340" y="106" width="145" height="54" rx="3" fill="#dfe8d2" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="412" y="130" text-anchor="middle" style="font-size:12.5px">有助于飞行</text><text class="zsub" x="412" y="148" text-anchor="middle">关键 · 飞行</text></g><path d="M485 133 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a34)"/><g class="zone" tabindex="0" data-w="部分羽毛有“触觉”" data-p="总之 · 角色" data-d="甚至还有一些鸟儿的部分羽毛有“触觉”。总之，在鸟儿的生活中，羽毛充当着十分重要的角色。"><rect class="fillable" x="495" y="106" width="145" height="54" rx="3" fill="#dfe8d2" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="567" y="130" text-anchor="middle" style="font-size:12.5px">部分羽毛有“触觉”</text><text class="zsub" x="567" y="148" text-anchor="middle">总之 · 角色</text></g><text class="rowlab" x="18" y="184">3 · УХОД ① 整理羽毛是保养的基本功</text><g class="zone" tabindex="0" data-w="背过头去反复地啄" data-p="反复 · 啄 · 动词+过" data-d="整理羽毛是保养的基本功，它们只要有时间，就会情不自禁地背过头去，反复地啄着羽毛，"><rect class="fillable" x="30" y="194" width="145" height="54" rx="3" fill="#e2e4ea" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="102" y="218" text-anchor="middle" style="font-size:12.5px">背过头去反复地啄</text><text class="zsub" x="102" y="236" text-anchor="middle">反复 · 啄 · 动词+过</text></g><path d="M175 221 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a34)"/><g class="zone" tabindex="0" data-w="像随身带了一把梳子" data-p="随身 · 梳子" data-d="就像随身带了一把梳子梳头发一样，"><rect class="fillable" x="185" y="194" width="145" height="54" rx="3" fill="#e2e4ea" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="257" y="218" text-anchor="middle" style="font-size:12.5px">像随身带了一把梳子</text><text class="zsub" x="257" y="236" text-anchor="middle">随身 · 梳子</text></g><path d="M330 221 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a34)"/><g class="zone" tabindex="0" data-w="顺便上点儿油，更光滑" data-p="光滑" data-d="顺便上点儿油，让羽毛更光滑。"><rect class="fillable" x="340" y="194" width="145" height="54" rx="3" fill="#e2e4ea" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="412" y="218" text-anchor="middle" style="font-size:12.5px">顺便上点儿油，更光滑</text><text class="zsub" x="412" y="236" text-anchor="middle">光滑</text></g><path d="M485 221 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a34)"/><g class="zone" tabindex="0" data-w="抓出一点儿寄生虫" data-p="抓 · 寄生" data-d="另外，鸟儿在理毛的时候，还会抓出一点儿寄生虫。"><rect class="fillable" x="495" y="194" width="145" height="54" rx="3" fill="#e2e4ea" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="567" y="218" text-anchor="middle" style="font-size:12.5px">抓出一点儿寄生虫</text><text class="zsub" x="567" y="236" text-anchor="middle">抓 · 寄生</text></g><text class="rowlab" x="18" y="272">4 · УХОД ② 洗澡：以方便为原则</text><g class="zone" tabindex="0" data-w="海鸟 → 海水" data-p="岛屿" data-d="比如，海鸟在岛屿上生活，就会选择海水；"><rect class="fillable" x="30" y="282" width="145" height="54" rx="3" fill="#e9e4d8" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="102" y="306" text-anchor="middle" style="font-size:12.5px">海鸟 → 海水</text><text class="zsub" x="102" y="324" text-anchor="middle">岛屿</text></g><g class="zone" tabindex="0" data-w="知更鸟 → 浅水坑" data-p="知更鸟 · 坑" data-d="知更鸟喜欢路旁的浅水坑；"><rect class="fillable" x="185" y="282" width="145" height="54" rx="3" fill="#e9e4d8" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="257" y="306" text-anchor="middle" style="font-size:12.5px">知更鸟 → 浅水坑</text><text class="zsub" x="257" y="324" text-anchor="middle">知更鸟 · 坑</text></g><g class="zone" tabindex="0" data-w="寒带鸟 → 以雪代水" data-p="池塘" data-d="寒带的鸟呢，因为江河池塘不好找，只好以雪代水；"><rect class="fillable" x="340" y="282" width="145" height="54" rx="3" fill="#e9e4d8" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="412" y="306" text-anchor="middle" style="font-size:12.5px">寒带鸟 → 以雪代水</text><text class="zsub" x="412" y="324" text-anchor="middle">池塘</text></g><g class="zone" tabindex="0" data-w="老鹰 → 雨中张开双翅" data-p="老鹰 · 痛快 · 迎接 · 洗礼" data-d="而老鹰的洗澡方式更是直接，它们会在雨中张开双翅痛快地迎接洗礼！"><rect class="fillable" x="495" y="282" width="145" height="54" rx="3" fill="#e9e4d8" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="567" y="306" text-anchor="middle" style="font-size:12.5px">老鹰 → 雨中张开双翅</text><text class="zsub" x="567" y="324" text-anchor="middle">老鹰 · 痛快 · 迎接 · 洗礼</text></g><text class="rowlab" x="18" y="360">5 · УХОД ③④ 沙浴 и 睡眠</text><g class="zone" tabindex="0" data-w="沙浴：生活在沙漠等干燥的环境" data-p="shāzi · gānzào · shāmò" data-d="沙浴也是一些鸟儿喜欢的保养方式。所谓沙浴，就是用沙子洗澡，它们之所以放弃了用水洗澡，在很大程度上和它们的生活环境有关，它们大多生活在沙漠等干燥的环境，爱在地面上活动。"><rect class="fillable" x="30" y="370" width="290" height="60" rx="3" fill="#d6e6de" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="175" y="396" text-anchor="middle" style="font-size:13px">用沙子洗澡：放弃了用水</text><text class="zsub" x="175" y="416" text-anchor="middle">沙子 · 干燥 · 沙漠 · 地面</text></g><g class="zone" tabindex="0" data-w="睡眠：寻找一处秘密的地方" data-p="mìmì · shuìmián" data-d="另外，睡眠是鸟儿们最佳的保养方式，虽然我们很少看到睡眠中的鸟儿，那是因为它们通常会寻找一处秘密的地方休息。大多数鸟儿1天大约睡8小时，有些鸟儿差不多要睡1天，而另一些鸟儿几乎一点儿觉也不用睡。"><rect class="fillable" x="340" y="370" width="290" height="60" rx="3" fill="#d6e6de" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="485" y="396" text-anchor="middle" style="font-size:13px">1天大约睡8小时</text><text class="zsub" x="485" y="416" text-anchor="middle">秘密 · 睡眠 · 最佳</text></g><text class="tiny" x="330" y="452" text-anchor="middle">区分鸟儿和其他动物的唯一特征就是羽毛，而不是会不会飞。</text><defs><marker id="a34" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" fill="#23262a"/></marker></defs></svg>
+    <div class="readout" id="readout">
+      <span class="hint">Наведите курсор или коснитесь любого блока — появится соответствующее место текста.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Текст в пяти блоках <span class="cn">课文 · 661 字</span></h2>
+
+  <div class="card green">
+    <p><span class="tag g">блок 1</span><b>Вопрос.</b> 大家都接触过鸟儿吧？那你知道鸟儿最重要的特征是什么吗？
+    是有翅膀会飞？还是吃昆虫？作为一只鸟儿，不管是天空中飞的，陆地上走的，或者能入水的，
+    都必须拥有羽毛。没错儿，区分鸟儿和其他动物的唯一特征就是羽毛，而不是会不会飞！</p>
+    <p style="margin:0"><b>Слова блока:</b> <span class="cn-ex">接触 · 特征 · 翅膀 · 昆虫 · 天空 · 区分 · 唯一</span></p>
+  </div>
+
+  <div class="card brass">
+    <p><span class="tag b">блок 2</span><b>Зачем перья.</b> 羽毛的作用很多，既可以保暖，又可以保护皮肤；
+    羽毛上的颜色和斑还能充当保护色；当然，更关键的是，羽毛有助于飞行；甚至还有一些鸟儿的部分羽毛
+    有“触觉”。总之，在鸟儿的生活中，羽毛充当着十分重要的角色。所以，鸟儿非常爱惜羽毛，
+    每天都会花很长时间来保养自己的“羽衣”。</p>
+    <p style="margin:0"><b>Слова блока:</b> <span class="cn-ex">斑 · 充当 · 总之 · 角色 · 爱惜 · 保养</span></p>
+  </div>
+
+  <div class="card">
+    <p><span class="tag">блок 3</span><b>Уход первый: чистка перьев.</b> 整理羽毛是保养的基本功，
+    它们只要有时间，就会情不自禁地背过头去，反复地啄着羽毛，就像随身带了一把梳子梳头发一样，
+    顺便上点儿油，让羽毛更光滑。另外，鸟儿在理毛的时候，还会抓出一点儿寄生虫。</p>
+    <p style="margin:0"><b>Слова блока:</b> <span class="cn-ex">反复 · 啄 · 随身 · 梳子 · 光滑 · 抓 · 寄生</span></p>
+  </div>
+
+  <div class="card green">
+    <p><span class="tag g">блок 4</span><b>Уход второй: купание.</b> 毫无疑问，洗澡也是保养的一大基本项目。
+    不过，鸟儿洗澡用不着肥皂，而且不同种类的鸟儿选择的“澡堂”也不一样，概括来说，就是以方便为原则。
+    比如，海鸟在岛屿上生活，就会选择海水；知更鸟喜欢路旁的浅水坑；寒带的鸟呢，因为江河池塘不好找，
+    只好以雪代水；而老鹰的洗澡方式更是直接，它们会在雨中张开双翅痛快地迎接洗礼！</p>
+    <p style="margin:0"><b>Слова блока:</b> <span class="cn-ex">肥皂 · 种类 · 概括 · 岛屿 · 知更鸟 · 坑 · 池塘 · 老鹰 · 痛快 · 迎接 · 洗礼</span></p>
+  </div>
+
+  <div class="card">
+    <p><span class="tag">блок 5</span><b>Уход третий и четвёртый: песок и сон.</b> 沙浴也是一些鸟儿喜欢的保养方式。
+    所谓沙浴，就是用沙子洗澡，它们之所以放弃了用水洗澡，在很大程度上和它们的生活环境有关，
+    它们大多生活在沙漠等干燥的环境，爱在地面上活动。另外，睡眠是鸟儿们最佳的保养方式，
+    虽然我们很少看到睡眠中的鸟儿，那是因为它们通常会寻找一处秘密的地方休息。大多数鸟儿1天大约睡8小时，
+    有些鸟儿差不多要睡1天，而另一些鸟儿几乎一点儿觉也不用睡。</p>
+    <p style="margin:0"><b>Слова блока:</b> <span class="cn-ex">沙子 · 干燥 · 秘密</span></p>
+  </div>
+  <p style="font-size:14px;color:var(--brick)">改编自《科学松鼠会》，作者：临渊</p>
+</section>
+
+<section>
+  <h2>34 слова по гнёздам <span class="cn">生词</span></h2>
+  <p style="font-size:14px;color:var(--brick)"><span class="star">★</span> — слово сверх программы HSK 5 (в учебнике помечено звёздочкой). Имён собственных нет. Из текста стоит выписать обороты: <span class="cn-ex">既……又…… · 有助于 · 基本功 · 情不自禁 · 毫无疑问 · 概括来说 · 以……为原则 · 以雪代水 · 所谓…… · 之所以……是因为…… · 在很大程度上</span> — это сразу несколько «скреп» для письменной части.</p>
+
+  <div class="audiobar" id="audiobar">
+    <div class="ab-t">Озвучка слов</div>
+    <div class="ab-row">
+      <input id="ab-pat" type="text" spellcheck="false" value="audio/{hz}.mp3" aria-label="Шаблон пути к mp3">
+      <button type="button" id="ab-auto">Подобрать</button>
+      <button type="button" id="ab-test">Проверить</button>
+    </div>
+    <div class="ab-status" id="ab-status"></div>
+    <div class="ab-note">
+      Ищутся файлы вида <code>иероглиф.mp3</code> — сначала в папке <code>audio</code> рядом с этим документом,
+      потом прямо рядом с ним. Подстановки: <code>{hz}</code>, <code>{py}</code>, <code>{pyn}</code>,
+      <code>{num}</code>, <code>{L}</code>.
+    </div>
+  </div>
+<div class="cluster"><h3>I. Что делает птицу птицей<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Первый абзац — и сразу семь слов, из которых пять есть в тематическом словаре «природа».</div><div class="words"><div class="w-item"><span class="hz">接触</span><span class="py">jiēchù</span><button class="pb" type="button" data-hz="接触" data-hz2="接触" data-py="jiēchù" data-pyn="jiechu" data-num="1" aria-label="Прослушать 接触" title="Прослушать 接触">&#9654;</button><span class="ru">соприкасаться, иметь дело с</span><span class="ex">接触过鸟儿 / 接触大自然</span></div><div class="w-item"><span class="hz">特征</span><span class="py">tèzhēng</span><button class="pb" type="button" data-hz="特征" data-hz2="特征" data-py="tèzhēng" data-pyn="tezheng" data-num="2" aria-label="Прослушать 特征" title="Прослушать 特征">&#9654;</button><span class="ru">признак, отличительная черта</span><span class="ex">最重要的特征 / 明显的特征</span></div><div class="w-item"><span class="hz">翅膀</span><span class="py">chìbǎng</span><button class="pb" type="button" data-hz="翅膀" data-hz2="翅膀" data-py="chìbǎng" data-pyn="chibang" data-num="3" aria-label="Прослушать 翅膀" title="Прослушать 翅膀">&#9654;</button><span class="ru">крыло</span><span class="ex">一对翅膀 / 张开双翅</span></div><div class="w-item"><span class="hz">昆虫</span><span class="py">kūnchóng</span><button class="pb" type="button" data-hz="昆虫" data-hz2="昆虫" data-py="kūnchóng" data-pyn="kunchong" data-num="4" aria-label="Прослушать 昆虫" title="Прослушать 昆虫">&#9654;</button><span class="ru">насекомое</span><span class="ex">吃昆虫 / 一只昆虫</span></div><div class="w-item"><span class="hz">天空</span><span class="py">tiānkōng</span><button class="pb" type="button" data-hz="天空" data-hz2="天空" data-py="tiānkōng" data-pyn="tiankong" data-num="5" aria-label="Прослушать 天空" title="Прослушать 天空">&#9654;</button><span class="ru">небо</span><span class="ex">天空中飞的 / 蓝色的天空</span></div><div class="w-item"><span class="hz">区分</span><span class="py">qūfēn</span><span class="star">★</span><button class="pb" type="button" data-hz="区分" data-hz2="区分" data-py="qūfēn" data-pyn="qufen" data-num="6" aria-label="Прослушать 区分" title="Прослушать 区分">&#9654;</button><span class="ru">различать, отличать одно от другого</span><span class="ex">区分鸟儿和其他动物 / 区分真假</span></div><div class="w-item"><span class="hz">唯一</span><span class="py">wéiyī</span><button class="pb" type="button" data-hz="唯一" data-hz2="唯一" data-py="wéiyī" data-pyn="weiyi" data-num="7" aria-label="Прослушать 唯一" title="Прослушать 唯一">&#9654;</button><span class="ru">единственный</span><span class="ex">唯一的特征 / 唯一的选择</span></div></div></div><div class="cluster"><h3>II. Для чего нужны перья<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Второе гнездо — функции и оценка; 充当 и 角色 здесь работают в паре.</div><div class="words"><div class="w-item"><span class="hz">斑</span><span class="py">bān</span><span class="star">★</span><button class="pb" type="button" data-hz="斑" data-hz2="斑" data-py="bān" data-pyn="ban" data-num="8" aria-label="Прослушать 斑" title="Прослушать 斑">&#9654;</button><span class="ru">пятнышко, крапинка, полоска</span><span class="ex">颜色和斑 / 斑点</span></div><div class="w-item"><span class="hz">充当</span><span class="py">chōngdāng</span><span class="star">★</span><button class="pb" type="button" data-hz="充当" data-hz2="充当" data-py="chōngdāng" data-pyn="chongdang" data-num="9" aria-label="Прослушать 充当" title="Прослушать 充当">&#9654;</button><span class="ru">выступать в роли, служить чем-то</span><span class="ex">充当保护色 / 充当重要的角色</span></div><div class="w-item"><span class="hz">总之</span><span class="py">zǒngzhī</span><button class="pb" type="button" data-hz="总之" data-hz2="总之" data-py="zǒngzhī" data-pyn="zongzhi" data-num="10" aria-label="Прослушать 总之" title="Прослушать 总之">&#9654;</button><span class="ru">словом, в общем, одним словом</span><span class="ex">总之，羽毛很重要 / 总之一句话</span></div><div class="w-item"><span class="hz">角色</span><span class="py">juésè</span><button class="pb" type="button" data-hz="角色" data-hz2="角色" data-py="juésè" data-pyn="juese" data-num="11" aria-label="Прослушать 角色" title="Прослушать 角色">&#9654;</button><span class="ru">роль, персонаж</span><span class="ex">重要的角色 / 扮演角色</span></div><div class="w-item"><span class="hz">爱惜</span><span class="py">àixī</span><button class="pb" type="button" data-hz="爱惜" data-hz2="爱惜" data-py="àixī" data-pyn="aixi" data-num="12" aria-label="Прослушать 爱惜" title="Прослушать 爱惜">&#9654;</button><span class="ru">беречь, дорожить</span><span class="ex">爱惜羽毛 / 爱惜粮食</span></div><div class="w-item"><span class="hz">保养</span><span class="py">bǎoyǎng</span><span class="star">★</span><button class="pb" type="button" data-hz="保养" data-hz2="保养" data-py="bǎoyǎng" data-pyn="baoyang" data-num="13" aria-label="Прослушать 保养" title="Прослушать 保养">&#9654;</button><span class="ru">ухаживать, поддерживать в хорошем состоянии</span><span class="ex">保养羽毛 / 保养皮肤</span></div></div></div><div class="cluster"><h3>III. Чистка перьев<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Третий абзац — движения тела; именно отсюда растут обе грамматические точки урока.</div><div class="words"><div class="w-item"><span class="hz">反复</span><span class="py">fǎnfù</span><button class="pb" type="button" data-hz="反复" data-hz2="反复" data-py="fǎnfù" data-pyn="fanfu" data-num="14" aria-label="Прослушать 反复" title="Прослушать 反复">&#9654;</button><span class="ru">снова и снова; рецидив</span><span class="ex">反复地啄 / 病情反复</span></div><div class="w-item"><span class="hz">啄</span><span class="py">zhuó</span><span class="star">★</span><button class="pb" type="button" data-hz="啄" data-hz2="啄" data-py="zhuó" data-pyn="zhuo" data-num="15" aria-label="Прослушать 啄" title="Прослушать 啄">&#9654;</button><span class="ru">клевать</span><span class="ex">啄着羽毛 / 啄木鸟</span></div><div class="w-item"><span class="hz">随身</span><span class="py">suíshēn</span><button class="pb" type="button" data-hz="随身" data-hz2="随身" data-py="suíshēn" data-pyn="suishen" data-num="16" aria-label="Прослушать 随身" title="Прослушать 随身">&#9654;</button><span class="ru">при себе, с собой</span><span class="ex">随身带着 / 随身行李</span></div><div class="w-item"><span class="hz">梳子</span><span class="py">shūzi</span><button class="pb" type="button" data-hz="梳子" data-hz2="梳子" data-py="shūzi" data-pyn="shuzi" data-num="17" aria-label="Прослушать 梳子" title="Прослушать 梳子">&#9654;</button><span class="ru">расчёска, гребень</span><span class="ex">一把梳子 / 用梳子梳头</span></div><div class="w-item"><span class="hz">光滑</span><span class="py">guānghuá</span><button class="pb" type="button" data-hz="光滑" data-hz2="光滑" data-py="guānghuá" data-pyn="guanghua" data-num="18" aria-label="Прослушать 光滑" title="Прослушать 光滑">&#9654;</button><span class="ru">гладкий, блестящий</span><span class="ex">让羽毛更光滑 / 皮肤光滑</span></div><div class="w-item"><span class="hz">抓</span><span class="py">zhuā</span><button class="pb" type="button" data-hz="抓" data-hz2="抓" data-py="zhuā" data-pyn="zhua" data-num="19" aria-label="Прослушать 抓" title="Прослушать 抓">&#9654;</button><span class="ru">хватать, ловить; чесать</span><span class="ex">抓出寄生虫 / 抓住机会</span></div><div class="w-item"><span class="hz">寄生</span><span class="py">jìshēng</span><span class="star">★</span><button class="pb" type="button" data-hz="寄生" data-hz2="寄生" data-py="jìshēng" data-pyn="jisheng" data-num="20" aria-label="Прослушать 寄生" title="Прослушать 寄生">&#9654;</button><span class="ru">паразитировать, жить за счёт другого</span><span class="ex">寄生虫 / 寄生生活</span></div></div></div><div class="cluster"><h3>IV. Купание<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Самое «природное» гнездо урока: четыре птицы и четыре водоёма.</div><div class="words"><div class="w-item"><span class="hz">肥皂</span><span class="py">féizào</span><button class="pb" type="button" data-hz="肥皂" data-hz2="肥皂" data-py="féizào" data-pyn="feizao" data-num="21" aria-label="Прослушать 肥皂" title="Прослушать 肥皂">&#9654;</button><span class="ru">мыло</span><span class="ex">用不着肥皂 / 一块肥皂</span></div><div class="w-item"><span class="hz">种类</span><span class="py">zhǒnglèi</span><button class="pb" type="button" data-hz="种类" data-hz2="种类" data-py="zhǒnglèi" data-pyn="zhonglei" data-num="22" aria-label="Прослушать 种类" title="Прослушать 种类">&#9654;</button><span class="ru">вид, разновидность</span><span class="ex">不同种类的鸟儿 / 种类很多</span></div><div class="w-item"><span class="hz">概括</span><span class="py">gàikuò</span><button class="pb" type="button" data-hz="概括" data-hz2="概括" data-py="gàikuò" data-pyn="gaikuo" data-num="23" aria-label="Прослушать 概括" title="Прослушать 概括">&#9654;</button><span class="ru">обобщать; сжатый</span><span class="ex">概括来说 / 概括为三点</span></div><div class="w-item"><span class="hz">岛屿</span><span class="py">dǎoyǔ</span><button class="pb" type="button" data-hz="岛屿" data-hz2="岛屿" data-py="dǎoyǔ" data-pyn="daoyu" data-num="24" aria-label="Прослушать 岛屿" title="Прослушать 岛屿">&#9654;</button><span class="ru">острова</span><span class="ex">在岛屿上生活 / 岛屿众多</span></div><div class="w-item"><span class="hz">知更鸟</span><span class="py">zhīgēngniǎo</span><span class="star">★</span><button class="pb" type="button" data-hz="知更鸟" data-hz2="知更鸟" data-py="zhīgēngniǎo" data-pyn="zhigengniao" data-num="25" aria-label="Прослушать 知更鸟" title="Прослушать 知更鸟">&#9654;</button><span class="ru">зарянка, малиновка</span><span class="ex">知更鸟喜欢浅水坑</span></div><div class="w-item"><span class="hz">坑</span><span class="py">kēng</span><span class="star">★</span><button class="pb" type="button" data-hz="坑" data-hz2="坑" data-py="kēng" data-pyn="keng" data-num="26" aria-label="Прослушать 坑" title="Прослушать 坑">&#9654;</button><span class="ru">яма, впадина</span><span class="ex">浅水坑 / 一个坑</span></div><div class="w-item"><span class="hz">池塘</span><span class="py">chítáng</span><button class="pb" type="button" data-hz="池塘" data-hz2="池塘" data-py="chítáng" data-pyn="chitang" data-num="27" aria-label="Прослушать 池塘" title="Прослушать 池塘">&#9654;</button><span class="ru">пруд</span><span class="ex">江河池塘 / 池塘边</span></div><div class="w-item"><span class="hz">老鹰</span><span class="py">lǎoyīng</span><span class="star">★</span><button class="pb" type="button" data-hz="老鹰" data-hz2="老鹰" data-py="lǎoyīng" data-pyn="laoying" data-num="28" aria-label="Прослушать 老鹰" title="Прослушать 老鹰">&#9654;</button><span class="ru">орёл, ястреб</span><span class="ex">老鹰的洗澡方式 / 一只老鹰</span></div><div class="w-item"><span class="hz">痛快</span><span class="py">tòngkuài</span><button class="pb" type="button" data-hz="痛快" data-hz2="痛快" data-py="tòngkuài" data-pyn="tongkuai" data-num="29" aria-label="Прослушать 痛快" title="Прослушать 痛快">&#9654;</button><span class="ru">от души, в своё удовольствие; прямодушный</span><span class="ex">痛快地迎接 / 喝个痛快</span></div><div class="w-item"><span class="hz">迎接</span><span class="py">yíngjiē</span><button class="pb" type="button" data-hz="迎接" data-hz2="迎接" data-py="yíngjiē" data-pyn="yingjie" data-num="30" aria-label="Прослушать 迎接" title="Прослушать 迎接">&#9654;</button><span class="ru">встречать, приветствовать</span><span class="ex">迎接洗礼 / 迎接客人</span></div><div class="w-item"><span class="hz">洗礼</span><span class="py">xǐlǐ</span><span class="star">★</span><button class="pb" type="button" data-hz="洗礼" data-hz2="洗礼" data-py="xǐlǐ" data-pyn="xili" data-num="31" aria-label="Прослушать 洗礼" title="Прослушать 洗礼">&#9654;</button><span class="ru">крещение, «омовение»</span><span class="ex">迎接洗礼 / 经受洗礼</span></div></div></div><div class="cluster"><h3>V. Песок и сон<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Три последних слова — и с ними же закрывается тема «сухой климат».</div><div class="words"><div class="w-item"><span class="hz">沙子</span><span class="py">shāzi</span><span class="star">★</span><button class="pb" type="button" data-hz="沙子" data-hz2="沙子" data-py="shāzi" data-pyn="shazi" data-num="32" aria-label="Прослушать 沙子" title="Прослушать 沙子">&#9654;</button><span class="ru">песок</span><span class="ex">用沙子洗澡 / 一把沙子</span></div><div class="w-item"><span class="hz">干燥</span><span class="py">gānzào</span><button class="pb" type="button" data-hz="干燥" data-hz2="干燥" data-py="gānzào" data-pyn="ganzao" data-num="33" aria-label="Прослушать 干燥" title="Прослушать 干燥">&#9654;</button><span class="ru">сухой, засушливый</span><span class="ex">干燥的环境 / 空气干燥</span></div><div class="w-item"><span class="hz">秘密</span><span class="py">mìmì</span><button class="pb" type="button" data-hz="秘密" data-hz2="秘密" data-py="mìmì" data-pyn="mimi" data-num="34" aria-label="Прослушать 秘密" title="Прослушать 秘密">&#9654;</button><span class="ru">тайный; тайна</span><span class="ex">秘密的地方 / 保守秘密</span></div></div></div></section>
+<section>
+  <h2>На слух: где рука ошибётся <span class="cn">听写陷阱</span></h2>
+  <p>Главное место урока — пара <b>爱惜 и 爱护</b>: оба «беречь», но 爱惜 — про расходуемое
+  (еду, время, перья, репутацию), а 爱护 — про то, что оберегают (детей, животных, книги, природу).
+  Второе опасное место — <b>随身 против 随手</b>: один знак, совершенно разные ситуации.
+  И третье — <b>种类 против 类型</b>, где различие чисто сочетаемостное.</p>
+<div class="warn">Первый пункт упражнения 2</div><div class="trap"><div><span class="hz">爱惜</span><span class="py">àixī</span><span class="n">«беречь, не тратить зря»: 爱惜粮食／时间／羽毛／生命.</span></div><div><span class="hz">爱护</span><span class="py">àihù</span><span class="n">«оберегать, заботиться»: 爱护儿童／动物／公物. Первый пункт упражнения 2.</span></div></div><div class="warn">Второй пункт упражнения 2</div><div class="trap"><div><span class="hz">随身</span><span class="py">suíshēn</span><span class="n">«при себе»: 随身带着伞, 随身行李 — вещь всё время с тобой.</span></div><div><span class="hz">随手</span><span class="py">suíshǒu</span><span class="n">«попутно, не задумываясь»: 随手关门, 随手一放. Второй пункт упражнения 2.</span></div></div><div class="warn">Четвёртый пункт упражнения 2</div><div class="trap"><div><span class="hz">种类</span><span class="py">zhǒnglèi</span><span class="n">«виды» — о множестве разновидностей: 种类多, 种类齐全.</span></div><div><span class="hz">类型</span><span class="py">lèixíng</span><span class="n">«тип» — об одном типе из классификации: 这种类型的人. Четвёртый пункт упражнения 2.</span></div></div><div class="warn">Третий пункт упражнения 2</div><div class="trap"><div><span class="hz">抓</span><span class="py">zhuā</span><span class="n">«схватить рукой, поймать»: 抓住小偷, 抓住机会, 抓出寄生虫.</span></div><div><span class="hz">拿 / 抱</span><span class="py">ná / bào</span><span class="n">拿 — просто взять, 抱 — обнять. Третий пункт упражнения 2: вора «берут» только 抓.</span></div></div><div class="warn">Разбор урока</div><div class="trap"><div><span class="hz">反复</span><span class="py">fǎnfù</span><span class="n">наречие «снова и снова» и существительное «рецидив». Дополнения не берёт.</span></div><div><span class="hz">重复</span><span class="py">chóngfù</span><span class="n">глагол «повторить то же самое»: 请你再重复一遍. Пара 辨析 урока.</span></div></div><div class="warn">Перекличка с уроком 33</div><div class="trap"><div><span class="hz">概括</span><span class="py">gàikuò</span><span class="n">«обобщить»: 概括为三点, 概括来说.</span></div><div><span class="hz">归纳 / 总之</span><span class="py">guīnà / zǒngzhī</span><span class="n">«свести воедино» (урок 33) и «словом». Все три — про подведение итога.</span></div></div><div class="warn">Три «брать роль»</div><div class="trap"><div><span class="hz">充当</span><span class="py">chōngdāng</span><span class="n">«выступать в роли»: 充当保护色, 充当角色.</span></div><div><span class="hz">担任 / 承担</span><span class="py">dānrèn / chéngdān</span><span class="n">«занимать должность» (урок 23) и «взять на себя» (урок 22).</span></div></div><div class="warn">Разные «гладко»</div><div class="trap"><div><span class="hz">光滑</span><span class="py">guānghuá</span><span class="n">«гладкий на ощупь»: 皮肤光滑, 表面光滑.</span></div><div><span class="hz">滑 / 顺利</span><span class="py">huá / shùnlì</span><span class="n">滑 само — «скользить, скользкий»: 路很滑. 顺利 — «гладко идёт» о деле.</span></div></div><div class="warn">Три знака zào/zǎo</div><div class="trap"><div><span class="hz">干燥</span><span class="py">gānzào</span><span class="n">燥 с ключом 火 — «сухой»: 空气干燥.</span></div><div><span class="hz">急躁 / 洗澡</span><span class="py">jízào / xǐzǎo</span><span class="n">躁 с 足 — «вспыльчивый», 澡 с 氵 — «мыться». Три одинаковых фонетика.</span></div></div><div class="warn">Три слова на 密</div><div class="trap"><div><span class="hz">秘密</span><span class="py">mìmì</span><span class="n">«тайна»: 保守秘密, 秘密的地方.</span></div><div><span class="hz">密切 / 密码</span><span class="py">mìqiè / mìmǎ</span><span class="n">«тесный» (урок 32) и «пароль». Все три — на 密.</span></div></div><div class="warn">Два значения 寄</div><div class="trap"><div><span class="hz">寄生</span><span class="py">jìshēng</span><span class="n">寄 — «поселиться у кого-то», отсюда и 寄生虫.</span></div><div><span class="hz">寄 / 寄信</span><span class="py">jì / jì xìn</span><span class="n">寄 как «отправить письмом» — то же слово в бытовом значении.</span></div></div><div class="warn">Трудное написание</div><div class="trap"><div><span class="hz">池塘</span><span class="py">chítáng</span><span class="n">塘 — «пруд, запруда»; 池 — «водоём».</span></div><div><span class="hz">糖 / 厅</span><span class="py">táng / tīng</span><span class="n">糖 «сахар» и 大厅 «зал» — похожие слоги, разные знаки.</span></div></div><div class="warn">Три слова на wéi</div><div class="trap"><div><span class="hz">唯一</span><span class="py">wéiyī</span><span class="n">«единственный»: 唯一的特征／选择／办法.</span></div><div><span class="hz">惟独 / 维持</span><span class="py">wéidú / wéichí</span><span class="n">«только лишь» и «поддерживать» (урок 29). Все три — на wéi.</span></div></div><div class="warn">Перекличка с уроком 29</div><div class="trap"><div><span class="hz">痛快</span><span class="py">tòngkuài</span><span class="n">«от души; прямодушный»: 喝个痛快, 答应得很痛快.</span></div><div><span class="hz">干脆</span><span class="py">gāncuì</span><span class="n">«решительно» (урок 29) — почти синоним во втором значении. Разводятся по сочетаемости.</span></div></div>
+  <div class="card green">
+    <p style="margin:0"><b>Как тренировать.</b> Связки урока:
+    <span class="cn-ex">接触大自然 · 明显的特征 · 一对翅膀 · 区分真假 · 唯一的办法 ·
+    充当角色 · 爱惜粮食 · 保养皮肤 · 反复练习 · 随身带着 · 一把梳子 · 抓住机会 ·
+    一块肥皂 · 种类齐全 · 概括来说 · 痛快地答应 · 迎接客人 · 空气干燥 · 保守秘密</span>.
+    Отдельно проговорите четыре оборота-скрепы: 既……又……、有助于、毫无疑问、概括来说.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Три точки урока <span class="cn">词语例释</span></h2>
+
+  <h3>1 · 总之 — «словом, в общем»</h3>
+  <div class="card green">
+    <p>Союз: подводит итог тому, что уже перечислено. Перед ним обязательно должен быть список
+    или несколько фактов — иначе подводить нечего.</p>
+    <p class="cn-ex">暑假我可能去上海、南京，还有杭州，<span class="hl">总之</span>，想去南方几个城市转转。</p>
+    <p class="cn-ex"><span class="hl">总之</span>，网络的确带给我们以前无法想象的方便，但同时它也带来了一定的危害。</p>
+    <p class="cn-ex"><span class="hl">总之</span>，在鸟儿的生活中，羽毛充当着十分重要的角色。</p>
+    <p class="tr" style="margin:10px 0 0">В сочинении 总之 — самый удобный способ начать последний
+    абзац: перед ним вы перечислили доводы, после него формулируете вывод одной фразой.
+    Близкие по функции: 总的来说, 概括来说, 一句话.</p>
+  </div>
+
+  <h3>2 · 动词 + 过 — поворот и перемещение</h3>
+  <div class="card brass">
+    <p><b>1. Человек или предмет меняет направление</b> — поворачивается.</p>
+    <p class="cn-ex">他转<span class="hl">过</span>身，一句话也不说。</p>
+    <p class="cn-ex">……它们只要有时间，就会情不自禁地背<span class="hl">过</span>头去，反复地啄着羽毛，……</p>
+    <p><b>2. Человек или предмет перемещается из одного места в другое.</b></p>
+    <p class="cn-ex">接<span class="hl">过</span>书的那一刻，老王突然明白了自己失败的原因。</p>
+    <p class="cn-ex">短短的几分钟里，我的脑子里闪<span class="hl">过</span>了很多想法。</p>
+    <p class="tr" style="margin:10px 0 0">Важно: это <b>не</b> суффикс опыта 过 («доводилось делать»).
+    Здесь 过 — результативная морфема направления, и она встаёт сразу после глагола,
+    до дополнения: 转过身, 背过头, 接过书, 闪过想法. Глаголы этой группы:
+    转、回、背、接、递、闪、翻.</p>
+  </div>
+
+  <h3>3 · 动词 + 开 — раскрыться, развернуться</h3>
+  <div class="card red">
+    <p>Значение одно: что-то расправляется, раскрывается, расходится вширь.</p>
+    <p class="cn-ex">猴子突然站了起来，张<span class="hl">开</span>手臂，抱住了管理员。</p>
+    <p class="cn-ex">《清明上河图》在我们的面前慢慢展<span class="hl">开</span>。</p>
+    <p class="cn-ex">而老鹰的洗澡方式更是直接，它们会在雨中张<span class="hl">开</span>双翅痛快地迎接洗礼！</p>
+    <p class="tr" style="margin:10px 0 0">Частые глаголы: 张开、展开、打开、铺开、传开、散开、分开.
+    Обратите внимание на 传开 — «разнестись» (о новости): 那件事情已经都传开了.
+    Это переносное «раскрытие», и в заданиях на позицию оно встречается чаще всего.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Сочетаемость <span class="cn">词语搭配</span></h2>
+  <table>
+    <tr><th>动词 + 宾语</th><th>примеры</th></tr>
+    <tr><td class="han">接触</td><td class="han">动物 / 孩子 / 病人 / 大自然 / 社会 / 新信息</td></tr>
+    <tr><td class="han">爱惜</td><td class="han">羽毛 / 身体 / 生命 / 粮食</td></tr>
+    <tr><th>定语 + 中心语</th><th></th></tr>
+    <tr><td class="han">明显 / 突出 / 唯一（的）</td><td class="han">特征</td></tr>
+    <tr><td class="han">唯一（的）</td><td class="han">办法 / 选择 / 结果 / 爱 / 角色</td></tr>
+    <tr><td class="han">光滑的</td><td class="han">表面 / 皮肤 / 羽毛</td></tr>
+    <tr><td class="han">干燥的</td><td class="han">表面 / 皮肤 / 环境 / 空气 / 气候</td></tr>
+    <tr><th>状语 + 中心语</th><th></th></tr>
+    <tr><td class="han">痛快地</td><td class="han">哭 / 笑 / 吃 / 喝 / 骂</td></tr>
+    <tr><td class="han">热情地</td><td class="han">迎接</td></tr>
+    <tr><th>数量词 + 名词</th><th></th></tr>
+    <tr><td class="han">一只 / 一双 / 一对</td><td class="han">翅膀</td></tr>
+    <tr><td class="han">一把</td><td class="han">梳子</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>反复 и 重复 <span class="cn">词语辨析</span></h2>
+  <p>Общее: оба значат «не один раз»:
+  <span class="han">这件事情你已经反复／重复说过好几遍了。</span>
+  Но грамматически это разные слова — одно наречие, другое глагол.</p>
+  <table class="pair-tbl">
+    <tr><th></th><th>反复 fǎnfù</th><th>重复 chóngfù</th></tr>
+    <tr><td>1</td><td><b>наречие</b>: «раз за разом» — стоит перед глаголом<br><span class="han">它们只要一有时间，就会情不自禁地背过头去，反复地啄着羽毛。</span></td><td><b>глагол</b>: «сделать то же самое ещё раз» — берёт дополнение<br><span class="han">我没听清，请你再重复一遍。</span></td></tr>
+    <tr><td>2</td><td>глагол: «неприятное вернулось снова»<br><span class="han">这种病容易反复。</span></td><td>глагол: «то же самое появилось дважды»<br><span class="han">这两个练习题重复了。</span></td></tr>
+    <tr><td>3</td><td>существительное: «возврат плохого»<br><span class="han">对这个问题，他思想上可能还有反复。</span></td><td>нет такого употребления</td></tr>
+  </table>
+  <p class="tr">Практическая проверка: если после слова можно поставить 一遍／两次 — это 重复.
+  Если слово описывает, <b>как</b> делается действие (反复地说, 反复练习) или называет
+  возврат болезни и сомнений — это 反复.</p>
+</section>
+
+<section>
+  <h2>Ответы к упражнениям <span class="cn">练习 · 做一做 · 练一练</span></h2>
+<details><summary>练习 1 — 选择合适的词语填空（昆虫 秘密 概括 光滑 痛快 唯一）</summary><div class="in">
+<p>① 那件事将是我一生中<span class="k">唯一</span>的遗憾。<br>
+② 李将军这次去北京的行动是<span class="k">秘密</span>的。<br>
+③ 你好容易来一趟，我们今晚一定要喝个<span class="k">痛快</span>！<br>
+④ 有些<span class="k">昆虫</span>和鸟类一样有翅膀。<br>
+⑤ 经常使用我们的肥皂，您的皮肤将变得更加<span class="k">光滑</span>。<br>
+⑥ 这次会议的精神可以<span class="k">概括</span>为三点。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+③ рамка «……个痛快» («от души») — устойчивая: 喝个痛快, 玩儿个痛快, 哭个痛快.
+⑥ 概括为…… — «свести к…».</p></div></details><details><summary>练习 2 — 选择正确答案</summary><div class="in">
+<p>① 我们要<span class="k">爱惜</span>（A）粮食，不要浪费。<br>
+② 她总是<span class="k">随身</span>（B）带着伞，说“不怕一万，就怕万一”。<br>
+③ 警察一把把小偷给<span class="k">抓</span>（B）住了。<br>
+④ 这个地区的动植物<span class="k">种类</span>（A）多，数量大。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+① еду можно израсходовать зря, поэтому 爱惜; 爱护 — о том, что оберегают (детей, животных).
+② зонт всё время с собой — 随身; 随手 значило бы «машинально взять». ③ преступника только 抓.
+④ речь о множестве разновидностей — 种类.</p></div></details><details><summary>练习 3 — 画线连接可以搭配的词语</summary><div class="in">
+<p>(1) 一只 — 昆虫 ／ 一把 — 梳子 ／ 一块 — 肥皂 ／ 一双 — 翅膀<br>
+(2) 接触 — 大自然 ／ 迎接 — 挑战 ／ 爱惜 — 财物 ／ 抓住 — 机会</p></div></details><details><summary>做一做 — 反复 или 重复</summary><div class="in">
+<p>(1) 我已经<span class="k">反复／重复</span>讲了多少次，你竟然还是忘了！（оба ✓）<br>
+(2) 这个实验我已经<span class="k">重复</span>过两次了。<br>
+(3) 经过<span class="k">反复</span>实验，他们终于成功了。<br>
+(4) 他的病情出现了<span class="k">反复</span>，情况不太乐观。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+(2) после слова стоит 过两次 — это глагол с дополнением, значит 重复.
+(3) слово определяет 实验 как «многократные» — наречие 反复.
+(4) существительное «ухудшение, возврат болезни» — только 反复.</p></div></details><details><summary>练一练 1 — 总之（образцы）</summary><div class="in">
+<p>(1) 不管你去不去，<span class="k">总之，明天下午三点我们在图书馆门口集合</span>。（总之）<br>
+(2) A: 你怎么能把汉语学得这么好？<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">多听、多说、多写，还交了不少中国朋友，总之，就是每天都用</span>。（总之）<br>
+(3) <span class="k">炒、炖、蒸、凉拌，各地的口味还都不一样</span>，总之，中国菜有很多做法。</p></div></details><details><summary>练一练 2 — 给“过”选择适当的位置</summary><div class="in">
+<p>(1) 你回 <span class="k">A</span> 头就可以看见我了。（<span class="han">回过头</span>）<br>
+(2) 他递 <span class="k">A</span> 一块毛巾给我擦汗。（<span class="han">递过一块毛巾</span>）<br>
+(3) 青年走到门口，转 <span class="k">C</span> 身说：“我们会再见的。”（<span class="han">转过身</span>）</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+Общее правило: 过 встаёт <b>сразу после глагола</b>, перед дополнением —
+回过头, 递过毛巾, 转过身. Если поставить его после дополнения, получится суффикс опыта,
+и смысл меняется.</p></div></details><details><summary>练一练 3 — 给“开”选择适当的位置</summary><div class="in">
+<p>(1) 回家时，妈妈张 <span class="k">C</span> 双臂迎接我。（<span class="han">张开双臂</span>）<br>
+(2) 他把纸铺 <span class="k">A</span>，笔拿好，准备练习书法。（<span class="han">铺开</span>）<br>
+(3) 那件事情已经都传 <span class="k">B</span> 了，大家都知道了。（<span class="han">传开了</span>）</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+(3) — переносное значение: новость «разошлась». Та же модель, что 散开, 分开.</p></div></details><details><summary>扩展 做一做 — 地理环境</summary><div class="in">
+<p>(1) <span class="k">土地</span>是重要的自然资源，没有它，人类无法得到食物。<br>
+(2) 他坐着自造的小船很轻松地就到达了对<span class="k">岸</span>。<br>
+(3) <span class="k">沙滩</span>排球是一种很有意思的运动。<br>
+(4) 孩子们在树林里玩儿，一个孩子不小心把裤子刮破了一个<span class="k">洞</span>。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+地理环境: 天空（tiānkōng）、陆地（lùdì）、土地（tǔdì）、池塘（chítáng）、沙漠（shāmò）、
+沙滩（shātān）、岛屿（dǎoyǔ）、岸（àn）、洞（dòng）、木头（mùtou）、石头（shítou）、灰尘（huīchén）.<br>
+Обратите внимание на пару 陆地／土地: первое — суша в противоположность морю,
+второе — земля как ресурс.</p></div></details></section>
+<section>
+  <h2>Сочинение <span class="cn">命题写作：我与/看宠物</span></h2>
+  <p>Тема учебника здесь уходит от птиц к домашним животным, и это удобно: можно опереться
+  на ту же мысль, что и в тексте, — что у животного есть свои потребности, а не только
+  наше удовольствие. Схема: своё отношение → конкретная история или наблюдение →
+  обратная сторона → вывод.</p>
+  <div class="card green">
+    <p class="cn-ex" style="line-height:2">我家养过一只猫，所以我很早就<span class="hl">接触</span>过小动物。
+    那时候我才知道，养宠物不只是陪它玩儿：每天要给它梳毛，
+    用<span class="hl">梳子</span><span class="hl">反复</span>地梳，
+    它的毛才会又干净又<span class="hl">光滑</span>；
+    还要注意它有没有<span class="hl">寄生</span>虫，房间要保持干净、<span class="hl">干燥</span>。
+    <span class="hl">总之</span>，宠物在家里<span class="hl">充当</span>的是家人的
+    <span class="hl">角色</span>，不是玩具。
+    当然，养宠物也会带来一些问题：时间、花费，还有邻居的意见。
+    所以我觉得，想养之前先问自己一句：能不能像<span class="hl">爱惜</span>自己的东西一样，
+    长期<span class="hl">保养</span>好另一个生命？
+    如果答案是肯定的，那它会给你很多温暖；如果不确定，
+    那<span class="hl">唯一</span>负责任的做法就是先不要养。</p>
+  </div>
+  <h3>Связки, которые стоит взять с собой</h3>
+  <ul>
+    <li><span class="cn-ex">我很早就接触过……，那时候我才知道……</span> — зачин через личный опыт;</li>
+    <li><span class="cn-ex">不只是……：还要……，还要……</span> — перечисление вместо общих слов;</li>
+    <li><span class="cn-ex">总之，……充当的是……的角色，不是……</span> — итог абзаца с 总之;</li>
+    <li><span class="cn-ex">当然，……也会带来一些问题：……</span> — обратная сторона;</li>
+    <li><span class="cn-ex">如果答案是肯定的，那……；如果不确定，那唯一负责任的做法就是……</span> — вывод через условие.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>План на урок <span class="cn">复习计划</span></h2>
+  <ol class="route">
+    <li><b>Пройдите пять полос схемы.</b> Вопрос → функции пера → чистка → купание → песок и сон.
+    Четыре способа ухода стоит запомнить именно как список из четырёх: 理毛、洗澡、沙浴、睡眠.</li>
+    <li><b>Соберите пересказ по таблице учебника.</b> Три блока: 鸟儿的特征 (接触、特征、翅膀、昆虫、唯一),
+    羽毛的作用 (既……又……、还能、关键、甚至、总之), 保养羽毛的方法
+    (背过头去、反复、随身、抓、种类、概括、张开、干燥、秘密).</li>
+    <li><b>Отработайте 动词+过 и 动词+开.</b> По три своих примера: 转过身、回过头、接过书 и
+    张开、铺开、传开. Главное — помнить, что морфема встаёт сразу после глагола.</li>
+    <li><b>Закройте пару 反复／重复.</b> Проверка: можно ли добавить 一遍／两次.
+    Если да — 重复.</li>
+    <li><b>Разведите 爱惜 и 爱护.</b> 爱惜 — то, что тратится (粮食、时间、生命),
+    爱护 — то, что оберегают (儿童、动物、公物). Это самая частая ошибка по этому уроку.</li>
+    <li><b>Напишите сочинение.</b> 100 знаков по схеме «свой опыт — что на самом деле нужно —
+    обратная сторона — вывод», обязательно с 总之 и с одним 动词+开.</li>
+  </ol>
+</section>
+
+
+<nav class="botnav"><a href="hsk5b-lesson-33.html"><span>← Урок 33</span>以堵治堵——缓解交通有妙招</a><a href="index-5b.html"><span>Урок 35 — в работе</span>植物会出汗</a></nav>
+
+<footer>HSK 标准教程 5（下） · урок 34 «鸟儿的护肤术» · конспект для подготовки к экзамену</footer>
+
+</div>
+<script>
+
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML =
+      '<span class="w">' + z.dataset.w + '</span>' +
+      '<span class="p">' + z.dataset.p + '</span>' +
+      '<span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    out.innerHTML = def;
+  }
+
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+
+  var box = document.querySelector('.plan-box svg');
+  box.addEventListener('mouseleave', clear);
+})();
+
+</script>
+<script>
+
+(function(){
+  var LESSON = "34";
+  var DIRS = ["audio/", "", "mp3/", "media/", "аудио/", "audio/34/", "34/"];
+  var CAND = [];
+  DIRS.forEach(function(d){ CAND.push(d + "{hz}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{hz2}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{pyn}.mp3"); });
+
+  var patIn  = document.getElementById('ab-pat');
+  var status = document.getElementById('ab-status');
+  var btns   = Array.prototype.slice.call(document.querySelectorAll('.pb[data-hz]'));
+  var cur = null, curBtn = null, queue = null;
+
+  function pad(n){ n = String(n||''); return n.length === 1 ? '0'+n : n; }
+
+  function resolve(pat, b){
+    return pat
+      .replace(/\{hz2\}/g, b.dataset.hz2 || b.dataset.hz)
+      .replace(/\{hz\}/g,  b.dataset.hz)
+      .replace(/\{pyn\}/g, b.dataset.pyn)
+      .replace(/\{py\}/g,  b.dataset.py)
+      .replace(/\{num\}/g, pad(b.dataset.num))
+      .replace(/\{n\}/g,   b.dataset.num || '')
+      .replace(/\{L\}/g,   LESSON);
+  }
+
+  function setStatus(t, cls){
+    status.textContent = t || '';
+    status.className = 'ab-status' + (cls ? ' ' + cls : '');
+  }
+
+  function test(pat, b){
+    return new Promise(function(res){
+      var a = new Audio(), done = false;
+      function ok(){ if(!done){ done = true; res(true); } }
+      function no(){ if(!done){ done = true; res(false); } }
+      a.addEventListener('loadedmetadata', ok);
+      a.addEventListener('canplay', ok);
+      a.addEventListener('error', no);
+      a.preload = 'metadata';
+      a.src = encodeURI(resolve(pat, b));
+      setTimeout(no, 2500);
+    });
+  }
+
+  function stop(){
+    if(cur){ cur.pause(); cur = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn = null; }
+    queue = null;
+    document.querySelectorAll('.pball.playing').forEach(function(x){ x.classList.remove('playing'); });
+  }
+
+  /* проигрывание с запасными вариантами имени для этого слова */
+  function play(b, onEnd){
+    stop();
+    var tries = [patIn.value.trim()];
+    var alt = (b.dataset.hz2 && b.dataset.hz2 !== b.dataset.hz)
+      ? patIn.value.trim().replace('{hz}', '{hz2}') : null;
+    if(alt && tries.indexOf(alt) < 0) tries.push(alt);
+    CAND.forEach(function(p){ if(tries.indexOf(p) < 0) tries.push(p); });
+
+    b.classList.add('playing');
+    var i = 0;
+    (function attempt(){
+      if(i >= tries.length){
+        b.classList.remove('playing');
+        b.classList.add('missing');
+        b.title = 'Не найден файл для ' + b.dataset.hz;
+        setStatus('Не найден файл для ' + b.dataset.hz + ' — проверьте папку или шаблон.', 'bad');
+        if(onEnd) onEnd();
+        return;
+      }
+      var src = resolve(tries[i++], b);
+      var a = new Audio(encodeURI(src));
+      var started = false;
+      a.addEventListener('canplay', function(){ started = true; });
+      a.addEventListener('ended', function(){
+        b.classList.remove('playing');
+        if(cur === a){ cur = null; curBtn = null; }
+        if(onEnd) onEnd();
+      });
+      a.addEventListener('error', function(){
+        if(!started){ attempt(); }
+        else { b.classList.remove('playing'); if(onEnd) onEnd(); }
+      });
+      cur = a; curBtn = b;
+      b.classList.remove('missing');
+      a.play().catch(function(){});
+    })();
+  }
+
+  /* автопоиск папки при открытии */
+  function autodetect(quiet){
+    if(!btns.length) return;
+    if(!quiet) setStatus('Перебираю варианты…');
+    var i = 0;
+    (function next(){
+      if(i >= CAND.length){
+        setStatus(quiet
+          ? 'Папка с mp3 не найдена. Положите файлы в audio рядом с этим документом.'
+          : 'Ни один из типовых вариантов не подошёл. Впишите путь вручную.',
+          quiet ? '' : 'bad');
+        return;
+      }
+      var p = CAND[i++];
+      test(p, btns[0]).then(function(ok){
+        if(ok){
+          patIn.value = p;
+          document.querySelectorAll('.pb.missing').forEach(function(x){
+            x.classList.remove('missing'); x.title = '';
+          });
+          setStatus('Озвучка подключена: ' + p, 'ok');
+        } else next();
+      });
+    })();
+  }
+
+  document.getElementById('ab-auto').addEventListener('click', function(){ autodetect(false); });
+  document.getElementById('ab-test').addEventListener('click', function(){
+    if(!btns.length) return;
+    setStatus('Проверяю…');
+    test(patIn.value.trim(), btns[0]).then(function(ok){
+      setStatus((ok ? 'Файл найден: ' : 'Не найден: ') + resolve(patIn.value.trim(), btns[0]),
+                ok ? 'ok' : 'bad');
+    });
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(curBtn === b && cur){ stop(); return; }
+      play(b);
+    });
+  });
+
+  document.querySelectorAll('.pball').forEach(function(pb){
+    pb.addEventListener('click', function(){
+      if(pb.classList.contains('playing')){ stop(); return; }
+      var list = Array.prototype.slice.call(
+        pb.closest('.cluster').querySelectorAll('.pb[data-hz]'));
+      stop();
+      pb.classList.add('playing');
+      var i = 0;
+      queue = list;
+      (function step(){
+        if(queue !== list || i >= list.length){ pb.classList.remove('playing'); return; }
+        play(list[i++], function(){ setTimeout(step, 350); });
+      })();
+    });
+  });
+
+  autodetect(true);
+})();
+
+</script>
+</body>
+</html>

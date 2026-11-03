@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 29 · 培养对手 · HSK 标准教程 5下</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#23262a;
+  --brick:#6f6b63;
+  --paper:#e3e1da;
+  --card:#f2f1ec;
+  --red:#b4342a;
+  --brass:#a8813c;
+  --bamboo:#4a6b4e;
+  --sky:#54748a;
+  --line:rgba(35,38,42,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:
+    linear-gradient(rgba(255,255,255,.35) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.35) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+/* ——— шапка ——— */
+header{padding:56px 0 28px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{
+  font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;
+  color:var(--red);letter-spacing:-.03em;
+}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:44px;line-height:1.05;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brick);margin-top:9px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+/* ——— секции ——— */
+section{margin-top:58px}
+h2{
+  font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px;
+}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+a{color:var(--red)}
+
+/* ——— план двора ——— */
+.plan-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px;
+  box-shadow:0 1px 0 rgba(35,38,42,.06)}
+.plan-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone rect,.zone circle,.zone path{transition:fill .18s ease}
+.zone:hover .fillable,.zone.on .fillable{fill:#e7cfc9}
+.zone:focus{outline:none}
+.zone:focus-visible .fillable{stroke:var(--red);stroke-width:2.5}
+.zlab{font-family:var(--han);font-size:15px;font-weight:600;fill:var(--ink);pointer-events:none}
+.zpin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.04em}
+.faint{font-family:var(--han);font-size:12px;fill:var(--brick);pointer-events:none}
+.compass{font-family:var(--mono);font-size:10px;fill:var(--brick);letter-spacing:.15em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:62px}
+.readout .w{font-family:var(--han);font-size:22px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:13px;color:var(--sky)}
+.readout .d{display:block;margin-top:4px;font-size:15px}
+.readout .hint{color:var(--brick);font-style:italic}
+
+/* ——— карточки слов ——— */
+.cluster{margin-top:26px}
+.cluster h3{margin-bottom:4px}
+.cluster .why{font-size:14px;color:var(--brick);margin-bottom:14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--brass);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+/* ——— общие блоки ——— */
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.green{border-left:4px solid var(--bamboo)}
+.card.brass{border-left:4px solid var(--brass)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--paper);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.b{background:var(--brass)}
+.tag.g{background:var(--bamboo)}
+.tag.r{background:var(--red)}
+
+/* ——— таблицы ——— */
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(35,38,42,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+/* ——— на слух ——— */
+.trap{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+/* ——— ответы ——— */
+details{background:var(--card);border:1px solid var(--line);margin:10px 0;padding:0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+/* ——— финал ——— */
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;
+  font-family:var(--disp);font-weight:700;font-size:22px;color:var(--red);
+  width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .lesson-no{font-size:66px}
+  h1{font-size:32px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+
+
+:root{--red:#2f6a52;--brass:#9a7a2c;--bamboo:#4e7046;--sky:#4f6a86;--paper:#e0e6e0;--card:#f2f6f2}
+.zone:hover .fillable,.zone.on .fillable{fill:#d4e6da}
+.rowlab{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;fill:var(--brick)}
+.zsub{font-family:var(--han);font-size:8.5px;fill:var(--brick);pointer-events:none;letter-spacing:0}
+.tiny{font-family:var(--han);font-size:11.5px;fill:var(--brick);pointer-events:none}
+.xout{stroke:#9c3b3b;stroke-width:1.4;stroke-linecap:round;opacity:.5;pointer-events:none}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index-5b.html">&#8592; Все уроки 5B</a><a href="index.html">Учебник 5A</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（下） · Unit 10 关注经济 · Focusing on economy</div>
+  <div class="title-row">
+    <div class="lesson-no">29</div>
+    <h1>培养对手<span class="lat">Растить себе соперника · 652 字 · стр. 84–91</span></h1>
+  </div>
+  <div class="meta">
+    <span><b>36</b> новых слов</span>
+    <span><b>3</b> грамматические точки</span>
+    <span>ключ: <b>不如 · 干脆 · 万一</b></span>
+  </div>
+</header>
+
+
+<section>
+  <p class="lede">Один из самых «экзаменационных» текстов всего учебника: короткая история про
+  студенческий книжный, которая целиком состоит из деловой лексики — 利润, 营业额, 资金, 垄断, 倒闭,
+  商业领域, 利益. И при этом у неё есть внятная мысль, которую легко пересказать своими словами:
+  соперник не мешает, а заставляет работать лучше. Схема ниже разбирает текст на пять шагов.</p>
+</section>
+
+<section id="plan">
+  <h2>Почему «书店老大» помогает соседям <span class="cn">培养对手</span></h2>
+  <div class="plan-box">
+    <svg viewBox="0 0 660 470" role="img" aria-label="Схема урока: книжный магазин Цзяньвэя и его соперники"><text class="rowlab" x="18" y="16">1 · КНИЖНЫЙ В ОБЩЕЖИТИИ 建伟的书店</text><g class="zone" tabindex="0" data-w="在公寓楼里开了一家书店" data-p="gōngyù · wénjù · lìrùn · chéngxìn · méitǐ" data-d="建伟在大学的一座公寓楼里开了一家书店，顺便卖点儿文具、电池、小日用品等。一年多来，虽然每件商品的利润都并不高，但他诚信经营，薄利多销，使书店生意越来越红火，甚至成为了媒体的采访对象。"><rect class="fillable" x="30" y="26" width="600" height="56" rx="3" fill="#d9e6dd" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="50" text-anchor="middle" style="font-size:14px">薄利多销 → 生意红火 → 媒体的采访对象</text><text class="zsub" x="330" y="70" text-anchor="middle">公寓 · 文具 · 电池 · 日用品 · 利润 · 诚信 · 媒体 · 对象</text></g><text class="rowlab" x="18" y="106">2 · ТРИ СОСЕДА 另外的三家书店</text><g class="zone" tabindex="0" data-w="有三家书店" data-p="营业 · 额" data-d="这个大学里另外还有三家书店，由于受到了建伟书店的影响，这三家书店的经营空间越来越小。"><rect class="fillable" x="30" y="116" width="190" height="54" rx="3" fill="#e4e8e2" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="125" y="140" text-anchor="middle" style="font-size:13px">有三家书店</text><text class="zsub" x="125" y="158" text-anchor="middle">营业 · 额</text></g><path d="M220 143 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a29)"/><g class="zone" tabindex="0" data-w="经营空间越来越小" data-p="不如 · 空间" data-d="这三家书店的经营空间越来越小，三家的营业额加起来还不如他一家高。"><rect class="fillable" x="235" y="116" width="190" height="54" rx="3" fill="#e4e8e2" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="140" text-anchor="middle" style="font-size:13px">经营空间越来越小</text><text class="zsub" x="330" y="158" text-anchor="middle">不如 · 空间</text></g><path d="M425 143 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a29)"/><g class="zone" tabindex="0" data-w="建伟成了“书店老大”" data-p="老大 · 媒体采访" data-d="建伟成了这里的“书店老大”。"><rect class="fillable" x="440" y="116" width="190" height="54" rx="3" fill="#e4e8e2" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="535" y="140" text-anchor="middle" style="font-size:13px">建伟成了“书店老大”</text><text class="zsub" x="535" y="158" text-anchor="middle">老大 · 媒体采访</text></g><text class="rowlab" x="18" y="194">3 · ДВА ПУТИ 亲友的建议 ↔ 建伟的做法</text><g class="zone" tabindex="0" data-w="干脆把另三家书店挤垮，垄断这个市场" data-p="gāncuì · jǐkuǎ · lǒngduàn" data-d="这时，许多亲朋好友便建议他干脆把另三家书店挤垮，垄断这个市场。"><rect class="fillable" x="30" y="204" width="290" height="58" rx="3" fill="#ecdcdc" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="175" y="230" text-anchor="middle" style="font-size:14px">干脆挤垮，垄断市场</text><text class="zsub" x="175" y="250" text-anchor="middle">干脆 · 挤 · 垮 · 垄断</text></g><path class="xout" d="M38 210 L312 256"/><path class="xout" d="M312 210 L38 256"/><g class="zone" tabindex="0" data-w="反而帮三家搞营销、借给资金" data-p="yíngxiāo · rèxīn · zījīn · dǎobì" data-d="可建伟不但没有去挤垮对手，反而还经常帮助三家书店搞一些营销活动，对于一家快要倒闭的书店，他还主动热心地借给其资金，想办法让他继续经营下去。"><rect class="fillable" x="340" y="204" width="290" height="58" rx="3" fill="#dde7e0" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="485" y="230" text-anchor="middle" style="font-size:14px">帮他们搞营销，借给资金</text><text class="zsub" x="485" y="250" text-anchor="middle">热心 · 资金 · 倒闭 · 经营下去</text></g><text class="rowlab" x="18" y="286">4 · ВОПРОС И ОТВЕТ “你怎么这么傻？”</text><g class="zone" tabindex="0" data-w="“你怎么这么傻？就让他们倒霉，不好吗？！”" data-p="shǎ · dǎoméi" data-d="有人问他：“你怎么这么傻？就让他们倒霉，不好吗？！”"><rect class="fillable" x="30" y="296" width="290" height="46" rx="3" fill="#e9e4d8" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="175" y="318" text-anchor="middle" style="font-size:13px">“就让他们倒霉，不好吗？！”</text><text class="zsub" x="175" y="334" text-anchor="middle">傻 · 倒霉</text></g><path d="M324 319 h10" stroke="#23262a" stroke-width="1.2" marker-end="url(#a29)"/><g class="zone" tabindex="0" data-w="保持图书市场的“生态平衡”" data-p="shēngtài · shāngyè · lǐngyù" data-d="建伟说，我是在保持这一地区图书市场的“生态平衡”。商业领域其实和自然界一样……"><rect class="fillable" x="340" y="296" width="290" height="46" rx="3" fill="#d9e6dd" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="485" y="318" text-anchor="middle" style="font-size:13px">保持图书市场的“生态平衡”</text><text class="zsub" x="485" y="334" text-anchor="middle">生态 · 商业 · 领域</text></g><text class="rowlab" x="18" y="366">5 · ДВА ДОВОДА 为什么要把对手培养好</text><g class="zone" tabindex="0" data-w="适当有一些“敌人”，会促使它们生长得更好" data-p="shìdàng · cùshǐ · fáng’ài · cùjìn · lìyì" data-d="自然界中的生物，适当有一些“敌人”，会促使它们生长得更好；同样的，对手并不会妨碍我的发展，反而会促进经营，让我获得更多利益。"><rect class="fillable" x="30" y="376" width="290" height="64" rx="3" fill="#dde7e0" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="175" y="402" text-anchor="middle" style="font-size:14px">对手不妨碍，反而促进</text><text class="zsub" x="175" y="424" text-anchor="middle">适当 · 促使 · 生长 · 妨碍 · 促进 · 利益</text></g><g class="zone" tabindex="0" data-w="让客户有所比较，才知道我的书价合理" data-p="hélǐ · wànyī · wéichí · bǎohé" data-d="一个原因是这样能创造让客户有所比较和优中选优的购物环境……如果只有我一家书店了，学生们没有了比较，价格定得再低也会认为我的书价高，万一他们自己跑到其他图书市场去“货比三家”，那我的生意就完了。"><rect class="fillable" x="340" y="376" width="290" height="64" rx="3" fill="#e9e4d8" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="485" y="402" text-anchor="middle" style="font-size:14px">万一他们去“货比三家”……</text><text class="zsub" x="485" y="424" text-anchor="middle">合理 · 万一 · 维持 · 饱和</text></g><text class="tiny" x="330" y="460" text-anchor="middle">为了保持目前这种经营的“生态平衡”，我要继续把对手培养好。</text><defs><marker id="a29" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" fill="#23262a"/></marker></defs></svg>
+    <div class="readout" id="readout">
+      <span class="hint">Наведите курсор или коснитесь любого блока — появится соответствующее место текста.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Текст в пяти шагах <span class="cn">课文 · 652 字</span></h2>
+
+  <div class="card green">
+    <p><span class="tag g">шаг 1</span><b>Магазин.</b> 建伟在大学的一座公寓楼里开了一家书店，顺便卖点儿文具、
+    电池、小日用品等。一年多来，虽然每件商品的利润都并不高，但他诚信经营，薄利多销，使书店生意越来越红火，
+    甚至成为了媒体的采访对象。</p>
+    <p style="margin:0"><b>Слова шага:</b> <span class="cn-ex">公寓 · 文具 · 电池 · 日用品 · 利润 · 诚信 · 媒体 · 对象</span></p>
+  </div>
+
+  <div class="card">
+    <p><span class="tag">шаг 2</span><b>Соседи.</b> 这个大学里另外还有三家书店，由于受到了建伟书店的影响，
+    这三家书店的经营空间越来越小，三家的营业额加起来还不如他一家高。建伟成了这里的“书店老大”。</p>
+    <p style="margin:0"><b>Слова шага:</b> <span class="cn-ex">营业 · 额 · 不如</span></p>
+  </div>
+
+  <div class="card red">
+    <p><span class="tag r">шаг 3</span><b>Совет и отказ.</b> 这时，许多亲朋好友便建议他干脆把另三家书店挤垮，
+    垄断这个市场。可建伟不但没有去挤垮对手，反而还经常帮助三家书店搞一些营销活动，
+    对于一家快要倒闭的书店，他还主动热心地借给其资金，想办法让他继续经营下去。</p>
+    <p style="margin:0"><b>Слова шага:</b> <span class="cn-ex">干脆 · 挤 · 垮 · 垄断 · 热心 · 资金 · 倒闭</span></p>
+  </div>
+
+  <div class="card brass">
+    <p><span class="tag b">шаг 4</span><b>«Ты что, дурак?»</b> 有人问他：“你怎么这么傻？就让他们倒霉，
+    不好吗？！” — 建伟说，我是在保持这一地区图书市场的“生态平衡”。商业领域其实和自然界一样，
+    自然界中的生物，适当有一些“敌人”，会促使它们生长得更好；同样的，对手并不会妨碍我的发展，
+    反而会促进经营，让我获得更多利益。</p>
+    <p style="margin:0"><b>Слова шага:</b> <span class="cn-ex">傻 · 倒霉 · 生态 · 商业 · 领域 · 适当 · 促使 · 生长 · 妨碍 · 促进 · 利益</span></p>
+  </div>
+
+  <div class="card green">
+    <p><span class="tag g">шаг 5</span><b>Два довода.</b> 一个原因是这样能创造让客户有所比较和优中选优的购物环境，
+    通过比较，学生们才知道我的书店服务好、品种优、价格合理。如果只有我一家书店了，学生们没有了比较，
+    价格定得再低也会认为我的书价高，万一他们自己跑到其他图书市场去“货比三家”，那我的生意就完了。
+    还有一个很重要的原因，就是维持这种书店饱和的“生态”，避免更多、更强的对手来“插足”。
+    我把其他三家都挤垮了，不见得是件好事，因为别人一看这么大的地方只有我一家书店，
+    新的书店可能就会出现，弄不好来一个比我更强的对手。所以，为了保持目前这种经营的“生态平衡”，
+    我要继续把对手培养好。</p>
+    <p style="margin:0"><b>Слова шага:</b> <span class="cn-ex">合理 · 万一 · 维持 · 饱和 · 不见得</span></p>
+  </div>
+  <p style="font-size:14px;color:var(--brick)">改编自《小故事大道理》，作者：宗先哲</p>
+</section>
+
+<section>
+  <h2>36 слов по гнёздам <span class="cn">生词 + 专有名词</span></h2>
+  <p style="font-size:14px;color:var(--brick)"><span class="star">★</span> — слово сверх программы HSK 5 (в учебнике помечено звёздочкой). В тексте есть ещё два выражения, которых нет в списке, но которые стоит выписать: <span class="cn-ex">薄利多销</span> (báolì-duōxiāo, «малая наценка — большой оборот») и <span class="cn-ex">货比三家</span> (huòbǐ-sānjiā, «сравнить товар в трёх лавках»).</p>
+
+  <div class="audiobar" id="audiobar">
+    <div class="ab-t">Озвучка слов</div>
+    <div class="ab-row">
+      <input id="ab-pat" type="text" spellcheck="false" value="audio/{hz}.mp3" aria-label="Шаблон пути к mp3">
+      <button type="button" id="ab-auto">Подобрать</button>
+      <button type="button" id="ab-test">Проверить</button>
+    </div>
+    <div class="ab-status" id="ab-status"></div>
+    <div class="ab-note">
+      Ищутся файлы вида <code>иероглиф.mp3</code> — сначала в папке <code>audio</code> рядом с этим документом,
+      потом прямо рядом с ним. Подстановки: <code>{hz}</code>, <code>{py}</code>, <code>{pyn}</code>,
+      <code>{num}</code>, <code>{L}</code>.
+    </div>
+  </div>
+<div class="cluster"><h3>I. Магазин и товар<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Первый абзац — восемь слов, которые пригодятся в любом тексте про торговлю.</div><div class="words"><div class="w-item"><span class="hz">培养</span><span class="py">péiyǎng</span><button class="pb" type="button" data-hz="培养" data-hz2="培养" data-py="péiyǎng" data-pyn="peiyang" data-num="1" aria-label="Прослушать 培养" title="Прослушать 培养">&#9654;</button><span class="ru">растить, воспитывать, культивировать</span><span class="ex">培养对手 / 培养兴趣</span></div><div class="w-item"><span class="hz">对手</span><span class="py">duìshǒu</span><button class="pb" type="button" data-hz="对手" data-hz2="对手" data-py="duìshǒu" data-pyn="duishou" data-num="2" aria-label="Прослушать 对手" title="Прослушать 对手">&#9654;</button><span class="ru">соперник, противник</span><span class="ex">培养对手 / 他的对手很强</span></div><div class="w-item"><span class="hz">公寓</span><span class="py">gōngyù</span><button class="pb" type="button" data-hz="公寓" data-hz2="公寓" data-py="gōngyù" data-pyn="gongyu" data-num="3" aria-label="Прослушать 公寓" title="Прослушать 公寓">&#9654;</button><span class="ru">многоквартирный дом, квартира</span><span class="ex">一座公寓楼 / 一套公寓</span></div><div class="w-item"><span class="hz">文具</span><span class="py">wénjù</span><button class="pb" type="button" data-hz="文具" data-hz2="文具" data-py="wénjù" data-pyn="wenju" data-num="4" aria-label="Прослушать 文具" title="Прослушать 文具">&#9654;</button><span class="ru">канцелярские принадлежности</span><span class="ex">卖点儿文具 / 文具店</span></div><div class="w-item"><span class="hz">电池</span><span class="py">diànchí</span><button class="pb" type="button" data-hz="电池" data-hz2="电池" data-py="diànchí" data-pyn="dianchi" data-num="5" aria-label="Прослушать 电池" title="Прослушать 电池">&#9654;</button><span class="ru">батарейка, аккумулятор</span><span class="ex">一节电池 / 手机电池不行了</span></div><div class="w-item"><span class="hz">日用品</span><span class="py">rìyòngpǐn</span><button class="pb" type="button" data-hz="日用品" data-hz2="日用品" data-py="rìyòngpǐn" data-pyn="riyongpin" data-num="6" aria-label="Прослушать 日用品" title="Прослушать 日用品">&#9654;</button><span class="ru">товары повседневного спроса</span><span class="ex">小日用品 / 日用品市场</span></div><div class="w-item"><span class="hz">利润</span><span class="py">lìrùn</span><button class="pb" type="button" data-hz="利润" data-hz2="利润" data-py="lìrùn" data-pyn="lirun" data-num="7" aria-label="Прослушать 利润" title="Прослушать 利润">&#9654;</button><span class="ru">прибыль</span><span class="ex">利润并不高 / 没有多少利润</span></div><div class="w-item"><span class="hz">诚信</span><span class="py">chéngxìn</span><span class="star">★</span><button class="pb" type="button" data-hz="诚信" data-hz2="诚信" data-py="chéngxìn" data-pyn="chengxin" data-num="8" aria-label="Прослушать 诚信" title="Прослушать 诚信">&#9654;</button><span class="ru">честный, добросовестный</span><span class="ex">诚信经营 / 讲诚信</span></div><div class="w-item"><span class="hz">媒体</span><span class="py">méitǐ</span><button class="pb" type="button" data-hz="媒体" data-hz2="媒体" data-py="méitǐ" data-pyn="meiti" data-num="9" aria-label="Прослушать 媒体" title="Прослушать 媒体">&#9654;</button><span class="ru">СМИ, медиа</span><span class="ex">媒体的采访对象 / 新媒体</span></div><div class="w-item"><span class="hz">对象</span><span class="py">duìxiàng</span><button class="pb" type="button" data-hz="对象" data-hz2="对象" data-py="duìxiàng" data-pyn="duixiang" data-num="10" aria-label="Прослушать 对象" title="Прослушать 对象">&#9654;</button><span class="ru">объект; тот, на кого направлено</span><span class="ex">采访对象 / 研究对象</span></div></div></div><div class="cluster"><h3>II. Три соседа и совет друзей<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Деловая часть: обороты и деньги, захват рынка, банкротство.</div><div class="words"><div class="w-item"><span class="hz">营业</span><span class="py">yíngyè</span><button class="pb" type="button" data-hz="营业" data-hz2="营业" data-py="yíngyè" data-pyn="yingye" data-num="11" aria-label="Прослушать 营业" title="Прослушать 营业">&#9654;</button><span class="ru">вести дело, работать (о заведении)</span><span class="ex">营业额 / 营业时间</span></div><div class="w-item"><span class="hz">额</span><span class="py">é</span><span class="star">★</span><button class="pb" type="button" data-hz="额" data-hz2="额" data-py="é" data-pyn="e" data-num="12" aria-label="Прослушать 额" title="Прослушать 额">&#9654;</button><span class="ru">установленная сумма, объём</span><span class="ex">营业额 / 名额 / 总额</span></div><div class="w-item"><span class="hz">不如</span><span class="py">bùrú</span><button class="pb" type="button" data-hz="不如" data-hz2="不如" data-py="bùrú" data-pyn="buru" data-num="13" aria-label="Прослушать 不如" title="Прослушать 不如">&#9654;</button><span class="ru">уступать, быть хуже чем; лучше бы</span><span class="ex">还不如他一家高 / 求人不如求己</span></div><div class="w-item"><span class="hz">干脆</span><span class="py">gāncuì</span><button class="pb" type="button" data-hz="干脆" data-hz2="干脆" data-py="gāncuì" data-pyn="gancui" data-num="14" aria-label="Прослушать 干脆" title="Прослушать 干脆">&#9654;</button><span class="ru">прямо, решительно; просто взять и…</span><span class="ex">说话很干脆 / 干脆放弃</span></div><div class="w-item"><span class="hz">挤</span><span class="py">jǐ</span><button class="pb" type="button" data-hz="挤" data-hz2="挤" data-py="jǐ" data-pyn="ji" data-num="15" aria-label="Прослушать 挤" title="Прослушать 挤">&#9654;</button><span class="ru">толкаться, втискивать, выдавливать, вытеснять</span><span class="ex">挤垮 / 挤上车 / 挤牙膏</span></div><div class="w-item"><span class="hz">垮</span><span class="py">kuǎ</span><span class="star">★</span><button class="pb" type="button" data-hz="垮" data-hz2="垮" data-py="kuǎ" data-pyn="kua" data-num="16" aria-label="Прослушать 垮" title="Прослушать 垮">&#9654;</button><span class="ru">рухнуть, развалиться</span><span class="ex">挤垮 / 身体垮了</span></div><div class="w-item"><span class="hz">垄断</span><span class="py">lǒngduàn</span><span class="star">★</span><button class="pb" type="button" data-hz="垄断" data-hz2="垄断" data-py="lǒngduàn" data-pyn="longduan" data-num="17" aria-label="Прослушать 垄断" title="Прослушать 垄断">&#9654;</button><span class="ru">монополизировать</span><span class="ex">垄断市场 / 垄断行业</span></div><div class="w-item"><span class="hz">倒闭</span><span class="py">dǎobì</span><span class="star">★</span><button class="pb" type="button" data-hz="倒闭" data-hz2="倒闭" data-py="dǎobì" data-pyn="daobi" data-num="18" aria-label="Прослушать 倒闭" title="Прослушать 倒闭">&#9654;</button><span class="ru">закрыться, обанкротиться</span><span class="ex">快要倒闭的书店 / 公司倒闭了</span></div><div class="w-item"><span class="hz">热心</span><span class="py">rèxīn</span><button class="pb" type="button" data-hz="热心" data-hz2="热心" data-py="rèxīn" data-pyn="rexin" data-num="19" aria-label="Прослушать 热心" title="Прослушать 热心">&#9654;</button><span class="ru">отзывчивый, с душой</span><span class="ex">热心地借给资金 / 热心帮助别人</span></div><div class="w-item"><span class="hz">资金</span><span class="py">zījīn</span><button class="pb" type="button" data-hz="资金" data-hz2="资金" data-py="zījīn" data-pyn="zijin" data-num="20" aria-label="Прослушать 资金" title="Прослушать 资金">&#9654;</button><span class="ru">средства, капитал</span><span class="ex">资金不足 / 借给资金</span></div></div></div><div class="cluster"><h3>III. «Ты что, дурак?»<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Короткая реплика — и переход к главной мысли текста.</div><div class="words"><div class="w-item"><span class="hz">傻</span><span class="py">shǎ</span><button class="pb" type="button" data-hz="傻" data-hz2="傻" data-py="shǎ" data-pyn="sha" data-num="21" aria-label="Прослушать 傻" title="Прослушать 傻">&#9654;</button><span class="ru">глупый, наивный</span><span class="ex">你怎么这么傻 / 别傻了</span></div><div class="w-item"><span class="hz">倒霉</span><span class="py">dǎo méi</span><button class="pb" type="button" data-hz="倒霉" data-hz2="倒霉" data-py="dǎo méi" data-pyn="daomei" data-num="22" aria-label="Прослушать 倒霉" title="Прослушать 倒霉">&#9654;</button><span class="ru">не везти, попасть в переплёт</span><span class="ex">让他们倒霉 / 真倒霉</span></div><div class="w-item"><span class="hz">生态</span><span class="py">shēngtài</span><span class="star">★</span><button class="pb" type="button" data-hz="生态" data-hz2="生态" data-py="shēngtài" data-pyn="shengtai" data-num="23" aria-label="Прослушать 生态" title="Прослушать 生态">&#9654;</button><span class="ru">экология, природный баланс</span><span class="ex">生态平衡 / 生态环境</span></div><div class="w-item"><span class="hz">商业</span><span class="py">shāngyè</span><button class="pb" type="button" data-hz="商业" data-hz2="商业" data-py="shāngyè" data-pyn="shangye" data-num="24" aria-label="Прослушать 商业" title="Прослушать 商业">&#9654;</button><span class="ru">коммерция, бизнес</span><span class="ex">商业领域 / 商业街</span></div><div class="w-item"><span class="hz">领域</span><span class="py">lǐngyù</span><button class="pb" type="button" data-hz="领域" data-hz2="领域" data-py="lǐngyù" data-pyn="lingyu" data-num="25" aria-label="Прослушать 领域" title="Прослушать 领域">&#9654;</button><span class="ru">область, сфера</span><span class="ex">商业领域 / 科学领域</span></div></div></div><div class="cluster"><h3>IV. Довод про природу<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Четыре глагола этого гнезда постоянно путают между собой — 促使／促进／妨碍／生长.</div><div class="words"><div class="w-item"><span class="hz">适当</span><span class="py">shìdàng</span><span class="star">★</span><button class="pb" type="button" data-hz="适当" data-hz2="适当" data-py="shìdàng" data-pyn="shidang" data-num="26" aria-label="Прослушать 适当" title="Прослушать 适当">&#9654;</button><span class="ru">надлежащий, в меру</span><span class="ex">适当有一些“敌人” / 适当延长时间</span></div><div class="w-item"><span class="hz">促使</span><span class="py">cùshǐ</span><button class="pb" type="button" data-hz="促使" data-hz2="促使" data-py="cùshǐ" data-pyn="cushi" data-num="27" aria-label="Прослушать 促使" title="Прослушать 促使">&#9654;</button><span class="ru">побудить кого-то сделать (+ действующее лицо)</span><span class="ex">促使它们生长得更好 / 促使他改变主意</span></div><div class="w-item"><span class="hz">生长</span><span class="py">shēngzhǎng</span><button class="pb" type="button" data-hz="生长" data-hz2="生长" data-py="shēngzhǎng" data-pyn="shengzhang" data-num="28" aria-label="Прослушать 生长" title="Прослушать 生长">&#9654;</button><span class="ru">расти (о живом)</span><span class="ex">生长得更好 / 在南方生长</span></div><div class="w-item"><span class="hz">妨碍</span><span class="py">fáng’ài</span><button class="pb" type="button" data-hz="妨碍" data-hz2="妨碍" data-py="fáng’ài" data-pyn="fang’ai" data-num="29" aria-label="Прослушать 妨碍" title="Прослушать 妨碍">&#9654;</button><span class="ru">мешать, препятствовать</span><span class="ex">不妨碍我的发展 / 妨碍交通</span></div><div class="w-item"><span class="hz">促进</span><span class="py">cùjìn</span><button class="pb" type="button" data-hz="促进" data-hz2="促进" data-py="cùjìn" data-pyn="cujin" data-num="30" aria-label="Прослушать 促进" title="Прослушать 促进">&#9654;</button><span class="ru">способствовать, продвигать (+ процесс)</span><span class="ex">促进经营 / 促进经济发展</span></div><div class="w-item"><span class="hz">利益</span><span class="py">lìyì</span><button class="pb" type="button" data-hz="利益" data-hz2="利益" data-py="lìyì" data-pyn="liyi" data-num="31" aria-label="Прослушать 利益" title="Прослушать 利益">&#9654;</button><span class="ru">выгода, интересы</span><span class="ex">获得更多利益 / 国家利益</span></div></div></div><div class="cluster"><h3>V. Довод про рынок<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Финал: почему монополия опаснее конкуренции.</div><div class="words"><div class="w-item"><span class="hz">合理</span><span class="py">hélǐ</span><button class="pb" type="button" data-hz="合理" data-hz2="合理" data-py="hélǐ" data-pyn="heli" data-num="32" aria-label="Прослушать 合理" title="Прослушать 合理">&#9654;</button><span class="ru">разумный, обоснованный</span><span class="ex">价格合理 / 合理的建议</span></div><div class="w-item"><span class="hz">万一</span><span class="py">wànyī</span><button class="pb" type="button" data-hz="万一" data-hz2="万一" data-py="wànyī" data-pyn="wanyi" data-num="33" aria-label="Прослушать 万一" title="Прослушать 万一">&#9654;</button><span class="ru">на случай если, вдруг</span><span class="ex">万一他们去“货比三家” / 以防万一</span></div><div class="w-item"><span class="hz">维持</span><span class="py">wéichí</span><span class="star">★</span><button class="pb" type="button" data-hz="维持" data-hz2="维持" data-py="wéichí" data-pyn="weichi" data-num="34" aria-label="Прослушать 维持" title="Прослушать 维持">&#9654;</button><span class="ru">поддерживать, сохранять в прежнем виде</span><span class="ex">维持生态 / 维持秩序</span></div><div class="w-item"><span class="hz">饱和</span><span class="py">bǎohé</span><span class="star">★</span><button class="pb" type="button" data-hz="饱和" data-hz2="饱和" data-py="bǎohé" data-pyn="baohe" data-num="35" aria-label="Прослушать 饱和" title="Прослушать 饱和">&#9654;</button><span class="ru">насыщенный, заполненный до предела</span><span class="ex">书店饱和 / 市场饱和</span></div><div class="w-item"><span class="hz">不见得</span><span class="py">bújiànde</span><button class="pb" type="button" data-hz="不见得" data-hz2="不见得" data-py="bújiànde" data-pyn="bujiande" data-num="36" aria-label="Прослушать 不见得" title="Прослушать 不见得">&#9654;</button><span class="ru">не обязательно, вряд ли</span><span class="ex">不见得是件好事 / 我看不见得</span></div><div class="w-item"><span class="hz">建伟</span><span class="py">Jiànwěi</span><button class="pb" type="button" data-hz="建伟" data-hz2="建伟" data-py="Jiànwěi" data-pyn="jianwei" data-num="" aria-label="Прослушать 建伟" title="Прослушать 建伟">&#9654;</button><span class="ru">Цзяньвэй, герой текста</span><span class="ex">建伟在大学里开了一家书店</span></div></div></div></section>
+<section>
+  <h2>На слух: где рука ошибётся <span class="cn">听写陷阱</span></h2>
+  <p>Урок опасен не омофонами, а <b>близнецами по смыслу</b>: 促使／促进, 妨碍／阻碍, 利润／利益／利息.
+  Их нельзя различить ни по тону, ни по звуку — только по тому, что стоит после слова.
+  Отдельно стоит отработать знаки 垮, 垄, 碍, 饱: они короткие, но рука их почти не знает.</p>
+<div class="warn">Главная пара урока</div><div class="trap"><div><span class="hz">促使</span><span class="py">cùshǐ</span><span class="n">побудить кого-то: после него стоит ЛИЦО + действие — 促使他改变主意.</span></div><div><span class="hz">促进</span><span class="py">cùjìn</span><span class="n">способствовать чему-то: после него стоит ПРОЦЕСС — 促进经济发展. Третий пункт упражнения 2.</span></div></div><div class="warn">Три слова на 碍</div><div class="trap"><div><span class="hz">妨碍</span><span class="py">fáng’ài</span><span class="n">мешать, стоять поперёк: 妨碍交通, 妨碍休息.</span></div><div><span class="hz">阻碍 / 障碍</span><span class="py">zǔ’ài / zhàng’ài</span><span class="n">«тормозить развитие» и «препятствие». Все три на 碍 — 13 черт, глаз + 得 без 彳.</span></div></div><div class="warn">Три слова на 利-</div><div class="trap"><div><span class="hz">利润</span><span class="py">lìrùn</span><span class="n">прибыль предприятия: 没有多少利润.</span></div><div><span class="hz">利益 / 利息</span><span class="py">lìyì / lìxī</span><span class="n">«выгода, интересы» и «проценты по вкладу». Три разных 利-.</span></div></div><div class="warn">倒 — dǎo или dào</div><div class="trap"><div><span class="hz">倒闭</span><span class="py">dǎobì</span><span class="n">dǎo третьим тоном: предприятие закрылось.</span></div><div><span class="hz">倒霉 / 倒是</span><span class="py">dǎo méi / dào shì</span><span class="n">«не повезло» (тоже dǎo) и 倒 как dào — «наоборот». Один знак, два чтения.</span></div></div><div class="warn">Три слова на 持</div><div class="trap"><div><span class="hz">维持</span><span class="py">wéichí</span><span class="n">сохранять как есть: 维持生态, 维持秩序.</span></div><div><span class="hz">保持 / 坚持</span><span class="py">bǎochí / jiānchí</span><span class="n">«поддерживать уровень» и «не бросать». Все три на 持.</span></div></div><div class="warn">Гнездо 适-/合-</div><div class="trap"><div><span class="hz">适当</span><span class="py">shìdàng</span><span class="n">в меру, надлежащий — шкала «сколько».</span></div><div><span class="hz">适合 / 合适</span><span class="py">shìhé / héshì</span><span class="n">«подходить кому-то» (глагол) и «подходящий» (прилагательное).</span></div></div><div class="warn">Четвёртый пункт упражнения 2</div><div class="trap"><div><span class="hz">合理</span><span class="py">hélǐ</span><span class="n">«обоснованный»: 价格合理, 合理的建议.</span></div><div><span class="hz">有理 / 道理</span><span class="py">yǒulǐ / dàolǐ</span><span class="n">«быть правым в споре» и «резон». Четвёртый пункт упражнения 2.</span></div></div><div class="warn">Синонимы, которыми его объясняют</div><div class="trap"><div><span class="hz">干脆</span><span class="py">gāncuì</span><span class="n">gāncuì — оба первого и четвёртого тона, 脆 с 月 слева.</span></div><div><span class="hz">痛快 / 果断</span><span class="py">tòngkuài / guǒduàn</span><span class="n">Синонимы из объяснения учебника: 说话痛快, 做事果断.</span></div></div><div class="warn">Первый пункт упражнения 2</div><div class="trap"><div><span class="hz">不如</span><span class="py">bùrú</span><span class="n">«уступать»: 我的发音不如她.</span></div><div><span class="hz">不比 / 没有</span><span class="py">bùbǐ / méiyǒu</span><span class="n">不比 — отрицание сравнения вообще; 没有 — «не настолько». Первый пункт упражнения 2.</span></div></div><div class="warn">Перекличка с уроком 22</div><div class="trap"><div><span class="hz">万一</span><span class="py">wànyī</span><span class="n">«вдруг, на случай если» — союз маловероятного и плохого.</span></div><div><span class="hz">一旦</span><span class="py">yídàn</span><span class="n">«как только, однажды» (урок 22) — событие считается возможным или уже данным.</span></div></div><div class="warn">Три способа усомниться</div><div class="trap"><div><span class="hz">不见得</span><span class="py">bújiànde</span><span class="n">«не обязательно» — смягчённое возражение.</span></div><div><span class="hz">不一定 / 说不定</span><span class="py">bùyídìng / shuōbudìng</span><span class="n">«необязательно» (нейтрально) и «может быть, даже». Все три — в одно гнездо.</span></div></div><div class="warn">Разбор урока</div><div class="trap"><div><span class="hz">挤</span><span class="py">jǐ</span><span class="n">пять значений: втиснуться, выдавить, набить, вытеснить, «впихнуть дела».</span></div><div><span class="hz">拥挤</span><span class="py">yōngjǐ</span><span class="n">«теснота, давка» — только про скопление. Пара 辨析 урока.</span></div></div><div class="warn">Три трудных знака</div><div class="trap"><div><span class="hz">垄断</span><span class="py">lǒngduàn</span><span class="n">垄 — 龙 над 土, «межа»; 断 — «обрубить».</span></div><div><span class="hz">垮 / 饱和</span><span class="py">kuǎ / bǎohé</span><span class="n">Ещё два коротких знака урока: 垮 = 土 + 夸, 饱 = 饣 + 包.</span></div></div>
+  <div class="card green">
+    <p style="margin:0"><b>Как тренировать.</b> Связки урока:
+    <span class="cn-ex">诚信经营 · 薄利多销 · 营业额 · 资金不足 · 垄断市场 · 公司倒闭 ·
+    生态平衡 · 商业领域 · 促进经济发展 · 妨碍交通 · 价格合理 · 以防万一 · 货比三家</span>.
+    Первые шесть — готовый блок для любого текста про бизнес: они встречаются и в 阅读, и в 书写.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Три точки урока <span class="cn">词语例释</span></h2>
+
+  <h3>1 · 不如 — «уступать; лучше уж»</h3>
+  <div class="card green">
+    <p><b>Глагол:</b> A 不如 B — «A хуже, чем B». То, что сравнивают, стоит перед словом, эталон — после.</p>
+    <p class="cn-ex">求人<span class="hl">不如</span>求己。</p>
+    <p class="cn-ex">……三家书店的经营空间越来越小，三家的营业额加起来还<span class="hl">不如</span>他一家高。</p>
+    <p class="cn-ex">如果找一个棋艺<span class="hl">不如</span>你或者和你差不多的人下棋，虽然你可能会轻易地战胜对手，
+    但并不能使你的棋艺得到提高。</p>
+    <p class="tr" style="margin:10px 0 0">Вторая, очень частая функция — <b>совет</b>: «（与其…）不如…» = «лучше уж».
+    <span class="cn-ex">与其在家里睡觉，不如出去走走。</span> В заданиях на перестановку слова 不如 почти
+    всегда встаёт перед подлежащим второй части: <span class="cn-ex">不如我们周末去看看吧。</span></p>
+  </div>
+
+  <h3>2 · 干脆 — «прямо; просто взять и…»</h3>
+  <div class="card brass">
+    <p><b>Прилагательное:</b> о речи и поступках — без колебаний.</p>
+    <p class="cn-ex">他这人很<span class="hl">干脆</span>，说行就行，说不行就不行。</p>
+    <p class="cn-ex">我求他帮忙，他答应得很<span class="hl">干脆</span>。</p>
+    <p><b>Наречие:</b> «раз так — то просто…», решение одним махом.</p>
+    <p class="cn-ex">我已经试了六次了，还是不行，我看我<span class="hl">干脆</span>放弃好了。</p>
+    <p class="cn-ex">这时，许多亲朋好友便建议他<span class="hl">干脆</span>把另三家书店挤垮，垄断这个市场。</p>
+    <p class="tr" style="margin:10px 0 0">Наречие 干脆 стоит после подлежащего и обычно сопровождается
+    оттенком «хватит тянуть»: 干脆别去了, 干脆说清楚, 干脆不来了.</p>
+  </div>
+
+  <h3>3 · 万一 — «а вдруг»</h3>
+  <div class="card red">
+    <p><b>Союз:</b> вероятность мала, но последствия неприятны. Главная часть обычно с 就.</p>
+    <p class="cn-ex">……<span class="hl">万一</span>他们自己跑到其他图书市场去“货比三家”，那我的生意就完了。</p>
+    <p class="cn-ex">不要将所有的鸡蛋都放在一个篮子里，因为<span class="hl">万一</span>不小心，鸡蛋就有可能全部打碎。</p>
+    <p><b>Существительное:</b> сам этот маловероятный случай — в устойчивых 就怕万一, 以防万一.</p>
+    <p class="cn-ex">不怕一万，就怕<span class="hl">万一</span>。</p>
+    <p class="cn-ex">她总是带着一把伞，<span class="hl">以防万一</span>。</p>
+    <p class="tr" style="margin:10px 0 0">Сравните с 一旦 (урок 22): 一旦 нейтрально и допускает хороший исход
+    (一旦成功…), 万一 — почти всегда о плохом и всегда о маловероятном.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Сочетаемость <span class="cn">词语搭配</span></h2>
+  <table>
+    <tr><th>动词 + 宾语</th><th>примеры</th></tr>
+    <tr><td class="han">培养</td><td class="han">能力 / 兴趣 / 感情 / 爱好</td></tr>
+    <tr><td class="han">促使</td><td class="han">他成长 / 自己改正缺点 / 她努力学习</td></tr>
+    <tr><td class="han">妨碍</td><td class="han">交通 / 你 / 别人学习</td></tr>
+    <tr><td class="han">促进</td><td class="han">经济发展 / 两国友谊 / 科技进步</td></tr>
+    <tr><th>数量词 + 名词</th><th></th></tr>
+    <tr><td class="han">一套 / 一间 / 一所</td><td class="han">公寓</td></tr>
+    <tr><td class="han">一节 / 一块</td><td class="han">电池</td></tr>
+    <tr><th>主语 + 谓语</th><th></th></tr>
+    <tr><td class="han">资金</td><td class="han">不足 / 紧张</td></tr>
+    <tr><td class="han">价格 / 收费 / 方法 / 建议 / 结构 / 设计</td><td class="han">合理</td></tr>
+  </table>
+  <p class="tr">Разница 促使／促进 видна прямо в таблице: после 促使 стоит <b>кто-то</b> и его действие,
+  после 促进 — <b>процесс</b>. Это самый частый вопрос по этому уроку.</p>
+</section>
+
+<section>
+  <h2>挤 и 拥挤 <span class="cn">词语辨析</span></h2>
+  <p>Общее: оба бывают и глаголом, и прилагательным, и как прилагательные значат «места мало, людей
+  или вещей много»: <span class="han">这么小的教室里放三十张桌子，太挤／拥挤了！</span>
+  Дальше начинается разница — и она вся на стороне 挤.</p>
+  <table class="pair-tbl">
+    <tr><th></th><th>挤 jǐ</th><th>拥挤 yōngjǐ</th></tr>
+    <tr><td>1</td><td>глагол: силой протиснуться сквозь толпу<br><span class="han">坐车的人太多了，我挤了半天才挤上车。</span></td><td>глагол: быть набитым, тесниться<br><span class="han">请先下后上，不要拥挤。</span></td></tr>
+    <tr><td>2</td><td>обычно сказуемое<br><span class="han">为了买到票，我挤得满头大汗！</span></td><td>бывает подлежащим и дополнением<br><span class="han">交通拥挤是个大问题。</span></td></tr>
+    <tr><td>3</td><td>выдавливать через отверстие<br><span class="han">牙膏用完了，已经挤不出来了。</span></td><td>нет такого значения</td></tr>
+    <tr><td>4</td><td>набиться вплотную; дела — в один отрезок времени<br><span class="han">如果你的生活先被不重要的事挤满了，那你就无法再装进更大、更重要的事了。</span></td><td>нет такого значения</td></tr>
+    <tr><td>5</td><td>вытеснить, выжить конкурента (排挤)<br><span class="han">……建议他干脆把另三家书店挤垮，垄断这个市场。</span></td><td>нет такого значения</td></tr>
+  </table>
+  <p class="tr">Практическая проверка: если слово стоит само по себе как подлежащее или дополнение
+  (交通拥挤, 避免拥挤) — это 拥挤. Если есть направление или результат (挤上车, 挤出来, 挤垮, 挤满) —
+  только 挤.</p>
+</section>
+
+<section>
+  <h2>Ответы к упражнениям <span class="cn">练习 · 做一做 · 练一练</span></h2>
+<details><summary>练习 1 — 选择合适的词语填空（电池 妨碍 利润 培养 资金 不见得）</summary><div class="in">
+<p>① 太晚了，我先走了，不<span class="k">妨碍</span>您休息。<br>
+② 我的手机<span class="k">电池</span>不行了，得去换一块。<br>
+③ 让他们俩在一起多待一会儿吧，<span class="k">培养</span>一下感情。<br>
+④ 我们这个是薄利多销，本来就没有多少<span class="k">利润</span>。<br>
+⑤ 你们上次赢了，这次就肯定也能赢吗？我看<span class="k">不见得</span>。<br>
+⑥ 这次活动，学校为我们提供了<span class="k">资金</span>支持。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+③ 培养感情 — устойчивое: «дать чувству окрепнуть». ⑤ ответ-возражение «вряд ли» — это всегда
+我看不见得 или 不一定.</p></div></details><details><summary>练习 2 — 选择正确答案</summary><div class="in">
+<p>① 她的汉语说得很好，我的发音<span class="k">不如</span>（A）她。<br>
+② 我建议你别去看那个演出，我已经看过了，很<span class="k">糟糕</span>（B）！<br>
+③ 最后老师的话<span class="k">促使</span>（B）他改变了主意。<br>
+④ 阳台、卧室的整体感觉都不错。但是桌子摆这儿，明显不<span class="k">合理</span>（A）。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+① сравнение «хуже, чем» → 不如; 没有 потребовало бы 那么／这么. ② 倒霉 — про невезение человека,
+про плохое качество спектакля говорят 糟糕. ③ после пропуска стоит 他改变了主意 — лицо и его
+действие, значит 促使. ④ о расстановке мебели говорят 不合理; 有理 — это «быть правым в споре».</p></div></details><details><summary>练习 3 — 给括号里的词选择适当的位置</summary><div class="in">
+<p>① 听说展览馆最近有个小人书展，<span class="k">C</span> 我们周末去看看吧。（<span class="han">不如我们周末去看看吧</span>）<br>
+② 他上周迟到，这周 <span class="k">D</span> 不来了？！（<span class="han">这周干脆不来了</span>）<br>
+③ 你小心一点儿，<span class="k">C</span> 受伤就麻烦了。（<span class="han">万一受伤就麻烦了</span>）<br>
+④ 大家都选的 <span class="k">B</span> 就是最好的。（<span class="han">大家都选的不见得就是最好的</span>）</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+Общее правило этих четырёх: 不如 и 万一 — союзы, они встают <b>в начало своей части</b>, до подлежащего;
+干脆 и 不见得 — наречия, они встают <b>после подлежащего</b>, перед сказуемым.</p></div></details><details><summary>做一做 — 挤 или 拥挤</summary><div class="in">
+<p>(1) 所有的事都<span class="k">挤</span>在这一个星期了。（挤 ✓ 拥挤 ✗）<br>
+(2) 由于人群<span class="k">拥挤</span>，有人受了伤。<br>
+(3) 他假装伤心，<span class="k">挤</span>出了两滴眼泪。<br>
+(4) 周末这家商场里虽然人很多，但并不<span class="k">拥挤</span>。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+(1) дела, сваленные в один отрезок времени — значение 4. (3) выдавить через отверстие — значение 3.
+(2) и (4) описывают само скопление: в (2) 人群拥挤 — подлежащее + сказуемое, в (4) слово стоит
+после 并不 как прилагательное-оценка.</p></div></details><details><summary>练一练 1 — 不如（образцы）</summary><div class="in">
+<p>(1) A: 周末咱们去趟长城怎么样？<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">周末人太多了，不如下周三请一天假去</span>。（不如）<br>
+(2) A: 与上学期相比，你这学期的成绩有进步吗？<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">说实话，这学期还不如上学期，我得好好总结一下</span>。（不如）<br>
+(3) 今天阳光真好，在房间里睡觉<span class="k">不如出去走走</span>。（不如）</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+(2) — значение «уступать»; (1) и (3) — значение «лучше уж», здесь 不如 вводит совет.</p></div></details><details><summary>练一练 2 — 干脆（образцы）</summary><div class="in">
+<p>(1) A: 现在这工作真没意思，又累挣得又少！<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">那你干脆换一份算了，别这么耗着</span>。（副词）<br>
+(2) 这件事你已经考虑了一个月了，<span class="k">干脆今天就定下来吧，好吗</span>？（副词）<br>
+(3) A: <span class="k">这个问题电话里说不清楚，我看我们干脆开个会吧</span>。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: 行，那我们叫大家明天一起开个会吧。</p></div></details><details><summary>练一练 3 — 万一（образцы）</summary><div class="in">
+<p>(1) 我们还是早点儿出发吧，<span class="k">万一路上堵车，就赶不上飞机了</span>。（万一）<br>
+(2) A: 今天晚上你回家吃饭吗？<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">应该回，不过你们先吃，万一我加班就别等我了</span>。（万一）<br>
+(3) A: 天气看起来不错，不用带伞了。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">还是带上吧，万一下午下雨呢，以防万一嘛</span>。（万一）</p></div></details><details><summary>扩展 做一做 — 经济 1</summary><div class="in">
+<p>(1) 这是找您的钱，这是<span class="k">发票</span>，请拿好。<br>
+(2) 交<span class="k">税</span>是每个人的义务。<br>
+(3) 我不喜欢在小商品市场买东西，因为我不会<span class="k">讨价还价</span>。<br>
+(4) 将军把自己的食品<span class="k">分配</span>给了身边的每一个士兵。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+经济1: 发票（fāpiào）、收据（shōujù）、支票（zhīpiào）、欠（qiàn）、税（shuì）、市场（shìchǎng）、
+执照（zhízhào）、柜台（guìtái）、商品（shāngpǐn）、优惠（yōuhuì）、讨价还价（tǎojià-huánjià）、
+兑换（duìhuàn）、投资（tóuzī）、分配（fēnpèi）.<br>
+В (1) подойдёт и 收据, но в магазине с кассой по-китайски дают именно 发票.</p></div></details></section>
+<section>
+  <h2>Сочинение <span class="cn">命题写作：如果我是建伟</span></h2>
+  <p>Тема сформулирована от первого лица, поэтому текст строится так: сначала честно сказать,
+  что первой мыслью было бы «挤垮», потом — почему всё-таки нет, и в конце одна фраза-вывод.
+  Это ровно та же трёхчастная схема, что и в 书写 части 2.</p>
+  <div class="card green">
+    <p class="cn-ex" style="line-height:2">说实话，如果我是建伟，一开始我可能也会想：
+    既然三家书店的<span class="hl">营业额</span>加起来还<span class="hl">不如</span>我一家高，
+    那<span class="hl">干脆</span>把它们<span class="hl">挤垮</span>算了。
+    可是仔细想想，<span class="hl">垄断</span>这个市场<span class="hl">不见得</span>是件好事。
+    学生们没有了比较，我的书价再<span class="hl">合理</span>他们也会觉得贵；
+    <span class="hl">万一</span>他们跑到别的地方去“货比三家”，我的生意反而会受影响。
+    更重要的是，这么大的地方只剩一家书店，很快就会有更强的<span class="hl">对手</span>出现。
+    所以我也会像他一样，<span class="hl">维持</span>这种<span class="hl">生态</span>平衡：
+    <span class="hl">适当</span>有一些对手，不但不会<span class="hl">妨碍</span>我，
+    反而会<span class="hl">促进</span>我把服务做得更好，让我获得更多<span class="hl">利益</span>。
+    把对手<span class="hl">培养</span>好，其实就是把自己培养好。</p>
+  </div>
+  <h3>Связки, которые стоит взять с собой</h3>
+  <ul>
+    <li><span class="cn-ex">说实话，一开始我可能也会想……</span> — честный зачин вместо лозунга;</li>
+    <li><span class="cn-ex">可是仔细想想，……不见得是件好事</span> — поворот;</li>
+    <li><span class="cn-ex">万一……，我的生意反而会受影响</span> — довод от противного;</li>
+    <li><span class="cn-ex">更重要的是，……</span> — второй, более сильный довод;</li>
+    <li><span class="cn-ex">把对手培养好，其实就是把自己培养好</span> — концовка-формула.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>План на урок <span class="cn">复习计划</span></h2>
+  <ol class="route">
+    <li><b>Пройдите пять полос схемы.</b> Магазин → соседи → совет и отказ → «ты что, дурак?» →
+    два довода. Важно заметить, что доводов именно два и они разные: один про природу (конкурент
+    делает сильнее), второй про рынок (без сравнения цена кажется высокой).</li>
+    <li><b>Соберите пересказ по таблице учебника.</b> Три блока: 建伟书店的经营情况 (公寓、利润、媒体、不如),
+    亲友的建议 (干脆、热心、傻), 建伟的反应 (商业、促使、妨碍、促进、万一、不见得).</li>
+    <li><b>Закройте пару 促使／促进.</b> Два своих примера на каждое: после 促使 — человек,
+    после 促进 — процесс. Без этого четвёртое задание всегда будет наполовину угадыванием.</li>
+    <li><b>Отработайте 挤.</b> Пять значений — пять своих фраз: 挤上车, 挤牙膏, 挤满, 挤垮, 太挤了.
+    Это самое «многозначное» слово всего юнита.</li>
+    <li><b>Выучите деловой блок наизусть.</b> 诚信经营 · 薄利多销 · 营业额 · 资金不足 · 垄断市场 ·
+    公司倒闭 — шесть связок, которые будут и в уроке 30, и в 阅读.</li>
+    <li><b>Напишите сочинение.</b> 100 знаков по схеме «сначала хотел挤垮 — потом понял — вывод»,
+    обязательно с 万一 и с одним 不见得.</li>
+  </ol>
+</section>
+
+
+<nav class="botnav"><a href="hsk5b-lesson-28.html"><span>← Урок 28</span>最受欢迎的毕业生</a><a href="hsk5b-lesson-30.html"><span>Урок 30 →</span>竞争让市场更高效</a></nav>
+
+<footer>HSK 标准教程 5（下） · урок 29 «培养对手» · конспект для подготовки к экзамену</footer>
+
+</div>
+<script>
+
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML =
+      '<span class="w">' + z.dataset.w + '</span>' +
+      '<span class="p">' + z.dataset.p + '</span>' +
+      '<span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    out.innerHTML = def;
+  }
+
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+
+  var box = document.querySelector('.plan-box svg');
+  box.addEventListener('mouseleave', clear);
+})();
+
+</script>
+<script>
+
+(function(){
+  var LESSON = "29";
+  var DIRS = ["audio/", "", "mp3/", "media/", "аудио/", "audio/29/", "29/"];
+  var CAND = [];
+  DIRS.forEach(function(d){ CAND.push(d + "{hz}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{hz2}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{pyn}.mp3"); });
+
+  var patIn  = document.getElementById('ab-pat');
+  var status = document.getElementById('ab-status');
+  var btns   = Array.prototype.slice.call(document.querySelectorAll('.pb[data-hz]'));
+  var cur = null, curBtn = null, queue = null;
+
+  function pad(n){ n = String(n||''); return n.length === 1 ? '0'+n : n; }
+
+  function resolve(pat, b){
+    return pat
+      .replace(/\{hz2\}/g, b.dataset.hz2 || b.dataset.hz)
+      .replace(/\{hz\}/g,  b.dataset.hz)
+      .replace(/\{pyn\}/g, b.dataset.pyn)
+      .replace(/\{py\}/g,  b.dataset.py)
+      .replace(/\{num\}/g, pad(b.dataset.num))
+      .replace(/\{n\}/g,   b.dataset.num || '')
+      .replace(/\{L\}/g,   LESSON);
+  }
+
+  function setStatus(t, cls){
+    status.textContent = t || '';
+    status.className = 'ab-status' + (cls ? ' ' + cls : '');
+  }
+
+  function test(pat, b){
+    return new Promise(function(res){
+      var a = new Audio(), done = false;
+      function ok(){ if(!done){ done = true; res(true); } }
+      function no(){ if(!done){ done = true; res(false); } }
+      a.addEventListener('loadedmetadata', ok);
+      a.addEventListener('canplay', ok);
+      a.addEventListener('error', no);
+      a.preload = 'metadata';
+      a.src = encodeURI(resolve(pat, b));
+      setTimeout(no, 2500);
+    });
+  }
+
+  function stop(){
+    if(cur){ cur.pause(); cur = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn = null; }
+    queue = null;
+    document.querySelectorAll('.pball.playing').forEach(function(x){ x.classList.remove('playing'); });
+  }
+
+  /* проигрывание с запасными вариантами имени для этого слова */
+  function play(b, onEnd){
+    stop();
+    var tries = [patIn.value.trim()];
+    var alt = (b.dataset.hz2 && b.dataset.hz2 !== b.dataset.hz)
+      ? patIn.value.trim().replace('{hz}', '{hz2}') : null;
+    if(alt && tries.indexOf(alt) < 0) tries.push(alt);
+    CAND.forEach(function(p){ if(tries.indexOf(p) < 0) tries.push(p); });
+
+    b.classList.add('playing');
+    var i = 0;
+    (function attempt(){
+      if(i >= tries.length){
+        b.classList.remove('playing');
+        b.classList.add('missing');
+        b.title = 'Не найден файл для ' + b.dataset.hz;
+        setStatus('Не найден файл для ' + b.dataset.hz + ' — проверьте папку или шаблон.', 'bad');
+        if(onEnd) onEnd();
+        return;
+      }
+      var src = resolve(tries[i++], b);
+      var a = new Audio(encodeURI(src));
+      var started = false;
+      a.addEventListener('canplay', function(){ started = true; });
+      a.addEventListener('ended', function(){
+        b.classList.remove('playing');
+        if(cur === a){ cur = null; curBtn = null; }
+        if(onEnd) onEnd();
+      });
+      a.addEventListener('error', function(){
+        if(!started){ attempt(); }
+        else { b.classList.remove('playing'); if(onEnd) onEnd(); }
+      });
+      cur = a; curBtn = b;
+      b.classList.remove('missing');
+      a.play().catch(function(){});
+    })();
+  }
+
+  /* автопоиск папки при открытии */
+  function autodetect(quiet){
+    if(!btns.length) return;
+    if(!quiet) setStatus('Перебираю варианты…');
+    var i = 0;
+    (function next(){
+      if(i >= CAND.length){
+        setStatus(quiet
+          ? 'Папка с mp3 не найдена. Положите файлы в audio рядом с этим документом.'
+          : 'Ни один из типовых вариантов не подошёл. Впишите путь вручную.',
+          quiet ? '' : 'bad');
+        return;
+      }
+      var p = CAND[i++];
+      test(p, btns[0]).then(function(ok){
+        if(ok){
+          patIn.value = p;
+          document.querySelectorAll('.pb.missing').forEach(function(x){
+            x.classList.remove('missing'); x.title = '';
+          });
+          setStatus('Озвучка подключена: ' + p, 'ok');
+        } else next();
+      });
+    })();
+  }
+
+  document.getElementById('ab-auto').addEventListener('click', function(){ autodetect(false); });
+  document.getElementById('ab-test').addEventListener('click', function(){
+    if(!btns.length) return;
+    setStatus('Проверяю…');
+    test(patIn.value.trim(), btns[0]).then(function(ok){
+      setStatus((ok ? 'Файл найден: ' : 'Не найден: ') + resolve(patIn.value.trim(), btns[0]),
+                ok ? 'ok' : 'bad');
+    });
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(curBtn === b && cur){ stop(); return; }
+      play(b);
+    });
+  });
+
+  document.querySelectorAll('.pball').forEach(function(pb){
+    pb.addEventListener('click', function(){
+      if(pb.classList.contains('playing')){ stop(); return; }
+      var list = Array.prototype.slice.call(
+        pb.closest('.cluster').querySelectorAll('.pb[data-hz]'));
+      stop();
+      pb.classList.add('playing');
+      var i = 0;
+      queue = list;
+      (function step(){
+        if(queue !== list || i >= list.length){ pb.classList.remove('playing'); return; }
+        play(list[i++], function(){ setTimeout(step, 350); });
+      })();
+    });
+  });
+
+  autodetect(true);
+})();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 27 · 下棋 · HSK 标准教程 5下</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#23262a;
+  --brick:#6f6b63;
+  --paper:#e3e1da;
+  --card:#f2f1ec;
+  --red:#b4342a;
+  --brass:#a8813c;
+  --bamboo:#4a6b4e;
+  --sky:#54748a;
+  --line:rgba(35,38,42,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:
+    linear-gradient(rgba(255,255,255,.35) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.35) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+/* ——— шапка ——— */
+header{padding:56px 0 28px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{
+  font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;
+  color:var(--red);letter-spacing:-.03em;
+}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:44px;line-height:1.05;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brick);margin-top:9px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+/* ——— секции ——— */
+section{margin-top:58px}
+h2{
+  font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px;
+}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+a{color:var(--red)}
+
+/* ——— план двора ——— */
+.plan-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px;
+  box-shadow:0 1px 0 rgba(35,38,42,.06)}
+.plan-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone rect,.zone circle,.zone path{transition:fill .18s ease}
+.zone:hover .fillable,.zone.on .fillable{fill:#e7cfc9}
+.zone:focus{outline:none}
+.zone:focus-visible .fillable{stroke:var(--red);stroke-width:2.5}
+.zlab{font-family:var(--han);font-size:15px;font-weight:600;fill:var(--ink);pointer-events:none}
+.zpin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.04em}
+.faint{font-family:var(--han);font-size:12px;fill:var(--brick);pointer-events:none}
+.compass{font-family:var(--mono);font-size:10px;fill:var(--brick);letter-spacing:.15em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:62px}
+.readout .w{font-family:var(--han);font-size:22px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:13px;color:var(--sky)}
+.readout .d{display:block;margin-top:4px;font-size:15px}
+.readout .hint{color:var(--brick);font-style:italic}
+
+/* ——— карточки слов ——— */
+.cluster{margin-top:26px}
+.cluster h3{margin-bottom:4px}
+.cluster .why{font-size:14px;color:var(--brick);margin-bottom:14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--brass);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+/* ——— общие блоки ——— */
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.green{border-left:4px solid var(--bamboo)}
+.card.brass{border-left:4px solid var(--brass)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--paper);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.b{background:var(--brass)}
+.tag.g{background:var(--bamboo)}
+.tag.r{background:var(--red)}
+
+/* ——— таблицы ——— */
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(35,38,42,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+/* ——— на слух ——— */
+.trap{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+/* ——— ответы ——— */
+details{background:var(--card);border:1px solid var(--line);margin:10px 0;padding:0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+/* ——— финал ——— */
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;
+  font-family:var(--disp);font-weight:700;font-size:22px;color:var(--red);
+  width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .lesson-no{font-size:66px}
+  h1{font-size:32px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+
+
+:root{--red:#7a6228;--brass:#9a7a2c;--bamboo:#4e7046;--sky:#55708c;--paper:#e4e2da;--card:#f5f3ec}
+.zone:hover .fillable,.zone.on .fillable{fill:#e8dcb8}
+.rowlab{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;fill:var(--brick)}
+.zsub{font-family:var(--han);font-size:8.5px;fill:var(--brick);pointer-events:none;letter-spacing:0}
+.tiny{font-family:var(--han);font-size:11.5px;fill:var(--brick);pointer-events:none}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index-5b.html">&#8592; Все уроки 5B</a><a href="index.html">Учебник 5A</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（下） · Unit 9 感受人生 · Feelings about life</div>
+  <div class="title-row">
+    <div class="lesson-no">27</div>
+    <h1>下棋<span class="lat">Игра в шахматы · 704 字 · стр. 67–74</span></h1>
+  </div>
+  <div class="meta">
+    <span><b>34</b> новых слов</span>
+    <span><b>2</b> грамматические точки</span>
+    <span>ключ: <b>动词+下来 · 舍不得</b></span>
+  </div>
+</header>
+
+
+<section>
+  <p class="lede">Текст — разговор отца с сыном после нескольких проигранных партий, и устроен он как
+  постепенное снятие отговорок: не повезло — не разыгрался — техника хуже — опыта мало.
+  Все четыре отвергаются, и остаётся одно: 心态. Самая сильная часть урока — разбор того,
+  где именно уходят фигуры; схема ниже повторяет его буквально, полосой времени.</p>
+</section>
+
+<section id="plan">
+  <h2>Разбор партии <span class="cn">下棋</span></h2>
+  <div class="plan-box">
+    <svg viewBox="0 0 660 470" role="img" aria-label="Схема урока: партия, разбор поражения и принцип игры"><text class="rowlab" x="18" y="22">1 · ПАРТИЯ ЗА ПАРТИЕЙ 几局下来</text><g class="zone" tabindex="0" data-w="第一局 · 损失" data-p="损失 · 眼睁睁 · 将军" data-d="父亲让我先走三步。不到三分钟，我的棋子损失大半，棋盘上空空的，只剩下几个子了。没办法，眼睁睁看着父亲“将军”，我输了。"><rect class="fillable" x="30" y="32" width="112" height="56" rx="3" fill="#e8e2cf" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="86" y="56" text-anchor="middle" style="font-size:13.5px">第一局</text><text class="zsub" x="86" y="74" text-anchor="middle">损失 · 眼睁睁 · 将军</text></g><path d="M142 60 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a27)"/><g class="zone" tabindex="0" data-w="不服气 · 服气" data-p="服气 · 运气" data-d="我不服气，说：“这次运气不好，再来！”"><rect class="fillable" x="152" y="32" width="112" height="56" rx="3" fill="#e8e2cf" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="208" y="56" text-anchor="middle" style="font-size:13.5px">不服气</text><text class="zsub" x="208" y="74" text-anchor="middle">服气 · 运气</text></g><path d="M264 60 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a27)"/><g class="zone" tabindex="0" data-w="第二局又输 · 局" data-p="局 · 发挥" data-d="第二局又输了，“这次没发挥好，我们再来”！"><rect class="fillable" x="274" y="32" width="112" height="56" rx="3" fill="#e8e2cf" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="56" text-anchor="middle" style="font-size:13.5px">第二局又输</text><text class="zsub" x="330" y="74" text-anchor="middle">局 · 发挥</text></g><path d="M386 60 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a27)"/><g class="zone" tabindex="0" data-w="败下阵来 · 下来" data-p="下来 · 10分钟" data-d="几局下来，基本上都是不到10分钟我就败下阵来。здесь же первая грамматическая точка урока — 动词+下来."><rect class="fillable" x="396" y="32" width="112" height="56" rx="3" fill="#e8e2cf" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="452" y="56" text-anchor="middle" style="font-size:13.5px">败下阵来</text><text class="zsub" x="452" y="74" text-anchor="middle">下来 · 10分钟</text></g><path d="M508 60 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a27)"/><g class="zone" tabindex="0" data-w="灰心 · 灰心" data-p="灰心" data-d="我有些灰心。父亲看看我说：“你初学棋，输是正常的。但是你要知道输在什么地方，要吸取教训。否则，你就再下上10年，也未必能赢。”"><rect class="fillable" x="518" y="32" width="112" height="56" rx="3" fill="#e8e2cf" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="574" y="56" text-anchor="middle" style="font-size:13.5px">灰心</text><text class="zsub" x="574" y="74" text-anchor="middle">灰心</text></g><text class="rowlab" x="18" y="118">2 · ГДЕ УШЛИ ФИГУРЫ 三分之二的棋子是在前三分之一的时间失去的</text><rect x="30" y="128" width="600" height="26" fill="#efeade" stroke="#23262a" stroke-width="1.4"/><path d="M230 128 v26" stroke="#23262a" stroke-width="1.4"/><text class="zsub" x="130" y="146" text-anchor="middle">前三分之一的时间</text><text class="zsub" x="430" y="146" text-anchor="middle">后三分之二的时间</text><g class="zone" tabindex="0" data-w="不假思索，拿起来就走" data-p="bùjiǎ-sīsuǒ" data-d="这期间你好像很有把握，下棋时不假思索，拿起来就走，失去了也不觉得可惜。因为你觉得棋子很多，失一两个不算什么。 — на этой трети уходит две трети фигур."><rect class="fillable" x="30" y="160" width="290" height="60" rx="3" fill="#eadfd4" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="175" y="184" text-anchor="middle" style="font-size:14px">不假思索 · 不觉得可惜</text><text class="zsub" x="175" y="202" text-anchor="middle">把握 · 期间 · 失去</text></g><g class="zone" tabindex="0" data-w="过于珍惜，一个也不想失" data-p="guòyú · zhēnxī" data-d="后三分之二的时间，你又犯了相反的错误：对棋子过于珍惜，每走一步都过于谨慎，一个棋子也不想失，反而一个一个都失去了。"><rect class="fillable" x="340" y="160" width="290" height="60" rx="3" fill="#dfe4e8" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="485" y="184" text-anchor="middle" style="font-size:14px">过于珍惜 · 过于谨慎</text><text class="zsub" x="485" y="202" text-anchor="middle">犯 · 过于 · 反而都失去</text></g><text class="tiny" x="330" y="240" text-anchor="middle">两种相反的错误，结果一样：棋子都没了。</text><text class="rowlab" x="18" y="272">3 · ЧТО ГЛАВНОЕ 次要因素 / 最重要的</text><g class="zone" tabindex="0" data-w="技术和经验" data-p="cìyào · yīnsù" data-d="“我知道，我技术没你好，经验也不足。” — “这只是次要因素，不是最重要的。”"><rect class="fillable" x="30" y="282" width="290" height="58" rx="3" fill="#ece6d8" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="175" y="306" text-anchor="middle" style="font-size:14px">技术不如 · 经验不足</text><text class="zsub" x="175" y="324" text-anchor="middle">次要因素</text></g><g class="zone" tabindex="0" data-w="心态不对，不够珍惜" data-p="xīntài · zàiyú" data-d="“最重要的问题在于你心态不对。你不够珍惜你的棋子。” — вот здесь и сидит 在于, которое легко спутать с 至于 из двадцать шестого урока."><rect class="fillable" x="340" y="282" width="290" height="58" rx="3" fill="#dde7dd" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="485" y="306" text-anchor="middle" style="font-size:14px">心态不对 · 不够珍惜</text><text class="zsub" x="485" y="324" text-anchor="middle">在于 · 心态 · 珍惜 · 否认</text></g><text class="rowlab" x="18" y="372">4 · ЦЕЛЬ И ПРИНЦИП 目的 ≠ 原则</text><g class="zone" tabindex="0" data-w="赢 — 这是目的" data-p="mùdì" data-d="“下棋的基本原则是什么？” 我想也没想，脱口而出：“赢啊！” — “那是目的。” 父亲用责备的眼光看了我一眼。"><rect class="fillable" x="30" y="382" width="290" height="58" rx="3" fill="#ece6d8" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="175" y="406" text-anchor="middle" style="font-size:14px">脱口而出：“赢啊！”</text><text class="zsub" x="175" y="424" text-anchor="middle">目的 · 责备</text></g><g class="zone" tabindex="0" data-w="考虑得失 — 这是原则" data-p="yuánzé · bìrán · shìxiān" data-d="“至于原则，是要考虑得失。有得必然有失，有失才会有得。每走一步，你事先都应该想清楚：为了赢得什么，你愿意失去什么，这样才可能赢。” 其实不仅是下棋，人生也是如此。"><rect class="fillable" x="340" y="382" width="290" height="58" rx="3" fill="#dde7dd" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="485" y="406" text-anchor="middle" style="font-size:14px">有得必然有失，有失才会有得</text><text class="zsub" x="485" y="424" text-anchor="middle">原则 · 必然 · 事先 · 舍不得 · 后果 · 屡</text></g><defs><marker id="a27" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" fill="#23262a"/></marker></defs></svg>
+    <div class="readout" id="readout">
+      <span class="hint">Наведите курсор или коснитесь любого блока — появится соответствующее место текста.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Текст в трёх кадрах <span class="cn">课文 · 704 字</span></h2>
+
+  <div class="card red">
+    <p><span class="tag r">кадр 1</span><b>Четыре отговорки.</b> 我父亲是一位象棋教练.
+    На каникулах отец предлагает сыграть, тот 高兴地答应了. Отец даёт фору в три хода, и уже
+    不到三分钟，我的棋子损失大半，棋盘上空空的: остаётся 眼睁睁看着父亲“将军”.
+    Сын 不服气: 这次运气不好，再来！ Вторая партия — 这次没发挥好. 几局下来，
+    基本上都是不到10分钟我就败下阵来. 我有些灰心. Отец: 你初学棋，输是正常的。
+    但是你要知道输在什么地方，要吸取教训。否则，你就再下上10年，也未必能赢.</p>
+    <p style="margin:0"><b>Слова кадра:</b> <span class="cn-ex">棋 · 教练 · 答应 · 损失 · 睁 · 眼睁睁 · 将军 · 服气 · 运气 · 局 · 发挥 · 灰心 · 吸取 · 教训 · 未必</span></p>
+  </div>
+
+  <div class="card green">
+    <p><span class="tag g">кадр 2</span><b>Где уходят фигуры.</b> Сын: 我技术没你好，经验也不足 —
+    这只是次要因素，不是最重要的. Главное: 最重要的问题在于你心态不对。你不够珍惜你的棋子.
+    Сын 否认: 我每走一步，都想半天. Отец возражает: 那是后来。开始你是这样吗？
+    我仔细观察过，你三分之二的棋子是在前三分之一的时间失去的。这期间你好像很有把握，
+    下棋时不假思索，拿起来就走，失去了也不觉得可惜。因为你觉得棋子很多，失一两个不算什么。
+    后三分之二的时间，你又犯了相反的错误：对棋子过于珍惜，每走一步都过于谨慎，
+    一个棋子也不想失，反而一个一个都失去了。</p>
+    <p style="margin:0"><b>Слова кадра:</b> <span class="cn-ex">次要 · 因素 · 在于 · 心态 · 珍惜 · 否认 · 观察 · 失去 · 期间 · 把握 · 不假思索 · 犯 · 过于</span></p>
+  </div>
+
+  <div class="card brass">
+    <p><span class="tag b">кадр 3</span><b>Цель и принцип.</b> Отец ставит фигуры заново и спрашивает:
+    下棋的基本原则是什么？ Сын 想也没想，脱口而出：“赢啊！” — 那是目的。父亲用责备的眼光看了我一眼.
+    至于原则，是要考虑得失。有得必然有失，有失才会有得。每走一步，你事先都应该想清楚：
+    为了赢得什么，你愿意失去什么，这样才可能赢。可惜，大部分人都像你这样，开始不考虑得失，
+    等到后来失去得多了，又开始舍不得，后果就是屡下屡败。其实不仅是下棋，人生也是如此啊！</p>
+    <p style="margin:0"><b>Слова кадра:</b> <span class="cn-ex">原则 · 责备 · 必然 · 事先 · 舍不得 · 后果 · 屡</span></p>
+  </div>
+  <p style="font-size:14px;color:var(--brick)">改编自《今日中学生》，作者：林夕</p>
+</section>
+
+<section>
+  <h2>34 слова по гнёздам <span class="cn">生词</span></h2>
+  <p style="font-size:14px;color:var(--brick)"><span class="star">★</span> — слово сверх программы HSK 5 (в учебнике помечено звёздочкой). Порядок не по номерам, а по смыслу.</p>
+
+  <div class="audiobar" id="audiobar">
+    <div class="ab-t">Озвучка слов</div>
+    <div class="ab-row">
+      <input id="ab-pat" type="text" spellcheck="false" value="audio/{hz}.mp3" aria-label="Шаблон пути к mp3">
+      <button type="button" id="ab-auto">Подобрать</button>
+      <button type="button" id="ab-test">Проверить</button>
+    </div>
+    <div class="ab-status" id="ab-status"></div>
+    <div class="ab-note">
+      Ищутся файлы вида <code>иероглиф.mp3</code> — сначала в папке <code>audio</code> рядом с этим документом,
+      потом прямо рядом с ним. Подстановки: <code>{hz}</code>, <code>{py}</code>, <code>{pyn}</code>,
+      <code>{num}</code>, <code>{L}</code>.
+    </div>
+  </div>
+<div class="cluster"><h3>I. Партия и отговорки<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Первый абзац — и заодно вся «игровая» лексика урока.</div><div class="words"><div class="w-item"><span class="hz">（象）棋</span><span class="py">(xiàng)qí</span><button class="pb" type="button" data-hz="（象）棋" data-hz2="象棋" data-py="(xiàng)qí" data-pyn="(xiang)qi" data-num="1" aria-label="Прослушать （象）棋" title="Прослушать （象）棋">&#9654;</button><span class="ru">шахматы, настольная игра</span><span class="ex">下棋 / 象棋教练 / 一盘棋</span></div><div class="w-item"><span class="hz">教练</span><span class="py">jiàoliàn</span><button class="pb" type="button" data-hz="教练" data-hz2="教练" data-py="jiàoliàn" data-pyn="jiaolian" data-num="2" aria-label="Прослушать 教练" title="Прослушать 教练">&#9654;</button><span class="ru">тренер</span><span class="ex">象棋教练 / 足球教练</span></div><div class="w-item"><span class="hz">答应</span><span class="py">dāying</span><button class="pb" type="button" data-hz="答应" data-hz2="答应" data-py="dāying" data-pyn="daying" data-num="3" aria-label="Прослушать 答应" title="Прослушать 答应">&#9654;</button><span class="ru">согласиться, пообещать</span><span class="ex">高兴地答应了 / 答应别人</span></div><div class="w-item"><span class="hz">损失</span><span class="py">sǔnshī</span><button class="pb" type="button" data-hz="损失" data-hz2="损失" data-py="sǔnshī" data-pyn="sunshi" data-num="4" aria-label="Прослушать 损失" title="Прослушать 损失">&#9654;</button><span class="ru">потерять, лишиться; потери</span><span class="ex">损失大半 / 巨大的损失</span></div><div class="w-item"><span class="hz">睁</span><span class="py">zhēng</span><button class="pb" type="button" data-hz="睁" data-hz2="睁" data-py="zhēng" data-pyn="zheng" data-num="5" aria-label="Прослушать 睁" title="Прослушать 睁">&#9654;</button><span class="ru">открыть (глаза)</span><span class="ex">睁开眼睛 / 睁大眼睛</span></div><div class="w-item"><span class="hz">眼睁睁</span><span class="py">yǎnzhēngzhēng</span><button class="pb" type="button" data-hz="眼睁睁" data-hz2="眼睁睁" data-py="yǎnzhēngzhēng" data-pyn="yanzhengzheng" data-num="5" aria-label="Прослушать 眼睁睁" title="Прослушать 眼睁睁">&#9654;</button><span class="ru">беспомощно глядя, не вмешиваясь</span><span class="ex">眼睁睁看着</span></div><div class="w-item"><span class="hz">将军</span><span class="py">jiāngjūn</span><span class="star">★</span><button class="pb" type="button" data-hz="将军" data-hz2="将军" data-py="jiāngjūn" data-pyn="jiangjun" data-num="6" aria-label="Прослушать 将军" title="Прослушать 将军">&#9654;</button><span class="ru">генерал; объявить шах</span><span class="ex">父亲“将军” / 一位将军</span></div><div class="w-item"><span class="hz">服气</span><span class="py">fúqì</span><span class="star">★</span><button class="pb" type="button" data-hz="服气" data-hz2="服气" data-py="fúqì" data-pyn="fuqi" data-num="7" aria-label="Прослушать 服气" title="Прослушать 服气">&#9654;</button><span class="ru">признать правоту, смириться</span><span class="ex">我不服气 / 不服气也得服</span></div><div class="w-item"><span class="hz">运气</span><span class="py">yùnqi</span><button class="pb" type="button" data-hz="运气" data-hz2="运气" data-py="yùnqi" data-pyn="yunqi" data-num="8" aria-label="Прослушать 运气" title="Прослушать 运气">&#9654;</button><span class="ru">везение, удача</span><span class="ex">运气不好 / 碰运气</span></div><div class="w-item"><span class="hz">局</span><span class="py">jú</span><span class="star">★</span><button class="pb" type="button" data-hz="局" data-hz2="局" data-py="jú" data-pyn="ju" data-num="9" aria-label="Прослушать 局" title="Прослушать 局">&#9654;</button><span class="ru">партия, кон (счётное)</span><span class="ex">第二局 / 几局下来 / 一盘棋</span></div><div class="w-item"><span class="hz">发挥</span><span class="py">fāhuī</span><button class="pb" type="button" data-hz="发挥" data-hz2="发挥" data-py="fāhuī" data-pyn="fahui" data-num="10" aria-label="Прослушать 发挥" title="Прослушать 发挥">&#9654;</button><span class="ru">проявить себя, реализовать</span><span class="ex">没发挥好 / 充分发挥</span></div><div class="w-item"><span class="hz">灰心</span><span class="py">huīxīn</span><button class="pb" type="button" data-hz="灰心" data-hz2="灰心" data-py="huīxīn" data-pyn="huixin" data-num="11" aria-label="Прослушать 灰心" title="Прослушать 灰心">&#9654;</button><span class="ru">падать духом, унывать</span><span class="ex">我有些灰心 / 别灰心</span></div></div></div><div class="cluster"><h3>II. Разбор поражения<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Середина разговора: как снимают отговорки одну за другой.</div><div class="words"><div class="w-item"><span class="hz">吸取</span><span class="py">xīqǔ</span><button class="pb" type="button" data-hz="吸取" data-hz2="吸取" data-py="xīqǔ" data-pyn="xiqu" data-num="12" aria-label="Прослушать 吸取" title="Прослушать 吸取">&#9654;</button><span class="ru">извлечь, усвоить</span><span class="ex">吸取教训 / 吸取经验</span></div><div class="w-item"><span class="hz">教训</span><span class="py">jiàoxùn</span><button class="pb" type="button" data-hz="教训" data-hz2="教训" data-py="jiàoxùn" data-pyn="jiaoxun" data-num="13" aria-label="Прослушать 教训" title="Прослушать 教训">&#9654;</button><span class="ru">урок (из неудачи); отчитывать</span><span class="ex">吸取教训 / 接受教训</span></div><div class="w-item"><span class="hz">未必</span><span class="py">wèibì</span><button class="pb" type="button" data-hz="未必" data-hz2="未必" data-py="wèibì" data-pyn="weibi" data-num="14" aria-label="Прослушать 未必" title="Прослушать 未必">&#9654;</button><span class="ru">не обязательно, вряд ли</span><span class="ex">也未必能赢 / 未必正确</span></div><div class="w-item"><span class="hz">次要</span><span class="py">cìyào</span><button class="pb" type="button" data-hz="次要" data-hz2="次要" data-py="cìyào" data-pyn="ciyao" data-num="15" aria-label="Прослушать 次要" title="Прослушать 次要">&#9654;</button><span class="ru">второстепенный</span><span class="ex">次要因素 / 次要问题</span></div><div class="w-item"><span class="hz">因素</span><span class="py">yīnsù</span><button class="pb" type="button" data-hz="因素" data-hz2="因素" data-py="yīnsù" data-pyn="yinsu" data-num="16" aria-label="Прослушать 因素" title="Прослушать 因素">&#9654;</button><span class="ru">фактор</span><span class="ex">重要因素 / 决定性因素</span></div><div class="w-item"><span class="hz">在于</span><span class="py">zàiyú</span><button class="pb" type="button" data-hz="在于" data-hz2="在于" data-py="zàiyú" data-pyn="zaiyu" data-num="17" aria-label="Прослушать 在于" title="Прослушать 在于">&#9654;</button><span class="ru">заключаться в, состоять в</span><span class="ex">问题在于…… / 关键在于……</span></div><div class="w-item"><span class="hz">心态</span><span class="py">xīntài</span><span class="star">★</span><button class="pb" type="button" data-hz="心态" data-hz2="心态" data-py="xīntài" data-pyn="xintai" data-num="18" aria-label="Прослушать 心态" title="Прослушать 心态">&#9654;</button><span class="ru">внутренний настрой, установка</span><span class="ex">心态不对 / 调整心态</span></div><div class="w-item"><span class="hz">珍惜</span><span class="py">zhēnxī</span><button class="pb" type="button" data-hz="珍惜" data-hz2="珍惜" data-py="zhēnxī" data-pyn="zhenxi" data-num="19" aria-label="Прослушать 珍惜" title="Прослушать 珍惜">&#9654;</button><span class="ru">дорожить, беречь</span><span class="ex">珍惜棋子 / 珍惜时间</span></div><div class="w-item"><span class="hz">否认</span><span class="py">fǒurèn</span><button class="pb" type="button" data-hz="否认" data-hz2="否认" data-py="fǒurèn" data-pyn="fouren" data-num="20" aria-label="Прослушать 否认" title="Прослушать 否认">&#9654;</button><span class="ru">отрицать</span><span class="ex">我否认说 / 不可否认</span></div><div class="w-item"><span class="hz">观察</span><span class="py">guānchá</span><button class="pb" type="button" data-hz="观察" data-hz2="观察" data-py="guānchá" data-pyn="guancha" data-num="21" aria-label="Прослушать 观察" title="Прослушать 观察">&#9654;</button><span class="ru">наблюдать, присматриваться</span><span class="ex">我仔细观察过 / 认真观察</span></div></div></div><div class="cluster"><h3>III. Две противоположные ошибки<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Самое важное место урока — и самая экзаменационная лексика.</div><div class="words"><div class="w-item"><span class="hz">失去</span><span class="py">shīqù</span><button class="pb" type="button" data-hz="失去" data-hz2="失去" data-py="shīqù" data-pyn="shiqu" data-num="22" aria-label="Прослушать 失去" title="Прослушать 失去">&#9654;</button><span class="ru">утратить, лишиться</span><span class="ex">失去棋子 / 失去机会</span></div><div class="w-item"><span class="hz">期间</span><span class="py">qījiān</span><button class="pb" type="button" data-hz="期间" data-hz2="期间" data-py="qījiān" data-pyn="qijian" data-num="23" aria-label="Прослушать 期间" title="Прослушать 期间">&#9654;</button><span class="ru">в период, во время</span><span class="ex">这期间 / 在国外工作期间</span></div><div class="w-item"><span class="hz">把握</span><span class="py">bǎwò</span><button class="pb" type="button" data-hz="把握" data-hz2="把握" data-py="bǎwò" data-pyn="bawo" data-num="24" aria-label="Прослушать 把握" title="Прослушать 把握">&#9654;</button><span class="ru">уверенность; ухватить</span><span class="ex">很有把握 / 把握住机会</span></div><div class="w-item"><span class="hz">不假思索</span><span class="py">bùjiǎ-sīsuǒ</span><span class="star">★</span><button class="pb" type="button" data-hz="不假思索" data-hz2="不假思索" data-py="bùjiǎ-sīsuǒ" data-pyn="bujia-sisuo" data-num="25" aria-label="Прослушать 不假思索" title="Прослушать 不假思索">&#9654;</button><span class="ru">не раздумывая, не колеблясь</span><span class="ex">不假思索，拿起来就走</span></div><div class="w-item"><span class="hz">犯</span><span class="py">fàn</span><span class="star">★</span><button class="pb" type="button" data-hz="犯" data-hz2="犯" data-py="fàn" data-pyn="fan" data-num="26" aria-label="Прослушать 犯" title="Прослушать 犯">&#9654;</button><span class="ru">совершить (ошибку, преступление)</span><span class="ex">犯了相反的错误 / 犯错误</span></div><div class="w-item"><span class="hz">过于</span><span class="py">guòyú</span><span class="star">★</span><button class="pb" type="button" data-hz="过于" data-hz2="过于" data-py="guòyú" data-pyn="guoyu" data-num="27" aria-label="Прослушать 过于" title="Прослушать 过于">&#9654;</button><span class="ru">чрезмерно, слишком</span><span class="ex">过于珍惜 / 过于谨慎</span></div><div class="w-item"><span class="hz">舍不得</span><span class="py">shěbude</span><button class="pb" type="button" data-hz="舍不得" data-hz2="舍不得" data-py="shěbude" data-pyn="shebude" data-num="32" aria-label="Прослушать 舍不得" title="Прослушать 舍不得">&#9654;</button><span class="ru">жалко расставаться, жаль тратить</span><span class="ex">又开始舍不得 / 舍不得花钱</span></div><div class="w-item"><span class="hz">屡</span><span class="py">lǚ</span><span class="star">★</span><button class="pb" type="button" data-hz="屡" data-hz2="屡" data-py="lǚ" data-pyn="lu" data-num="34" aria-label="Прослушать 屡" title="Прослушать 屡">&#9654;</button><span class="ru">раз за разом, неоднократно</span><span class="ex">屡下屡败 / 屡次</span></div></div></div><div class="cluster"><h3>IV. Цель и принцип<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Финал: пять слов, из которых и складывается мораль.</div><div class="words"><div class="w-item"><span class="hz">原则</span><span class="py">yuánzé</span><button class="pb" type="button" data-hz="原则" data-hz2="原则" data-py="yuánzé" data-pyn="yuanze" data-num="28" aria-label="Прослушать 原则" title="Прослушать 原则">&#9654;</button><span class="ru">принцип</span><span class="ex">基本原则 / 有原则</span></div><div class="w-item"><span class="hz">责备</span><span class="py">zébèi</span><button class="pb" type="button" data-hz="责备" data-hz2="责备" data-py="zébèi" data-pyn="zebei" data-num="29" aria-label="Прослушать 责备" title="Прослушать 责备">&#9654;</button><span class="ru">упрекать, корить</span><span class="ex">责备的眼光 / 责备孩子</span></div><div class="w-item"><span class="hz">必然</span><span class="py">bìrán</span><button class="pb" type="button" data-hz="必然" data-hz2="必然" data-py="bìrán" data-pyn="biran" data-num="30" aria-label="Прослушать 必然" title="Прослушать 必然">&#9654;</button><span class="ru">неизбежно, закономерно</span><span class="ex">有得必然有失 / 必然的结果</span></div><div class="w-item"><span class="hz">事先</span><span class="py">shìxiān</span><button class="pb" type="button" data-hz="事先" data-hz2="事先" data-py="shìxiān" data-pyn="shixian" data-num="31" aria-label="Прослушать 事先" title="Прослушать 事先">&#9654;</button><span class="ru">заранее, загодя</span><span class="ex">事先想清楚 / 事先通知</span></div><div class="w-item"><span class="hz">后果</span><span class="py">hòuguǒ</span><button class="pb" type="button" data-hz="后果" data-hz2="后果" data-py="hòuguǒ" data-pyn="houguo" data-num="33" aria-label="Прослушать 后果" title="Прослушать 后果">&#9654;</button><span class="ru">последствия (дурные)</span><span class="ex">后果很严重 / 承担后果</span></div></div></div></section>
+<section>
+  <h2>На слух: где рука ошибётся <span class="cn">听写陷阱</span></h2>
+  <p>Урок абстрактный, и в нём сразу два слова, которые путаются с уже выученными:
+  在于 с 至于 из двадцать шестого, 过于 с 过分 из двадцать второго. Плюс 否认, которое стоит
+  ровно напротив 承认 из того же двадцать второго — такие антонимичные пары запоминаются парой.</p>
+<div class="warn">Пара разбора этого урока</div><div class="trap"><div><span class="hz">损失</span><span class="py">sǔnshī</span><span class="n">потерять часть — об уменьшении; бывает и существительным.</span></div><div><span class="hz">失去</span><span class="py">shīqù</span><span class="n">лишиться совсем; существительным не бывает. Пара 辨析 урока.</span></div></div><div class="warn">Перекличка с уроком 26</div><div class="trap"><div><span class="hz">在于</span><span class="py">zàiyú</span><span class="n">заключаться в: 问题在于……, 关键在于…….</span></div><div><span class="hz">至于</span><span class="py">zhìyú</span><span class="n">«что до…» — урок 26. Оба на 于, оба абстрактные.</span></div></div><div class="warn">Перекличка с уроком 22</div><div class="trap"><div><span class="hz">过于</span><span class="py">guòyú</span><span class="n">чрезмерно — наречие перед прилагательным: 过于谨慎.</span></div><div><span class="hz">过分</span><span class="py">guòfèn</span><span class="n">«переходить меру» (урок 22) — и наречие, и сказуемое: 太过分了.</span></div></div><div class="warn">Антоним из урока 22</div><div class="trap"><div><span class="hz">否认</span><span class="py">fǒurèn</span><span class="n">отрицать — говорить, что этого не было.</span></div><div><span class="hz">承认</span><span class="py">chéngrèn</span><span class="n">признавать (урок 22). Точный антоним, и оба на 认.</span></div></div><div class="warn">Первый пункт упражнения 2</div><div class="trap"><div><span class="hz">灰心</span><span class="py">huīxīn</span><span class="n">пасть духом — ещё можно вернуться.</span></div><div><span class="hz">死心</span><span class="py">sǐxīn</span><span class="n">поставить крест, отказаться совсем. В упражнении 2 нужен 灰心.</span></div></div><div class="warn">Второй пункт упражнения 2</div><div class="trap"><div><span class="hz">期间</span><span class="py">qījiān</span><span class="n">в течение какого-то отрезка: 工作期间, 这期间.</span></div><div><span class="hz">时期</span><span class="py">shíqī</span><span class="n">эпоха, период как целое: 西汉时期. Второй пункт упражнения 2.</span></div></div><div class="warn">Третий пункт упражнения 2</div><div class="trap"><div><span class="hz">事先</span><span class="py">shìxiān</span><span class="n">заранее — до события вообще.</span></div><div><span class="hz">提前</span><span class="py">tíqián</span><span class="n">заблаговременно, за столько-то времени: 提前24小时. Третий пункт упражнения 2.</span></div></div><div class="warn">Четвёртый пункт упражнения 2</div><div class="trap"><div><span class="hz">后果</span><span class="py">hòuguǒ</span><span class="n">последствия — всегда дурные: 后果很严重.</span></div><div><span class="hz">结果</span><span class="py">jiéguǒ</span><span class="n">результат — нейтрально. Четвёртый пункт упражнения 2.</span></div></div><div class="warn">Три слова в одном гнезде</div><div class="trap"><div><span class="hz">教练</span><span class="py">jiàoliàn</span><span class="n">тренер.</span></div><div><span class="hz">教训 / 训练</span><span class="py">jiàoxùn / xùnliàn</span><span class="n">«урок из неудачи» и «тренировать». Все три на 教 или 练.</span></div></div><div class="warn">Перекличка с уроком 24</div><div class="trap"><div><span class="hz">运气</span><span class="py">yùnqi</span><span class="n">везение. Второй слог нейтральный.</span></div><div><span class="hz">勇气 / 力气</span><span class="py">yǒngqì / lìqi</span><span class="n">«смелость» (урок 24) и «силы». Три слова на 气.</span></div></div><div class="warn">Перекличка с уроком 21</div><div class="trap"><div><span class="hz">服气</span><span class="py">fúqì</span><span class="n">признать правоту. 服 — «подчиниться».</span></div><div><span class="hz">佩服 / 福气</span><span class="py">pèifú / fúqi</span><span class="n">«восхищаться» (урок 21) и «везение, счастливая доля».</span></div></div><div class="warn">Три знака на один слог</div><div class="trap"><div><span class="hz">犯</span><span class="py">fàn</span><span class="n">совершить ошибку или преступление. 犭 слева.</span></div><div><span class="hz">饭 / 范</span><span class="py">fàn</span><span class="n">«еда» и «образец, рамки». Все три чистое fàn.</span></div></div>
+  <div class="card green">
+    <p style="margin:0"><b>Как тренировать.</b> Связки урока:
+    <span class="cn-ex">吸取教训 · 发挥好 · 别灰心 · 问题在于 · 心态不对 · 珍惜时间 ·
+    把握住机会 · 不假思索 · 犯错误 · 事先想清楚 · 后果很严重</span>.
+    Половина из них — готовые куски для 书写: 吸取教训, 把握机会, 事先想清楚 ложатся почти в любое сочинение.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Две точки урока <span class="cn">词语例释</span></h2>
+
+  <h3>1 · 动词 + 下来</h3>
+  <div class="card red">
+    <p>Показывает завершённость действия, иногда с оттенком «отделилось» или «закрепилось».</p>
+    <p class="cn-ex">你的论文大概什么时候发表？<span class="hl">定下来</span>了吗？</p>
+    <p class="cn-ex">你看，那张纸是从这本书里撕<span class="hl">下来</span>的。</p>
+    <p class="cn-ex">几局<span class="hl">下来</span>，基本上都是不到10分钟我就败<span class="hl">下</span>阵<span class="hl">来</span>。</p>
+    <p class="tr" style="margin:10px 0 0">Три оттенка: «закрепиться» (定下来, 坚持下来, 记下来),
+    «отделиться» (撕下来, 摘下来, 脱下来) и «подвести итог отрезка» (几局下来, 一年下来, 算下来).
+    Третий — самый полезный в сочинении.</p>
+  </div>
+
+  <h3>2 · 舍不得 — «жалко»</h3>
+  <div class="card green">
+    <p>Глагол: не хочется отдавать, тратить или использовать. Утвердительная форма 舍得
+    чаще встречается в вопросах, ответах и сравнениях.</p>
+    <p class="cn-ex">把你最喜欢的玩具送给小朋友，你<span class="hl">舍得</span>吗？</p>
+    <p class="cn-ex">有些人对于把钱花在为家庭和自己的生活增加乐趣的事情上，总是有些<span class="hl">舍不得</span>。</p>
+    <p class="cn-ex">可惜，大部分人都像你这样，开始不考虑得失，等到后来失去得多了，
+    又开始<span class="hl">舍不得</span>，后果就是屡下屡败。</p>
+    <p class="tr" style="margin:10px 0 0">Два разных «жалко»: 舍不得 — жалко отдать своё;
+    可惜 — жаль, что так вышло. На экзамене их различают по тому, есть ли у действия субъект,
+    который чем-то жертвует.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Сочетаемость <span class="cn">词语搭配</span></h2>
+  <table>
+    <tr><th>动词 + 宾语</th><th>примеры</th></tr>
+    <tr><td class="han">接受 / 总结 / 吸取</td><td class="han">教训</td></tr>
+    <tr><td class="han">珍惜</td><td class="han">时间 / 现在 / 朋友 / 生命</td></tr>
+    <tr><th>定语 + 中心语</th><th></th></tr>
+    <tr><td class="han">重要 / 决定（性）/ 关键</td><td class="han">因素</td></tr>
+    <tr><td class="han">严重（的）</td><td class="han">后果</td></tr>
+    <tr><th>状语 + 中心语</th><th></th></tr>
+    <tr><td class="han">认真 / 仔细（地）</td><td class="han">观察</td></tr>
+    <tr><td class="han">充分 / 尽情（地）</td><td class="han">发挥</td></tr>
+    <tr><th>中心语 + 补语</th><th></th></tr>
+    <tr><td class="han">睁</td><td class="han">开 / 大</td></tr>
+    <tr><td class="han">把握</td><td class="han">好 / 住</td></tr>
+    <tr><th>数量词 + 名词</th><th></th></tr>
+    <tr><td class="han">一盘 / 局</td><td class="han">棋</td></tr>
+    <tr><td class="han">一个 / 条</td><td class="han">原则</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>损失 и 失去 <span class="cn">词语辨析</span></h2>
+  <p>Оба глаголы: было — и не стало. Заменяются друг на друга далеко не всегда:
+  <span class="cn-ex">为了赢得什么，你愿意损失／失去什么。</span></p>
+  <table class="pair-tbl">
+    <tr><th></th><th>损失 sǔnshī</th><th>失去 shīqù</th></tr>
+    <tr><td>сколько</td><td>уменьшилось, стало меньше<br><span class="han">不到三分钟，我的棋子损失大半。</span></td><td>не стало совсем<br><span class="han">战争让他失去了家庭。</span></td></tr>
+    <tr><td>существительное</td><td>да: <span class="han">公司会赔偿我们的损失。</span></td><td>нет</td></tr>
+  </table>
+  <p class="tr">Короткое правило: про деньги и имущество, которые убыли, — 损失;
+  про память, семью, время и возможности, которых больше нет, — 失去.</p>
+</section>
+
+<section>
+  <h2>Ответы к упражнениям <span class="cn">练习 · 做一做 · 练一练</span></h2>
+<details><summary>练习 1 — 选择合适的词语填空（把握 发挥 观察 教训 因素 眼睁睁）</summary><div class="in">
+<p>① 吸取<span class="k">教训</span>才能避免以后再次发生同样的问题。<br>
+② 工作压力太大、不能兼顾工作和家庭是影响幸福感的重要<span class="k">因素</span>。<br>
+③ 希望你在比赛中<span class="k">发挥</span>好，赛出好成绩！<br>
+④ 只有做好准备的人才能<span class="k">把握</span>住机会。<br>
+⑤ 你就这样<span class="k">眼睁睁</span>地看着他摔倒了？！<br>
+⑥ 仔细<span class="k">观察</span>周围的大自然，你会发现很多有意思的东西。</p></div></details><details><summary>练习 2 — 选择正确答案</summary><div class="in">
+<p>① 这几次考试我都考得不太好，觉得有点儿<span class="k">灰心</span>（A）。<br>
+② 在国外工作<span class="k">期间</span>（B），我一直很想念我的家乡和家人。<br>
+③ 如果有变动，请<span class="k">提前</span>（B）24小时告诉我。<br>
+④ 你要想清楚，这样做的<span class="k">后果</span>（A）很严重！</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+① 灰心 — упал духом, но не сдался; 死心 — отказался совсем.
+② с конкретным сроком работы идёт 期间, 时期 — про историческую эпоху.
+③ перед числом с единицей времени ставится 提前. ④ «серьёзные последствия» — только 后果.</p></div></details><details><summary>练习 3 — 给括号里的词选择适当的位置</summary><div class="in">
+<p>① 你A说得这么复杂，我B觉得他<span class="k">C</span>能D听懂。（未必）→ 我觉得他<span class="k">未必</span>能听懂<br>
+② A我看，老板没有糟糕的，B关键<span class="k">C</span>你D怎样去和他沟通。（在于）→ 关键<span class="k">在于</span>你怎样去和他沟通<br>
+③ 在很多A家庭中，夫妻<span class="k">B</span>同时C工作并D做家务。（双方）→ 夫妻<span class="k">双方</span>同时工作并做家务<br>
+④ 开始学滑雪A的时候，我花了很长时间B学习C怎么停<span class="k">D</span>。（下来）→ 学习怎么停<span class="k">下来</span></p></div></details><details><summary>做一做 — 损失 или 失去</summary><div class="in">
+<p>(1) 生意失败，他<span class="k">损失</span>了很多钱。<br>
+(2) 因为一场病，他<span class="k">失去</span>了记忆。<br>
+(3) 要珍惜时间，因为<span class="k">失去</span>的时间永远都不会再回来。<br>
+(4) 这次火灾造成了巨大的<span class="k">损失</span>。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+(4) — здесь нужно существительное, а им бывает только 损失.</p></div></details><details><summary>练一练 1 — 动词+下来（образцы）</summary><div class="in">
+<p>(1) 房间里太热了，<span class="k">把外套脱下来吧</span>。<br>
+(2) 这套房子不错，<span class="k">我想就定下来了</span>。<br>
+(3) A: 为什么你跟他们说话的时候要带个录音机呢？<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">我怕漏掉重要的内容，想把他们说的话录下来</span>。</p></div></details><details><summary>练一练 2 — 舍不得（образцы）</summary><div class="in">
+<p>(1) A: 这么好的工作，你怎么舍得辞职？！<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">其实我也舍不得，可是家里实在离不开人</span>。<br>
+(2) 买了件新衣服舍不得穿，结果<span class="k">在柜子里放了一年，款式都过时了</span>。<br>
+(3) A: 我们真的要花这么多钱去做新产品的推广吗？<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">这笔钱舍不得花，产品就卖不出去</span>。</p></div></details><details><summary>扩展 做一做 — 家居2</summary><div class="in">
+<p>(1) 这份文件有好几页，拿个<span class="k">夹子</span>夹一下吧，别丢了。<br>
+(2) 一把钥匙开一把<span class="k">锁</span>。<br>
+(3) 中国人吃饭习惯用筷子，西方人吃饭习惯用刀和<span class="k">叉子</span>。<br>
+(4) 周末的下午，坐在阳光下，喝<span class="k">壶</span>茶，感觉很舒服。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+家居2: 夹子、梳子、肥皂、扇子、剪刀、绳子、锁、叉子、锅、壶、盆、火柴.</p></div></details></section>
+<section>
+  <h2>Сочинение <span class="cn">命题写作：得与失</span></h2>
+  <p>Тема задана текстом почти дословно, и выигрывает здесь не рассуждение вообще,
+  а своя иллюстрация к формуле 有得必然有失. Лучше всего — один конкретный выбор из своей жизни.</p>
+  <div class="card green">
+    <p class="cn-ex" style="line-height:2">父亲那句“有得<span class="hl">必然</span>有失，有失才会有得”，
+    我是很久以后才真正懂的。两年前我决定出国学汉语，为此辞掉了一份稳定的工作。
+    当时我<span class="hl">舍不得</span>，身边的人也<span class="hl">责备</span>过我，说我太冲动。
+    现在回头看，那一步我<span class="hl">事先</span>其实没有想清楚：我只知道自己想<span class="hl">得到</span>什么，
+    却没问过自己愿意<span class="hl">失去</span>什么。好在我没有<span class="hl">灰心</span>，
+    也<span class="hl">吸取</span>了<span class="hl">教训</span>——后来每做一个决定，我都会先写下两栏：
+    得什么，失什么。<span class="hl">心态</span>一变，选择反而容易了。
+    最怕的不是失去，而是既不肯<span class="hl">珍惜</span>，又什么都<span class="hl">舍不得</span>。</p>
+  </div>
+  <h3>Связки, которые стоит взять с собой</h3>
+  <ul>
+    <li><span class="cn-ex">……这句话，我是很久以后才真正懂的</span> — вход через цитату из текста;</li>
+    <li><span class="cn-ex">当时我……，现在回头看……</span> — простой и сильный контраст времён;</li>
+    <li><span class="cn-ex">我只知道想得到什么，却没问过自己愿意失去什么</span> — почти дословно из текста;</li>
+    <li><span class="cn-ex">好在我没有……，也吸取了教训</span> — поворот к выводу;</li>
+    <li><span class="cn-ex">最怕的不是……，而是……</span> — концовка через противопоставление.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>План на урок <span class="cn">复习计划</span></h2>
+  <ol class="route">
+    <li><b>Пройдите полосу времени в схеме.</b> Две трети фигур уходят на первой трети партии —
+    и именно эта картинка держит весь урок. Остальное к ней прикладывается.</li>
+    <li><b>Соберите пересказ по таблице учебника.</b> Три блока: 父亲与我下棋 (教练、答应、损失、眼睁睁、灰心),
+    输的原因 (吸取、未必、因素、在于、否认、观察、失去、把握), 下棋与人生 (原则、必然、事先、舍不得、后果).</li>
+    <li><b>Разведите четыре пары из упражнения 2.</b> 灰心／死心, 期间／时期, 事先／提前, 后果／结果 —
+    плюс 损失／失去 из разбора. Пять пар закрывают почти все ловушки урока.</li>
+    <li><b>Проверьте переклички.</b> 在于 рядом с 至于 (урок 26), 过于 рядом с 过分 (урок 22),
+    否认 напротив 承认 (урок 22). Если старые слова стоят твёрдо, новые встают за ними сами.</li>
+    <li><b>Напишите сочинение.</b> 100 знаков про один свой выбор, обязательно с 有得必然有失
+    и с одним 舍不得.</li>
+  </ol>
+</section>
+
+
+<nav class="botnav"><a href="hsk5b-lesson-26.html"><span>← Урок 26</span>你属于哪一种“忙”</a><a href="hsk5b-lesson-28.html"><span>Урок 28 →</span>最受欢迎的毕业生</a></nav>
+
+<footer>HSK 标准教程 5（下） · урок 27 «下棋» · конспект для подготовки к экзамену</footer>
+
+</div>
+<script>
+
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML =
+      '<span class="w">' + z.dataset.w + '</span>' +
+      '<span class="p">' + z.dataset.p + '</span>' +
+      '<span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    out.innerHTML = def;
+  }
+
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+
+  var box = document.querySelector('.plan-box svg');
+  box.addEventListener('mouseleave', clear);
+})();
+
+</script>
+<script>
+
+(function(){
+  var LESSON = "27";
+  var DIRS = ["audio/", "", "mp3/", "media/", "аудио/", "audio/27/", "27/"];
+  var CAND = [];
+  DIRS.forEach(function(d){ CAND.push(d + "{hz}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{hz2}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{pyn}.mp3"); });
+
+  var patIn  = document.getElementById('ab-pat');
+  var status = document.getElementById('ab-status');
+  var btns   = Array.prototype.slice.call(document.querySelectorAll('.pb[data-hz]'));
+  var cur = null, curBtn = null, queue = null;
+
+  function pad(n){ n = String(n||''); return n.length === 1 ? '0'+n : n; }
+
+  function resolve(pat, b){
+    return pat
+      .replace(/\{hz2\}/g, b.dataset.hz2 || b.dataset.hz)
+      .replace(/\{hz\}/g,  b.dataset.hz)
+      .replace(/\{pyn\}/g, b.dataset.pyn)
+      .replace(/\{py\}/g,  b.dataset.py)
+      .replace(/\{num\}/g, pad(b.dataset.num))
+      .replace(/\{n\}/g,   b.dataset.num || '')
+      .replace(/\{L\}/g,   LESSON);
+  }
+
+  function setStatus(t, cls){
+    status.textContent = t || '';
+    status.className = 'ab-status' + (cls ? ' ' + cls : '');
+  }
+
+  function test(pat, b){
+    return new Promise(function(res){
+      var a = new Audio(), done = false;
+      function ok(){ if(!done){ done = true; res(true); } }
+      function no(){ if(!done){ done = true; res(false); } }
+      a.addEventListener('loadedmetadata', ok);
+      a.addEventListener('canplay', ok);
+      a.addEventListener('error', no);
+      a.preload = 'metadata';
+      a.src = encodeURI(resolve(pat, b));
+      setTimeout(no, 2500);
+    });
+  }
+
+  function stop(){
+    if(cur){ cur.pause(); cur = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn = null; }
+    queue = null;
+    document.querySelectorAll('.pball.playing').forEach(function(x){ x.classList.remove('playing'); });
+  }
+
+  /* проигрывание с запасными вариантами имени для этого слова */
+  function play(b, onEnd){
+    stop();
+    var tries = [patIn.value.trim()];
+    var alt = (b.dataset.hz2 && b.dataset.hz2 !== b.dataset.hz)
+      ? patIn.value.trim().replace('{hz}', '{hz2}') : null;
+    if(alt && tries.indexOf(alt) < 0) tries.push(alt);
+    CAND.forEach(function(p){ if(tries.indexOf(p) < 0) tries.push(p); });
+
+    b.classList.add('playing');
+    var i = 0;
+    (function attempt(){
+      if(i >= tries.length){
+        b.classList.remove('playing');
+        b.classList.add('missing');
+        b.title = 'Не найден файл для ' + b.dataset.hz;
+        setStatus('Не найден файл для ' + b.dataset.hz + ' — проверьте папку или шаблон.', 'bad');
+        if(onEnd) onEnd();
+        return;
+      }
+      var src = resolve(tries[i++], b);
+      var a = new Audio(encodeURI(src));
+      var started = false;
+      a.addEventListener('canplay', function(){ started = true; });
+      a.addEventListener('ended', function(){
+        b.classList.remove('playing');
+        if(cur === a){ cur = null; curBtn = null; }
+        if(onEnd) onEnd();
+      });
+      a.addEventListener('error', function(){
+        if(!started){ attempt(); }
+        else { b.classList.remove('playing'); if(onEnd) onEnd(); }
+      });
+      cur = a; curBtn = b;
+      b.classList.remove('missing');
+      a.play().catch(function(){});
+    })();
+  }
+
+  /* автопоиск папки при открытии */
+  function autodetect(quiet){
+    if(!btns.length) return;
+    if(!quiet) setStatus('Перебираю варианты…');
+    var i = 0;
+    (function next(){
+      if(i >= CAND.length){
+        setStatus(quiet
+          ? 'Папка с mp3 не найдена. Положите файлы в audio рядом с этим документом.'
+          : 'Ни один из типовых вариантов не подошёл. Впишите путь вручную.',
+          quiet ? '' : 'bad');
+        return;
+      }
+      var p = CAND[i++];
+      test(p, btns[0]).then(function(ok){
+        if(ok){
+          patIn.value = p;
+          document.querySelectorAll('.pb.missing').forEach(function(x){
+            x.classList.remove('missing'); x.title = '';
+          });
+          setStatus('Озвучка подключена: ' + p, 'ok');
+        } else next();
+      });
+    })();
+  }
+
+  document.getElementById('ab-auto').addEventListener('click', function(){ autodetect(false); });
+  document.getElementById('ab-test').addEventListener('click', function(){
+    if(!btns.length) return;
+    setStatus('Проверяю…');
+    test(patIn.value.trim(), btns[0]).then(function(ok){
+      setStatus((ok ? 'Файл найден: ' : 'Не найден: ') + resolve(patIn.value.trim(), btns[0]),
+                ok ? 'ok' : 'bad');
+    });
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(curBtn === b && cur){ stop(); return; }
+      play(b);
+    });
+  });
+
+  document.querySelectorAll('.pball').forEach(function(pb){
+    pb.addEventListener('click', function(){
+      if(pb.classList.contains('playing')){ stop(); return; }
+      var list = Array.prototype.slice.call(
+        pb.closest('.cluster').querySelectorAll('.pb[data-hz]'));
+      stop();
+      pb.classList.add('playing');
+      var i = 0;
+      queue = list;
+      (function step(){
+        if(queue !== list || i >= list.length){ pb.classList.remove('playing'); return; }
+        play(list[i++], function(){ setTimeout(step, 350); });
+      })();
+    });
+  });
+
+  autodetect(true);
+})();
+
+</script>
+</body>
+</html>

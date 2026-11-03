@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 33 · 以堵治堵——缓解交通有妙招 · HSK 标准教程 5下</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#23262a;
+  --brick:#6f6b63;
+  --paper:#e3e1da;
+  --card:#f2f1ec;
+  --red:#b4342a;
+  --brass:#a8813c;
+  --bamboo:#4a6b4e;
+  --sky:#54748a;
+  --line:rgba(35,38,42,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:
+    linear-gradient(rgba(255,255,255,.35) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.35) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+/* ——— шапка ——— */
+header{padding:56px 0 28px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{
+  font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;
+  color:var(--red);letter-spacing:-.03em;
+}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:44px;line-height:1.05;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brick);margin-top:9px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+/* ——— секции ——— */
+section{margin-top:58px}
+h2{
+  font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px;
+}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+a{color:var(--red)}
+
+/* ——— план двора ——— */
+.plan-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px;
+  box-shadow:0 1px 0 rgba(35,38,42,.06)}
+.plan-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone rect,.zone circle,.zone path{transition:fill .18s ease}
+.zone:hover .fillable,.zone.on .fillable{fill:#e7cfc9}
+.zone:focus{outline:none}
+.zone:focus-visible .fillable{stroke:var(--red);stroke-width:2.5}
+.zlab{font-family:var(--han);font-size:15px;font-weight:600;fill:var(--ink);pointer-events:none}
+.zpin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.04em}
+.faint{font-family:var(--han);font-size:12px;fill:var(--brick);pointer-events:none}
+.compass{font-family:var(--mono);font-size:10px;fill:var(--brick);letter-spacing:.15em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:62px}
+.readout .w{font-family:var(--han);font-size:22px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:13px;color:var(--sky)}
+.readout .d{display:block;margin-top:4px;font-size:15px}
+.readout .hint{color:var(--brick);font-style:italic}
+
+/* ——— карточки слов ——— */
+.cluster{margin-top:26px}
+.cluster h3{margin-bottom:4px}
+.cluster .why{font-size:14px;color:var(--brick);margin-bottom:14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--brass);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+/* ——— общие блоки ——— */
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.green{border-left:4px solid var(--bamboo)}
+.card.brass{border-left:4px solid var(--brass)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--paper);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.b{background:var(--brass)}
+.tag.g{background:var(--bamboo)}
+.tag.r{background:var(--red)}
+
+/* ——— таблицы ——— */
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(35,38,42,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+/* ——— на слух ——— */
+.trap{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+/* ——— ответы ——— */
+details{background:var(--card);border:1px solid var(--line);margin:10px 0;padding:0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+/* ——— финал ——— */
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;
+  font-family:var(--disp);font-weight:700;font-size:22px;color:var(--red);
+  width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .lesson-no{font-size:66px}
+  h1{font-size:32px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+
+
+:root{--red:#7a3a6a;--brass:#9a7a2c;--bamboo:#4e7046;--sky:#55708c;--paper:#e7dfe6;--card:#f7f1f6}
+.zone:hover .fillable,.zone.on .fillable{fill:#ecd6e6}
+.rowlab{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;fill:var(--brick)}
+.zsub{font-family:var(--han);font-size:8.5px;fill:var(--brick);pointer-events:none;letter-spacing:0}
+.tiny{font-family:var(--han);font-size:11.5px;fill:var(--brick);pointer-events:none}
+.xout{stroke:#9c3b3b;stroke-width:1.4;stroke-linecap:round;opacity:.5;pointer-events:none}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index-5b.html">&#8592; Все уроки 5B</a><a href="index.html">Учебник 5A</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（下） · Unit 11 观察社会 · Observing the society</div>
+  <div class="title-row">
+    <div class="lesson-no">33</div>
+    <h1>以堵治堵——缓解交通有妙招<span class="lat">Лечить пробку пробкой · 744 字 · стр. 118–125</span></h1>
+  </div>
+  <div class="meta">
+    <span><b>38</b> новых слов</span>
+    <span><b>3</b> грамматические точки</span>
+    <span>ключ: <b>照常 · 难怪 · 与其</b></span>
+  </div>
+</header>
+
+
+<section>
+  <p class="lede">Урок про то, как решили проблему пробок, сделав пробки ещё хуже. Текст выстроен
+  как настоящий кейс: проблема → привычное решение, которое не работает → исследование →
+  случайное наблюдение → мера → результат. Именно эту логику стоит у него и заимствовать:
+  она годится для любого сочинения на тему «如何解决……问题». Лексика — городская и
+  административная: 政府, 批准, 改革, 取消, 保险, 赔偿, 咨询, 归纳.</p>
+</section>
+
+<section id="plan">
+  <h2>Как лечат пробку пробкой <span class="cn">以堵治堵</span></h2>
+  <div class="plan-box">
+    <svg viewBox="0 0 660 545" role="img" aria-label="Схема урока: лечить пробку пробкой"><text class="rowlab" x="18" y="16">1 · ПРОБЛЕМА 堵车成了家常便饭</text><g class="zone" tabindex="0" data-w="城市汽车的数量迅速增长" data-p="fánróng · tǐxiàn · yōngjǐ · jiācháng" data-d="城市汽车的数量迅速增长，最初还被视为是社会发展、经济繁荣的体现。但很快人们就发现了问题。随着车流量的增加，道路变得格外拥挤，堵车在大城市中已经成了家常便饭。"><rect class="fillable" x="30" y="26" width="600" height="46" rx="3" fill="#e8dce6" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="48" text-anchor="middle" style="font-size:14px">最初是繁荣的体现 → 很快成了家常便饭</text><text class="zsub" x="330" y="64" text-anchor="middle">缓解 · 招（儿）· 繁荣 · 体现 · 拥挤 · 家常</text></g><text class="rowlab" x="18" y="96">2 · ПРИВЫЧНЫЙ ПУТЬ НЕ РАБОТАЕТ 新建或加宽道路</text><g class="zone" tabindex="0" data-w="新建或加宽道路" data-p="面积 · 宽 · 扩大" data-d="解决交通拥堵的问题就要减少单位面积道路内的汽车数量，新建或加宽道路被公认为最基本的方法。"><rect class="fillable" x="30" y="106" width="190" height="54" rx="3" fill="#ecdcdc" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="125" y="130" text-anchor="middle" style="font-size:12.5px">新建或加宽道路</text><text class="zsub" x="125" y="148" text-anchor="middle">面积 · 宽 · 扩大</text></g><path d="M220 133 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a33)"/><g class="zone" tabindex="0" data-w="扩建跟不上车流量" data-p="主观 · 愿望" data-d="但事实证明这只是我们美好的主观愿望，道路扩建的速度远远跟不上车流量增加的速度，面积的增加并未使道路空出空间来。"><rect class="fillable" x="235" y="106" width="190" height="54" rx="3" fill="#ecdcdc" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="130" text-anchor="middle" style="font-size:12.5px">扩建跟不上车流量</text><text class="zsub" x="330" y="148" text-anchor="middle">主观 · 愿望</text></g><path d="M425 133 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a33)"/><g class="zone" tabindex="0" data-w="反而鼓励更多司机上路" data-p="拥挤 · 根治" data-d="甚至还会在无形之中鼓励更多的司机开车上路，使得市中心的道路更加拥挤。那么，如何根治交通拥堵呢？"><rect class="fillable" x="440" y="106" width="190" height="54" rx="3" fill="#ecdcdc" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="535" y="130" text-anchor="middle" style="font-size:12.5px">反而鼓励更多司机上路</text><text class="zsub" x="535" y="148" text-anchor="middle">拥挤 · 根治</text></g><path class="xout" d="M38 110 L212 156"/><path class="xout" d="M212 110 L38 156"/><text class="rowlab" x="18" y="184">3 · ЧТО СДЕЛАЛ ДЖЕНСЕН 詹森的工作方法</text><g class="zone" tabindex="0" data-w="展开调查" data-p="不妨 · 展开" data-d="这里我们不妨听听佩·詹森的故事。詹森一到欧洲环境保护署交通部工作，就接到了研究如何解决城市拥堵问题的任务。于是，他开始展开调查。"><rect class="fillable" x="30" y="194" width="190" height="46" rx="3" fill="#e2e4ea" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="125" y="216" text-anchor="middle" style="font-size:13px">展开调查</text><text class="zsub" x="125" y="232" text-anchor="middle">不妨 · 展开</text></g><path d="M220 217 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a33)"/><g class="zone" tabindex="0" data-w="归纳问题特点" data-p="数据 · 归纳" data-d="研究收集上来的数据，归纳问题特点。"><rect class="fillable" x="235" y="194" width="190" height="46" rx="3" fill="#e2e4ea" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="216" text-anchor="middle" style="font-size:13px">归纳问题特点</text><text class="zsub" x="330" y="232" text-anchor="middle">数据 · 归纳</text></g><path d="M425 217 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a33)"/><g class="zone" tabindex="0" data-w="虚心咨询专家" data-p="虚心 · 咨询" data-d="并虚心咨询了有关专家。"><rect class="fillable" x="440" y="194" width="190" height="46" rx="3" fill="#e2e4ea" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="535" y="216" text-anchor="middle" style="font-size:13px">虚心咨询专家</text><text class="zsub" x="535" y="232" text-anchor="middle">虚心 · 咨询</text></g><text class="rowlab" x="18" y="264">4 · СЛУЧАЙ И ОЗАРЕНИЕ 九月中旬的一天早晨</text><g class="zone" tabindex="0" data-w="健身的人图省事横穿马路，被撞倒" data-p="zhōngxún · zhàocháng · jiànshēn · tú · shòu shāng · bǎoxiǎn · péicháng" data-d="九月中旬的一天早晨，詹森照常提前出门赶在早高峰之前去交通部。他看到一个健身的人慢跑通过一个有过街天桥的路口时，为图省事没上天桥，而是横穿马路。结果，他被一辆车撞倒在地，虽然最后他只是受了点轻伤，而且有保险可以赔偿，但司机还是被吓得不轻。"><rect class="fillable" x="30" y="274" width="290" height="58" rx="3" fill="#e9e4d8" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="175" y="300" text-anchor="middle" style="font-size:13px">为图省事没上天桥 → 被车撞倒</text><text class="zsub" x="175" y="320" text-anchor="middle">中旬 · 照常 · 健身 · 图 · 受伤 · 保险 · 赔偿</text></g><path d="M324 303 h10" stroke="#23262a" stroke-width="1.2" marker-end="url(#a33)"/><g class="zone" tabindex="0" data-w="反其道而行之——让城市先堵起来" data-p="fǎn qí dào ér xíng zhī" data-d="不过这件事倒是给了詹森启发：开车出行是为了省时省力，但如果情况相反呢？他决定要改变市民出行的观念，反其道而行之——让城市先堵起来，给司机制造麻烦，以堵治堵。"><rect class="fillable" x="340" y="274" width="290" height="58" rx="3" fill="#e8dce6" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="485" y="300" text-anchor="middle" style="font-size:13px">给司机制造麻烦，以堵治堵</text><text class="zsub" x="485" y="320" text-anchor="middle">启发 · 观念 · 反其道而行之</text></g><text class="rowlab" x="18" y="356">5 · МЕРЫ 政府批准的改革措施</text><g class="zone" tabindex="0" data-w="增设红绿灯，取消地下通道" data-p="zhèngfǔ · pīzhǔn · gǎigé · qǔxiāo · xíngrén" data-d="经过多次努力，政府批准了他提出的改革措施，比如，增设红绿灯，让车辆不得不走走停停；在主要十字路口取消地下通道，让行人从地下重返地面；"><rect class="fillable" x="30" y="366" width="290" height="58" rx="3" fill="#dfe6dc" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="175" y="392" text-anchor="middle" style="font-size:13px">红绿灯 · 走走停停 · 行人回地面</text><text class="zsub" x="175" y="412" text-anchor="middle">政府 · 批准 · 改革 · 取消 · 行人</text></g><g class="zone" tabindex="0" data-w="商场附近不建停车场，发展公交" data-p="guǎngchǎng · shāngwù · dàshà" data-d="在购物广场、商务大厦的附近不建停车场等。同时，大力发展公共交通。"><rect class="fillable" x="340" y="366" width="290" height="58" rx="3" fill="#dfe6dc" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="485" y="392" text-anchor="middle" style="font-size:13px">广场、大厦附近不建停车场</text><text class="zsub" x="485" y="412" text-anchor="middle">广场 · 商务 · 大厦 · 公共交通</text></g><text class="rowlab" x="18" y="448">6 · РЕЗУЛЬТАТ 半年过去了</text><g class="zone" tabindex="0" data-w="自愿放弃开私家车出门的人越来越多" data-p="zìyuàn · nánguài · yǔqí · qìyóu · huǎnjiě · míngquè · qīdài · jiěfàng" data-d="半年过去了，虽然市民们有些抱怨，但效果非常明显，自愿放弃开私家车出门的人越来越多。这也难怪，与其堵在路上浪费时间和汽油，污染环境，倒不如改乘公交出行。这样一来，道路拥堵大为缓解。城市本是为人而建，如今却被汽车占有，詹森的目标很明确，就是期待能够解放城市，使之更适合人类生活。"><rect class="fillable" x="30" y="458" width="600" height="50" rx="3" fill="#dfe6dc" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="482" text-anchor="middle" style="font-size:13px">与其堵在路上浪费时间和汽油，倒不如改乘公交 → 拥堵大为缓解</text><text class="zsub" x="330" y="500" text-anchor="middle">自愿 · 难怪 · 与其 · 汽油 · 缓解 · 明确 · 期待 · 解放</text></g><text class="tiny" x="330" y="534" text-anchor="middle">城市本是为人而建，如今却被汽车占有 —— 詹森的目标是解放城市。</text><defs><marker id="a33" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" fill="#23262a"/></marker></defs></svg>
+    <div class="readout" id="readout">
+      <span class="hint">Наведите курсор или коснитесь любого блока — появится соответствующее место текста.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Текст в шести шагах <span class="cn">课文 · 744 字</span></h2>
+
+  <div class="card red">
+    <p><span class="tag r">шаг 1</span><b>Проблема.</b> 城市汽车的数量迅速增长，最初还被视为是社会发展、
+    经济繁荣的体现。但很快人们就发现了问题。随着车流量的增加，道路变得格外拥挤，堵车在大城市中
+    已经成了家常便饭。</p>
+    <p style="margin:0"><b>Слова шага:</b> <span class="cn-ex">繁荣 · 体现 · 拥挤 · 家常</span></p>
+  </div>
+
+  <div class="card">
+    <p><span class="tag">шаг 2</span><b>Привычное решение не работает.</b> 解决交通拥堵的问题就要减少单位面积
+    道路内的汽车数量，新建或加宽道路被公认为最基本的方法。但事实证明这只是我们美好的主观愿望，
+    道路扩建的速度远远跟不上车流量增加的速度，面积的增加并未使道路空出空间来，甚至还会在无形之中
+    鼓励更多的司机开车上路，使得市中心的道路更加拥挤。那么，如何根治交通拥堵呢？这里我们不妨听听
+    佩·詹森的故事。</p>
+    <p style="margin:0"><b>Слова шага:</b> <span class="cn-ex">面积 · 宽 · 主观 · 扩（大） · 根治 · 不妨</span></p>
+  </div>
+
+  <div class="card brass">
+    <p><span class="tag b">шаг 3</span><b>Исследование.</b> 詹森一到欧洲环境保护署交通部工作，
+    就接到了研究如何解决城市拥堵问题的任务。于是，他开始展开调查，研究收集上来的数据，归纳问题特点，
+    并虚心咨询了有关专家。</p>
+    <p style="margin:0"><b>Слова шага:</b> <span class="cn-ex">展开 · 归纳 · 虚心 · 咨询</span></p>
+  </div>
+
+  <div class="card">
+    <p><span class="tag">шаг 4</span><b>Случай и озарение.</b> 九月中旬的一天早晨，詹森照常提前出门
+    赶在早高峰之前去交通部。他看到一个健身的人慢跑通过一个有过街天桥的路口时，为图省事没上天桥，
+    而是横穿马路。结果，他被一辆车撞倒在地，虽然最后他只是受了点轻伤，而且有保险可以赔偿，
+    但司机还是被吓得不轻。不过这件事倒是给了詹森启发：开车出行是为了省时省力，但如果情况相反呢？
+    他决定要改变市民出行的观念，反其道而行之——让城市先堵起来，给司机制造麻烦，以堵治堵。</p>
+    <p style="margin:0"><b>Слова шага:</b> <span class="cn-ex">中旬 · 照常 · 健身 · 图 · 受（伤） · 保险 · 赔偿</span></p>
+  </div>
+
+  <div class="card green">
+    <p><span class="tag g">шаг 5</span><b>Меры.</b> 经过多次努力，政府批准了他提出的改革措施，比如，
+    增设红绿灯，让车辆不得不走走停停；在主要十字路口取消地下通道，让行人从地下重返地面；
+    在购物广场、商务大厦的附近不建停车场等。同时，大力发展公共交通。</p>
+    <p style="margin:0"><b>Слова шага:</b> <span class="cn-ex">政府 · 批准 · 改革 · 取消 · 行人 · 广场 · 商务 · 大厦</span></p>
+  </div>
+
+  <div class="card green">
+    <p><span class="tag g">шаг 6</span><b>Результат.</b> 半年过去了，虽然市民们有些抱怨，但效果非常明显，
+    自愿放弃开私家车出门的人越来越多。这也难怪，与其堵在路上浪费时间和汽油，污染环境，
+    倒不如改乘公交出行。这样一来，道路拥堵大为缓解。城市本是为人而建，如今却被汽车占有，
+    詹森的目标很明确，就是期待能够解放城市，使之更适合人类生活。</p>
+    <p style="margin:0"><b>Слова шага:</b> <span class="cn-ex">自愿 · 难怪 · 与其 · 汽油 · 缓解 · 明确 · 期待 · 解放</span></p>
+  </div>
+  <p style="font-size:14px;color:var(--brick)">改编自《读者》2012年第8期</p>
+</section>
+
+<section>
+  <h2>38 слов по гнёздам <span class="cn">生词 + 专有名词</span></h2>
+  <p style="font-size:14px;color:var(--brick)"><span class="star">★</span> — слово сверх программы HSK 5 (в учебнике помечено звёздочкой). Последние два — имена собственные. Из текста стоит выписать обороты: <span class="cn-ex">家常便饭 · 被视为 · 跟不上 · 无形之中 · 早高峰 · 过街天桥 · 横穿马路 · 省时省力 · 反其道而行之 · 以堵治堵 · 这样一来 · 大为缓解</span>.</p>
+
+  <div class="audiobar" id="audiobar">
+    <div class="ab-t">Озвучка слов</div>
+    <div class="ab-row">
+      <input id="ab-pat" type="text" spellcheck="false" value="audio/{hz}.mp3" aria-label="Шаблон пути к mp3">
+      <button type="button" id="ab-auto">Подобрать</button>
+      <button type="button" id="ab-test">Проверить</button>
+    </div>
+    <div class="ab-status" id="ab-status"></div>
+    <div class="ab-note">
+      Ищутся файлы вида <code>иероглиф.mp3</code> — сначала в папке <code>audio</code> рядом с этим документом,
+      потом прямо рядом с ним. Подстановки: <code>{hz}</code>, <code>{py}</code>, <code>{pyn}</code>,
+      <code>{num}</code>, <code>{L}</code>.
+    </div>
+  </div>
+<div class="cluster"><h3>I. Пробка как данность<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Первое гнездо — то, как город описывают в газетной статье.</div><div class="words"><div class="w-item"><span class="hz">缓解</span><span class="py">huǎnjiě</span><button class="pb" type="button" data-hz="缓解" data-hz2="缓解" data-py="huǎnjiě" data-pyn="huanjie" data-num="1" aria-label="Прослушать 缓解" title="Прослушать 缓解">&#9654;</button><span class="ru">смягчить, разрядить (проблему, боль)</span><span class="ex">缓解拥堵 / 缓解压力</span></div><div class="w-item"><span class="hz">招（儿）</span><span class="py">zhāo(r)</span><span class="star">★</span><button class="pb" type="button" data-hz="招（儿）" data-hz2="招" data-py="zhāo(r)" data-pyn="zhao(r)" data-num="2" aria-label="Прослушать 招（儿）" title="Прослушать 招（儿）">&#9654;</button><span class="ru">приём, ход, способ</span><span class="ex">有妙招 / 想个招儿</span></div><div class="w-item"><span class="hz">繁荣</span><span class="py">fánróng</span><button class="pb" type="button" data-hz="繁荣" data-hz2="繁荣" data-py="fánróng" data-pyn="fanrong" data-num="3" aria-label="Прослушать 繁荣" title="Прослушать 繁荣">&#9654;</button><span class="ru">процветающий; процветание</span><span class="ex">经济繁荣 / 繁荣的城市</span></div><div class="w-item"><span class="hz">体现</span><span class="py">tǐxiàn</span><button class="pb" type="button" data-hz="体现" data-hz2="体现" data-py="tǐxiàn" data-pyn="tixian" data-num="4" aria-label="Прослушать 体现" title="Прослушать 体现">&#9654;</button><span class="ru">воплощать, проявляться в чём-то</span><span class="ex">发展的体现 / 体现出特点</span></div><div class="w-item"><span class="hz">拥挤</span><span class="py">yōngjǐ</span><button class="pb" type="button" data-hz="拥挤" data-hz2="拥挤" data-py="yōngjǐ" data-pyn="yongji" data-num="5" aria-label="Прослушать 拥挤" title="Прослушать 拥挤">&#9654;</button><span class="ru">тесный, переполненный; давка</span><span class="ex">道路拥挤 / 交通拥挤</span></div><div class="w-item"><span class="hz">家常</span><span class="py">jiācháng</span><span class="star">★</span><button class="pb" type="button" data-hz="家常" data-hz2="家常" data-py="jiācháng" data-pyn="jiachang" data-num="6" aria-label="Прослушать 家常" title="Прослушать 家常">&#9654;</button><span class="ru">повседневный быт семьи</span><span class="ex">家常便饭 / 聊家常</span></div></div></div><div class="cluster"><h3>II. Почему не помогает расширение дорог<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Самое «аргументационное» гнездо урока.</div><div class="words"><div class="w-item"><span class="hz">面积</span><span class="py">miànjī</span><button class="pb" type="button" data-hz="面积" data-hz2="面积" data-py="miànjī" data-pyn="mianji" data-num="7" aria-label="Прослушать 面积" title="Прослушать 面积">&#9654;</button><span class="ru">площадь (в кв. метрах)</span><span class="ex">单位面积 / 面积的增加</span></div><div class="w-item"><span class="hz">宽</span><span class="py">kuān</span><button class="pb" type="button" data-hz="宽" data-hz2="宽" data-py="kuān" data-pyn="kuan" data-num="8" aria-label="Прослушать 宽" title="Прослушать 宽">&#9654;</button><span class="ru">широкий</span><span class="ex">加宽道路 / 路很宽</span></div><div class="w-item"><span class="hz">主观</span><span class="py">zhǔguān</span><button class="pb" type="button" data-hz="主观" data-hz2="主观" data-py="zhǔguān" data-pyn="zhuguan" data-num="9" aria-label="Прослушать 主观" title="Прослушать 主观">&#9654;</button><span class="ru">субъективный</span><span class="ex">主观愿望 / 主观判断</span></div><div class="w-item"><span class="hz">扩（大）</span><span class="py">kuò(dà)</span><button class="pb" type="button" data-hz="扩（大）" data-hz2="扩大" data-py="kuò(dà)" data-pyn="kuo(da)" data-num="10" aria-label="Прослушать 扩（大）" title="Прослушать 扩（大）">&#9654;</button><span class="ru">расширять, увеличивать</span><span class="ex">道路扩建 / 扩大影响</span></div><div class="w-item"><span class="hz">根治</span><span class="py">gēnzhì</span><span class="star">★</span><button class="pb" type="button" data-hz="根治" data-hz2="根治" data-py="gēnzhì" data-pyn="genzhi" data-num="11" aria-label="Прослушать 根治" title="Прослушать 根治">&#9654;</button><span class="ru">вылечить окончательно, устранить корень</span><span class="ex">根治交通拥堵 / 根治疾病</span></div><div class="w-item"><span class="hz">不妨</span><span class="py">bùfáng</span><span class="star">★</span><button class="pb" type="button" data-hz="不妨" data-hz2="不妨" data-py="bùfáng" data-pyn="bufang" data-num="12" aria-label="Прослушать 不妨" title="Прослушать 不妨">&#9654;</button><span class="ru">«почему бы и не», «можно и…»</span><span class="ex">不妨听听 / 不妨试一试</span></div></div></div><div class="cluster"><h3>III. Как работал Дженсен<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Четыре слова, которые описывают любое исследование — пригодятся и в 书写.</div><div class="words"><div class="w-item"><span class="hz">展开</span><span class="py">zhǎnkāi</span><button class="pb" type="button" data-hz="展开" data-hz2="展开" data-py="zhǎnkāi" data-pyn="zhankai" data-num="13" aria-label="Прослушать 展开" title="Прослушать 展开">&#9654;</button><span class="ru">развернуть, развернуться (о работе, споре)</span><span class="ex">展开调查 / 展开辩论</span></div><div class="w-item"><span class="hz">归纳</span><span class="py">guīnà</span><button class="pb" type="button" data-hz="归纳" data-hz2="归纳" data-py="guīnà" data-pyn="guina" data-num="14" aria-label="Прослушать 归纳" title="Прослушать 归纳">&#9654;</button><span class="ru">обобщить, свести воедино</span><span class="ex">归纳问题特点 / 归纳观点</span></div><div class="w-item"><span class="hz">虚心</span><span class="py">xūxīn</span><button class="pb" type="button" data-hz="虚心" data-hz2="虚心" data-py="xūxīn" data-pyn="xuxin" data-num="15" aria-label="Прослушать 虚心" title="Прослушать 虚心">&#9654;</button><span class="ru">непредвзято, готовый слушать других</span><span class="ex">虚心咨询 / 虚心听取意见</span></div><div class="w-item"><span class="hz">咨询</span><span class="py">zīxún</span><button class="pb" type="button" data-hz="咨询" data-hz2="咨询" data-py="zīxún" data-pyn="zixun" data-num="16" aria-label="Прослушать 咨询" title="Прослушать 咨询">&#9654;</button><span class="ru">консультироваться, наводить справки</span><span class="ex">咨询专家 / 咨询服务</span></div></div></div><div class="cluster"><h3>IV. Случай на перекрёстке<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Семь слов — и готовая история про ДТП, какие бывают в аудировании.</div><div class="words"><div class="w-item"><span class="hz">中旬</span><span class="py">zhōngxún</span><button class="pb" type="button" data-hz="中旬" data-hz2="中旬" data-py="zhōngxún" data-pyn="zhongxun" data-num="17" aria-label="Прослушать 中旬" title="Прослушать 中旬">&#9654;</button><span class="ru">вторая декада месяца (11–20 число)</span><span class="ex">九月中旬 / 下月中旬</span></div><div class="w-item"><span class="hz">照常</span><span class="py">zhàocháng</span><button class="pb" type="button" data-hz="照常" data-hz2="照常" data-py="zhàocháng" data-pyn="zhaochang" data-num="18" aria-label="Прослушать 照常" title="Прослушать 照常">&#9654;</button><span class="ru">как обычно; идти своим чередом</span><span class="ex">照常出门 / 一切照常</span></div><div class="w-item"><span class="hz">健身</span><span class="py">jiàn shēn</span><button class="pb" type="button" data-hz="健身" data-hz2="健身" data-py="jiàn shēn" data-pyn="jianshen" data-num="19" aria-label="Прослушать 健身" title="Прослушать 健身">&#9654;</button><span class="ru">заниматься фитнесом, укреплять тело</span><span class="ex">健身的人 / 去健身房</span></div><div class="w-item"><span class="hz">图</span><span class="py">tú</span><span class="star">★</span><button class="pb" type="button" data-hz="图" data-hz2="图" data-py="tú" data-pyn="tu" data-num="20" aria-label="Прослушать 图" title="Прослушать 图">&#9654;</button><span class="ru">гнаться за чем-то, искать выгоды</span><span class="ex">为图省事 / 图便宜</span></div><div class="w-item"><span class="hz">受（伤）</span><span class="py">shòu (shāng)</span><button class="pb" type="button" data-hz="受（伤）" data-hz2="受伤" data-py="shòu (shāng)" data-pyn="shou(shang)" data-num="21" aria-label="Прослушать 受（伤）" title="Прослушать 受（伤）">&#9654;</button><span class="ru">получить ранение, пострадать</span><span class="ex">受了点轻伤 / 受伤的人</span></div><div class="w-item"><span class="hz">保险</span><span class="py">bǎoxiǎn</span><button class="pb" type="button" data-hz="保险" data-hz2="保险" data-py="bǎoxiǎn" data-pyn="baoxian" data-num="22" aria-label="Прослушать 保险" title="Прослушать 保险">&#9654;</button><span class="ru">страховка; надёжный</span><span class="ex">有保险可以赔偿 / 不太保险</span></div><div class="w-item"><span class="hz">赔偿</span><span class="py">péicháng</span><button class="pb" type="button" data-hz="赔偿" data-hz2="赔偿" data-py="péicháng" data-pyn="peichang" data-num="23" aria-label="Прослушать 赔偿" title="Прослушать 赔偿">&#9654;</button><span class="ru">возмещать ущерб</span><span class="ex">保险赔偿 / 赔偿损失</span></div></div></div><div class="cluster"><h3>V. Меры властей<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Административное гнездо: эти восемь слов почти всегда вместе.</div><div class="words"><div class="w-item"><span class="hz">政府</span><span class="py">zhèngfǔ</span><button class="pb" type="button" data-hz="政府" data-hz2="政府" data-py="zhèngfǔ" data-pyn="zhengfu" data-num="24" aria-label="Прослушать 政府" title="Прослушать 政府">&#9654;</button><span class="ru">правительство, власти</span><span class="ex">政府批准 / 中央政府</span></div><div class="w-item"><span class="hz">批准</span><span class="py">pīzhǔn</span><button class="pb" type="button" data-hz="批准" data-hz2="批准" data-py="pīzhǔn" data-pyn="pizhun" data-num="25" aria-label="Прослушать 批准" title="Прослушать 批准">&#9654;</button><span class="ru">утвердить, санкционировать</span><span class="ex">批准措施 / 批准方案</span></div><div class="w-item"><span class="hz">改革</span><span class="py">gǎigé</span><button class="pb" type="button" data-hz="改革" data-hz2="改革" data-py="gǎigé" data-pyn="gaige" data-num="26" aria-label="Прослушать 改革" title="Прослушать 改革">&#9654;</button><span class="ru">реформа; реформировать</span><span class="ex">改革措施 / 改革开放</span></div><div class="w-item"><span class="hz">取消</span><span class="py">qǔxiāo</span><button class="pb" type="button" data-hz="取消" data-hz2="取消" data-py="qǔxiāo" data-pyn="quxiao" data-num="27" aria-label="Прослушать 取消" title="Прослушать 取消">&#9654;</button><span class="ru">отменить, аннулировать</span><span class="ex">取消地下通道 / 取消资格</span></div><div class="w-item"><span class="hz">行人</span><span class="py">xíngrén</span><button class="pb" type="button" data-hz="行人" data-hz2="行人" data-py="xíngrén" data-pyn="xingren" data-num="28" aria-label="Прослушать 行人" title="Прослушать 行人">&#9654;</button><span class="ru">пешеход</span><span class="ex">让行人重返地面 / 行人过马路</span></div><div class="w-item"><span class="hz">广场</span><span class="py">guǎngchǎng</span><button class="pb" type="button" data-hz="广场" data-hz2="广场" data-py="guǎngchǎng" data-pyn="guangchang" data-num="29" aria-label="Прослушать 广场" title="Прослушать 广场">&#9654;</button><span class="ru">площадь; торговый центр</span><span class="ex">购物广场 / 天安门广场</span></div><div class="w-item"><span class="hz">商务</span><span class="py">shāngwù</span><button class="pb" type="button" data-hz="商务" data-hz2="商务" data-py="shāngwù" data-pyn="shangwu" data-num="30" aria-label="Прослушать 商务" title="Прослушать 商务">&#9654;</button><span class="ru">деловой, бизнес-</span><span class="ex">商务大厦 / 商务活动</span></div><div class="w-item"><span class="hz">大厦</span><span class="py">dàshà</span><button class="pb" type="button" data-hz="大厦" data-hz2="大厦" data-py="dàshà" data-pyn="dasha" data-num="31" aria-label="Прослушать 大厦" title="Прослушать 大厦">&#9654;</button><span class="ru">высотное здание, бизнес-центр</span><span class="ex">商务大厦 / 一座大厦</span></div></div></div><div class="cluster"><h3>VI. Результат и цель<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Финальное гнездо, в котором сидят сразу две из трёх грамматических точек.</div><div class="words"><div class="w-item"><span class="hz">自愿</span><span class="py">zìyuàn</span><button class="pb" type="button" data-hz="自愿" data-hz2="自愿" data-py="zìyuàn" data-pyn="ziyuan" data-num="32" aria-label="Прослушать 自愿" title="Прослушать 自愿">&#9654;</button><span class="ru">добровольно, по своей воле</span><span class="ex">自愿放弃 / 自愿参加</span></div><div class="w-item"><span class="hz">难怪</span><span class="py">nánguài</span><button class="pb" type="button" data-hz="难怪" data-hz2="难怪" data-py="nánguài" data-pyn="nanguai" data-num="33" aria-label="Прослушать 难怪" title="Прослушать 难怪">&#9654;</button><span class="ru">неудивительно; и немудрено</span><span class="ex">这也难怪 / 难怪他没来</span></div><div class="w-item"><span class="hz">与其</span><span class="py">yǔqí</span><button class="pb" type="button" data-hz="与其" data-hz2="与其" data-py="yǔqí" data-pyn="yuqi" data-num="34" aria-label="Прослушать 与其" title="Прослушать 与其">&#9654;</button><span class="ru">«чем …, лучше …» (отбрасываемый вариант)</span><span class="ex">与其……倒不如…… / 与其……宁可……</span></div><div class="w-item"><span class="hz">汽油</span><span class="py">qìyóu</span><button class="pb" type="button" data-hz="汽油" data-hz2="汽油" data-py="qìyóu" data-pyn="qiyou" data-num="35" aria-label="Прослушать 汽油" title="Прослушать 汽油">&#9654;</button><span class="ru">бензин</span><span class="ex">浪费汽油 / 汽油涨价</span></div><div class="w-item"><span class="hz">明确</span><span class="py">míngquè</span><button class="pb" type="button" data-hz="明确" data-hz2="明确" data-py="míngquè" data-pyn="mingque" data-num="36" aria-label="Прослушать 明确" title="Прослушать 明确">&#9654;</button><span class="ru">чёткий, определённый; уточнить</span><span class="ex">目标很明确 / 明确表示</span></div><div class="w-item"><span class="hz">期待</span><span class="py">qīdài</span><button class="pb" type="button" data-hz="期待" data-hz2="期待" data-py="qīdài" data-pyn="qidai" data-num="37" aria-label="Прослушать 期待" title="Прослушать 期待">&#9654;</button><span class="ru">ожидать, надеяться</span><span class="ex">期待解放城市 / 值得期待</span></div><div class="w-item"><span class="hz">解放</span><span class="py">jiěfàng</span><span class="star">★</span><button class="pb" type="button" data-hz="解放" data-hz2="解放" data-py="jiěfàng" data-pyn="jiefang" data-num="38" aria-label="Прослушать 解放" title="Прослушать 解放">&#9654;</button><span class="ru">освободить</span><span class="ex">解放城市 / 解放思想</span></div><div class="w-item"><span class="hz">佩·詹森</span><span class="py">Pèi Zhānsēn</span><button class="pb" type="button" data-hz="佩·詹森" data-hz2="佩·詹森" data-py="Pèi Zhānsēn" data-pyn="peizhansen" data-num="" aria-label="Прослушать 佩·詹森" title="Прослушать 佩·詹森">&#9654;</button><span class="ru">Пэй Дженсен, герой текста</span><span class="ex">不妨听听佩·詹森的故事</span></div><div class="w-item"><span class="hz">欧洲环境保护署</span><span class="py">Ōuzhōu Huánjìng Bǎohù Shǔ</span><button class="pb" type="button" data-hz="欧洲环境保护署" data-hz2="欧洲环境保护署" data-py="Ōuzhōu Huánjìng Bǎohù Shǔ" data-pyn="ouzhouhuanjingbaohushu" data-num="" aria-label="Прослушать 欧洲环境保护署" title="Прослушать 欧洲环境保护署">&#9654;</button><span class="ru">Европейское агентство по окружающей среде</span><span class="ex">欧洲环境保护署交通部</span></div></div></div></section>
+<section>
+  <h2>На слух: где рука ошибётся <span class="cn">听写陷阱</span></h2>
+  <p>Два самых опасных места урока — <b>难怪 против 难道</b> (оба начинаются одинаково, но одно
+  объясняет, другое спрашивает) и <b>虚心 против 谦虚</b> (оба переводятся «скромный», но
+  сочетаются по-разному). Плюс целое гнездо на 旬/询/寻 и три слова на 赔/陪/培.</p>
+<div class="warn">Второй пункт упражнения 2</div><div class="trap"><div><span class="hz">难怪</span><span class="py">nánguài</span><span class="n">«неудивительно» — объясняет уже известный факт: 难怪他没来，原来病了.</span></div><div><span class="hz">难道</span><span class="py">nándào</span><span class="n">«неужели» — риторический вопрос, часто с 吗. Второй пункт упражнения 2.</span></div></div><div class="warn">Третий пункт упражнения 2</div><div class="trap"><div><span class="hz">虚心</span><span class="py">xūxīn</span><span class="n">«непредвзято слушать других» — всегда про готовность учиться: 虚心请教／咨询／接受批评.</span></div><div><span class="hz">谦虚</span><span class="py">qiānxū</span><span class="n">«скромный» — о характере в целом (урок 31). Третий пункт упражнения 2.</span></div></div><div class="warn">Первый пункт упражнения 2</div><div class="trap"><div><span class="hz">取消</span><span class="py">qǔxiāo</span><span class="n">«отменить» — решением: 取消资格／比赛／约会.</span></div><div><span class="hz">消失</span><span class="py">xiāoshī</span><span class="n">«исчезнуть» — само по себе (урок 32). Первый пункт упражнения 2.</span></div></div><div class="warn">Четвёртый пункт упражнения 2</div><div class="trap"><div><span class="hz">明确</span><span class="py">míngquè</span><span class="n">«чёткий, недвусмысленный» — о цели, позиции, заявлении: 明确表示.</span></div><div><span class="hz">清楚</span><span class="py">qīngchu</span><span class="n">«понятный, разборчивый» — о том, что видно и слышно. Четвёртый пункт упражнения 2.</span></div></div><div class="warn">Три знака xún</div><div class="trap"><div><span class="hz">中旬</span><span class="py">zhōngxún</span><span class="n">旬 — декада: 上旬 (1–10), 中旬 (11–20), 下旬 (21–конец).</span></div><div><span class="hz">咨询 / 寻找</span><span class="py">zīxún / xúnzhǎo</span><span class="n">Три разных xún: 旬（日）、询（讠）、寻. В диктанте решает ключ.</span></div></div><div class="warn">Три знака péi</div><div class="trap"><div><span class="hz">赔偿</span><span class="py">péicháng</span><span class="n">赔 — «возместить»: 赔偿损失.</span></div><div><span class="hz">陪 / 培养</span><span class="py">péi / péiyǎng</span><span class="n">陪 — «сопровождать» (陪我练车), 培养 — «растить» (урок 29). Три 贝/阝/土.</span></div></div><div class="warn">Три степени решения</div><div class="trap"><div><span class="hz">缓解</span><span class="py">huǎnjiě</span><span class="n">«смягчить»: 缓解拥堵／压力／疼痛. Проблема остаётся, но слабее.</span></div><div><span class="hz">解决 / 根治</span><span class="py">jiějué / gēnzhì</span><span class="n">«решить окончательно» и «устранить корень». Разная степень.</span></div></div><div class="warn">Разбор урока</div><div class="trap"><div><span class="hz">体现</span><span class="py">tǐxiàn</span><span class="n">«проявиться в чём-то конкретном» — подчёркивает, через что видно.</span></div><div><span class="hz">表现</span><span class="py">biǎoxiàn</span><span class="n">«проявлять, вести себя»; бывает существительным. Пара 辨析 урока.</span></div></div><div class="warn">Три слова на 拥</div><div class="trap"><div><span class="hz">拥挤</span><span class="py">yōngjǐ</span><span class="n">«теснота» — про скопление (урок 29, пара с 挤).</span></div><div><span class="hz">拥抱 / 拥有</span><span class="py">yōngbào / yōngyǒu</span><span class="n">«обнять» и «обладать». Все три — на 拥.</span></div></div><div class="warn">Три слова на 险</div><div class="trap"><div><span class="hz">保险</span><span class="py">bǎoxiǎn</span><span class="n">«страховка» и «надёжный»: 买保险, 不太保险.</span></div><div><span class="hz">危险 / 冒险</span><span class="py">wēixiǎn / màoxiǎn</span><span class="n">«опасность» и «рисковать». Все три — на 险.</span></div></div><div class="warn">Гнездо 府／付／附</div><div class="trap"><div><span class="hz">政府</span><span class="py">zhèngfǔ</span><span class="n">府 — «управа», не 付 и не 附.</span></div><div><span class="hz">付出 / 附近</span><span class="py">fùchū / fùjìn</span><span class="n">«отдавать» и «поблизости». Три похожих знака fù/fǔ.</span></div></div><div class="warn">Три слова на 改</div><div class="trap"><div><span class="hz">改革</span><span class="py">gǎigé</span><span class="n">«реформа» — крупное переустройство системы.</span></div><div><span class="hz">改变 / 改善</span><span class="py">gǎibiàn / gǎishàn</span><span class="n">«изменить» и «улучшить» (урок 30). Все три — на 改.</span></div></div><div class="warn">Три слова на 愿</div><div class="trap"><div><span class="hz">自愿</span><span class="py">zìyuàn</span><span class="n">«добровольно»: 自愿放弃, 自愿参加.</span></div><div><span class="hz">愿望 / 志愿</span><span class="py">yuànwàng / zhìyuàn</span><span class="n">«желание» и «воля, доброволец». Все три — на 愿.</span></div></div><div class="warn">厦 — shà или xià</div><div class="trap"><div><span class="hz">大厦</span><span class="py">dàshà</span><span class="n">厦 здесь shà — «высотное здание».</span></div><div><span class="hz">厦门</span><span class="py">Xiàmén</span><span class="n">厦 как xià — город Сямэнь. Один знак, два чтения.</span></div></div>
+  <div class="card green">
+    <p style="margin:0"><b>Как тренировать.</b> Связки урока:
+    <span class="cn-ex">经济繁荣 · 家常便饭 · 加宽道路 · 主观愿望 · 跟不上 · 不妨试一试 ·
+    展开调查 · 虚心咨询 · 九月中旬 · 一切照常 · 为图省事 · 受了轻伤 · 保险赔偿 ·
+    政府批准 · 改革措施 · 取消资格 · 自愿放弃 · 这也难怪 · 与其……倒不如…… · 大为缓解</span>.
+    Последние три — каркас для вывода в сочинении.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Три точки урока <span class="cn">词语例释</span></h2>
+
+  <h3>1 · 照常 — «как обычно»</h3>
+  <div class="card green">
+    <p><b>Глагол:</b> «идти как всегда» — слово стоит сказуемым, после него ничего не нужно.</p>
+    <p class="cn-ex">虽然战争临近，但这里的日常生活，一切<span class="hl">照常</span>。</p>
+    <p class="cn-ex">大火对东区的商业活动没有造成大的影响，区内商业活动<span class="hl">照常</span>。</p>
+    <p><b>Наречие:</b> «по-прежнему, как и раньше» — перед глаголом.</p>
+    <p class="cn-ex">在东方广场的迎新活动<span class="hl">照常</span>举行。</p>
+    <p class="cn-ex">九月中旬的一天早晨，詹森<span class="hl">照常</span>提前出门赶在早高峰之前去交通部。</p>
+    <p class="tr" style="margin:10px 0 0">Проверка: если после слова идёт глагол (照常上班, 照常举行) —
+    это наречие; если слово завершает предложение (一切照常) — это сказуемое.
+    В вопросах типа «他还能照常……吗？» подразумевается «как раньше, несмотря ни на что».</p>
+  </div>
+
+  <h3>2 · 难怪 — «неудивительно»</h3>
+  <div class="card brass">
+    <p><b>Глагол:</b> «не стоит винить, его можно понять» — с оттенком извинения за человека.</p>
+    <p class="cn-ex">这也<span class="hl">难怪</span>，他每天那么忙，哪儿有时间操心孩子的事啊！</p>
+    <p class="cn-ex">这也<span class="hl">难怪</span>，与其堵在路上浪费时间和汽油，污染环境，倒不如改乘公交出行。</p>
+    <p><b>Наречие:</b> «то-то я и смотрю…» — говорящий только что узнал причину и перестал удивляться.</p>
+    <p class="cn-ex">你的抽屉真乱，<span class="hl">难怪</span>总是找不到东西。</p>
+    <p class="cn-ex">他都18岁了，还不敢一个人走夜路，<span class="hl">难怪</span>大家都叫他胆小鬼。</p>
+    <p class="tr" style="margin:10px 0 0">Схема у наречия всегда одна: <b>причина → 难怪 → следствие</b>,
+    причём следствие уже известно говорящему. Не путайте с 难道 («неужели»), которое вводит
+    риторический вопрос и обычно заканчивается на 吗.</p>
+  </div>
+
+  <h3>3 · 与其 — «чем …, лучше …»</h3>
+  <div class="card red">
+    <p>Союз. Ставится перед тем вариантом, от которого <b>отказываются</b>; во второй части
+    обязательно идёт 不如／倒不如／宁可.</p>
+    <p class="cn-ex"><span class="hl">与其</span>说是采访，不如说是向他学习。</p>
+    <p class="cn-ex"><span class="hl">与其</span>找个不认真的小时工，我宁可自己打扫。</p>
+    <p class="cn-ex">这也难怪，<span class="hl">与其</span>堵在路上浪费时间和汽油，污染环境，倒不如改乘公交出行。</p>
+    <p class="tr" style="margin:10px 0 0">Запомните две готовые рамки:
+    <b>与其A，不如B</b> — «чем A, лучше B» (выбирают B) и
+    <b>与其说A，不如说B</b> — «это не столько A, сколько B» (уточняют формулировку).
+    Вторая особенно часто встречается в 阅读.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Сочетаемость <span class="cn">词语搭配</span></h2>
+  <table>
+    <tr><th>动词 + 宾语</th><th>примеры</th></tr>
+    <tr><td class="han">缓解</td><td class="han">压力 / 病情 / 疼痛 / （紧张）情绪 / 交通 / 气氛</td></tr>
+    <tr><td class="han">取消</td><td class="han">资格 / 会议 / 计划 / 比赛 / 活动 / 成绩 / 限制 / 约会</td></tr>
+    <tr><th>定语 + 中心语</th><th></th></tr>
+    <tr><td class="han">主观的</td><td class="han">愿望 / 意见 / 办法 / 因素 / 态度 / 判断 / 喜好 / 想象</td></tr>
+    <tr><td class="han">繁荣的</td><td class="han">国家 / 地区 / 城市 / 经济 / 时代 / 文化 / 景象 / 市场 / 社会</td></tr>
+    <tr><th>状语 + 中心语</th><th></th></tr>
+    <tr><td class="han">自愿（地）</td><td class="han">参加 / 报名 / 退学 / 担任 / 放弃 / 从事</td></tr>
+    <tr><td class="han">虚心（地）</td><td class="han">请教 / 学习 / 咨询 / 接受（批评）/ 吸取（教训）</td></tr>
+    <tr><th>主语 + 谓语</th><th></th></tr>
+    <tr><td class="han">社会 / 制度 / 政治 / 经济 / 技术 / 课程 / 工资</td><td class="han">改革</td></tr>
+    <tr><td class="han">交通 / 道路 / 车厢 / 住房 / 城市 / 车站</td><td class="han">拥挤</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>表现 и 体现 <span class="cn">词语辨析</span></h2>
+  <p>Общее: оба — глаголы со значением «показывать наружу»:
+  <span class="han">这部电影表现／体现出鲜明的时代特点。</span>
+  Дальше различий три, и все они на стороне 表现.</p>
+  <table class="pair-tbl">
+    <tr><th></th><th>表现 biǎoxiàn</th><th>体现 tǐxiàn</th></tr>
+    <tr><td>1</td><td>показывать <b>характер, чувства, отношение</b> человека или вещи<br><span class="han">他总是乐呵呵的，对什么事都表现得很乐观。</span></td><td>подчёркивает, что явление, качество или дух <b>воплощается через</b> что-то конкретное<br><span class="han">不同文化的差异在语言特别是词语上体现得最突出。</span></td></tr>
+    <tr><td>2</td><td>«нарочно показать свои достоинства» — часто с неодобрением<br><span class="han">为了得到领导的欣赏，他拼命地表现自己。</span></td><td>нет такого значения</td></tr>
+    <tr><td>3</td><td>бывает существительным: «поведение, результаты»<br><span class="han">我们对你的表现很满意，你下周一能来上班吗？</span></td><td>нет такого употребления</td></tr>
+  </table>
+  <p class="tr">Практическая проверка: если слово можно заменить на «воплощается в…, виден в…» —
+  это 体现. Если речь о том, как человек себя ведёт или показывает — 表现. И только 表现
+  может стоять после 的 как существительное: 哭是软弱的表现.</p>
+</section>
+
+<section>
+  <h2>Ответы к упражнениям <span class="cn">练习 · 做一做 · 练一练</span></h2>
+<details><summary>练习 1 — 选择合适的词语填空（保险 缓解 赔偿 拥挤 咨询 展开）</summary><div class="in">
+<p>① 每当体育馆有比赛举行，周围的交通就会出现<span class="k">拥挤</span>情况。<br>
+② 手术有风险，小明父母<span class="k">咨询</span>了许多专家后，还是决定做。<br>
+③ 为了赢得顾客，双方一定会在服务方面<span class="k">展开</span>竞争。<br>
+④ 小李办事太马虎，你派他去可不太<span class="k">保险</span>。<br>
+⑤ 车的问题已经处理好了，保险公司正在办理<span class="k">赔偿</span>手续。<br>
+⑥ 道路修通后，灾民饮水困难的问题得到了<span class="k">缓解</span>。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+④ здесь 保险 — прилагательное «надёжно», а не существительное «страховка».
+⑥ проблема смягчилась, но не исчезла — поэтому 缓解, а не 解决.</p></div></details><details><summary>练习 2 — 选择正确答案</summary><div class="in">
+<p>① 学校规定，旷课达到60节以上的学生<span class="k">取消</span>（A）其考试的资格。<br>
+② 汽油明天要涨价了，<span class="k">难怪</span>（A）加油站又有车在排队加油呢。<br>
+③ 一个好的领导能<span class="k">虚心</span>（B）听取不同的意见。<br>
+④ 调查发现，有60%的人<span class="k">明确</span>（A）表示愿意选择公交出行。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+① квалификацию отменяют решением — 取消. ② причина названа в первой части, значит
+«то-то я и смотрю» — 难怪; 难道 потребовало бы вопроса. ③ устойчивое 虚心听取意见.
+④ 明确表示 — «заявить недвусмысленно».</p></div></details><details><summary>练习 3 — 画线连接可以搭配的词语</summary><div class="in">
+<p>(1) 展开 — 辩论 ／ 扩大 — 影响 ／ 归纳 — 观点 ／ 批准 — 方案<br>
+(2) 缓解 — 矛盾 ／ 取消 — 限制 ／ 赔偿 — 损失 ／ 期待 — 胜利</p></div></details><details><summary>做一做 — 表现 или 体现</summary><div class="in">
+<p>(1) 用表格来说明问题是一种有条理的思考方法的<span class="k">体现</span>。（表现 ✗ 体现 ✓）<br>
+(2) 人们一直认为，哭是胆小、软弱的<span class="k">表现</span>。<br>
+(3) 丽丽是不会错过这个在大家面前<span class="k">表现</span>自己的机会的。<br>
+(4) 人生的价值不<span class="k">体现</span>在你口袋里有多少钱，而在于你为社会做出了多少贡献。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+(2) — существительное «проявление чего-то в человеке», а существительным бывает только 表现.
+(3) — «показать себя», второе значение 表现. (1) и (4) — «воплощается в…», это 体现.</p></div></details><details><summary>练一练 1 — 照常（образцы）</summary><div class="in">
+<p>(1) 刘老师从北京回来后，<span class="k">第二天就照常给我们上课了</span>。（照常）<br>
+(2) A: 王医生，<span class="k">我这样的情况，手术以后还能照常运动</span>吗？（照常）<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: 一般来说，手术后三个月就可以参加一般的运动了。<br>
+(3) A: 快过年了，不知道胡同口的那家超市春节还开不开？<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">我问过了，春节期间他们照常营业</span>。（照常）</p></div></details><details><summary>练一练 2 — 难怪（образцы）</summary><div class="in">
+<p>(1) 这也难怪，<span class="k">他刚来这个城市，什么都不熟悉，走错路很正常</span>。<br>
+(2) 你一点儿也不理解他的想法，<span class="k">难怪你们俩总是吵架</span>。（难怪）<br>
+(3) A: 李岩和我是小学同学，我们认识快20年了。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">难怪你们俩这么熟，说话一点儿都不客气</span>。（难怪）</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+(1) — глагольное 这也难怪 («его можно понять»); (2) и (3) — наречие по схеме
+«причина → 难怪 → следствие».</p></div></details><details><summary>练一练 3 — 与其（образцы）</summary><div class="in">
+<p>(1) 那些赶时髦的消费者，<span class="k">与其说是买东西</span>，不如说是买牌子。（与其说……不如说）<br>
+(2) <span class="k">与其说他是靠实力赢的</span>，我宁可相信是他运气好。（与其）<br>
+(3) A: 我们在这儿等公交车吧，下站就是物美超市。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: 这么近，<span class="k">与其在这儿干等，不如走着过去</span>。（与其）</p></div></details><details><summary>扩展 做一做 — 交通</summary><div class="in">
+<p>(1) 列车长办公室在9号<span class="k">车厢</span>，请到那儿办理补票手续。<br>
+(2) 刚考下驾照时，他陪我到郊外练车，<span class="k">拐弯</span>、倒车、停车，没一个月我就敢自己上路了。<br>
+(3) 月亮<span class="k">绕</span>地球一圈的真实时间是27日7小时43分11秒。<br>
+(4) 这个交通标志表示禁止停车，在这儿停车是要被<span class="k">罚款</span>的。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+交通: 卡车（kǎchē）、列车（lièchē）、摩托车（mótuōchē）、行人（xíngrén）、车厢（chēxiāng）、
+车库（chēkù）、拐弯（guǎiwān）、绕（rào）、长途（chángtú）、运输（yùnshū）、汽油（qìyóu）、
+罚款（fákuǎn）.</p></div></details></section>
+<section>
+  <h2>Сочинение <span class="cn">命题写作：绿色出行，从我做起</span></h2>
+  <p>Тема почти совпадает с выводом текста, поэтому проще всего взять его логику целиком:
+  сначала признать, что машина удобна, потом посчитать, что она на самом деле стоит,
+  затем назвать свой выбор и закончить мыслью о том, для кого построен город.</p>
+  <div class="card green">
+    <p class="cn-ex" style="line-height:2">城市汽车的数量迅速增长，最初被看作经济<span class="hl">繁荣</span>的
+    <span class="hl">体现</span>，可现在堵车已经成了<span class="hl">家常</span>便饭。
+    很多人觉得，只要新建或加<span class="hl">宽</span>道路就能解决问题，
+    但那只是美好的<span class="hl">主观</span>愿望：道路扩建的速度永远跟不上车辆增加的速度。
+    我自己也算过一笔账：<span class="hl">与其</span>每天堵在路上浪费时间和<span class="hl">汽油</span>，
+    污染环境，倒不如改乘公交。这也<span class="hl">难怪</span>，
+    现在<span class="hl">自愿</span>放弃开私家车的人越来越多。
+    所以我的做法很<span class="hl">明确</span>：上班坐地铁，三公里以内骑自行车，
+    周末尽量步行。这些小事当然不能<span class="hl">根治</span>拥堵，
+    但如果每个人都这样做，道路拥堵一定会大为<span class="hl">缓解</span>。
+    城市本是为人而建，我<span class="hl">期待</span>有一天它能真正被<span class="hl">解放</span>出来。</p>
+  </div>
+  <h3>Связки, которые стоит взять с собой</h3>
+  <ul>
+    <li><span class="cn-ex">最初被看作……的体现，可现在……已经成了家常便饭</span> — зачин с поворотом;</li>
+    <li><span class="cn-ex">那只是美好的主观愿望：……永远跟不上……</span> — возражение общепринятому;</li>
+    <li><span class="cn-ex">我自己也算过一笔账：与其……倒不如……</span> — личный довод;</li>
+    <li><span class="cn-ex">这些小事当然不能根治……，但如果每个人都这样做，……一定会大为缓解</span> — честная оговорка;</li>
+    <li><span class="cn-ex">城市本是为人而建</span> — фраза из текста, годится как концовка.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>План на урок <span class="cn">复习计划</span></h2>
+  <ol class="route">
+    <li><b>Пройдите шесть полос схемы.</b> Проблема → привычное решение (перечёркнуто) →
+    исследование → случай → меры → результат. Вторая полоса важнее всего: именно её отрицание
+    и даёт весь текст.</li>
+    <li><b>Соберите пересказ по таблице учебника.</b> Три блока: 城市交通的问题 (拥堵、新建/加宽道路、跟不上),
+    启发詹森的一件事 (照常、健身、图省事、撞倒、受伤), 詹森的妙招及其效果
+    (增设、红绿灯、取消、通道、行人、难怪、与其、公交、缓解).</li>
+    <li><b>Закройте пару 表现／体现.</b> Проверка: можно ли сказать «воплощается в…».
+    И помните, что существительным бывает только 表现.</li>
+    <li><b>Выучите рамку 与其……倒不如……</b> — вместе со вторым вариантом 与其说……不如说…….
+    Это одна из самых полезных конструкций всего тома.</li>
+    <li><b>Разведите 难怪 и 难道.</b> 难怪 объясняет уже известное, 难道 спрашивает.
+    По два своих примера на каждое.</li>
+    <li><b>Напишите сочинение.</b> 100 знаков по схеме «машина удобна — но вот счёт —
+    мой выбор — для кого построен город», обязательно с 与其……倒不如…… и одним 难怪.</li>
+  </ol>
+</section>
+
+
+<nav class="botnav"><a href="hsk5b-lesson-32.html"><span>← Урок 32</span>身边的环保</a><a href="hsk5b-lesson-34.html"><span>Урок 34 →</span>鸟儿的护肤术</a></nav>
+
+<footer>HSK 标准教程 5（下） · урок 33 «以堵治堵——缓解交通有妙招» · конспект для подготовки к экзамену</footer>
+
+</div>
+<script>
+
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML =
+      '<span class="w">' + z.dataset.w + '</span>' +
+      '<span class="p">' + z.dataset.p + '</span>' +
+      '<span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    out.innerHTML = def;
+  }
+
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+
+  var box = document.querySelector('.plan-box svg');
+  box.addEventListener('mouseleave', clear);
+})();
+
+</script>
+<script>
+
+(function(){
+  var LESSON = "33";
+  var DIRS = ["audio/", "", "mp3/", "media/", "аудио/", "audio/33/", "33/"];
+  var CAND = [];
+  DIRS.forEach(function(d){ CAND.push(d + "{hz}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{hz2}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{pyn}.mp3"); });
+
+  var patIn  = document.getElementById('ab-pat');
+  var status = document.getElementById('ab-status');
+  var btns   = Array.prototype.slice.call(document.querySelectorAll('.pb[data-hz]'));
+  var cur = null, curBtn = null, queue = null;
+
+  function pad(n){ n = String(n||''); return n.length === 1 ? '0'+n : n; }
+
+  function resolve(pat, b){
+    return pat
+      .replace(/\{hz2\}/g, b.dataset.hz2 || b.dataset.hz)
+      .replace(/\{hz\}/g,  b.dataset.hz)
+      .replace(/\{pyn\}/g, b.dataset.pyn)
+      .replace(/\{py\}/g,  b.dataset.py)
+      .replace(/\{num\}/g, pad(b.dataset.num))
+      .replace(/\{n\}/g,   b.dataset.num || '')
+      .replace(/\{L\}/g,   LESSON);
+  }
+
+  function setStatus(t, cls){
+    status.textContent = t || '';
+    status.className = 'ab-status' + (cls ? ' ' + cls : '');
+  }
+
+  function test(pat, b){
+    return new Promise(function(res){
+      var a = new Audio(), done = false;
+      function ok(){ if(!done){ done = true; res(true); } }
+      function no(){ if(!done){ done = true; res(false); } }
+      a.addEventListener('loadedmetadata', ok);
+      a.addEventListener('canplay', ok);
+      a.addEventListener('error', no);
+      a.preload = 'metadata';
+      a.src = encodeURI(resolve(pat, b));
+      setTimeout(no, 2500);
+    });
+  }
+
+  function stop(){
+    if(cur){ cur.pause(); cur = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn = null; }
+    queue = null;
+    document.querySelectorAll('.pball.playing').forEach(function(x){ x.classList.remove('playing'); });
+  }
+
+  /* проигрывание с запасными вариантами имени для этого слова */
+  function play(b, onEnd){
+    stop();
+    var tries = [patIn.value.trim()];
+    var alt = (b.dataset.hz2 && b.dataset.hz2 !== b.dataset.hz)
+      ? patIn.value.trim().replace('{hz}', '{hz2}') : null;
+    if(alt && tries.indexOf(alt) < 0) tries.push(alt);
+    CAND.forEach(function(p){ if(tries.indexOf(p) < 0) tries.push(p); });
+
+    b.classList.add('playing');
+    var i = 0;
+    (function attempt(){
+      if(i >= tries.length){
+        b.classList.remove('playing');
+        b.classList.add('missing');
+        b.title = 'Не найден файл для ' + b.dataset.hz;
+        setStatus('Не найден файл для ' + b.dataset.hz + ' — проверьте папку или шаблон.', 'bad');
+        if(onEnd) onEnd();
+        return;
+      }
+      var src = resolve(tries[i++], b);
+      var a = new Audio(encodeURI(src));
+      var started = false;
+      a.addEventListener('canplay', function(){ started = true; });
+      a.addEventListener('ended', function(){
+        b.classList.remove('playing');
+        if(cur === a){ cur = null; curBtn = null; }
+        if(onEnd) onEnd();
+      });
+      a.addEventListener('error', function(){
+        if(!started){ attempt(); }
+        else { b.classList.remove('playing'); if(onEnd) onEnd(); }
+      });
+      cur = a; curBtn = b;
+      b.classList.remove('missing');
+      a.play().catch(function(){});
+    })();
+  }
+
+  /* автопоиск папки при открытии */
+  function autodetect(quiet){
+    if(!btns.length) return;
+    if(!quiet) setStatus('Перебираю варианты…');
+    var i = 0;
+    (function next(){
+      if(i >= CAND.length){
+        setStatus(quiet
+          ? 'Папка с mp3 не найдена. Положите файлы в audio рядом с этим документом.'
+          : 'Ни один из типовых вариантов не подошёл. Впишите путь вручную.',
+          quiet ? '' : 'bad');
+        return;
+      }
+      var p = CAND[i++];
+      test(p, btns[0]).then(function(ok){
+        if(ok){
+          patIn.value = p;
+          document.querySelectorAll('.pb.missing').forEach(function(x){
+            x.classList.remove('missing'); x.title = '';
+          });
+          setStatus('Озвучка подключена: ' + p, 'ok');
+        } else next();
+      });
+    })();
+  }
+
+  document.getElementById('ab-auto').addEventListener('click', function(){ autodetect(false); });
+  document.getElementById('ab-test').addEventListener('click', function(){
+    if(!btns.length) return;
+    setStatus('Проверяю…');
+    test(patIn.value.trim(), btns[0]).then(function(ok){
+      setStatus((ok ? 'Файл найден: ' : 'Не найден: ') + resolve(patIn.value.trim(), btns[0]),
+                ok ? 'ok' : 'bad');
+    });
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(curBtn === b && cur){ stop(); return; }
+      play(b);
+    });
+  });
+
+  document.querySelectorAll('.pball').forEach(function(pb){
+    pb.addEventListener('click', function(){
+      if(pb.classList.contains('playing')){ stop(); return; }
+      var list = Array.prototype.slice.call(
+        pb.closest('.cluster').querySelectorAll('.pb[data-hz]'));
+      stop();
+      pb.classList.add('playing');
+      var i = 0;
+      queue = list;
+      (function step(){
+        if(queue !== list || i >= list.length){ pb.classList.remove('playing'); return; }
+        play(list[i++], function(){ setTimeout(step, 350); });
+      })();
+    });
+  });
+
+  autodetect(true);
+})();
+
+</script>
+</body>
+</html>

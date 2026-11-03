@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 28 · 最受欢迎的毕业生 · HSK 标准教程 5下</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#23262a;
+  --brick:#6f6b63;
+  --paper:#e3e1da;
+  --card:#f2f1ec;
+  --red:#b4342a;
+  --brass:#a8813c;
+  --bamboo:#4a6b4e;
+  --sky:#54748a;
+  --line:rgba(35,38,42,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:
+    linear-gradient(rgba(255,255,255,.35) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.35) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+/* ——— шапка ——— */
+header{padding:56px 0 28px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{
+  font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;
+  color:var(--red);letter-spacing:-.03em;
+}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:44px;line-height:1.05;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brick);margin-top:9px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+/* ——— секции ——— */
+section{margin-top:58px}
+h2{
+  font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px;
+}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+a{color:var(--red)}
+
+/* ——— план двора ——— */
+.plan-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px;
+  box-shadow:0 1px 0 rgba(35,38,42,.06)}
+.plan-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone rect,.zone circle,.zone path{transition:fill .18s ease}
+.zone:hover .fillable,.zone.on .fillable{fill:#e7cfc9}
+.zone:focus{outline:none}
+.zone:focus-visible .fillable{stroke:var(--red);stroke-width:2.5}
+.zlab{font-family:var(--han);font-size:15px;font-weight:600;fill:var(--ink);pointer-events:none}
+.zpin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.04em}
+.faint{font-family:var(--han);font-size:12px;fill:var(--brick);pointer-events:none}
+.compass{font-family:var(--mono);font-size:10px;fill:var(--brick);letter-spacing:.15em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:62px}
+.readout .w{font-family:var(--han);font-size:22px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:13px;color:var(--sky)}
+.readout .d{display:block;margin-top:4px;font-size:15px}
+.readout .hint{color:var(--brick);font-style:italic}
+
+/* ——— карточки слов ——— */
+.cluster{margin-top:26px}
+.cluster h3{margin-bottom:4px}
+.cluster .why{font-size:14px;color:var(--brick);margin-bottom:14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--brass);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+/* ——— общие блоки ——— */
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.green{border-left:4px solid var(--bamboo)}
+.card.brass{border-left:4px solid var(--brass)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--paper);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.b{background:var(--brass)}
+.tag.g{background:var(--bamboo)}
+.tag.r{background:var(--red)}
+
+/* ——— таблицы ——— */
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(35,38,42,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+/* ——— на слух ——— */
+.trap{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+/* ——— ответы ——— */
+details{background:var(--card);border:1px solid var(--line);margin:10px 0;padding:0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+/* ——— финал ——— */
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;
+  font-family:var(--disp);font-weight:700;font-size:22px;color:var(--red);
+  width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .lesson-no{font-size:66px}
+  h1{font-size:32px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+
+
+:root{--red:#8a3a52;--brass:#9a7a2c;--bamboo:#4e7046;--sky:#55708c;--paper:#e6e1e2;--card:#f6f2f3}
+.zone:hover .fillable,.zone.on .fillable{fill:#efd6dd}
+.rowlab{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;fill:var(--brick)}
+.zsub{font-family:var(--han);font-size:8.5px;fill:var(--brick);pointer-events:none;letter-spacing:0}
+.tiny{font-family:var(--han);font-size:11.5px;fill:var(--brick);pointer-events:none}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index-5b.html">&#8592; Все уроки 5B</a><a href="index.html">Учебник 5A</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（下） · Unit 10 关注经济 · Focusing on economy</div>
+  <div class="title-row">
+    <div class="lesson-no">28</div>
+    <h1>最受欢迎的毕业生<span class="lat">Самый желанный выпускник · 673 字 · стр. 76–83</span></h1>
+  </div>
+  <div class="meta">
+    <span><b>40</b> новых слов</span>
+    <span><b>3</b> грамматические точки</span>
+    <span>ключ: <b>从此 · 假设 · 堆</b></span>
+  </div>
+</header>
+
+
+<section>
+  <p class="lede">История про то, как детское увлечение оказалось единственным настоящим преимуществом
+  в резюме. Текст идёт ровно четырьмя шагами — тревога, предыстория, эфир, результат, — и схема ниже
+  повторяет их в том же порядке. Попутно урок даёт целый пласт лексики про поиск работы,
+  которая нужна и в 书写, и на HSKK.</p>
+</section>
+
+<section id="plan">
+  <h2>От «没什么优势» до «不缺机会» <span class="cn">最受欢迎的毕业生</span></h2>
+  <div class="plan-box">
+    <svg viewBox="0 0 660 450" role="img" aria-label="Схема урока: от тревоги выпускника к предложению работы"><text class="rowlab" x="18" y="22">1 · ТРЕВОГА ВЫПУСКНИКА 刘辰的烦恼</text><g class="zone" tabindex="0" data-w="23岁的应届本科毕业生" data-p="jiè · běnkē · jiù yè · yōushì" data-d="他叫刘辰，是一个年仅23岁的应届本科毕业生，再过一个月就要毕业了。面对并不乐观的就业形势，他压力很大：“说实话，我觉得自己实在没什么优势。”"><rect class="fillable" x="30" y="32" width="600" height="52" rx="3" fill="#ead9de" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="56" text-anchor="middle" style="font-size:14px">面对并不乐观的就业形势：“实在没什么优势”</text><text class="zsub" x="330" y="74" text-anchor="middle">届 · 本科 · 面对 · 乐观 · 就业 · 实话 · 优势</text></g><text class="rowlab" x="18" y="112">2 · ЧТО БЫЛО ЗА ПЛЕЧАМИ 公交就是他最好的伙伴</text><g class="zone" tabindex="0" data-w="小学六年级 · 迷上了公交车" data-p="迷上了公交车" data-d="因为小学六年级的时候，他迷上了公交车，从此，就一直关注公交线路。"><rect class="fillable" x="30" y="122" width="141" height="54" rx="3" fill="#e4e0e8" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="100" y="146" text-anchor="middle" style="font-size:13px">小学六年级</text><text class="zsub" x="100" y="164" text-anchor="middle">迷上了公交车</text></g><path d="M171 149 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a28)"/><g class="zone" tabindex="0" data-w="从此关注线路 · 从此" data-p="从此 · 范围" data-d="从此，就一直关注公交线路，北京市范围内所有的公交线路他都了如指掌。"><rect class="fillable" x="183" y="122" width="141" height="54" rx="3" fill="#e4e0e8" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="253" y="146" text-anchor="middle" style="font-size:13px">从此关注线路</text><text class="zsub" x="253" y="164" text-anchor="middle">从此 · 范围</text></g><path d="M324 149 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a28)"/><g class="zone" tabindex="0" data-w="了如指掌 · 初中" data-p="初中 · 顾问" data-d="从上初中起，他就是同学们的出行顾问，无论谁要去哪里，他都能很快地回答出最方便的路线。"><rect class="fillable" x="336" y="122" width="141" height="54" rx="3" fill="#e4e0e8" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="406" y="146" text-anchor="middle" style="font-size:13px">了如指掌</text><text class="zsub" x="406" y="164" text-anchor="middle">初中 · 顾问</text></g><path d="M477 149 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a28)"/><g class="zone" tabindex="0" data-w="同学们的顾问 · 参考" data-p="参考 · 成长 · 伙伴" data-d="……提供给同学们参考。在他的成长过程中，公交就是他最好的伙伴。"><rect class="fillable" x="489" y="122" width="141" height="54" rx="3" fill="#e4e0e8" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="559" y="146" text-anchor="middle" style="font-size:13px">同学们的顾问</text><text class="zsub" x="559" y="164" text-anchor="middle">参考 · 成长 · 伙伴</text></g><text class="rowlab" x="18" y="204">3 · НА СЪЁМОЧНОЙ ПЛОЩАДКЕ 节目现场</text><g class="zone" tabindex="0" data-w="简历 → 现场求职" data-p="简历 · 现场 · 职位 · 体验" data-d="天津卫视《非你莫属》节目组看了他的简历，接受了他的申请，他可以到节目现场去求职。来到现场，他发现，果然有一家公司有适合他的职位——旅游体验师。"><rect class="fillable" x="30" y="214" width="190" height="68" rx="3" fill="#e2e6ea" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="125" y="240" text-anchor="middle" style="font-size:13.5px">简历 → 现场求职</text><text class="zsub" x="125" y="262" text-anchor="middle">简历 · 现场 · 职位 · 体验</text></g><g class="zone" tabindex="0" data-w="才艺与考题" data-p="制作 · 才艺 · 假设 · 乘 · 反应 · 到达" data-d="节目制作时，电视台问他有什么才艺，他便说：“我是个公交迷，对北京市的公交、地铁线路都有一些研究。”主持人现场考他：“假设我要从国贸到鼓楼大街，该怎么乘车？”他反应得非常快，马上回答说：“在国贸坐1路车，到天安门东，换乘82路，就可以到达。”"><rect class="fillable" x="236" y="214" width="190" height="68" rx="3" fill="#e2e6ea" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="331" y="240" text-anchor="middle" style="font-size:13.5px">才艺与考题</text><text class="zsub" x="331" y="262" text-anchor="middle">制作 · 才艺 · 假设 · 乘 · 反应 · 到达</text></g><g class="zone" tabindex="0" data-w="12位老板提问" data-p="老板 · 陆续 · 提问 · 堆 · 情侣 · 制订 · 休闲 · 具体" data-d="他的回答让台上的12位老板都兴奋了起来，他们开始陆续向他提问。他有问必答，不但准确无误地按顺序报了一大堆公交车、地铁站的名字，而且还给一对情侣制订了北京休闲一日游的具体方案。"><rect class="fillable" x="442" y="214" width="188" height="68" rx="3" fill="#e2e6ea" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="536" y="240" text-anchor="middle" style="font-size:13.5px">12位老板提问</text><text class="zsub" x="536" y="262" text-anchor="middle">老板 · 陆续 · 提问 · 堆 · 情侣 · 制订 · 休闲</text></g><text class="rowlab" x="18" y="308">4 · РЕЗУЛЬТАТ 专注的人永远不缺机会</text><g class="zone" tabindex="0" data-w="求职的大门打开了" data-p="xiǎnrán · chénglì · bùmén" data-d="他对公交的这种专注显然为他的求职打开了大门。老总们向他发出了热情的邀请，给他非常好的职位和待遇，甚至要专门为他成立有关的部门，只为留住这个人才。最终，他选择了一家他感兴趣的单位。"><rect class="fillable" x="30" y="318" width="290" height="60" rx="3" fill="#e4e0e8" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="175" y="344" text-anchor="middle" style="font-size:14px">职位 · 待遇 · 成立部门</text><text class="zsub" x="175" y="364" text-anchor="middle">显然 · 成立 · 部门 · 留住人才</text></g><path d="M324 348 h10" stroke="#23262a" stroke-width="1.2" marker-end="url(#a28)"/><g class="zone" tabindex="0" data-w="专注的人永远不缺机会" data-p="zhuānzhù · zhízhuó · guāngmíng · qiántú · hángyè · quēfá" data-d="主持人问这家公司的老总：“你给的工资是不是太高了？”这个老总回答：“专业的、执着的、优秀的人才是无价的，这样的人一定会有光明的前途。”是的，无论在哪个行业，最缺乏的永远都是专注的人。专注的人永远不缺机会！"><rect class="fillable" x="340" y="318" width="290" height="60" rx="3" fill="#e3eae2" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="485" y="344" text-anchor="middle" style="font-size:14px">专业的、执着的人才是无价的</text><text class="zsub" x="485" y="364" text-anchor="middle">光明 · 前途 · 行业 · 缺乏</text></g><text class="tiny" x="330" y="412" text-anchor="middle">一个从六年级开始的爱好，十一年后成了简历上唯一的优势。</text><defs><marker id="a28" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" fill="#23262a"/></marker></defs></svg>
+    <div class="readout" id="readout">
+      <span class="hint">Наведите курсор или коснитесь любого блока — появится соответствующее место текста.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Текст в четырёх кадрах <span class="cn">课文 · 673 字</span></h2>
+
+  <div class="card red">
+    <p><span class="tag r">кадр 1</span><b>Тревога.</b> 他叫刘辰，是一个年仅23岁的应届本科毕业生，
+    再过一个月就要毕业了。面对并不乐观的就业形势，他压力很大：“说实话，我觉得自己实在没什么优势。”</p>
+    <p style="margin:0"><b>Слова кадра:</b> <span class="cn-ex">届 · 本科 · 面对 · 乐观 · 就业 · 实话 · 优势</span></p>
+  </div>
+
+  <div class="card green">
+    <p><span class="tag g">кадр 2</span><b>Что было за плечами.</b> 就在他为工作发愁时，机会来了:
+    天津卫视《非你莫属》节目组看了他的简历，接受了他的申请，他可以到节目现场去求职.
+    На месте выяснилось: 果然有一家公司有适合他的职位——旅游体验师. Почему именно он?
+    因为小学六年级的时候，他迷上了公交车，从此，就一直关注公交线路，北京市范围内所有的公交线路
+    他都了如指掌。从上初中起，他就是同学们的出行顾问，无论谁要去哪里，他都能很快地回答出最方便的路线，
+    提供给同学们参考。在他的成长过程中，公交就是他最好的伙伴。</p>
+    <p style="margin:0"><b>Слова кадра:</b> <span class="cn-ex">简历 · 现场 · 职位 · 体验 · 从此 · 范围 · 初中 · 顾问 · 参考 · 成长</span></p>
+  </div>
+
+  <div class="card brass">
+    <p><span class="tag b">кадр 3</span><b>Эфир.</b> 节目制作时，电视台问他有什么才艺，他便说：
+    “我是个公交迷，对北京市的公交、地铁线路都有一些研究。” Ведущий проверяет прямо в студии:
+    假设我要从国贸到鼓楼大街，该怎么乘车？ — 他反应得非常快，马上回答说：“在国贸坐1路车，到天安门东，
+    换乘82路，就可以到达。” 他的回答让台上的12位老板都兴奋了起来，他们开始陆续向他提问。
+    他有问必答，不但准确无误地按顺序报了一大堆公交车、地铁站的名字，而且还给一对情侣制订了
+    北京休闲一日游的具体方案。</p>
+    <p style="margin:0"><b>Слова кадра:</b> <span class="cn-ex">制作 · 才艺 · 假设 · 乘 · 反应 · 到达 · 老板 · 陆续 · 提问 · 堆 · 情侣 · 制订 · 休闲 · 具体</span></p>
+  </div>
+
+  <div class="card">
+    <p><span class="tag">кадр 4</span><b>Результат.</b> 他对公交的这种专注显然为他的求职打开了大门。
+    老总们向他发出了热情的邀请，给他非常好的职位和待遇，甚至要专门为他成立有关的部门，
+    只为留住这个人才。最终，他选择了一家他感兴趣的单位. На вопрос ведущего, не слишком ли высокая
+    зарплата, директор отвечает: 专业的、执着的、优秀的人才是无价的，这样的人一定会有光明的前途.
+    И вывод: 无论在哪个行业，最缺乏的永远都是专注的人。专注的人永远不缺机会！</p>
+    <p style="margin:0"><b>Слова кадра:</b> <span class="cn-ex">专注 · 显然 · 成立 · 部门 · 执着 · 光明 · 前途 · 行业 · 缺乏</span></p>
+  </div>
+  <p style="font-size:14px;color:var(--brick)">改编自《年轻人》，作者：张宏生</p>
+</section>
+
+<section>
+  <h2>40 слов по гнёздам <span class="cn">生词 + 专有名词</span></h2>
+  <p style="font-size:14px;color:var(--brick)"><span class="star">★</span> — слово сверх программы HSK 5 (в учебнике помечено звёздочкой). Последние три — имена собственные; в тексте есть ещё 国贸, 鼓楼大街 и 天安门东 — это станции и районы Пекина.</p>
+
+  <div class="audiobar" id="audiobar">
+    <div class="ab-t">Озвучка слов</div>
+    <div class="ab-row">
+      <input id="ab-pat" type="text" spellcheck="false" value="audio/{hz}.mp3" aria-label="Шаблон пути к mp3">
+      <button type="button" id="ab-auto">Подобрать</button>
+      <button type="button" id="ab-test">Проверить</button>
+    </div>
+    <div class="ab-status" id="ab-status"></div>
+    <div class="ab-note">
+      Ищутся файлы вида <code>иероглиф.mp3</code> — сначала в папке <code>audio</code> рядом с этим документом,
+      потом прямо рядом с ним. Подстановки: <code>{hz}</code>, <code>{py}</code>, <code>{pyn}</code>,
+      <code>{num}</code>, <code>{L}</code>.
+    </div>
+  </div>
+<div class="cluster"><h3>I. Выпускник перед рынком труда<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Первый абзац — и сразу вся лексика резюме, нужная на экзамене.</div><div class="words"><div class="w-item"><span class="hz">届</span><span class="py">jiè</span><button class="pb" type="button" data-hz="届" data-hz2="届" data-py="jiè" data-pyn="jie" data-num="1" aria-label="Прослушать 届" title="Прослушать 届">&#9654;</button><span class="ru">выпуск, созыв (счётное)</span><span class="ex">应届毕业生 / 一届学生</span></div><div class="w-item"><span class="hz">本科</span><span class="py">běnkē</span><button class="pb" type="button" data-hz="本科" data-hz2="本科" data-py="běnkē" data-pyn="benke" data-num="2" aria-label="Прослушать 本科" title="Прослушать 本科">&#9654;</button><span class="ru">бакалавриат, высшее первой ступени</span><span class="ex">本科毕业生 / 本科生</span></div><div class="w-item"><span class="hz">面对</span><span class="py">miànduì</span><button class="pb" type="button" data-hz="面对" data-hz2="面对" data-py="miànduì" data-pyn="miandui" data-num="3" aria-label="Прослушать 面对" title="Прослушать 面对">&#9654;</button><span class="ru">стоять перед, встречать лицом к лицу</span><span class="ex">面对就业形势 / 面对困难</span></div><div class="w-item"><span class="hz">乐观</span><span class="py">lèguān</span><button class="pb" type="button" data-hz="乐观" data-hz2="乐观" data-py="lèguān" data-pyn="leguan" data-num="4" aria-label="Прослушать 乐观" title="Прослушать 乐观">&#9654;</button><span class="ru">оптимистичный</span><span class="ex">并不乐观 / 乐观地面对生活</span></div><div class="w-item"><span class="hz">就业</span><span class="py">jiù yè</span><span class="star">★</span><button class="pb" type="button" data-hz="就业" data-hz2="就业" data-py="jiù yè" data-pyn="jiuye" data-num="5" aria-label="Прослушать 就业" title="Прослушать 就业">&#9654;</button><span class="ru">трудоустройство, найти работу</span><span class="ex">就业形势 / 大学生就业</span></div><div class="w-item"><span class="hz">实话</span><span class="py">shíhuà</span><button class="pb" type="button" data-hz="实话" data-hz2="实话" data-py="shíhuà" data-pyn="shihua" data-num="6" aria-label="Прослушать 实话" title="Прослушать 实话">&#9654;</button><span class="ru">правда, честно говоря</span><span class="ex">说实话 / 实话实说</span></div><div class="w-item"><span class="hz">优势</span><span class="py">yōushì</span><button class="pb" type="button" data-hz="优势" data-hz2="优势" data-py="yōushì" data-pyn="youshi" data-num="7" aria-label="Прослушать 优势" title="Прослушать 优势">&#9654;</button><span class="ru">преимущество, сильная сторона</span><span class="ex">没什么优势 / 占优势</span></div><div class="w-item"><span class="hz">简历</span><span class="py">jiǎnlì</span><button class="pb" type="button" data-hz="简历" data-hz2="简历" data-py="jiǎnlì" data-pyn="jianli" data-num="8" aria-label="Прослушать 简历" title="Прослушать 简历">&#9654;</button><span class="ru">резюме</span><span class="ex">看了他的简历 / 一份简历</span></div></div></div><div class="cluster"><h3>II. Увлечение, ставшее базой<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Вторая часть — как «бесполезное» хобби превратилось в профессию.</div><div class="words"><div class="w-item"><span class="hz">现场</span><span class="py">xiànchǎng</span><span class="star">★</span><button class="pb" type="button" data-hz="现场" data-hz2="现场" data-py="xiànchǎng" data-pyn="xianchang" data-num="9" aria-label="Прослушать 现场" title="Прослушать 现场">&#9654;</button><span class="ru">место события, студия</span><span class="ex">节目现场 / 现场考他</span></div><div class="w-item"><span class="hz">职位</span><span class="py">zhíwèi</span><span class="star">★</span><button class="pb" type="button" data-hz="职位" data-hz2="职位" data-py="zhíwèi" data-pyn="zhiwei" data-num="10" aria-label="Прослушать 职位" title="Прослушать 职位">&#9654;</button><span class="ru">должность, позиция</span><span class="ex">适合他的职位 / 好的职位</span></div><div class="w-item"><span class="hz">体验</span><span class="py">tǐyàn</span><button class="pb" type="button" data-hz="体验" data-hz2="体验" data-py="tǐyàn" data-pyn="tiyan" data-num="11" aria-label="Прослушать 体验" title="Прослушать 体验">&#9654;</button><span class="ru">испытать на себе, прочувствовать</span><span class="ex">旅游体验师 / 体验生活</span></div><div class="w-item"><span class="hz">从此</span><span class="py">cóngcǐ</span><button class="pb" type="button" data-hz="从此" data-hz2="从此" data-py="cóngcǐ" data-pyn="congci" data-num="12" aria-label="Прослушать 从此" title="Прослушать 从此">&#9654;</button><span class="ru">с этого момента, с тех пор</span><span class="ex">从此就一直关注 / 从此以后</span></div><div class="w-item"><span class="hz">范围</span><span class="py">fànwéi</span><button class="pb" type="button" data-hz="范围" data-hz2="范围" data-py="fànwéi" data-pyn="fanwei" data-num="13" aria-label="Прослушать 范围" title="Прослушать 范围">&#9654;</button><span class="ru">пределы, охват</span><span class="ex">北京市范围内 / 扩大范围</span></div><div class="w-item"><span class="hz">初（级）中（学）</span><span class="py">chū(jí)zhōng(xué)</span><button class="pb" type="button" data-hz="初（级）中（学）" data-hz2="初中" data-py="chū(jí)zhōng(xué)" data-pyn="chu(ji)zhong(xue)" data-num="14" aria-label="Прослушать 初（级）中（学）" title="Прослушать 初（级）中（学）">&#9654;</button><span class="ru">средняя школа первой ступени</span><span class="ex">从上初中起</span></div><div class="w-item"><span class="hz">顾问</span><span class="py">gùwèn</span><span class="star">★</span><button class="pb" type="button" data-hz="顾问" data-hz2="顾问" data-py="gùwèn" data-pyn="guwen" data-num="15" aria-label="Прослушать 顾问" title="Прослушать 顾问">&#9654;</button><span class="ru">консультант, советчик</span><span class="ex">出行顾问 / 法律顾问</span></div><div class="w-item"><span class="hz">参考</span><span class="py">cānkǎo</span><button class="pb" type="button" data-hz="参考" data-hz2="参考" data-py="cānkǎo" data-pyn="cankao" data-num="16" aria-label="Прослушать 参考" title="Прослушать 参考">&#9654;</button><span class="ru">справляться, принимать во внимание</span><span class="ex">提供给同学们参考 / 仅供参考</span></div><div class="w-item"><span class="hz">成长</span><span class="py">chéngzhǎng</span><button class="pb" type="button" data-hz="成长" data-hz2="成长" data-py="chéngzhǎng" data-pyn="chengzhang" data-num="17" aria-label="Прослушать 成长" title="Прослушать 成长">&#9654;</button><span class="ru">расти, взрослеть</span><span class="ex">成长过程 / 健康成长</span></div></div></div><div class="cluster"><h3>III. Прямой эфир<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Самый длинный абзац — и самый «телевизионный» словарь урока.</div><div class="words"><div class="w-item"><span class="hz">制作</span><span class="py">zhìzuò</span><button class="pb" type="button" data-hz="制作" data-hz2="制作" data-py="zhìzuò" data-pyn="zhizuo" data-num="18" aria-label="Прослушать 制作" title="Прослушать 制作">&#9654;</button><span class="ru">изготавливать, производить (вещь, передачу)</span><span class="ex">节目制作 / 制作玩具</span></div><div class="w-item"><span class="hz">才艺</span><span class="py">cáiyì</span><span class="star">★</span><button class="pb" type="button" data-hz="才艺" data-hz2="才艺" data-py="cáiyì" data-pyn="caiyi" data-num="19" aria-label="Прослушать 才艺" title="Прослушать 才艺">&#9654;</button><span class="ru">талант, умение (для показа)</span><span class="ex">有什么才艺</span></div><div class="w-item"><span class="hz">假设</span><span class="py">jiǎshè</span><button class="pb" type="button" data-hz="假设" data-hz2="假设" data-py="jiǎshè" data-pyn="jiashe" data-num="20" aria-label="Прослушать 假设" title="Прослушать 假设">&#9654;</button><span class="ru">предположим, что; гипотеза</span><span class="ex">假设我要从国贸…… / 一种假设</span></div><div class="w-item"><span class="hz">乘</span><span class="py">chéng</span><span class="star">★</span><button class="pb" type="button" data-hz="乘" data-hz2="乘" data-py="chéng" data-pyn="cheng" data-num="21" aria-label="Прослушать 乘" title="Прослушать 乘">&#9654;</button><span class="ru">ехать на, садиться (в транспорт)</span><span class="ex">乘车 / 换乘82路</span></div><div class="w-item"><span class="hz">反应</span><span class="py">fǎnyìng</span><button class="pb" type="button" data-hz="反应" data-hz2="反应" data-py="fǎnyìng" data-pyn="fanying" data-num="22" aria-label="Прослушать 反应" title="Прослушать 反应">&#9654;</button><span class="ru">реагировать; реакция</span><span class="ex">反应得非常快 / 什么反应</span></div><div class="w-item"><span class="hz">到达</span><span class="py">dàodá</span><button class="pb" type="button" data-hz="到达" data-hz2="到达" data-py="dàodá" data-pyn="daoda" data-num="23" aria-label="Прослушать 到达" title="Прослушать 到达">&#9654;</button><span class="ru">прибыть, добраться</span><span class="ex">就可以到达 / 到达目的地</span></div><div class="w-item"><span class="hz">老板</span><span class="py">lǎobǎn</span><button class="pb" type="button" data-hz="老板" data-hz2="老板" data-py="lǎobǎn" data-pyn="laoban" data-num="24" aria-label="Прослушать 老板" title="Прослушать 老板">&#9654;</button><span class="ru">хозяин, начальник</span><span class="ex">12位老板 / 老板发出邀请</span></div><div class="w-item"><span class="hz">陆续</span><span class="py">lùxù</span><button class="pb" type="button" data-hz="陆续" data-hz2="陆续" data-py="lùxù" data-pyn="luxu" data-num="25" aria-label="Прослушать 陆续" title="Прослушать 陆续">&#9654;</button><span class="ru">один за другим, по очереди</span><span class="ex">陆续向他提问 / 陆续走进会场</span></div><div class="w-item"><span class="hz">提问</span><span class="py">tíwèn</span><button class="pb" type="button" data-hz="提问" data-hz2="提问" data-py="tíwèn" data-pyn="tiwen" data-num="26" aria-label="Прослушать 提问" title="Прослушать 提问">&#9654;</button><span class="ru">задавать вопросы</span><span class="ex">向他提问 / 老师提问</span></div><div class="w-item"><span class="hz">堆</span><span class="py">duī</span><button class="pb" type="button" data-hz="堆" data-hz2="堆" data-py="duī" data-pyn="dui" data-num="27" aria-label="Прослушать 堆" title="Прослушать 堆">&#9654;</button><span class="ru">куча, груда (счётное); сваливать в кучу</span><span class="ex">一大堆名字 / 堆雪人</span></div><div class="w-item"><span class="hz">情侣</span><span class="py">qínglǚ</span><span class="star">★</span><button class="pb" type="button" data-hz="情侣" data-hz2="情侣" data-py="qínglǚ" data-pyn="qinglu" data-num="28" aria-label="Прослушать 情侣" title="Прослушать 情侣">&#9654;</button><span class="ru">влюблённая пара</span><span class="ex">一对情侣</span></div><div class="w-item"><span class="hz">制订</span><span class="py">zhìdìng</span><span class="star">★</span><button class="pb" type="button" data-hz="制订" data-hz2="制订" data-py="zhìdìng" data-pyn="zhiding" data-num="29" aria-label="Прослушать 制订" title="Прослушать 制订">&#9654;</button><span class="ru">разработать, составить (план)</span><span class="ex">制订方案 / 制订计划</span></div><div class="w-item"><span class="hz">休闲</span><span class="py">xiūxián</span><button class="pb" type="button" data-hz="休闲" data-hz2="休闲" data-py="xiūxián" data-pyn="xiuxian" data-num="30" aria-label="Прослушать 休闲" title="Прослушать 休闲">&#9654;</button><span class="ru">отдыхать, досуг</span><span class="ex">休闲一日游 / 休闲时间</span></div><div class="w-item"><span class="hz">具体</span><span class="py">jùtǐ</span><button class="pb" type="button" data-hz="具体" data-hz2="具体" data-py="jùtǐ" data-pyn="juti" data-num="31" aria-label="Прослушать 具体" title="Прослушать 具体">&#9654;</button><span class="ru">конкретный, детальный</span><span class="ex">具体方案 / 具体时间</span></div></div></div><div class="cluster"><h3>IV. Почему его взяли<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Финал урока: девять слов, которые складываются в вывод.</div><div class="words"><div class="w-item"><span class="hz">专注</span><span class="py">zhuānzhù</span><span class="star">★</span><button class="pb" type="button" data-hz="专注" data-hz2="专注" data-py="zhuānzhù" data-pyn="zhuanzhu" data-num="32" aria-label="Прослушать 专注" title="Прослушать 专注">&#9654;</button><span class="ru">сосредоточенный, поглощённый делом</span><span class="ex">对公交的专注 / 专注的人</span></div><div class="w-item"><span class="hz">显然</span><span class="py">xiǎnrán</span><button class="pb" type="button" data-hz="显然" data-hz2="显然" data-py="xiǎnrán" data-pyn="xianran" data-num="33" aria-label="Прослушать 显然" title="Прослушать 显然">&#9654;</button><span class="ru">очевидно, явно</span><span class="ex">显然为他打开了大门 / 显然不对</span></div><div class="w-item"><span class="hz">成立</span><span class="py">chénglì</span><button class="pb" type="button" data-hz="成立" data-hz2="成立" data-py="chénglì" data-pyn="chengli" data-num="34" aria-label="Прослушать 成立" title="Прослушать 成立">&#9654;</button><span class="ru">учредить, создать</span><span class="ex">成立部门 / 成立公司</span></div><div class="w-item"><span class="hz">部门</span><span class="py">bùmén</span><button class="pb" type="button" data-hz="部门" data-hz2="部门" data-py="bùmén" data-pyn="bumen" data-num="35" aria-label="Прослушать 部门" title="Прослушать 部门">&#9654;</button><span class="ru">отдел, подразделение</span><span class="ex">有关的部门 / 人事部门</span></div><div class="w-item"><span class="hz">执着</span><span class="py">zhízhuó</span><span class="star">★</span><button class="pb" type="button" data-hz="执着" data-hz2="执着" data-py="zhízhuó" data-pyn="zhizhuo" data-num="36" aria-label="Прослушать 执着" title="Прослушать 执着">&#9654;</button><span class="ru">упорный, не отступающий</span><span class="ex">执着的人才 / 执着地追求</span></div><div class="w-item"><span class="hz">光明</span><span class="py">guāngmíng</span><button class="pb" type="button" data-hz="光明" data-hz2="光明" data-py="guāngmíng" data-pyn="guangming" data-num="37" aria-label="Прослушать 光明" title="Прослушать 光明">&#9654;</button><span class="ru">светлый (о будущем)</span><span class="ex">光明的前途 / 前途一片光明</span></div><div class="w-item"><span class="hz">前途</span><span class="py">qiántú</span><button class="pb" type="button" data-hz="前途" data-hz2="前途" data-py="qiántú" data-pyn="qiantu" data-num="38" aria-label="Прослушать 前途" title="Прослушать 前途">&#9654;</button><span class="ru">будущее, перспективы</span><span class="ex">光明的前途 / 有前途</span></div><div class="w-item"><span class="hz">行业</span><span class="py">hángyè</span><button class="pb" type="button" data-hz="行业" data-hz2="行业" data-py="hángyè" data-pyn="hangye" data-num="39" aria-label="Прослушать 行业" title="Прослушать 行业">&#9654;</button><span class="ru">отрасль, сфера</span><span class="ex">无论在哪个行业 / 服务行业</span></div><div class="w-item"><span class="hz">缺乏</span><span class="py">quēfá</span><button class="pb" type="button" data-hz="缺乏" data-hz2="缺乏" data-py="quēfá" data-pyn="quefa" data-num="40" aria-label="Прослушать 缺乏" title="Прослушать 缺乏">&#9654;</button><span class="ru">не хватать, испытывать нехватку</span><span class="ex">最缺乏的 / 缺乏锻炼</span></div><div class="w-item"><span class="hz">刘辰</span><span class="py">Liú Chén</span><button class="pb" type="button" data-hz="刘辰" data-hz2="刘辰" data-py="Liú Chén" data-pyn="liuchen" data-num="" aria-label="Прослушать 刘辰" title="Прослушать 刘辰">&#9654;</button><span class="ru">Лю Чэнь, герой текста</span><span class="ex">他叫刘辰</span></div><div class="w-item"><span class="hz">天津卫视</span><span class="py">Tiānjīn Wèishì</span><button class="pb" type="button" data-hz="天津卫视" data-hz2="天津卫视" data-py="Tiānjīn Wèishì" data-pyn="tianjinweishi" data-num="" aria-label="Прослушать 天津卫视" title="Прослушать 天津卫视">&#9654;</button><span class="ru">телеканал «Тяньцзинь»</span><span class="ex">天津卫视《非你莫属》</span></div><div class="w-item"><span class="hz">《非你莫属》</span><span class="py">Fēi Nǐ Mòshǔ</span><button class="pb" type="button" data-hz="《非你莫属》" data-hz2="《非你莫属》" data-py="Fēi Nǐ Mòshǔ" data-pyn="feinimoshu" data-num="" aria-label="Прослушать 《非你莫属》" title="Прослушать 《非你莫属》">&#9654;</button><span class="ru">«Только ты», шоу по поиску работы</span><span class="ex">《非你莫属》节目组</span></div></div></div></section>
+<section>
+  <h2>На слух: где рука ошибётся <span class="cn">听写陷阱</span></h2>
+  <p>Главная ловушка урока — 反应 и 反映: они звучат совершенно одинаково, оба бывают и глаголом,
+  и существительным, и различить их можно только по смыслу. Рядом целое гнездо на 制-:
+  制作, 制造, 制订, 制定 — четыре слова, которые в заданиях постоянно меняют местами.</p>
+<div class="warn">Полные омофоны — разбор урока</div><div class="trap"><div><span class="hz">反应</span><span class="py">fǎnyìng</span><span class="n">реагировать на внешнее; реакция. Дополнение не берёт.</span></div><div><span class="hz">反映</span><span class="py">fǎnyìng</span><span class="n">доложить наверх; отражать суть. Дополнение берёт. Пара 辨析 урока.</span></div></div><div class="warn">Первый пункт упражнения 2</div><div class="trap"><div><span class="hz">制作</span><span class="py">zhìzuò</span><span class="n">изготовить вещь или передачу: 制作玩具, 节目制作.</span></div><div><span class="hz">制造</span><span class="py">zhìzào</span><span class="n">производить промышленно: 制造汽车. В упражнении 2 нужен 制作.</span></div></div><div class="warn">Вторая пара на 制-</div><div class="trap"><div><span class="hz">制订</span><span class="py">zhìdìng</span><span class="n">составить, разработать — процесс ещё идёт: 制订方案.</span></div><div><span class="hz">制定</span><span class="py">zhìdìng</span><span class="n">установить окончательно: 制定法律. Полные омофоны.</span></div></div><div class="warn">Третий пункт упражнения 2</div><div class="trap"><div><span class="hz">到达</span><span class="py">dàodá</span><span class="n">прибыть куда-то: 到达目的地.</span></div><div><span class="hz">达到</span><span class="py">dádào</span><span class="n">достичь уровня или цели: 达到标准. Перестановка морфем.</span></div></div><div class="warn">Перекличка с уроком 22</div><div class="trap"><div><span class="hz">假设</span><span class="py">jiǎshè</span><span class="n">«предположим, что» — вводит допущение, бывает существительным.</span></div><div><span class="hz">假如</span><span class="py">jiǎrú</span><span class="n">«если» — обычное условие (урок 22). Второй пункт упражнения 2.</span></div></div><div class="warn">Четвёртый пункт упражнения 2</div><div class="trap"><div><span class="hz">光明</span><span class="py">guāngmíng</span><span class="n">светлый — только в переносном смысле: 光明的前途.</span></div><div><span class="hz">明亮</span><span class="py">míngliàng</span><span class="n">светлый физически: 房间很明亮. Четвёртый пункт упражнения 2.</span></div></div><div class="warn">Один знак, два чтения</div><div class="trap"><div><span class="hz">行业</span><span class="py">hángyè</span><span class="n">行 здесь háng — отрасль, ряд.</span></div><div><span class="hz">行动 / 行李</span><span class="py">xíngdòng / xíngli</span><span class="n">行 как xíng: «действие» (урок 24), «багаж».</span></div></div><div class="warn">Три слова одного вывода</div><div class="trap"><div><span class="hz">专注</span><span class="py">zhuānzhù</span><span class="n">сосредоточенный на деле.</span></div><div><span class="hz">执着 / 专业</span><span class="py">zhízhuó / zhuānyè</span><span class="n">«упорный» и «профессиональный» — все три в финале текста.</span></div></div><div class="warn">Перекличка с уроком 20</div><div class="trap"><div><span class="hz">陆续</span><span class="py">lùxù</span><span class="n">один за другим, с промежутками.</span></div><div><span class="hz">连续 / 手续</span><span class="py">liánxù / shǒuxù</span><span class="n">«непрерывно» и «формальности» (урок 20). Все три на 续.</span></div></div><div class="warn">Перекличка с уроком 24</div><div class="trap"><div><span class="hz">休闲</span><span class="py">xiūxián</span><span class="n">досуг, отдых: 休闲一日游.</span></div><div><span class="hz">空闲</span><span class="py">kòngxián</span><span class="n">свободное время (урок 24). Оба на 闲.</span></div></div><div class="warn">Три знака на jù</div><div class="trap"><div><span class="hz">具体</span><span class="py">jùtǐ</span><span class="n">конкретный. 具 с восемью чертами внутри.</span></div><div><span class="hz">巨大 / 俱乐部</span><span class="py">jùdà / jùlèbù</span><span class="n">«огромный» (урок 22) и «клуб» (урок 20). Три разных 巨/具/俱.</span></div></div><div class="warn">Три слова на 缺</div><div class="trap"><div><span class="hz">缺乏</span><span class="py">quēfá</span><span class="n">не хватать чего-то нужного: 缺乏锻炼.</span></div><div><span class="hz">缺少 / 缺点</span><span class="py">quēshǎo / quēdiǎn</span><span class="n">«недоставать» и «недостаток». Все три на 缺.</span></div></div>
+  <div class="card green">
+    <p style="margin:0"><b>Как тренировать.</b> Связки урока:
+    <span class="cn-ex">应届毕业生 · 就业形势 · 说实话 · 没什么优势 · 一份简历 · 从此以后 ·
+    仅供参考 · 反应很快 · 陆续提问 · 具体方案 · 光明的前途 · 缺乏锻炼</span>.
+    Первые пять — готовый блок для любой темы про работу и учёбу: их стоит проговорить отдельно.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Три точки урока <span class="cn">词语例释</span></h2>
+
+  <h3>1 · 从此 — «с этого момента»</h3>
+  <div class="card red">
+    <p>Наречие: отсчёт от названного момента в прошлом; дальше почти всегда идёт то, что изменилось.</p>
+    <p class="cn-ex">李白听了老婆婆的话，很受感动。<span class="hl">从此</span>他刻苦用功，最后成了一位伟大的诗人。</p>
+    <p class="cn-ex">因为小学六年级的时候，他迷上了公交车，<span class="hl">从此</span>，他就一直关注公交线路……</p>
+    <p class="cn-ex">嫦娥自己吃下了不死药，结果她飞到了月亮上，<span class="hl">从此</span>与后羿分离。</p>
+    <p class="tr" style="margin:10px 0 0">Отличие от 自从 (урок 22): 自从 — предлог, после него идёт
+    само событие (自从我来中国以后); 从此 — наречие, оно ссылается на уже названный момент
+    и стоит в начале следующего предложения.</p>
+  </div>
+
+  <h3>2 · 假设 — «допустим, что»</h3>
+  <div class="card green">
+    <p><b>Глагол:</b> принять некую ситуацию за действительную.</p>
+    <p class="cn-ex"><span class="hl">假设</span>我要从国贸到鼓楼大街，该怎么乘车？</p>
+    <p class="cn-ex"><span class="hl">假设</span>汽水两块钱一瓶，两个空瓶可以换一瓶汽水，如果给你6块钱，你最多能喝几瓶汽水？</p>
+    <p><b>Существительное:</b> само допущение, гипотеза.</p>
+    <p class="cn-ex">您当年的<span class="hl">假设</span>已经被证明是对的。</p>
+    <p class="cn-ex">这是一种大胆的<span class="hl">假设</span>，但不一定是科学的。</p>
+    <p class="tr" style="margin:10px 0 0">假设 книжнее и «задачнее», чем 假如: им вводят условие
+    в задаче, в опросе, в научном рассуждении. Для бытового «если» по-прежнему берут 如果 или 假如.</p>
+  </div>
+
+  <h3>3 · 堆 — «куча»</h3>
+  <div class="card brass">
+    <p><b>Счётное слово</b> для того, что лежит грудой; к уважаемым людям не применяется.</p>
+    <p class="cn-ex">他有问必答，不但准确无误地按顺序报了<span class="hl">一大堆</span>公交车、地铁站的名字……</p>
+    <p class="cn-ex">一个小师弟结婚才半年，就跑过来找我诉苦，说妻子几乎每天都要挑出他<span class="hl">一大堆</span>毛病。</p>
+    <p><b>Глагол:</b> сваливать, складывать в кучу.</p>
+    <p class="cn-ex">这些零件怎么都<span class="hl">堆</span>在这儿啊？</p>
+    <p class="cn-ex">今年真不错！你看这粮食，都<span class="hl">堆</span>成山了。</p>
+    <p><b>Существительное:</b> сама куча.</p>
+    <p class="cn-ex">工厂旁边有一个建筑材料<span class="hl">堆</span>。</p>
+    <p class="tr" style="margin:10px 0 0">一大堆 в разговоре часто звучит слегка пренебрежительно:
+    一大堆毛病, 一大堆问题, 一大堆事儿. Для людей — только нейтрально и о толпе: 一堆人围在那儿.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Сочетаемость <span class="cn">词语搭配</span></h2>
+  <table>
+    <tr><th>动词 + 宾语</th><th>примеры</th></tr>
+    <tr><td class="han">有 / 占 / 突出 / 失去</td><td class="han">优势</td></tr>
+    <tr><td class="han">体验</td><td class="han">生活 / 快乐 / 新产品</td></tr>
+    <tr><td class="han">划 / 限制 / 扩大</td><td class="han">范围</td></tr>
+    <tr><td class="han">制作</td><td class="han">玩具 / 乐器</td></tr>
+    <tr><td class="han">缺乏</td><td class="han">锻炼 / 睡眠 / 信心</td></tr>
+    <tr><th>状语 + 中心语</th><th></th></tr>
+    <tr><td class="han">陆续 / 陆陆续续（地）</td><td class="han">进来 / 回去 / 出来 / 出去</td></tr>
+    <tr><td class="han">具体（地）</td><td class="han">说 / 看 / 分析</td></tr>
+    <tr><th>数量词 + 名词</th><th></th></tr>
+    <tr><td class="han">一届</td><td class="han">学生 / 会议</td></tr>
+    <tr><td class="han">一份</td><td class="han">简历 / 报纸 / 答案</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>反应 и 反映 <span class="cn">词语辨析</span></h2>
+  <p>Полные омофоны — <b>fǎnyìng</b>, и оба бывают и глаголом, и существительным.
+  Это та пара, где на слух не поможет ничего, кроме смысла фразы.</p>
+  <table class="pair-tbl">
+    <tr><th></th><th>反应 fǎnyìng</th><th>反映 fǎnyìng</th></tr>
+    <tr><td>значение 1</td><td>ответ организма или человека на внешнее воздействие<br><span class="han">这时人体精力下降，反应减慢，情绪低下。</span></td><td>доложить, передать наверх<br><span class="han">请放心，我会把你的意见反映给学校。</span></td></tr>
+    <tr><td>значение 2</td><td>других значений нет</td><td>отражать суть явления<br><span class="han">谈话可以反映一个人的职业特点。</span></td></tr>
+    <tr><td>дополнение</td><td>не берёт: <span class="han">他反应得非常快。</span></td><td>берёт: <span class="han">这个电影反映了中国年轻一代的新变化。</span></td></tr>
+  </table>
+  <p class="tr">Практическая проверка: если после слова стоит прямое дополнение (反映情况／意见／变化) —
+  это 反映. Если слово употреблено само или с 得 (反应快, 反应得慢) — это 反应.</p>
+</section>
+
+<section>
+  <h2>Ответы к упражнениям <span class="cn">练习 · 做一做 · 练一练</span></h2>
+<details><summary>练习 1 — 选择合适的词语填空（参考 范围 具体 乐观 陆续 显然）</summary><div class="in">
+<p>① 因为天气影响，我们的活动推迟了，<span class="k">具体</span>时间再等通知。<br>
+② 会议快要开始了，代表们<span class="k">陆续</span>走进了会场。<br>
+③ 这次比赛是在全国<span class="k">范围</span>内举行的。<br>
+④ 前两局棋输给爸爸，他<span class="k">显然</span>并不担心。<br>
+⑤ 不管遇到什么困难，都要<span class="k">乐观</span>地面对生活。<br>
+⑥ 这只是我个人意见，仅供你<span class="k">参考</span>。</p></div></details><details><summary>练习 2 — 选择正确答案</summary><div class="in">
+<p>① 这个玩具是我爸爸亲手为我<span class="k">制作</span>（A）的。<br>
+② 我们<span class="k">假设</span>（A）他明天9点能出发，那么10点可以到这儿。<br>
+③ 我们已经安全地<span class="k">到达</span>（B）目的地了。<br>
+④ 来我们公司工作，你的前途一片<span class="k">光明</span>（A）！</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+① своими руками делают 制作, на заводе — 制造. ② здесь строится рассуждение, значит 假设.
+③ прибыть в точку — 到达; 达到 про уровень и цель. ④ о будущем говорят только 光明.</p></div></details><details><summary>练习 3 — 画线连接可以搭配的词语</summary><div class="in">
+<p>(1) 一届 — 学生 ／ 一堆 — 垃圾 ／ 一份 — 答案 ／ 一种 — 优势<br>
+(2) 失去 — 家庭 ／ 制定 — 法律 ／ 缺乏 — 锻炼 ／ 成立 — 公司</p></div></details><details><summary>做一做 — 反应 или 反映</summary><div class="in">
+<p>(1) 那两只羊看见青草后是什么<span class="k">反应</span>？<br>
+(2) 他这么做，<span class="k">反映</span>出他的思想还不太成熟。<br>
+(3) 他脑子<span class="k">反应</span>得很快，马上找到了问题的关键。<br>
+(4) 小王，大家<span class="k">反映</span>你最近常迟到。家里有什么问题吗？</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+(2) и (4) — «отразить суть» и «передать наверх», оба с дополнением → 反映;
+(1) и (3) — реакция, без дополнения → 反应.</p></div></details><details><summary>练一练 1 — 从此（образцы）</summary><div class="in">
+<p>(1) 他是十年前来的中国，<span class="k">从此就在这儿定居了</span>。<br>
+(2) A: 你跟原来的同屋还有联系吗？<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">毕业那年搬走以后，从此就再也没联系过</span>。<br>
+(3) 医生说他体重过重，营养过剩，<span class="k">从此他开始控制饮食，每天运动</span>。</p></div></details><details><summary>练一练 2 — 假设（образцы）</summary><div class="in">
+<p>(1) 假设他说的是真话，<span class="k">那这件事就得重新调查了</span>。<br>
+(2) A: 马上就要毕业了，你有什么想法？<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">假设一切顺利，我想先工作两年再读研</span>。（动词）<br>
+(3) 关于这个问题 <span class="k">科学家提出过好几种假设</span>。（名词）</p></div></details><details><summary>练一练 3 — 堆（образцы）</summary><div class="in">
+<p>(1) 下雪了，<span class="k">我们去堆个雪人吧</span>。（动词）<br>
+(2) A: 你知道我上个星期买的那本书可能放在哪儿了吗？<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">可能在书桌上那堆旧杂志下面</span>。（名词）<br>
+(3) A: 那边怎么有一堆人围在那儿？<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: 可能是<span class="k">有人在那儿发传单，大家都去看热闹了</span>。</p></div></details><details><summary>扩展 做一做 — 职业 и 求职</summary><div class="in">
+<p>(1) 你女儿的身材这么好，可以去当个<span class="k">模特</span>。<br>
+(2) 我要考注册<span class="k">会计</span>师，报了个辅导班，每周末都要上课。<br>
+(3) 平时我上课，周末我会到一个公司去做<span class="k">兼职</span>。<br>
+(4) 我们决定录用你，请你下周一到<span class="k">人事</span>部办理<span class="k">报到</span>手续。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+职业: 模特、会计、秘书、农民、工程师、工人、员工.<br>
+求职: 人事、报到、失业、手续、待遇、兼职、简历.</p></div></details></section>
+<section>
+  <h2>Сочинение <span class="cn">命题写作：寻找自己的优势</span></h2>
+  <p>Тема почти повторяет первую фразу текста, поэтому и строить сочинение удобно так же:
+  сначала «у меня нет преимуществ», потом одна конкретная вещь, которой занимаешься давно,
+  потом вывод про 专注.</p>
+  <div class="card green">
+    <p class="cn-ex" style="line-height:2"><span class="hl">说实话</span>，刚开始找工作的时候，
+    我也觉得自己<span class="hl">实在没什么优势</span>：成绩一般，也没有什么特别的<span class="hl">才艺</span>。
+    后来我才想起一件事：我从中学起就喜欢整理资料，
+    <span class="hl">从此</span>一直在做这件事，连朋友写论文都来找我当<span class="hl">顾问</span>。
+    这算不上什么大本事，可它是我做了很多年、而且一直没放下的事。
+    面试那天，我没有讲大道理，只<span class="hl">具体</span>说了自己怎么在一周内整理出一份两百页的资料。
+    对方的<span class="hl">反应</span>很快，当场就问了我一大<span class="hl">堆</span>细节。
+    我现在相信那位老总的话：无论在哪个<span class="hl">行业</span>，
+    最<span class="hl">缺乏</span>的永远都是<span class="hl">专注</span>的人。
+    优势不一定要去找，有时候它就在你已经做了很久的那件小事里。</p>
+  </div>
+  <h3>Связки, которые стоит взять с собой</h3>
+  <ul>
+    <li><span class="cn-ex">说实话，我也觉得自己实在没什么优势</span> — честное начало вместо хвастовства;</li>
+    <li><span class="cn-ex">后来我才想起一件事：……</span> — поворот к примеру;</li>
+    <li><span class="cn-ex">这算不上什么大本事，可它是……</span> — оговорка, которая усиливает довод;</li>
+    <li><span class="cn-ex">我没有讲大道理，只具体说了……</span> — приём из самого текста;</li>
+    <li><span class="cn-ex">优势不一定要去找，有时候它就在……</span> — концовка-формула.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>План на урок <span class="cn">复习计划</span></h2>
+  <ol class="route">
+    <li><b>Пройдите четыре полосы схемы.</b> Тревога → предыстория → эфир → результат.
+    Важно заметить, что вторая полоса объясняет четвёртую: должность появилась не на съёмках,
+    а в шестом классе.</li>
+    <li><b>Соберите пересказ по таблице учебника.</b> Четыре блока: 刘辰的烦恼 (届、乐观、优势),
+    刘辰的机会 (简历、体验、从此、初中、成长), 节目现场 (制作、假设、反应、陆续、堆、具体),
+    求职的结果 (显然、成立、前途、缺乏).</li>
+    <li><b>Отдельно — гнездо 制-.</b> 制作／制造／制订／制定: четыре слова, две пары омофонов.
+    Выпишите по одному примеру на каждое, иначе в заданиях они будут путаться постоянно.</li>
+    <li><b>Отработайте 反应／反映.</b> Проверка одна: есть ли прямое дополнение.
+    Три своих примера на каждое — и пара закрыта.</li>
+    <li><b>Напишите сочинение.</b> 100 знаков по схеме «нет преимуществ — одна давняя привычка —
+    вывод про 专注», обязательно с 说实话 и с одним 从此.</li>
+  </ol>
+</section>
+
+
+<nav class="botnav"><a href="hsk5b-lesson-27.html"><span>← Урок 27</span>下棋</a><a href="index-5b.html"><span>Урок 29 — в работе</span>培养对手</a></nav>
+
+<footer>HSK 标准教程 5（下） · урок 28 «最受欢迎的毕业生» · конспект для подготовки к экзамену</footer>
+
+</div>
+<script>
+
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML =
+      '<span class="w">' + z.dataset.w + '</span>' +
+      '<span class="p">' + z.dataset.p + '</span>' +
+      '<span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    out.innerHTML = def;
+  }
+
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+
+  var box = document.querySelector('.plan-box svg');
+  box.addEventListener('mouseleave', clear);
+})();
+
+</script>
+<script>
+
+(function(){
+  var LESSON = "28";
+  var DIRS = ["audio/", "", "mp3/", "media/", "аудио/", "audio/28/", "28/"];
+  var CAND = [];
+  DIRS.forEach(function(d){ CAND.push(d + "{hz}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{hz2}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{pyn}.mp3"); });
+
+  var patIn  = document.getElementById('ab-pat');
+  var status = document.getElementById('ab-status');
+  var btns   = Array.prototype.slice.call(document.querySelectorAll('.pb[data-hz]'));
+  var cur = null, curBtn = null, queue = null;
+
+  function pad(n){ n = String(n||''); return n.length === 1 ? '0'+n : n; }
+
+  function resolve(pat, b){
+    return pat
+      .replace(/\{hz2\}/g, b.dataset.hz2 || b.dataset.hz)
+      .replace(/\{hz\}/g,  b.dataset.hz)
+      .replace(/\{pyn\}/g, b.dataset.pyn)
+      .replace(/\{py\}/g,  b.dataset.py)
+      .replace(/\{num\}/g, pad(b.dataset.num))
+      .replace(/\{n\}/g,   b.dataset.num || '')
+      .replace(/\{L\}/g,   LESSON);
+  }
+
+  function setStatus(t, cls){
+    status.textContent = t || '';
+    status.className = 'ab-status' + (cls ? ' ' + cls : '');
+  }
+
+  function test(pat, b){
+    return new Promise(function(res){
+      var a = new Audio(), done = false;
+      function ok(){ if(!done){ done = true; res(true); } }
+      function no(){ if(!done){ done = true; res(false); } }
+      a.addEventListener('loadedmetadata', ok);
+      a.addEventListener('canplay', ok);
+      a.addEventListener('error', no);
+      a.preload = 'metadata';
+      a.src = encodeURI(resolve(pat, b));
+      setTimeout(no, 2500);
+    });
+  }
+
+  function stop(){
+    if(cur){ cur.pause(); cur = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn = null; }
+    queue = null;
+    document.querySelectorAll('.pball.playing').forEach(function(x){ x.classList.remove('playing'); });
+  }
+
+  /* проигрывание с запасными вариантами имени для этого слова */
+  function play(b, onEnd){
+    stop();
+    var tries = [patIn.value.trim()];
+    var alt = (b.dataset.hz2 && b.dataset.hz2 !== b.dataset.hz)
+      ? patIn.value.trim().replace('{hz}', '{hz2}') : null;
+    if(alt && tries.indexOf(alt) < 0) tries.push(alt);
+    CAND.forEach(function(p){ if(tries.indexOf(p) < 0) tries.push(p); });
+
+    b.classList.add('playing');
+    var i = 0;
+    (function attempt(){
+      if(i >= tries.length){
+        b.classList.remove('playing');
+        b.classList.add('missing');
+        b.title = 'Не найден файл для ' + b.dataset.hz;
+        setStatus('Не найден файл для ' + b.dataset.hz + ' — проверьте папку или шаблон.', 'bad');
+        if(onEnd) onEnd();
+        return;
+      }
+      var src = resolve(tries[i++], b);
+      var a = new Audio(encodeURI(src));
+      var started = false;
+      a.addEventListener('canplay', function(){ started = true; });
+      a.addEventListener('ended', function(){
+        b.classList.remove('playing');
+        if(cur === a){ cur = null; curBtn = null; }
+        if(onEnd) onEnd();
+      });
+      a.addEventListener('error', function(){
+        if(!started){ attempt(); }
+        else { b.classList.remove('playing'); if(onEnd) onEnd(); }
+      });
+      cur = a; curBtn = b;
+      b.classList.remove('missing');
+      a.play().catch(function(){});
+    })();
+  }
+
+  /* автопоиск папки при открытии */
+  function autodetect(quiet){
+    if(!btns.length) return;
+    if(!quiet) setStatus('Перебираю варианты…');
+    var i = 0;
+    (function next(){
+      if(i >= CAND.length){
+        setStatus(quiet
+          ? 'Папка с mp3 не найдена. Положите файлы в audio рядом с этим документом.'
+          : 'Ни один из типовых вариантов не подошёл. Впишите путь вручную.',
+          quiet ? '' : 'bad');
+        return;
+      }
+      var p = CAND[i++];
+      test(p, btns[0]).then(function(ok){
+        if(ok){
+          patIn.value = p;
+          document.querySelectorAll('.pb.missing').forEach(function(x){
+            x.classList.remove('missing'); x.title = '';
+          });
+          setStatus('Озвучка подключена: ' + p, 'ok');
+        } else next();
+      });
+    })();
+  }
+
+  document.getElementById('ab-auto').addEventListener('click', function(){ autodetect(false); });
+  document.getElementById('ab-test').addEventListener('click', function(){
+    if(!btns.length) return;
+    setStatus('Проверяю…');
+    test(patIn.value.trim(), btns[0]).then(function(ok){
+      setStatus((ok ? 'Файл найден: ' : 'Не найден: ') + resolve(patIn.value.trim(), btns[0]),
+                ok ? 'ok' : 'bad');
+    });
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(curBtn === b && cur){ stop(); return; }
+      play(b);
+    });
+  });
+
+  document.querySelectorAll('.pball').forEach(function(pb){
+    pb.addEventListener('click', function(){
+      if(pb.classList.contains('playing')){ stop(); return; }
+      var list = Array.prototype.slice.call(
+        pb.closest('.cluster').querySelectorAll('.pb[data-hz]'));
+      stop();
+      pb.classList.add('playing');
+      var i = 0;
+      queue = list;
+      (function step(){
+        if(queue !== list || i >= list.length){ pb.classList.remove('playing'); return; }
+        play(list[i++], function(){ setTimeout(step, 350); });
+      })();
+    });
+  });
+
+  autodetect(true);
+})();
+
+</script>
+</body>
+</html>

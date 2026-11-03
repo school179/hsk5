@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 35 · 植物会出汗 · HSK 标准教程 5下</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#23262a;
+  --brick:#6f6b63;
+  --paper:#e3e1da;
+  --card:#f2f1ec;
+  --red:#b4342a;
+  --brass:#a8813c;
+  --bamboo:#4a6b4e;
+  --sky:#54748a;
+  --line:rgba(35,38,42,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:
+    linear-gradient(rgba(255,255,255,.35) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.35) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+/* ——— шапка ——— */
+header{padding:56px 0 28px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{
+  font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;
+  color:var(--red);letter-spacing:-.03em;
+}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:44px;line-height:1.05;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brick);margin-top:9px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+/* ——— секции ——— */
+section{margin-top:58px}
+h2{
+  font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px;
+}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+a{color:var(--red)}
+
+/* ——— план двора ——— */
+.plan-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px;
+  box-shadow:0 1px 0 rgba(35,38,42,.06)}
+.plan-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone rect,.zone circle,.zone path{transition:fill .18s ease}
+.zone:hover .fillable,.zone.on .fillable{fill:#e7cfc9}
+.zone:focus{outline:none}
+.zone:focus-visible .fillable{stroke:var(--red);stroke-width:2.5}
+.zlab{font-family:var(--han);font-size:15px;font-weight:600;fill:var(--ink);pointer-events:none}
+.zpin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.04em}
+.faint{font-family:var(--han);font-size:12px;fill:var(--brick);pointer-events:none}
+.compass{font-family:var(--mono);font-size:10px;fill:var(--brick);letter-spacing:.15em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:62px}
+.readout .w{font-family:var(--han);font-size:22px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:13px;color:var(--sky)}
+.readout .d{display:block;margin-top:4px;font-size:15px}
+.readout .hint{color:var(--brick);font-style:italic}
+
+/* ——— карточки слов ——— */
+.cluster{margin-top:26px}
+.cluster h3{margin-bottom:4px}
+.cluster .why{font-size:14px;color:var(--brick);margin-bottom:14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--brass);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+/* ——— общие блоки ——— */
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.green{border-left:4px solid var(--bamboo)}
+.card.brass{border-left:4px solid var(--brass)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--paper);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.b{background:var(--brass)}
+.tag.g{background:var(--bamboo)}
+.tag.r{background:var(--red)}
+
+/* ——— таблицы ——— */
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(35,38,42,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+/* ——— на слух ——— */
+.trap{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+/* ——— ответы ——— */
+details{background:var(--card);border:1px solid var(--line);margin:10px 0;padding:0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+/* ——— финал ——— */
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;
+  font-family:var(--disp);font-weight:700;font-size:22px;color:var(--red);
+  width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .lesson-no{font-size:66px}
+  h1{font-size:32px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+
+
+:root{--red:#3a6a8a;--brass:#9a7a2c;--bamboo:#4e7046;--sky:#4f6a86;--paper:#dfe6ea;--card:#f0f5f8}
+.zone:hover .fillable,.zone.on .fillable{fill:#cfe2ec}
+.rowlab{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;fill:var(--brick)}
+.zsub{font-family:var(--han);font-size:8.5px;fill:var(--brick);pointer-events:none;letter-spacing:0}
+.tiny{font-family:var(--han);font-size:11.5px;fill:var(--brick);pointer-events:none}
+.xout{stroke:#9c3b3b;stroke-width:1.4;stroke-linecap:round;opacity:.5;pointer-events:none}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index-5b.html">&#8592; Все уроки 5B</a><a href="index.html">Учебник 5A</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（下） · Unit 12 亲近自然 · Getting close to the nature</div>
+  <div class="title-row">
+    <div class="lesson-no">35</div>
+    <h1>植物会出汗<span class="lat">Растения тоже потеют · 604 字 · стр. 136–143</span></h1>
+  </div>
+  <div class="meta">
+    <span><b>35</b> новых слов</span>
+    <span><b>3</b> грамматические точки</span>
+    <span>ключ: <b>赶快 · 片 · 根本</b></span>
+  </div>
+</header>
+
+
+<section>
+  <p class="lede">Научно-популярный текст, устроенный как детектив: сначала наблюдение
+  (под деревом прохладно), потом вопрос (как вода поднимается на сто метров), потом гипотеза,
+  которая не подтвердилась, потом настоящий ответ — и честное признание, что до конца
+  механизм всё ещё не понят. Для 阅读 это идеальный тренажёр: именно так устроены
+  научные тексты в экзамене. Лексика — «тело и вещество»: 肌肉, 毛孔, 吸收, 成分, 释放, 补充.</p>
+</section>
+
+<section id="plan">
+  <h2>Почему под деревом прохладно <span class="cn">植物会出汗</span></h2>
+  <div class="plan-box">
+    <svg viewBox="0 0 660 545" role="img" aria-label="Схема урока: почему дерево потеет"><text class="rowlab" x="18" y="16">1 · ЗАЧИН 大树下歇一歇，为什么这么舒服</text><g class="zone" tabindex="0" data-w="我们在大树下享受的湿润荫凉，也是因为大树在“出汗”" data-p="yánrè · xiē · jīròu · huīfù · shīrùn · yìnliáng" data-d="炎热的夏天，踢完一场球赛，每个队员都已经是汗如雨下。如果这个时候，能到大树下歇一歇，喝口凉开水，吃个冰激凌，放松放松肌肉，缓解一下疲劳，那一定是件美事，可以很快恢复活力。不过，你知道吗，我们之所以能在大树下享受这种湿润荫凉，也是因为大树在“出汗”呢！"><rect class="fillable" x="30" y="26" width="600" height="46" rx="3" fill="#d4e2ec" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="48" text-anchor="middle" style="font-size:14px">湿润荫凉，是因为大树在“出汗”</text><text class="zsub" x="330" y="64" text-anchor="middle">炎热 · 歇 · 开水 · 冰激凌 · 肌肉 · 恢复 · 湿润 · 荫凉</text></g><text class="rowlab" x="18" y="96">2 · ДВА ПОТА 人出汗 ↔ 大树“出汗”</text><g class="zone" tabindex="0" data-w="人：汗水从毛孔里冒出来 —— 为了降温" data-p="zhǐhuī · gǎnkuài · hànxiàn · máokǒng · mào" data-d="人体要保持相对稳定的温度，一旦温度上升，大脑就会指挥我们的身体赶快出汗，这时所有汗腺开始工作，汗水就从毛孔里冒了出来。"><rect class="fillable" x="30" y="106" width="290" height="56" rx="3" fill="#e9e4d8" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="175" y="130" text-anchor="middle" style="font-size:13px">大脑指挥身体赶快出汗 → 降温</text><text class="zsub" x="175" y="150" text-anchor="middle">指挥 · 赶快 · 汗腺 · 毛孔 · 冒</text></g><g class="zone" tabindex="0" data-w="树：从叶片的气孔冒出来 —— 为了运输养分" data-p="piàn · yùnshū yǎngfèn" data-d="大树出的“汗”，通常是从叶片的气孔里冒出来的，不过，这种“出汗”可不是为了降低温度，而是为了运输养分。"><rect class="fillable" x="340" y="106" width="290" height="56" rx="3" fill="#d4e2ec" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="485" y="130" text-anchor="middle" style="font-size:13px">从叶片气孔冒出 → 运输养分</text><text class="zsub" x="485" y="150" text-anchor="middle">片 · 气孔 · 养分</text></g><text class="rowlab" x="18" y="184">3 · ВОПРОС 怎么把水送到上百米的树梢</text><g class="zone" tabindex="0" data-w="根吸收养分和水分，可怎么运到上百米的树梢" data-p="chángshí · gēn · xīshōu · kòngzhì · chéngfèn" data-d="我们都知道这样的常识——植物的根会吸收养分和水分，但是你有没有想过，植物是怎么控制这些成分，把它们运输到十几米甚至上百米的树梢的呢？"><rect class="fillable" x="30" y="194" width="600" height="46" rx="3" fill="#dde6ec" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="216" text-anchor="middle" style="font-size:13px">植物是怎么控制这些成分，把它们运上去的呢？</text><text class="zsub" x="330" y="232" text-anchor="middle">常识 · 根 · 吸收 · 控制 · 成分 · 梢</text></g><text class="rowlab" x="18" y="264">4 · ГИПОТЕЗА, КОТОРАЯ НЕ ПОДОШЛА 毛细作用</text><g class="zone" tabindex="0" data-w="水顺着细管子向上“爬”" data-p="毛细作用 · 梢" data-d="最初人们认为大树是通过毛细作用来提水的。所谓“毛细作用”，简单来说，就是水会顺着很细很细的管子向上“爬”。"><rect class="fillable" x="30" y="274" width="190" height="54" rx="3" fill="#ecdcdc" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="125" y="298" text-anchor="middle" style="font-size:12.5px">水顺着细管子向上“爬”</text><text class="zsub" x="125" y="316" text-anchor="middle">毛细作用 · 梢</text></g><path d="M220 301 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a35)"/><g class="zone" tabindex="0" data-w="玻璃管越细，爬得越高" data-p="管子 · 玻璃" data-d="我们在家可以用一个比较细的玻璃管体验一下。玻璃管越细，水爬升的高度就越高。"><rect class="fillable" x="235" y="274" width="190" height="54" rx="3" fill="#ecdcdc" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="298" text-anchor="middle" style="font-size:12.5px">玻璃管越细，爬得越高</text><text class="zsub" x="330" y="316" text-anchor="middle">管子 · 玻璃</text></g><path d="M425 301 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a35)"/><g class="zone" tabindex="0" data-w="根本送不到几十米高" data-p="测验 · 根本" data-d="可是，经过测验计算发现，以大树输送管道的尺寸产生的毛细作用，根本无法把水分送到几十米高的地方。"><rect class="fillable" x="440" y="274" width="190" height="54" rx="3" fill="#ecdcdc" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="535" y="298" text-anchor="middle" style="font-size:12.5px">根本送不到几十米高</text><text class="zsub" x="535" y="316" text-anchor="middle">测验 · 根本</text></g><path class="xout" d="M448 278 L622 324"/><path class="xout" d="M622 278 L448 324"/><text class="rowlab" x="18" y="352">5 · ОТВЕТ “蒸腾拉力”</text><g class="zone" tabindex="0" data-w="叶片向空气释放水汽" data-p="枝干 · 释放" data-d="实际上，大树利用的是枝干顶端的那些叶片。叶子通过不停地向空气中释放水汽，"><rect class="fillable" x="30" y="362" width="190" height="54" rx="3" fill="#dfe8d2" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="125" y="386" text-anchor="middle" style="font-size:12.5px">叶片向空气释放水汽</text><text class="zsub" x="125" y="404" text-anchor="middle">枝干 · 释放</text></g><path d="M220 389 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a35)"/><g class="zone" tabindex="0" data-w="树干水分自动前来补充" data-p="自动 · 补充" data-d="迫使树干中的水分自动前来补充，"><rect class="fillable" x="235" y="362" width="190" height="54" rx="3" fill="#dfe8d2" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="386" text-anchor="middle" style="font-size:12.5px">树干水分自动前来补充</text><text class="zsub" x="330" y="404" text-anchor="middle">自动 · 补充</text></g><path d="M425 389 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a35)"/><g class="zone" tabindex="0" data-w="节节传递，像把水抽上来" data-p="抽 · 蒸腾 · 特殊" data-d="这样节节传递，就像是把树根吸收的水分给抽了上来。因为跟蒸腾作用有关，这种特殊的提升力就被称为“蒸腾拉力”。"><rect class="fillable" x="440" y="362" width="190" height="54" rx="3" fill="#dfe8d2" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="535" y="386" text-anchor="middle" style="font-size:12.5px">节节传递，像把水抽上来</text><text class="zsub" x="535" y="404" text-anchor="middle">抽 · 蒸腾 · 特殊</text></g><text class="rowlab" x="18" y="440">6 · ЧТО ОСТАЛОСЬ ЗАГАДКОЙ 到目前还是个谜</text><g class="zone" tabindex="0" data-w="供水系统的运转状况、遵守的秩序、巨大的拉力 —— 还是个谜" data-p="nèibù · xìtǒng · zhuàngkuàng · zhìxù" data-d="不过，这个大树内部的供水系统具体的运转状况是怎么样的，它们遵守的是一种什么样的秩序，为什么会产生如此巨大的拉力，到目前还是个谜。"><rect class="fillable" x="30" y="450" width="600" height="52" rx="3" fill="#dde6ec" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="474" text-anchor="middle" style="font-size:13px">运转状况如何，遵守什么秩序，为什么拉力如此巨大</text><text class="zsub" x="330" y="492" text-anchor="middle">内部 · 系统 · 状况 · 秩序 · 如此巨大</text></g><text class="tiny" x="330" y="530" text-anchor="middle">我们在树荫下乘凉，其实是在享受大树“出汗”的结果。</text><defs><marker id="a35" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" fill="#23262a"/></marker></defs></svg>
+    <div class="readout" id="readout">
+      <span class="hint">Наведите курсор или коснитесь любого блока — появится соответствующее место текста.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Текст в шести шагах <span class="cn">课文 · 604 字</span></h2>
+
+  <div class="card green">
+    <p><span class="tag g">шаг 1</span><b>Зачин.</b> 炎热的夏天，踢完一场球赛，每个队员都已经是汗如雨下。
+    如果这个时候，能到大树下歇一歇，喝口凉开水，吃个冰激凌，放松放松肌肉，缓解一下疲劳，那一定是件美事，
+    可以很快恢复活力。不过，你知道吗，我们之所以能在大树下享受这种湿润荫凉，也是因为大树在“出汗”呢！</p>
+    <p style="margin:0"><b>Слова шага:</b> <span class="cn-ex">炎热 · 歇 · 开水 · 冰激凌 · 肌肉 · 恢复 · 湿润 · 荫凉</span></p>
+  </div>
+
+  <div class="card brass">
+    <p><span class="tag b">шаг 2</span><b>Два пота.</b> 人体要保持相对稳定的温度，一旦温度上升，
+    大脑就会指挥我们的身体赶快出汗，这时所有汗腺开始工作，汗水就从毛孔里冒了出来。大树出的“汗”，
+    通常是从叶片的气孔里冒出来的，不过，这种“出汗”可不是为了降低温度，而是为了运输养分。</p>
+    <p style="margin:0"><b>Слова шага:</b> <span class="cn-ex">指挥 · 赶快 · 汗腺 · 毛孔 · 冒 · 片</span></p>
+  </div>
+
+  <div class="card">
+    <p><span class="tag">шаг 3</span><b>Вопрос.</b> 我们都知道这样的常识——植物的根会吸收养分和水分，
+    但是你有没有想过，植物是怎么控制这些成分，把它们运输到十几米甚至上百米的树梢的呢？</p>
+    <p style="margin:0"><b>Слова шага:</b> <span class="cn-ex">常识 · 根 · 吸收 · 控制 · 成分 · 梢</span></p>
+  </div>
+
+  <div class="card red">
+    <p><span class="tag r">шаг 4</span><b>Гипотеза, которая не подошла.</b> 最初人们认为大树是通过毛细作用
+    来提水的。所谓“毛细作用”，简单来说，就是水会顺着很细很细的管子向上“爬”，我们在家可以用一个
+    比较细的玻璃管体验一下。玻璃管越细，水爬升的高度就越高。可是，经过测验计算发现，
+    以大树输送管道的尺寸产生的毛细作用，根本无法把水分送到几十米高的地方。</p>
+    <p style="margin:0"><b>Слова шага:</b> <span class="cn-ex">管子 · 玻璃 · 测验 · 根本</span></p>
+  </div>
+
+  <div class="card green">
+    <p><span class="tag g">шаг 5</span><b>Настоящий ответ.</b> 实际上，大树利用的是枝干顶端的那些叶片。
+    叶子通过不停地向空气中释放水汽，迫使树干中的水分自动前来补充，这样节节传递，
+    就像是把树根吸收的水分给抽了上来。因为跟蒸腾作用有关，这种特殊的提升力就被称为“蒸腾拉力”。</p>
+    <p style="margin:0"><b>Слова шага:</b> <span class="cn-ex">枝干 · 释放 · 自动 · 补充 · 抽 · 蒸腾 · 特殊</span></p>
+  </div>
+
+  <div class="card">
+    <p><span class="tag">шаг 6</span><b>Что осталось загадкой.</b> 不过，这个大树内部的供水系统具体的
+    运转状况是怎么样的，它们遵守的是一种什么样的秩序，为什么会产生如此巨大的拉力，到目前还是个谜。</p>
+    <p style="margin:0"><b>Слова шага:</b> <span class="cn-ex">内部 · 系统 · 状况 · 秩序</span></p>
+  </div>
+  <p style="font-size:14px;color:var(--brick)">改编自《科学松鼠会》，作者：史军</p>
+</section>
+
+<section>
+  <h2>35 слов по гнёздам <span class="cn">生词</span></h2>
+  <p style="font-size:14px;color:var(--brick)"><span class="star">★</span> — слово сверх программы HSK 5 (в учебнике помечено звёздочкой). Имён собственных нет. Из текста стоит выписать обороты: <span class="cn-ex">汗如雨下 · 之所以……是因为…… · 一旦……就…… · 可不是……而是…… · 所谓…… · 简单来说 · 实际上 · 节节传递 · 被称为 · 如此巨大 · 到目前还是个谜</span>.</p>
+
+  <div class="audiobar" id="audiobar">
+    <div class="ab-t">Озвучка слов</div>
+    <div class="ab-row">
+      <input id="ab-pat" type="text" spellcheck="false" value="audio/{hz}.mp3" aria-label="Шаблон пути к mp3">
+      <button type="button" id="ab-auto">Подобрать</button>
+      <button type="button" id="ab-test">Проверить</button>
+    </div>
+    <div class="ab-status" id="ab-status"></div>
+    <div class="ab-note">
+      Ищутся файлы вида <code>иероглиф.mp3</code> — сначала в папке <code>audio</code> рядом с этим документом,
+      потом прямо рядом с ним. Подстановки: <code>{hz}</code>, <code>{py}</code>, <code>{pyn}</code>,
+      <code>{num}</code>, <code>{L}</code>.
+    </div>
+  </div>
+<div class="cluster"><h3>I. Жаркий день и отдых в тени<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Первый абзац — бытовой, и именно его лексика попадается в аудировании про лето и спорт.</div><div class="words"><div class="w-item"><span class="hz">炎热</span><span class="py">yánrè</span><span class="star">★</span><button class="pb" type="button" data-hz="炎热" data-hz2="炎热" data-py="yánrè" data-pyn="yanre" data-num="1" aria-label="Прослушать 炎热" title="Прослушать 炎热">&#9654;</button><span class="ru">знойный, палящий</span><span class="ex">炎热的夏天 / 天气炎热</span></div><div class="w-item"><span class="hz">歇</span><span class="py">xiē</span><button class="pb" type="button" data-hz="歇" data-hz2="歇" data-py="xiē" data-pyn="xie" data-num="2" aria-label="Прослушать 歇" title="Прослушать 歇">&#9654;</button><span class="ru">передохнуть, сделать перерыв</span><span class="ex">歇一会儿 / 歇两天</span></div><div class="w-item"><span class="hz">开水</span><span class="py">kāishuǐ</span><button class="pb" type="button" data-hz="开水" data-hz2="开水" data-py="kāishuǐ" data-pyn="kaishui" data-num="3" aria-label="Прослушать 开水" title="Прослушать 开水">&#9654;</button><span class="ru">кипячёная вода</span><span class="ex">一壶开水 / 喝口凉开水</span></div><div class="w-item"><span class="hz">冰激凌</span><span class="py">bīngjīlíng</span><button class="pb" type="button" data-hz="冰激凌" data-hz2="冰激凌" data-py="bīngjīlíng" data-pyn="bingjiling" data-num="4" aria-label="Прослушать 冰激凌" title="Прослушать 冰激凌">&#9654;</button><span class="ru">мороженое</span><span class="ex">吃个冰激凌 / 一个冰激凌</span></div><div class="w-item"><span class="hz">肌肉</span><span class="py">jīròu</span><button class="pb" type="button" data-hz="肌肉" data-hz2="肌肉" data-py="jīròu" data-pyn="jirou" data-num="5" aria-label="Прослушать 肌肉" title="Прослушать 肌肉">&#9654;</button><span class="ru">мышцы</span><span class="ex">放松肌肉 / 肌肉紧张</span></div><div class="w-item"><span class="hz">恢复</span><span class="py">huīfù</span><button class="pb" type="button" data-hz="恢复" data-hz2="恢复" data-py="huīfù" data-pyn="huifu" data-num="6" aria-label="Прослушать 恢复" title="Прослушать 恢复">&#9654;</button><span class="ru">восстановить, прийти в норму</span><span class="ex">恢复活力 / 恢复得很快</span></div><div class="w-item"><span class="hz">湿润</span><span class="py">shīrùn</span><button class="pb" type="button" data-hz="湿润" data-hz2="湿润" data-py="shīrùn" data-pyn="shirun" data-num="7" aria-label="Прослушать 湿润" title="Прослушать 湿润">&#9654;</button><span class="ru">влажный (приятно)</span><span class="ex">湿润荫凉 / 眼圈湿润了</span></div><div class="w-item"><span class="hz">荫凉</span><span class="py">yìnliáng</span><span class="star">★</span><button class="pb" type="button" data-hz="荫凉" data-hz2="荫凉" data-py="yìnliáng" data-pyn="yinliang" data-num="8" aria-label="Прослушать 荫凉" title="Прослушать 荫凉">&#9654;</button><span class="ru">тенистый и прохладный</span><span class="ex">湿润荫凉 / 找个荫凉的地方</span></div></div></div><div class="cluster"><h3>II. Как потеет человек и как дерево<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Второе гнездо — физиология; здесь же первая грамматическая точка 赶快.</div><div class="words"><div class="w-item"><span class="hz">指挥</span><span class="py">zhǐhuī</span><button class="pb" type="button" data-hz="指挥" data-hz2="指挥" data-py="zhǐhuī" data-pyn="zhihui" data-num="9" aria-label="Прослушать 指挥" title="Прослушать 指挥">&#9654;</button><span class="ru">командовать, дирижировать</span><span class="ex">大脑指挥身体 / 指挥军队</span></div><div class="w-item"><span class="hz">赶快</span><span class="py">gǎnkuài</span><button class="pb" type="button" data-hz="赶快" data-hz2="赶快" data-py="gǎnkuài" data-pyn="gankuai" data-num="10" aria-label="Прослушать 赶快" title="Прослушать 赶快">&#9654;</button><span class="ru">поскорее, живо</span><span class="ex">赶快出汗 / 赶快走吧</span></div><div class="w-item"><span class="hz">汗腺</span><span class="py">hànxiàn</span><span class="star">★</span><button class="pb" type="button" data-hz="汗腺" data-hz2="汗腺" data-py="hànxiàn" data-pyn="hanxian" data-num="11" aria-label="Прослушать 汗腺" title="Прослушать 汗腺">&#9654;</button><span class="ru">потовая железа</span><span class="ex">所有汗腺开始工作</span></div><div class="w-item"><span class="hz">毛孔</span><span class="py">máokǒng</span><span class="star">★</span><button class="pb" type="button" data-hz="毛孔" data-hz2="毛孔" data-py="máokǒng" data-pyn="maokong" data-num="12" aria-label="Прослушать 毛孔" title="Прослушать 毛孔">&#9654;</button><span class="ru">пора (кожи)</span><span class="ex">汗水从毛孔里冒出来</span></div><div class="w-item"><span class="hz">冒</span><span class="py">mào</span><span class="star">★</span><button class="pb" type="button" data-hz="冒" data-hz2="冒" data-py="mào" data-pyn="mao" data-num="13" aria-label="Прослушать 冒" title="Прослушать 冒">&#9654;</button><span class="ru">выделяться, валить, бить (о паре, поте)</span><span class="ex">冒出来 / 冒汗 / 冒烟</span></div><div class="w-item"><span class="hz">片</span><span class="py">piàn</span><button class="pb" type="button" data-hz="片" data-hz2="片" data-py="piàn" data-pyn="pian" data-num="14" aria-label="Прослушать 片" title="Прослушать 片">&#9654;</button><span class="ru">плоский ломтик; счётное для плоского</span><span class="ex">叶片 / 两片面包 / 一片树林</span></div></div></div><div class="cluster"><h3>III. Вопрос про корни и верхушку<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Третий абзац короткий, но все шесть слов — экзаменационные.</div><div class="words"><div class="w-item"><span class="hz">常识</span><span class="py">chángshí</span><button class="pb" type="button" data-hz="常识" data-hz2="常识" data-py="chángshí" data-pyn="changshi" data-num="15" aria-label="Прослушать 常识" title="Прослушать 常识">&#9654;</button><span class="ru">общеизвестная истина, азы</span><span class="ex">这样的常识 / 生活常识</span></div><div class="w-item"><span class="hz">根</span><span class="py">gēn</span><button class="pb" type="button" data-hz="根" data-hz2="根" data-py="gēn" data-pyn="gen" data-num="16" aria-label="Прослушать 根" title="Прослушать 根">&#9654;</button><span class="ru">корень; счётное для длинного</span><span class="ex">植物的根 / 一根管子</span></div><div class="w-item"><span class="hz">吸收</span><span class="py">xīshōu</span><button class="pb" type="button" data-hz="吸收" data-hz2="吸收" data-py="xīshōu" data-pyn="xishou" data-num="17" aria-label="Прослушать 吸收" title="Прослушать 吸收">&#9654;</button><span class="ru">впитывать, усваивать</span><span class="ex">吸收养分 / 吸收新知识</span></div><div class="w-item"><span class="hz">控制</span><span class="py">kòngzhì</span><button class="pb" type="button" data-hz="控制" data-hz2="控制" data-py="kòngzhì" data-pyn="kongzhi" data-num="18" aria-label="Прослушать 控制" title="Прослушать 控制">&#9654;</button><span class="ru">контролировать, управлять</span><span class="ex">控制成分 / 控制情绪</span></div><div class="w-item"><span class="hz">成分</span><span class="py">chéngfèn</span><button class="pb" type="button" data-hz="成分" data-hz2="成分" data-py="chéngfèn" data-pyn="chengfen" data-num="19" aria-label="Прослушать 成分" title="Прослушать 成分">&#9654;</button><span class="ru">составная часть, компонент</span><span class="ex">控制这些成分 / 主要成分</span></div><div class="w-item"><span class="hz">梢</span><span class="py">shāo</span><span class="star">★</span><button class="pb" type="button" data-hz="梢" data-hz2="梢" data-py="shāo" data-pyn="shao" data-num="20" aria-label="Прослушать 梢" title="Прослушать 梢">&#9654;</button><span class="ru">верхушка, кончик ветки</span><span class="ex">树梢 / 上百米的树梢</span></div></div></div><div class="cluster"><h3>IV. Неподтвердившаяся гипотеза<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Четвёртое гнездо — лабораторное; сюда же попадает вторая грамматическая точка 根本.</div><div class="words"><div class="w-item"><span class="hz">管子</span><span class="py">guǎnzi</span><button class="pb" type="button" data-hz="管子" data-hz2="管子" data-py="guǎnzi" data-pyn="guanzi" data-num="21" aria-label="Прослушать 管子" title="Прослушать 管子">&#9654;</button><span class="ru">трубка, труба</span><span class="ex">一根管子 / 很细的管子</span></div><div class="w-item"><span class="hz">玻璃</span><span class="py">bōli</span><button class="pb" type="button" data-hz="玻璃" data-hz2="玻璃" data-py="bōli" data-pyn="boli" data-num="22" aria-label="Прослушать 玻璃" title="Прослушать 玻璃">&#9654;</button><span class="ru">стекло</span><span class="ex">一块玻璃 / 玻璃管</span></div><div class="w-item"><span class="hz">测验</span><span class="py">cèyàn</span><button class="pb" type="button" data-hz="测验" data-hz2="测验" data-py="cèyàn" data-pyn="ceyan" data-num="23" aria-label="Прослушать 测验" title="Прослушать 测验">&#9654;</button><span class="ru">испытывать, проверять; тест</span><span class="ex">经过测验计算 / 心理测验</span></div><div class="w-item"><span class="hz">根本</span><span class="py">gēnběn</span><button class="pb" type="button" data-hz="根本" data-hz2="根本" data-py="gēnběn" data-pyn="genben" data-num="24" aria-label="Прослушать 根本" title="Прослушать 根本">&#9654;</button><span class="ru">корень, основа; совершенно (не)</span><span class="ex">根本无法 / 根本的问题</span></div></div></div><div class="cluster"><h3>V. Как это работает на самом деле<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Пятое гнездо — механизм; 释放／补充／抽 описывают один и тот же процесс с трёх сторон.</div><div class="words"><div class="w-item"><span class="hz">枝干</span><span class="py">zhīgàn</span><span class="star">★</span><button class="pb" type="button" data-hz="枝干" data-hz2="枝干" data-py="zhīgàn" data-pyn="zhigan" data-num="25" aria-label="Прослушать 枝干" title="Прослушать 枝干">&#9654;</button><span class="ru">ветви и ствол</span><span class="ex">枝干顶端 / 树的枝干</span></div><div class="w-item"><span class="hz">释放</span><span class="py">shìfàng</span><span class="star">★</span><button class="pb" type="button" data-hz="释放" data-hz2="释放" data-py="shìfàng" data-pyn="shifang" data-num="26" aria-label="Прослушать 释放" title="Прослушать 释放">&#9654;</button><span class="ru">выделять, высвобождать</span><span class="ex">向空气中释放水汽 / 释放能量</span></div><div class="w-item"><span class="hz">自动</span><span class="py">zìdòng</span><button class="pb" type="button" data-hz="自动" data-hz2="自动" data-py="zìdòng" data-pyn="zidong" data-num="27" aria-label="Прослушать 自动" title="Прослушать 自动">&#9654;</button><span class="ru">сам собой, автоматически</span><span class="ex">自动前来补充 / 自动售货机</span></div><div class="w-item"><span class="hz">补充</span><span class="py">bǔchōng</span><button class="pb" type="button" data-hz="补充" data-hz2="补充" data-py="bǔchōng" data-pyn="buchong" data-num="28" aria-label="Прослушать 补充" title="Прослушать 补充">&#9654;</button><span class="ru">восполнять, дополнять</span><span class="ex">补充水分 / 补充说明</span></div><div class="w-item"><span class="hz">抽</span><span class="py">chōu</span><span class="star">★</span><button class="pb" type="button" data-hz="抽" data-hz2="抽" data-py="chōu" data-pyn="chou" data-num="29" aria-label="Прослушать 抽" title="Прослушать 抽">&#9654;</button><span class="ru">тянуть, выкачивать, вынимать</span><span class="ex">把水抽上来 / 抽时间</span></div><div class="w-item"><span class="hz">蒸腾</span><span class="py">zhēngténg</span><span class="star">★</span><button class="pb" type="button" data-hz="蒸腾" data-hz2="蒸腾" data-py="zhēngténg" data-pyn="zhengteng" data-num="30" aria-label="Прослушать 蒸腾" title="Прослушать 蒸腾">&#9654;</button><span class="ru">испаряться, подниматься паром</span><span class="ex">蒸腾作用 / 蒸腾拉力</span></div><div class="w-item"><span class="hz">特殊</span><span class="py">tèshū</span><button class="pb" type="button" data-hz="特殊" data-hz2="特殊" data-py="tèshū" data-pyn="teshu" data-num="31" aria-label="Прослушать 特殊" title="Прослушать 特殊">&#9654;</button><span class="ru">особый, специфический</span><span class="ex">特殊的提升力 / 情况特殊</span></div></div></div><div class="cluster"><h3>VI. Загадка внутри ствола<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Четыре последних слова — «системные»; они постоянно встречаются в деловых и научных текстах.</div><div class="words"><div class="w-item"><span class="hz">内部</span><span class="py">nèibù</span><button class="pb" type="button" data-hz="内部" data-hz2="内部" data-py="nèibù" data-pyn="neibu" data-num="32" aria-label="Прослушать 内部" title="Прослушать 内部">&#9654;</button><span class="ru">внутренняя часть; внутренний</span><span class="ex">大树内部 / 公司内部的问题</span></div><div class="w-item"><span class="hz">系统</span><span class="py">xìtǒng</span><button class="pb" type="button" data-hz="系统" data-hz2="系统" data-py="xìtǒng" data-pyn="xitong" data-num="33" aria-label="Прослушать 系统" title="Прослушать 系统">&#9654;</button><span class="ru">система</span><span class="ex">供水系统 / 系统升级</span></div><div class="w-item"><span class="hz">状况</span><span class="py">zhuàngkuàng</span><button class="pb" type="button" data-hz="状况" data-hz2="状况" data-py="zhuàngkuàng" data-pyn="zhuangkuang" data-num="34" aria-label="Прослушать 状况" title="Прослушать 状况">&#9654;</button><span class="ru">состояние, положение дел</span><span class="ex">运转状况 / 健康状况</span></div><div class="w-item"><span class="hz">秩序</span><span class="py">zhìxù</span><button class="pb" type="button" data-hz="秩序" data-hz2="秩序" data-py="zhìxù" data-pyn="zhixu" data-num="35" aria-label="Прослушать 秩序" title="Прослушать 秩序">&#9654;</button><span class="ru">порядок, упорядоченность</span><span class="ex">遵守秩序 / 秩序良好</span></div></div></div></section>
+<section>
+  <h2>На слух: где рука ошибётся <span class="cn">听写陷阱</span></h2>
+  <p>Самое коварное место урока — пара <b>吸收 и 吸取</b>: оба «впитывать», но урок пропитан
+  словом 吸收, а в упражнении нужен именно 吸取 (吸取教训). Рядом — <b>自动 против 主动</b>
+  (само собой против по своей инициативе) и <b>秩序 против 规则</b>. Плюс гнездо на 湿润／潮湿.</p>
+<div class="warn">Первый пункт упражнения 2</div><div class="trap"><div><span class="hz">吸收</span><span class="py">xīshōu</span><span class="n">«впитать, усвоить» — о веществе и знаниях: 吸收养分, 吸收新知识.</span></div><div><span class="hz">吸取</span><span class="py">xīqǔ</span><span class="n">«извлечь» — только об уроке и опыте: 吸取教训／经验. Первый пункт упражнения 2.</span></div></div><div class="warn">Третий пункт упражнения 2</div><div class="trap"><div><span class="hz">自动</span><span class="py">zìdòng</span><span class="n">«само собой, автоматически» — без участия воли: 自动补充, 自动售货机.</span></div><div><span class="hz">主动</span><span class="py">zhǔdòng</span><span class="n">«по собственной инициативе» — про человека: 主动提出. Третий пункт упражнения 2.</span></div></div><div class="warn">Четвёртый пункт упражнения 2</div><div class="trap"><div><span class="hz">秩序</span><span class="py">zhìxù</span><span class="n">«порядок» — как всё идёт: 秩序良好, 遵守秩序.</span></div><div><span class="hz">规则</span><span class="py">guīzé</span><span class="n">«правила» — чему следуют. Четвёртый пункт упражнения 2.</span></div></div><div class="warn">Второй пункт упражнения 2</div><div class="trap"><div><span class="hz">控制</span><span class="py">kòngzhì</span><span class="n">«управлять, держать в руках»: 控制情绪, 控制成分.</span></div><div><span class="hz">限制</span><span class="py">xiànzhì</span><span class="n">«ограничивать» — ставить рамки. Второй пункт упражнения 2.</span></div></div><div class="warn">Перекличка с уроком 36</div><div class="trap"><div><span class="hz">湿润</span><span class="py">shīrùn</span><span class="n">«влажный» в приятном смысле: 空气湿润, 眼圈湿润.</span></div><div><span class="hz">潮湿</span><span class="py">cháoshī</span><span class="n">«сырой» — скорее неприятно: 房间潮湿. Пара пригодится и в уроке 36.</span></div></div><div class="warn">Разбор урока</div><div class="trap"><div><span class="hz">特殊</span><span class="py">tèshū</span><span class="n">книжное «особый»; только прилагательное: 情况特殊.</span></div><div><span class="hz">特别</span><span class="py">tèbié</span><span class="n">и разговорное «особенный», и наречие «особенно». Пара 辨析 урока.</span></div></div><div class="warn">Три слова huī/huí/fǎn-fù</div><div class="trap"><div><span class="hz">恢复</span><span class="py">huīfù</span><span class="n">«восстановиться»: 恢复活力, 恢复正常.</span></div><div><span class="hz">回复 / 反复</span><span class="py">huífù / fǎnfù</span><span class="n">«ответить» и «снова и снова» (урок 34). Все три — похожие слоги.</span></div></div><div class="warn">Три слова на 指</div><div class="trap"><div><span class="hz">指挥</span><span class="py">zhǐhuī</span><span class="n">«командовать, дирижировать»: 大脑指挥身体.</span></div><div><span class="hz">指导 / 指出</span><span class="py">zhǐdǎo / zhǐchū</span><span class="n">«руководить, наставлять» и «указать». Все три — на 指.</span></div></div><div class="warn">Гнездо на -分</div><div class="trap"><div><span class="hz">成分</span><span class="py">chéngfèn</span><span class="n">«компонент»: 主要成分, 控制成分.</span></div><div><span class="hz">部分 / 身份</span><span class="py">bùfen / shēnfèn</span><span class="n">«часть» и «статус». Все три — на 分 в лёгком или четвёртом тоне.</span></div></div><div class="warn">Три слова на 充</div><div class="trap"><div><span class="hz">补充</span><span class="py">bǔchōng</span><span class="n">«восполнить»: 补充水分, 补充说明.</span></div><div><span class="hz">充当 / 充分</span><span class="py">chōngdāng / chōngfèn</span><span class="n">«выступать в роли» (урок 34) и «в полной мере». Все три — на 充.</span></div></div><div class="warn">Три вида проверки</div><div class="trap"><div><span class="hz">测验</span><span class="py">cèyàn</span><span class="n">«тест, проверка» — обычно короткая: 心理测验.</span></div><div><span class="hz">考试 / 实验</span><span class="py">kǎoshì / shíyàn</span><span class="n">«экзамен» и «эксперимент». Три разных формата проверки.</span></div></div><div class="warn">Три слова на 本</div><div class="trap"><div><span class="hz">根本</span><span class="py">gēnběn</span><span class="n">根 здесь — «корень»: 根本的问题, 根本无法.</span></div><div><span class="hz">本质 / 基本</span><span class="py">běnzhì / jīběn</span><span class="n">«сущность» (урок 30) и «основной». Все три — на 本.</span></div></div><div class="warn">Три слова на 冒</div><div class="trap"><div><span class="hz">冒</span><span class="py">mào</span><span class="n">«валить, бить ключом»: 冒汗, 冒烟, 冒出来.</span></div><div><span class="hz">帽子 / 冒险</span><span class="py">màozi / màoxiǎn</span><span class="n">«шапка» и «рисковать». Один фонетик, три слова.</span></div></div><div class="warn">Ключ 扌 на месте?</div><div class="trap"><div><span class="hz">抽</span><span class="py">chōu</span><span class="n">«вытягивать, выкачивать»: 把水抽上来, 抽时间, 抽烟.</span></div><div><span class="hz">油 / 柚</span><span class="py">yóu / yòu</span><span class="n">Знак 抽 легко спутать по правой части; слева обязательно 扌.</span></div></div>
+  <div class="card green">
+    <p style="margin:0"><b>Как тренировать.</b> Связки урока:
+    <span class="cn-ex">炎热的夏天 · 歇一会儿 · 一壶开水 · 放松肌肉 · 恢复活力 · 空气湿润 ·
+    大脑指挥 · 赶快出汗 · 生活常识 · 吸收养分 · 控制情绪 · 主要成分 · 一根管子 ·
+    一块玻璃 · 心理测验 · 根本无法 · 释放能量 · 自动售货机 · 补充水分 · 健康状况 · 遵守秩序</span>.
+    Отдельно — три научные «скрепы»: 所谓……就是……、简单来说、被称为.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Три точки урока <span class="cn">词语例释</span></h2>
+
+  <h3>1 · 赶快 — «скорее, живо»</h3>
+  <div class="card green">
+    <p>Наречие: «поторопись, не теряй времени». Стоит перед глаголом, часто с 吧 на конце фразы.</p>
+    <p class="cn-ex">我下个月要搬家，得<span class="hl">赶快</span>找房子。</p>
+    <p class="cn-ex">这份材料下午开会要用，你<span class="hl">赶快</span>把它复印一下。</p>
+    <p class="cn-ex">……一旦温度上升，大脑就会指挥我们的身体<span class="hl">赶快</span>出汗，……</p>
+    <p class="tr" style="margin:10px 0 0">Отличие от 赶紧 почти нулевое — они взаимозаменяемы.
+    А вот 尽快 (урок 21) значит «как можно скорее» и звучит нейтральнее и официальнее:
+    в просьбе начальнику уместнее 尽快, в разговоре с другом — 赶快.</p>
+  </div>
+
+  <h3>2 · 片 — «пластинка, ломтик»</h3>
+  <div class="card brass">
+    <p><b>Существительное:</b> что-то плоское и тонкое, обычно небольшое.</p>
+    <p class="cn-ex">瓶子里装着满满的石头、玻璃碎<span class="hl">片</span>和沙子。</p>
+    <p class="cn-ex">大树出的“汗”，通常是从叶<span class="hl">片</span>的气孔里冒出来的，……</p>
+    <p><b>Счётное слово:</b> для плоских предметов, а также для звуков и пейзажей,
+    которые «расстилаются».</p>
+    <p class="cn-ex">窗外有一棵大树，秋风中，叶子一<span class="hl">片</span>片地掉落下来。</p>
+    <p class="cn-ex">同学们听了，发出一<span class="hl">片</span>热烈的欢呼声。</p>
+    <p class="tr" style="margin:10px 0 0">Два разных 片 в быту: 两片面包／药 — считаем ломтики
+    и таблетки; 一片树林／草地／天空／欢笑声 — одно сплошное пространство или звук.
+    Во втором случае перед 片 всегда стоит 一, и множественного числа нет.</p>
+  </div>
+
+  <h3>3 · 根本 — три части речи</h3>
+  <div class="card red">
+    <p><b>Существительное:</b> самое главное, корень дела.</p>
+    <p class="cn-ex">教育是国家的<span class="hl">根本</span>。</p>
+    <p class="cn-ex">这个办法只能救急，不能从<span class="hl">根本</span>上解决问题。</p>
+    <p><b>Прилагательное:</b> основной, решающий.</p>
+    <p class="cn-ex">谈判还算顺利，一些<span class="hl">根本</span>的问题都谈好了。</p>
+    <p class="cn-ex">政府工作应从人民的<span class="hl">根本</span>利益出发。</p>
+    <p><b>Наречие 1:</b> «вообще, совершенно» — почти всегда с отрицанием.</p>
+    <p class="cn-ex">有时候我会梦见参加考试，可是却发现自己<span class="hl">根本</span>读不懂考试的题目。</p>
+    <p class="cn-ex">可是，经过测验计算发现……<span class="hl">根本</span>无法把水分送到几十米高的地方。</p>
+    <p><b>Наречие 2:</b> «полностью, до конца» — уже без отрицания.</p>
+    <p class="cn-ex">事情已经<span class="hl">根本</span>解决了。</p>
+    <p class="cn-ex">他<span class="hl">根本</span>就是在故意找我们的麻烦。</p>
+    <p class="tr" style="margin:10px 0 0">Практическое правило: 根本 + 不／没／无法 — «вообще не»;
+    根本 + 就是 — «попросту, попросту говоря». Именно эти две рамки и встречаются
+    в заданиях чаще всего.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Сочетаемость <span class="cn">词语搭配</span></h2>
+  <table>
+    <tr><th>动词 + 宾语</th><th>примеры</th></tr>
+    <tr><td class="han">感觉 / 缓解</td><td class="han">疲劳</td></tr>
+    <tr><td class="han">指挥</td><td class="han">士兵 / 军队</td></tr>
+    <tr><td class="han">补充</td><td class="han">信息 / 营养 / 人员 / 资金</td></tr>
+    <tr><td class="han">遵守 / 破坏</td><td class="han">秩序</td></tr>
+    <tr><th>状语 + 中心语</th><th></th></tr>
+    <tr><td class="han">有效 / 直接 / 大量 / 完全</td><td class="han">吸收</td></tr>
+    <tr><td class="han">自动</td><td class="han">离开 / 辞职 / 打开 / 燃烧</td></tr>
+    <tr><th>中心语 + 补语</th><th></th></tr>
+    <tr><td class="han">歇</td><td class="han">一会儿 / 两天</td></tr>
+    <tr><td class="han">恢复</td><td class="han">过来 / 得很快</td></tr>
+    <tr><th>数量词 + 名词</th><th></th></tr>
+    <tr><td class="han">一壶 / 一杯 / 一瓶</td><td class="han">开水</td></tr>
+    <tr><td class="han">一片</td><td class="han">面包 / 西瓜 / 药 / 草地 / 树林 / 天空 / 欢笑声</td></tr>
+    <tr><td class="han">一根 / 一支</td><td class="han">管子</td></tr>
+    <tr><td class="han">一块</td><td class="han">玻璃</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>特殊 и 特别 <span class="cn">词语辨析</span></h2>
+  <p>Общее: как прилагательные оба значат «не такой, как все»:
+  <span class="han">对我来说，他是一个特殊／特别的人。</span>
+  Дальше всё решает стиль и часть речи.</p>
+  <table class="pair-tbl">
+    <tr><th></th><th>特殊 tèshū</th><th>特别 tèbié</th></tr>
+    <tr><td>1</td><td>чаще <b>книжный</b> стиль<br><span class="han">因为跟蒸腾作用有关，这种特殊的提升力就被称为“蒸腾拉力”。</span></td><td>годится и в устной, и в письменной речи<br><span class="han">她穿衣服总是很特别。</span></td></tr>
+    <tr><td>2</td><td>наречием <b>не бывает</b></td><td>бывает наречием со значением «особенно, крайне»<br><span class="han">我特别喜欢学中文，尤其是汉字。</span></td></tr>
+  </table>
+  <p class="tr">Практическая проверка: если слово стоит перед глаголом или другим прилагательным
+  (特别喜欢, 特别舒服, 特别是……) — там возможно только 特别. Если это определение
+  в книжном тексте (特殊的情况／方法／地位) — предпочтительнее 特殊.</p>
+</section>
+
+<section>
+  <h2>Ответы к упражнениям <span class="cn">练习 · 做一做 · 练一练</span></h2>
+<details><summary>练习 1 — 选择合适的词语填空（测验 根本 内部 疲劳 系统 自动）</summary><div class="in">
+<p>① 有时候，睡觉并不一定能缓解<span class="k">疲劳</span>。<br>
+② 你的电脑太慢了，应该去给<span class="k">系统</span>做一下升级。<br>
+③ 其实他是位盲人，<span class="k">根本</span>看不见你的动作。<br>
+④ 楼下新装了一台<span class="k">自动</span>售货机。<br>
+⑤ 一位心理学家找来两个7岁的孩子进行一项心理<span class="k">测验</span>。<br>
+⑥ 这是我们公司<span class="k">内部</span>的问题，我们自己来解决吧。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+③ рамка 根本 + 不／看不见 — «вообще не». ④ 自动售货机 — устойчивое название.</p></div></details><details><summary>练习 2 — 选择正确答案</summary><div class="in">
+<p>① 这是你第几次错了？！怎么不<span class="k">吸取</span>（A）教训呢？<br>
+② 你太激动了，最好<span class="k">控制</span>（B）一下你的情绪。<br>
+③ 是他<span class="k">主动</span>（B）提出要去参加这次比赛的。<br>
+④ 今天的比赛<span class="k">秩序</span>（A）良好，没有球迷闹事。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+① урок «извлекают» — 吸取教训; 吸收 про вещество и знания. ② эмоции «держат в руках» — 控制;
+限制 значило бы «ограничить». ③ он сам вызвался — 主动; 自动 было бы «само собой».
+④ 秩序良好 — «порядок соблюдался»; 规则 — это сами правила.</p></div></details><details><summary>练习 3 — 画线连接可以搭配的词语</summary><div class="in">
+<p>(1) 一壶 — 开水 ／ 一根 — 管子 ／ 一块 — 玻璃 ／ 一片 — 天空<br>
+(2) 恢复 — 疲劳 ／ 了解 — 状况 ／ 补充 — 水分 ／ 遵守 — 秩序</p></div></details><details><summary>做一做 — 特殊 или 特别</summary><div class="in">
+<p>(1) 治疗这种病需要一种<span class="k">特殊／特别</span>的药。（оба ✓）<br>
+(2) 这种情况比较<span class="k">特殊</span>，我原来没见过。<br>
+(3) 我喜欢北京，<span class="k">特别</span>是北京的秋天。<br>
+(4) 夏天运动后在大树下坐一会儿，喝口凉开水，<span class="k">特别</span>舒服。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+(2) «особый случай» — книжное 情况特殊. (3) 特别是 — устойчивое «особенно».
+(4) слово стоит перед прилагательным 舒服, то есть работает наречием, а наречием бывает
+только 特别.</p></div></details><details><summary>练一练 1 — 赶快（образцы）</summary><div class="in">
+<p>(1) <span class="k">咱们赶快出发吧</span>，要不该赶上堵车了。（赶快）<br>
+(2) A: <span class="k">客人快到了，你赶快把客厅收拾一下</span>。（赶快）<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: 好，我马上就收拾好了。<br>
+(3) A: 你怎么还在玩儿游戏？火车票预定了吗？<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">哎呀，我忘了，我赶快去订</span>。（赶快）</p></div></details><details><summary>练一练 2 — 片（образцы）</summary><div class="in">
+<p>(1) A: 我来切菜吧，土豆怎么切？<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">切成片儿吧，炒着快熟</span>。（片－名词）<br>
+(2) 今天早上我吃了<span class="k">两片面包和一个鸡蛋</span>。（片－量词）<br>
+(3) A: 这药怎么吃？<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">一天三次，一次两片，饭后吃</span>。（片－量词）</p></div></details><details><summary>练一练 3 — 根本（образцы）</summary><div class="in">
+<p>(1) A: 你觉得他说的话有道理吗？<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">没道理，他根本就不了解实际情况</span>。（根本）<br>
+(2) 搬家要整理的东西太多了，<span class="k">我一个人根本忙不过来</span>。（根本）<br>
+(3) 秦国人在赵国四处散布谣言，说秦军最怕赵括，
+<span class="k">根本不把老将军廉颇放在眼里</span>。（根本）</p></div></details><details><summary>扩展 做一做 — 动物 и 植物</summary><div class="in">
+<p>(1) 猫和<span class="k">老鼠</span>是天敌。<br>
+(2) “蜂拥而至”这个成语是形容很多人像<span class="k">蜜蜂</span>似的一拥而来。<br>
+(3) 冬天，一位农夫在路边看到一条快要冻死的<span class="k">蛇</span>，觉得它很可怜。<br>
+(4) <span class="k">小麦</span>是世界上产量第二的粮食，仅次于玉米。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+动物: 老鼠（lǎoshǔ）、蜜蜂（mìfēng）、蛇（shé）、狮子（shīzi）、兔子（tùzi）、大象（dàxiàng）、
+猴子（hóuzi）、猪（zhū）、蝴蝶（húdié）、昆虫（kūnchóng）.<br>
+植物: 小麦（xiǎomài）、竹子（zhúzi）、根（gēn）、果实（guǒshí）.<br>
+(3) обратите внимание на счётное слово 一条 перед 蛇 — оно же подсказывает ответ.</p></div></details></section>
+<section>
+  <h2>Сочинение <span class="cn">命题写作：我所知道的一种植物</span></h2>
+  <p>Тема просит рассказать про одно растение, и самый выигрышный ход — взять то,
+  что растёт рядом с вами, и объяснить <b>механизм</b>, как это делает текст урока:
+  что оно умеет, как устроено, и почему это важно. Так сочинение не превратится
+  в перечисление «листья зелёные, цветы красивые».</p>
+  <div class="card green">
+    <p class="cn-ex" style="line-height:2">我想说说我家楼下的那几棵大树。
+    小时候我只知道，<span class="hl">炎热</span>的夏天在树下<span class="hl">歇</span>一会儿
+    特别舒服，又<span class="hl">湿润</span>又<span class="hl">荫凉</span>，
+    喝口凉<span class="hl">开水</span>，很快就能<span class="hl">恢复</span>活力。
+    后来我才知道，这其实是因为大树在“出汗”。
+    这是一个<span class="hl">常识</span>：植物的<span class="hl">根</span>会
+    <span class="hl">吸收</span>水分和养分；可我一直没想过，它是怎么把这些
+    <span class="hl">成分</span>送到十几米高的树<span class="hl">梢</span>的。
+    原来叶片会不停地向空气中<span class="hl">释放</span>水汽，
+    树干里的水就会<span class="hl">自动</span>前来<span class="hl">补充</span>，
+    这样一节一节地把水<span class="hl">抽</span>上去。
+    这种<span class="hl">特殊</span>的力量叫“蒸腾拉力”。
+    有意思的是，大树<span class="hl">内部</span>这套供水<span class="hl">系统</span>
+    到底遵守什么样的<span class="hl">秩序</span>，科学家到现在也还没完全弄清楚。
+    一棵普通的树，原来里面藏着这么多秘密。</p>
+  </div>
+  <h3>Связки, которые стоит взять с собой</h3>
+  <ul>
+    <li><span class="cn-ex">小时候我只知道……，后来我才知道……</span> — зачин через собственное незнание;</li>
+    <li><span class="cn-ex">这是一个常识：……；可我一直没想过，……</span> — постановка вопроса;</li>
+    <li><span class="cn-ex">原来……，这样一节一节地……</span> — объяснение механизма;</li>
+    <li><span class="cn-ex">这种特殊的……叫“……”</span> — введение термина;</li>
+    <li><span class="cn-ex">有意思的是，……到现在也还没完全弄清楚</span> — честная концовка вместо пафоса.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>План на урок <span class="cn">复习计划</span></h2>
+  <ol class="route">
+    <li><b>Пройдите шесть полос схемы.</b> Зачин → два пота → вопрос → гипотеза (перечёркнута) →
+    ответ → загадка. Это модель любого научного текста в 阅读: заметьте, где стоит 可是
+    и где 实际上 — именно они отмечают повороты.</li>
+    <li><b>Соберите пересказ по таблице учебника.</b> Три блока: 运动之后 (歇、肌肉、恢复、湿润),
+    人出汗与大树“出汗” (指挥、赶快、片、运输), 大树怎么“出汗”
+    (吸收、控制、管子、根本、自动、特殊、状况、秩序).</li>
+    <li><b>Закройте пару 特殊／特别.</b> Проверка: стоит ли слово перед глаголом или
+    прилагательным. Если да — только 特别.</li>
+    <li><b>Отработайте 根本.</b> Четыре употребления и две рамки: 根本不／无法 и 根本就是.
+    По одному своему примеру на каждое.</li>
+    <li><b>Отдельно — 吸收／吸取.</b> 吸取 только с 教训 и 经验, во всех остальных случаях 吸收.
+    Это самая частая ошибка по этому уроку.</li>
+    <li><b>Напишите сочинение.</b> 100 знаков по схеме «что я видел — чего не знал —
+    как это устроено — что до сих пор непонятно», обязательно с 所谓……就是…… и одним 根本.</li>
+  </ol>
+</section>
+
+
+<nav class="botnav"><a href="hsk5b-lesson-34.html"><span>← Урок 34</span>鸟儿的护肤术</a><a href="hsk5b-lesson-36.html"><span>Урок 36 →</span>老舍与养花</a></nav>
+
+<footer>HSK 标准教程 5（下） · урок 35 «植物会出汗» · конспект для подготовки к экзамену</footer>
+
+</div>
+<script>
+
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML =
+      '<span class="w">' + z.dataset.w + '</span>' +
+      '<span class="p">' + z.dataset.p + '</span>' +
+      '<span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    out.innerHTML = def;
+  }
+
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+
+  var box = document.querySelector('.plan-box svg');
+  box.addEventListener('mouseleave', clear);
+})();
+
+</script>
+<script>
+
+(function(){
+  var LESSON = "35";
+  var DIRS = ["audio/", "", "mp3/", "media/", "аудио/", "audio/35/", "35/"];
+  var CAND = [];
+  DIRS.forEach(function(d){ CAND.push(d + "{hz}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{hz2}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{pyn}.mp3"); });
+
+  var patIn  = document.getElementById('ab-pat');
+  var status = document.getElementById('ab-status');
+  var btns   = Array.prototype.slice.call(document.querySelectorAll('.pb[data-hz]'));
+  var cur = null, curBtn = null, queue = null;
+
+  function pad(n){ n = String(n||''); return n.length === 1 ? '0'+n : n; }
+
+  function resolve(pat, b){
+    return pat
+      .replace(/\{hz2\}/g, b.dataset.hz2 || b.dataset.hz)
+      .replace(/\{hz\}/g,  b.dataset.hz)
+      .replace(/\{pyn\}/g, b.dataset.pyn)
+      .replace(/\{py\}/g,  b.dataset.py)
+      .replace(/\{num\}/g, pad(b.dataset.num))
+      .replace(/\{n\}/g,   b.dataset.num || '')
+      .replace(/\{L\}/g,   LESSON);
+  }
+
+  function setStatus(t, cls){
+    status.textContent = t || '';
+    status.className = 'ab-status' + (cls ? ' ' + cls : '');
+  }
+
+  function test(pat, b){
+    return new Promise(function(res){
+      var a = new Audio(), done = false;
+      function ok(){ if(!done){ done = true; res(true); } }
+      function no(){ if(!done){ done = true; res(false); } }
+      a.addEventListener('loadedmetadata', ok);
+      a.addEventListener('canplay', ok);
+      a.addEventListener('error', no);
+      a.preload = 'metadata';
+      a.src = encodeURI(resolve(pat, b));
+      setTimeout(no, 2500);
+    });
+  }
+
+  function stop(){
+    if(cur){ cur.pause(); cur = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn = null; }
+    queue = null;
+    document.querySelectorAll('.pball.playing').forEach(function(x){ x.classList.remove('playing'); });
+  }
+
+  /* проигрывание с запасными вариантами имени для этого слова */
+  function play(b, onEnd){
+    stop();
+    var tries = [patIn.value.trim()];
+    var alt = (b.dataset.hz2 && b.dataset.hz2 !== b.dataset.hz)
+      ? patIn.value.trim().replace('{hz}', '{hz2}') : null;
+    if(alt && tries.indexOf(alt) < 0) tries.push(alt);
+    CAND.forEach(function(p){ if(tries.indexOf(p) < 0) tries.push(p); });
+
+    b.classList.add('playing');
+    var i = 0;
+    (function attempt(){
+      if(i >= tries.length){
+        b.classList.remove('playing');
+        b.classList.add('missing');
+        b.title = 'Не найден файл для ' + b.dataset.hz;
+        setStatus('Не найден файл для ' + b.dataset.hz + ' — проверьте папку или шаблон.', 'bad');
+        if(onEnd) onEnd();
+        return;
+      }
+      var src = resolve(tries[i++], b);
+      var a = new Audio(encodeURI(src));
+      var started = false;
+      a.addEventListener('canplay', function(){ started = true; });
+      a.addEventListener('ended', function(){
+        b.classList.remove('playing');
+        if(cur === a){ cur = null; curBtn = null; }
+        if(onEnd) onEnd();
+      });
+      a.addEventListener('error', function(){
+        if(!started){ attempt(); }
+        else { b.classList.remove('playing'); if(onEnd) onEnd(); }
+      });
+      cur = a; curBtn = b;
+      b.classList.remove('missing');
+      a.play().catch(function(){});
+    })();
+  }
+
+  /* автопоиск папки при открытии */
+  function autodetect(quiet){
+    if(!btns.length) return;
+    if(!quiet) setStatus('Перебираю варианты…');
+    var i = 0;
+    (function next(){
+      if(i >= CAND.length){
+        setStatus(quiet
+          ? 'Папка с mp3 не найдена. Положите файлы в audio рядом с этим документом.'
+          : 'Ни один из типовых вариантов не подошёл. Впишите путь вручную.',
+          quiet ? '' : 'bad');
+        return;
+      }
+      var p = CAND[i++];
+      test(p, btns[0]).then(function(ok){
+        if(ok){
+          patIn.value = p;
+          document.querySelectorAll('.pb.missing').forEach(function(x){
+            x.classList.remove('missing'); x.title = '';
+          });
+          setStatus('Озвучка подключена: ' + p, 'ok');
+        } else next();
+      });
+    })();
+  }
+
+  document.getElementById('ab-auto').addEventListener('click', function(){ autodetect(false); });
+  document.getElementById('ab-test').addEventListener('click', function(){
+    if(!btns.length) return;
+    setStatus('Проверяю…');
+    test(patIn.value.trim(), btns[0]).then(function(ok){
+      setStatus((ok ? 'Файл найден: ' : 'Не найден: ') + resolve(patIn.value.trim(), btns[0]),
+                ok ? 'ok' : 'bad');
+    });
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(curBtn === b && cur){ stop(); return; }
+      play(b);
+    });
+  });
+
+  document.querySelectorAll('.pball').forEach(function(pb){
+    pb.addEventListener('click', function(){
+      if(pb.classList.contains('playing')){ stop(); return; }
+      var list = Array.prototype.slice.call(
+        pb.closest('.cluster').querySelectorAll('.pb[data-hz]'));
+      stop();
+      pb.classList.add('playing');
+      var i = 0;
+      queue = list;
+      (function step(){
+        if(queue !== list || i >= list.length){ pb.classList.remove('playing'); return; }
+        play(list[i++], function(){ setTimeout(step, 350); });
+      })();
+    });
+  });
+
+  autodetect(true);
+})();
+
+</script>
+</body>
+</html>

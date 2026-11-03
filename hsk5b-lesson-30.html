@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 30 · 竞争让市场更高效 · HSK 标准教程 5下</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#23262a;
+  --brick:#6f6b63;
+  --paper:#e3e1da;
+  --card:#f2f1ec;
+  --red:#b4342a;
+  --brass:#a8813c;
+  --bamboo:#4a6b4e;
+  --sky:#54748a;
+  --line:rgba(35,38,42,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:
+    linear-gradient(rgba(255,255,255,.35) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.35) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+/* ——— шапка ——— */
+header{padding:56px 0 28px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{
+  font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;
+  color:var(--red);letter-spacing:-.03em;
+}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:44px;line-height:1.05;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brick);margin-top:9px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+/* ——— секции ——— */
+section{margin-top:58px}
+h2{
+  font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px;
+}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+a{color:var(--red)}
+
+/* ——— план двора ——— */
+.plan-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px;
+  box-shadow:0 1px 0 rgba(35,38,42,.06)}
+.plan-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone rect,.zone circle,.zone path{transition:fill .18s ease}
+.zone:hover .fillable,.zone.on .fillable{fill:#e7cfc9}
+.zone:focus{outline:none}
+.zone:focus-visible .fillable{stroke:var(--red);stroke-width:2.5}
+.zlab{font-family:var(--han);font-size:15px;font-weight:600;fill:var(--ink);pointer-events:none}
+.zpin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.04em}
+.faint{font-family:var(--han);font-size:12px;fill:var(--brick);pointer-events:none}
+.compass{font-family:var(--mono);font-size:10px;fill:var(--brick);letter-spacing:.15em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:62px}
+.readout .w{font-family:var(--han);font-size:22px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:13px;color:var(--sky)}
+.readout .d{display:block;margin-top:4px;font-size:15px}
+.readout .hint{color:var(--brick);font-style:italic}
+
+/* ——— карточки слов ——— */
+.cluster{margin-top:26px}
+.cluster h3{margin-bottom:4px}
+.cluster .why{font-size:14px;color:var(--brick);margin-bottom:14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--brass);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+/* ——— общие блоки ——— */
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.green{border-left:4px solid var(--bamboo)}
+.card.brass{border-left:4px solid var(--brass)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--paper);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.b{background:var(--brass)}
+.tag.g{background:var(--bamboo)}
+.tag.r{background:var(--red)}
+
+/* ——— таблицы ——— */
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(35,38,42,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+/* ——— на слух ——— */
+.trap{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+/* ——— ответы ——— */
+details{background:var(--card);border:1px solid var(--line);margin:10px 0;padding:0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+/* ——— финал ——— */
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;
+  font-family:var(--disp);font-weight:700;font-size:22px;color:var(--red);
+  width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .lesson-no{font-size:66px}
+  h1{font-size:32px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+
+
+:root{--red:#44568f;--brass:#9a7a2c;--bamboo:#4e7046;--sky:#4f6a86;--paper:#e1e3ea;--card:#f3f4f8}
+.zone:hover .fillable,.zone.on .fillable{fill:#d6dcee}
+.rowlab{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;fill:var(--brick)}
+.zsub{font-family:var(--han);font-size:8.5px;fill:var(--brick);pointer-events:none;letter-spacing:0}
+.tiny{font-family:var(--han);font-size:11.5px;fill:var(--brick);pointer-events:none}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index-5b.html">&#8592; Все уроки 5B</a><a href="index.html">Учебник 5A</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（下） · Unit 10 关注经济 · Focusing on economy</div>
+  <div class="title-row">
+    <div class="lesson-no">30</div>
+    <h1>竞争让市场更高效<span class="lat">Конкуренция делает рынок эффективнее · 607 字 · стр. 92–99</span></h1>
+  </div>
+  <div class="meta">
+    <span><b>36</b> новых слов</span>
+    <span><b>3</b> грамматические точки</span>
+    <span>ключ: <b>无意 · 有利 · 的确</b></span>
+  </div>
+</header>
+
+
+<section>
+  <p class="lede">Второй урок десятого юнита — и редкий случай, когда научно-популярный текст читается
+  как притча: испанские рыбаки, сардины, которые дохнут при перевозке, и один сом, из-за которого
+  вся партия доплывает живой. Из этой картинки учебник выводит целый экономический термин — 鲇鱼效应 —
+  и заканчивает тем, что умеренное давление полезно. Текст почти целиком состоит из слов,
+  которые нужны в 阅读: 刺激, 活力, 落后, 比例, 构成, 潜力, 效率.</p>
+</section>
+
+<section id="plan">
+  <h2>От сардин к «эффекту сома» <span class="cn">竞争让市场更高效</span></h2>
+  <div class="plan-box">
+    <svg viewBox="0 0 660 470" role="img" aria-label="Схема урока: эффект сома — от перевозки сардин до эффекта давления"><text class="rowlab" x="18" y="16">1 · ПРОБЛЕМА 沙丁鱼的运输问题</text><g class="zone" tabindex="0" data-w="离开大海极不适应" data-p="运输 · 适应" data-d="西班牙人特别喜欢吃沙丁鱼。但沙丁鱼对离开大海后的环境极不适应，运输就成了问题。"><rect class="fillable" x="30" y="26" width="145" height="56" rx="3" fill="#dfe3ee" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="102" y="50" text-anchor="middle" style="font-size:12.5px">离开大海极不适应</text><text class="zsub" x="102" y="70" text-anchor="middle">运输 · 适应</text></g><path d="M175 54 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a30)"/><g class="zone" tabindex="0" data-w="上岸后很快死去" data-p="岸" data-d="鱼上岸后，过不了多久就会死去。"><rect class="fillable" x="185" y="26" width="145" height="56" rx="3" fill="#dfe3ee" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="257" y="50" text-anchor="middle" style="font-size:12.5px">上岸后很快死去</text><text class="zsub" x="257" y="70" text-anchor="middle">岸</text></g><path d="M330 54 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a30)"/><g class="zone" tabindex="0" data-w="口感差，价格便宜很多" data-p="商品 · 销售" data-d="而死掉的沙丁鱼口感很差，作为商品销售，价格就会便宜很多。"><rect class="fillable" x="340" y="26" width="145" height="56" rx="3" fill="#dfe3ee" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="412" y="50" text-anchor="middle" style="font-size:12.5px">口感差，价格便宜很多</text><text class="zsub" x="412" y="70" text-anchor="middle">商品 · 销售</text></g><path d="M485 54 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a30)"/><g class="zone" tabindex="0" data-w="活着上岸，卖价涨很多倍" data-p="卖价 · 涨" data-d="如果上岸时沙丁鱼还活着，鱼的卖价可以涨很多倍。"><rect class="fillable" x="495" y="26" width="145" height="56" rx="3" fill="#dfe3ee" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="567" y="50" text-anchor="middle" style="font-size:12.5px">活着上岸，卖价涨很多倍</text><text class="zsub" x="567" y="70" text-anchor="middle">卖价 · 涨</text></g><text class="rowlab" x="18" y="106">2 · РЕШЕНИЕ 一位渔民无意中发现的办法</text><g class="zone" tabindex="0" data-w="无意中发现的办法" data-p="无意 · 巧妙 · 实用" data-d="为了延长沙丁鱼的存活期，减少经济损失，渔民们想了很多办法，但情况仍然没有得到太大的改善。后来一位渔民无意中发现了一种巧妙而实用的方法……"><rect class="fillable" x="30" y="116" width="145" height="56" rx="3" fill="#dee8e2" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="102" y="140" text-anchor="middle" style="font-size:12.5px">无意中发现的办法</text><text class="zsub" x="102" y="160" text-anchor="middle">无意 · 巧妙 · 实用</text></g><path d="M175 144 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a30)"/><g class="zone" tabindex="0" data-w="放进天敌鲇鱼" data-p="天敌 · 鲇鱼 · 设备" data-d="把几条沙丁鱼的天敌鲇鱼放进装鱼的设备中。"><rect class="fillable" x="185" y="116" width="145" height="56" rx="3" fill="#dee8e2" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="257" y="140" text-anchor="middle" style="font-size:12.5px">放进天敌鲇鱼</text><text class="zsub" x="257" y="160" text-anchor="middle">天敌 · 鲇鱼 · 设备</text></g><path d="M330 144 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a30)"/><g class="zone" tabindex="0" data-w="构成威胁，无法共处" data-p="和平 · 构成 · 威胁" data-d="因为鲇鱼是食肉鱼，无法和沙丁鱼和平共处，它会四处游动寻找小鱼吃，对沙丁鱼构成威胁。"><rect class="fillable" x="340" y="116" width="145" height="56" rx="3" fill="#dee8e2" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="412" y="140" text-anchor="middle" style="font-size:12.5px">构成威胁，无法共处</text><text class="zsub" x="412" y="160" text-anchor="middle">和平 · 构成 · 威胁</text></g><path d="M485 144 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a30)"/><g class="zone" tabindex="0" data-w="加速游动，存活率高" data-p="逃避 · 不断 · 旺盛 · 比例" data-d="为了逃避天敌，沙丁鱼自然会不断地加速游动，从而保持了旺盛的生命力，存活的比例大大提高。"><rect class="fillable" x="495" y="116" width="145" height="56" rx="3" fill="#dee8e2" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="567" y="140" text-anchor="middle" style="font-size:12.5px">加速游动，存活率高</text><text class="zsub" x="567" y="160" text-anchor="middle">逃避 · 不断 · 旺盛 · 比例</text></g><text class="rowlab" x="18" y="196">3 · В ЭКОНОМИКЕ “鲇鱼效应”</text><g class="zone" tabindex="0" data-w="刺激企业活跃起来" data-p="措施 · 刺激 · 活力" data-d="这个概念的核心是：一个市场如果能采取一种措施，刺激企业活跃起来，就能使企业获得足够的活力……"><rect class="fillable" x="30" y="206" width="196" height="60" rx="3" fill="#e9e4d8" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="128" y="232" text-anchor="middle" style="font-size:13px">刺激企业活跃起来</text><text class="zsub" x="128" y="252" text-anchor="middle">措施 · 刺激 · 活力</text></g><path d="M226 236 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a30)"/><g class="zone" tabindex="0" data-w="积极参与竞争，不至于落后" data-p="参与 · 落后" data-d="……在市场中积极参与竞争而不至于落后。"><rect class="fillable" x="236" y="206" width="196" height="60" rx="3" fill="#e9e4d8" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="334" y="232" text-anchor="middle" style="font-size:13px">积极参与竞争，不至于落后</text><text class="zsub" x="334" y="252" text-anchor="middle">参与 · 落后</text></g><path d="M432 236 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a30)"/><g class="zone" tabindex="0" data-w="反过来又促使市场更为高效" data-p="概念 · 核心 · 高效" data-d="同时这样反过来又能促使市场更为高效。“鲇鱼效应”对于市场经济以及现代企业管理都有着重要的启发作用。"><rect class="fillable" x="442" y="206" width="196" height="60" rx="3" fill="#e9e4d8" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="540" y="232" text-anchor="middle" style="font-size:13px">反过来又促使市场更为高效</text><text class="zsub" x="540" y="252" text-anchor="middle">概念 · 核心 · 高效</text></g><text class="rowlab" x="18" y="290">4 · СУТЬ 从本质上说，这是一种压力效应</text><g class="zone" tabindex="0" data-w="企业和员工产生一种危机感" data-p="běnzhì · yuángōng · wēijī" data-d="从本质上说，“鲇鱼效应”使得企业和员工产生一种危机感，其实就是一种压力效应。"><rect class="fillable" x="30" y="300" width="290" height="64" rx="3" fill="#ecdfe2" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="175" y="326" text-anchor="middle" style="font-size:14px">危机感 ＝ 压力效应</text><text class="zsub" x="175" y="348" text-anchor="middle">本质 · 员工 · 危机</text></g><path d="M324 332 h10" stroke="#23262a" stroke-width="1.2" marker-end="url(#a30)"/><g class="zone" tabindex="0" data-w="适度的压力有利于保持良好的状态" data-p="yǒulì · wājué · qiánlì · xiàolǜ" data-d="很多研究发现，适度的压力有利于我们保持良好的状态，更加有助于挖掘我们的潜力，从而提高个人的工作效率。"><rect class="fillable" x="340" y="300" width="290" height="64" rx="3" fill="#dee8e2" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="485" y="326" text-anchor="middle" style="font-size:14px">有利于挖掘潜力，提高效率</text><text class="zsub" x="485" y="348" text-anchor="middle">有利 · 挖掘 · 潜力 · 效率</text></g><text class="rowlab" x="18" y="388">5 · ПРИМЕР И ВЫВОД 运动员的决赛</text><g class="zone" tabindex="0" data-w="一定要将自己调整到接近最佳状态" data-p="juésài · jiējìn · jiā · díquè" data-d="比如运动员每到参加比赛，尤其是决赛时，一定要将自己调整到接近最佳状态，让自己感到适度的压力，如果他不紧张、没压力感，则不利于出成绩。因此，“鲇鱼效应”的确对挖掘员工潜力、提高企业活力具有积极的意义。"><rect class="fillable" x="30" y="398" width="600" height="42" rx="3" fill="#dfe3ee" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="418" text-anchor="middle" style="font-size:13px">让自己感到适度的压力，否则不利于出成绩</text><text class="zsub" x="330" y="434" text-anchor="middle">决赛 · 接近 · 佳 · 的确</text></g><text class="tiny" x="330" y="462" text-anchor="middle">放一条天敌进去，整箱鱼反而活了下来 —— 这就是“鲇鱼效应”。</text><defs><marker id="a30" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" fill="#23262a"/></marker></defs></svg>
+    <div class="readout" id="readout">
+      <span class="hint">Наведите курсор или коснитесь любого блока — появится соответствующее место текста.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Текст в пяти шагах <span class="cn">课文 · 607 字</span></h2>
+
+  <div class="card">
+    <p><span class="tag">шаг 1</span><b>Проблема.</b> 西班牙人特别喜欢吃沙丁鱼。但沙丁鱼对离开大海后的环境极不适应，
+    运输就成了问题。鱼上岸后，过不了多久就会死去。而死掉的沙丁鱼口感很差，作为商品销售，价格就会便宜很多。
+    如果上岸时沙丁鱼还活着，鱼的卖价可以涨很多倍。</p>
+    <p style="margin:0"><b>Слова шага:</b> <span class="cn-ex">沙丁鱼 · 运输 · 岸 · 商品</span></p>
+  </div>
+
+  <div class="card green">
+    <p><span class="tag g">шаг 2</span><b>Находка.</b> 为了延长沙丁鱼的存活期，减少经济损失，渔民们想了很多办法，
+    但情况仍然没有得到太大的改善。后来一位渔民无意中发现了一种巧妙而实用的方法：把几条沙丁鱼的天敌鲇鱼
+    放进装鱼的设备中。因为鲇鱼是食肉鱼，无法和沙丁鱼和平共处，它会四处游动寻找小鱼吃，对沙丁鱼构成威胁。
+    为了逃避天敌，沙丁鱼自然会不断地加速游动，从而保持了旺盛的生命力，存活的比例大大提高。</p>
+    <p style="margin:0"><b>Слова шага:</b> <span class="cn-ex">延长 · 存活 · 改善 · 无意 · 巧妙 · 实用 · 天敌 · 鲇鱼 · 设备 · 和平 · 构成 · 逃避 · 不断 · 旺盛 · 比例</span></p>
+  </div>
+
+  <div class="card brass">
+    <p><span class="tag b">шаг 3</span><b>Термин.</b> 看到这里，你有什么感想和体会呢？其实，这在经济学上被称为
+    “鲇鱼效应”。“鲇鱼效应”对于市场经济以及现代企业管理都有着重要的启发作用。这个概念的核心是：
+    一个市场如果能采取一种措施，刺激企业活跃起来，就能使企业获得足够的活力，在市场中积极参与竞争
+    而不至于落后，同时这样反过来又能促使市场更为高效。</p>
+    <p style="margin:0"><b>Слова шага:</b> <span class="cn-ex">感想 · 体会 · 概念 · 核心 · 刺激 · 活力 · 落后</span></p>
+  </div>
+
+  <div class="card red">
+    <p><span class="tag r">шаг 4</span><b>Суть.</b> 从本质上说，“鲇鱼效应”使得企业和员工产生一种危机感，
+    其实就是一种压力效应。很多研究发现，适度的压力有利于我们保持良好的状态，更加有助于挖掘我们的潜力，
+    从而提高个人的工作效率。</p>
+    <p style="margin:0"><b>Слова шага:</b> <span class="cn-ex">本质 · 员工 · 危机 · 有利 · 挖掘 · 潜力</span></p>
+  </div>
+
+  <div class="card green">
+    <p><span class="tag g">шаг 5</span><b>Пример и вывод.</b> 比如运动员每到参加比赛，尤其是决赛时，
+    一定要将自己调整到接近最佳状态，让自己感到适度的压力，如果他不紧张、没压力感，则不利于出成绩。
+    因此，“鲇鱼效应”的确对挖掘员工潜力、提高企业活力具有积极的意义。</p>
+    <p style="margin:0"><b>Слова шага:</b> <span class="cn-ex">决赛 · 接近 · 佳 · 的确</span></p>
+  </div>
+  <p style="font-size:14px;color:var(--brick)">改编自《每天学一点经济学》</p>
+</section>
+
+<section>
+  <h2>36 слов по гнёздам <span class="cn">生词</span></h2>
+  <p style="font-size:14px;color:var(--brick)"><span class="star">★</span> — слово сверх программы HSK 5 (в учебнике помечено звёздочкой). Имён собственных в уроке нет; из текста стоит отдельно выписать выражения <span class="cn-ex">和平共处 · 生命力 · 危机感 · 压力效应 · 最佳状态</span>.</p>
+
+  <div class="audiobar" id="audiobar">
+    <div class="ab-t">Озвучка слов</div>
+    <div class="ab-row">
+      <input id="ab-pat" type="text" spellcheck="false" value="audio/{hz}.mp3" aria-label="Шаблон пути к mp3">
+      <button type="button" id="ab-auto">Подобрать</button>
+      <button type="button" id="ab-test">Проверить</button>
+    </div>
+    <div class="ab-status" id="ab-status"></div>
+    <div class="ab-note">
+      Ищутся файлы вида <code>иероглиф.mp3</code> — сначала в папке <code>audio</code> рядом с этим документом,
+      потом прямо рядом с ним. Подстановки: <code>{hz}</code>, <code>{py}</code>, <code>{pyn}</code>,
+      <code>{num}</code>, <code>{L}</code>.
+    </div>
+  </div>
+<div class="cluster"><h3>I. Сардины и перевозка<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Первый абзац — четыре слова и одна простая причинно-следственная цепочка.</div><div class="words"><div class="w-item"><span class="hz">沙丁鱼</span><span class="py">shādīngyú</span><span class="star">★</span><button class="pb" type="button" data-hz="沙丁鱼" data-hz2="沙丁鱼" data-py="shādīngyú" data-pyn="shadingyu" data-num="1" aria-label="Прослушать 沙丁鱼" title="Прослушать 沙丁鱼">&#9654;</button><span class="ru">сардина</span><span class="ex">西班牙人喜欢吃沙丁鱼</span></div><div class="w-item"><span class="hz">运输</span><span class="py">yùnshū</span><button class="pb" type="button" data-hz="运输" data-hz2="运输" data-py="yùnshū" data-pyn="yunshu" data-num="2" aria-label="Прослушать 运输" title="Прослушать 运输">&#9654;</button><span class="ru">перевозить, транспортировать</span><span class="ex">运输成了问题 / 货物运输</span></div><div class="w-item"><span class="hz">岸</span><span class="py">àn</span><button class="pb" type="button" data-hz="岸" data-hz2="岸" data-py="àn" data-pyn="an" data-num="3" aria-label="Прослушать 岸" title="Прослушать 岸">&#9654;</button><span class="ru">берег</span><span class="ex">鱼上岸后 / 河岸 / 两岸</span></div><div class="w-item"><span class="hz">商品</span><span class="py">shāngpǐn</span><button class="pb" type="button" data-hz="商品" data-hz2="商品" data-py="shāngpǐn" data-pyn="shangpin" data-num="4" aria-label="Прослушать 商品" title="Прослушать 商品">&#9654;</button><span class="ru">товар</span><span class="ex">作为商品销售 / 商品价格</span></div></div></div><div class="cluster"><h3>II. Находка рыбака<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Самое длинное гнездо урока: 15 слов, и почти все они — из экзаменационного 阅读.</div><div class="words"><div class="w-item"><span class="hz">延长</span><span class="py">yáncháng</span><button class="pb" type="button" data-hz="延长" data-hz2="延长" data-py="yáncháng" data-pyn="yanchang" data-num="5" aria-label="Прослушать 延长" title="Прослушать 延长">&#9654;</button><span class="ru">продлить, удлинить</span><span class="ex">延长存活期 / 延长报名时间</span></div><div class="w-item"><span class="hz">存活</span><span class="py">cúnhuó</span><span class="star">★</span><button class="pb" type="button" data-hz="存活" data-hz2="存活" data-py="cúnhuó" data-pyn="cunhuo" data-num="6" aria-label="Прослушать 存活" title="Прослушать 存活">&#9654;</button><span class="ru">выжить, оставаться живым</span><span class="ex">存活期 / 存活的比例</span></div><div class="w-item"><span class="hz">改善</span><span class="py">gǎishàn</span><button class="pb" type="button" data-hz="改善" data-hz2="改善" data-py="gǎishàn" data-pyn="gaishan" data-num="7" aria-label="Прослушать 改善" title="Прослушать 改善">&#9654;</button><span class="ru">улучшить (условия, положение)</span><span class="ex">情况没有改善 / 改善生活</span></div><div class="w-item"><span class="hz">无意</span><span class="py">wúyì</span><span class="star">★</span><button class="pb" type="button" data-hz="无意" data-hz2="无意" data-py="wúyì" data-pyn="wuyi" data-num="8" aria-label="Прослушать 无意" title="Прослушать 无意">&#9654;</button><span class="ru">не иметь намерения; ненароком, случайно</span><span class="ex">无意中发现 / 无意伤害任何人</span></div><div class="w-item"><span class="hz">巧妙</span><span class="py">qiǎomiào</span><button class="pb" type="button" data-hz="巧妙" data-hz2="巧妙" data-py="qiǎomiào" data-pyn="qiaomiao" data-num="9" aria-label="Прослушать 巧妙" title="Прослушать 巧妙">&#9654;</button><span class="ru">остроумный, ловко придуманный</span><span class="ex">巧妙的方法 / 巧妙的回答</span></div><div class="w-item"><span class="hz">实用</span><span class="py">shíyòng</span><button class="pb" type="button" data-hz="实用" data-hz2="实用" data-py="shíyòng" data-pyn="shiyong" data-num="10" aria-label="Прослушать 实用" title="Прослушать 实用">&#9654;</button><span class="ru">практичный, применимый на деле</span><span class="ex">巧妙而实用 / 实用的经验</span></div><div class="w-item"><span class="hz">天敌</span><span class="py">tiāndí</span><span class="star">★</span><button class="pb" type="button" data-hz="天敌" data-hz2="天敌" data-py="tiāndí" data-pyn="tiandi" data-num="11" aria-label="Прослушать 天敌" title="Прослушать 天敌">&#9654;</button><span class="ru">естественный враг</span><span class="ex">沙丁鱼的天敌 / 逃避天敌</span></div><div class="w-item"><span class="hz">鲇鱼</span><span class="py">niányú</span><span class="star">★</span><button class="pb" type="button" data-hz="鲇鱼" data-hz2="鲇鱼" data-py="niányú" data-pyn="nianyu" data-num="12" aria-label="Прослушать 鲇鱼" title="Прослушать 鲇鱼">&#9654;</button><span class="ru">сом</span><span class="ex">几条鲇鱼 / 鲇鱼效应</span></div><div class="w-item"><span class="hz">设备</span><span class="py">shèbèi</span><button class="pb" type="button" data-hz="设备" data-hz2="设备" data-py="shèbèi" data-pyn="shebei" data-num="13" aria-label="Прослушать 设备" title="Прослушать 设备">&#9654;</button><span class="ru">оборудование, устройство (здесь — ёмкость для рыбы)</span><span class="ex">装鱼的设备 / 设备齐全</span></div><div class="w-item"><span class="hz">和平</span><span class="py">hépíng</span><button class="pb" type="button" data-hz="和平" data-hz2="和平" data-py="hépíng" data-pyn="heping" data-num="14" aria-label="Прослушать 和平" title="Прослушать 和平">&#9654;</button><span class="ru">мирный; мир</span><span class="ex">和平共处 / 世界和平</span></div><div class="w-item"><span class="hz">构成</span><span class="py">gòuchéng</span><button class="pb" type="button" data-hz="构成" data-hz2="构成" data-py="gòuchéng" data-pyn="goucheng" data-num="15" aria-label="Прослушать 构成" title="Прослушать 构成">&#9654;</button><span class="ru">составлять, образовывать, создавать (угрозу)</span><span class="ex">构成威胁 / 由三部分构成</span></div><div class="w-item"><span class="hz">逃避</span><span class="py">táobì</span><button class="pb" type="button" data-hz="逃避" data-hz2="逃避" data-py="táobì" data-pyn="taobi" data-num="16" aria-label="Прослушать 逃避" title="Прослушать 逃避">&#9654;</button><span class="ru">уклоняться, убегать от</span><span class="ex">逃避天敌 / 逃避责任</span></div><div class="w-item"><span class="hz">不断</span><span class="py">búduàn</span><button class="pb" type="button" data-hz="不断" data-hz2="不断" data-py="búduàn" data-pyn="buduan" data-num="17" aria-label="Прослушать 不断" title="Прослушать 不断">&#9654;</button><span class="ru">непрерывно, всё время</span><span class="ex">不断地加速游动 / 不断改善</span></div><div class="w-item"><span class="hz">旺盛</span><span class="py">wàngshèng</span><span class="star">★</span><button class="pb" type="button" data-hz="旺盛" data-hz2="旺盛" data-py="wàngshèng" data-pyn="wangsheng" data-num="18" aria-label="Прослушать 旺盛" title="Прослушать 旺盛">&#9654;</button><span class="ru">бурный, кипучий (о силе, жизни)</span><span class="ex">旺盛的生命力 / 精力旺盛</span></div><div class="w-item"><span class="hz">比例</span><span class="py">bǐlì</span><button class="pb" type="button" data-hz="比例" data-hz2="比例" data-py="bǐlì" data-pyn="bili" data-num="19" aria-label="Прослушать 比例" title="Прослушать 比例">&#9654;</button><span class="ru">доля, пропорция</span><span class="ex">存活的比例 / 男女比例</span></div></div></div><div class="cluster"><h3>III. Термин<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Третий абзац — слова, которыми в китайском вообще вводят любое понятие.</div><div class="words"><div class="w-item"><span class="hz">感想</span><span class="py">gǎnxiǎng</span><button class="pb" type="button" data-hz="感想" data-hz2="感想" data-py="gǎnxiǎng" data-pyn="ganxiang" data-num="20" aria-label="Прослушать 感想" title="Прослушать 感想">&#9654;</button><span class="ru">впечатления, мысли по поводу</span><span class="ex">有什么感想 / 谈谈感想</span></div><div class="w-item"><span class="hz">体会</span><span class="py">tǐhuì</span><button class="pb" type="button" data-hz="体会" data-hz2="体会" data-py="tǐhuì" data-pyn="tihui" data-num="21" aria-label="Прослушать 体会" title="Прослушать 体会">&#9654;</button><span class="ru">прочувствовать на себе; понимание из опыта</span><span class="ex">有什么体会 / 深刻的体会</span></div><div class="w-item"><span class="hz">概念</span><span class="py">gàiniàn</span><button class="pb" type="button" data-hz="概念" data-hz2="概念" data-py="gàiniàn" data-pyn="gainian" data-num="22" aria-label="Прослушать 概念" title="Прослушать 概念">&#9654;</button><span class="ru">понятие, концепция</span><span class="ex">这个概念的核心 / 概念很模糊</span></div><div class="w-item"><span class="hz">核心</span><span class="py">héxīn</span><button class="pb" type="button" data-hz="核心" data-hz2="核心" data-py="héxīn" data-pyn="hexin" data-num="23" aria-label="Прослушать 核心" title="Прослушать 核心">&#9654;</button><span class="ru">ядро, сердцевина</span><span class="ex">概念的核心 / 核心问题</span></div><div class="w-item"><span class="hz">刺激</span><span class="py">cìjī</span><button class="pb" type="button" data-hz="刺激" data-hz2="刺激" data-py="cìjī" data-pyn="ciji" data-num="24" aria-label="Прослушать 刺激" title="Прослушать 刺激">&#9654;</button><span class="ru">стимулировать, возбуждать</span><span class="ex">刺激企业活跃 / 刺激经济</span></div><div class="w-item"><span class="hz">活力</span><span class="py">huólì</span><span class="star">★</span><button class="pb" type="button" data-hz="活力" data-hz2="活力" data-py="huólì" data-pyn="huoli" data-num="25" aria-label="Прослушать 活力" title="Прослушать 活力">&#9654;</button><span class="ru">жизненная сила, энергия</span><span class="ex">获得足够的活力 / 充满活力</span></div><div class="w-item"><span class="hz">落后</span><span class="py">luòhòu</span><button class="pb" type="button" data-hz="落后" data-hz2="落后" data-py="luòhòu" data-pyn="luohou" data-num="26" aria-label="Прослушать 落后" title="Прослушать 落后">&#9654;</button><span class="ru">отставать, быть позади</span><span class="ex">不至于落后 / 落后于别人</span></div></div></div><div class="cluster"><h3>IV. Суть: эффект давления<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Четвёртый абзац — ключ ко всей второй половине текста.</div><div class="words"><div class="w-item"><span class="hz">本质</span><span class="py">běnzhì</span><button class="pb" type="button" data-hz="本质" data-hz2="本质" data-py="běnzhì" data-pyn="benzhi" data-num="27" aria-label="Прослушать 本质" title="Прослушать 本质">&#9654;</button><span class="ru">сущность, природа явления</span><span class="ex">从本质上说 / 事物的本质</span></div><div class="w-item"><span class="hz">员工</span><span class="py">yuángōng</span><button class="pb" type="button" data-hz="员工" data-hz2="员工" data-py="yuángōng" data-pyn="yuangong" data-num="28" aria-label="Прослушать 员工" title="Прослушать 员工">&#9654;</button><span class="ru">сотрудники, персонал</span><span class="ex">企业和员工 / 挖掘员工潜力</span></div><div class="w-item"><span class="hz">危机</span><span class="py">wēijī</span><span class="star">★</span><button class="pb" type="button" data-hz="危机" data-hz2="危机" data-py="wēijī" data-pyn="weiji" data-num="29" aria-label="Прослушать 危机" title="Прослушать 危机">&#9654;</button><span class="ru">кризис</span><span class="ex">危机感 / 经济危机</span></div><div class="w-item"><span class="hz">有利</span><span class="py">yǒulì</span><button class="pb" type="button" data-hz="有利" data-hz2="有利" data-py="yǒulì" data-pyn="youli" data-num="30" aria-label="Прослушать 有利" title="Прослушать 有利">&#9654;</button><span class="ru">полезный, выгодный (有利于…)</span><span class="ex">有利于保持状态 / 有利条件</span></div><div class="w-item"><span class="hz">挖掘</span><span class="py">wājué</span><span class="star">★</span><button class="pb" type="button" data-hz="挖掘" data-hz2="挖掘" data-py="wājué" data-pyn="wajue" data-num="31" aria-label="Прослушать 挖掘" title="Прослушать 挖掘">&#9654;</button><span class="ru">раскапывать, раскрывать (потенциал)</span><span class="ex">挖掘潜力 / 挖掘人才</span></div><div class="w-item"><span class="hz">潜力</span><span class="py">qiánlì</span><span class="star">★</span><button class="pb" type="button" data-hz="潜力" data-hz2="潜力" data-py="qiánlì" data-pyn="qianli" data-num="32" aria-label="Прослушать 潜力" title="Прослушать 潜力">&#9654;</button><span class="ru">потенциал, скрытые возможности</span><span class="ex">挖掘潜力 / 潜力很大</span></div></div></div><div class="cluster"><h3>V. Пример и вывод<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Финал: четыре слова, два из которых постоянно встречаются в заданиях.</div><div class="words"><div class="w-item"><span class="hz">决赛</span><span class="py">juésài</span><button class="pb" type="button" data-hz="决赛" data-hz2="决赛" data-py="juésài" data-pyn="juesai" data-num="33" aria-label="Прослушать 决赛" title="Прослушать 决赛">&#9654;</button><span class="ru">финал (соревнований)</span><span class="ex">参加决赛 / 进入决赛</span></div><div class="w-item"><span class="hz">接近</span><span class="py">jiējìn</span><button class="pb" type="button" data-hz="接近" data-hz2="接近" data-py="jiējìn" data-pyn="jiejin" data-num="34" aria-label="Прослушать 接近" title="Прослушать 接近">&#9654;</button><span class="ru">приближаться, быть близким к</span><span class="ex">接近最佳状态 / 接近一万人</span></div><div class="w-item"><span class="hz">佳</span><span class="py">jiā</span><span class="star">★</span><button class="pb" type="button" data-hz="佳" data-hz2="佳" data-py="jiā" data-pyn="jia" data-num="35" aria-label="Прослушать 佳" title="Прослушать 佳">&#9654;</button><span class="ru">хороший, превосходный (книжн.)</span><span class="ex">最佳状态 / 最佳成绩</span></div><div class="w-item"><span class="hz">的确</span><span class="py">díquè</span><button class="pb" type="button" data-hz="的确" data-hz2="的确" data-py="díquè" data-pyn="dique" data-num="36" aria-label="Прослушать 的确" title="Прослушать 的确">&#9654;</button><span class="ru">действительно, в самом деле</span><span class="ex">的确有积极的意义 / 的的确确</span></div></div></div></section>
+<section>
+  <h2>На слух: где рука ошибётся <span class="cn">听写陷阱</span></h2>
+  <p>В этом уроке два по-настоящему опасных места. Первое — 的确 díquè: 的 здесь читается
+  <b>dí</b>, а не de и не dì. Второе — 危机 wēijī: это ровно тот же слог, что и 机会, и 时机,
+  и в диктанте рука часто пишет 危急 (wēijí, «критический»). Ниже — полное гнездо ловушек урока.</p>
+<div class="warn">Первый пункт упражнения 2</div><div class="trap"><div><span class="hz">的确</span><span class="py">díquè</span><span class="n">的 читается dí. Наречие «действительно», можно удвоить: 的的确确.</span></div><div><span class="hz">确实 / 实在</span><span class="py">quèshí / shízài</span><span class="n">确实 бывает и прилагательным (消息确实吗？), 的确 — никогда. Первый пункт упражнения 2.</span></div></div><div class="warn">Гнездо на wēi-/-jī</div><div class="trap"><div><span class="hz">危机</span><span class="py">wēijī</span><span class="n">«кризис»: 危机感, 经济危机.</span></div><div><span class="hz">危急 / 时机</span><span class="py">wēijí / shíjī</span><span class="n">«критический, опасный» и «удачный момент». Три слова, два разных 机/急.</span></div></div><div class="warn">Второй пункт упражнения 2</div><div class="trap"><div><span class="hz">延长</span><span class="py">yáncháng</span><span class="n">сделать длиннее по времени или в пространстве: 延长时间, 延长公路.</span></div><div><span class="hz">推迟</span><span class="py">tuīchí</span><span class="n">перенести на более поздний срок — длина не меняется. Второй пункт упражнения 2.</span></div></div><div class="warn">Третий пункт упражнения 2</div><div class="trap"><div><span class="hz">体会</span><span class="py">tǐhuì</span><span class="n">ГЛАГОЛ и существительное: прочувствовать на себе. 体会到 возможно.</span></div><div><span class="hz">感想</span><span class="py">gǎnxiǎng</span><span class="n">только СУЩЕСТВИТЕЛЬНОЕ: мысли по поводу. 感想到 невозможно. Третий пункт упражнения 2.</span></div></div><div class="warn">Четвёртый пункт упражнения 2</div><div class="trap"><div><span class="hz">本质</span><span class="py">běnzhì</span><span class="n">существительное: сущность. 从本质上说 — вводный оборот.</span></div><div><span class="hz">根本</span><span class="py">gēnběn</span><span class="n">наречие «совершенно, вовсе» при отрицании: 根本就看不见. Четвёртый пункт упражнения 2.</span></div></div><div class="warn">Разбор урока</div><div class="trap"><div><span class="hz">接近</span><span class="py">jiējìn</span><span class="n">приблизиться — в том числе к абстрактному, ко времени и к числу.</span></div><div><span class="hz">靠近</span><span class="py">kàojìn</span><span class="n">придвинуться физически; ни время, ни количество, ни абстракция. Пара 辨析 урока.</span></div></div><div class="warn">Три слова yǒulì/yǒulǐ</div><div class="trap"><div><span class="hz">有利</span><span class="py">yǒulì</span><span class="n">«полезный»: 有利于…, 有利条件. Отрицание — 不利.</span></div><div><span class="hz">有力 / 有理</span><span class="py">yǒulì / yǒulǐ</span><span class="n">有力 — «сильный, веский» (有力的证据), 有理 — «быть правым». Полные омофоны 有利／有力.</span></div></div><div class="warn">Три слова на 用</div><div class="trap"><div><span class="hz">实用</span><span class="py">shíyòng</span><span class="n">«практичный»: 实用的方法.</span></div><div><span class="hz">适用 / 使用</span><span class="py">shìyòng / shǐyòng</span><span class="n">«применимый к» и «пользоваться». Все три звучат похоже.</span></div></div><div class="warn">Три слова на 成</div><div class="trap"><div><span class="hz">构成</span><span class="py">gòuchéng</span><span class="n">«образовать, создать»: 构成威胁, 由三部分构成.</span></div><div><span class="hz">组成 / 形成</span><span class="py">zǔchéng / xíngchéng</span><span class="n">«составить из частей» и «сложиться само». Разводятся только по сочетаемости.</span></div></div><div class="warn">Три слова на 避</div><div class="trap"><div><span class="hz">逃避</span><span class="py">táobì</span><span class="n">«уклоняться»: 逃避责任, 逃避天敌.</span></div><div><span class="hz">避免 / 躲避</span><span class="py">bìmiǎn / duǒbì</span><span class="n">«избежать (чтобы не случилось)» и «прятаться от». Все три — на 避.</span></div></div><div class="warn">Три слова на 激</div><div class="trap"><div><span class="hz">刺激</span><span class="py">cìjī</span><span class="n">«стимулировать» и «раздражать»: 刺激经济, 受了刺激.</span></div><div><span class="hz">激动 / 激烈</span><span class="py">jīdòng / jīliè</span><span class="n">«волноваться» и «ожесточённый». Все три — на 激.</span></div></div><div class="warn">Финальное гнездо урока</div><div class="trap"><div><span class="hz">挖掘</span><span class="py">wājué</span><span class="n">«раскапывать, раскрывать»: 挖掘潜力. 掘 — не самый частый знак, стоит прописать.</span></div><div><span class="hz">潜力 / 活力</span><span class="py">qiánlì / huólì</span><span class="n">Два «-力» этого урока: скрытая сила и живая энергия.</span></div></div><div class="warn">落 — luò или là</div><div class="trap"><div><span class="hz">落后</span><span class="py">luòhòu</span><span class="n">落 здесь luò — «отставать».</span></div><div><span class="hz">落 / 丢三落四</span><span class="py">là / diūsān-làsì</span><span class="n">落 как là — «забыть вещь»: 我把钱包落在家里了. Один знак, два чтения.</span></div></div><div class="warn">Порядок знаков</div><div class="trap"><div><span class="hz">比例</span><span class="py">bǐlì</span><span class="n">«доля, пропорция»: 存活的比例, 男女比例.</span></div><div><span class="hz">比较 / 例如</span><span class="py">bǐjiào / lìrú</span><span class="n">Два знака этого слова по отдельности очень частотны — не перепутайте порядок.</span></div></div>
+  <div class="card green">
+    <p style="margin:0"><b>Как тренировать.</b> Связки урока:
+    <span class="cn-ex">无意中发现 · 巧妙而实用 · 构成威胁 · 和平共处 · 不断加速 · 旺盛的生命力 ·
+    存活的比例 · 概念的核心 · 刺激经济 · 充满活力 · 不至于落后 · 从本质上说 · 危机感 ·
+    有利于…… · 挖掘潜力 · 最佳状态 · 的确</span>.
+    Обороты 从本质上说, 有利于…… и 的确 — это готовые «скрепы» для сочинения: их стоит
+    выучить именно как блоки.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Три точки урока <span class="cn">词语例释</span></h2>
+
+  <h3>1 · 无意 — «не намеренно»</h3>
+  <div class="card green">
+    <p><b>Глагол:</b> «не желать, не иметь намерения» — после него идёт действие.</p>
+    <p class="cn-ex">他<span class="hl">无意</span>伤害任何人。</p>
+    <p class="cn-ex">我<span class="hl">无意</span>打扰您，不过我可以跟您谈一会儿吗？</p>
+    <p><b>Наречие:</b> «ненароком, случайно», почти всегда в форме 无意中.</p>
+    <p class="cn-ex">后来一位渔民<span class="hl">无意中</span>发现了一种巧妙而实用的方法……</p>
+    <p class="cn-ex">她在收拾花园时，<span class="hl">无意</span>地找到了这只耳环。</p>
+    <p class="tr" style="margin:10px 0 0">Типичные глаголы после 无意中: 发现, 看到, 知道, 成为,
+    说出, 听到, 提起 — то есть всё, что можно обнаружить или сказать случайно (см. таблицу сочетаемости).</p>
+  </div>
+
+  <h3>2 · 有利 — «полезный, выгодный»</h3>
+  <div class="card brass">
+    <p>Прилагательное. Чаще всего в конструкции <b>有利于 + кому/чему</b>; отрицание — <b>不利</b>.</p>
+    <p class="cn-ex">高高的个子、漂亮的外表，都是他的<span class="hl">有利</span>条件。</p>
+    <p class="cn-ex">很多研究发现，适度的压力<span class="hl">有利于</span>我们保持良好的状态……</p>
+    <p class="cn-ex">笑能促进心肺活动，改善肌肉紧张状况，对睡眠也是<span class="hl">有利</span>的。</p>
+    <p class="tr" style="margin:10px 0 0">Схема переделки предложений из 练一练: «对…有好处／有帮助»
+    → «有利于…». Важно: 有利于 требует после себя <b>именную группу или глагольный оборот</b>,
+    но не целое предложение с подлежащим и сказуемым, оторванными от темы.</p>
+  </div>
+
+  <h3>3 · 的确 — «в самом деле»</h3>
+  <div class="card red">
+    <p>Наречие: «совершенно точно, действительно». Может удваиваться — 的的确确.</p>
+    <p class="cn-ex">因此，“鲇鱼效应”<span class="hl">的确</span>对挖掘员工潜力、提高企业活力具有积极的意义。</p>
+    <p class="cn-ex">他<span class="hl">的确</span>是我所教过的学生中最聪明的。</p>
+    <p class="cn-ex">咱们总裁选择李阳负责的<span class="hl">的的确确</span>有些冒险，因为他太年轻了。</p>
+    <p class="tr" style="margin:10px 0 0">Главное отличие от 确实: 的确 — <b>только наречие</b>,
+    оно стоит перед сказуемым. 确实 бывает ещё и прилагательным и может само быть сказуемым:
+    <span class="cn-ex">消息确实吗？ / 这个消息很确实。</span> Поэтому в вопросе «новость точная?»
+    подходит только 确实.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Сочетаемость <span class="cn">词语搭配</span></h2>
+  <table>
+    <tr><th>动词 + 宾语</th><th>примеры</th></tr>
+    <tr><td class="han">改善</td><td class="han">条件 / 环境 / 关系 / 管理 / 生活 / 质量 / 服务</td></tr>
+    <tr><td class="han">刺激</td><td class="han">胃 / 大脑 / 生产 / 购买力 / 经济</td></tr>
+    <tr><th>定语 + 中心语</th><th></th></tr>
+    <tr><td class="han">有利的</td><td class="han">形势 / 条件 / 地位 / 环境 / 位置 / 因素</td></tr>
+    <tr><td class="han">巧妙的</td><td class="han">方法 / 主意 / 设计 / 方式 / 回答 / 比喻 / 处理 / 发明</td></tr>
+    <tr><th>状语 + 中心语</th><th></th></tr>
+    <tr><td class="han">不断</td><td class="han">发展 / 改善 / 追求 / 调整 / 积累 / 投入 / 成熟 / 丰富 / 优化</td></tr>
+    <tr><td class="han">无意（中）</td><td class="han">发现 / 看到 / 知道 / 成为 / 说出 / 听到 / 提起</td></tr>
+    <tr><th>主语 + 谓语</th><th></th></tr>
+    <tr><td class="han">概念</td><td class="han">明确 / 模糊 / 错误 / 复杂</td></tr>
+    <tr><td class="han">设备</td><td class="han">落后 / 齐全 / 完好</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>接近 и 靠近 <span class="cn">词语辨析</span></h2>
+  <p>Общее: оба — глаголы «сокращать расстояние, двигаться к цели», и иногда взаимозаменяемы:
+  <span class="han">这个地方接近／靠近北极地区，夏季白天很长，天亮得也很早。</span>
+  Разница в том, <b>к чему</b> можно приближаться.</p>
+  <table class="pair-tbl">
+    <tr><th></th><th>接近 jiējìn</th><th>靠近 kàojìn</th></tr>
+    <tr><td>1</td><td>люди, вещи, места, <b>время и количество</b><br><span class="han">接近下午一点时，救护车终于赶到了。</span></td><td>люди, вещи, места — но <b>не время и не количество</b><br><span class="han">他们挤在靠近车窗的地方，脸对脸离得很近。</span></td></tr>
+    <tr><td>2</td><td>сочетается с <b>абстрактным</b><br><span class="han">经过努力，现在我们已越来越接近年初定下的销售目标了。</span></td><td>с абстрактным обычно не сочетается</td></tr>
+    <tr><td>3</td><td>может означать «разница невелика»<br><span class="han">他们俩的水平非常接近，这场比赛真不好说谁会赢。</span></td><td>нет такого значения</td></tr>
+  </table>
+  <p class="tr">Практическая проверка: если после слова стоит время, число, цель, уровень или «мнения» —
+  только 接近. Если речь о том, чтобы придвинуться телом или предметом вплотную — 靠近.</p>
+</section>
+
+<section>
+  <h2>Ответы к упражнениям <span class="cn">练习 · 做一做 · 练一练</span></h2>
+<details><summary>练习 1 — 选择合适的词语填空（实用 接近 落后 逃避 构成 延长）</summary><div class="in">
+<p>① 中国的发展和强大不会对任何人<span class="k">构成</span>威胁。<br>
+② 遇到困难不应该<span class="k">逃避</span>，应该积极地面对。<br>
+③ 由于报名的考生太多，学校决定适当<span class="k">延长</span>报名时间。<br>
+④ 公司在产品包装、宣传推广和销售等方面积累了相当丰富、<span class="k">实用</span>的经验。<br>
+⑤ 中国各地区经济发展水平不平衡，中西部<span class="k">落后</span>于东南沿海地区。<br>
+⑥ 参加本届运动会的运动员人数<span class="k">接近</span>一万人。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+① 构成威胁 — устойчивое сочетание. ⑤ обратите внимание на 落后<b>于</b> — «отставать от».
+⑥ про количество можно сказать только 接近, но не 靠近.</p></div></details><details><summary>练习 2 — 选择正确答案</summary><div class="in">
+<p>① 你听谁说刘方要结婚了？消息<span class="k">确实</span>（B）吗？<br>
+② 主任临时有点儿事，下午的会<span class="k">推迟</span>（B）到明天了。<br>
+③ 让孩子<span class="k">体会</span>（A）到自己的意见受到尊重，这一点很重要。<br>
+④ 他<span class="k">根本</span>（B）就看不见这些美丽的花呀。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+① слово стоит сказуемым вопроса — значит нужно прилагательное 确实; 的确 только наречие.
+② встречу переносят — 推迟; 延长 удлиняет саму встречу. ③ после пропуска стоит 到 — нужен глагол 体会;
+感想 только существительное. ④ при отрицании «вовсе не» — 根本.</p></div></details><details><summary>练习 3 — 画线连接可以搭配的词语</summary><div class="in">
+<p>(1) 设备 — 笨重 ／ 体会 — 深刻 ／ 概念 — 抽象 ／ 效率 — 惊人<br>
+(2) 说话 — 巧妙 ／ 经济 — 落后 ／ 方法 — 实用 ／ 世界 — 和平</p></div></details><details><summary>做一做 — 接近 или 靠近</summary><div class="in">
+<p>(1) 做这个动作时，大腿要尽量<span class="k">靠近</span>胸部。（接近 ✗ 靠近 ✓）<br>
+(2) 直到天快亮的时候，他的体温才<span class="k">接近</span>正常。<br>
+(3) 这项技术已<span class="k">接近</span>世界先进水平。<br>
+(4) 对于这个问题，几国的意见很<span class="k">接近</span>。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+(1) физическое движение частью тела вплотную — 靠近. (2) «подойти к норме», (3) «к уровню»,
+(4) «мнения близки» — всё это абстрактное и количественное, значит только 接近.</p></div></details><details><summary>练一练 1 — 无意（образцы）</summary><div class="in">
+<p>(1) 售货员看他<span class="k">无意买那款贵的手机</span>，就拿出另外一款更便宜的手机。<br>
+(2) 真对不起！踩到您的脚了，<span class="k">我不是故意的，是无意中碰到的</span>。<br>
+(3) A: 你怎么知道他去找了刘经理？<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">我昨天在楼下无意中看到的</span>。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+(1) — глагол «не иметь намерения»; (2) и (3) — наречие 无意中.</p></div></details><details><summary>练一练 2 — 有利（用所学词语改写句子）</summary><div class="in">
+<p>(1) 我听人介绍，<span class="k">苹果有利于健康</span>。<br>
+(2) 与电子阅读相比，<span class="k">纸质阅读更有利于保护眼睛</span>。<br>
+(3) 考试时，<span class="k">适度的紧张有利于考生集中精力完成考试</span>。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+Схема переделки одна и та же: «对……有好处／有帮助／能使……» → «……有利于……».</p></div></details><details><summary>练一练 3 — 的确（образцы）</summary><div class="in">
+<p>(1) 丽丽的歌声优美动人，听她唱歌<span class="k">的确是一种享受</span>。<br>
+(2) A: 卧室的窗帘有些日子没洗了吧？<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">的确，都快两个月了，这个周末就洗</span>。<br>
+(3) A: 我这次去九寨沟拍的照片你看了吗？<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">看了，那儿的风景的的确确美极了</span>。</p></div></details><details><summary>扩展 做一做 — 经济 2</summary><div class="in">
+<p>(1) 他从事对外<span class="k">贸易</span>工作多年，积累了丰富的经验。<br>
+(2) <span class="k">谈判</span>进行得还算顺利，最快下周就可以签合同了。<br>
+(3) 公司的项目挺不错，但资金出了问题，目前面临<span class="k">破产</span>危险。<br>
+(4) 买房的<span class="k">贷款</span>还有三四年就可以还清了。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+经济2: 出口（chūkǒu）、进口（jìnkǒu）、贸易（màoyì）、谈判（tánpàn）、合同（hétong）、
+中介（zhōngjiè）、破产（pòchǎn）、资金（zījīn）、利润（lìrùn）、股票（gǔpiào）、账户（zhànghù）、
+利息（lìxī）、贷款（dàikuǎn）、汇率（huìlǜ）、押金（yājīn）.<br>
+Вместе с 经济1 из урока 29 это полный экономический словарь пятого уровня — 29 слов,
+которые стоит выписать на один лист.</p></div></details></section>
+<section>
+  <h2>Сочинение <span class="cn">命题写作：竞争的利与弊</span></h2>
+  <p>Тема прямо требует двух частей — польза и вред, — поэтому самая удобная схема такая:
+  сначала «плюсы» словами урока, потом «но» с конкретным примером минуса, и в конце
+  собственный вывод про 适度.</p>
+  <div class="card green">
+    <p class="cn-ex" style="line-height:2">竞争<span class="hl">的确</span>有不少好处。
+    它能<span class="hl">刺激</span>企业活跃起来，让企业获得足够的<span class="hl">活力</span>，
+    在市场中积极参与竞争而不至于<span class="hl">落后</span>；对个人来说，
+    适度的压力也<span class="hl">有利于</span>我们保持良好的状态，更有助于<span class="hl">挖掘</span>
+    自己的<span class="hl">潜力</span>。就像运动员参加<span class="hl">决赛</span>时，
+    一定要把自己调整到<span class="hl">接近</span>最<span class="hl">佳</span>状态，
+    如果完全没有压力感，反而不利于出成绩。
+    但竞争也有不利的一面。有些失败者会丧失信心，产生自卑感；
+    压力过大还可能让人长期紧张、焦虑，甚至把别人的成绩看作一种威胁，损害人际关系。
+    所以我认为，关键不在于要不要竞争，而在于<span class="hl">适当</span>：
+    把对手当成让自己游得更快的那条“鲇鱼”，而不是必须<span class="hl">逃避</span>的天敌。</p>
+  </div>
+  <h3>Связки, которые стоит взять с собой</h3>
+  <ul>
+    <li><span class="cn-ex">竞争的确有不少好处</span> — зачин с 的确 вместо пустого 我觉得;</li>
+    <li><span class="cn-ex">对个人来说，……也有利于……</span> — переход от общего к личному;</li>
+    <li><span class="cn-ex">就像……一样，如果……，反而……</span> — пример с оговоркой;</li>
+    <li><span class="cn-ex">但……也有不利的一面</span> — поворот ко второй части темы;</li>
+    <li><span class="cn-ex">关键不在于……，而在于……</span> — сильная концовка (конструкция из урока 26).</li>
+  </ul>
+</section>
+
+<section>
+  <h2>План на урок <span class="cn">复习计划</span></h2>
+  <ol class="route">
+    <li><b>Пройдите пять полос схемы.</b> Проблема → находка → термин → суть → пример.
+    Обратите внимание: текст дважды делает один и тот же логический ход — «враг оказывается полезен»,
+    сначала на рыбах, потом на людях.</li>
+    <li><b>Соберите пересказ по таблице учебника.</b> Три блока: 沙丁鱼的运输问题 (环境、适应、岸、口感、销售、涨),
+    如何提高存活率 (延长、损失、改善、无意、巧妙、实用、逃避、不断、比例),
+    “鲇鱼效应”的启发 (体会、核心、刺激、活力、落后、危机感、有利、状态).</li>
+    <li><b>Закройте пару 接近／靠近.</b> Проверка одна: можно ли приблизиться к этому во времени,
+    в числе или в уровне. Если да — 接近.</li>
+    <li><b>Отработайте 的确／确实.</b> 的确 — только перед сказуемым; 确实 может быть сказуемым само.
+    Три своих примера на каждое.</li>
+    <li><b>Соедините словарь уроков 29 и 30.</b> 经济1 + 经济2 — 29 слов на одном листе:
+    это весь экономический блок HSK 5, и он почти гарантированно встретится в 阅读.</li>
+    <li><b>Напишите сочинение.</b> 100 знаков по схеме «плюсы — но — вывод про 适当»,
+    обязательно с 有利于 и с одним 的确.</li>
+  </ol>
+</section>
+
+
+<nav class="botnav"><a href="hsk5b-lesson-29.html"><span>← Урок 29</span>培养对手</a><a href="index-5b.html"><span>Урок 31 — в работе</span>登门槛效应</a></nav>
+
+<footer>HSK 标准教程 5（下） · урок 30 «竞争让市场更高效» · конспект для подготовки к экзамену</footer>
+
+</div>
+<script>
+
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML =
+      '<span class="w">' + z.dataset.w + '</span>' +
+      '<span class="p">' + z.dataset.p + '</span>' +
+      '<span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    out.innerHTML = def;
+  }
+
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+
+  var box = document.querySelector('.plan-box svg');
+  box.addEventListener('mouseleave', clear);
+})();
+
+</script>
+<script>
+
+(function(){
+  var LESSON = "30";
+  var DIRS = ["audio/", "", "mp3/", "media/", "аудио/", "audio/30/", "30/"];
+  var CAND = [];
+  DIRS.forEach(function(d){ CAND.push(d + "{hz}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{hz2}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{pyn}.mp3"); });
+
+  var patIn  = document.getElementById('ab-pat');
+  var status = document.getElementById('ab-status');
+  var btns   = Array.prototype.slice.call(document.querySelectorAll('.pb[data-hz]'));
+  var cur = null, curBtn = null, queue = null;
+
+  function pad(n){ n = String(n||''); return n.length === 1 ? '0'+n : n; }
+
+  function resolve(pat, b){
+    return pat
+      .replace(/\{hz2\}/g, b.dataset.hz2 || b.dataset.hz)
+      .replace(/\{hz\}/g,  b.dataset.hz)
+      .replace(/\{pyn\}/g, b.dataset.pyn)
+      .replace(/\{py\}/g,  b.dataset.py)
+      .replace(/\{num\}/g, pad(b.dataset.num))
+      .replace(/\{n\}/g,   b.dataset.num || '')
+      .replace(/\{L\}/g,   LESSON);
+  }
+
+  function setStatus(t, cls){
+    status.textContent = t || '';
+    status.className = 'ab-status' + (cls ? ' ' + cls : '');
+  }
+
+  function test(pat, b){
+    return new Promise(function(res){
+      var a = new Audio(), done = false;
+      function ok(){ if(!done){ done = true; res(true); } }
+      function no(){ if(!done){ done = true; res(false); } }
+      a.addEventListener('loadedmetadata', ok);
+      a.addEventListener('canplay', ok);
+      a.addEventListener('error', no);
+      a.preload = 'metadata';
+      a.src = encodeURI(resolve(pat, b));
+      setTimeout(no, 2500);
+    });
+  }
+
+  function stop(){
+    if(cur){ cur.pause(); cur = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn = null; }
+    queue = null;
+    document.querySelectorAll('.pball.playing').forEach(function(x){ x.classList.remove('playing'); });
+  }
+
+  /* проигрывание с запасными вариантами имени для этого слова */
+  function play(b, onEnd){
+    stop();
+    var tries = [patIn.value.trim()];
+    var alt = (b.dataset.hz2 && b.dataset.hz2 !== b.dataset.hz)
+      ? patIn.value.trim().replace('{hz}', '{hz2}') : null;
+    if(alt && tries.indexOf(alt) < 0) tries.push(alt);
+    CAND.forEach(function(p){ if(tries.indexOf(p) < 0) tries.push(p); });
+
+    b.classList.add('playing');
+    var i = 0;
+    (function attempt(){
+      if(i >= tries.length){
+        b.classList.remove('playing');
+        b.classList.add('missing');
+        b.title = 'Не найден файл для ' + b.dataset.hz;
+        setStatus('Не найден файл для ' + b.dataset.hz + ' — проверьте папку или шаблон.', 'bad');
+        if(onEnd) onEnd();
+        return;
+      }
+      var src = resolve(tries[i++], b);
+      var a = new Audio(encodeURI(src));
+      var started = false;
+      a.addEventListener('canplay', function(){ started = true; });
+      a.addEventListener('ended', function(){
+        b.classList.remove('playing');
+        if(cur === a){ cur = null; curBtn = null; }
+        if(onEnd) onEnd();
+      });
+      a.addEventListener('error', function(){
+        if(!started){ attempt(); }
+        else { b.classList.remove('playing'); if(onEnd) onEnd(); }
+      });
+      cur = a; curBtn = b;
+      b.classList.remove('missing');
+      a.play().catch(function(){});
+    })();
+  }
+
+  /* автопоиск папки при открытии */
+  function autodetect(quiet){
+    if(!btns.length) return;
+    if(!quiet) setStatus('Перебираю варианты…');
+    var i = 0;
+    (function next(){
+      if(i >= CAND.length){
+        setStatus(quiet
+          ? 'Папка с mp3 не найдена. Положите файлы в audio рядом с этим документом.'
+          : 'Ни один из типовых вариантов не подошёл. Впишите путь вручную.',
+          quiet ? '' : 'bad');
+        return;
+      }
+      var p = CAND[i++];
+      test(p, btns[0]).then(function(ok){
+        if(ok){
+          patIn.value = p;
+          document.querySelectorAll('.pb.missing').forEach(function(x){
+            x.classList.remove('missing'); x.title = '';
+          });
+          setStatus('Озвучка подключена: ' + p, 'ok');
+        } else next();
+      });
+    })();
+  }
+
+  document.getElementById('ab-auto').addEventListener('click', function(){ autodetect(false); });
+  document.getElementById('ab-test').addEventListener('click', function(){
+    if(!btns.length) return;
+    setStatus('Проверяю…');
+    test(patIn.value.trim(), btns[0]).then(function(ok){
+      setStatus((ok ? 'Файл найден: ' : 'Не найден: ') + resolve(patIn.value.trim(), btns[0]),
+                ok ? 'ok' : 'bad');
+    });
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(curBtn === b && cur){ stop(); return; }
+      play(b);
+    });
+  });
+
+  document.querySelectorAll('.pball').forEach(function(pb){
+    pb.addEventListener('click', function(){
+      if(pb.classList.contains('playing')){ stop(); return; }
+      var list = Array.prototype.slice.call(
+        pb.closest('.cluster').querySelectorAll('.pb[data-hz]'));
+      stop();
+      pb.classList.add('playing');
+      var i = 0;
+      queue = list;
+      (function step(){
+        if(queue !== list || i >= list.length){ pb.classList.remove('playing'); return; }
+        play(list[i++], function(){ setTimeout(step, 350); });
+      })();
+    });
+  });
+
+  autodetect(true);
+})();
+
+</script>
+</body>
+</html>

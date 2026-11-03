@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 32 · 身边的环保 · HSK 标准教程 5下</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#23262a;
+  --brick:#6f6b63;
+  --paper:#e3e1da;
+  --card:#f2f1ec;
+  --red:#b4342a;
+  --brass:#a8813c;
+  --bamboo:#4a6b4e;
+  --sky:#54748a;
+  --line:rgba(35,38,42,.18);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:
+    linear-gradient(rgba(255,255,255,.35) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.35) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+/* ——— шапка ——— */
+header{padding:56px 0 28px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{
+  font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;
+  color:var(--red);letter-spacing:-.03em;
+}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:44px;line-height:1.05;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brick);margin-top:9px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+/* ——— секции ——— */
+section{margin-top:58px}
+h2{
+  font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px;
+}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+a{color:var(--red)}
+
+/* ——— план двора ——— */
+.plan-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px;
+  box-shadow:0 1px 0 rgba(35,38,42,.06)}
+.plan-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone rect,.zone circle,.zone path{transition:fill .18s ease}
+.zone:hover .fillable,.zone.on .fillable{fill:#e7cfc9}
+.zone:focus{outline:none}
+.zone:focus-visible .fillable{stroke:var(--red);stroke-width:2.5}
+.zlab{font-family:var(--han);font-size:15px;font-weight:600;fill:var(--ink);pointer-events:none}
+.zpin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.04em}
+.faint{font-family:var(--han);font-size:12px;fill:var(--brick);pointer-events:none}
+.compass{font-family:var(--mono);font-size:10px;fill:var(--brick);letter-spacing:.15em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:62px}
+.readout .w{font-family:var(--han);font-size:22px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:13px;color:var(--sky)}
+.readout .d{display:block;margin-top:4px;font-size:15px}
+.readout .hint{color:var(--brick);font-style:italic}
+
+/* ——— карточки слов ——— */
+.cluster{margin-top:26px}
+.cluster h3{margin-bottom:4px}
+.cluster .why{font-size:14px;color:var(--brick);margin-bottom:14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--brass);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+/* ——— общие блоки ——— */
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.green{border-left:4px solid var(--bamboo)}
+.card.brass{border-left:4px solid var(--brass)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--paper);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.b{background:var(--brass)}
+.tag.g{background:var(--bamboo)}
+.tag.r{background:var(--red)}
+
+/* ——— таблицы ——— */
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(35,38,42,.05)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+/* ——— на слух ——— */
+.trap{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--sky);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+/* ——— ответы ——— */
+details{background:var(--card);border:1px solid var(--line);margin:10px 0;padding:0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+/* ——— финал ——— */
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;
+  font-family:var(--disp);font-weight:700;font-size:22px;color:var(--red);
+  width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .lesson-no{font-size:66px}
+  h1{font-size:32px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+
+
+:root{--red:#4a7030;--brass:#9a7a2c;--bamboo:#4e7046;--sky:#4f6a86;--paper:#e3e7dc;--card:#f4f7ee}
+.zone:hover .fillable,.zone.on .fillable{fill:#dbe8c9}
+.rowlab{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;fill:var(--brick)}
+.zsub{font-family:var(--han);font-size:8.5px;fill:var(--brick);pointer-events:none;letter-spacing:0}
+.tiny{font-family:var(--han);font-size:11.5px;fill:var(--brick);pointer-events:none}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index-5b.html">&#8592; Все уроки 5B</a><a href="index.html">Учебник 5A</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（下） · Unit 11 观察社会 · Observing the society</div>
+  <div class="title-row">
+    <div class="lesson-no">32</div>
+    <h1>身边的环保<span class="lat">Экология рядом · 737 字 · стр. 110–117</span></h1>
+  </div>
+  <div class="meta">
+    <span><b>39</b> новых слов</span>
+    <span><b>3</b> грамматические точки</span>
+    <span>ключ: <b>密切 · 尽量 · 逐步</b></span>
+  </div>
+</header>
+
+
+<section>
+  <p class="lede">Самый «словарный» урок второго тома: 39 новых слов, и почти все они — это
+  готовый экологический блок HSK 5, который на экзамене встречается и в аудировании, и в чтении,
+  и в сочинении. Текст устроен предельно логично — вред природе, вред людям, причины, меры, вывод, —
+  поэтому его удобно использовать как каркас для собственного рассказа на любую тему
+  «проблема — причины — что делать».</p>
+</section>
+
+<section id="plan">
+  <h2>Пять блоков одного текста <span class="cn">身边的环保</span></h2>
+  <div class="plan-box">
+    <svg viewBox="0 0 660 480" role="img" aria-label="Схема урока: экология рядом с нами"><text class="rowlab" x="18" y="16">1 · ВРЕД ЖИВОТНЫМ И РАСТЕНИЯМ 污染对动植物的危害</text><g class="zone" tabindex="0" data-w="自然界的变化" data-p="洪水 · 地震" data-d="动植物的消失，部分原因是由于自然界的变化，比如洪水、地震等改变了它们生活的环境。"><rect class="fillable" x="30" y="26" width="190" height="54" rx="3" fill="#dfe8d2" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="125" y="50" text-anchor="middle" style="font-size:12.5px">自然界的变化</text><text class="zsub" x="125" y="68" text-anchor="middle">洪水 · 地震</text></g><path d="M220 53 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a32)"/><g class="zone" tabindex="0" data-w="人类对自然的破坏" data-p="破坏 · 砍 · 生存" data-d="但更大的原因则是人类对自然的破坏——有些地区的森林已经几乎被人砍光了，很多河流被污染，不再适合鱼类生存，有的地区原本是草原，如今已变为沙漠……"><rect class="fillable" x="235" y="26" width="190" height="54" rx="3" fill="#dfe8d2" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="50" text-anchor="middle" style="font-size:12.5px">人类对自然的破坏</text><text class="zsub" x="330" y="68" text-anchor="middle">破坏 · 砍 · 生存</text></g><path d="M425 53 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a32)"/><g class="zone" tabindex="0" data-w="一半以上动植物正在消失" data-p="消失 · 沙漠 · 数据 · 夸张" data-d="从国际环保组织公布的数据可知，地球上一半以上的动植物正在消失，这是真实的情况，一点儿也不夸张。"><rect class="fillable" x="440" y="26" width="190" height="54" rx="3" fill="#dfe8d2" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="535" y="50" text-anchor="middle" style="font-size:12.5px">一半以上动植物正在消失</text><text class="zsub" x="535" y="68" text-anchor="middle">消失 · 沙漠 · 数据 · 夸张</text></g><text class="rowlab" x="18" y="104">2 · ВРЕД ЛЮДЯМ 污染对人类的危害</text><g class="zone" tabindex="0" data-w="地表水污染，地下水过量使用" data-p="资源 · 短缺" data-d="人类自身也饱受污染的危害。有些地区地表水已污染，地下水又被过量使用，水资源短缺问题就连科学家们也不知道该如何解决。"><rect class="fillable" x="30" y="114" width="190" height="54" rx="3" fill="#e8e2d4" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="125" y="138" text-anchor="middle" style="font-size:12.5px">地表水污染，地下水过量使用</text><text class="zsub" x="125" y="156" text-anchor="middle">资源 · 短缺</text></g><path d="M220 141 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a32)"/><g class="zone" tabindex="0" data-w="17% 的人喝不上干净的水" data-p="享用 · 饮用水" data-d="目前世界上有17%的人无法享用干净的饮用水。"><rect class="fillable" x="235" y="114" width="190" height="54" rx="3" fill="#e8e2d4" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="330" y="138" text-anchor="middle" style="font-size:12.5px">17% 的人喝不上干净的水</text><text class="zsub" x="330" y="156" text-anchor="middle">享用 · 饮用水</text></g><path d="M425 141 h10" stroke="#23262a" stroke-width="1.1" marker-end="url(#a32)"/><g class="zone" tabindex="0" data-w="死于空气污染的人比车祸还多" data-p="疾病 · 车祸 · 不安" data-d="而每年死于与空气污染有关的疾病的人比死于车祸的还要多。这些数据确实令人不安。"><rect class="fillable" x="440" y="114" width="190" height="54" rx="3" fill="#e8e2d4" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="535" y="138" text-anchor="middle" style="font-size:12.5px">死于空气污染的人比车祸还多</text><text class="zsub" x="535" y="156" text-anchor="middle">疾病 · 车祸 · 不安</text></g><text class="rowlab" x="18" y="192">3 · ОТКУДА ОНО БЕРЁТСЯ 造成污染的原因</text><g class="zone" tabindex="0" data-w="工业农业生产活动" data-p="gōngyè · nóngyè · gōngchǎng · fèi · ránshāo · méitàn" data-d="一部分环境污染是由工业农业生产活动造成的，例如，大型工厂生产过程中，有的会产生大量废水；有的要大量燃烧煤炭，从而产生大量废气和废物。"><rect class="fillable" x="30" y="202" width="290" height="58" rx="3" fill="#e8e2d4" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="175" y="228" text-anchor="middle" style="font-size:13px">大型工厂：废水、废气、废物</text><text class="zsub" x="175" y="248" text-anchor="middle">工业 · 农业 · 生产 · 大型 · 工厂 · 废 · 燃烧 · 煤炭</text></g><g class="zone" tabindex="0" data-w="和日常生活密切相关" data-p="mìqiè · wěiqì" data-d="还有一部分污染和我们的日常生活密切相关，汽车尾气就是其中之一。此外，垃圾也会对环境造成严重的损害。"><rect class="fillable" x="340" y="202" width="290" height="58" rx="3" fill="#e8e2d4" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="485" y="228" text-anchor="middle" style="font-size:13px">日常生活：汽车尾气、垃圾</text><text class="zsub" x="485" y="248" text-anchor="middle">密切 · 尾气 · 垃圾 · 损害</text></g><text class="rowlab" x="18" y="284">4 · ЧТО ДЕЛАТЬ 保护环境的措施</text><g class="zone" tabindex="0" data-w="生产中：环保设施、能源结构" data-p="shèshī · néngyuán · zhúbù" data-d="生产中，增加环保设施，减少污染物排放，调整能源消费结构，逐步向可再生能源转变；"><rect class="fillable" x="30" y="294" width="290" height="62" rx="3" fill="#dfe8d2" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="175" y="320" text-anchor="middle" style="font-size:14px">增加设施，逐步转变能源</text><text class="zsub" x="175" y="340" text-anchor="middle">设施 · 能源 · 逐步 · 转变</text></g><g class="zone" tabindex="0" data-w="生活中：垃圾分类、公共交通" data-p="jǐnliàng · sī(rén)" data-d="而在日常生活中，改变生活习惯，尽量减少生活垃圾，做到垃圾分类。同时，尽量多骑自行车，多选择公共交通，少使用私家车。"><rect class="fillable" x="340" y="294" width="290" height="62" rx="3" fill="#dfe8d2" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="485" y="320" text-anchor="middle" style="font-size:14px">垃圾分类，尽量少用私家车</text><text class="zsub" x="485" y="340" text-anchor="middle">尽量 · 分类 · 私（人）· 公共交通</text></g><text class="rowlab" x="18" y="380">5 · ВЫВОД 地球是人类共同的家园</text><g class="zone" tabindex="0" data-w="消极的逃避和幻想都解决不了问题" data-p="xiāojí · huànxiǎng" data-d="地球是人类共同的家园，我们应该把它看作一个属于自己的大房间。房间脏了，消极的逃避和不符合实际的幻想都不能解决问题，"><rect class="fillable" x="30" y="390" width="290" height="58" rx="3" fill="#e8ddd8" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="175" y="416" text-anchor="middle" style="font-size:13px">房间脏了，逃避和幻想都没用</text><text class="zsub" x="175" y="434" text-anchor="middle">消极 · 幻想 · 不符合实际</text></g><path d="M324 419 h10" stroke="#23262a" stroke-width="1.2" marker-end="url(#a32)"/><g class="zone" tabindex="0" data-w="人类的命运由我们自己掌握" data-p="gòngxiàn · mìngyùn · zhǎngwò · zūnjìng · gǔwǔ" data-d="为保持它的卫生每一个人都应付出行动，做出贡献。人类的命运由我们自己掌握，改变要靠我们自己。"><rect class="fillable" x="340" y="390" width="290" height="58" rx="3" fill="#dfe8d2" stroke="#23262a" stroke-width="1.3"/><text class="zlab" x="485" y="416" text-anchor="middle" style="font-size:13px">付出行动，做出贡献</text><text class="zsub" x="485" y="434" text-anchor="middle">尊敬 · 鼓舞 · 贡献 · 命运 · 掌握</text></g><text class="tiny" x="330" y="470" text-anchor="middle">把地球看作属于自己的大房间 —— 房间脏了，抱怨和幻想都不能把它弄干净。</text><defs><marker id="a32" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" fill="#23262a"/></marker></defs></svg>
+    <div class="readout" id="readout">
+      <span class="hint">Наведите курсор или коснитесь любого блока — появится соответствующее место текста.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Текст в пяти блоках <span class="cn">课文 · 737 字</span></h2>
+
+  <div class="card green">
+    <p><span class="tag g">блок 1</span><b>Вред животным и растениям.</b> 如果你觉得地球上的一点儿小污染没什么关系，
+    那你可就大错特错了！环境污染会危害动物、植物以及人类自身。有些生活在过去的动物，你今天再也看不到了，
+    植物也面临着同样的危险。动植物的消失，部分原因是由于自然界的变化，比如洪水、地震等改变了它们生活的环境，
+    但更大的原因则是人类对自然的破坏——有些地区的森林已经几乎被人砍光了，很多河流被污染，不再适合鱼类生存，
+    有的地区原本是草原，如今已变为沙漠……从国际环保组织公布的数据可知，地球上一半以上的动植物正在消失，
+    这是真实的情况，一点儿也不夸张。</p>
+    <p style="margin:0"><b>Слова блока:</b> <span class="cn-ex">消失 · 洪水 · 地震 · 破坏 · 砍 · 生存 · 沙漠 · 公布 · 数据 · 真实 · 夸张</span></p>
+  </div>
+
+  <div class="card brass">
+    <p><span class="tag b">блок 2</span><b>Вред людям.</b> 人类自身也饱受污染的危害。有些地区地表水已污染，
+    地下水又被过量使用，水资源短缺问题就连科学家们也不知道该如何解决，目前世界上有17%的人无法享用干净的饮用水，
+    而每年死于与空气污染有关的疾病的人比死于车祸的还要多。这些数据确实令人不安。</p>
+    <p style="margin:0"><b>Слова блока:</b> <span class="cn-ex">资源 · 车祸 · 不安</span></p>
+  </div>
+
+  <div class="card">
+    <p><span class="tag">блок 3</span><b>Причины.</b> 一部分环境污染是由工业农业生产活动造成的，例如，
+    大型工厂生产过程中，有的会产生大量废水；有的要大量燃烧煤炭，从而产生大量废气和废物。
+    还有一部分污染和我们的日常生活密切相关，汽车尾气就是其中之一。此外，垃圾也会对环境造成严重的损害。</p>
+    <p style="margin:0"><b>Слова блока:</b> <span class="cn-ex">工业 · 农业 · 生产 · 大型 · 工厂 · 废 · 燃烧 · 煤炭 · 密切 · 尾气</span></p>
+  </div>
+
+  <div class="card green">
+    <p><span class="tag g">блок 4</span><b>Меры.</b> 幸运的是，越来越多的人敏感地认识到了环境问题的严重，
+    并自觉地投入到了保护地球的行动中。生产中，增加环保设施，减少污染物排放，调整能源消费结构，
+    逐步向可再生能源转变；而在日常生活中，改变生活习惯，尽量减少生活垃圾，做到垃圾分类。同时，
+    尽量多骑自行车，多选择公共交通，少使用私家车。这些为此付出努力的人们令人尊敬，取得的成绩也令人鼓舞。</p>
+    <p style="margin:0"><b>Слова блока:</b> <span class="cn-ex">幸运 · 敏感 · 自觉 · 设施 · 能源 · 逐步 · 尽量 · 私（人） · 尊敬 · 鼓舞</span></p>
+  </div>
+
+  <div class="card red">
+    <p><span class="tag r">блок 5</span><b>Вывод.</b> 地球是人类共同的家园，我们应该把它看作一个属于自己的大房间。
+    房间脏了，消极的逃避和不符合实际的幻想都不能解决问题，为保持它的卫生每一个人都应付出行动，做出贡献。
+    人类的命运由我们自己掌握，改变要靠我们自己。</p>
+    <p style="margin:0"><b>Слова блока:</b> <span class="cn-ex">消极 · 幻想 · 贡献 · 命运 · 掌握</span></p>
+  </div>
+</section>
+
+<section>
+  <h2>39 слов по гнёздам <span class="cn">生词</span></h2>
+  <p style="font-size:14px;color:var(--brick)"><span class="star">★</span> — слово сверх программы HSK 5 (в учебнике помечено звёздочкой). Имён собственных нет. Из текста стоит выписать ещё готовые обороты: <span class="cn-ex">大错特错 · 面临危险 · 饱受危害 · 过量使用 · 水资源短缺 · 污染物排放 · 可再生能源 · 垃圾分类 · 公共交通 · 共同的家园</span>.</p>
+
+  <div class="audiobar" id="audiobar">
+    <div class="ab-t">Озвучка слов</div>
+    <div class="ab-row">
+      <input id="ab-pat" type="text" spellcheck="false" value="audio/{hz}.mp3" aria-label="Шаблон пути к mp3">
+      <button type="button" id="ab-auto">Подобрать</button>
+      <button type="button" id="ab-test">Проверить</button>
+    </div>
+    <div class="ab-status" id="ab-status"></div>
+    <div class="ab-note">
+      Ищутся файлы вида <code>иероглиф.mp3</code> — сначала в папке <code>audio</code> рядом с этим документом,
+      потом прямо рядом с ним. Подстановки: <code>{hz}</code>, <code>{py}</code>, <code>{pyn}</code>,
+      <code>{num}</code>, <code>{L}</code>.
+    </div>
+  </div>
+<div class="cluster"><h3>I. Исчезновение животных и растений<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Первый блок: природа и то, что с ней делает человек.</div><div class="words"><div class="w-item"><span class="hz">消失</span><span class="py">xiāoshī</span><button class="pb" type="button" data-hz="消失" data-hz2="消失" data-py="xiāoshī" data-pyn="xiaoshi" data-num="1" aria-label="Прослушать 消失" title="Прослушать 消失">&#9654;</button><span class="ru">исчезать, пропадать</span><span class="ex">动植物正在消失 / 消失得无影无踪</span></div><div class="w-item"><span class="hz">洪水</span><span class="py">hóngshuǐ</span><span class="star">★</span><button class="pb" type="button" data-hz="洪水" data-hz2="洪水" data-py="hóngshuǐ" data-pyn="hongshui" data-num="2" aria-label="Прослушать 洪水" title="Прослушать 洪水">&#9654;</button><span class="ru">наводнение, паводок</span><span class="ex">洪水、地震等 / 发洪水</span></div><div class="w-item"><span class="hz">地震</span><span class="py">dìzhèn</span><button class="pb" type="button" data-hz="地震" data-hz2="地震" data-py="dìzhèn" data-pyn="dizhen" data-num="3" aria-label="Прослушать 地震" title="Прослушать 地震">&#9654;</button><span class="ru">землетрясение</span><span class="ex">洪水、地震 / 发生地震</span></div><div class="w-item"><span class="hz">破坏</span><span class="py">pòhuài</span><button class="pb" type="button" data-hz="破坏" data-hz2="破坏" data-py="pòhuài" data-pyn="pohuai" data-num="4" aria-label="Прослушать 破坏" title="Прослушать 破坏">&#9654;</button><span class="ru">разрушать, портить</span><span class="ex">对自然的破坏 / 破坏环境</span></div><div class="w-item"><span class="hz">砍</span><span class="py">kǎn</span><button class="pb" type="button" data-hz="砍" data-hz2="砍" data-py="kǎn" data-pyn="kan" data-num="5" aria-label="Прослушать 砍" title="Прослушать 砍">&#9654;</button><span class="ru">рубить, срубать</span><span class="ex">森林被人砍光了 / 砍树</span></div><div class="w-item"><span class="hz">生存</span><span class="py">shēngcún</span><span class="star">★</span><button class="pb" type="button" data-hz="生存" data-hz2="生存" data-py="shēngcún" data-pyn="shengcun" data-num="6" aria-label="Прослушать 生存" title="Прослушать 生存">&#9654;</button><span class="ru">существовать, выживать</span><span class="ex">不适合鱼类生存 / 生存环境</span></div><div class="w-item"><span class="hz">沙漠</span><span class="py">shāmò</span><button class="pb" type="button" data-hz="沙漠" data-hz2="沙漠" data-py="shāmò" data-pyn="shamo" data-num="7" aria-label="Прослушать 沙漠" title="Прослушать 沙漠">&#9654;</button><span class="ru">пустыня</span><span class="ex">变为沙漠 / 沙漠地区</span></div><div class="w-item"><span class="hz">公布</span><span class="py">gōngbù</span><button class="pb" type="button" data-hz="公布" data-hz2="公布" data-py="gōngbù" data-pyn="gongbu" data-num="8" aria-label="Прослушать 公布" title="Прослушать 公布">&#9654;</button><span class="ru">обнародовать, объявить</span><span class="ex">公布的数据 / 公布比赛结果</span></div><div class="w-item"><span class="hz">数据</span><span class="py">shùjù</span><button class="pb" type="button" data-hz="数据" data-hz2="数据" data-py="shùjù" data-pyn="shuju" data-num="9" aria-label="Прослушать 数据" title="Прослушать 数据">&#9654;</button><span class="ru">данные, цифры</span><span class="ex">国际组织公布的数据 / 数据分析</span></div><div class="w-item"><span class="hz">真实</span><span class="py">zhēnshí</span><button class="pb" type="button" data-hz="真实" data-hz2="真实" data-py="zhēnshí" data-pyn="zhenshi" data-num="10" aria-label="Прослушать 真实" title="Прослушать 真实">&#9654;</button><span class="ru">подлинный, реальный</span><span class="ex">真实的情况 / 真实的故事</span></div><div class="w-item"><span class="hz">夸张</span><span class="py">kuāzhāng</span><button class="pb" type="button" data-hz="夸张" data-hz2="夸张" data-py="kuāzhāng" data-pyn="kuazhang" data-num="11" aria-label="Прослушать 夸张" title="Прослушать 夸张">&#9654;</button><span class="ru">преувеличенный; преувеличивать</span><span class="ex">一点儿也不夸张 / 夸张的动作</span></div></div></div><div class="cluster"><h3>II. Вред людям<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Короткий блок, но все три слова — экзаменационные.</div><div class="words"><div class="w-item"><span class="hz">资源</span><span class="py">zīyuán</span><button class="pb" type="button" data-hz="资源" data-hz2="资源" data-py="zīyuán" data-pyn="ziyuan" data-num="12" aria-label="Прослушать 资源" title="Прослушать 资源">&#9654;</button><span class="ru">ресурсы</span><span class="ex">水资源短缺 / 保护资源</span></div><div class="w-item"><span class="hz">车祸</span><span class="py">chēhuò</span><span class="star">★</span><button class="pb" type="button" data-hz="车祸" data-hz2="车祸" data-py="chēhuò" data-pyn="chehuo" data-num="13" aria-label="Прослушать 车祸" title="Прослушать 车祸">&#9654;</button><span class="ru">ДТП, авария</span><span class="ex">死于车祸 / 发生车祸</span></div><div class="w-item"><span class="hz">不安</span><span class="py">bù’ān</span><button class="pb" type="button" data-hz="不安" data-hz2="不安" data-py="bù’ān" data-pyn="bu’an" data-num="14" aria-label="Прослушать 不安" title="Прослушать 不安">&#9654;</button><span class="ru">тревожный, неспокойный</span><span class="ex">令人不安 / 感到不安</span></div></div></div><div class="cluster"><h3>III. Откуда берётся загрязнение<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Третий блок — промышленность, и это самое плотное гнездо урока.</div><div class="words"><div class="w-item"><span class="hz">工业</span><span class="py">gōngyè</span><button class="pb" type="button" data-hz="工业" data-hz2="工业" data-py="gōngyè" data-pyn="gongye" data-num="15" aria-label="Прослушать 工业" title="Прослушать 工业">&#9654;</button><span class="ru">промышленность</span><span class="ex">工业农业生产 / 工业污染</span></div><div class="w-item"><span class="hz">农业</span><span class="py">nóngyè</span><button class="pb" type="button" data-hz="农业" data-hz2="农业" data-py="nóngyè" data-pyn="nongye" data-num="16" aria-label="Прослушать 农业" title="Прослушать 农业">&#9654;</button><span class="ru">сельское хозяйство</span><span class="ex">农业生产 / 发展农业</span></div><div class="w-item"><span class="hz">生产</span><span class="py">shēngchǎn</span><button class="pb" type="button" data-hz="生产" data-hz2="生产" data-py="shēngchǎn" data-pyn="shengchan" data-num="17" aria-label="Прослушать 生产" title="Прослушать 生产">&#9654;</button><span class="ru">производить; производство</span><span class="ex">生产过程 / 生产活动</span></div><div class="w-item"><span class="hz">大型</span><span class="py">dàxíng</span><button class="pb" type="button" data-hz="大型" data-hz2="大型" data-py="dàxíng" data-pyn="daxing" data-num="18" aria-label="Прослушать 大型" title="Прослушать 大型">&#9654;</button><span class="ru">крупный, большого типа</span><span class="ex">大型工厂 / 大型活动</span></div><div class="w-item"><span class="hz">工厂</span><span class="py">gōngchǎng</span><button class="pb" type="button" data-hz="工厂" data-hz2="工厂" data-py="gōngchǎng" data-pyn="gongchang" data-num="19" aria-label="Прослушать 工厂" title="Прослушать 工厂">&#9654;</button><span class="ru">завод, фабрика</span><span class="ex">大型工厂 / 一家工厂</span></div><div class="w-item"><span class="hz">废</span><span class="py">fèi</span><button class="pb" type="button" data-hz="废" data-hz2="废" data-py="fèi" data-pyn="fei" data-num="20" aria-label="Прослушать 废" title="Прослушать 废">&#9654;</button><span class="ru">отработанный, негодный</span><span class="ex">废水、废气、废物 / 废纸</span></div><div class="w-item"><span class="hz">燃烧</span><span class="py">ránshāo</span><button class="pb" type="button" data-hz="燃烧" data-hz2="燃烧" data-py="ránshāo" data-pyn="ranshao" data-num="21" aria-label="Прослушать 燃烧" title="Прослушать 燃烧">&#9654;</button><span class="ru">гореть, сжигать</span><span class="ex">燃烧煤炭 / 燃烧起来</span></div><div class="w-item"><span class="hz">煤炭</span><span class="py">méitàn</span><button class="pb" type="button" data-hz="煤炭" data-hz2="煤炭" data-py="méitàn" data-pyn="meitan" data-num="22" aria-label="Прослушать 煤炭" title="Прослушать 煤炭">&#9654;</button><span class="ru">каменный уголь</span><span class="ex">大量燃烧煤炭 / 煤炭资源</span></div><div class="w-item"><span class="hz">密切</span><span class="py">mìqiè</span><button class="pb" type="button" data-hz="密切" data-hz2="密切" data-py="mìqiè" data-pyn="miqie" data-num="23" aria-label="Прослушать 密切" title="Прослушать 密切">&#9654;</button><span class="ru">тесный, близкий; делать теснее</span><span class="ex">密切相关 / 密切配合</span></div><div class="w-item"><span class="hz">尾气</span><span class="py">wěiqì</span><span class="star">★</span><button class="pb" type="button" data-hz="尾气" data-hz2="尾气" data-py="wěiqì" data-pyn="weiqi" data-num="24" aria-label="Прослушать 尾气" title="Прослушать 尾气">&#9654;</button><span class="ru">выхлопные газы</span><span class="ex">汽车尾气 / 尾气排放</span></div></div></div><div class="cluster"><h3>IV. Меры<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Четвёртый блок — слова, без которых не написать сочинение про экологию.</div><div class="words"><div class="w-item"><span class="hz">幸运</span><span class="py">xìngyùn</span><button class="pb" type="button" data-hz="幸运" data-hz2="幸运" data-py="xìngyùn" data-pyn="xingyun" data-num="25" aria-label="Прослушать 幸运" title="Прослушать 幸运">&#9654;</button><span class="ru">счастливый, удачливый</span><span class="ex">幸运的是…… / 很幸运地</span></div><div class="w-item"><span class="hz">敏感</span><span class="py">mǐngǎn</span><button class="pb" type="button" data-hz="敏感" data-hz2="敏感" data-py="mǐngǎn" data-pyn="mingan" data-num="26" aria-label="Прослушать 敏感" title="Прослушать 敏感">&#9654;</button><span class="ru">чуткий, восприимчивый</span><span class="ex">敏感地认识到 / 敏感话题</span></div><div class="w-item"><span class="hz">自觉</span><span class="py">zìjué</span><button class="pb" type="button" data-hz="自觉" data-hz2="自觉" data-py="zìjué" data-pyn="zijue" data-num="27" aria-label="Прослушать 自觉" title="Прослушать 自觉">&#9654;</button><span class="ru">сознательный, по собственному почину</span><span class="ex">自觉地投入 / 自觉遵守</span></div><div class="w-item"><span class="hz">设施</span><span class="py">shèshī</span><button class="pb" type="button" data-hz="设施" data-hz2="设施" data-py="shèshī" data-pyn="sheshi" data-num="28" aria-label="Прослушать 设施" title="Прослушать 设施">&#9654;</button><span class="ru">сооружения, инфраструктура</span><span class="ex">环保设施 / 基础设施</span></div><div class="w-item"><span class="hz">能源</span><span class="py">néngyuán</span><button class="pb" type="button" data-hz="能源" data-hz2="能源" data-py="néngyuán" data-pyn="nengyuan" data-num="29" aria-label="Прослушать 能源" title="Прослушать 能源">&#9654;</button><span class="ru">энергоресурсы</span><span class="ex">能源消费结构 / 可再生能源</span></div><div class="w-item"><span class="hz">逐步</span><span class="py">zhúbù</span><button class="pb" type="button" data-hz="逐步" data-hz2="逐步" data-py="zhúbù" data-pyn="zhubu" data-num="30" aria-label="Прослушать 逐步" title="Прослушать 逐步">&#9654;</button><span class="ru">постепенно, шаг за шагом</span><span class="ex">逐步转变 / 逐步扩大</span></div><div class="w-item"><span class="hz">尽量</span><span class="py">jǐnliàng</span><button class="pb" type="button" data-hz="尽量" data-hz2="尽量" data-py="jǐnliàng" data-pyn="jinliang" data-num="31" aria-label="Прослушать 尽量" title="Прослушать 尽量">&#9654;</button><span class="ru">по возможности, насколько можно</span><span class="ex">尽量减少垃圾 / 尽量多骑车</span></div><div class="w-item"><span class="hz">私（人）</span><span class="py">sī(rén)</span><button class="pb" type="button" data-hz="私（人）" data-hz2="私人" data-py="sī(rén)" data-pyn="si(ren)" data-num="32" aria-label="Прослушать 私（人）" title="Прослушать 私（人）">&#9654;</button><span class="ru">частный, личный</span><span class="ex">私家车 / 私人问题</span></div></div></div><div class="cluster"><h3>V. Вывод<button class="pb pball" type="button">&#9654; подряд</button></h3><div class="why">Пятый блок — семь слов, из которых половина пойдёт прямо в концовку сочинения.</div><div class="words"><div class="w-item"><span class="hz">尊敬</span><span class="py">zūnjìng</span><button class="pb" type="button" data-hz="尊敬" data-hz2="尊敬" data-py="zūnjìng" data-pyn="zunjing" data-num="33" aria-label="Прослушать 尊敬" title="Прослушать 尊敬">&#9654;</button><span class="ru">уважать, почитать</span><span class="ex">令人尊敬 / 尊敬老人</span></div><div class="w-item"><span class="hz">鼓舞</span><span class="py">gǔwǔ</span><button class="pb" type="button" data-hz="鼓舞" data-hz2="鼓舞" data-py="gǔwǔ" data-pyn="guwu" data-num="34" aria-label="Прослушать 鼓舞" title="Прослушать 鼓舞">&#9654;</button><span class="ru">воодушевлять; воодушевлённый</span><span class="ex">令人鼓舞 / 受到鼓舞</span></div><div class="w-item"><span class="hz">消极</span><span class="py">xiāojí</span><button class="pb" type="button" data-hz="消极" data-hz2="消极" data-py="xiāojí" data-pyn="xiaoji" data-num="35" aria-label="Прослушать 消极" title="Прослушать 消极">&#9654;</button><span class="ru">пассивный, негативный</span><span class="ex">消极的逃避 / 态度消极</span></div><div class="w-item"><span class="hz">幻想</span><span class="py">huànxiǎng</span><button class="pb" type="button" data-hz="幻想" data-hz2="幻想" data-py="huànxiǎng" data-pyn="huanxiang" data-num="36" aria-label="Прослушать 幻想" title="Прослушать 幻想">&#9654;</button><span class="ru">фантазия, иллюзия; мечтать</span><span class="ex">不符合实际的幻想 / 幻想着未来</span></div><div class="w-item"><span class="hz">贡献</span><span class="py">gòngxiàn</span><button class="pb" type="button" data-hz="贡献" data-hz2="贡献" data-py="gòngxiàn" data-pyn="gongxian" data-num="37" aria-label="Прослушать 贡献" title="Прослушать 贡献">&#9654;</button><span class="ru">вклад; вносить вклад</span><span class="ex">做出贡献 / 贡献力量</span></div><div class="w-item"><span class="hz">命运</span><span class="py">mìngyùn</span><button class="pb" type="button" data-hz="命运" data-hz2="命运" data-py="mìngyùn" data-pyn="mingyun" data-num="38" aria-label="Прослушать 命运" title="Прослушать 命运">&#9654;</button><span class="ru">судьба</span><span class="ex">人类的命运 / 改变命运</span></div><div class="w-item"><span class="hz">掌握</span><span class="py">zhǎngwò</span><button class="pb" type="button" data-hz="掌握" data-hz2="掌握" data-py="zhǎngwò" data-pyn="zhangwo" data-num="39" aria-label="Прослушать 掌握" title="Прослушать 掌握">&#9654;</button><span class="ru">овладеть, держать в руках</span><span class="ex">由我们自己掌握 / 掌握方法</span></div></div></div></section>
+<section>
+  <h2>На слух: где рука ошибётся <span class="cn">听写陷阱</span></h2>
+  <p>Главная ловушка урока — три пары, которые на слух почти или совсем неразличимы:
+  <b>尽量 jǐnliàng</b> против 尽力／尽快, <b>消极 xiāojí</b> против 消失／消费, и целое гнездо
+  на 资/质/值. Отдельно — 设施 и 设备: они различаются только по тому, о чём речь,
+  и это третий пункт упражнения 2.</p>
+<div class="warn">Третий пункт упражнения 2</div><div class="trap"><div><span class="hz">设施</span><span class="py">shèshī</span><span class="n">сооружения и инфраструктура: 基础设施, 环保设施, 服务设施.</span></div><div><span class="hz">设备</span><span class="py">shèbèi</span><span class="n">оборудование, аппаратура: 生产设备, 设备齐全. Третий пункт упражнения 2.</span></div></div><div class="warn">Первый пункт упражнения 2</div><div class="trap"><div><span class="hz">尊重</span><span class="py">zūnzhòng</span><span class="n">«уважать выбор, мнение, права» — то, с чем можно не соглашаться.</span></div><div><span class="hz">尊敬</span><span class="py">zūnjìng</span><span class="n">«почитать человека» — старших, учителя. Первый пункт упражнения 2.</span></div></div><div class="warn">Второй пункт упражнения 2</div><div class="trap"><div><span class="hz">真实</span><span class="py">zhēnshí</span><span class="n">прилагательное-определение: 真实的情况／故事／情感.</span></div><div><span class="hz">确实</span><span class="py">quèshí</span><span class="n">«действительно» (наречие) и «достоверный». Второй пункт упражнения 2.</span></div></div><div class="warn">Четвёртый пункт упражнения 2</div><div class="trap"><div><span class="hz">把握</span><span class="py">bǎwò</span><span class="n">существительное «уверенность»: 没什么把握. И глагол «ухватить момент».</span></div><div><span class="hz">掌握</span><span class="py">zhǎngwò</span><span class="n">только глагол: овладеть знаниями, держать в руках. Четвёртый пункт упражнения 2.</span></div></div><div class="warn">尽 — jǐn или jìn</div><div class="trap"><div><span class="hz">尽量</span><span class="py">jǐnliàng</span><span class="n">jǐn третьим тоном: «по возможности больше/меньше».</span></div><div><span class="hz">尽力 / 尽快</span><span class="py">jìnlì / jǐnkuài</span><span class="n">尽 как jìn — «исчерпать силы»; 尽快 снова jǐn. Один знак, два чтения.</span></div></div><div class="warn">Три слова на 消-</div><div class="trap"><div><span class="hz">消极</span><span class="py">xiāojí</span><span class="n">«пассивный, негативный»: 态度消极.</span></div><div><span class="hz">消失 / 消费</span><span class="py">xiāoshī / xiāofèi</span><span class="n">«исчезнуть» и «потреблять» — оба тоже в этом уроке.</span></div></div><div class="warn">Гнездо 资／质／值</div><div class="trap"><div><span class="hz">资源</span><span class="py">zīyuán</span><span class="n">资 — «средства»: 资源, 资金 (урок 29), 投资.</span></div><div><span class="hz">质量 / 价值</span><span class="py">zhìliàng / jiàzhí</span><span class="n">Знаки 资／质／值 похожи и на слух (zī/zhì/zhí), и по виду.</span></div></div><div class="warn">Разбор урока</div><div class="trap"><div><span class="hz">鼓舞</span><span class="py">gǔwǔ</span><span class="n">«воодушевлять» — подлежащее обычно вещь или событие; бывает прилагательным.</span></div><div><span class="hz">鼓励</span><span class="py">gǔlì</span><span class="n">«подбадривать, поощрять кого-то делать» — подлежащее человек. Пара 辨析 урока.</span></div></div><div class="warn">Три слова про вред</div><div class="trap"><div><span class="hz">破坏</span><span class="py">pòhuài</span><span class="n">«разрушать»: 破坏环境／关系／计划.</span></div><div><span class="hz">损害 / 伤害</span><span class="py">sǔnhài / shānghài</span><span class="n">«вредить (интересам, здоровью)» и «ранить». Все три есть в тексте.</span></div></div><div class="warn">Ключ 火 на месте?</div><div class="trap"><div><span class="hz">燃烧</span><span class="py">ránshāo</span><span class="n">«гореть, сжигать»: 燃烧煤炭.</span></div><div><span class="hz">然而 / 燃料</span><span class="py">rán’ér / ránliào</span><span class="n">然 без 火 — союз «однако». В диктанте рука теряет ключ 火.</span></div></div><div class="warn">Три слова на 敏</div><div class="trap"><div><span class="hz">敏感</span><span class="py">mǐngǎn</span><span class="n">«чуткий; щекотливый»: 敏感话题, 敏感地认识到.</span></div><div><span class="hz">灵敏 / 敏捷</span><span class="py">língmǐn / mǐnjié</span><span class="n">«чувствительный (о приборе)» и «проворный». Все три — на 敏.</span></div></div><div class="warn">Три слова про мечты</div><div class="trap"><div><span class="hz">幻想</span><span class="py">huànxiǎng</span><span class="n">«иллюзия, мечта оторванная от реальности».</span></div><div><span class="hz">理想 / 想象</span><span class="py">lǐxiǎng / xiǎngxiàng</span><span class="n">«идеал, мечта» (нейтрально-положительно) и «воображать». Разные оттенки.</span></div></div><div class="warn">Разбор по знакам</div><div class="trap"><div><span class="hz">夸张</span><span class="py">kuāzhāng</span><span class="n">«преувеличенный»: 一点儿也不夸张.</span></div><div><span class="hz">夸 / 紧张</span><span class="py">kuā / jǐnzhāng</span><span class="n">夸 само — «хвалить»: 夸孩子. Второй знак тот же, что в 紧张.</span></div></div>
+  <div class="card green">
+    <p style="margin:0"><b>Как тренировать.</b> Связки урока:
+    <span class="cn-ex">破坏环境 · 公布数据 · 真实的情况 · 一点儿也不夸张 · 水资源短缺 ·
+    令人不安 · 大型工厂 · 燃烧煤炭 · 汽车尾气 · 密切相关 · 自觉地 · 环保设施 ·
+    可再生能源 · 逐步转变 · 尽量减少 · 垃圾分类 · 令人尊敬 · 令人鼓舞 · 做出贡献 · 掌握命运</span>.
+    Обратите внимание на три оборота с 令人: 令人不安, 令人尊敬, 令人鼓舞 — это готовая
+    конструкция для оценки в сочинении.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Три точки урока <span class="cn">词语例释</span></h2>
+
+  <h3>1 · 密切 — «тесный»</h3>
+  <div class="card green">
+    <p><b>Прилагательное 1:</b> об отношениях — близкие, тесные.</p>
+    <p class="cn-ex">还有一部分污染和我们的日常生活<span class="hl">密切</span>相关，汽车尾气就是其中之一。</p>
+    <p class="cn-ex">参加了这次环保活动后，两人便有了共同语言，来往也比先前<span class="hl">密切</span>了。</p>
+    <p><b>Прилагательное 2:</b> о внимании к делу — пристальный, тщательный.</p>
+    <p class="cn-ex">刘医生<span class="hl">密切</span>地观察着李妈妈病情的发展。</p>
+    <p class="cn-ex">家长应和老师<span class="hl">密切</span>配合，形成合力，保持教育的一致性。</p>
+    <p><b>Глагол:</b> «сделать отношения более тесными».</p>
+    <p class="cn-ex">这条铁路的建成，大大<span class="hl">密切</span>了西南地区与首都的联系。</p>
+    <p class="cn-ex">友好城市之间的交往<span class="hl">密切</span>了两国人民之间的友谊。</p>
+    <p class="tr" style="margin:10px 0 0">Самое частое в экзамене — 密切相关 и 密切注意／关注.
+    Глагольное употребление встречается только в книжном стиле, но в 阅读 попадается.</p>
+  </div>
+
+  <h3>2 · 尽量 — «насколько возможно»</h3>
+  <div class="card brass">
+    <p>Наречие: стараться достичь максимума (или минимума) в пределах возможного.
+    Почти всегда перед 多／少／减少／避免.</p>
+    <p class="cn-ex">同时，<span class="hl">尽量</span>多骑自行车，多选择公共交通，少使用私家车。</p>
+    <p class="cn-ex">老年人要<span class="hl">尽量</span>少吃油炸食品。</p>
+    <p class="cn-ex">为了节约能源，请大家都<span class="hl">尽量</span>使用节能电器。</p>
+    <p class="tr" style="margin:10px 0 0">Не путайте с 尽力 (jìnlì — «приложить все силы»,
+    о собственном усилии) и с 尽快 (jǐnkuài — «как можно скорее», только о скорости).
+    У 尽量 обязательно есть шкала «больше/меньше».</p>
+  </div>
+
+  <h3>3 · 逐步 — «шаг за шагом»</h3>
+  <div class="card red">
+    <p>Наречие: постепенно, ступенями. Чаще всего о том, что делается <b>намеренно</b>,
+    по плану — поэтому обычно не сочетается с прилагательными.</p>
+    <p class="cn-ex">云计算应用市场规模正在<span class="hl">逐步</span>扩大。</p>
+    <p class="cn-ex">……调整能源消费结构，<span class="hl">逐步</span>向可再生能源转变；</p>
+    <p class="cn-ex">记者了解到，现在受灾群众已<span class="hl">逐步</span>恢复了正常的生产生活。</p>
+    <p class="tr" style="margin:10px 0 0">Отличие от 逐渐 (zhújiàn): 逐渐 — о естественном,
+    само собой идущем изменении, и спокойно сочетается с прилагательными
+    (天气逐渐冷了). 逐步 — о плановых шагах: 逐步扩大, 逐步转变, 逐步恢复.
+    Сказать «天气逐步冷了» нельзя.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Сочетаемость <span class="cn">词语搭配</span></h2>
+  <table>
+    <tr><th>动词 + 宾语</th><th>примеры</th></tr>
+    <tr><td class="han">破坏</td><td class="han">设备 / 环境 / 秩序 / 关系 / 婚姻 / 家庭 / 计划 / 形象 / 和平 / 平衡</td></tr>
+    <tr><td class="han">掌握</td><td class="han">规律 / 方法 / 情况 / 信息 / 特点 / 命运 / 技术 / 知识 / 语言</td></tr>
+    <tr><th>定语 + 中心语</th><th></th></tr>
+    <tr><td class="han">真实的</td><td class="han">内容 / 故事 / 材料 / 消息 / 生活 / 经历 / 感情 / 看法 / 报道 / 原因</td></tr>
+    <tr><td class="han">夸张的</td><td class="han">故事 / 剧情 / 形象 / 动作 / 语言 / 数量</td></tr>
+    <tr><th>状语 + 中心语</th><th></th></tr>
+    <tr><td class="han">自觉地</td><td class="han">工作 / 学习 / 运用 / 遵守 / 爱护 / 注意 / 养成（习惯）</td></tr>
+    <tr><td class="han">密切</td><td class="han">合作 / 相关 / 联系 / 配合 / 注意 / 关注</td></tr>
+    <tr><th>主语 + 谓语</th><th></th></tr>
+    <tr><td class="han">资源</td><td class="han">开发（出来）/ 保护（起来）/ 浪费 / 丰富 / 不足 / 宝贵</td></tr>
+    <tr><td class="han">设施</td><td class="han">建成 / 完工 / 投入使用 / 完善 / 先进 / 落后</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>鼓励 и 鼓舞 <span class="cn">词语辨析</span></h2>
+  <p>Общее: оба — глаголы со значением «воодушевить, придать уверенности»:
+  <span class="han">这次谈话，使刘洋受到极大的鼓励／鼓舞。</span>
+  Дальше различий три, и все они важны.</p>
+  <table class="pair-tbl">
+    <tr><th></th><th>鼓励 gǔlì</th><th>鼓舞 gǔwǔ</th></tr>
+    <tr><td>1</td><td>слово нейтральное, может быть и о дурном<br><span class="han">吸烟有害健康，你不阻止他，怎么还鼓励呢？</span></td><td>слово с положительной оценкой (褒义词)<br><span class="han">新产品的研制成功极大地鼓舞了科技人员。</span></td></tr>
+    <tr><td>2</td><td>«побудить кого-то <b>делать</b>»: подлежащее — человек или организация, частая рамка 鼓励某人做某事<br><span class="han">近些年，国家越来越鼓励大学生毕业后开办自己的公司。</span></td><td>«воодушевить <b>воздействием</b>»: подлежащее — чаще событие или вещь<br><span class="han">新的胜利给了全体队员很大的鼓舞。</span></td></tr>
+    <tr><td>3</td><td>такого употребления нет</td><td>бывает прилагательным: «воодушевляющий»<br><span class="han">年初制定的目标顺利实现，取得的成绩令人十分鼓舞。</span></td></tr>
+  </table>
+  <p class="tr">Практическая проверка: если в предложении есть «кто кого побуждает что-то делать» —
+  это 鼓励. Если есть 受……的／令人…… и подлежащим стоит успех, новость, результат — это 鼓舞.</p>
+</section>
+
+<section>
+  <h2>Ответы к упражнениям <span class="cn">练习 · 做一做 · 练一练</span></h2>
+<details><summary>练习 1 — 选择合适的词语填空（鼓舞 公布 消失 幻想 不安 幸运）</summary><div class="in">
+<p>① 小时候，他常<span class="k">幻想</span>着自己有一天也能成为一名导演。<br>
+② 船翻了，他很<span class="k">幸运</span>地抱住一根木头，游到一个小岛上。<br>
+③ 大赛的作品将被放在网上，由网友打分，比赛结果于四月十五日<span class="k">公布</span>。<br>
+④ 谈判的成功给了他极大的<span class="k">鼓舞</span>。<br>
+⑤ 接到电话，她感到有些<span class="k">不安</span>，急忙连夜赶回家中。<br>
+⑥ 记录、保存将要<span class="k">消失</span>的事物是摄影非常重要的作用。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+④ рамка «给了他极大的……» — это именно 鼓舞, потому что подлежащее здесь успех переговоров,
+а не человек.</p></div></details><details><summary>练习 2 — 选择正确答案</summary><div class="in">
+<p>① 虽然我不同意你的看法，但我还是<span class="k">尊重</span>（B）你的选择。<br>
+② 作品充分地表达了作者内心<span class="k">真实</span>（A）的情感。<br>
+③ 那个城市的基础<span class="k">设施</span>（A）还不够完善。<br>
+④ 这次考试能否通过，我实在没什么<span class="k">把握</span>（A）。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+① выбор можно уважать, не почитая человека, — 尊重. ② перед 情感 стоит определение, нужно
+прилагательное 真实. ③ 基础设施 — устойчивое «базовая инфраструктура». ④ «нет уверенности» —
+только 把握, потому что здесь нужно существительное.</p></div></details><details><summary>练习 3 — 画线连接可以搭配的词语</summary><div class="in">
+<p>(1) 贡献 — 力量 ／ 放弃 — 幻想 ／ 改变 — 命运 ／ 鼓舞 — 人心<br>
+(2) 态度 — 消极 ／ 话题 — 敏感 ／ 联系 — 密切 ／ 心神 — 不安</p></div></details><details><summary>做一做 — 鼓励 или 鼓舞</summary><div class="in">
+<p>(1) 父母平时应<span class="k">鼓励</span>孩子多参加体育活动。（鼓励 ✓ 鼓舞 ✗）<br>
+(2) 在工作中，管理者多<span class="k">鼓励</span>员工，会提高员工的工作积极性。<br>
+(3) 听了他们的发言，我挺受<span class="k">鼓舞</span>的，对他们很有信心。<br>
+(4) 感谢大家对我的肯定与<span class="k">鼓励</span>。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+(1) и (2) — «кто-то побуждает кого-то делать», рамка 鼓励某人做某事. (3) — 受……鼓舞,
+воздействие выступления. (4) — 肯定与鼓励, пара существительных про поддержку человека человеком.</p></div></details><details><summary>练一练 1 — 密切（образцы）</summary><div class="in">
+<p>(1) 这种病传染性很强，<span class="k">请大家密切注意自己的身体状况</span>。（密切）<br>
+(2) 经济全球化<span class="k">密切了各国之间的经济联系</span>。（动词用法）<br>
+(3) A: 这两年，李雪飞来咱们家的次数好像少多了？<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">是啊，她工作以后，和老同学的来往就不像以前那么密切了</span>。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+(2) — то самое глагольное употребление «сделать связи теснее»: подлежащее 经济全球化,
+дополнение 联系.</p></div></details><details><summary>练一练 2 — 尽量（образцы）</summary><div class="in">
+<p>(1) 为了培养孩子的自理能力，<span class="k">家长应该尽量让他自己的事情自己做</span>。（尽量）<br>
+(2) 明天单位有个活动，可能不能按时下班，<span class="k">我尽量早点儿回来，你们先吃饭别等我</span>。（尽量）<br>
+(3) 遇到危险情况时，先别慌，<span class="k">尽量保持冷静，想办法联系救援</span>。（尽量）</p></div></details><details><summary>练一练 3 — 逐步（образцы）</summary><div class="in">
+<p>(1) 未来两天国内无明显冷空气活动，大部分地区天气晴好，<span class="k">气温也将逐步回升</span>。（逐步）<br>
+(2) 随着人们生活水平的不断提高，绿色食品<span class="k">正逐步走进普通家庭的餐桌</span>。（逐步）<br>
+(3) A: 你知道吗？现在，上网校的人越来越多。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B: <span class="k">是啊，这几年网络教育正在逐步改变传统的学习方式</span>。（逐步）</p></div></details><details><summary>扩展 做一做 — 资源</summary><div class="in">
+<p>(1) 这种管子是<span class="k">金属</span>管，只是从表面上看像塑料。<br>
+(2) “中国大妈”一词的产生充分证明中国是<span class="k">黄金</span>消费的大国。<br>
+(3) 豆腐深受中国人的喜爱，制作它的主要<span class="k">原料</span>就是黄豆。<br>
+(4) 从目前中国能源消费结构来看，<span class="k">煤炭</span>依然占主导地位。</p>
+<p style="font-family:var(--body);font-size:14.5px;color:var(--brick);margin-top:10px">
+资源: 金属（jīnshǔ）、黄金（huángjīn）、银（yín）、钢铁（gāngtiě）、煤炭（méitàn）、
+能源（néngyuán）、原料（yuánliào）、资源（zīyuán）.</p></div></details></section>
+<section>
+  <h2>Сочинение <span class="cn">命题写作：环保，可以这样开始</span></h2>
+  <p>Тема прямо просит конкретики, поэтому общие слова про «спасти планету» здесь только вредят.
+  Самая надёжная схема: одна фраза о масштабе проблемы, затем три-четыре бытовых действия
+  (именно те, что перечислены в тексте), и концовка про 命运 и 贡献.</p>
+  <div class="card green">
+    <p class="cn-ex" style="line-height:2">以前我总觉得，环境问题离我很远：
+    <span class="hl">洪水</span>、<span class="hl">沙漠</span>、动植物的<span class="hl">消失</span>，
+    那都是新闻里的事。可是看到国际环保组织<span class="hl">公布</span>的<span class="hl">数据</span>，
+    我才知道这是<span class="hl">真实</span>的情况，一点儿也不<span class="hl">夸张</span>。
+    其实一部分污染和我们的日常生活<span class="hl">密切</span>相关：
+    汽车<span class="hl">尾气</span>、生活垃圾，都是其中之一。
+    所以我从三件小事做起：<span class="hl">尽量</span>多坐公共交通，少开<span class="hl">私</span>家车；
+    做到垃圾分类；出门<span class="hl">自觉</span>地带上自己的杯子。
+    这些事都很小，可是如果每个人都<span class="hl">逐步</span>改变一点儿生活习惯，加起来就不小了。
+    <span class="hl">消极</span>的逃避和不符合实际的<span class="hl">幻想</span>都不能解决问题，
+    人类的<span class="hl">命运</span>由我们自己<span class="hl">掌握</span>——
+    环保，就可以从身边这样开始。</p>
+  </div>
+  <h3>Связки, которые стоит взять с собой</h3>
+  <ul>
+    <li><span class="cn-ex">以前我总觉得……离我很远，可是……我才知道</span> — зачин через собственное заблуждение;</li>
+    <li><span class="cn-ex">这是真实的情况，一点儿也不夸张</span> — фраза из текста, годится дословно;</li>
+    <li><span class="cn-ex">其实一部分污染和我们的日常生活密切相关</span> — переход к быту;</li>
+    <li><span class="cn-ex">所以我从三件小事做起：……；……；……</span> — перечисление вместо общих слов;</li>
+    <li><span class="cn-ex">人类的命运由我们自己掌握</span> — концовка-формула.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>План на урок <span class="cn">复习计划</span></h2>
+  <ol class="route">
+    <li><b>Пройдите пять полос схемы.</b> Вред природе → вред людям → причины → меры → вывод.
+    Этот каркас сам по себе — шаблон для любого «проблемного» сочинения, не только про экологию.</li>
+    <li><b>Соберите пересказ по таблице учебника.</b> Четыре блока: 污染对动植物的危害
+    (消失、自然界、破坏、砍、沙漠、真实), 污染对人类的危害 (水资源、短缺、疾病、数据),
+    造成污染的原因 (工业农业、生产、汽车尾气、垃圾), 保护环境的措施 (设施、能源、逐步、转变、尽量、私家车).</li>
+    <li><b>Выучите три оборота с 令人.</b> 令人不安、令人尊敬、令人鼓舞 — они дают готовую
+    оценочную фразу и в 书写, и в HSKK.</li>
+    <li><b>Закройте пару 鼓励／鼓舞.</b> Проверка: есть ли «кто кого побуждает делать».
+    По два своих примера на каждое.</li>
+    <li><b>Разведите 逐步 и 逐渐.</b> Плановые шаги против естественного хода.
+    Проверочная фраза: 天气逐渐冷了 — можно, 天气逐步冷了 — нельзя.</li>
+    <li><b>Напишите сочинение.</b> 100 знаков по схеме «раньше думал, что далеко — на самом деле рядом —
+    три моих шага — вывод», обязательно с 尽量 и с одним 逐步.</li>
+  </ol>
+</section>
+
+
+<nav class="botnav"><a href="hsk5b-lesson-31.html"><span>← Урок 31</span>登门槛效应</a><a href="index-5b.html"><span>Урок 33 — в работе</span>以堵治堵——缓解交通有妙招</a></nav>
+
+<footer>HSK 标准教程 5（下） · урок 32 «身边的环保» · конспект для подготовки к экзамену</footer>
+
+</div>
+<script>
+
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML =
+      '<span class="w">' + z.dataset.w + '</span>' +
+      '<span class="p">' + z.dataset.p + '</span>' +
+      '<span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    out.innerHTML = def;
+  }
+
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+
+  var box = document.querySelector('.plan-box svg');
+  box.addEventListener('mouseleave', clear);
+})();
+
+</script>
+<script>
+
+(function(){
+  var LESSON = "32";
+  var DIRS = ["audio/", "", "mp3/", "media/", "аудио/", "audio/32/", "32/"];
+  var CAND = [];
+  DIRS.forEach(function(d){ CAND.push(d + "{hz}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{hz2}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{pyn}.mp3"); });
+
+  var patIn  = document.getElementById('ab-pat');
+  var status = document.getElementById('ab-status');
+  var btns   = Array.prototype.slice.call(document.querySelectorAll('.pb[data-hz]'));
+  var cur = null, curBtn = null, queue = null;
+
+  function pad(n){ n = String(n||''); return n.length === 1 ? '0'+n : n; }
+
+  function resolve(pat, b){
+    return pat
+      .replace(/\{hz2\}/g, b.dataset.hz2 || b.dataset.hz)
+      .replace(/\{hz\}/g,  b.dataset.hz)
+      .replace(/\{pyn\}/g, b.dataset.pyn)
+      .replace(/\{py\}/g,  b.dataset.py)
+      .replace(/\{num\}/g, pad(b.dataset.num))
+      .replace(/\{n\}/g,   b.dataset.num || '')
+      .replace(/\{L\}/g,   LESSON);
+  }
+
+  function setStatus(t, cls){
+    status.textContent = t || '';
+    status.className = 'ab-status' + (cls ? ' ' + cls : '');
+  }
+
+  function test(pat, b){
+    return new Promise(function(res){
+      var a = new Audio(), done = false;
+      function ok(){ if(!done){ done = true; res(true); } }
+      function no(){ if(!done){ done = true; res(false); } }
+      a.addEventListener('loadedmetadata', ok);
+      a.addEventListener('canplay', ok);
+      a.addEventListener('error', no);
+      a.preload = 'metadata';
+      a.src = encodeURI(resolve(pat, b));
+      setTimeout(no, 2500);
+    });
+  }
+
+  function stop(){
+    if(cur){ cur.pause(); cur = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn = null; }
+    queue = null;
+    document.querySelectorAll('.pball.playing').forEach(function(x){ x.classList.remove('playing'); });
+  }
+
+  /* проигрывание с запасными вариантами имени для этого слова */
+  function play(b, onEnd){
+    stop();
+    var tries = [patIn.value.trim()];
+    var alt = (b.dataset.hz2 && b.dataset.hz2 !== b.dataset.hz)
+      ? patIn.value.trim().replace('{hz}', '{hz2}') : null;
+    if(alt && tries.indexOf(alt) < 0) tries.push(alt);
+    CAND.forEach(function(p){ if(tries.indexOf(p) < 0) tries.push(p); });
+
+    b.classList.add('playing');
+    var i = 0;
+    (function attempt(){
+      if(i >= tries.length){
+        b.classList.remove('playing');
+        b.classList.add('missing');
+        b.title = 'Не найден файл для ' + b.dataset.hz;
+        setStatus('Не найден файл для ' + b.dataset.hz + ' — проверьте папку или шаблон.', 'bad');
+        if(onEnd) onEnd();
+        return;
+      }
+      var src = resolve(tries[i++], b);
+      var a = new Audio(encodeURI(src));
+      var started = false;
+      a.addEventListener('canplay', function(){ started = true; });
+      a.addEventListener('ended', function(){
+        b.classList.remove('playing');
+        if(cur === a){ cur = null; curBtn = null; }
+        if(onEnd) onEnd();
+      });
+      a.addEventListener('error', function(){
+        if(!started){ attempt(); }
+        else { b.classList.remove('playing'); if(onEnd) onEnd(); }
+      });
+      cur = a; curBtn = b;
+      b.classList.remove('missing');
+      a.play().catch(function(){});
+    })();
+  }
+
+  /* автопоиск папки при открытии */
+  function autodetect(quiet){
+    if(!btns.length) return;
+    if(!quiet) setStatus('Перебираю варианты…');
+    var i = 0;
+    (function next(){
+      if(i >= CAND.length){
+        setStatus(quiet
+          ? 'Папка с mp3 не найдена. Положите файлы в audio рядом с этим документом.'
+          : 'Ни один из типовых вариантов не подошёл. Впишите путь вручную.',
+          quiet ? '' : 'bad');
+        return;
+      }
+      var p = CAND[i++];
+      test(p, btns[0]).then(function(ok){
+        if(ok){
+          patIn.value = p;
+          document.querySelectorAll('.pb.missing').forEach(function(x){
+            x.classList.remove('missing'); x.title = '';
+          });
+          setStatus('Озвучка подключена: ' + p, 'ok');
+        } else next();
+      });
+    })();
+  }
+
+  document.getElementById('ab-auto').addEventListener('click', function(){ autodetect(false); });
+  document.getElementById('ab-test').addEventListener('click', function(){
+    if(!btns.length) return;
+    setStatus('Проверяю…');
+    test(patIn.value.trim(), btns[0]).then(function(ok){
+      setStatus((ok ? 'Файл найден: ' : 'Не найден: ') + resolve(patIn.value.trim(), btns[0]),
+                ok ? 'ok' : 'bad');
+    });
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(curBtn === b && cur){ stop(); return; }
+      play(b);
+    });
+  });
+
+  document.querySelectorAll('.pball').forEach(function(pb){
+    pb.addEventListener('click', function(){
+      if(pb.classList.contains('playing')){ stop(); return; }
+      var list = Array.prototype.slice.call(
+        pb.closest('.cluster').querySelectorAll('.pb[data-hz]'));
+      stop();
+      pb.classList.add('playing');
+      var i = 0;
+      queue = list;
+      (function step(){
+        if(queue !== list || i >= list.length){ pb.classList.remove('playing'); return; }
+        play(list[i++], function(){ setTimeout(step, 350); });
+      })();
+    });
+  });
+
+  autodetect(true);
+})();
+
+</script>
+</body>
+</html>
