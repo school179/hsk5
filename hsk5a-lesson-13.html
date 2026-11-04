@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 13 · 锯掉生活的“筐底” · HSK 标准教程 5上</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#211d18;
+  --paper:#dcd8ce;
+  --card:#f2eee5;
+  --brick:#6b6255;
+  --red:#c05a2a;
+  --wood:#9a7343;
+  --teal:#2f5560;
+  --line:rgba(33,29,24,.19);
+  --disp:"PT Sans Narrow","Roboto Condensed",sans-serif;
+  --body:"Literata",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:repeating-linear-gradient(0deg,transparent 0 31px,rgba(33,29,24,.045) 31px 32px)}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px 100px}
+
+header{padding:40px 0 26px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.title-row{display:flex;align-items:flex-start;gap:22px;margin-top:14px;flex-wrap:wrap}
+.lesson-no{font-family:var(--disp);font-weight:700;font-size:96px;line-height:.78;color:var(--red);letter-spacing:-.03em}
+h1{margin:0;font-family:var(--han);font-weight:900;font-size:41px;line-height:1.08;letter-spacing:.02em}
+h1 .lat{display:block;font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brick);margin-top:10px}
+.meta{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--brick);display:flex;gap:18px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+
+section{margin-top:56px}
+h2{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:12px}
+h2 .cn{font-family:var(--han);font-size:19px;letter-spacing:.05em;color:var(--red);font-weight:600;text-transform:none}
+h3{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.03em;margin:30px 0 10px}
+p{margin:0 0 14px}
+.lede{font-size:18px;line-height:1.65}
+
+/* ——— схема ——— */
+.scene-box{background:var(--card);border:1px solid var(--line);padding:18px 18px 12px}
+.scene-box svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone .fillable{transition:opacity .18s ease}
+.zone .fillable{opacity:.85}
+.zone:hover .fillable,.zone.on .fillable{opacity:1}
+.zone:focus{outline:none}
+.zone:focus-visible .fillable{stroke:var(--red);stroke-width:2.5}
+.slab{font-family:var(--han);font-size:14px;font-weight:600;fill:var(--ink);pointer-events:none}
+.spin{font-family:var(--mono);font-size:9px;fill:var(--brick);pointer-events:none;letter-spacing:.05em}
+.sfaint{font-family:var(--mono);font-size:10px;fill:var(--brick);pointer-events:none;letter-spacing:.14em}
+.readout{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;min-height:64px}
+.readout .w{font-family:var(--han);font-size:21px;font-weight:600;margin-right:10px}
+.readout .p{font-family:var(--mono);font-size:12.5px;color:var(--teal)}
+.readout .d{display:block;margin-top:5px;font-size:15px;line-height:1.55}
+.readout .hint{color:var(--brick);font-style:italic}
+
+.moves{list-style:none;padding:0;margin:0;counter-reset:mv}
+.moves li{counter-increment:mv;position:relative;padding:14px 0 14px 62px;border-bottom:1px solid var(--line)}
+.moves li::before{content:counter(mv,decimal-leading-zero);position:absolute;left:0;top:14px;
+  font-family:var(--mono);font-size:13px;font-weight:700;color:var(--red);letter-spacing:.05em}
+.moves b{font-family:var(--disp);font-size:18px;letter-spacing:.02em;display:block;margin-bottom:3px}
+.moves .kw{display:block;margin-top:6px;font-family:var(--han);font-size:15px;color:var(--brick)}
+
+.cluster{margin-top:26px}
+.cluster .why{font-size:14px;color:var(--brick);margin:-4px 0 14px;font-style:italic}
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.w-item{background:var(--card);padding:11px 13px}
+.w-item .hz{font-family:var(--han);font-size:20px;font-weight:600;letter-spacing:.04em}
+.w-item .py{font-family:var(--mono);font-size:12px;color:var(--teal);margin-left:7px}
+.w-item .ru{display:block;font-size:14.5px;line-height:1.45;margin-top:3px}
+.w-item .ex{display:block;font-family:var(--han);font-size:14px;color:var(--brick);margin-top:6px}
+.star{color:var(--wood);font-family:var(--mono);font-size:11px;vertical-align:super}
+
+.card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin:16px 0}
+.card.red{border-left:4px solid var(--red)}
+.card.wood{border-left:4px solid var(--wood)}
+.card.teal{border-left:4px solid var(--teal)}
+.cn-ex{font-family:var(--han);font-size:17px;line-height:1.85;margin:2px 0}
+.cn-ex .hl{color:var(--red);font-weight:600}
+.tr{font-size:14px;color:var(--brick);margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--card);padding:2px 7px;margin-right:8px;vertical-align:2px}
+.tag.w{background:var(--wood)}
+.tag.t{background:var(--teal)}
+.tag.r{background:var(--red)}
+
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--card);font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:rgba(33,29,24,.06)}
+td .han{font-family:var(--han);font-size:16px}
+.pair-tbl td:first-child{width:34%;font-family:var(--han);font-size:16px}
+
+.trap{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);margin-bottom:14px;background:var(--card)}
+.trap>div{padding:11px 14px}
+.trap>div+div{border-left:1px solid var(--line)}
+.trap .hz{font-family:var(--han);font-size:19px;font-weight:600}
+.trap .py{font-family:var(--mono);font-size:12px;color:var(--teal);margin-left:6px}
+.trap .n{display:block;font-size:14px;margin-top:3px;color:var(--brick)}
+.warn{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+
+details{background:var(--card);border:1px solid var(--line);margin:10px 0}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--red);margin-right:10px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 16px 16px}
+details .in p{font-family:var(--han);font-size:16px;line-height:1.9;margin:0}
+details .in .k{color:var(--red);font-weight:600}
+
+.route{counter-reset:step;list-style:none;padding:0;margin:14px 0 0}
+.route li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px}
+.route li::before{content:counter(step);position:absolute;left:0;top:-2px;font-family:var(--disp);
+  font-weight:700;font-size:22px;color:var(--red);width:30px;text-align:right}
+.route b{font-family:var(--disp);font-size:17px;letter-spacing:.02em}
+footer{margin-top:64px;padding-top:20px;border-top:3px solid var(--ink);
+  font-family:var(--mono);font-size:11.5px;color:var(--brick);letter-spacing:.05em}
+
+@media (max-width:620px){
+  .lesson-no{font-size:64px}
+  h1{font-size:29px}
+  .trap{grid-template-columns:1fr}
+  .trap>div+div{border-left:none;border-top:1px solid var(--line)}
+  .wrap{padding:0 15px 70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* ——— аудио ——— */
+.pb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  margin-left:8px;padding:0;border:1px solid var(--line);background:transparent;
+  color:var(--red);cursor:pointer;vertical-align:-3px;font-size:9px;line-height:1;
+  font-family:var(--mono);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pb:hover{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pb.playing{background:var(--red);color:var(--card);border-color:var(--red)}
+.pb.missing{color:var(--brick);opacity:.4;cursor:help}
+.pb.missing:hover{background:transparent;color:var(--brick);border-color:var(--line)}
+.pball{width:auto;height:22px;padding:0 9px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-left:12px;vertical-align:2px}
+h3 .pball{font-family:var(--mono)}
+
+.audiobar{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade,var(--red));
+  padding:16px 18px;margin:18px 0 26px}
+.audiobar .ab-t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;margin-bottom:10px}
+.audiobar .ab-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.audiobar input{flex:1 1 260px;min-width:0;font-family:var(--mono);font-size:13px;padding:7px 9px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.audiobar button{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;
+  padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.audiobar button:hover{background:var(--red);border-color:var(--red)}
+.audiobar .ab-note{font-size:13.5px;color:var(--brick);margin-top:10px;line-height:1.5}
+.audiobar .ab-note code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 4px}
+.audiobar .ab-status{margin-top:9px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.audiobar .ab-status.ok{color:var(--jade,#5c8073)}
+.audiobar .ab-status.bad{color:var(--red)}
+
+
+
+/* ——— навигация ——— */
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.topnav a{color:var(--brick);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.topnav .home{font-weight:700}
+.botnav{margin-top:46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--disp);font-size:15px;letter-spacing:.04em}
+.botnav a{color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:11px 16px;flex:1 1 200px}
+.botnav a:hover{border-color:var(--red);color:var(--red)}
+.botnav a span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brick);margin-bottom:3px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav"><a class="home" href="index.html">&#8592; Все уроки 5A</a><a href="#" onclick="window.print();return false;">Печать</a></nav>
+
+<header>
+  <div class="eyebrow">HSK 标准教程 5（上） · Unit 5 放眼世界 · Seeing the World</div>
+  <div class="title-row">
+    <div class="lesson-no">13</div>
+    <h1>锯掉生活的“筐底”<span class="lat">Отпилить у жизни «дно корзины» · 656 字 · стр. 106–113</span></h1>
+  </div>
+  <div class="meta">
+    <span><b>37</b> новых слов</span>
+    <span><b>3</b> грамматические точки</span>
+    <span>ключ: <b>何况 · 何必 · 多亏</b></span>
+  </div>
+</header>
+
+<section>
+  <p class="lede">Третий урок юнита — притча. 1891 год, изобретение баскетбола, персиковая корзина, прибитая к перилам, и тридцать лет мучений с лестницей, потому что у корзины было дно. Весь текст держится на одном предмете, который меняется дважды: корзина с дном → пила → кольцо без дна. Вокруг этого превращения и разложена лексика.</p>
+  <p style="font-size:15px;color:var(--brick);margin:0"><b>Что стоит заметить сразу:</b> инженеры строили машину, чтобы доставать мяч, — и никому не пришло в голову убрать дно. Слово 阻碍 в последнем абзаце относится не к корзине, а к мышлению: 我们的思维像篮球一样被篮筐的底挡在了半空中.</p>
+</section>
+
+<section id="scene">
+  <h2>Один предмет, два превращения <span class="cn">筐 → 锯 → 篮</span></h2>
+  <div class="scene-box">
+    <svg viewBox="0 0 620 330" role="img" aria-label="Схема: корзина с дном, пила, кольцо без дна — с подписями лексики урока">
+      <text class="sfaint" x="16" y="18">1891 · ДО</text>
+      <text class="sfaint" x="266" y="18">РЕШЕНИЕ</text>
+      <text class="sfaint" x="470" y="18">ПОСЛЕ</text>
+      <line x1="238" y1="30" x2="238" y2="300" stroke="rgba(33,29,24,.2)" stroke-width="1" stroke-dasharray="4 5"/>
+      <line x1="432" y1="30" x2="432" y2="300" stroke="rgba(33,29,24,.2)" stroke-width="1" stroke-dasharray="4 5"/>
+
+      <!-- перила -->
+      <g class="zone" tabindex="0" data-w="栏杆 · 安装 · 甲乙两队" data-p="lángān · ānzhuāng" data-d="Найсмит 将两只篮筐分别安装在体育馆两边看台的栏杆上. Студентов разделили на команды 甲 и 乙 — «первая» и «вторая» по циклическим знакам, китайский аналог A и B.">
+        <rect class="fillable" x="20" y="60" width="200" height="9" fill="#9a7343"/>
+        <rect class="fillable" x="30" y="69" width="7" height="26" fill="#9a7343"/>
+        <rect class="fillable" x="196" y="69" width="7" height="26" fill="#9a7343"/>
+        <text class="spin" x="120" y="52" text-anchor="middle">栏杆 · 安装 · 甲/乙</text>
+      </g>
+
+      <!-- корзина с дном -->
+      <g class="zone" tabindex="0" data-w="筐 · 桃 · 装 · 项目" data-p="kuāng · táo · zhuāng" data-d="Школе не хватало (缺乏) зимних игровых дисциплин — 在室内进行的球类比赛项目. Идея пришла из местной игры: бросать мяч в персиковую корзину (桃子筐), в каких возят персики — 装桃子的专用篮筐.">
+        <path class="fillable" d="M74 78 L166 78 L152 152 L88 152 z" fill="#c49a5e" stroke="#6b4f2a" stroke-width="1.6"/>
+        <line x1="88" y1="152" x2="152" y2="152" stroke="#6b4f2a" stroke-width="5"/>
+        <circle class="fillable" cx="120" cy="118" r="17" fill="#c05a2a"/>
+        <path d="M103 118 h34 M120 101 v34" stroke="#7a3418" stroke-width="1.4"/>
+        <text class="slab" x="120" y="176" text-anchor="middle">筐（有底）</text>
+        <text class="spin" x="120" y="192" text-anchor="middle">桃子筐 · 装 · 项目</text>
+      </g>
+
+      <!-- лестница и踩 -->
+      <g class="zone" tabindex="0" data-w="踩梯子 · 一再 · 重复 · 断断续续" data-p="cǎi · yízài · chóngfù" data-d="Каждый заброшенный мяч приходилось доставать: 就得有一个人踩着梯子上去把球取出来. Действие 必须一再地重复, из-за чего игра шла 断断续续 и теряла 激烈紧张的气氛.">
+        <path class="fillable" d="M178 300 L196 152 M204 300 L222 152" stroke="#9a7343" stroke-width="4"/>
+        <path class="fillable" d="M183 260 h22 M188 220 h22 M193 180 h22" stroke="#9a7343" stroke-width="3.4"/>
+        <text class="spin" x="200" y="318" text-anchor="middle">踩 · 一再 · 重复</text>
+      </g>
+
+      <!-- недовольство -->
+      <g class="zone" tabindex="0" data-w="气氛 · 激烈 · 球迷 · 何况" data-p="qìfēn · jīliè · qiúmí" data-d="Игра теряла остроту: 缺少了激烈紧张的气氛，连运动员都不满意，更何况看比赛的球迷呢？ Это и есть образцовое употребление 何况 из текста.">
+        <path class="fillable" d="M28 210 h122 v46 h-84 l-18 16 v-16 h-20 z" fill="#f2eee5" stroke="#2f5560" stroke-width="1.5"/>
+        <text class="slab" x="89" y="232" text-anchor="middle" style="font-size:13px">气氛没了</text>
+        <text class="spin" x="89" y="248" text-anchor="middle">激烈 · 球迷 · 何况</text>
+      </g>
+
+      <!-- машина инженера -->
+      <g class="zone" tabindex="0" data-w="工程师 · 机器 · 顺畅" data-p="gōngchéngshī · jīqì · shùnchàng" data-d="Один инженер даже 专门制造出一种机器: дёрнешь за низ корзины — мяч выскочит. Но 这些办法都没能让比赛顺畅起来. Сложное решение простой задачи — центральная ирония текста.">
+        <rect class="fillable" x="256" y="96" width="66" height="52" fill="#8d9aa0" stroke="#2f5560" stroke-width="1.5"/>
+        <circle class="fillable" cx="274" cy="122" r="9" fill="none" stroke="#2f5560" stroke-width="2"/>
+        <circle class="fillable" cx="302" cy="122" r="9" fill="none" stroke="#2f5560" stroke-width="2"/>
+        <path class="fillable" d="M289 148 v22" stroke="#2f5560" stroke-width="2"/>
+        <text class="spin" x="289" y="186" text-anchor="middle">工程师 · 机器</text>
+        <text class="spin" x="289" y="200" text-anchor="middle">还是不顺畅</text>
+      </g>
+
+      <!-- мальчик и вопрос -->
+      <g class="zone" tabindex="0" data-w="幼儿园 · 好奇 · 何必" data-p="yòu'éryuán · hàoqí · hébì" data-d="Мимо шёл мальчик из детского сада и 好奇地问父亲：“何必这么麻烦呢？把篮筐的底去掉不就行了吗？” Ребёнок задал вопрос, который не пришёл в голову ни одному инженеру.">
+        <circle class="fillable" cx="352" cy="112" r="15" fill="#c49a5e" stroke="#6b4f2a" stroke-width="1.4"/>
+        <path class="fillable" d="M352 127 v34 M340 140 h24 M344 190 l8 -29 l8 29" stroke="#6b4f2a" stroke-width="2.6" fill="none"/>
+        <text class="spin" x="352" y="212" text-anchor="middle">幼儿园 · 好奇</text>
+        <text class="slab" x="352" y="232" text-anchor="middle" style="font-size:13px">何必？</text>
+      </g>
+
+      <!-- пила -->
+      <g class="zone" tabindex="0" data-w="锯（子）· 多亏 · 连忙 · 瞧" data-p="jù(zi) · duōkuī · liánmáng" data-d="多亏了他这句话，人们如梦初醒 — и один игрок 连忙找来一把锯子把篮筐的底锯掉. Глагол 锯 и существительное 锯子 пишутся одинаково: 锯掉底 / 一把锯子.">
+        <path class="fillable" d="M256 250 L392 250 L392 266 L256 266 z" fill="#b9b3a5" stroke="#4a4438" stroke-width="1.4"/>
+        <path class="fillable" d="M256 266 l8 9 l8 -9 l8 9 l8 -9 l8 9 l8 -9 l8 9 l8 -9 l8 9 l8 -9 l8 9 l8 -9 l8 9 l8 -9 l8 9 l8 -9" fill="none" stroke="#4a4438" stroke-width="1.4"/>
+        <rect class="fillable" x="392" y="246" width="26" height="24" fill="#9a7343"/>
+        <text class="spin" x="324" y="240" text-anchor="middle">锯子 · 多亏 · 连忙</text>
+      </g>
+
+      <!-- кольцо без дна -->
+      <g class="zone" tabindex="0" data-w="投篮 · 顺畅 · 困扰被解决" data-p="tóu lán · kùnrǎo" data-d="Дна больше нет — мяч падает сам. 困扰人们很长时间的取球问题就这样被一个小孩子解决了. Так родилось современное кольцо.">
+        <ellipse class="fillable" cx="522" cy="96" rx="46" ry="12" fill="none" stroke="#c05a2a" stroke-width="5"/>
+        <path class="fillable" d="M480 100 q42 46 84 0" fill="none" stroke="#8d9aa0" stroke-width="1.4" stroke-dasharray="3 4"/>
+        <circle class="fillable" cx="522" cy="176" r="17" fill="#c05a2a"/>
+        <path d="M505 176 h34 M522 159 v34" stroke="#7a3418" stroke-width="1.4"/>
+        <path class="fillable" d="M522 130 v22" stroke="#c05a2a" stroke-width="2" stroke-dasharray="3 4"/>
+        <text class="slab" x="522" y="216" text-anchor="middle">篮（无底）</text>
+        <text class="spin" x="522" y="232" text-anchor="middle">投篮 · 顺畅</text>
+      </g>
+
+      <!-- мораль -->
+      <g class="zone" tabindex="0" data-w="思维 · 阻碍 · 呆 · 仿佛 · 造成" data-p="sīwéi · zǔ'ài · dāi" data-d="Финальный поворот: дно мешало не мячу, а мысли. 我们的思维像篮球一样被篮筐的底挡在了半空中，于是我们呆呆地去搬梯子、造机器. 世界上本来就没有太复杂的事，复杂都是我们自己造成的.">
+        <rect class="fillable" x="452" y="252" width="140" height="52" fill="#2f5560"/>
+        <text class="slab" x="522" y="274" text-anchor="middle" style="fill:#f2eee5;font-size:13px">思维的“筐底”</text>
+        <text class="spin" x="522" y="292" text-anchor="middle" style="fill:#b4bfc4">阻碍 · 呆 · 造成</text>
+      </g>
+    </svg>
+    <div class="readout" id="readout">
+      <span class="hint">Наведите курсор или коснитесь любого элемента — появятся слова этого эпизода и их роль в тексте.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Текст в трёх кадрах <span class="cn">课文复述</span></h2>
+  <p style="font-size:14.5px;color:var(--brick)">Ровно те три блока, по которым учебник просит пересказать текст (стр. 112). Пересказывайте по опорным словам, глядя на схему выше, а не в текст.</p>
+  <ol class="moves">
+    <li>
+      <b>Изобретение баскетбола</b>
+      1891 год, штат Массачусетс, преподаватель физкультуры Джеймс Найсмит. Зима выдалась особенно холодной, а школе, где он 训练, 缺乏在室内进行的球类比赛项目. Идею подала местная игра: бросать мяч в персиковую корзину — 他从当地人把球扔进桃子筐的游戏中得到启发. Он 将两只篮筐分别安装在体育馆两边看台的栏杆上, разделил студентов на команды 甲 и 乙, а 工具 взял футбольный мяч; кто забросил больше — тот и выиграл.
+      <span class="kw">训练 · 缺乏 · 项目 · 桃 · 装 · 启发 · 安装 · 栏杆 · 甲 · 乙 · 工具</span>
+    </li>
+    <li>
+      <b>Мучение с доставанием мяча</b>
+      Игра быстро вошла в моду, но на перилах была закреплена настоящая корзина — с дном. После каждого попадания кто-то 踩着梯子上去把球取出来. Это приходилось 一再地重复, поэтому матч шёл 断断续续 и терял 激烈紧张的气氛. Недовольны были даже игроки — 更何况看比赛的球迷呢？ Люди 纷纷出主意, один инженер даже 制造出一种机器: потянешь снизу — мяч выскочит. Но 这些办法都没能让比赛顺畅起来.
+      <span class="kw">踩 · 一再 · 重复 · 断断续续 · 激烈 · 气氛 · 何况 · 球迷 · 工程师 · 机器 · 顺畅</span>
+    </li>
+    <li>
+      <b>Решение и мораль</b>
+      Несколько лет спустя мимо площадки проходил мальчик из 幼儿园. Увидев, как взрослые раз за разом мучаются, он 好奇地问父亲：何必这么麻烦呢？把篮筐的底去掉不就行了吗？ 多亏了他这句话, все словно проснулись, и игрок 连忙找来一把锯子把篮筐的底锯掉. 困扰人们很长时间的取球问题就这样被一个小孩子解决了. Почему же никто не додумался? 因为我们的思维像篮球一样被篮筐的底挡在了半空中, и мы 呆呆地去搬梯子、造机器. 世界上本来就没有太复杂的事，复杂都是我们自己造成的. 生活仿佛篮筐, и часто нужна лишь пила, чтобы отпилить то, что 阻碍我们.
+      <span class="kw">幼儿园 · 好奇 · 何必 · 多亏 · 连忙 · 锯 · 瞧 · 困扰 · 思维 · 呆 · 造成 · 仿佛 · 阻碍</span>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <h2>37 слов по гнёздам <span class="cn">生词</span></h2>
+  <p style="font-size:14px;color:var(--brick)"><span class="star">★</span> — слово сверх программы HSK 5 (в учебнике со звёздочкой). Порядок смысловой, по эпизодам схемы.</p>
+
+  <div class="audiobar" id="audiobar">
+    <div class="ab-t">Озвучка слов</div>
+    <div class="ab-row">
+      <input id="ab-pat" type="text" spellcheck="false" value="audio/{hz}.mp3" aria-label="Шаблон пути к mp3">
+      <button type="button" id="ab-auto">Подобрать</button>
+      <button type="button" id="ab-test">Проверить</button>
+    </div>
+    <div class="ab-status" id="ab-status"></div>
+    <div class="ab-note">
+      По умолчанию ищутся файлы вида <code>иероглиф.mp3</code> — сначала в папке
+      <code>audio</code> рядом с этим файлом, потом прямо рядом с ним. Нужная папка
+      определяется сама при открытии страницы. Если ваши mp3 лежат где-то ещё, впишите путь
+      вручную: доступны подстановки <code>{hz}</code> иероглифы, <code>{py}</code> пиньинь с
+      тонами, <code>{pyn}</code> пиньинь без диакритики, <code>{num}</code> номер слова в списке
+      учебника, <code>{L}</code> номер урока. Работает только если открыть файл у себя на диске —
+      в предпросмотре доступа к вашим папкам нет.
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>I. Изобретение: 1891 год<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Предметное гнездо. Половина слов пригодится в любом тексте про спорт, оборудование и организацию.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">项目</span><span class="py">xiàngmù</span><button class="pb" type="button" data-hz="项目" data-hz2="项目" data-py="xiàngmù" data-pyn="xiangmu" data-num="5" aria-label="Прослушать 项目" title="Прослушать 项目">&#9654;</button><span class="ru">вид (спорта), пункт, проект</span><span class="ex">体育项目 / 比赛项目</span></div>
+      <div class="w-item"><span class="hz">缺乏</span><span class="py">quēfá</span><button class="pb" type="button" data-hz="缺乏" data-hz2="缺乏" data-py="quēfá" data-pyn="quefa" data-num="4" aria-label="Прослушать 缺乏" title="Прослушать 缺乏">&#9654;</button><span class="ru">испытывать нехватку</span><span class="ex">缺乏经验 / 人才 / 信心</span></div>
+      <div class="w-item"><span class="hz">训练</span><span class="py">xùnliàn</span><button class="pb" type="button" data-hz="训练" data-hz2="训练" data-py="xùnliàn" data-pyn="xunlian" data-num="3" aria-label="Прослушать 训练" title="Прослушать 训练">&#9654;</button><span class="ru">тренировать(ся)</span><span class="ex">严格地训练</span></div>
+      <div class="w-item"><span class="hz">启发</span><span class="py">qǐfā</span><button class="pb" type="button" data-hz="启发" data-hz2="启发" data-py="qǐfā" data-pyn="qifa" data-num="8" aria-label="Прослушать 启发" title="Прослушать 启发">&#9654;</button><span class="ru">натолкнуть на мысль, вдохновить</span><span class="ex">得到启发 / 很有启发</span></div>
+      <div class="w-item"><span class="hz">筐</span><span class="py">kuāng</span><span class="star">★</span><button class="pb" type="button" data-hz="筐" data-hz2="筐" data-py="kuāng" data-pyn="kuang" data-num="2" aria-label="Прослушать 筐" title="Прослушать 筐">&#9654;</button><span class="ru">корзина</span><span class="ex">桃子筐 / 篮筐</span></div>
+      <div class="w-item"><span class="hz">桃</span><span class="py">táo</span><button class="pb" type="button" data-hz="桃" data-hz2="桃" data-py="táo" data-pyn="tao" data-num="6" aria-label="Прослушать 桃" title="Прослушать 桃">&#9654;</button><span class="ru">персик</span></div>
+      <div class="w-item"><span class="hz">装</span><span class="py">zhuāng</span><button class="pb" type="button" data-hz="装" data-hz2="装" data-py="zhuāng" data-pyn="zhuang" data-num="7" aria-label="Прослушать 装" title="Прослушать 装">&#9654;</button><span class="ru">вмещать, грузить, класть внутрь</span><span class="ex">装桃子 / 箱子装不下</span></div>
+      <div class="w-item"><span class="hz">安装</span><span class="py">ānzhuāng</span><button class="pb" type="button" data-hz="安装" data-hz2="安装" data-py="ānzhuāng" data-pyn="anzhuang" data-num="9" aria-label="Прослушать 安装" title="Прослушать 安装">&#9654;</button><span class="ru">монтировать, устанавливать</span><span class="ex">安装机器 / 安装软件</span></div>
+      <div class="w-item"><span class="hz">栏杆</span><span class="py">lángān</span><span class="star">★</span><button class="pb" type="button" data-hz="栏杆" data-hz2="栏杆" data-py="lángān" data-pyn="langan" data-num="10" aria-label="Прослушать 栏杆" title="Прослушать 栏杆">&#9654;</button><span class="ru">перила, ограждение</span></div>
+      <div class="w-item"><span class="hz">甲</span><span class="py">jiǎ</span><button class="pb" type="button" data-hz="甲" data-hz2="甲" data-py="jiǎ" data-pyn="jia" data-num="11" aria-label="Прослушать 甲" title="Прослушать 甲">&#9654;</button><span class="ru">первый, «А» (сторона)</span><span class="ex">甲队 ↔ 乙队</span></div>
+      <div class="w-item"><span class="hz">乙</span><span class="py">yǐ</span><button class="pb" type="button" data-hz="乙" data-hz2="乙" data-py="yǐ" data-pyn="yi" data-num="12" aria-label="Прослушать 乙" title="Прослушать 乙">&#9654;</button><span class="ru">второй, «Б» (сторона)</span></div>
+      <div class="w-item"><span class="hz">工具</span><span class="py">gōngjù</span><button class="pb" type="button" data-hz="工具" data-hz2="工具" data-py="gōngjù" data-pyn="gongju" data-num="13" aria-label="Прослушать 工具" title="Прослушать 工具">&#9654;</button><span class="ru">инструмент, орудие</span><span class="ex">交通工具 / 学习工具</span></div>
+      <div class="w-item"><span class="hz">投篮</span><span class="py">tóu lán</span><button class="pb" type="button" data-hz="投篮" data-hz2="投篮" data-py="tóu lán" data-pyn="toulan" data-num="14" aria-label="Прослушать 投篮" title="Прослушать 投篮">&#9654;</button><span class="ru">бросать в корзину</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>II. Мучение: почему игра не шла<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Гнездо повторяющегося действия и потерянной атмосферы. Здесь же живёт 何况.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">踩</span><span class="py">cǎi</span><button class="pb" type="button" data-hz="踩" data-hz2="踩" data-py="cǎi" data-pyn="cai" data-num="15" aria-label="Прослушать 踩" title="Прослушать 踩">&#9654;</button><span class="ru">наступать, ступать на</span><span class="ex">踩着梯子 / 踩破 / 踩碎</span></div>
+      <div class="w-item"><span class="hz">一再</span><span class="py">yízài</span><button class="pb" type="button" data-hz="一再" data-hz2="一再" data-py="yízài" data-pyn="yizai" data-num="16" aria-label="Прослушать 一再" title="Прослушать 一再">&#9654;</button><span class="ru">раз за разом, неоднократно</span><span class="ex">一再重复 / 一再强调</span></div>
+      <div class="w-item"><span class="hz">重复</span><span class="py">chóngfù</span><button class="pb" type="button" data-hz="重复" data-hz2="重复" data-py="chóngfù" data-pyn="chongfu" data-num="17" aria-label="Прослушать 重复" title="Прослушать 重复">&#9654;</button><span class="ru">повторять</span><span class="ex">简单地重复（重 читается chóng!）</span></div>
+      <div class="w-item"><span class="hz">断断续续</span><span class="py">duànduàn-xùxù</span><button class="pb" type="button" data-hz="断断续续" data-hz2="断断续续" data-py="duànduàn-xùxù" data-pyn="duanduan-xuxu" data-num="18" aria-label="Прослушать 断断续续" title="Прослушать 断断续续">&#9654;</button><span class="ru">с перерывами, урывками</span></div>
+      <div class="w-item"><span class="hz">激烈</span><span class="py">jīliè</span><button class="pb" type="button" data-hz="激烈" data-hz2="激烈" data-py="jīliè" data-pyn="jilie" data-num="19" aria-label="Прослушать 激烈" title="Прослушать 激烈">&#9654;</button><span class="ru">ожесточённый, острый</span><span class="ex">激烈的比赛 / 争论</span></div>
+      <div class="w-item"><span class="hz">气氛</span><span class="py">qìfēn</span><button class="pb" type="button" data-hz="气氛" data-hz2="气氛" data-py="qìfēn" data-pyn="qifen" data-num="20" aria-label="Прослушать 气氛" title="Прослушать 气氛">&#9654;</button><span class="ru">атмосфера, настроение</span><span class="ex">节日的气氛（氛 — 1-й тон）</span></div>
+      <div class="w-item"><span class="hz">何况</span><span class="py">hékuàng</span><button class="pb" type="button" data-hz="何况" data-hz2="何况" data-py="hékuàng" data-pyn="hekuang" data-num="21" aria-label="Прослушать 何况" title="Прослушать 何况">&#9654;</button><span class="ru">тем более, куда уж там</span></div>
+      <div class="w-item"><span class="hz">球迷</span><span class="py">qiúmí</span><button class="pb" type="button" data-hz="球迷" data-hz2="球迷" data-py="qiúmí" data-pyn="qiumi" data-num="22" aria-label="Прослушать 球迷" title="Прослушать 球迷">&#9654;</button><span class="ru">болельщик</span><span class="ex">ср. 歌迷, 影迷</span></div>
+      <div class="w-item"><span class="hz">顺畅</span><span class="py">shùnchàng</span><span class="star">★</span><button class="pb" type="button" data-hz="顺畅" data-hz2="顺畅" data-py="shùnchàng" data-pyn="shunchang" data-num="25" aria-label="Прослушать 顺畅" title="Прослушать 顺畅">&#9654;</button><span class="ru">гладкий, без заминок</span><span class="ex">比赛顺畅起来</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>III. Решение: пила вместо машины<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Сюжетный поворот. 何必 и 多亏 — обе грамматические точки урока сидят прямо здесь.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">工程师</span><span class="py">gōngchéngshī</span><button class="pb" type="button" data-hz="工程师" data-hz2="工程师" data-py="gōngchéngshī" data-pyn="gongchengshi" data-num="23" aria-label="Прослушать 工程师" title="Прослушать 工程师">&#9654;</button><span class="ru">инженер</span></div>
+      <div class="w-item"><span class="hz">机器</span><span class="py">jīqì</span><button class="pb" type="button" data-hz="机器" data-hz2="机器" data-py="jīqì" data-pyn="jiqi" data-num="24" aria-label="Прослушать 机器" title="Прослушать 机器">&#9654;</button><span class="ru">машина, механизм</span><span class="ex">制造机器 / 安装机器</span></div>
+      <div class="w-item"><span class="hz">幼儿园</span><span class="py">yòu'éryuán</span><button class="pb" type="button" data-hz="幼儿园" data-hz2="幼儿园" data-py="yòu'éryuán" data-pyn="youeryuan" data-num="26" aria-label="Прослушать 幼儿园" title="Прослушать 幼儿园">&#9654;</button><span class="ru">детский сад</span></div>
+      <div class="w-item"><span class="hz">好奇</span><span class="py">hàoqí</span><button class="pb" type="button" data-hz="好奇" data-hz2="好奇" data-py="hàoqí" data-pyn="haoqi" data-num="27" aria-label="Прослушать 好奇" title="Прослушать 好奇">&#9654;</button><span class="ru">любопытный</span><span class="ex">好奇地问（好 — 4-й тон）</span></div>
+      <div class="w-item"><span class="hz">何必</span><span class="py">hébì</span><button class="pb" type="button" data-hz="何必" data-hz2="何必" data-py="hébì" data-pyn="hebi" data-num="28" aria-label="Прослушать 何必" title="Прослушать 何必">&#9654;</button><span class="ru">зачем же, к чему</span><span class="ex">何必这么麻烦呢？</span></div>
+      <div class="w-item"><span class="hz">锯（子）</span><span class="py">jù(zi)</span><span class="star">★</span><button class="pb" type="button" data-hz="锯" data-hz2="锯子" data-py="jù" data-pyn="ju" data-num="1" aria-label="Прослушать 锯" title="Прослушать 锯">&#9654;</button><span class="ru">пилить; пила</span><span class="ex">锯掉底 / 一把锯子</span></div>
+      <div class="w-item"><span class="hz">多亏</span><span class="py">duōkuī</span><button class="pb" type="button" data-hz="多亏" data-hz2="多亏" data-py="duōkuī" data-pyn="duokui" data-num="29" aria-label="Прослушать 多亏" title="Прослушать 多亏">&#9654;</button><span class="ru">благодаря, спасибо что</span><span class="ex">多亏了你，要不……</span></div>
+      <div class="w-item"><span class="hz">连忙</span><span class="py">liánmáng</span><button class="pb" type="button" data-hz="连忙" data-hz2="连忙" data-py="liánmáng" data-pyn="lianmang" data-num="30" aria-label="Прослушать 连忙" title="Прослушать 连忙">&#9654;</button><span class="ru">тут же, поспешно</span></div>
+      <div class="w-item"><span class="hz">瞧</span><span class="py">qiáo</span><button class="pb" type="button" data-hz="瞧" data-hz2="瞧" data-py="qiáo" data-pyn="qiao" data-num="31" aria-label="Прослушать 瞧" title="Прослушать 瞧">&#9654;</button><span class="ru">глядеть (разг.)</span><span class="ex">瞧见 / 瞧不起</span></div>
+      <div class="w-item"><span class="hz">困扰</span><span class="py">kùnrǎo</span><span class="star">★</span><button class="pb" type="button" data-hz="困扰" data-hz2="困扰" data-py="kùnrǎo" data-pyn="kunrao" data-num="32" aria-label="Прослушать 困扰" title="Прослушать 困扰">&#9654;</button><span class="ru">донимать, мучить (о проблеме)</span><span class="ex">困扰人们很长时间</span></div>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <h3>IV. Мораль: дно в голове<button class="pb pball" type="button">&#9654; подряд</button></h3>
+    <div class="why">Пять слов последнего абзаца. Именно они пригодятся в сочинении и в 阅读 про мышление и привычки.</div>
+    <div class="words">
+      <div class="w-item"><span class="hz">思维</span><span class="py">sīwéi</span><span class="star">★</span><button class="pb" type="button" data-hz="思维" data-hz2="思维" data-py="sīwéi" data-pyn="siwei" data-num="33" aria-label="Прослушать 思维" title="Прослушать 思维">&#9654;</button><span class="ru">мышление</span><span class="ex">思维方式 / 改变思维</span></div>
+      <div class="w-item"><span class="hz">呆</span><span class="py">dāi</span><button class="pb" type="button" data-hz="呆" data-hz2="呆" data-py="dāi" data-pyn="dai" data-num="34" aria-label="Прослушать 呆" title="Прослушать 呆">&#9654;</button><span class="ru">оцепенело, тупо; тупой</span><span class="ex">呆呆地看着</span></div>
+      <div class="w-item"><span class="hz">造成</span><span class="py">zàochéng</span><button class="pb" type="button" data-hz="造成" data-hz2="造成" data-py="zàochéng" data-pyn="zaocheng" data-num="35" aria-label="Прослушать 造成" title="Прослушать 造成">&#9654;</button><span class="ru">вызывать, приводить к (плохому)</span><span class="ex">造成困难 / 影响 / 伤害</span></div>
+      <div class="w-item"><span class="hz">仿佛</span><span class="py">fǎngfú</span><button class="pb" type="button" data-hz="仿佛" data-hz2="仿佛" data-py="fǎngfú" data-pyn="fangfu" data-num="36" aria-label="Прослушать 仿佛" title="Прослушать 仿佛">&#9654;</button><span class="ru">словно, как будто</span><span class="ex">生活仿佛篮筐（佛 — fú）</span></div>
+      <div class="w-item"><span class="hz">阻碍</span><span class="py">zǔ'ài</span><span class="star">★</span><button class="pb" type="button" data-hz="阻碍" data-hz2="阻碍" data-py="zǔ'ài" data-pyn="zuai" data-num="37" aria-label="Прослушать 阻碍" title="Прослушать 阻碍">&#9654;</button><span class="ru">препятствовать; препятствие</span><span class="ex">阻碍我们的“筐底”</span></div>
+      <div class="w-item"><span class="hz">马萨诸塞州</span><span class="py">Mǎsàzhūsài Zhōu</span><button class="pb" type="button" data-hz="马萨诸塞州" data-hz2="马萨诸塞州" data-py="Mǎsàzhūsài Zhōu" data-pyn="MasazhusaiZhou" data-num="" aria-label="Прослушать 马萨诸塞州" title="Прослушать 马萨诸塞州">&#9654;</button><span class="ru">штат Массачусетс</span></div>
+      <div class="w-item"><span class="hz">詹姆士·奈史密斯</span><span class="py">Zhānmǔshì Nàishǐmìsī</span><button class="pb" type="button" data-hz="詹姆士·奈史密斯" data-hz2="詹姆士·奈史密斯" data-py="Zhānmǔshì Nàishǐmìsī" data-pyn="ZhanmushiNaishimisi" data-num="" aria-label="Прослушать 詹姆士·奈史密斯" title="Прослушать 詹姆士·奈史密斯">&#9654;</button><span class="ru">Джеймс Найсмит</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>На слух: где рука ошибётся <span class="cn">听写陷阱</span></h2>
+  <p>В этом уроке главная опасность — не омофоны, а <b>нестандартные чтения знакомых иероглифов</b>. Четыре слова читаются не так, как подсказывает интуиция.</p>
+
+  <div class="warn">Иероглиф читается не так, как ожидается</div>
+  <table class="pair-tbl">
+    <tr><th>Слово</th><th>В чём подвох</th></tr>
+    <tr><td>重复 chóng<b>fù</b></td><td>重 здесь <b>chóng</b> «снова», а не zhòng «тяжёлый». Ср. 重新 chóngxīn, 重复 chóngfù — но 重要 zhòngyào.</td></tr>
+    <tr><td><b>好</b>奇 hàoqí</td><td>好 в 4-м тоне = «любить, быть склонным». Так же в 好客 hàokè «гостеприимный». Не hǎoqí.</td></tr>
+    <tr><td>仿<b>佛</b> fǎngfú</td><td>佛 читается fú, а не fó (как в 佛教 fójiào).</td></tr>
+    <tr><td>气<b>氛</b> qìfēn</td><td>氛 — <b>первый</b> тон, хотя фонетик 分 бывает и fèn. Очень частая ошибка даже у носителей.</td></tr>
+    <tr><td>栏<b>杆</b> lángān</td><td>杆 здесь gān (1-й тон), не gǎn.</td></tr>
+  </table>
+
+  <div class="warn">Перекличка с соседними уроками</div>
+  <div class="trap">
+    <div><span class="hz">一再</span><span class="py">yízài</span><span class="n">урок 13 — «раз за разом»</span></div>
+    <div><span class="hz">再三</span><span class="py">zàisān</span><span class="n">урок 15 — то же значение, знаки переставлены местами. 再三 книжнее и может стоять после глагола (考虑再三), 一再 — только перед</span></div>
+  </div>
+  <div class="trap">
+    <div><span class="hz">阻碍</span><span class="py">zǔ'ài</span><span class="n">урок 13 — мешать, тормозить (о препятствии)</span></div>
+    <div><span class="hz">阻止</span><span class="py">zǔzhǐ</span><span class="n">урок 15 — не дать сделать (о действии человека)</span></div>
+  </div>
+  <div class="trap">
+    <div><span class="hz">造成</span><span class="py">zàochéng</span><span class="n">урок 13 — привести к (плохому)</span></div>
+    <div><span class="hz">组成 / 形成</span><span class="py">zǔchéng / xíngchéng</span><span class="n">урок 14 и общая лексика: 组成 — состоять из, 形成 — складываться (нейтрально). Все три оканчиваются на -chéng</span></div>
+  </div>
+
+  <div class="warn">Пары внутри урока и рядом</div>
+  <table class="pair-tbl">
+    <tr><th>Пара</th><th>Как развести</th></tr>
+    <tr><td>装 zhuāng<br>安装 ānzhuāng</td><td>装 — положить внутрь, вместить (箱子装不下). 安装 — смонтировать, закрепить (安装机器). В упражнении 2 проверяется именно это.</td></tr>
+    <tr><td>缺乏 quēfá<br>缺少 quēshǎo</td><td>Почти синонимы, но 不可缺少 — устойчиво, ✗不可缺乏. 缺乏 книжнее и чаще с абстрактным: 缺乏经验/信心.</td></tr>
+    <tr><td>激烈 jīliè<br>强烈 qiángliè<br>剧烈 jùliè</td><td>Все на -liè. 激烈 — про борьбу и споры, 强烈 — про свет, запах, чувства и требования, 剧烈 — про боль и физическое движение.</td></tr>
+    <tr><td>何况 hékuàng<br>何必 hébì</td><td>Оба с 何 и оба риторические, но 何况 — союз («тем более»), а 何必 — наречие («зачем же»). Первое усиливает вывод, второе отговаривает.</td></tr>
+    <tr><td>踩 cǎi<br>采 cǎi</td><td>踩 = 足 + 采: «нога» слева. 采 без ключа — «собирать, срывать».</td></tr>
+    <tr><td>瞧 qiáo<br>桥 qiáo / 巧 qiǎo</td><td>瞧 = 目 + 焦: «глаз» слева. Тон 2-й, как у 桥.</td></tr>
+    <tr><td>锯 jù<br>据 jù / 剧 jù</td><td>锯 = 钅 + 居: ключ «металл», потому что это инструмент. 据 — 扌, 剧 — 刂.</td></tr>
+    <tr><td>呆 dāi<br>待 dāi</td><td>呆 — «оцепенеть, туповатый» (呆呆地). 待 dāi — «находиться, торчать где-то» (在家待着).</td></tr>
+  </table>
+
+  <div class="warn">Тяжёлые для руки иероглифы</div>
+  <div class="card">
+    <ul style="margin-bottom:0">
+      <li><b>锯</b> = 钅 + 居 (металл + «жить»). <b>筐</b> = ⺮ + 匡: бамбуковый ключ сверху, потому что корзину плели из бамбука.</li>
+      <li><b>栏杆</b> — оба знака с 木: 栏 = 木 + 兰, 杆 = 木 + 干. Ограда деревянная.</li>
+      <li><b>氛</b> (气氛) = 气 + 分, причём 分 <b>внутри</b> «облака» 气, а не рядом.</li>
+      <li><b>瞧</b> = 目 + 焦; <b>踩</b> = 足 + 采; <b>扰</b> (困扰) = 扌 + 尤.</li>
+      <li><b>碍</b> (阻碍) = 石 + 㝵. Часто пишут по ошибке 得 — правая часть похожа, но без 彳.</li>
+      <li><b>维</b> (思维) = 纟 + 隹 «короткохвостая птица». Та же правая часть в 谁, 准, 集.</li>
+      <li><b>幼</b> (幼儿园) = 幺 + 力, не 纟.</li>
+      <li><b>乙</b> — одна черта, но её легко спутать с 己 и 已. <b>甲</b> — рамка с вертикалью, выходящей вниз.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Грамматика: три детали <span class="cn">注释</span></h2>
+
+  <h3>1 · 何况 hékuàng</h3>
+  <div class="card red">
+    <p><span class="tag r">значение A</span> Союз. Риторическим вопросом усиливает вывод на ступень: «если уж A, то B и подавно». Схема: 连 A 都……，何况 B 呢？</p>
+    <p class="cn-ex">缺少了激烈紧张的气氛，连运动员都不满意，更<span class="hl">何况</span>看比赛的球迷呢？</p>
+    <p class="cn-ex">我这个土生土长的老北京还常迷路呢，<span class="hl">何况</span>你一个外地人。</p>
+    <p class="tr">Часто с 更 или 又 впереди и обязательным 呢 в конце вопроса.</p>
+    <p><span class="tag r">значение B</span> Добавляет ещё одну причину: «к тому же, тем более что».</p>
+    <p class="cn-ex">这辆车外观漂亮，安全性高，又<span class="hl">何况</span>价钱也就比上次看的那辆贵了几千块。</p>
+    <p class="cn-ex" style="margin-bottom:0">上海冬天没有暖气，屋子里冷得让人伸不出手，<span class="hl">何况</span>李阳还是病人，自然是受不了的。</p>
+  </div>
+
+  <h3>2 · 何必 hébì</h3>
+  <div class="card wood">
+    <p>Наречие. Риторический вопрос со значением «не нужно, незачем»: говорящий отговаривает. Схема: 何必 + глагол + 呢？, часто с продолжением 不就行了吗？</p>
+    <p class="cn-ex">“<span class="hl">何必</span>这么麻烦呢？把篮筐的底去掉不就行了吗？”</p>
+    <p class="cn-ex">食堂楼下就有个小超市，<span class="hl">何必</span>去学校外边呢？</p>
+    <p class="cn-ex">你<span class="hl">何必</span>亲自送一趟呢？叫个快递不就行了？</p>
+    <p class="tr" style="margin:0">По смыслу равно 不必 / 没必要, но 何必 всегда звучит как вопрос и мягкий упрёк. Утвердительная форма ✗«我何必去» невозможна — только вопрос.</p>
+  </div>
+
+  <h3>3 · 多亏 duōkuī</h3>
+  <div class="card teal">
+    <p>Глагол: благодаря чьей-то помощи или удачному обстоятельству удалось избежать беды или получить выгоду. Часто с 了 и с продолжением через 要不 / 不然 «иначе бы…».</p>
+    <p class="cn-ex"><span class="hl">多亏</span>了他这句话，人们如梦初醒。</p>
+    <p class="cn-ex">谢谢您，<span class="hl">多亏</span>您给我那瓶药，很管用。</p>
+    <p class="cn-ex">今天搬家<span class="hl">多亏</span>有你在，你可帮我大忙了。</p>
+    <p class="tr" style="margin:0">Ключевой нюанс: 多亏 всегда о хорошем исходе. Про плохой исход говорят 都怪…… или 要不是……. Типичный экзаменационный шаблон: 多亏了……，要不我就…… .</p>
+  </div>
+</section>
+
+<section>
+  <h2>Сочетаемость <span class="cn">词语搭配</span></h2>
+  <table>
+    <tr><th style="width:38%">Модель</th><th>Что подставляем</th></tr>
+    <tr><td class="han">缺乏 + O</td><td class="han">缺乏人才 / 教师 / 材料 / 知识 / 工具 / 勇气 / 信心</td></tr>
+    <tr><td class="han">造成 + O</td><td class="han">造成困难 / 影响 / 浪费 / 危害 / 失眠 / 紧张</td></tr>
+    <tr><td class="han">激烈的 + N</td><td class="han">激烈的比赛 / 争吵 / 战争 / 运动</td></tr>
+    <tr><td class="han">…… 的 + 气氛</td><td class="han">家庭的 / 政治 / 节日 / 学习的 / 谈话的气氛</td></tr>
+    <tr><td class="han">…… 地 + 训练</td><td class="han">认真地 / 紧张地 / 艰苦地 / 严格地训练</td></tr>
+    <tr><td class="han">…… 地 + 重复</td><td class="han">简单地 / 完全 / 准确地重复</td></tr>
+    <tr><td class="han">踩 + 补语</td><td class="han">踩破 / 踩伤 / 踩断 / 踩碎</td></tr>
+    <tr><td class="han">瞧 + 补语</td><td class="han">瞧见 / 瞧得起 / 瞧不起 / 瞧得上 / 瞧不上</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>激烈 или 强烈 <span class="cn">词语辨析</span></h2>
+  <p>Оба — прилагательные со значением «сильный, яростный», и в части фраз взаимозаменяемы (我不顾父母的激烈/强烈反对……). Различие в оттенке:</p>
+  <table>
+    <tr><th style="width:50%">激烈 jīliè</th><th>强烈 qiángliè</th></tr>
+    <tr>
+      <td>Оттенок <b>остроты и напряжения</b> — что-то накалено.<br><span class="han">人类最早什么时候开始用火，一直是学者激烈争论的问题。</span></td>
+      <td>Оттенок <b>мощи и интенсивности</b> — что-то бьёт сильно.<br><span class="han">文章发表以后立刻引起了读者的强烈反响。</span></td>
+    </tr>
+    <tr>
+      <td>Чаще о <b>речи, эмоциях, соревновании, борьбе</b>.<br><span class="han">人在激烈运动时，会出很多汗。</span></td>
+      <td>Чаще о <b>свете, токе, цвете, запахе</b>, а также о чувствах, мыслях и требованиях.<br><span class="han">夏天阳光的照射很强烈。</span></td>
+    </tr>
+  </table>
+  <p style="font-size:14.5px;color:var(--brick);margin:0">Быстрый тест: есть две противостоящие стороны (спор, матч, конкуренция) → 激烈. Есть источник, который действует на органы чувств или на всех сразу (свет, запах, требование, реакция) → 强烈.</p>
+</section>
+
+<section>
+  <h2>Проверьте себя <span class="cn">练习 · 答案</span></h2>
+  <p>Ответы к упражнениям со стр. 111–112 — сначала решите, потом раскройте.</p>
+
+  <details>
+    <summary>做一做 · 激烈 / 强烈</summary>
+    <div class="in">
+      <p>① 这种蔬菜有<span class="k">强烈</span>的香味。（запах — 强烈）<br>
+      ② 听说竞争很<span class="k">激烈</span>。（конкуренция — две стороны）<br>
+      ③ 当晚的比赛紧张、<span class="k">激烈</span>。（матч）<br>
+      ④ 学生们<span class="k">强烈</span>要求重新安排考试。（требование）</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 1 · 选择合适的词语填空 （重复 造成 气氛 缺乏 仿佛 连忙）</summary>
+    <div class="in">
+      <p>① 你们组织得相当好，<span class="k">气氛</span>搞得轻松愉快。<br>
+      ② 已经8点多了，李阳<span class="k">连忙</span>穿好衣服往公司赶。<br>
+      ③ 在本子上记着什么，<span class="k">仿佛</span>对我的发言挺感兴趣似的。（仿佛……似的 — устойчивая рамка）<br>
+      ④ 一个动作或想法，如果<span class="k">重复</span>二十一天就会形成习惯。<br>
+      ⑤ 大量饮酒给我的身体健康<span class="k">造成</span>了很大的伤害。<br>
+      ⑥ 在食物<span class="k">缺乏</span>的季节，动物只能多睡觉。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 2 · 选择正确答案</summary>
+    <div class="in">
+      <p>① 这个箱子根本<span class="k">装</span>不下（A）— вместить, а не смонтировать.<br>
+      ② 躺着<span class="k">看</span>书（B）— 瞧 разговорное «глянуть» и идёт с дополнением результата (瞧见, 瞧不起), а книгу «читают» — 看书.<br>
+      ③ 不可<span class="k">缺少</span>的一部分（A）— 不可缺少 устойчиво; ✗不可缺乏.<br>
+      ④ 风俗是怎么<span class="k">形成</span>的（A）— 造成 всегда о плохом результате, обычай же «складывается».</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>练习 3 · 给括号里的词选择适当的位置</summary>
+    <div class="in">
+      <p>① <span class="k">B</span> — 您多画点儿画儿多好，<span class="k">何必</span>把时间浪费在这些人的身上呢？<br>
+      ② <span class="k">C</span> — 年轻人恐怕都受不了了，<span class="k">何况</span>一个有病的老人呢？<br>
+      ③ <span class="k">A</span> — <span class="k">多亏</span>你提醒，要不我肯定忘了下午还要开会。<br>
+      ④ <span class="k">C</span> — 经历了那件事后，我<span class="k">仿佛</span>一夜之间长大成人了。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>扩展 · 体育 （太极拳 球迷 武术 纪录 象棋 教练 对手 冠军 决赛）</summary>
+    <div class="in">
+      <p>① <span class="k">武术</span>是中国传统的体育项目，<span class="k">太极拳</span>是其中重要的组成部分。<br>
+      ② 他<span class="k">象棋</span>下得可棒了。<br>
+      ③ 打羽毛球你可不是我的<span class="k">对手</span>。<br>
+      ④ 打败对方，拿回<span class="k">冠军</span>的奖杯。</p>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Сочинение <span class="cn">我喜欢的一项运动</span></h2>
+  <p>Задание урока: не менее 100 иероглифов о любимом виде спорта. Образец на ~170 знаков — с 多亏, 何必 и лексикой всех четырёх гнёзд.</p>
+  <div class="card red">
+    <p class="cn-ex" style="line-height:2">我最喜欢的一<span class="hl">项</span>运动是篮球。上中学时，学校<span class="hl">缺乏</span>专业的教练，我们只能自己<span class="hl">训练</span>，可那种<span class="hl">激烈</span>紧张的<span class="hl">气氛</span>还是让人上瘾。<span class="hl">多亏</span>了一位同学的<span class="hl">启发</span>，我才明白打球不只是<span class="hl">投篮</span>，更重要的是配合。现在工作忙，有人问我<span class="hl">何必</span>每周专门空出两个小时去球场，其实理由很简单：跑起来的时候，那些<span class="hl">困扰</span>了我一整周的问题<span class="hl">仿佛</span>都被扔在了场外。运动就像一把<span class="hl">锯子</span>，能锯掉生活里多余的东西。</p>
+  </div>
+  <h3>Готовые связки</h3>
+  <div class="card">
+    <ul style="margin-bottom:0">
+      <li class="cn-ex">我最喜欢的一项运动是……</li>
+      <li class="cn-ex">多亏了……，我才……</li>
+      <li class="cn-ex">有人问我何必……，其实理由很简单：……</li>
+      <li class="cn-ex">那种激烈紧张的气氛让人上瘾</li>
+      <li class="cn-ex">……的问题仿佛都被扔在了场外</li>
+      <li class="cn-ex">生活仿佛篮筐，我们需要的只不过是一把锯子</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Что делать до экзамена <span class="cn">复习计划</span></h2>
+  <ol class="route">
+    <li><b>Расскажите схему слева направо.</b> Корзина с дном → лестница → машина инженера → мальчик → пила → кольцо. Шесть картинок, три абзаца текста, две трети лексики урока.</li>
+    <li><b>Отдельно — четыре чтения.</b> 重复 chóng, 好奇 hào, 仿佛 fú, 气氛 fēn. Их надо проговорить вслух несколько раз: в диктанте вы сначала слышите, и неверно опознанный слог тянет за собой неверный иероглиф.</li>
+    <li><b>Прогон колоды с бумагой.</b> Вероятные тормоза руки здесь: 锯、筐、栏杆、氛、瞧、踩、扰、碍、维. Отдельный лист, по строчке на каждый.</li>
+    <li><b>Три конструкции — по своему предложению.</b> 连……都……，何况……呢？ · 何必……呢？ · 多亏了……，要不…… . Последняя особенно хороша: она почти всегда уместна в устной части.</li>
+    <li><b>Сравните три соседних урока.</b> 一再 (13) и 再三 (15) — одно значение, переставленные знаки. 阻碍 (13) и 阻止 (15). 造成 (13), 组成 и 形成 (14). Эти тройки удобно повторять вместе, а не по урокам.</li>
+  </ol>
+  <p style="margin-top:24px;font-size:15px;color:var(--brick)">С этим уроком Unit 5 закрыт целиком: 13, 14 и 15 — «筐底», «四合院» и «纸上谈兵».</p>
+</section>
+
+<nav class="botnav"><a href="index.html"><span>Оглавление</span>Все 18 уроков 5A</a><a href="hsk5a-lesson-14.html"><span>Следующий урок</span>14 · 北京的四合院</a></nav>
+
+<footer>
+  Конспект по «HSK 标准教程 5（上）», урок 13 «锯掉生活的“筐底”», стр. 106–113 · Unit 5 放眼世界<br>
+  Схема нарисована по тексту урока: корзина на перилах, лестница, машина инженера, вопрос ребёнка, пила и кольцо без дна.
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var out = document.getElementById('readout');
+  var def = out.innerHTML;
+  var zones = document.querySelectorAll('.zone');
+
+  function show(z){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    z.classList.add('on');
+    out.innerHTML =
+      '<span class="w">' + z.dataset.w + '</span>' +
+      '<span class="p">' + z.dataset.p + '</span>' +
+      '<span class="d">' + z.dataset.d + '</span>';
+  }
+  function clear(){
+    zones.forEach(function(o){ o.classList.remove('on'); });
+    out.innerHTML = def;
+  }
+
+  zones.forEach(function(z){
+    z.addEventListener('mouseenter', function(){ show(z); });
+    z.addEventListener('focus', function(){ show(z); });
+    z.addEventListener('click', function(e){ e.preventDefault(); show(z); });
+    z.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(z); }
+    });
+  });
+
+  document.querySelector('.scene-box svg').addEventListener('mouseleave', clear);
+})();
+</script>
+<script>
+(function(){
+  var LESSON = "13";
+  var DIRS = ["audio/", "", "mp3/", "media/", "аудио/", "audio/15/", "15/"];
+  var CAND = [];
+  DIRS.forEach(function(d){ CAND.push(d + "{hz}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{hz2}.mp3"); });
+  DIRS.forEach(function(d){ CAND.push(d + "{pyn}.mp3"); });
+
+  var patIn  = document.getElementById('ab-pat');
+  var status = document.getElementById('ab-status');
+  var btns   = Array.prototype.slice.call(document.querySelectorAll('.pb[data-hz]'));
+  var cur = null, curBtn = null, queue = null;
+
+  function pad(n){ n = String(n||''); return n.length === 1 ? '0'+n : n; }
+
+  function resolve(pat, b){
+    return pat
+      .replace(/\{hz2\}/g, b.dataset.hz2 || b.dataset.hz)
+      .replace(/\{hz\}/g,  b.dataset.hz)
+      .replace(/\{pyn\}/g, b.dataset.pyn)
+      .replace(/\{py\}/g,  b.dataset.py)
+      .replace(/\{num\}/g, pad(b.dataset.num))
+      .replace(/\{n\}/g,   b.dataset.num || '')
+      .replace(/\{L\}/g,   LESSON);
+  }
+
+  function setStatus(t, cls){
+    status.textContent = t || '';
+    status.className = 'ab-status' + (cls ? ' ' + cls : '');
+  }
+
+  function test(pat, b){
+    return new Promise(function(res){
+      var a = new Audio(), done = false;
+      function ok(){ if(!done){ done = true; res(true); } }
+      function no(){ if(!done){ done = true; res(false); } }
+      a.addEventListener('loadedmetadata', ok);
+      a.addEventListener('canplay', ok);
+      a.addEventListener('error', no);
+      a.preload = 'metadata';
+      a.src = encodeURI(resolve(pat, b));
+      setTimeout(no, 2500);
+    });
+  }
+
+  function stop(){
+    if(cur){ cur.pause(); cur = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn = null; }
+    queue = null;
+    document.querySelectorAll('.pball.playing').forEach(function(x){ x.classList.remove('playing'); });
+  }
+
+  /* проигрывание с запасными вариантами имени для этого слова */
+  function play(b, onEnd){
+    stop();
+    var tries = [patIn.value.trim()];
+    var alt = (b.dataset.hz2 && b.dataset.hz2 !== b.dataset.hz)
+      ? patIn.value.trim().replace('{hz}', '{hz2}') : null;
+    if(alt && tries.indexOf(alt) < 0) tries.push(alt);
+    CAND.forEach(function(p){ if(tries.indexOf(p) < 0) tries.push(p); });
+
+    b.classList.add('playing');
+    var i = 0;
+    (function attempt(){
+      if(i >= tries.length){
+        b.classList.remove('playing');
+        b.classList.add('missing');
+        b.title = 'Не найден файл для ' + b.dataset.hz;
+        setStatus('Не найден файл для ' + b.dataset.hz + ' — проверьте папку или шаблон.', 'bad');
+        if(onEnd) onEnd();
+        return;
+      }
+      var src = resolve(tries[i++], b);
+      var a = new Audio(encodeURI(src));
+      var started = false;
+      a.addEventListener('canplay', function(){ started = true; });
+      a.addEventListener('ended', function(){
+        b.classList.remove('playing');
+        if(cur === a){ cur = null; curBtn = null; }
+        if(onEnd) onEnd();
+      });
+      a.addEventListener('error', function(){
+        if(!started){ attempt(); }
+        else { b.classList.remove('playing'); if(onEnd) onEnd(); }
+      });
+      cur = a; curBtn = b;
+      b.classList.remove('missing');
+      a.play().catch(function(){});
+    })();
+  }
+
+  /* автопоиск папки при открытии */
+  function autodetect(quiet){
+    if(!btns.length) return;
+    if(!quiet) setStatus('Перебираю варианты…');
+    var i = 0;
+    (function next(){
+      if(i >= CAND.length){
+        setStatus(quiet
+          ? 'Папка с mp3 не найдена. Положите файлы в audio рядом с этим документом.'
+          : 'Ни один из типовых вариантов не подошёл. Впишите путь вручную.',
+          quiet ? '' : 'bad');
+        return;
+      }
+      var p = CAND[i++];
+      test(p, btns[0]).then(function(ok){
+        if(ok){
+          patIn.value = p;
+          document.querySelectorAll('.pb.missing').forEach(function(x){
+            x.classList.remove('missing'); x.title = '';
+          });
+          setStatus('Озвучка подключена: ' + p, 'ok');
+        } else next();
+      });
+    })();
+  }
+
+  document.getElementById('ab-auto').addEventListener('click', function(){ autodetect(false); });
+  document.getElementById('ab-test').addEventListener('click', function(){
+    if(!btns.length) return;
+    setStatus('Проверяю…');
+    test(patIn.value.trim(), btns[0]).then(function(ok){
+      setStatus((ok ? 'Файл найден: ' : 'Не найден: ') + resolve(patIn.value.trim(), btns[0]),
+                ok ? 'ok' : 'bad');
+    });
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(curBtn === b && cur){ stop(); return; }
+      play(b);
+    });
+  });
+
+  document.querySelectorAll('.pball').forEach(function(pb){
+    pb.addEventListener('click', function(){
+      if(pb.classList.contains('playing')){ stop(); return; }
+      var list = Array.prototype.slice.call(
+        pb.closest('.cluster').querySelectorAll('.pb[data-hz]'));
+      stop();
+      pb.classList.add('playing');
+      var i = 0;
+      queue = list;
+      (function step(){
+        if(queue !== list || i >= list.length){ pb.classList.remove('playing'); return; }
+        play(list[i++], function(){ setTimeout(step, 350); });
+      })();
+    });
+  });
+
+  autodetect(true);
+})();
+</script>
+</body>
+</html>
